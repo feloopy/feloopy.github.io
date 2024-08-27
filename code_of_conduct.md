@@ -29,7 +29,7 @@ Community leaders will enforce these standards:
 - They have the authority to remove content that violates this code.
 - They will communicate reasons for actions taken.
 - This code applies everywhere our community is represented.
-- Any misconduct can be reported [here](https://www.linkedin.com/in/k-tafakkori/).
+- Any misconduct can be reported [here](mailto:feloopy@gmail.com).
 
 ## Consequences
 
