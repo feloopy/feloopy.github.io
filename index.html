@@ -1,39 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <title>FelooPy</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-
-        
-        <div class="container active">
-            <img src="assets/images/feloopy-logo.png" alt="FelooPy's logo" class="header-image">
-            <h1 class="feloopy-main-title">FelooPy</h1>
-            <h3 class="feloopy-main-subtitle">Integrated Decision Environment</h3>
-            <h4 class="feloopy-main-subsubtitle">Lost sustainability and resilience?
-                Find your feasible, logical, and optimal business solutions with FelooPy IDE.</h4>
-            <div class="button-container">
-                <div class="button-wrapper">
-                    <button id="download-button" class="download-button">Download</button>
-                    <h4 id="download-info" class="feloopy-main-subsubsubtitle">Download Info</h4>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <title>FelooPy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container active">
+        <img src="assets/images/feloopy-logo.png" alt="FelooPy's logo" class="header-image">
+        <h1 class="feloopy-main-title">FelooPy</h1>
+        <h3 class="feloopy-main-subtitle">Integrated Decision Environment</h3>
+        <h4 class="feloopy-main-subsubtitle">Lost sustainability and resilience? Find your feasible, logical, and optimal business solutions with FelooPy IDE.</h4>
+        <div class="button-container">
+            <div class="button-wrapper">
+                <button id="download-button" class="download-button">Download</button>
+                <h4 id="download-info" class="feloopy-main-subsubsubtitle">Download Info</h4>
             </div>
         </div>
+        <div class="scroll-arrow">&#x2193;</div>
+    </div>
 
-        <div class="container">
-            <h2>Second Section</h2>
-            <p>This is a text.</p>
+    <div class="container">
+        <div class="two-column-container">
+            <div class="column text-column">
+                <div>
+                    <h3 class="feloopy-main-subtitle">Ease of Use</h3>
+                    <p>test</p>
+                </div>
+            </div>
+            <div class="column image-column">
+                <img src="assets/images/feloopy-logo.png" alt="Your Image Description">
+            </div>
         </div>
+    </div>
 
-        <div class="container">
-            <h2>Test</h2>
-            <p>This is a text.</p>
+    <div class="container">
+        <div class="code-box-container">
+            <input type="text" value="pip install feloopy==0.3.5" class="code-box" id="codeBox" readonly>
+            <button class="copy-button" onclick="copycommandToClipboard()">&#x1F4CB;</button>
         </div>
+    </div>
 
-        <script src="download.js"></script>
-        <script src="scroll.js"></script>
-    </body>
+    <div class="container">
+        <div class="two-column-container">
+            <div class="column text-column">
+                <p>Test </p>
+            </div>
+            <div class="column code-column">
+                <pre><code class="language-python" id="pythonCode">
+print("Hello world")
+                </code></pre>
+                <button class="copy-button" onclick="copyPythonCode()">Copy Code</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="download.js"></script>
+    <script src="scroll.js"></script>
+    <script src="clipboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <script>
+        function copyToClipboard() {
+            var codeBox = document.getElementById("codeBox");
+            codeBox.select();
+            codeBox.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+
+        function copyPythonCode() {
+            var pythonCode = document.getElementById("pythonCode").textContent;
+            navigator.clipboard.writeText(pythonCode);
+        }
+    </script>
+</body>
 </html>
