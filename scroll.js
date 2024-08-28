@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const containers = document.querySelectorAll('.container');
     let currentIndex = 0;
-
-    document.addEventListener('wheel', handleScroll, { passive: false });
-    document.addEventListener('touchstart', handleTouchStart, { passive: false });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
-
     let startY = 0;
-    let isScrolling = false; 
+    let isScrolling = false;
+
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('wheel', handleScroll, { passive: false });
 
     function handleTouchStart(event) {
         startY = event.touches[0].clientY;
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (isScrolling) return;
 
-        if (Math.abs(deltaY) > 50) { 
+        if (Math.abs(deltaY) > 50) {
             handleScroll({ deltaY: -deltaY });
             isScrolling = true;
             setTimeout(() => isScrolling = false, 100); 
@@ -26,12 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleScroll(event) {
-        event.preventDefault(); 
-
-        if (isScrolling) return; 
+        if (isScrolling) return;
 
         if (event.deltaY > 0 && currentIndex < containers.length - 1) {
-
+            
             containers[currentIndex].classList.remove('active');
             currentIndex++;
             containers[currentIndex].classList.add('active');
@@ -44,5 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         isScrolling = true; 
         setTimeout(() => isScrolling = false, 100); 
+
+        event.preventDefault(); 
     }
 });
