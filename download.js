@@ -18,7 +18,7 @@ function setDownloadOptions() {
             downloadInfo.textContent = 'For Windows 11/10 64-bit.';
             break;
         default:
-            downloadButton.onclick = () => alert('Your OS is not supported.');
+            downloadButton.onclick = () => alert('Please use "pip install -U feloopy" instead.');
             downloadInfo.textContent = 'Your OS is not supported.';
     }
 }

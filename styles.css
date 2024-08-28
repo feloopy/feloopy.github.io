@@ -112,6 +112,19 @@ footer {
     font-family: 'Montserrat', sans-serif; 
 }
 
+.button-container {
+    display: flex;
+    gap: 10px; 
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+}
+
 .download-button {
     background-color: #3fabb5; 
     color: white;
@@ -139,3 +152,4 @@ footer {
 .download-button:active {
     transform: translateY(1px);
 }
+
