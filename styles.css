@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 /* main css */
 * {
@@ -8,7 +9,7 @@
 }
 
 :root {
-    --txt-color: #ad0404;
+    --txt-color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,7 +54,8 @@ footer {
 
 @keyframes gradientAnimation {
     0% {background-position: 0% 0%;}
-    50% {background-position: 100% 100%;}
+    25% {background-position: 100% 100%;}
+    75% {background-position: 100% 100%;}
     100% {background-position: 0% 0%;}
 }
 
@@ -63,7 +65,7 @@ footer {
     font-family: 'Roboto', sans-serif; 
     font-size: 2.5em; 
     font-weight: bold;
-    background: linear-gradient(45deg, blue, orange);
+    background: linear-gradient(45deg, #223ffcfd, #ff9318);
     background-size: 200% 200%; 
     animation: gradientAnimation 3s ease infinite;
     -webkit-background-clip: text; 
@@ -71,4 +73,18 @@ footer {
     text-align: center; 
     margin: 0px 0; 
     padding: 0px; 
+    animation: gradientAnimation 2s linear  infinite;
+}
+
+.feloopy-main-subtitle {
+    position: relative;
+    font-family: 'Montserrat', 'Montserrat', Helvetica, sans-serif; 
+    font-size: 1.2em; 
+    font-weight: 600; 
+    text-align: center;
+    color: #333;
+    line-height: 1.4;
+    margin: 10px 0;
+    padding: 0;
+    text-transform: uppercase;
 }
