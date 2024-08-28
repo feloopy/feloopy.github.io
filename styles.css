@@ -18,6 +18,8 @@
     }
 }
 
+
+
 body {
     color: var(--txt-color);
     display: flex;
@@ -200,6 +202,13 @@ body, html {
     animation: bounce 1.5s infinite; 
     display: none; 
 }
+
+@media (min-width: 1px) {
+    .scroll-arrow {
+        display: block;
+    }
+}
+
 
 .code-box-container {
     display: flex;
