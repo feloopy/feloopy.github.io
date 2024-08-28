@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* main css */
 * {
     margin: 0;
     padding: 0;
@@ -77,13 +76,14 @@ footer {
     -webkit-text-fill-color: transparent; 
     text-align: center; 
     margin: 0px 0; 
-    padding: 0px; 
+    padding: 0px 20px; 
     animation: gradientAnimation 2s linear  infinite;
 }
 
 .feloopy-main-subtitle {
     font-size: 1.5em;
     color: #666;
+    padding: 0px 20px;
     margin-bottom: 15px;
 }
 
@@ -92,5 +92,6 @@ footer {
     color: #999;
     line-height: 1.5;
     max-width: 800px;
-    margin: 0 auto; 
+    margin: 10 auto; 
+    padding: 10px 20px; 
 }
