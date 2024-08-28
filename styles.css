@@ -51,7 +51,7 @@ footer {
 
 .header-image {
     max-width: 80%; 
-    width: 200px;
+    width: 170px;
     height: auto; 
     display: block; 
     margin: 0 auto; 
@@ -66,7 +66,7 @@ footer {
 
 .feloopy-main-title {
     position: relative; 
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Montserrat', sans-serif; 
     font-size: 2.5em; 
     font-weight: bold;
     background: linear-gradient(45deg, #223ffcfd, #ff9318);
@@ -85,6 +85,9 @@ footer {
     color: #666;
     padding: 0px 20px;
     margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif; 
+    text-transform: uppercase;
+
 }
 
 .feloopy-main-subsubtitle {
@@ -95,4 +98,5 @@ footer {
     margin: 10 auto; 
     padding: 10px 20px; 
     font-weight: normal;
+    font-family: 'Montserrat', sans-serif; 
 }
