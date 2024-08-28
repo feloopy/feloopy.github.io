@@ -101,6 +101,17 @@ footer {
     font-family: 'Montserrat', sans-serif; 
 }
 
+.feloopy-main-subsubsubtitle {
+    font-size: 0.75em;
+    color: #999;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 10 auto; 
+    padding: 10px 20px; 
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif; 
+}
+
 .download-button {
     background-color: #3fabb5; 
     color: white;
