@@ -1,0 +1,52 @@
+
+@keyframes gradientAnimation {
+    0% {background-position: 0% 0%;}
+    25% {background-position: 100% 100%;}
+    75% {background-position: 100% 100%;}
+    100% {background-position: 0% 0%;}
+}
+
+
+.feloopy-main-title {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #223ffcfd, #ff9318);
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 0px 0;
+    padding: 0px 20px;
+    animation: gradientAnimation 2s linear infinite;
+}
+
+.feloopy-main-subtitle {
+    font-size: 1.5em;
+    color: #666;
+    padding: 0px 20px;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.feloopy-main-subsubtitle, .feloopy-main-subsubsubtitle {
+    font-size: 1.2em;
+    color: #999;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 10 auto;
+    padding: 10px 20px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-image {
+    max-width: 80%;
+    width: 170px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

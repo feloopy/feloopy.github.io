@@ -1,0 +1,46 @@
+.code-box-container {
+    display: flex;
+    align-items: center; 
+    border-radius: 9px; 
+    border: 1px solid #ddd; 
+    overflow: hidden; 
+    background-color: #f5f5f5; 
+    margin: 20px;
+}
+
+.code-box {
+    width: 400px;
+    max-width: 300px;
+    padding: 10px;
+    font-family: monospace; 
+    flex: 1; 
+    overflow: hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+    border: none;
+    background: transparent; 
+    outline: none;
+}
+
+.copy-button {
+    background-color: #3fabb5;
+    color: #fff; 
+    border: none; 
+    padding: 10px; 
+    cursor: pointer; 
+    font-size: 14px;
+    border-radius: 0 8px 8px 0;
+    transition: background-color 0.3s; 
+}
+
+.copy-button:hover {
+    background-color: #faac4a; 
+}
+
+.copy-button:active {
+    background-color: #faac4a; 
+}
+
+.copy-button:focus {
+    outline: none;
+}

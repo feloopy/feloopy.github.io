@@ -1,0 +1,30 @@
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-12px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); 
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    animation: bounce 1.5s infinite; 
+    display: none; 
+}
+
+@media (min-width: 1px) {
+    .scroll-arrow {
+        display: block;
+    }
+}

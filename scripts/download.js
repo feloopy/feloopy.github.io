@@ -7,10 +7,10 @@ function detectOS() {
     return 'Unknown';
 }
 
-function setDownloadOptions() {
+function setDownloadOptions(downloadButtonId, downloadInfoId) {
     const os = detectOS();
-    const downloadButton = document.getElementById('download-button');
-    const downloadInfo = document.getElementById('download-info');
+    const downloadButton = document.getElementById(downloadButtonId);
+    const downloadInfo = document.getElementById(downloadInfoId);
 
     switch (os) {
         case 'Windows':
@@ -23,4 +23,7 @@ function setDownloadOptions() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', setDownloadOptions);
+document.addEventListener('DOMContentLoaded', () => {
+    setDownloadOptions('download-button1', 'download-info1');
+    setDownloadOptions('download-button2', 'download-info2');
+});
