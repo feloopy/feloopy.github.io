@@ -14,7 +14,7 @@ function setDownloadOptions(downloadButtonId, downloadInfoId) {
 
     switch (os) {
         case 'Windows':
-            downloadButton.onclick = () => window.location.href = 'https://github.com/ktafakkori/feloopy/releases/download/0.3.5/feloopy-engine.exe';
+            downloadButton.onclick = () => window.location.href = 'https://github.com/feloopy/engine';
             downloadInfo.textContent = 'For Windows 11/10 64-bit.';
             break;
         default:
