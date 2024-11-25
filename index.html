@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>FelooPy</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -24,8 +25,18 @@
         <h4 class="feloopy-main-subsubtitle">Lost sustainability and resilience? Find your feasible, logical, and optimal business solutions with FelooPy IDE.</h4>
         <div class="button-container">
             <div class="button-wrapper">
-                <button id="download-button1" class="download-button">Download</button>
+                <button id="download-button1" class="download-button">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <span>Download</span>
+                </button>
                 <h4 id="download-info1" class="feloopy-main-subsubsubtitle">Download Info</h4>
+            </div>
+            <div class="button-wrapper">
+                <button id="documentation-button" class="documentation-button">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <span>Documentation</span>
+                </button>
+                <h4 class="feloopy-main-subsubsubtitle">Read the docs!</h4>
             </div>
         </div>
         <div class="scroll-arrow">&#x2193;</div>
@@ -206,6 +217,7 @@ flp recover
                 <button id="download-button2" class="download-button">Download</button>
                 <h4 id="download-info2" class="feloopy-main-subsubsubtitle">Download Info</h4>
             </div>
+            
         </div>
 
         <div class="badges-container">
@@ -225,6 +237,7 @@ flp recover
     </div>
     
     <script src="scripts/download.js"></script>
+    <script src="scripts/documentation.js"></script>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/clipboard.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>

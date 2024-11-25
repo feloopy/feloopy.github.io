@@ -1,0 +1,81 @@
+.download-button {
+    background-color: #3fabb5;
+    color: white;
+    border: none;
+    gap: 8px; /* Space between text and icon */
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    font-weight: normal;
+    top: 40px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+
+.documentation-button {
+    background-color: #faac4a;
+    color: white; 
+    border: none; 
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    font-weight: normal; 
+    top: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+
+.download-button:hover {
+    background-color: #faac4a;
+}
+
+.documentation-button:hover {
+    background-color: #3fabb5;
+}
+
+.download-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #faac4a;
+}
+
+.documentation-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #3fabb5;
+}
+
+.download-button:active {
+    transform: translateY(1px);
+}
+
+.documentation-button:active {
+    transform: translateY(1px); 
+}
+
+
+/* FontAwesome icons inherit button color */
+.download-button i {
+    font-size: 14px; /* Adjust size of the icon */
+}
+
+/* FontAwesome icons inherit button color */
+.documentation-button i {
+    font-size: 14px; /* Adjust size of the icon */
+}
+
+.button-container {
+    display: flex;
+    gap: 20px; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
