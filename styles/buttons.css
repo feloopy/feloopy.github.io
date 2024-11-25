@@ -2,7 +2,7 @@
     background-color: #3fabb5;
     color: white;
     border: none;
-    gap: 8px; /* Space between text and icon */
+    gap: 8px;
     border-radius: 4px;
     padding: 10px 10px;
     font-family: 'Montserrat', sans-serif;
@@ -56,14 +56,12 @@
 }
 
 
-/* FontAwesome icons inherit button color */
 .download-button i {
-    font-size: 14px; /* Adjust size of the icon */
+    font-size: 14px; 
 }
 
-/* FontAwesome icons inherit button color */
 .documentation-button i {
-    font-size: 14px; /* Adjust size of the icon */
+    font-size: 14px; 
 }
 
 .button-container {
