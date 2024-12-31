@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
     <title>FelooPy</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -18,7 +20,17 @@
 </head>
 
 <body>
+
     <div class="container active">
+        <div class="github-repo">
+            <a href="https://github.com/feloopy/feloopy" target="_blank">
+                <button id="github-button1" class="github-button">
+                    <i class="fab fa-github" aria-hidden="true" id="github-icon"></i>
+                    <span>GitHub</span>
+                </button>
+            </a>
+        </div>        
+
         <img src="assets/images/feloopy-logo.png" alt="FelooPy's logo" class="header-image">
         <h1 class="feloopy-main-title">FelooPy</h1>
         <h3 class="feloopy-main-subtitle">Integrated Decision Environment</h3>
@@ -41,6 +53,7 @@
         </div>
         <div class="scroll-arrow">&#x2193;</div>
     </div>
+
 
     <div class="container">
         <div class="feature-container">
@@ -236,12 +249,14 @@ flp recover
         </div>
     </div>
     
+    <script src="scripts/githubbutton.js"></script>
     <script src="scripts/download.js"></script>
     <script src="scripts/documentation.js"></script>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/clipboard.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 </body>
 
