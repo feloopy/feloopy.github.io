@@ -6,8 +6,7 @@
     100% {background-position: 0% 0%;}
 }
 
-
-.feloopy-main-title {
+/* .feloopy-main-title {
     position: relative;
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
@@ -21,7 +20,62 @@
     margin: 0px 0;
     padding: 0px 20px;
     animation: gradientAnimation 2s linear infinite;
-}
+} */
+
+.feloopy-main-title {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px 0;
+    padding: 0px 20px;
+    background: linear-gradient(45deg, #223ffcfd, #ff9318);
+    background-size: 200% 200%;
+    animation: gradientAnimation 2s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .animating-text {
+    display: inline-block;
+    overflow: hidden; 
+    height: 1.3em; 
+    line-height: 1.3em;
+    vertical-align: -0.3em;
+  }
+
+  .animating-text span {
+    display: block;
+    background: linear-gradient(45deg, #223ffcfd, #ff9318);
+    background-size: 200% 200%;
+    margin: 0px 0;
+    padding: 0px -20px;
+    animation: gradientAnimation 4s ease-in-out infinite, switch 7.6s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes switch {
+    0%, 55% {
+      transform: translateY(0%);
+    }
+    55%, 100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
 .feloopy-main-subtitle {
     font-size: 1.5em;
