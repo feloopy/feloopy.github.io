@@ -67,9 +67,9 @@
     background-color: #414347;
     color: white;
     border: none;
-    gap: 10px;
+    gap: 1px;
     border-radius: 6px;
-    padding: 12px 16px;
+    padding: 10px 10px;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     font-weight: 500;
