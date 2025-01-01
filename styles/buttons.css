@@ -34,7 +34,8 @@
 .documentation-button {
     background-color: #faac4a;
     color: white; 
-    border: none; 
+    border: none;
+    gap: 8px;
     border-radius: 4px;
     padding: 10px 10px;
     font-family: 'Montserrat', sans-serif;
@@ -104,7 +105,7 @@
 
 .button-container {
     display: flex;
-    gap: 20px; 
+    gap: 0px; 
     justify-content: center; 
     align-items: center; 
     margin-top: 20px;
