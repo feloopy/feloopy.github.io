@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://www.https://feloopy.github.io/</loc>
+		<loc>https://www.feloopy.github.io</loc>
+		<priority>1.00</priority>
+		<lastmod>2025-01-19</lastmod>
+	</url>
+	<url>
+		<loc>https://www.feloopy.github.io/blog.html</loc>
 		<priority>0.67</priority>
 		<lastmod>2025-01-19</lastmod>
 	</url>
 	<url>
-		<loc>https://www.https://feloopy.github.io//blog.html</loc>
+		<loc>https://www.feloopy.github.io/blog/list-of-optimization-packages.html</loc>
 		<priority>0.33</priority>
-		<lastmod>2025-01-19</lastmod>
-	</url>
-	<url>
-		<loc>https://www.https://feloopy.github.io//blog/list-of-optimization-packages.html</loc>
-		<priority>0.17</priority>
 		<lastmod>2025-01-19</lastmod>
 	</url>
 </urlset>
