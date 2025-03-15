@@ -1,12 +1,11 @@
 function detectOS() {
     const userAgent = window.navigator.userAgent;
-    // Simplified detection for current release targets
     if (userAgent.includes('Win')) return 'Windows';
-    if (userAgent.includes('Linux')) return 'Linux'; // Prioritize Linux detection
+    if (userAgent.includes('Linux')) return 'Linux';
     return 'Other';
 }
 
-async function getLatestReleaseDownloadLink(os) { // Added os parameter
+async function getLatestReleaseDownloadLink(os) {
     try {
         const response = await fetch('https://api.github.com/repos/feloopy/engine/releases/latest');
         const data = await response.json();
