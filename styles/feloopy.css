@@ -8,7 +8,7 @@
 
 /* .feloopy-main-title {
     position: relative;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     font-size: 2.5em;
     font-weight: bold;
     background: linear-gradient(45deg, #223ffcfd, #ff9318);
@@ -24,7 +24,7 @@
 
 .feloopy-main-title {
     position: relative;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     font-size: 2.5em;
     font-weight: bold;
     text-align: center;
@@ -47,7 +47,7 @@
 
   .animating-text span {
     display: block;
-    background: linear-gradient(45deg, #223ffcfd, #ff9318);
+    background: linear-gradient(45deg, #2f376cfd, #ff9318);
     background-size: 200% 200%;
     margin: 0px 0;
     padding: 0px -20px;
@@ -79,27 +79,27 @@
 
 .feloopy-main-subtitle {
     font-size: 1.5em;
-    color: #6ebe44;
+    color: #3b3b3c;
     padding: 0px 20px;
     margin-bottom: 15px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     text-transform: uppercase;
 }
 
 .feloopy-main-subsubtitle, .feloopy-main-subsubsubtitle {
     font-size: 1.2em;
-    color: #999;
+    color: #3b3b3c;
     line-height: 1.5;
     max-width: 800px;
     margin: 10 auto;
     padding: 10px 20px;
     font-weight: normal;
-    font-family: 'Source Code Pro', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 .header-image {
     max-width: 80%;
-    width: 365px;
+    width: 450px;
     height: auto;
     display: block;
     margin: 0 auto;

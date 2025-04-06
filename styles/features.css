@@ -45,10 +45,10 @@
 
 .feature-main-title {
     position: relative;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     font-size: 2.5em;
     font-weight: bold;
-    background: linear-gradient(45deg, #223ffcfd, #ff9318);
+    background: linear-gradient(45deg, #3b3b3c, #53be2c);
     background-size: 200% 200%;
     animation: gradientAnimation 3s ease infinite;
     -webkit-background-clip: text;
@@ -64,7 +64,7 @@
     color: #666;
     padding: 0px 20px;
     margin-bottom: 15px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     /*text-transform: uppercase;*/
 }
 
@@ -76,7 +76,7 @@
     margin: 10 auto;
     padding: 10px 20px;
     font-weight: normal;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 .feature-terminal-image {

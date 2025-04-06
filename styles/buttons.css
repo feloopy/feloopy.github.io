@@ -1,13 +1,13 @@
 .download-button {
-    background-color: #3fabb5;
-    color: white;
-    border: none;
+    background-color: #7bc144;
+    color: #2d2d2e;
+    border: 2px solid #2d2d2e;;
     gap: 8px;
     border-radius: 4px;
     padding: 10px 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     cursor: pointer;
-    font-weight: normal;
+    font-weight: bold;
     top: 40px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-transform: uppercase;
@@ -15,12 +15,12 @@
 }
 
 .download-button:hover {
-    background-color: #faac4a;
+    background-color: #6ead3db6;
 }
 
 .download-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px #faac4a;
+    /*box-shadow: 0 0 0 3px #2d2d2e;*/
 }
 
 .download-button:active {
@@ -32,15 +32,15 @@
 }
 
 .documentation-button {
-    background-color: #faac4a;
-    color: white; 
-    border: none;
+    background-color: #ffffff;
+    color: #2d2d2e; 
+    border: 2px solid #2d2d2e;
     gap: 8px;
     border-radius: 4px;
     padding: 10px 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     cursor: pointer;
-    font-weight: normal; 
+    font-weight: bold; 
     top: 40px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     text-transform: uppercase;
@@ -48,12 +48,12 @@
 }
 
 .documentation-button:hover {
-    background-color: #3fabb5;
+    background-color: #6ead3db6;
 }
 
 .documentation-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px #3fabb5;
+    /*box-shadow: 0 0 0 3px #3fabb5;*/
 }
 
 .documentation-button:active {
@@ -65,13 +65,13 @@
 }
 
 .github-button {
-    background-color: #414347;
+    background-color: #3b3b3c;
     color: white;
     border: none;
     gap: 1px;
     border-radius: 6px;
     padding: 10px 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     cursor: pointer;
     font-weight: 500;
     text-transform: uppercase;
@@ -96,7 +96,7 @@
 
 .github-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px #444d56;
+    /*box-shadow: 0 0 0 3px #444d56;*/
 }
 
 .github-button:active {
@@ -104,13 +104,13 @@
 }
 
 .blog-button {
-    background-color: #3e3e3e;
+    background-color: #3b3b3c;
     color: white;
     border: none;
     gap: 1px;
     border-radius: 6px;
     padding: 10px 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     cursor: pointer;
     font-weight: 500;
     text-transform: uppercase;
@@ -137,7 +137,7 @@
 
 .blog-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px #555e66;
+    /*box-shadow: 0 0 0 3px #555e66;*/
 }
 
 .blog-button:active {

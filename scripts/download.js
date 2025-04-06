@@ -29,7 +29,7 @@ function setDownloadOptions(downloadButtonId, downloadInfoId) {
         if (url && (os === 'Windows' || os === 'Linux')) {
             downloadButton.onclick = () => window.location.href = url;
             downloadInfo.textContent = os === 'Windows'
-                ? 'For Windows 11/10 64-bit'
+                ? 'For Windows 10/11 64-bit'
                 : 'For Linux 64-bit';
         } else {
             downloadButton.onclick = () => alert('Please use "pip install -U feloopy" instead.');
