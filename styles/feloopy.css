@@ -30,7 +30,7 @@
     text-align: center;
     margin: 0px 0;
     padding: 0px 20px;
-    background: linear-gradient(45deg, #223ffcfd, #ff9318);
+    background: linear-gradient(45deg,  #3b3b3c, #53be2c);
     background-size: 200% 200%;
     animation: gradientAnimation 2s linear infinite;
     -webkit-background-clip: text;
@@ -103,4 +103,12 @@
     height: auto;
     display: block;
     margin: 0 auto;
+}
+
+.header-image-second {
+  max-width: 80%;
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }

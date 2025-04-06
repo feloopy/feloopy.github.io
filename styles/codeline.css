@@ -12,6 +12,7 @@
     width: 400px;
     max-width: 300px;
     padding: 10px;
+
     font-family: monospace; 
     flex: 1; 
     overflow: hidden; 
@@ -23,22 +24,21 @@
 }
 
 .copy-button {
-    background-color: #3fabb5;
+    background-color: #7bc144;
     color: #fff; 
-    border: none; 
+    border: none;
     padding: 10px; 
     cursor: pointer; 
     font-size: 14px;
     border-radius: 0 8px 8px 0;
-    transition: background-color 0.3s; 
 }
 
 .copy-button:hover {
-    background-color: #faac4a; 
+    background-color: #6ead3db6;; 
 }
 
 .copy-button:active {
-    background-color: #faac4a; 
+    background-color: #6ead3db6;; 
 }
 
 .copy-button:focus {

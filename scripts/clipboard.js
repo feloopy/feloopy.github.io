@@ -3,7 +3,7 @@ function copyCommandToClipboard() {
     command.select();
     command.setSelectionRange(0, 99999); 
     document.execCommand("copy");
-    alert("The command has been copied to your clipboard. You can now paste it into your Python VM or terminal.");
+    alert("You may execute the copied command inside a Python VM or terminal.");
 }
 
 function copyPythonCode() {

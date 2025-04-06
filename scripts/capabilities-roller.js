@@ -9,7 +9,7 @@ const phrases = [
   "minimize Vulnerability", "maximize Impressions", "minimize Tardy Jobs", "maximize Robustness", "minimize Shortage",
   "maximize Outputs", "minimize Dependencies", "maximize Exports", "minimize Resources", "maximize Reliability",
   "minimize Fatigue", "maximize Job Creation", "minimize Fleet Size", "maximize Social Responsibility", "minimize Inputs",
-  "maximize Efficiency", "minimize Loss", "maximize Effectiveness", "minimize Imports", "maximize Quality", "minimize Cycle Time", "maximize Market Share", "minimize Makespan"
+  "maximize Efficiency", "minimize Loss", "maximize Effectiveness", "minimize Imports", "maximize Quality", "minimize Cycle Time", "maximize Market Share", "minimize Makespan", "minimize Perishability", "minimize Outsourcing",
 ];
 
 const roller = document.getElementById('roller');
