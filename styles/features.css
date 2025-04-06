@@ -32,7 +32,6 @@
     font-weight: bold;
     color: #333;
   }
-  
 @media screen and (min-width: 768px) {
     .feature-container {
         flex-direction: row;
