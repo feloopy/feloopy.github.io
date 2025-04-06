@@ -45,7 +45,7 @@
 
 .feature-main-title {
     position: relative;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 2.5em;
     font-weight: bold;
     background: linear-gradient(45deg, #223ffcfd, #ff9318);
@@ -64,7 +64,7 @@
     color: #666;
     padding: 0px 20px;
     margin-bottom: 15px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     /*text-transform: uppercase;*/
 }
 
@@ -76,7 +76,7 @@
     margin: 10 auto;
     padding: 10px 20px;
     font-weight: normal;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .feature-terminal-image {

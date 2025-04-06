@@ -5,7 +5,7 @@
     gap: 8px;
     border-radius: 4px;
     padding: 10px 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
     font-weight: normal;
     top: 40px;
@@ -38,7 +38,7 @@
     gap: 8px;
     border-radius: 4px;
     padding: 10px 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
     font-weight: normal; 
     top: 40px;
@@ -71,7 +71,7 @@
     gap: 1px;
     border-radius: 6px;
     padding: 10px 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
     font-weight: 500;
     text-transform: uppercase;
@@ -110,7 +110,7 @@
     gap: 1px;
     border-radius: 6px;
     padding: 10px 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
     font-weight: 500;
     text-transform: uppercase;
