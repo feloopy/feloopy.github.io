@@ -32,7 +32,7 @@ function setDownloadOptions(downloadButtonId, downloadInfoId) {
                 ? 'For Windows 10/11 64-bit'
                 : 'For Linux 64-bit';
         } else {
-            downloadButton.onclick = () => alert('Please use "pip install -U feloopy" instead.');
+            downloadButton.onclick = () => alert('Please use "pip install -U feloopy[stock]==0.3.7" instead.');
             downloadInfo.textContent = os === 'Other'
                 ? 'Your OS is not supported'
                 : 'Failed to fetch download link';
