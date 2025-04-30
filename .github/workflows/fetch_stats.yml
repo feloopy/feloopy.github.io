@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -29,23 +28,24 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python - <<EOF
-import os, json
-from pypistats import recent        
-import requests                  
+          import os
+          import json
+          from pypistats import recent
+          import requests
 
-week = recent("feloopy", period="week").data.last_week
-month = recent("feloopy", period="month").data.last_month
+          week = recent("feloopy", period="week")["data"]["last_week"]
+          month = recent("feloopy", period="month")["data"]["last_month"]
 
-resp = requests.get(
-    "https://api.github.com/repos/feloopy/feloopy",
-    headers={"Authorization": f"token {os.environ['GITHUB_TOKEN']}"}
-)
-stars = resp.json().get("stargazers_count", 0)
+          resp = requests.get(
+              "https://api.github.com/repos/feloopy/feloopy",
+              headers={"Authorization": f"token {os.environ['GITHUB_TOKEN']}"}
+          )
+          stars = resp.json().get("stargazers_count", 0)
 
-stats = {"week": week, "month": month, "stars": stars}
-with open("stats.json","w") as f:
-    json.dump(stats, f)
-EOF
+          stats = {"week": week, "month": month, "stars": stars}
+          with open("stats.json", "w") as f:
+              json.dump(stats, f)
+          EOF
 
       - name: Commit stats.json
         run: |

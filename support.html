@@ -1,54 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Support Feloopy: Engagement Dashboard</title>
+  <title>Feloopy Engagement Dashboard</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
       background: #f4f7fc;
       color: #333;
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
     }
     .hero {
-      background: #2b6cb0; color: #fff;
-      text-align: center; padding: 50px 20px;
+      background: #2b6cb0;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
     }
-    .hero h1 { margin: 0; font-size: 2.5rem; }
-    .hero p { max-width: 600px; margin: 10px auto 0; font-size: 1.1rem; }
+    .hero h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 10px auto 0;
+      font-size: 1.1rem;
+    }
     .container {
-      max-width: 800px; margin: -30px auto 40px;
-      background: #fff; border-radius: 8px;
+      max-width: 800px;
+      margin: -30px auto 40px;
+      background: #fff;
+      border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       padding: 30px;
     }
     .stats {
-      display: flex; flex-wrap: wrap; gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
       margin-bottom: 30px;
     }
     .card {
-      flex: 1 1 180px; background: #e2e8f0;
-      border-radius: 6px; padding: 20px;
+      flex: 1 1 180px;
+      background: #e2e8f0;
+      border-radius: 6px;
+      padding: 20px;
     }
-    .card h3 { margin: 0 0 10px; color: #2b6cb0; }
-    .value { font-size: 2rem; font-weight: bold; }
+    .card h3 {
+      margin: 0 0 10px;
+      color: #2b6cb0;
+    }
+    .value {
+      font-size: 2rem;
+      font-weight: bold;
+    }
     .progress-container {
-      background: #cbd5e0; border-radius: 4px;
-      height: 20px; overflow: hidden; margin-top: 10px;
+      background: #cbd5e0;
+      border-radius: 4px;
+      height: 20px;
+      overflow: hidden;
+      margin-top: 10px;
     }
     .progress-bar {
-      width: 0; height: 100%; background: #38a169;
+      width: 0;
+      height: 100%;
+      background: #38a169;
       transform-origin: left center;
       animation: fillBar 2s ease-out forwards;
     }
-    @keyframes fillBar { to { width: var(--pct); } }
-    .cta {
-      display: inline-block; margin: 20px 0;
-      padding: 12px 24px; background: #38a169;
-      color: #fff; text-decoration: none; border-radius: 4px;
+    @keyframes fillBar {
+      to {
+        width: var(--pct);
+      }
     }
-    .cta:hover { background: #2f855a; }
+    .cta {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 12px 24px;
+      background: #38a169;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .cta:hover {
+      background: #2f855a;
+    }
   </style>
 </head>
 <body>
@@ -59,21 +96,34 @@
 
   <div class="container">
     <div class="stats">
-      <div class="card"><h3>Weekly Downloads</h3><div id="week" class="value">–</div></div>
-      <div class="card"><h3>Monthly Downloads</h3><div id="month" class="value">–</div></div>
-      <div class="card"><h3>GitHub Stars</h3><div id="stars" class="value">–</div></div>
+      <div class="card">
+        <h3>Weekly Downloads</h3>
+        <div id="week" class="value">–</div>
+      </div>
+      <div class="card">
+        <h3>Monthly Downloads</h3>
+        <div id="month" class="value">–</div>
+      </div>
+      <div class="card">
+        <h3>GitHub Stars</h3>
+        <div id="stars" class="value">–</div>
+      </div>
       <div class="card">
         <h3>Star-to-Download %</h3>
         <div id="pct" class="value">–</div>
-        <div class="progress-container"><div id="bar" class="progress-bar"></div></div>
+        <div class="progress-container">
+          <div id="bar" class="progress-bar"></div>
+        </div>
       </div>
     </div>
     <a class="cta" href="https://github.com/feloopy/feloopy" target="_blank">Star on GitHub ★</a>
   </div>
 
   <script>
-    function animate(el, start, end, duration=1500) {
-      let range = end - start, startTime = null;
+    // High-performance count-up using requestAnimationFrame
+    function animate(el, start, end, duration = 1500) {
+      let range = end - start;
+      let startTime = null;
       function step(ts) {
         if (!startTime) startTime = ts;
         let progress = Math.min((ts - startTime) / duration, 1);
@@ -84,17 +134,24 @@
     }
 
     async function loadStats() {
-      const stats = await fetch('stats.json').then(r => r.json());
-      animate(document.getElementById('week'), 0, stats.week);
-      animate(document.getElementById('month'), 0, stats.month);
-      animate(document.getElementById('stars'), 0, stats.stars);
-      const pct = stats.month ? Math.round((stats.stars / stats.month) * 100) : 0;
-      animate(document.getElementById('pct'), 0, pct);
-      const bar = document.getElementById('bar');
-      bar.style.setProperty('--pct', pct + '%');
+      try {
+        const response = await fetch('stats.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const stats = await response.json();
+        animate(document.getElementById('week'), 0, stats.week);
+        animate(document.getElementById('month'), 0, stats.month);
+        animate(document.getElementById('stars'), 0, stats.stars);
+        const pct = stats.month ? Math.round((stats.stars / stats.month) * 100) : 0;
+        animate(document.getElementById('pct'), 0, pct);
+        document.getElementById('bar').style.setProperty('--pct', pct + '%');
+      } catch (error) {
+        console.error('Error fetching stats:', error);
+      }
     }
 
-    loadStats(); 
+    loadStats();  // Kick off on load
   </script>
 </body>
 </html>
