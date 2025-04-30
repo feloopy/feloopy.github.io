@@ -1,0 +1,56 @@
+name: Fetch Feloopy Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pypistats requests
+
+      - name: Fetch PyPI downloads & GitHub stars
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<EOF
+import os, json
+from pypistats import recent        
+import requests                  
+
+week = recent("feloopy", period="week").data.last_week
+month = recent("feloopy", period="month").data.last_month
+
+resp = requests.get(
+    "https://api.github.com/repos/feloopy/feloopy",
+    headers={"Authorization": f"token {os.environ['GITHUB_TOKEN']}"}
+)
+stars = resp.json().get("stargazers_count", 0)
+
+stats = {"week": week, "month": month, "stars": stars}
+with open("stats.json","w") as f:
+    json.dump(stats, f)
+EOF
+
+      - name: Commit stats.json
+        run: |
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git add stats.json
+          git diff --staged --quiet || git commit -m "updated stats.json"
+          git push
