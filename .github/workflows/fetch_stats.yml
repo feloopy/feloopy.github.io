@@ -35,21 +35,28 @@ jobs:
           python - << 'EOF'
           import os
           import json
-          from pypistats import recent        # attribute-based API :contentReference[oaicite:5]{index=5}
           import requests
+          import pypistats
 
-          # Correct attribute access (not dict indexing) :contentReference[oaicite:6]{index=6}
-          week = recent("feloopy", period="week").data.last_week
-          month = recent("feloopy", period="month").data.last_month
+          # Fetch recent stats (returns JSON string)
+          week_json = pypistats.recent("feloopy", period="week", format="json")
+          month_json = pypistats.recent("feloopy", period="month", format="json")
 
-          # GitHub stars (authenticated to avoid rate-limit) :contentReference[oaicite:7]{index=7}
+          # Parse JSON strings into Python dicts
+          week_data = json.loads(week_json)
+          month_data = json.loads(month_json)
+
+          week = week_data["data"]["last_week"]
+          month = month_data["data"]["last_month"]
+
+          # GitHub stars
           resp = requests.get(
               "https://api.github.com/repos/feloopy/feloopy",
               headers={"Authorization": f"token {os.environ['GITHUB_TOKEN']}"}
           )
           stars = resp.json().get("stargazers_count", 0)
 
-          # Write same-origin JSON for GitHub Pages (CORS-friendly) :contentReference[oaicite:8]{index=8}
+          # Output stats
           stats = {"week": week, "month": month, "stars": stars}
           with open("stats.json", "w") as f:
               json.dump(stats, f)
