@@ -5,67 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Support FelooPy</title>
   <style>
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f4f7fc; margin:0; padding:0 }
-    .hero { background: #2b6cb0; color:#fff; text-align:center; padding:50px 20px }
-    .container { max-width:900px; margin:-30px auto 40px; background:#fff; border-radius:8px;
-                 box-shadow:0 4px 12px rgba(0,0,0,0.05); padding:30px }
-    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:20px }
-    .card { background:#e2e8f0; border-radius:6px; padding:20px; text-align:center }
-    .card h3 { margin-bottom:10px; color:#2b6cb0 }
-    .value { font-size:2rem; font-weight:bold }
-    .progress-container { background:#cbd5e0; border-radius:4px; height:20px; overflow:hidden }
-    .progress-bar { width:0; height:100%; background:#38a169; transform-origin:left;
-                    animation:fillBar 2s ease-out forwards }
-    @keyframes fillBar { to { width: var(--pct); } }
-    #map { width:100%; height:400px; margin-top:30px }
-    canvas { margin-top:30px; width:100% !important; height:300px !important }
-    .cta { display:inline-block; margin:20px 0; padding:12px 24px;
-           background:#38a169; color:#fff; text-decoration:none; border-radius:4px }
-    .cta:hover { background:#2f855a }
+    body{font-family:'Segoe UI',sans-serif;background:#f4f7fc;margin:0;padding:0}
+    .hero{background:#2b6cb0;color:#fff;text-align:center;padding:50px}
+    .hero h1{margin:0;font-size:2.5rem}
+    .container{max-width:900px;margin:-30px auto 40px;background:#fff;
+               border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.05);padding:30px}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+    .card{background:#e2e8f0;border-radius:6px;padding:20px;text-align:center}
+    .card h3{color:#2b6cb0;margin-bottom:10px}
+    .value{font-size:2rem;font-weight:bold}
+    .progress-container{background:#cbd5e0;border-radius:4px;height:20px;overflow:hidden;margin-top:10px}
+    .progress-bar{width:0;height:100%;background:#38a169;transform-origin:left;
+                  animation:fillBar 2s ease-out forwards}
+    @keyframes fillBar{to{width:var(--pct)}}            /* CSS animation via var */ :contentReference[oaicite:11]{index=11}
+    #map{width:100%;height:300px;margin-top:30px}
+    canvas{margin-top:30px;width:100%!important;height:300px!important}
+    .cta{display:inline-block;margin:20px 0;padding:12px 24px;background:#38a169;
+         color:#fff;text-decoration:none;border-radius:4px}
+    .cta:hover{background:#2f855a}
   </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Fuel FelooPy’s Future</h1>
-  </section>
+  <section class="hero"><h1>Fuel FelooPy’s Future</h1></section>
   <div class="container">
     <div class="stats">
-      <div class="card"><h3>Total Downloads</h3><div id="total" class="value">–</div></div>
-      <div class="card"><h3>YouTube Subs</h3><div id="subs" class="value">–</div></div>
-      <div class="card"><h3>YouTube Views</h3><div id="views" class="value">–</div></div>
+      <div class="card">
+        <h3>Today’s Downloads</h3><div id="day" class="value">–</div>
+      </div>
+      <div class="card">
+        <h3>Weekly Downloads</h3><div id="week" class="value">–</div>
+      </div>
+      <div class="card">
+        <h3>Monthly Downloads</h3><div id="month" class="value">–</div>
+      </div>
+      <div class="card">
+        <h3>Total Downloads</h3><div id="total" class="value">–</div>
+      </div>
+      <div class="card">
+        <h3>GitHub Stars</h3><div id="stars" class="value">–</div>
+      </div>
+      <div class="card">
+        <h3>Star-to-Download %</h3><div id="sd-pct" class="value">–%</div>
+        <div class="progress-container"><div id="sd-bar" class="progress-bar"></div></div>
+      </div>
+      <div class="card">
+        <h3>YouTube Subs</h3><div id="subs" class="value">–</div>
+      </div>
+      <div class="card">
+        <h3>YouTube Views</h3><div id="views" class="value">–</div>
+      </div>
+      <div class="card">
+        <h3>Sub-to-View %</h3><div id="sv-pct" class="value">–%</div>
+        <div class="progress-container"><div id="sv-bar" class="progress-bar"></div></div>
+      </div>
     </div>
+
     <div id="map"></div>
-    <canvas id="chart"></canvas>
+    <canvas id="countryChart"></canvas>
+    <canvas id="starsHistoryChart"></canvas>
+
     <a class="cta" href="https://github.com/feloopy/feloopy" target="_blank">Star on GitHub ★</a>
   </div>
 
+  <!-- Geo-map -->
   <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script>
     google.charts.load('current',{packages:['geochart']});
-    google.charts.setOnLoadCallback(()=>{
-      fetch('stats.json').then(r=>r.json()).then(s=>{
-        const data=[['Country','Downloads'],...s.by_country.map(r=>[r.country,r.downloads])];
-        const chart=new google.visualization.GeoChart(document.getElementById('map'));
-        chart.draw(google.visualization.arrayToDataTable(data),{});
-      });
+    google.charts.setOnLoadCallback(async ()=>{
+      const s = await fetch('stats.json').then(r=>r.json());
+      const data = [['Country','Downloads'],...s.by_country.map(r=>[r.country,r.downloads])];
+      new google.visualization.GeoChart(document.getElementById('map'))
+        .draw(google.visualization.arrayToDataTable(data),{});
     });
   </script>
 
+  <!-- Charts & animated bars -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    fetch('stats.json').then(r=>r.json()).then(s=>{
-      document.getElementById('total').textContent=s.total;
-      document.getElementById('subs').textContent=s.youtube_subs;
-      document.getElementById('views').textContent=s.youtube_views;
-      new Chart(document.getElementById('chart'),{
+    function animateNumber(el, start, end, duration=1500) {
+      let range=end-start, t0;
+      function step(ts){
+        if(!t0)t0=ts;
+        let p=Math.min((ts-t0)/duration,1);
+        el.textContent=Math.floor(start+p*range)+(el.id.includes('-pct')? '%':'');
+        if(p<1) requestAnimationFrame(step);  /* smooth rAF */ :contentReference[oaicite:12]{index=12}
+      }
+      requestAnimationFrame(step);
+    }
+
+    async function render() {
+      const s = await fetch('stats.json').then(r=>r.json());
+
+      // Animate raw values
+      ['day','week','month','total','stars'].forEach(k=>{
+        animateNumber(document.getElementById(k),0, s[k]||0);
+      });
+      document.getElementById('subs').textContent = s.youtube_subs;
+      document.getElementById('views').textContent = s.youtube_views;
+
+      // Animate bars
+      const sd = s.month ? Math.round(s.stars/s.month*100) : 0;
+      const sv = (parseInt(s.youtube_views) && parseInt(s.youtube_subs))
+               ? Math.round(parseInt(s.youtube_subs)/parseInt(s.youtube_views)*100)
+               : 0;
+      animateNumber(document.getElementById('sd-pct'),0,sd);
+      animateNumber(document.getElementById('sv-pct'),0,sv);
+      document.getElementById('sd-bar').style.setProperty('--pct',sd+'%');
+      document.getElementById('sv-bar').style.setProperty('--pct',sv+'%');
+
+      // Top-10 countries bar chart
+      const top10 = s.by_country.sort((a,b)=>b.downloads-a.downloads).slice(0,10);
+      new Chart(document.getElementById('countryChart'),{
+        type:'bar',
+        data:{
+          labels: top10.map(r=>r.country),
+          datasets:[{label:'Downloads',data:top10.map(r=>r.downloads),fill:false}]
+        },
+        options:{responsive:true,scales:{y:{beginAtZero:true}}}
+      });
+
+      // Stars history line chart
+      const h = await fetch('stars_history.json').then(r=>r.json());
+      new Chart(document.getElementById('starsHistoryChart'),{
         type:'line',
         data:{
-          labels:[s.fetched_at],
-          datasets:[{ label:'Fetch time', data:[1], fill:false }]
+          labels:Object.keys(h),
+          datasets:[{label:'Stars',data:Object.values(h),fill:false}]
         },
-        options:{ responsive:true }
+        options:{responsive:true,scales:{y:{beginAtZero:true}}}
       });
-    });
+    }
+    render();
   </script>
 </body>
 </html>

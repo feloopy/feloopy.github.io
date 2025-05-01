@@ -2,8 +2,8 @@ name: Fetch Feloopy Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: '0 0 * * *'        # daily at 00:00 UTC
+  workflow_dispatch:           # manual trigger
 
 jobs:
   update-stats:
@@ -18,43 +18,70 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4 pypinfo
+          pip install requests beautifulsoup4 pypistats pypinfo
 
       - name: Fetch stats & build JSON
         run: |
-          python - << 'EOF'
+          python << 'EOF'
           import json, datetime, subprocess, re
-          import requests
+          import requests, pypistats
           from bs4 import BeautifulSoup
 
           stats = {}
 
+          # 1. Daily/weekly/monthly downloads via PyPI Stats API
+          r = requests.get('https://pypistats.org/api/packages/feloopy/recent').json()
+          d = r.get('data', {})
+          stats.update({
+            'day':   d.get('last_day', 0),
+            'week':  d.get('last_week', 0),
+            'month': d.get('last_month', 0)
+          })  # :contentReference[oaicite:6]{index=6}
+
+          # 2. Total downloads via Shields.io badge JSON
           shield = requests.get('https://img.shields.io/pypi/dt/feloopy.json').json()
-          stats['total'] = int(re.sub(r'\D','', str(shield.get('value',0))))
+          v = re.sub(r'\D','', str(shield.get('value','')))
+          stats['total'] = int(v) if v.isdigit() else 0  # :contentReference[oaicite:7]{index=7}
 
-          out = subprocess.check_output([
-            'pypinfo', 'feloopy', 'country', '--json', '--limit', '200'
-          ])
-          stats['by_country'] = json.loads(out)
+          # 3. GitHub stars_count (public endpoint)
+          gh = requests.get("https://api.github.com/repos/feloopy/feloopy").json()
+          stats['stars'] = gh.get('stargazers_count', 0)  # :contentReference[oaicite:8]{index=8}
 
+          # 4. YouTube subs & views by scraping ytInitialData JSON
           html = requests.get('https://www.youtube.com/@feloopy/about').text
-          soup = BeautifulSoup(html, 'html.parser')
+          m = re.search(r'window\["ytInitialData"\] = (.*?);\s*</script>', html, re.S)
+          if m:
+              jd = json.loads(m.group(1))
+              hdr = jd['header']['c4TabbedHeaderRenderer']
+              stats['youtube_subs']  = hdr['subscriberCountText']['simpleText']
+              stats['youtube_views'] = hdr['viewCountText']['simpleText']
+          else:
+              stats['youtube_subs'] = stats['youtube_views'] = 'n/a'  # :contentReference[oaicite:9]{index=9}
 
-          sub = soup.select_one('yt-formatted-string#subscriber-count')
-          stats['youtube_subs'] = sub.text.strip() if sub else 'n/a'
+          # 5. Downloads by country via pypinfo CLI (BigQuery free tier)
+          out = subprocess.check_output(['pypinfo','feloopy','country','--json','--limit','200'])
+          stats['by_country'] = json.loads(out)  # :contentReference[oaicite:10]{index=10}
 
-          view = soup.select_one('span.about-stat:nth-of-type(2) b')
-          stats['youtube_views'] = view.text.strip() if view else 'n/a'
+          # 6. Append daily GitHub stars history
+          hist_path = 'stars_history.json'
+          today = datetime.date.today().isoformat()
+          try:
+              history = json.load(open(hist_path))
+          except FileNotFoundError:
+              history = {}
+          history[today] = stats['stars']
+          with open(hist_path, 'w') as f:
+              json.dump(history, f, indent=2)
 
           stats['fetched_at'] = datetime.datetime.utcnow().isoformat()+'Z'
-
-          with open('stats.json','w') as f: json.dump(stats, f, indent=2)
+          with open('stats.json','w') as f:
+              json.dump(stats, f, indent=2)
           EOF
 
       - name: Commit & push
         run: |
           git config user.name github-actions
           git config user.email actions@github.com
-          git add stats.json
+          git add stats.json stars_history.json
           git diff --staged --quiet || git commit -m "Update stats.json"
           git push
