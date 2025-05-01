@@ -1,6 +1,5 @@
 name: Fetch Feloopy Stats
 
-# Scheduled (daily at 00:00 UTC) and manual trigger
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -11,59 +10,48 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout your repo so we can commit stats.json :contentReference[oaicite:3]{index=3}
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      # 2️⃣ Install Python for pypistats :contentReference[oaicite:4]{index=4}
-      - name: Set up Python 3.x
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      # 3️⃣ Install pypistats & requests
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install pypistats requests
+          pip install requests beautifulsoup4 pypinfo
 
-      # 4️⃣ Fetch stats via pypistats (no CORS issues, server-side) & GitHub API  
-      - name: Fetch PyPI downloads & GitHub stars
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Fetch stats & build JSON
         run: |
           python - << 'EOF'
-          import os
-          import json
+          import json, datetime, subprocess, re
           import requests
-          import pypistats
+          from bs4 import BeautifulSoup
 
-          # Fetch recent stats (returns JSON string)
-          week_json = pypistats.recent("feloopy", period="week", format="json")
-          month_json = pypistats.recent("feloopy", period="month", format="json")
+          stats = {}
 
-          # Parse JSON strings into Python dicts
-          week_data = json.loads(week_json)
-          month_data = json.loads(month_json)
+          shield = requests.get('https://img.shields.io/pypi/dt/feloopy.json').json()
+          stats['total'] = int(re.sub(r'\D','', str(shield.get('value',0))))
 
-          week = week_data["data"]["last_week"]
-          month = month_data["data"]["last_month"]
+          out = subprocess.check_output([
+            'pypinfo', 'feloopy', 'country', '--json', '--limit', '200'
+          ])
+          stats['by_country'] = json.loads(out)
 
-          # GitHub stars
-          resp = requests.get(
-              "https://api.github.com/repos/feloopy/feloopy",
-              headers={"Authorization": f"token {os.environ['GITHUB_TOKEN']}"}
-          )
-          stars = resp.json().get("stargazers_count", 0)
+          html = requests.get('https://www.youtube.com/@feloopy/about').text
+          soup = BeautifulSoup(html, 'html.parser')
 
-          # Output stats
-          stats = {"week": week, "month": month, "stars": stars}
-          with open("stats.json", "w") as f:
-              json.dump(stats, f)
+          sub = soup.select_one('yt-formatted-string#subscriber-count')
+          stats['youtube_subs'] = sub.text.strip() if sub else 'n/a'
+
+          view = soup.select_one('span.about-stat:nth-of-type(2) b')
+          stats['youtube_views'] = view.text.strip() if view else 'n/a'
+
+          stats['fetched_at'] = datetime.datetime.utcnow().isoformat()+'Z'
+
+          with open('stats.json','w') as f: json.dump(stats, f, indent=2)
           EOF
 
-      # 5️⃣ Commit & push stats.json back to main :contentReference[oaicite:9]{index=9}
-      - name: Commit stats.json
+      - name: Commit & push
         run: |
           git config user.name github-actions
           git config user.email actions@github.com
