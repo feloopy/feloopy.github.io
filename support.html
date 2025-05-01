@@ -4,33 +4,54 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Support FelooPy</title>
+  <!-- FontAwesome for brand icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pEcYjmYl1Xy6Xg5z1s4QF7M4VnaxnYx0V6hLr9Gx7FfY5QkXx0E2z0hE1Zp1e0bQ0X1f3e4H6b7g8h9i0j1k2l==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    body{font-family:'Segoe UI',sans-serif;background:#f4f7fc;margin:0;padding:0}
-    .hero{background:#2b6cb0;color:#fff;text-align:center;padding:50px}
-    .container{max-width:900px;margin:-30px auto;padding:30px;background:#fff;
-               border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
-    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
-    .card{background:#e2e8f0;border-radius:6px;padding:20px;text-align:center}
-    .card h3{color:#2b6cb0;margin-bottom:10px}
-    .value{font-size:2rem;font-weight:bold}
-    .progress-container{background:#cbd5e0;border-radius:4px;height:20px;overflow:hidden;margin-top:10px}
-    .progress-bar{width:0;height:100%;background:#38a169;transform-origin:left;
-                  animation:fillBar 2s ease-out forwards}
-    @keyframes fillBar{to{width:var(--pct)}}  /* CSS var–driven bar animation */ :contentReference[oaicite:8]{index=8}
-    canvas{margin-top:30px;width:100% !important;height:300px !important}
-    .cta{display:inline-block;margin:20px 0;padding:12px 24px;background:#38a169;
-         color:#fff;text-decoration:none;border-radius:4px}
-    .cta:hover{background:#2f855a}
+    /* Light-mode ShadCN-like UI */
+    body { font-family: 'Segoe UI', sans-serif; background: #f9fafb; margin: 0; padding: 0; color: #111827; }
+    .hero { background: #f3f4f6; color: #1f2937; text-align: center; padding: 50px; border-bottom: 1px solid #e5e7eb; }
+    .container { max-width: 900px; margin: -30px auto 40px; padding: 30px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+    .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 6px; padding: 20px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .card h3 { color: #1d4ed8; margin-bottom: 10px; font-size: 1rem; font-weight: 600; }
+    .value { font-size: 2rem; font-weight: 700; color: #111827; }
+    .progress-container { background: #e5e7eb; border-radius: 4px; height: 8px; overflow: hidden; margin-top: 10px; }
+    .progress-bar { width: 0; height: 100%; background: #10b981; transform-origin: left; animation: fillBar 2s ease-out forwards; }
+    @keyframes fillBar { to { width: var(--pct); } }
+    .cta-group { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+    .cta { display: inline-flex; align-items: center; padding: 12px 20px; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.2s; }
+    .cta i { margin-right: 8px; font-size: 1.2rem; }
+    .cta.github { background: #24292f; }
+    .cta.github:hover { background: #1b1f23; }
+    .cta.youtube { background: #ff0000; }
+    .cta.youtube:hover { background: #e60000; }
+    .cta.linkedin { background: #0077b5; }
+    .cta.linkedin:hover { background: #005582; }
+    .progress-wrapper { margin-top: 10px; }
+    canvas { display: none; }
+
+    /* ONLY NEW ADDITIONS BELOW */
+    .cta-group {
+      justify-content: center; /* Added center alignment */
+    }
+    .cta.donate {
+      background: #28a745;
+    }
+    .cta.donate:hover {
+      background: #218838;
+    }
   </style>
 </head>
 <body>
   <section class="hero"><h1>Fuel FelooPy’s Future</h1></section>
   <div class="container">
+
     <div class="stats">
       <div class="card"><h3>Today’s Downloads</h3><div id="day" class="value">–</div></div>
       <div class="card"><h3>Weekly Downloads</h3><div id="week" class="value">–</div></div>
       <div class="card"><h3>Monthly Downloads</h3><div id="month" class="value">–</div></div>
       <div class="card"><h3>Total Downloads</h3><div id="total" class="value">–</div></div>
+      <div class="card"><h3>Last commit</h3><div id="last-commit" class="value">–</div></div>
       <div class="card"><h3>GitHub Stars</h3><div id="stars" class="value">–</div></div>
       <div class="card">
         <h3>Star-to-Download %</h3>
@@ -39,44 +60,69 @@
       </div>
     </div>
 
+    <!-- Call-to-Action Buttons -->
+    <div class="cta-group" role="group" aria-label="Support and follow actions">
+      <!-- Original buttons remain unchanged -->
+      <a class="cta github" href="https://github.com/feloopy/feloopy" target="_blank" rel="noopener noreferrer" aria-label="Star on GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+        Star on GitHub
+      </a>
+      <a class="cta youtube" href="https://www.youtube.com/@feloopy" target="_blank" rel="noopener noreferrer" aria-label="Subscribe on YouTube">
+        <i class="fab fa-youtube" aria-hidden="true"></i>
+        Subscribe on YouTube
+      </a>
+      <a class="cta linkedin" href="http://linkedin.com/company/feloopy" target="_blank" rel="noopener noreferrer" aria-label="Follow on LinkedIn">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+        Follow on LinkedIn
+      </a>
+      
+      <!-- New Donate Button -->
+      <a class="cta donate" 
+         href="mailto:feloopy@gmail.com?subject=Donation%20to%20FelooPy&body=Hi%20FelooPy%20Team,%0A%0AI%20would%20like%20to%20support%20your%20project%20with%20a%20donation.%0A%0APlease%20let%20me%20know%20how%20I%20can%20contribute.%0A%0ABest%20regards," 
+         aria-label="Donate via Email">
+        <i class="fas fa-heart" aria-hidden="true"></i>
+        Donate to FelooPy
+      </a>
+    </div>
 
-    <a class="cta" href="https://github.com/feloopy/feloopy" target="_blank">Star on GitHub ★</a>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    function animateNumber(el, start, end, d=1500){
-      let r=end-start, t0;
-      function step(ts){
-        if(!t0)t0=ts;
-        let p=Math.min((ts-t0)/d,1);
-        el.textContent = Math.floor(start + p*r) + (el.id.includes('-pct')? '%':'');
-        if(p<1) requestAnimationFrame(step);
+    function animateNumber(el, start, end, d = 1500) {
+      let r = end - start, t0;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        let p = Math.min((ts - t0) / d, 1);
+        el.textContent = Math.floor(start + p * r) + (el.id.includes('-pct') ? '%' : '');
+        if (p < 1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
     }
-
-    async function render(){
-      const s = await fetch('stats.json').then(r=>r.json());
-
-      // raw metrics
-      ['day','week','month','total','stars'].forEach(k=>
-        animateNumber(document.getElementById(k),0,s[k]||0)
-      );
-
-      // star-to-download bar
-      animateNumber(document.getElementById('sd-pct'),0,s.star_pct||0);
-      document.getElementById('sd-bar').style.setProperty('--pct',(s.star_pct||0)+'%');
-
-      // stars history line chart :contentReference[oaicite:9]{index=9}
-      const h = await fetch('stars_history.json').then(r=>r.json());
-      new Chart(document.getElementById('starsHistoryChart'),{
-        type:'line',
-        data:{labels:Object.keys(h),datasets:[{label:'Stars',data:Object.values(h),fill:false}]},
-        options:{responsive:true,scales:{y:{beginAtZero:true}}}
-      });
+  
+    async function render() {
+      try {
+        const response = await fetch('stats.json');
+        if (!response.ok) throw new Error('Failed to fetch stats.json');
+        const s = await response.json();
+  
+        ['day', 'week', 'month', 'total', 'stars'].forEach(k =>
+          animateNumber(document.getElementById(k), 0, s[k] || 0)
+        );
+        animateNumber(document.getElementById('sd-pct'), 0, s.star_pct || 0);
+  
+        document.getElementById('last-commit').textContent =
+          s.days_since_push != null ? `${s.days_since_push} days ago` : 'N/A';
+  
+        document.getElementById('sd-bar').style.setProperty('--pct', (s.star_pct || 0) + '%');
+  
+      } catch (err) {
+        console.error('Error loading stats:', err);
+        document.querySelectorAll('.value').forEach(el => el.textContent = '–');
+      }
     }
+  
     render();
   </script>
+  
 </body>
 </html>
