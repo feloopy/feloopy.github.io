@@ -2,8 +2,8 @@ name: Fetch Feloopy Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'        # daily at 00:00 UTC
-  workflow_dispatch:
+    - cron: '0 0 * * *'        # daily at 00:00 UTC  
+  workflow_dispatch:           # manual trigger
 
 jobs:
   update-stats:
@@ -18,34 +18,33 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4 pypistats pypinfo
+          pip install requests beautifulsoup4 pypistats
 
       - name: Fetch stats & build JSON
         run: |
           python << 'EOF'
-          import json, datetime, subprocess, re
-          import requests
+          import json, datetime, re, requests
           from bs4 import BeautifulSoup
 
           stats = {}
 
-          # 1. Daily/weekly/monthly downloads via PyPI Stats API
+          # 1. Daily/weekly/monthly via PyPI Stats API (updated daily; 180-day retention) :contentReference[oaicite:0]{index=0}
           r = requests.get('https://pypistats.org/api/packages/feloopy/recent').json()
           d = r.get('data', {})
           stats['day']   = d.get('last_day', 0)
           stats['week']  = d.get('last_week', 0)
-          stats['month'] = d.get('last_month', 0)            # :contentReference[oaicite:1]{index=1}
+          stats['month'] = d.get('last_month', 0)
 
-          # 2. Total downloads via Shields.io badge JSON
+          # 2. Total via Shields.io badge JSON (no key needed) :contentReference[oaicite:1]{index=1}
           shield = requests.get('https://img.shields.io/pypi/dt/feloopy.json').json()
           v = re.sub(r'\D','', str(shield.get('value','')))
-          stats['total'] = int(v) if v.isdigit() else 0     # 
+          stats['total'] = int(v) if v.isdigit() else 0
 
-          # 3. GitHub stars (public endpoint)
-          gh = requests.get("https://api.github.com/repos/feloopy/feloopy").json()
-          stats['stars'] = gh.get('stargazers_count', 0)     # 
+          # 3. GitHub stars via public REST API :contentReference[oaicite:2]{index=2}
+          gh = requests.get('https://api.github.com/repos/feloopy/feloopy').json()
+          stats['stars'] = gh.get('stargazers_count', 0)
 
-          # 4. YouTube subs & views by scraping ytInitialData JSON
+          # 4. YouTube subs/views by scraping ytInitialData JSON :contentReference[oaicite:3]{index=3}
           html = requests.get('https://www.youtube.com/@feloopy/about').text
           m = re.search(r'window\["ytInitialData"\] = (.*?);\s*</script>', html, re.S)
           if m:
@@ -54,29 +53,20 @@ jobs:
               stats['youtube_subs']  = hdr['subscriberCountText']['simpleText']
               stats['youtube_views'] = hdr['viewCountText']['simpleText']
           else:
-              stats['youtube_subs'] = stats['youtube_views'] = 'n/a'  # :contentReference[oaicite:2]{index=2}
+              stats['youtube_subs'] = stats['youtube_views'] = 'n/a'
 
-          # 5. Downloads by country via pypinfo CLI (BigQuery free tier)
-          #     note: -j and -l must come before the project name
-          out = subprocess.check_output([
-            'pypinfo', '-j', '-l', '200', 'feloopy', 'country'
-          ])
-          stats['by_country'] = json.loads(out)['rows']        # :contentReference[oaicite:3]{index=3}
-
-          # 6. Append daily GitHub stars history
-          hist_path = 'stars_history.json'
+          # 5. Append GitHub stars history
+          hist_file = 'stars_history.json'
           today = datetime.date.today().isoformat()
           try:
-              history = json.load(open(hist_path))
+              history = json.load(open(hist_file))
           except FileNotFoundError:
               history = {}
           history[today] = stats['stars']
-          with open(hist_path,'w') as f:
-              json.dump(history, f, indent=2)
+          json.dump(history, open(hist_file,'w'), indent=2)
 
           stats['fetched_at'] = datetime.datetime.utcnow().isoformat()+'Z'
-          with open('stats.json','w') as f:
-              json.dump(stats, f, indent=2)
+          json.dump(stats, open('stats.json','w'), indent=2)
           EOF
 
       - name: Commit & push
