@@ -7,9 +7,8 @@
   <style>
     body{font-family:'Segoe UI',sans-serif;background:#f4f7fc;margin:0;padding:0}
     .hero{background:#2b6cb0;color:#fff;text-align:center;padding:50px}
-    .hero h1{margin:0;font-size:2.5rem}
-    .container{max-width:900px;margin:-30px auto 40px;background:#fff;
-               border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.05);padding:30px}
+    .container{max-width:900px;margin:-30px auto;padding:30px;background:#fff;
+               border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
     .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
     .card{background:#e2e8f0;border-radius:6px;padding:20px;text-align:center}
     .card h3{color:#2b6cb0;margin-bottom:10px}
@@ -17,8 +16,8 @@
     .progress-container{background:#cbd5e0;border-radius:4px;height:20px;overflow:hidden;margin-top:10px}
     .progress-bar{width:0;height:100%;background:#38a169;transform-origin:left;
                   animation:fillBar 2s ease-out forwards}
-    @keyframes fillBar{to{width:var(--pct)}}  /* CSS var–driven animation */ 
-    canvas{margin-top:30px;width:100%!important;height:300px!important}
+    @keyframes fillBar{to{width:var(--pct)}}  /* CSS var–driven bar animation */ :contentReference[oaicite:8]{index=8}
+    canvas{margin-top:30px;width:100% !important;height:300px !important}
     .cta{display:inline-block;margin:20px 0;padding:12px 24px;background:#38a169;
          color:#fff;text-decoration:none;border-radius:4px}
     .cta:hover{background:#2f855a}
@@ -34,18 +33,12 @@
       <div class="card"><h3>Total Downloads</h3><div id="total" class="value">–</div></div>
       <div class="card"><h3>GitHub Stars</h3><div id="stars" class="value">–</div></div>
       <div class="card">
-        <h3>Star-to-Download %</h3><div id="sd-pct" class="value">–%</div>
+        <h3>Star-to-Download %</h3>
+        <div id="sd-pct" class="value">–%</div>
         <div class="progress-container"><div id="sd-bar" class="progress-bar"></div></div>
-      </div>
-      <div class="card"><h3>YouTube Subs</h3><div id="subs" class="value">–</div></div>
-      <div class="card"><h3>YouTube Views</h3><div id="views" class="value">–</div></div>
-      <div class="card">
-        <h3>Sub-to-View %</h3><div id="sv-pct" class="value">–%</div>
-        <div class="progress-container"><div id="sv-bar" class="progress-bar"></div></div>
       </div>
     </div>
 
-    <canvas id="starsHistoryChart"></canvas>
 
     <a class="cta" href="https://github.com/feloopy/feloopy" target="_blank">Star on GitHub ★</a>
   </div>
@@ -57,7 +50,7 @@
       function step(ts){
         if(!t0)t0=ts;
         let p=Math.min((ts-t0)/d,1);
-        el.textContent = Math.floor(start+p*r) + (el.id.includes('-pct')? '%':'');
+        el.textContent = Math.floor(start + p*r) + (el.id.includes('-pct')? '%':'');
         if(p<1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
@@ -70,19 +63,12 @@
       ['day','week','month','total','stars'].forEach(k=>
         animateNumber(document.getElementById(k),0,s[k]||0)
       );
-      document.getElementById('subs').textContent = s.youtube_subs;
-      document.getElementById('views').textContent = s.youtube_views;
 
-      // bars
-      const sd = s.month?Math.round(s.stars/s.month*100):0;
-      const sv = (parseInt(s.youtube_views)&&parseInt(s.youtube_subs))
-               ?Math.round(parseInt(s.youtube_subs)/parseInt(s.youtube_views)*100):0;
-      animateNumber(document.getElementById('sd-pct'),0,sd);
-      animateNumber(document.getElementById('sv-pct'),0,sv);
-      document.getElementById('sd-bar').style.setProperty('--pct',sd+'%');
-      document.getElementById('sv-bar').style.setProperty('--pct',sv+'%');
+      // star-to-download bar
+      animateNumber(document.getElementById('sd-pct'),0,s.star_pct||0);
+      document.getElementById('sd-bar').style.setProperty('--pct',(s.star_pct||0)+'%');
 
-      // stars history
+      // stars history line chart :contentReference[oaicite:9]{index=9}
       const h = await fetch('stars_history.json').then(r=>r.json());
       new Chart(document.getElementById('starsHistoryChart'),{
         type:'line',

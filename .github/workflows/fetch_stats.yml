@@ -24,53 +24,40 @@ jobs:
         run: |
           python << 'EOF'
           import json, datetime, re, requests
-          from bs4 import BeautifulSoup
 
           stats = {}
 
-          # 1. Daily/weekly/monthly via PyPI Stats “recent” API :contentReference[oaicite:4]{index=4}
+          # 1. Daily/weekly/monthly via PyPI Stats “recent” API
           r = requests.get('https://pypistats.org/api/packages/feloopy/recent').json()
           d = r.get('data', {})
           stats['day']   = d.get('last_day', 0)
           stats['week']  = d.get('last_week', 0)
-          stats['month'] = d.get('last_month', 0)
+          stats['month'] = d.get('last_month', 0)          # :contentReference[oaicite:5]{index=5}
 
-          # 2. Total via PyPI Stats “overall” API (sum without_mirrors) :contentReference[oaicite:5]{index=5}
+          # 2. Total via PyPI Stats “overall” API (sum non-mirror downloads)
           o = requests.get('https://pypistats.org/api/packages/feloopy/overall').json()
-          total = sum(item['downloads']
-                      for item in o.get('data', [])
-                      if item.get('category') == 'without_mirrors')
-          stats['total'] = total
+          stats['total'] = sum(item['downloads']
+                                for item in o.get('data', [])
+                                if item.get('category') == 'without_mirrors')  # :contentReference[oaicite:6]{index=6}
 
-          # 3. GitHub stars via public REST API :contentReference[oaicite:6]{index=6}
+          # 3. GitHub stars via public REST API
           gh = requests.get('https://api.github.com/repos/feloopy/feloopy').json()
-          stats['stars'] = gh.get('stargazers_count', 0)
+          stats['stars'] = gh.get('stargazers_count', 0)    # :contentReference[oaicite:7]{index=7}
 
-          # 4. YouTube subs/views by scraping ytInitialData with browser UA :contentReference[oaicite:7]{index=7}
-          ua = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-          html = requests.get('https://www.youtube.com/@feloopy/about', headers=ua).text
-          m = re.search(r'var ytInitialData = ({.*?});', html, re.S) or \
-              re.search(r'window\["ytInitialData"\] = (.*?);', html, re.S)
-          if m:
-              jd = json.loads(m.group(1))
-              hdr = jd['header']['c4TabbedHeaderRenderer']
-              stats['youtube_subs']  = hdr['subscriberCountText']['simpleText']
-              stats['youtube_views'] = hdr['viewCountText']['simpleText']
-          else:
-              stats['youtube_subs'] = stats['youtube_views'] = 'n/a'
+          # 4. Compute star-to-download % server-side if desired:
+          stats['star_pct'] = round((stats['stars'] / stats['month'] * 100)
+                                    if stats['month'] else 0)
 
-          # 5. Append GitHub stars history
+          # 5. Append daily GitHub stars history
           hist_file = 'stars_history.json'
           today = datetime.date.today().isoformat()
-          try:
-              history = json.load(open(hist_file))
-          except FileNotFoundError:
-              history = {}
+          try: history = json.load(open(hist_file))
+          except: history = {}
           history[today] = stats['stars']
-          json.dump(history, open(hist_file, 'w'), indent=2)
+          json.dump(history, open(hist_file,'w'), indent=2)
 
           stats['fetched_at'] = datetime.datetime.utcnow().isoformat() + 'Z'
-          json.dump(stats, open('stats.json', 'w'), indent=2)
+          json.dump(stats, open('stats.json','w'), indent=2)
           EOF
 
       - name: Commit & push
