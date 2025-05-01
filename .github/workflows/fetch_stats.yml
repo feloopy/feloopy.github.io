@@ -27,22 +27,43 @@ jobs:
 
           stats = {}
 
+
           r = requests.get('https://pypistats.org/api/packages/feloopy/recent').json()
           d = r.get('data', {})
-          stats['day']   = d.get('last_day', 0)
-          stats['week']  = d.get('last_week', 0)
+          stats['day'] = d.get('last_day', 0)
+          stats['week'] = d.get('last_week', 0)
           stats['month'] = d.get('last_month', 0)
 
           o = requests.get('https://pypistats.org/api/packages/feloopy/overall').json()
-          stats['total'] = sum(item['downloads']
-                                for item in o.get('data', [])
-                                if item.get('category') == 'without_mirrors')
+          stats['total'] = sum(item['downloads'] 
+                              for item in o.get('data', []) 
+                              if item.get('category') == 'without_mirrors')
+
 
           gh = requests.get('https://api.github.com/repos/feloopy/feloopy').json()
           stats['stars'] = gh.get('stargazers_count', 0)
 
-          stats['star_pct'] = round((stats['stars'] / stats['month'] * 100)
-                                    if stats['month'] else 0)
+
+          engine_releases = requests.get('https://api.github.com/repos/feloopy/engine/releases').json()
+          stats['engine_downloads'] = sum(
+              asset.get('download_count', 0)
+              for release in engine_releases
+              for asset in release.get('assets', [])
+          )
+
+
+          feloopy_releases = requests.get('https://api.github.com/repos/feloopy/feloopy/releases').json()
+          stats['source_downloads'] = sum(
+              asset.get('download_count', 0)
+              for release in feloopy_releases
+              for asset in release.get('assets', [])
+              if asset.get('name', '').startswith('Source code')
+          )
+
+
+          stats['star_pct'] = round((stats['stars'] / stats['month'] * 100) 
+                                  if stats['month'] else 0)
+
 
           pushed_at_str = gh.get('pushed_at')
           if pushed_at_str:
@@ -55,6 +76,7 @@ jobs:
               stats['last_push'] = None
               stats['days_since_push'] = None
 
+
           hist_file = 'stars_history.json'
           today = datetime.date.today().isoformat()
           try:
@@ -65,6 +87,7 @@ jobs:
           history[today] = stats['stars']
           with open(hist_file, 'w') as f:
               json.dump(history, f, indent=2)
+
 
           stats['fetched_at'] = datetime.datetime.utcnow().isoformat() + 'Z'
           with open('stats.json', 'w') as f:
