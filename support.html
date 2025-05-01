@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Support FelooPy</title>
   <style>
     body{font-family:'Segoe UI',sans-serif;background:#f4f7fc;margin:0;padding:0}
@@ -17,8 +17,8 @@
     .progress-container{background:#cbd5e0;border-radius:4px;height:20px;overflow:hidden;margin-top:10px}
     .progress-bar{width:0;height:100%;background:#38a169;transform-origin:left;
                   animation:fillBar 2s ease-out forwards}
-    @keyframes fillBar{to{width:var(--pct)}}           /* CSS keyframe bar animation */ :contentReference[oaicite:4]{index=4}
-    canvas{margin-top:30px;width:100% !important;height:300px !important}
+    @keyframes fillBar{to{width:var(--pct)}}  /* CSS var–driven animation */ 
+    canvas{margin-top:30px;width:100%!important;height:300px!important}
     .cta{display:inline-block;margin:20px 0;padding:12px 24px;background:#38a169;
          color:#fff;text-decoration:none;border-radius:4px}
     .cta:hover{background:#2f855a}
@@ -34,15 +34,13 @@
       <div class="card"><h3>Total Downloads</h3><div id="total" class="value">–</div></div>
       <div class="card"><h3>GitHub Stars</h3><div id="stars" class="value">–</div></div>
       <div class="card">
-        <h3>Star-to-Download %</h3>
-        <div id="sd-pct" class="value">–%</div>
+        <h3>Star-to-Download %</h3><div id="sd-pct" class="value">–%</div>
         <div class="progress-container"><div id="sd-bar" class="progress-bar"></div></div>
       </div>
       <div class="card"><h3>YouTube Subs</h3><div id="subs" class="value">–</div></div>
       <div class="card"><h3>YouTube Views</h3><div id="views" class="value">–</div></div>
       <div class="card">
-        <h3>Sub-to-View %</h3>
-        <div id="sv-pct" class="value">–%</div>
+        <h3>Sub-to-View %</h3><div id="sv-pct" class="value">–%</div>
         <div class="progress-container"><div id="sv-bar" class="progress-bar"></div></div>
       </div>
     </div>
@@ -59,32 +57,32 @@
       function step(ts){
         if(!t0)t0=ts;
         let p=Math.min((ts-t0)/d,1);
-        el.textContent=Math.floor(start+p*r)+(el.id.includes('-pct')? '%':'');
+        el.textContent = Math.floor(start+p*r) + (el.id.includes('-pct')? '%':'');
         if(p<1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
     }
 
     async function render(){
-      const s = await fetch('stats.json').then(r=>r.json());           
+      const s = await fetch('stats.json').then(r=>r.json());
 
-      // Animate raw metrics :contentReference[oaicite:5]{index=5}
+      // raw metrics
       ['day','week','month','total','stars'].forEach(k=>
         animateNumber(document.getElementById(k),0,s[k]||0)
       );
-      document.getElementById('subs').textContent = s.youtube_subs;  
+      document.getElementById('subs').textContent = s.youtube_subs;
       document.getElementById('views').textContent = s.youtube_views;
 
-      // Animate bars :contentReference[oaicite:6]{index=6}
-      const sd = s.month ? Math.round(s.stars/s.month*100) : 0;
+      // bars
+      const sd = s.month?Math.round(s.stars/s.month*100):0;
       const sv = (parseInt(s.youtube_views)&&parseInt(s.youtube_subs))
-               ? Math.round(parseInt(s.youtube_subs)/parseInt(s.youtube_views)*100) : 0;
+               ?Math.round(parseInt(s.youtube_subs)/parseInt(s.youtube_views)*100):0;
       animateNumber(document.getElementById('sd-pct'),0,sd);
       animateNumber(document.getElementById('sv-pct'),0,sv);
       document.getElementById('sd-bar').style.setProperty('--pct',sd+'%');
       document.getElementById('sv-bar').style.setProperty('--pct',sv+'%');
 
-      // Stars history line chart :contentReference[oaicite:7]{index=7}
+      // stars history
       const h = await fetch('stars_history.json').then(r=>r.json());
       new Chart(document.getElementById('starsHistoryChart'),{
         type:'line',

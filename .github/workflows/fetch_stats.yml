@@ -2,8 +2,8 @@ name: Fetch Feloopy Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'        # daily at 00:00 UTC  
-  workflow_dispatch:           # manual trigger
+    - cron: '0 0 * * *'    # daily at 00:00 UTC
+  workflow_dispatch:       # manual trigger
 
 jobs:
   update-stats:
@@ -28,25 +28,29 @@ jobs:
 
           stats = {}
 
-          # 1. Daily/weekly/monthly via PyPI Stats API (updated daily; 180-day retention) :contentReference[oaicite:0]{index=0}
+          # 1. Daily/weekly/monthly via PyPI Stats “recent” API :contentReference[oaicite:4]{index=4}
           r = requests.get('https://pypistats.org/api/packages/feloopy/recent').json()
           d = r.get('data', {})
           stats['day']   = d.get('last_day', 0)
           stats['week']  = d.get('last_week', 0)
           stats['month'] = d.get('last_month', 0)
 
-          # 2. Total via Shields.io badge JSON (no key needed) :contentReference[oaicite:1]{index=1}
-          shield = requests.get('https://img.shields.io/pypi/dt/feloopy.json').json()
-          v = re.sub(r'\D','', str(shield.get('value','')))
-          stats['total'] = int(v) if v.isdigit() else 0
+          # 2. Total via PyPI Stats “overall” API (sum without_mirrors) :contentReference[oaicite:5]{index=5}
+          o = requests.get('https://pypistats.org/api/packages/feloopy/overall').json()
+          total = sum(item['downloads']
+                      for item in o.get('data', [])
+                      if item.get('category') == 'without_mirrors')
+          stats['total'] = total
 
-          # 3. GitHub stars via public REST API :contentReference[oaicite:2]{index=2}
+          # 3. GitHub stars via public REST API :contentReference[oaicite:6]{index=6}
           gh = requests.get('https://api.github.com/repos/feloopy/feloopy').json()
           stats['stars'] = gh.get('stargazers_count', 0)
 
-          # 4. YouTube subs/views by scraping ytInitialData JSON :contentReference[oaicite:3]{index=3}
-          html = requests.get('https://www.youtube.com/@feloopy/about').text
-          m = re.search(r'window\["ytInitialData"\] = (.*?);\s*</script>', html, re.S)
+          # 4. YouTube subs/views by scraping ytInitialData with browser UA :contentReference[oaicite:7]{index=7}
+          ua = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+          html = requests.get('https://www.youtube.com/@feloopy/about', headers=ua).text
+          m = re.search(r'var ytInitialData = ({.*?});', html, re.S) or \
+              re.search(r'window\["ytInitialData"\] = (.*?);', html, re.S)
           if m:
               jd = json.loads(m.group(1))
               hdr = jd['header']['c4TabbedHeaderRenderer']
@@ -63,10 +67,10 @@ jobs:
           except FileNotFoundError:
               history = {}
           history[today] = stats['stars']
-          json.dump(history, open(hist_file,'w'), indent=2)
+          json.dump(history, open(hist_file, 'w'), indent=2)
 
-          stats['fetched_at'] = datetime.datetime.utcnow().isoformat()+'Z'
-          json.dump(stats, open('stats.json','w'), indent=2)
+          stats['fetched_at'] = datetime.datetime.utcnow().isoformat() + 'Z'
+          json.dump(stats, open('stats.json', 'w'), indent=2)
           EOF
 
       - name: Commit & push
