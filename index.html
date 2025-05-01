@@ -293,7 +293,7 @@ flp recover
           .then(data => {
             if(data.version) {
               document.getElementById('installCommand').value = 
-                `pip install feloopy[full]==${data.version}`;
+                `pip install "feloopy[full]==${data.version}"`;
             }
           });
     </script>

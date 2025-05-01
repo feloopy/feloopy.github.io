@@ -71,7 +71,7 @@ async function setDownloadOptions(downloadButtonId, downloadInfoId) {
             getStats()
         ]);
 
-        const pipCommand = `pip install -U feloopy[full]==${stats.version}`;
+        const pipCommand = `pip install -U "feloopy[full]==${stats.version}"`;
 
         if (url && (os === 'Windows' || os === 'Linux')) {
             downloadButton.onclick = () => window.location.href = url;
@@ -96,11 +96,11 @@ async function setDownloadOptions(downloadButtonId, downloadInfoId) {
 
         const installCommands = document.querySelectorAll('.code-box[id^="installCommand"]');
         installCommands.forEach(el => {
-            el.value = `pip install feloopy[stock]==${stats.version}`;
+            el.value = `pip install "feloopy[full]==${stats.version}"`;
         });
     } catch (error) {
         console.error('Error setting download options:', error);
-        const pipCommand = `pip install -U feloopy[full]==${stats?.version || '0.3.8'}`;
+        const pipCommand = `pip install -U "feloopy[full]==${stats?.version || '0.3.8'}"`;
         downloadButton.onclick = () => alert(`Please use "${pipCommand}" instead.`);
         downloadInfo.textContent = 'Error loading download information';
     }
