@@ -3,7 +3,7 @@ name: Fetch Feloopy Stats
 on:
   schedule:
     - cron: '0 0 * * *'        # daily at 00:00 UTC
-  workflow_dispatch:           # manual trigger
+  workflow_dispatch:
 
 jobs:
   update-stats:
@@ -34,16 +34,16 @@ jobs:
           d = r.get('data', {})
           stats['day']   = d.get('last_day', 0)
           stats['week']  = d.get('last_week', 0)
-          stats['month'] = d.get('last_month', 0)            # :contentReference[oaicite:7]{index=7}
+          stats['month'] = d.get('last_month', 0)            # :contentReference[oaicite:1]{index=1}
 
           # 2. Total downloads via Shields.io badge JSON
           shield = requests.get('https://img.shields.io/pypi/dt/feloopy.json').json()
           v = re.sub(r'\D','', str(shield.get('value','')))
-          stats['total'] = int(v) if v.isdigit() else 0     # :contentReference[oaicite:8]{index=8}
+          stats['total'] = int(v) if v.isdigit() else 0     # 
 
           # 3. GitHub stars (public endpoint)
           gh = requests.get("https://api.github.com/repos/feloopy/feloopy").json()
-          stats['stars'] = gh.get('stargazers_count', 0)     # :contentReference[oaicite:9]{index=9}
+          stats['stars'] = gh.get('stargazers_count', 0)     # 
 
           # 4. YouTube subs & views by scraping ytInitialData JSON
           html = requests.get('https://www.youtube.com/@feloopy/about').text
@@ -54,11 +54,14 @@ jobs:
               stats['youtube_subs']  = hdr['subscriberCountText']['simpleText']
               stats['youtube_views'] = hdr['viewCountText']['simpleText']
           else:
-              stats['youtube_subs'] = stats['youtube_views'] = 'n/a'  # :contentReference[oaicite:10]{index=10}
+              stats['youtube_subs'] = stats['youtube_views'] = 'n/a'  # :contentReference[oaicite:2]{index=2}
 
           # 5. Downloads by country via pypinfo CLI (BigQuery free tier)
-          out = subprocess.check_output(['pypinfo','feloopy','country','-j','-l','200'])
-          stats['by_country'] = json.loads(out)['rows']        # :contentReference[oaicite:11]{index=11}
+          #     note: -j and -l must come before the project name
+          out = subprocess.check_output([
+            'pypinfo', '-j', '-l', '200', 'feloopy', 'country'
+          ])
+          stats['by_country'] = json.loads(out)['rows']        # :contentReference[oaicite:3]{index=3}
 
           # 6. Append daily GitHub stars history
           hist_path = 'stars_history.json'
