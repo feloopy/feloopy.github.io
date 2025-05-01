@@ -149,6 +149,7 @@
       <div class="card"><h3>Weekly Downloads</h3><div id="week" class="value">–</div></div>
       <div class="card"><h3>Monthly Downloads</h3><div id="month" class="value">–</div></div>
       <div class="card"><h3>Six Months Downloads</h3><div id="total" class="value">–</div></div>
+      <div class="card"><h3>Est. Total Downloads</h3><div id="total-downloads" class="value">–</div></div>
       <div class="card"><h3>Last Commit</h3><div id="last-commit" class="value">–</div></div>
       <div class="card"><h3>GitHub Stars</h3><div id="stars" class="value">–</div></div>
       <div class="card">
@@ -264,6 +265,26 @@
         document.getElementById('stars-count').textContent = starCount.toLocaleString();
         document.getElementById('engagement-ratio').textContent = `${ratioPct}%`;
         document.getElementById('user-count').textContent = totalUsers.toLocaleString();
+
+
+
+        // Calculate six-month periods since 2022-09-14
+        const startDate = new Date('2022-09-14');
+        const currentDate = new Date();
+
+        const getMonthsBetween = (start, end) => {
+            return end.getMonth() - start.getMonth() + 
+                  (end.getFullYear() - start.getFullYear()) * 12;
+        };
+
+        const monthsElapsed = getMonthsBetween(startDate, currentDate);
+        const sixMonthPeriods = monthsElapsed / 6;
+
+        const totalEstimated = totalUsers * sixMonthPeriods;
+        document.getElementById('total-downloads').textContent = Math.floor(totalEstimated).toLocaleString();
+
+
+
 
       } catch (error) {
         console.error('Error loading stats:', error);
