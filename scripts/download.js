@@ -1,3 +1,27 @@
+function detectOS() {
+    const platform = navigator.platform.toLowerCase();
+    const userAgent = navigator.userAgent.toLowerCase();
+
+    if (platform.includes('win')) return 'Windows';
+    if (platform.includes('linux')) return 'Linux';
+    if (platform.includes('mac') || userAgent.includes('mac')) return 'Other';
+    return 'Other';
+}
+
+async function getLatestReleaseDownloadLink(os) {
+    try {
+        const response = await fetch('https://api.github.com/repos/feloopy/engine/releases/latest');
+        const data = await response.json();
+
+        const assetName = `feloopy-engine-${os.toLowerCase()}.zip`;
+        const asset = data.assets.find(a => a.name === assetName);
+
+        return asset ? asset.browser_download_url : null;
+    } catch (error) {
+        console.error('Failed to fetch release:', error);
+        return null;
+    }
+}
 
 function getOrdinal(n) {
     const j = n % 10,
@@ -32,20 +56,22 @@ async function setDownloadOptions(downloadButtonId, downloadInfoId) {
 
         if (url && (os === 'Windows' || os === 'Linux')) {
             downloadButton.onclick = () => window.location.href = url;
-            let infoText = os === 'Windows' 
-                ? 'For Windows 10/11 64-bit' 
+        
+            let infoText = os === 'Windows'
+                ? 'For Windows 10/11 64-bit'
                 : 'For Linux 64-bit';
-            
+        
             if (count !== null) {
                 const nextUser = getOrdinal(count + 1);
-                infoText += ` - Be the ${nextUser} user now!`;
+                infoText += `<br>Be the <strong>${nextUser}</strong> user now!`;
             }
-            
-            downloadInfo.textContent = infoText;
-        } else {
+        
+            downloadInfo.innerHTML = infoText;
+        }
+         else {
             downloadButton.onclick = () => alert('Please use "pip install -U feloopy[stock]==0.3.8" instead.');
-            downloadInfo.textContent = os === 'Other' 
-                ? 'Your OS is not supported' 
+            downloadInfo.textContent = os === 'Other'
+                ? 'Your OS is not supported'
                 : 'Failed to fetch download link';
         }
     } catch (error) {
