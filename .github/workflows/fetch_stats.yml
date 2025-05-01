@@ -1,9 +1,9 @@
-name: Fetch Feloopy Stats
+name: Fetch Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'    # daily at 00:00 UTC
-  workflow_dispatch:       # manual trigger
+    - cron: '0 0 * * *'    
+  workflow_dispatch:       
 
 jobs:
   update-stats:
@@ -27,7 +27,6 @@ jobs:
 
           stats = {}
 
-          # 1. Fetch download statistics
           r = requests.get('https://pypistats.org/api/packages/feloopy/recent').json()
           d = r.get('data', {})
           stats['day']   = d.get('last_day', 0)
@@ -39,15 +38,12 @@ jobs:
                                 for item in o.get('data', [])
                                 if item.get('category') == 'without_mirrors')
 
-          # 2. Fetch GitHub repository information
           gh = requests.get('https://api.github.com/repos/feloopy/feloopy').json()
           stats['stars'] = gh.get('stargazers_count', 0)
 
-          # 3. Calculate star-to-download percentage
           stats['star_pct'] = round((stats['stars'] / stats['month'] * 100)
                                     if stats['month'] else 0)
 
-          # 4. Calculate days since last push
           pushed_at_str = gh.get('pushed_at')
           if pushed_at_str:
               pushed_at = datetime.datetime.strptime(pushed_at_str, '%Y-%m-%dT%H:%M:%SZ')
@@ -59,7 +55,6 @@ jobs:
               stats['last_push'] = None
               stats['days_since_push'] = None
 
-          # 5. Append daily GitHub stars history
           hist_file = 'stars_history.json'
           today = datetime.date.today().isoformat()
           try:
@@ -76,11 +71,10 @@ jobs:
               json.dump(stats, f, indent=2)
           EOF
 
-
       - name: Commit & push
         run: |
           git config user.name github-actions
           git config user.email actions@github.com
           git add stats.json stars_history.json
-          git diff --staged --quiet || git commit -m "Update stats.json"
+          git diff --staged --quiet || git commit -m "updated stats.json file."
           git push

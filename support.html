@@ -2,56 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Support FelooPy</title>
-  <!-- FontAwesome for brand icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pEcYjmYl1Xy6Xg5z1s4QF7M4VnaxnYx0V6hLr9Gx7FfY5QkXx0E2z0hE1Zp1e0bQ0X1f3e4H6b7g8h9i0j1k2l==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
   <style>
-    /* Light-mode ShadCN-like UI */
-    body { font-family: 'Segoe UI', sans-serif; background: #f9fafb; margin: 0; padding: 0; color: #111827; }
-    .hero { background: #f3f4f6; color: #1f2937; text-align: center; padding: 50px; border-bottom: 1px solid #e5e7eb; }
-    .container { max-width: 900px; margin: -30px auto 40px; padding: 30px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
-    .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 6px; padding: 20px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-    .card h3 { color: #1d4ed8; margin-bottom: 10px; font-size: 1rem; font-weight: 600; }
-    .value { font-size: 2rem; font-weight: 700; color: #111827; }
-    .progress-container { background: #e5e7eb; border-radius: 4px; height: 8px; overflow: hidden; margin-top: 10px; }
-    .progress-bar { width: 0; height: 100%; background: #10b981; transform-origin: left; animation: fillBar 2s ease-out forwards; }
-    @keyframes fillBar { to { width: var(--pct); } }
-    .cta-group { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
-    .cta { display: inline-flex; align-items: center; padding: 12px 20px; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.2s; }
-    .cta i { margin-right: 8px; font-size: 1.2rem; }
+    body {
+      font-family: 'Chakra Petch', sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0;
+      color: #111827;
+    }
+    /* Hero Section Styles */
+    .feloopy-main-title {
+      position: relative;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-align: center;
+      margin: 50px 0;
+      padding: 20px;
+      background: linear-gradient(45deg, #3b3b3c, #53be2c);
+      background-size: 200% 200%;
+      animation: gradientAnimation 2s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .container {
+      max-width: 960px;
+      margin: -30px auto 40px;
+      padding: 30px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      color: #1d4ed8;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #111827;
+    }
+    .progress-container {
+      background: #e5e7eb;
+      border-radius: 4px;
+      height: 8px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      background: #10b981;
+      transform-origin: left;
+      animation: fillBar 2s ease-out forwards;
+    }
+    @keyframes fillBar {
+      to { width: var(--pct); }
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px 0;
+      justify-content: center;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .cta i {
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
     .cta.github { background: #24292f; }
     .cta.github:hover { background: #1b1f23; }
     .cta.youtube { background: #ff0000; }
     .cta.youtube:hover { background: #e60000; }
     .cta.linkedin { background: #0077b5; }
     .cta.linkedin:hover { background: #005582; }
-    .progress-wrapper { margin-top: 10px; }
-    canvas { display: none; }
+    .cta.donate { background: #28a745; }
+    .cta.donate:hover { background: #218838; }
 
-    /* ONLY NEW ADDITIONS BELOW */
-    .cta-group {
-      justify-content: center; /* Added center alignment */
+    .message-box {
+      margin-top: 30px;
+      padding: 16px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 1rem;
     }
-    .cta.donate {
-      background: #28a745;
-    }
-    .cta.donate:hover {
-      background: #218838;
-    }
+    .box-yellow { background: #fef3c7; border-left: 6px solid #f59e0b; }
+    .box-blue { background: #e0f2fe; border-left: 6px solid #0284c7; }
+    .box-green { background: #dcfce7; border-left: 6px solid #10b981; }
+    .box-red { background: #fee2e2; border-left: 6px solid #dc2626; }
   </style>
 </head>
 <body>
-  <section class="hero"><h1>Fuel FelooPy’s Future</h1></section>
-  <div class="container">
 
+  <section class="feloopy-main-title">
+    <div class="animating-text">
+      <span>Fuel FelooPy’s Future</span>
+    </div>
+  </section>
+
+  <div class="container">
     <div class="stats">
       <div class="card"><h3>Today’s Downloads</h3><div id="day" class="value">–</div></div>
       <div class="card"><h3>Weekly Downloads</h3><div id="week" class="value">–</div></div>
       <div class="card"><h3>Monthly Downloads</h3><div id="month" class="value">–</div></div>
-      <div class="card"><h3>Total Downloads</h3><div id="total" class="value">–</div></div>
-      <div class="card"><h3>Last commit</h3><div id="last-commit" class="value">–</div></div>
+      <div class="card"><h3>Six Months Downloads</h3><div id="total" class="value">–</div></div>
+      <div class="card"><h3>Last Commit</h3><div id="last-commit" class="value">–</div></div>
       <div class="card"><h3>GitHub Stars</h3><div id="stars" class="value">–</div></div>
       <div class="card">
         <h3>Star-to-Download %</h3>
@@ -60,9 +158,41 @@
       </div>
     </div>
 
-    <!-- Call-to-Action Buttons -->
+    <div class="message-box box-yellow">
+      ⭐ <strong>Only <span id="stars-count">–</span> (<span id="engagement-ratio">--%</span>) of our <span id="user-count">--</span> users in the past 6 months have starred this project.</strong>
+      <br/>The next <em>star</em> could be the next feature, the next bug fix, or the next maintenance release. Every click counts!
+    </div>
+
+    <div class="message-box box-blue">
+      📉 <span id="commit-warning">Checking last commit activity…</span>
+    </div>
+
+    <div class="message-box box-green">
+      💡 <strong>Quick tip:</strong> GitHub stars are tax-free! Just one click shows your support and helps us grow.
+    </div>
+
+    <div class="message-box box-green">
+      🎥 <strong>Subscribe on YouTube:</strong> Stay updated with our latest tutorials and features. 
+    </div>
+
+    <div class="message-box box-green">
+      💼 <strong>Follow on LinkedIn:</strong> Join our professional network to get insights, updates, and opportunities.
+    </div>
+
+    <div class="message-box box-green">
+      ❤️ <strong>Donate to FelooPy:</strong> Your contributions help us maintain and develop the project. Donors may be acknowledged in our releases and documentation per their request.
+    </div>
+
+    <div class="message-box box-red" id="content-box">
+      🙌 <strong>Engage with Our Latest Content:</strong>
+      <ul>
+        <li>YouTube: <a href="https://www.youtube.com/@feloopy" target="_blank" rel="noopener noreferrer">Latest Videos</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/company/feloopy" target="_blank" rel="noopener noreferrer">Latest Posts</a></li>
+      </ul>
+      Your feedback help us understand what content resonates with you!
+    </div>
+
     <div class="cta-group" role="group" aria-label="Support and follow actions">
-      <!-- Original buttons remain unchanged -->
       <a class="cta github" href="https://github.com/feloopy/feloopy" target="_blank" rel="noopener noreferrer" aria-label="Star on GitHub">
         <i class="fab fa-github" aria-hidden="true"></i>
         Star on GitHub
@@ -71,15 +201,11 @@
         <i class="fab fa-youtube" aria-hidden="true"></i>
         Subscribe on YouTube
       </a>
-      <a class="cta linkedin" href="http://linkedin.com/company/feloopy" target="_blank" rel="noopener noreferrer" aria-label="Follow on LinkedIn">
+      <a class="cta linkedin" href="https://www.linkedin.com/company/feloopy" target="_blank" rel="noopener noreferrer" aria-label="Follow on LinkedIn">
         <i class="fab fa-linkedin" aria-hidden="true"></i>
         Follow on LinkedIn
       </a>
-      
-      <!-- New Donate Button -->
-      <a class="cta donate" 
-         href="mailto:feloopy@gmail.com?subject=Donation%20to%20FelooPy&body=Hi%20FelooPy%20Team,%0A%0AI%20would%20like%20to%20support%20your%20project%20with%20a%20donation.%0A%0APlease%20let%20me%20know%20how%20I%20can%20contribute.%0A%0ABest%20regards," 
-         aria-label="Donate via Email">
+      <a class="cta donate" href="mailto:feloopy@gmail.com?subject=Donation%20to%20FelooPy&body=Hi%20FelooPy%20Team,%0A%0AI%20would%20like%20to%20support%20your%20project%20with%20a%20donation.%0A%0APlease%20let%20me%20know%20how%20I%20can%20contribute.%0A%0ABest regards," aria-label="Donate to FelooPy">
         <i class="fas fa-heart" aria-hidden="true"></i>
         Donate to FelooPy
       </a>
@@ -88,41 +214,65 @@
   </div>
 
   <script>
-    function animateNumber(el, start, end, d = 1500) {
-      let r = end - start, t0;
-      function step(ts) {
-        if (!t0) t0 = ts;
-        let p = Math.min((ts - t0) / d, 1);
-        el.textContent = Math.floor(start + p * r) + (el.id.includes('-pct') ? '%' : '');
-        if (p < 1) requestAnimationFrame(step);
+    function animateNumber(el, start, end, duration = 1500) {
+      const range = end - start;
+      let startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const current = Math.floor(start + progress * range);
+        el.textContent = el.id.includes('-pct') ? current + '%' : current.toLocaleString();
+        if (progress < 1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
     }
-  
+
     async function render() {
       try {
-        const response = await fetch('stats.json');
-        if (!response.ok) throw new Error('Failed to fetch stats.json');
-        const s = await response.json();
-  
+        const res = await fetch('stats.json');
+        if (!res.ok) throw new Error('Failed to fetch stats.json');
+        const s = await res.json();
+
+        // Stats rendering (same as before)
         ['day', 'week', 'month', 'total', 'stars'].forEach(k =>
           animateNumber(document.getElementById(k), 0, s[k] || 0)
         );
-        animateNumber(document.getElementById('sd-pct'), 0, s.star_pct || 0);
-  
-        document.getElementById('last-commit').textContent =
-          s.days_since_push != null ? `${s.days_since_push} days ago` : 'N/A';
-  
-        document.getElementById('sd-bar').style.setProperty('--pct', (s.star_pct || 0) + '%');
-  
-      } catch (err) {
-        console.error('Error loading stats:', err);
+
+        const starPct = s.star_pct || 0;
+        animateNumber(document.getElementById('sd-pct'), 0, starPct);
+        document.getElementById('sd-bar').style.setProperty('--pct', starPct + '%');
+
+        const lastCommit = s.days_since_push;
+        const lastCommitEl = document.getElementById('last-commit');
+        lastCommitEl.textContent = lastCommit != null ? `${lastCommit} days ago` : 'N/A';
+
+        const commitBox = document.getElementById('commit-warning');
+        if (lastCommit != null) {
+          if (lastCommit > 90) {
+            commitBox.innerHTML = `⏰ <strong>Too much time since the last commit?</strong> It’s been <strong>${lastCommit} days</strong>. This might mean the project is at risk of being discontinued. What happens then? 🤷‍♂️`;
+          } else {
+            commitBox.innerHTML = `✅ Last commit was just <strong>${lastCommit} days ago</strong>. All looks healthy!`;
+          }
+        } else {
+          commitBox.textContent = 'Activity status unknown.';
+        }
+
+        const totalUsers = s.total || 0;
+        const starCount = s.stars || 0;
+        const ratioPct = (totalUsers > 0) ? ((starCount / totalUsers) * 100).toFixed(2) : '0.00';
+
+        document.getElementById('stars-count').textContent = starCount.toLocaleString();
+        document.getElementById('engagement-ratio').textContent = `${ratioPct}%`;
+        document.getElementById('user-count').textContent = totalUsers.toLocaleString();
+
+      } catch (error) {
+        console.error('Error loading stats:', error);
         document.querySelectorAll('.value').forEach(el => el.textContent = '–');
+        document.getElementById('commit-warning').textContent = 'Could not load activity data.';
       }
     }
-  
+
     render();
   </script>
-  
 </body>
 </html>
