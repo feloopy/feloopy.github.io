@@ -24,7 +24,7 @@ jobs:
         run: |
           python << 'EOF'
           import json, datetime, subprocess, re
-          import requests, pypistats
+          import requests
           from bs4 import BeautifulSoup
 
           stats = {}
@@ -32,20 +32,18 @@ jobs:
           # 1. Daily/weekly/monthly downloads via PyPI Stats API
           r = requests.get('https://pypistats.org/api/packages/feloopy/recent').json()
           d = r.get('data', {})
-          stats.update({
-            'day':   d.get('last_day', 0),
-            'week':  d.get('last_week', 0),
-            'month': d.get('last_month', 0)
-          })  # :contentReference[oaicite:6]{index=6}
+          stats['day']   = d.get('last_day', 0)
+          stats['week']  = d.get('last_week', 0)
+          stats['month'] = d.get('last_month', 0)            # :contentReference[oaicite:7]{index=7}
 
           # 2. Total downloads via Shields.io badge JSON
           shield = requests.get('https://img.shields.io/pypi/dt/feloopy.json').json()
           v = re.sub(r'\D','', str(shield.get('value','')))
-          stats['total'] = int(v) if v.isdigit() else 0  # :contentReference[oaicite:7]{index=7}
+          stats['total'] = int(v) if v.isdigit() else 0     # :contentReference[oaicite:8]{index=8}
 
-          # 3. GitHub stars_count (public endpoint)
+          # 3. GitHub stars (public endpoint)
           gh = requests.get("https://api.github.com/repos/feloopy/feloopy").json()
-          stats['stars'] = gh.get('stargazers_count', 0)  # :contentReference[oaicite:8]{index=8}
+          stats['stars'] = gh.get('stargazers_count', 0)     # :contentReference[oaicite:9]{index=9}
 
           # 4. YouTube subs & views by scraping ytInitialData JSON
           html = requests.get('https://www.youtube.com/@feloopy/about').text
@@ -56,11 +54,11 @@ jobs:
               stats['youtube_subs']  = hdr['subscriberCountText']['simpleText']
               stats['youtube_views'] = hdr['viewCountText']['simpleText']
           else:
-              stats['youtube_subs'] = stats['youtube_views'] = 'n/a'  # :contentReference[oaicite:9]{index=9}
+              stats['youtube_subs'] = stats['youtube_views'] = 'n/a'  # :contentReference[oaicite:10]{index=10}
 
           # 5. Downloads by country via pypinfo CLI (BigQuery free tier)
-          out = subprocess.check_output(['pypinfo','feloopy','country','--json','--limit','200'])
-          stats['by_country'] = json.loads(out)  # :contentReference[oaicite:10]{index=10}
+          out = subprocess.check_output(['pypinfo','feloopy','country','-j','-l','200'])
+          stats['by_country'] = json.loads(out)['rows']        # :contentReference[oaicite:11]{index=11}
 
           # 6. Append daily GitHub stars history
           hist_path = 'stars_history.json'
@@ -70,7 +68,7 @@ jobs:
           except FileNotFoundError:
               history = {}
           history[today] = stats['stars']
-          with open(hist_path, 'w') as f:
+          with open(hist_path,'w') as f:
               json.dump(history, f, indent=2)
 
           stats['fetched_at'] = datetime.datetime.utcnow().isoformat()+'Z'
