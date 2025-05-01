@@ -10,7 +10,7 @@ function getOrdinal(n) {
 
 async function getDownloadCount() {
     try {
-        const response = await fetch('path/to/statusbar.json');
+        const response = await fetch('stats.json');
         const data = await response.json();
         return parseInt(data.engine_downloads) || 0;
     } catch (error) {
@@ -43,14 +43,14 @@ async function setDownloadOptions(downloadButtonId, downloadInfoId) {
             
             downloadInfo.textContent = infoText;
         } else {
-            downloadButton.onclick = () => alert('Please use "pip install -U feloopy[stock]==0.3.7" instead.');
+            downloadButton.onclick = () => alert('Please use "pip install -U feloopy[stock]==0.3.8" instead.');
             downloadInfo.textContent = os === 'Other' 
                 ? 'Your OS is not supported' 
                 : 'Failed to fetch download link';
         }
     } catch (error) {
         console.error('Error setting download options:', error);
-        downloadButton.onclick = () => alert('Please use "pip install -U feloopy[stock]==0.3.7" instead.');
+        downloadButton.onclick = () => alert('Please use "pip install -U feloopy[stock]==0.3.8" instead.');
         downloadInfo.textContent = 'Error loading download information';
     }
 }
