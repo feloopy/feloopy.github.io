@@ -10,7 +10,7 @@ function getOrdinal(n) {
 
 async function getDownloadCount() {
     try {
-        const response = await fetch('stats.json');
+        const response = await fetch('../stats.json');
         const data = await response.json();
         return parseInt(data.engine_downloads) || 0;
     } catch (error) {
