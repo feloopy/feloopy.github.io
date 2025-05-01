@@ -43,16 +43,35 @@ async function getDownloadCount() {
     }
 }
 
+async function getStats() {
+    try {
+        const response = await fetch('../stats.json');
+        const data = await response.json();
+        return {
+            version: data.version || '0.3.8', 
+            engineDownloads: parseInt(data.engine_downloads) || 0
+        };
+    } catch (error) {
+        console.error('Failed to fetch stats:', error);
+        return {
+            version: '0.3.8',
+            engineDownloads: 0
+        };
+    }
+}
+
 async function setDownloadOptions(downloadButtonId, downloadInfoId) {
     const os = detectOS();
     const downloadButton = document.getElementById(downloadButtonId);
     const downloadInfo = document.getElementById(downloadInfoId);
 
     try {
-        const [url, count] = await Promise.all([
+        const [url, stats] = await Promise.all([
             getLatestReleaseDownloadLink(os),
-            getDownloadCount()
+            getStats()
         ]);
+
+        const pipCommand = `pip install -U feloopy[full]==${stats.version}`;
 
         if (url && (os === 'Windows' || os === 'Linux')) {
             downloadButton.onclick = () => window.location.href = url;
@@ -61,27 +80,37 @@ async function setDownloadOptions(downloadButtonId, downloadInfoId) {
                 ? 'For Windows 10/11 64-bit'
                 : 'For Linux 64-bit';
         
-            if (count !== null) {
-                const nextUser = getOrdinal(count + 1);
+            if (stats.engineDownloads !== null) {
+                const nextUser = getOrdinal(stats.engineDownloads + 1);
                 infoText += `<br>Be the <strong>${nextUser}</strong> user now!`;
             }
         
             downloadInfo.innerHTML = infoText;
         }
-         else {
-            downloadButton.onclick = () => alert('Please use "pip install -U feloopy[stock]==0.3.8" instead.');
+        else {
+            downloadButton.onclick = () => alert(`Please use "${pipCommand}" instead.`);
             downloadInfo.textContent = os === 'Other'
                 ? 'Your OS is not supported'
                 : 'Failed to fetch download link';
         }
+
+        const installCommands = document.querySelectorAll('.code-box[id^="installCommand"]');
+        installCommands.forEach(el => {
+            el.value = `pip install feloopy[stock]==${stats.version}`;
+        });
     } catch (error) {
         console.error('Error setting download options:', error);
-        downloadButton.onclick = () => alert('Please use "pip install -U feloopy[stock]==0.3.8" instead.');
+        const pipCommand = `pip install -U feloopy[full]==${stats?.version || '0.3.8'}`;
+        downloadButton.onclick = () => alert(`Please use "${pipCommand}" instead.`);
         downloadInfo.textContent = 'Error loading download information';
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     setDownloadOptions('download-button1', 'download-info1');
     setDownloadOptions('download-button2', 'download-info2');
 });
+
+
+
