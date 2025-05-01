@@ -1,4 +1,4 @@
-name: Fetch Stats
+name: fetch-stats
 
 on:
   schedule:
