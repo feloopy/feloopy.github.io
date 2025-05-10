@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-
-        <meta charset="UTF-8">
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
-            rel="stylesheet">
+            rel="stylesheet" />
         <script
             src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
         <title>List of optimization packages in Python: Update 2025</title>
-        <link rel="stylesheet" href="../custom-styles.css">
+        <link rel="stylesheet" href="../custom-styles.css" />
         <link rel="apple-touch-icon" sizes="180x180"
-            href="/apple-touch-icon.png">
+            href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32"
-            href="/favicon-32x32.png">
+            href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16"
-            href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-
+            href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
     </head>
 
     <body>
@@ -49,14 +48,15 @@
             </a>
         </div>
 
-        <div id="content"
-            style="max-width: 800px; margin: 0 auto; padding: 20px; margin-top: 50px;">
+        <div
+            id="content"
+            style="max-width: 800px; margin: 0 auto; padding: 20px; margin-top: 50px">
             <div id="html-output"></div>
         </div>
 
         <script>
-        const markdownText = `
-# ![FelooPy Logo](https://feloopy.github.io/assets/images/feloopy-logo.png) List of optimization packages in Python: Update 2025 ![FelooPy Logo](https://feloopy.github.io/assets/images/feloopy-logo.png) 
+      const markdownText = `
+# ![FelooPy Logo](https://feloopy.github.io/assets/images/feloopy-logo.png) List of optimization packages in Python: Update 2025 ![FelooPy Logo](https://feloopy.github.io/assets/images/feloopy-logo.png)
 
 ## Keivan Tafakkori
 
@@ -70,293 +70,316 @@ This article serves as a comprehensive reference for academics and experts in th
 - Computer science (CS)
 - Machine learning (ML)
 - Simulation (SM)
-- Decision science (DS) 
+- Decision science (DS)
 - Data science (DS)
 
 ### Guide
 
+
 | Package capability | Description                          |
-| ------------------ | ------------------------------------ |
-| \`MINLP\`            | Mixed integer nonlinear programming  |
-| \`MIQP\`             | Mixed integer quadratic programming  |
-| \`MILP\`             | Mixed integer linear programming     |
-| \`NLP\`              | Nonlinear programming                |
-| \`IP\`               | Integer programming                  |
-| \`LP\`               | Linear programming                   |
-| \`CP\`               | Constraint programming               |
-| \`GPP\`              | General purpose programming          |
-| \`MOP\`              | Multi-criteria/objective programming |
-| \`QPP\`              | Quantum-powered programming |
-| \`PSP\`              | Problem-specific programming |
+| -------------------- | -------------------------------------- |
+| \`MINLP\`          | Mixed integer nonlinear programming  |
+| \`MIQP\`           | Mixed integer quadratic programming  |
+| \`MILP\`           | Mixed integer linear programming     |
+| \`NLP\`            | Nonlinear programming                |
+| \`IP\`             | Integer programming                  |
+| \`LP\`             | Linear programming                   |
+| \`GPP\`            | General purpose programming          |
+| \`MOP\`            | Multi-criteria/objective programming |
+| \`QPP\`            | Quantum-powered programming          |
+| \`PSP\`            | Problem-specific programming         |
 
-### MINLP+MIQP+MILP+NLP+IP+LP Packages (20)
-
-_Note: Some packages might not accept a mixed group of discrete and continuous variables._
-
-| Package            | Link                                                                  |
-| ------------------ | --------------------------------------------------------------------- |
-| \`amplpy\`           | [Official](https://amplpy.ampl.com/en/latest/)                        |
-| \`casadi\`           | [Official](https://web.casadi.org/)                                   |
-| \`feloopy\`          | [Official](https://github.com/feloopy/feloopy)                     |
-| \`gekko\`            | [Official](https://machinelearning.byu.edu/)                          |
-| \`gamspy\`           | [Official](https://github.com/GAMS-dev/gamspy)                        |
-| \`insideopt-seeker\` | [Official](https://insideopt.com/)                                    |
-| \`knitro\`           | [Official](https://www.artelys.com/docs/knitro/index.html)            |
-| \`lindo\`            | [Official](https://www.lindo.com/)                                    |
-| \`midaco\`           | [Official](http://www.midaco-solver.com/index.php/download/python)    |
-| \`naginterfaces\`    | [Official](https://www.nag.com/)                                      |
-| \`octeract\`         | [Official](https://octeract.gg/)                                      |
-| \`omlt\`             | [Official](https://github.com/cog-imperial/OMLT)                      |
-| \`optalg\`           | [Official](https://github.com/ttinoco/OPTALG)                         |
-| \`optmod\`           | [Official](https://github.com/ttinoco/OPTMOD)                         |
-| \`pydrake\`          | [Official](https://drake.mit.edu/)                                    |
-| \`pyepo\`            | [Official](https://github.com/khalil-research/PyEPO)                  |
-| \`pyomo\`            | [Official](http://www.pyomo.org/)                                     |
-| \`pyscipopt\`        | [Official](https://scipopt.org/)                                      |
-| \`xpress\`           | [Official](https://www.fico.com/en/products/fico-xpress-optimization) |
-| \`science-optimization\` | [Official](https://pypi.org/project/science-optimization/) |
-
-###  MIQP+MILP+IP+LP Packages (14)
+### MINLP+MIQP+MILP+NLP+IP+LP Packages (21)
 
 _Note: Some packages might not accept a mixed group of discrete and continuous variables._
 
-| Package          | Link                                                               |
-| ---------------- | ------------------------------------------------------------------ |
-| \`coptpy\`         | [Official](https://www.shanshu.ai/copt)                            |
-| \`cplex\`          | [Official](https://www.ibm.com/analytics/cplex-optimizer)          |
-| \`docplex\`        | [Official](https://ibmdecisionoptimization.github.io/docplex-doc/) |
-| \`doopl\`        | [Official](https://github.com/IBMDecisionOptimization/doopl) |
-| \`gurobipy\`       | [Official](https://www.gurobi.com/)                                |
-| \`hexaly\`         | [Official](https://www.hexaly.com/)                                |
-| \`highspy\`        | [Official](https://highs.dev/)                                     |
-| \`miosqp\`       | [Official](https://github.com/osqp/miosqp)                |
-| \`mosek\`          | [Official](https://docs.mosek.com/latest/pythonapi/index.html)     |
-| \`optlang\`        | [Official](https://optlang.readthedocs.io/en/latest/)              |
-| \`pyoptinterface\` | [Official](https://github.com/metab0t/PyOptInterface)              |
-| \`qiskit-optimization\`| [Official](https://github.com/qiskit-community/qiskit-optimization) |
-| \`qpsolvers\`      | [Official](https://github.com/qpsolvers/qpsolvers)                 |
-| \`rsome\`          | [Official](https://github.com/XiongPengNUS/rsome)                  |
-| \`sasoptpy\`       | [Official](https://github.com/sassoftware/sasoptpy)                |
+
+| Package                  | Official                                                              | Version                                                                                                                        | License                                                                                                          | Last commit                                                                            |
+| -------------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| \`amplpy\`               | [Official](https://amplpy.ampl.com/en/latest/)                        | [![PyPI version](https://img.shields.io/pypi/v/amplpy)](https://pypi.org/project/amplpy/)                                      | [![License](https://img.shields.io/pypi/l/amplpy)](https://pypi.org/project/amplpy/)                             | ![Last commit](https://img.shields.io/github/last-commit/ampl/amplpy)                  |
+| \`casadi\`               | [Official](https://web.casadi.org/)                                   | [![PyPI version](https://img.shields.io/pypi/v/casadi)](https://pypi.org/project/casadi/)                                      | [![License](https://img.shields.io/pypi/l/casadi)](https://pypi.org/project/casadi/)                             | ![Last commit](https://img.shields.io/github/last-commit/casadi/casadi)                |
+| \`feloopy\`              | [Official](https://github.com/feloopy/feloopy)                        | [![PyPI version](https://img.shields.io/pypi/v/feloopy)](https://pypi.org/project/feloopy/)                                    | [![License](https://img.shields.io/pypi/l/feloopy)](https://pypi.org/project/feloopy/)                           | ![Last commit](https://img.shields.io/github/last-commit/feloopy/feloopy)              |
+| \`gamspy\`               | [Official](https://github.com/GAMS-dev/gamspy)                        | [![PyPI version](https://img.shields.io/pypi/v/gamspy)](https://pypi.org/project/gamspy/)                                      | [![License](https://img.shields.io/pypi/l/gamspy)](https://pypi.org/project/gamspy/)                             | ![Last commit](https://img.shields.io/github/last-commit/GAMS-dev/gamspy)              |
+| \`gekko\`                | [Official](https://machinelearning.byu.edu/)                          | [![PyPI version](https://img.shields.io/pypi/v/gekko)](https://pypi.org/project/gekko/)                                        | [![License](https://img.shields.io/pypi/l/gekko)](https://pypi.org/project/gekko/)                               | ![Last commit](https://img.shields.io/github/last-commit/BYU-PRISM/GEKKO)              |
+| \`hexaly\`               | [Official](https://www.hexaly.com/)                                   | -                                                                                                                              | -                                                                                                                | -                                                                                      |
+| \`insideopt-seeker\`     | [Official](https://insideopt.com/)                                    | [![PyPI version](https://img.shields.io/pypi/v/insideopt-seeker)](https://pypi.org/project/insideopt-seeker/)                  | [![License](https://img.shields.io/pypi/l/insideopt-seeker)](https://pypi.org/project/insideopt-seeker/)         | -                                                                                      |
+| \`knitro\`               | [Official](https://www.artelys.com/docs/knitro/index.html)            | -                                                                                                                              | -                                                                                                                | -                                                                                      |
+| \`lindo\`                | [Official](https://www.lindo.com/)                                    | [![PyPI version](https://img.shields.io/pypi/v/lindo)](https://pypi.org/project/lindo/)                                        | [![License](https://img.shields.io/pypi/l/lindo)](https://pypi.org/project/lindo/)                               | ![Last commit](https://img.shields.io/github/last-commit/lindosystems/lingoapi-python) |
+| \`midaco\`               | [Official](http://www.midaco-solver.com/index.php/download/python)    | –                                                                                                                             | -                                                                                                                | -                                                                                      |
+| \`naginterfaces\`        | [Official](https://www.nag.com/)                                      | -                                                                                                                              | -                                                                                                                | -                                                                                      |
+| \`octeract\`             | [Official](https://octeract.gg/)                                      | –                                                                                                                             | -                                                                                                                | -                                                                                      |
+| \`omlt\`                 | [Official](https://github.com/cog-imperial/OMLT)                      | [![PyPI version](https://img.shields.io/pypi/v/omlt)](https://pypi.org/project/omlt/)                                          | [![License](https://img.shields.io/pypi/l/omlt)](https://pypi.org/project/omlt/)                                 | ![Last commit](https://img.shields.io/github/last-commit/cog-imperial/OMLT)            |
+| \`optalg\`               | [Official](https://github.com/ttinoco/OPTALG)                         | [![PyPI version](https://img.shields.io/pypi/v/OPTALG)](https://pypi.org/project/OPTALG/)                                      | [![License](https://img.shields.io/pypi/l/OPTALG)](https://pypi.org/project/OPTALG/)                             | ![Last commit](https://img.shields.io/github/last-commit/ttinoco/OPTALG)               |
+| \`optmod\`               | [Official](https://github.com/ttinoco/OPTMOD)                         | [![PyPI version](https://img.shields.io/pypi/v/OPTMOD)](https://pypi.org/project/OPTMOD/)                                      | [![License](https://img.shields.io/pypi/l/OPTMOD)](https://pypi.org/project/OPTMOD/)                             | ![Last commit](https://img.shields.io/github/last-commit/ttinoco/OPTMOD)               |
+| \`pydrake\`              | [Official](https://drake.mit.edu/)                                    | [![Version](https://img.shields.io/github/v/release/RobotLocomotion/drake)](https://github.com/RobotLocomotion/drake/releases) | -                                                                                                                | ![Last commit](https://img.shields.io/github/last-commit/RobotLocomotion/drake)        |
+| \`pyepo\`                | [Official](https://github.com/khalil-research/PyEPO)                  | [![PyPI version](https://img.shields.io/pypi/v/pyepo)](https://pypi.org/project/pyepo/)                                        | [![PyPI version](https://img.shields.io/pypi/l/pyepo)](https://pypi.org/project/pyepo/)                          | ![Last commit](https://img.shields.io/github/last-commit/khalil-research/PyEPO)        |
+| \`pyomo\`                | [Official](http://www.pyomo.org/)                                     | [![PyPI version](https://img.shields.io/pypi/v/pyomo)](https://pypi.org/project/pyomo/)                                        | [![License](https://img.shields.io/pypi/l/pyomo)](https://pypi.org/project/pyomo/)                               | ![Last commit](https://img.shields.io/github/last-commit/Pyomo/pyomo)                  |
+| \`pyscipopt\`            | [Official](https://scipopt.org/)                                      | [![PyPI version](https://img.shields.io/pypi/v/pyscipopt)](https://pypi.org/project/pyscipopt/)                                | [![License](https://img.shields.io/pypi/l/pyscipopt)](https://pypi.org/project/pyscipopt/)                       | ![Last commit](https://img.shields.io/github/last-commit/SCIP-Interfaces/PySCIPOpt)    |
+| \`science-optimization\` | [Official](https://pypi.org/project/science-optimization/)            | [![PyPI version](https://img.shields.io/pypi/v/science-optimization)](https://pypi.org/project/science-optimization/)          | [![License](https://img.shields.io/pypi/l/science-optimization)](https://pypi.org/project/science-optimization/) | -                                                                                      |
+| \`xpress\`               | [Official](https://www.fico.com/en/products/fico-xpress-optimization) | [![PyPI version](https://img.shields.io/pypi/v/xpress)](https://pypi.org/project/xpress/)                                      | [![License](https://img.shields.io/pypi/l/xpress)](https://pypi.org/project/xpress/)                             | -                                                                                      |
+
+### MIQP+MILP+IP+LP Packages (16)
+
+_Note: Some packages might not accept a mixed group of discrete and continuous variables._
+
+
+| Package                 | Link                                                                | Version                                                                                                                  | License                                                                                                                  | Last commit                                                                                         |
+| ---------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| \`coptpy\`              | [Official](https://www.shanshu.ai/copt)                             | [![PyPI version](https://img.shields.io/pypi/v/coptpy)](https://pypi.org/project/coptpy/)                               | [![PyPI version](https://img.shields.io/pypi/l/coptpy)](https://pypi.org/project/coptpy/)                               | -                                                                                                 |
+| \`cplex\`               | [Official](https://www.ibm.com/analytics/cplex-optimizer)           | [![PyPI version](https://img.shields.io/pypi/v/cplex)](https://pypi.org/project/cplex/)                                 | [![PyPI version](https://img.shields.io/pypi/l/cplex)](https://pypi.org/project/cplex/)                                 | -                                                                                                 |
+| \`docplex\`             | [Official](https://ibmdecisionoptimization.github.io/docplex-doc/)  | [![PyPI version](https://img.shields.io/pypi/v/docplex)](https://pypi.org/project/docplex/)                             | [![PyPI version](https://img.shields.io/pypi/l/docplex)](https://pypi.org/project/docplex/)                             | ![Last commit](https://img.shields.io/github/last-commit/IBMDecisionOptimization/docplex)         |
+| \`doopl\`               | [Official](https://github.com/IBMDecisionOptimization/doopl)        | [![PyPI version](https://img.shields.io/pypi/v/doopl)](https://pypi.org/project/doopl/)                                 | [![PyPI version](https://img.shields.io/pypi/v/doopl)](https://pypi.org/project/doopl/)                                 | ![Last commit](https://img.shields.io/github/last-commit/IBMDecisionOptimization/doopl)           |
+| \`gurobipy\`            | [Official](https://www.gurobi.com/)                                 | [![PyPI version](https://img.shields.io/pypi/v/gurobipy)](https://pypi.org/project/gurobipy/)                           | [![License](https://img.shields.io/pypi/l/gurobipy)](https://pypi.org/project/gurobipy/)                                | -                                                                                                 |
+| \`hexaly\`              | [Official](https://www.hexaly.com/)                                 | -                                                                                                                        | -                                                                                                                        | -                                                                                                 |
+| \`highspy\`             | [Official](https://highs.dev/)                                      | [![PyPI version](https://img.shields.io/pypi/v/highspy)](https://pypi.org/project/highspy/)                             | [![License](https://img.shields.io/pypi/l/highspy)](https://pypi.org/project/highspy/)                                  | ![Last commit](https://img.shields.io/github/last-commit/ERGO-Code/HiGHS)                         |
+| \`miosqp\`              | [Official](https://github.com/osqp/miosqp)                          | -                                                                                                                        | -                                                                                                                        | ![Last commit](https://img.shields.io/github/last-commit/osqp/miosqp)                             |
+| \`mosek\`               | [Official](https://docs.mosek.com/latest/pythonapi/index.html)      | [![PyPI version](https://img.shields.io/pypi/v/mosek)](https://pypi.org/project/mosek/)                                 | [![PyPI version](https://img.shields.io/pypi/l/mosek)](https://pypi.org/project/mosek/)                                 | -                                                                                                 |
+| \`optlang\`             | [Official](https://optlang.readthedocs.io/en/latest/)               | [![PyPI version](https://img.shields.io/pypi/v/optlang)](https://pypi.org/project/optlang/)                             | [![PyPI version](https://img.shields.io/pypi/l/optlang)](https://pypi.org/project/optlang/)                             | ![Last commit](https://img.shields.io/github/last-commit/opencobra/optlang)                       |
+| \`pyoframe\`            | [Official](https://github.com/Bravos-Power/pyoframe)                | [![PyPI version](https://img.shields.io/pypi/v/pyoframe)](https://pypi.org/project/pyoframe/)                           | [![PyPI version](https://img.shields.io/pypi/l/pyoframe)](https://pypi.org/project/pyoframe/)                           | ![Last commit](https://img.shields.io/github/last-commit/Bravos-Power/pyoframe)                   |
+| \`pyoptinterface\`      | [Official](https://github.com/metab0t/PyOptInterface)               | [![PyPI version](https://img.shields.io/pypi/v/pyoptinterface)](https://pypi.org/project/pyoptinterface/)               | [![PyPI version](https://img.shields.io/pypi/l/pyoptinterface)](https://pypi.org/project/pyoptinterface/)               | ![Last commit](https://img.shields.io/github/last-commit/metab0t/PyOptInterface)                  |
+| \`qiskit-optimization\` | [Official](https://github.com/qiskit-community/qiskit-optimization) | [![PyPI version](https://img.shields.io/pypi/v/qiskit-optimization)](https://pypi.org/project/qiskit-optimization/)     | [![PyPI version](https://img.shields.io/pypi/l/qiskit-optimization)](https://pypi.org/project/qiskit-optimization/)     | ![Last commit](https://img.shields.io/github/last-commit/qiskit-community/qiskit-optimization)    |
+| \`qpsolvers\`           | [Official](https://github.com/qpsolvers/qpsolvers)                  | [![PyPI version](https://img.shields.io/pypi/v/qpsolvers)](https://pypi.org/project/qpsolvers/)                         | [![License](https://img.shields.io/pypi/l/qpsolvers)](https://pypi.org/project/qpsolvers/)                              | ![Last commit](https://img.shields.io/github/last-commit/qpsolvers/qpsolvers)                     |
+| \`rsome\`               | [Official](https://github.com/XiongPengNUS/rsome)                   | [![PyPI version](https://img.shields.io/pypi/v/rsome)](https://pypi.org/project/rsome/)                                 | [![PyPI version](https://img.shields.io/pypi/l/rsome)](https://pypi.org/project/rsome/)                                 | ![Last commit](https://img.shields.io/github/last-commit/XiongPengNUS/rsome)                      |
+| \`sasoptpy\`            | [Official](https://github.com/sassoftware/sasoptpy)                 | [![PyPI version](https://img.shields.io/pypi/v/sasoptpy)](https://pypi.org/project/sasoptpy/)                           | [![License](https://img.shields.io/pypi/l/sasoptpy)](https://pypi.org/project/sasoptpy/)                                | ![Last commit](https://img.shields.io/github/last-commit/sassoftware/sasoptpy)                    |
 
 ### MILP+IP+LP Packages (14)
 
 _Note: Some packages might not accept a mixed group of discrete and continuous variables._
 
-| Package      | Link                                                                |
-| ------------ | ------------------------------------------------------------------- |
-| \`cvxopt\`     | [Official](https://cvxopt.org/)                                     |
-| \`cvxpy\`      | [Official](https://www.cvxpy.org/)                                  |
-| \`cylp\`       | [Official](http://coin-or.github.io/CyLP/)                          |
-| \`flowty\`     | [Official](https://flowty.ai/)                                      |
-| \`linopy\`     | [Official](https://github.com/PyPSA/linopy)                         |
-| \`lpsolve55 \` | [Official](http://web.mit.edu/lpsolve/doc/Python.htm)               |
-| \`mindoptpy\`  | [Official](https://solver.damo.alibaba-inc.com/doc/html/index.html) |
-| \`mip\`        | [Official](https://www.python-mip.com/)                             |
-| \`ortools\`    | [Official](https://developers.google.com/optimization)              |
-| \`mathopt\`    | [Official](https://developers.google.com/optimization/math_opt)     |
-| \`picos\`      | [Official](https://picos-api.gitlab.io/picos/)                      |
-| \`pulp\`       | [Official](https://projects.coin-or.org/PuLP)                       |
-| \`pymprog\`    | [Official](http://pymprog.sourceforge.net/)                         |
-| \`swiglpk\`    | [Official](https://github.com/biosustain/swiglpk)                   |
 
-###  NLP+LP Packages (22)
+| Package       | Link                                                            | Version                                                                                         | License                                                                                         | Last commit                                                                               |
+| --------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| \`cvxopt\`    | [Official](https://cvxopt.org/)                                 | [![PyPI version](https://img.shields.io/pypi/v/cvxopt)](https://pypi.org/project/cvxopt/)       | [![License](https://img.shields.io/pypi/l/cvxopt)](https://pypi.org/project/cvxopt/)            | ![Last commit](https://img.shields.io/github/last-commit/cvxopt/cvxopt)                   |
+| \`cvxpy\`     | [Official](https://www.cvxpy.org/)                              | [![PyPI version](https://img.shields.io/pypi/v/cvxpy)](https://pypi.org/project/cvxpy/)         | [![License](https://img.shields.io/pypi/l/cvxpy)](https://pypi.org/project/cvxpy/)              | ![Last commit](https://img.shields.io/github/last-commit/cvxpy/cvxpy)                     |
+| \`cylp\`      | [Official](http://coin‑or.github.io/CyLP/)                     | [![PyPI version](https://img.shields.io/pypi/v/cylp)](https://pypi.org/project/cylp/)           | [![License](https://img.shields.io/pypi/l/cylp)](https://pypi.org/project/cylp/)                | ![Last commit](https://img.shields.io/github/last-commit/coin-or/CyLP)                    |
+| \`flowty\`    | [Official](https://flowty.ai/)                                  | [![PyPI version](https://img.shields.io/pypi/v/flowty)](https://pypi.org/project/flowty/)       | [![License](https://img.shields.io/pypi/l/flowty)](https://pypi.org/project/flowty/)            | ![Last commit](https://img.shields.io/github/last-commit/flowty/flowty)                   |
+| \`linopy\`    | [Official](https://github.com/PyPSA/linopy)                     | [![PyPI version](https://img.shields.io/pypi/v/linopy)](https://pypi.org/project/linopy/)       | [![License](https://img.shields.io/pypi/l/linopy)](https://pypi.org/project/linopy/)            | ![Last commit](https://img.shields.io/github/last-commit/PyPSA/linopy)                    |
+| \`lpsolve55\` | [Official](http://web.mit.edu/lpsolve/doc/Python.htm)           | –                                                                                              | –                                                                                              | ![Last commit](https://img.shields.io/github/last-commit/chandu-atina/lp_solve_python_3x) |
+| \`mathopt\`   | [Official](https://developers.google.com/optimization/math_opt) | –                                                                                              | –                                                                                              | ![Last commit](https://img.shields.io/github/last-commit/google/or-tools)                 |
+| \`mindoptpy\` | [Official](https://opt.aliyun.com/)                             | [![PyPI version](https://img.shields.io/pypi/v/mindoptpy)](https://pypi.org/project/mindoptpy/) | [![PyPI version](https://img.shields.io/pypi/l/mindoptpy)](https://pypi.org/project/mindoptpy/) | -                                                                                         |
+| \`mip\`       | [Official](https://www.python-mip.com/)                         | [![PyPI version](https://img.shields.io/pypi/v/mip)](https://pypi.org/project/mip/)             | [![License](https://img.shields.io/pypi/l/mip)](https://pypi.org/project/mip/)                  | ![Last commit](https://img.shields.io/github/last-commit/coin-or/python-mip)              |
+| \`ortools\`   | [Official](https://developers.google.com/optimization)          | [![PyPI version](https://img.shields.io/pypi/v/ortools)](https://pypi.org/project/ortools/)     | [![License](https://img.shields.io/pypi/l/ortools)](https://pypi.org/project/ortools/)          | ![Last commit](https://img.shields.io/github/last-commit/google/or-tools)                 |
+| \`picos\`     | [Official](https://picos-api.gitlab.io/picos/)                  | [![PyPI version](https://img.shields.io/pypi/v/PICOS)](https://pypi.org/project/PICOS/)         | [![License](https://img.shields.io/pypi/l/PICOS)](https://pypi.org/project/PICOS/)              | ![Last commit](https://img.shields.io/gitlab/last-commit/picos-api/picos)                 |
+| \`pulp\`      | [Official](https://projects.coin-or.org/PuLP)                   | [![PyPI version](https://img.shields.io/pypi/v/PuLP)](https://pypi.org/project/PuLP/)           | [![PyPI version](https://img.shields.io/pypi/l/PuLP)](https://pypi.org/project/PuLP/)           | ![Last commit](https://img.shields.io/github/last-commit/coin-or/pulp)                    |
+| \`pymprog\`   | [Official](http://pymprog.sourceforge.net/)                     | [![PyPI version](https://img.shields.io/pypi/v/pymprog)](https://pypi.org/project/pymprog/)     | [![License](https://img.shields.io/pypi/l/pymprog)](https://pypi.org/project/pymprog/)          | ![Last commit](https://img.shields.io/github/last-commit/classner/pymp)                   |
+| \`swiglpk\`   | [Official](https://github.com/biosustain/swiglpk)               | [![PyPI version](https://img.shields.io/pypi/v/swiglpk)](https://pypi.org/project/swiglpk/)     | [![License](https://img.shields.io/pypi/l/swiglpk)](https://pypi.org/project/swiglpk/)          | ![Last commit](https://img.shields.io/github/last-commit/biosustain/swiglpk)              |
 
-| Package       | Link                                                      |
-| ------------- | --------------------------------------------------------- |
-| \`acadopy\`     | [Official](https://github.com/force-h2020/acadopy)        |
-| \`acados\`      | [Official](https://docs.acados.org/index.html)            |
-| \`bioptim\`       | [Official](https://github.com/pyomeca/bioptim)                             |
-| \`cyipopt\`     | [Official](https://pypi.org/project/ipopt/)               |
-| \`dymos\`       | [Official](https://openmdao.github.io/dymos/)             |
-| \`gpkit\`       | [Official](https://gpkit.readthedocs.io/en/latest/)       |
-| \`iminuit\`     | [Official](https://pypi.org/project/iminuit/)             |
-| \`nlopt\`       | [Official](https://nlopt.readthedocs.io/en/latest/)       |
-| \`nlpy\`        | [Official](http://nlpy.sourceforge.net/)                  |
-| \`openmdao\`    | [Official](https://openmdao.org/)                         |
-| \`openopt\`     | [Official](http://openopt.org/)                           |
-| \`optimagic\`       | [Official](https://github.com/optimagic-dev/optimagic)                             |
-| \`optimistix\`       | [Official](https://github.com/patrick-kidger/optimistix)                             |
-| \`polyopt\`     | [Official](https://github.com/PavelTrutman/polyopt)       |
-| \`pyipm\`     | [Official](https://github.com/jkaardal/pyipm)                |
-| \`pyipopt\`     | [Official](https://github.com/xuy/pyipopt)                |
-| \`pyopt\`       | [Official](http://www.pyopt.org/)                         |
-| \`scipy\`       | [Official](https://scipy.org/)                            |
-| \`theseus\`       | [Official](https://github.com/facebookresearch/theseus)                             |
-| \`trustregion\` | [Official](https://github.com/lindonroberts/trust-region) |
-| \`worhp\`       | [Official](https://worhp.de/)                             |
-| \`lpsolvers\`       | [Official](https://github.com/stephane-caron/lpsolvers)   |
+### NLP+LP Packages (22)
 
 
-###  CP Packages (12)
+| Package         | Link                                                      | Version                                                                                 | License                                                                                 | Last commit                                                                   |
+|-----------------|:----------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| \`acadopy\`       | [Official](https://github.com/force-h2020/acadopy)        | -                                                                                       | -                                                                                       | ![Last commit](https://img.shields.io/github/last-commit/force-h2020/acadopy) |
+| \`acados\`        | [Official](https://docs.acados.org/index.html)            | -                                                                                       | -                                                                                       | ![Last commit](https://img.shields.io/github/last-commit/acados/acados)       |
+| \`bioptim\`       | [Official](https://github.com/pyomeca/bioptim)            | -                                                                                       | -                                                                                       | ![Last commit](https://img.shields.io/github/last-commit/pyomeca/bioptim)     |
+| \`cyipopt\`       | [Official](https://pypi.org/project/ipopt/)               | [![PyPI version](https://img.shields.io/pypi/v/ipopt)](https://pypi.org/project/ipopt/) | [![License](https://img.shields.io/pypi/l/ipopt)](https://pypi.org/project/ipopt/)      | ![Last commit](https://img.shields.io/github/last-commit/mechmotum/cyipopt)   |
+| \`dymos\`         | [Official](https://openmdao.github.io/dymos/)             | [![PyPI version](https://img.shields.io/pypi/v/dymos)](https://pypi.org/project/dymos/) | [![License](https://img.shields.io/pypi/l/dymos)](https://pypi.org/project/dymos/)      | ![Last commit](https://img.shields.io/github/last-commit/OpenMDAO/dymos)      |
+| \`gpkit\`         | [Official](https://gpkit.readthedocs.io/en/latest/)       | [![PyPI version](https://img.shields.io/pypi/v/gpkit)](https://pypi.org/project/gpkit/) | [![License](https://img.shields.io/pypi/l/gpkit)](https://pypi.org/project/gpkit/)      | ![Last commit](https://img.shields.io/github/last-commit/convexengineering/gpkit) |
+| \`iminuit\`       | [Official](https://pypi.org/project/iminuit/)             | [![PyPI version](https://img.shields.io/pypi/v/iminuit)](https://pypi.org/project/iminuit/) | [![License](https://img.shields.io/pypi/l/iminuit)](https://pypi.org/project/iminuit/) | ![Last commit](https://img.shields.io/github/last-commit/scikit-hep/iminuit)  |
+| \`lpsolvers\`     | [Official](https://github.com/stephane-caron/lpsolvers)   | [![PyPI version](https://img.shields.io/pypi/v/lpsolvers)](https://pypi.org/project/lpsolvers/) | [![License](https://img.shields.io/pypi/l/lpsolvers)](https://pypi.org/project/lpsolvers/) | ![Last commit](https://img.shields.io/github/last-commit/stephane-caron/lpsolvers) |
+| \`nlopt\`         | [Official](https://nlopt.readthedocs.io/en/latest/)       | [![PyPI version](https://img.shields.io/pypi/v/nlopt)](https://pypi.org/project/nlopt/) | [![License](https://img.shields.io/pypi/l/nlopt)](https://pypi.org/project/nlopt/)      | ![Last commit](https://img.shields.io/github/last-commit/stevengj/nlopt)      |
+| \`nlpy\`          | [Official](http://nlpy.sourceforge.net/)                  | -                                                                                       | [![License](https://img.shields.io/badge/license-LGPL-blue)](http://nlpy.sourceforge.net/) | -                                                                             |
+| \`openmdao\`      | [Official](https://openmdao.org/)                         | [![PyPI version](https://img.shields.io/pypi/v/openmdao)](https://pypi.org/project/openmdao/) | [![License](https://img.shields.io/pypi/l/openmdao)](https://pypi.org/project/openmdao/) | ![Last commit](https://img.shields.io/github/last-commit/OpenMDAO/OpenMDAO)   |
+| \`openopt\`       | [Official](http://openopt.org/)                           | [![PyPI version](https://img.shields.io/pypi/v/openopt)](https://pypi.org/project/openopt/) | [![License](https://img.shields.io/pypi/l/openopt)](https://pypi.org/project/openopt/)  | ![Last commit](https://img.shields.io/github/last-commit/openopt/openopt)     |
+| \`optimagic\`     | [Official](https://github.com/optimagic-dev/optimagic)    | -                                                                                       | [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/optimagic-dev/optimagic/blob/main/LICENSE) | ![Last commit](https://img.shields.io/github/last-commit/optimagic-dev/optimagic) |
+| \`optimistix\`    | [Official](https://github.com/patrick-kidger/optimistix)  | [![PyPI version](https://img.shields.io/pypi/v/optimistix)](https://pypi.org/project/optimistix/) | [![License](https://img.shields.io/pypi/l/optimistix)](https://pypi.org/project/optimistix/) | ![Last commit](https://img.shields.io/github/last-commit/patrick-kidger/optimistix) |
+| \`polyopt\`       | [Official](https://github.com/PavelTrutman/polyopt)       | -                                                                                       | -                                                                                       | ![Last commit](https://img.shields.io/github/last-commit/PavelTrutman/polyopt) |
+| \`pyipm\`         | [Official](https://github.com/jkaardal/pyipm)             | -                                                                                       | -                                                                                       | ![Last commit](https://img.shields.io/github/last-commit/jkaardal/pyipm)      |
+| \`pyipopt\`       | [Official](https://github.com/xuy/pyipopt)                | [![PyPI version](https://img.shields.io/pypi/v/pyipopt)](https://pypi.org/project/pyipopt/) | [![License](https://img.shields.io/pypi/l/pyipopt)](https://pypi.org/project/pyipopt/)  | ![Last commit](https://img.shields.io/github/last-commit/xuy/pyipopt)         |
+| \`pyopt\`         | [Official](http://www.pyopt.org/)                         | [![PyPI version](https://img.shields.io/pypi/v/pyopt)](https://pypi.org/project/pyopt/) | [![License](https://img.shields.io/pypi/l/pyopt)](https://pypi.org/project/pyopt/)      | ![Last commit](https://img.shields.io/github/last-commit/pyopt/pyopt)         |
+| \`scipy\`         | [Official](https://scipy.org/)                            | [![PyPI version](https://img.shields.io/pypi/v/scipy)](https://pypi.org/project/scipy/) | [![License](https://img.shields.io/pypi/l/scipy)](https://pypi.org/project/scipy/)      | ![Last commit](https://img.shields.io/github/last-commit/scipy/scipy)         |
+| \`theseus\`       | [Official](https://github.com/facebookresearch/theseus)   | -                                                                                       | -                                                                                       | ![Last commit](https://img.shields.io/github/last-commit/facebookresearch/theseus) |
+| \`trustregion\`   | [Official](https://github.com/lindonroberts/trust-region) | -                                                                                       | -                                                                                       | ![Last commit](https://img.shields.io/github/last-commit/lindonroberts/trust-region) |
+| \`worhp\`         | [Official](https://worhp.de/)                             | -                                                                                       | -                                                                                       | -                                                                             |
 
-| Package             | Link                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------- |
-| \`choco\`             | [Official](https://pypi.org/project/pychoco/)                                                 |
-| \`cplex\`             | [Official](https://www.ibm.com/analytics/cplex-cp-optimizer)                                  |
-| \`cpmpy\`             | [Official](https://github.com/CPMpy/cpmpy)                                                    |
-| \`feloopy\`           | [Official](https://github.com/feloopy/feloopy)                                             |
-| \`gecode-python\`     | [Official](https://launchpad.net/gecode-python)                                               |
-| \`kalis\`             | [Official](https://www.artelys.com/docs/kalis/index.html)                                     |
-| \`minizinc\`          | [Official](https://minizinc-python.readthedocs.io/en/latest/index.html)                       |
-| \`optapy\`            | [Official](https://www.optapy.org/docs/latest/planner-introduction/planner-introduction.html) |
-| \`ortools\`           | [Official](https://developers.google.com/optimization/cp)                                     |
-| \`python-constraint\` | [Official](https://github.com/python-constraint/python-constraint)                            |
-| \`timefold\`          | [Official](https://timefold.ai/)                                                              |
-| \`z3-solver\`         | [Official](https://github.com/Z3Prover/z3)                                                    |
-
-###  GPP Packages (94)
-
-| Package                    | Link                                                                                  |
-| -------------------------- | ------------------------------------------------------------------------------------- |
-| \`arm-mango\`                | [Official](https://github.com/ARM-software/mango)                                     |
-| \`ax\`                       | [Official](https://github.com/facebook/Ax)                                            |
-| \`bayesian-optimization\`    | [Official](https://github.com/fmfn/BayesianOptimization)                              |
-| \`didppy\`    | [Official](https://didppy.readthedocs.io/en/stable/)                              |
-| \`bayesianevolution\`        | [Official](https://github.com/subhodipbiswas/BayesianEvolution)                       |
-| \`bayeso\`                   | [Official](https://bayeso.readthedocs.io/en/main/)                                    |
-| \`bayesopt\`                 | [Official](https://bayesopt.github.io/)                                               |
-| \`black-box\`                | [Official](https://github.com/paulknysh/blackbox)                                     |
-| \`bolib\`                    | [Official](https://gitlab.com/ibaidev/bolib)                                          |
-| \`cma\`                      | [Official](https://github.com/CMA-ES/pycma)                                           |
-| \`cmaes\`                    | [Official](https://github.com/CyberAgentAILab/cmaes)                                  |
-| \`cobyqa\`                   | [Official](https://github.com/ragonneau/cobyqa)                                       |
-| \`cuopt\`                    | [Official](https://developer.nvidia.com/cuopt-logistics-optimization)                 |
-| \`deap\`                     | [Official](https://github.com/7ossam81/EvoloPy)                                       |
-| \`dfoalgos\`                 | [Official](https://pypi.org/project/dfoalgos/)                                        |
-| \`dfogn\`                    | [Official](https://pypi.org/project/DFOGN/)                                           |
-| \`dlib\`                     | [Official](http://dlib.net/)                                                          |
-| \`evolopy\`                  | [Official](https://github.com/7ossam81/EvoloPy)                                       |
-| \`evoopt\`                   | [Official](https://github.com/tsyet12/EvoOpt)                                         |
-| \`evostra\`                  | [Official](https://github.com/alirezamika/evostra)                                    |
-| \`feloopy\`                  | [Official](https://github.com/feloopy/feloopy)                                     |
-| \`freelunch\`                | [Official](https://pypi.org/project/freelunch/)                                       |
-| \`gaft\`                     | [Official](https://github.com/PytLab/gaft)                                            |
-| \`geneticalgorithm\`         | [Official](https://github.com/rmsolgi/geneticalgorithm)                               |
-| \`goptpy\`                   | [Official](https://github.com/redb0/gotpy)                                            |
-| \`gradient-free-optimizers\` | [Official](https://github.com/SimonBlanke/Gradient-Free-Optimizers)                   |
-| \`gyopt\`                    | [Official](http://sheffieldml.github.io/GPyOpt/)                                      |
-| \`hebo\`                     | [Official](https://pypi.org/project/HEBO/)                                            |
-| \`heuristic_optimization\`   | [Official](https://github.com/tjanson/heuristic_optimization)                         |
-| \`hpbandster\`               | [Official](https://github.com/automl/HpBandSter)                                      |
-| \`hyperopt-sklearn\`         | [Official](https://github.com/hyperopt/hyperopt-sklearn)                                       |
-| \`hyperopt\`                 | [Official](http://hyperopt.github.io/hyperopt/)                                       |
-| \`inspyred\`                 | [Official](https://github.com/aarongarrett/inspyred)                                  |
-| \`jmetalpy\` |[Official](https://github.com/jMetal/jMetalPy) |
-| \`mealpy\`                   | [Official](https://github.com/thieu1995/mealpy)                                       |
-| \`mipego\`                   | [Official](https://github.com/wangronin/MIP-EGO)                                      |
-| \`moptipy\`                  | [Official](https://thomasweise.github.io/moptipy/)                                    |
-| \`mystic\`                   | [Official](https://github.com/uqfoundation/mystic)                                    |
-| \`nevergrad\`                | [Official](https://facebookresearch.github.io/nevergrad/)                             |
-| \`niapy\`                    | [Official](https://github.com/NiaOrg/NiaPy)                                           |
-| \`oasis\`                    | [Official](https://github.com/MAfarrag/Oasis)                                         |
-| \`opro\` |[Official](https://github.com/google-deepmind/opro) |
-| \`optimus\` |[Official](https://github.com/teshnizi/OptiMUS) |
-| \`optuna\`                   | [Official](https://optuna.org/)                                                       |
-| \`optuner\`                  | [Official](https://opentuner.org/)                                                    |
-| \`opytimizer\`               | [Official](https://github.com/gugarosa/opytimizer)                                    |
-| \`orion\` |[Official](https://github.com/Epistimio/orion) |
-| \`orlm\` |[Official](https://github.com/Cardinal-Operations/ORLM) |
-| \`pagmo\`                    | [Official](https://esa.github.io/pagmo2/index.html)                                   |
-| \`pdfo\`                     | [Official](https://www.pdfo.net/index.html)                                           |
-| \`platypus\`                 | [Official](https://platypus.readthedocs.io/en/latest/)                                |
-| \`poppy\` |[Official](https://github.com/instadeepai/poppy) |
-| \`prodyn\`                   | [Official](https://prodyn.readthedocs.io/)                                            |
-| \`proxmin\`                  | [Official](https://github.com/pmelchior/proxmin)                                      |
-| \`proxmin\` |[Official](https://github.com/pmelchior/proxmin) |
-| \`psopt\`                    | [Official](https://pypi.org/project/psopt/)                                           |
-| \`psopy\`                    | [Official](https://github.com/jerrytheo/psopy)                                        |
-| \`py-bobyqa\`                | [Official](https://numericalalgorithmsgroup.github.io/pybobyqa/build/html/index.html) |
-| \`pydogs\`                   | [Official](https://pypi.org/project/pydogs/)                                          |
-| \`pygad\`                    | [Official](https://github.com/ahmedfgad/GeneticAlgorithmPython)                       |
-| \`pygmo\`                    | [Official](https://esa.github.io/pygmo2/)                                             |
-| \`pygpgo\`                   | [Official](https://pygpgo.readthedocs.io/en/latest/)                                  |
-| \`pymetaheuristic\`          | [Official](https://github.com/Valdecy/pyMetaheuristic)                                |
-| \`pymoo\`                    | [Official](https://pymoo.org/)                                                        |
-| \`pyopus\`                   | [Official](https://fides.fe.uni-lj.si/pyopus/)                                        |
-| \`pypesto\`                  | [Official](https://github.com/icb-dcm/pypesto)                                        |
-| \`pyriad\`                   | [Official](https://pypi.org/project/pyriad/)                                          |
-| \`pysmac\`                   | [Official](https://github.com/automl/pysmac)                                          |
-| \`pysot\`                    | [Official](https://pysot.readthedocs.io/en/latest/)                                   |
-| \`pyswarms\`                 | [Official](https://pyswarms.readthedocs.io/en/latest/)                                |
-| \`qiskit-optimization\`      | [Official](https://pypi.org/project/qiskit-optimization/)                             |
-| \`rapids-NeurIPS\`           | [Official](https://github.com/daxiongshu/rapids-ai-BBO-2nd-place-solution)            |
-| \`ray\`                      | [Official](https://github.com/ray-project/ray)                                        |
-| \`rbfopt\`                   | [Official](https://github.com/coin-or/rbfopt)                                         |
-| \`rl4co\` |[Official](https://github.com/ai4co/rl4co) |
-| \`robo\`                    | [Official](https://github.com/automl/RoBO)                                          |
-| \`safeopt\` |[Official](https://github.com/befelix/safeopt) |
-| \`scikit-opt\`               | [Official](https://github.com/guofei9987/scikit-opt)                                  |
-| \`scikit-optimize\`          | [Official](https://scikit-optimize.github.io/stable/)                                 |
-| \`simanneal\`                | [Official](https://github.com/perrygeo/simanneal)                                     |
-| \`simple\`                   | [Official](https://github.com/chrisstroemel/Simple)                                   |
-| \`solidpy\`                  | [Official](https://github.com/100/Solid)                                              |
-| \`spearmint\`                | [Official](https://github.com/HIPS/Spearmint)                                         |
-| \`spotpy\`                   | [Official](https://spotpy.readthedocs.io/en/stable/)                                  |
-| \`ssb-optimize\`             | [Official](https://github.com/theleftcoast/swarm-simplex-bootstrap)                   |
-| \`swarm-cg\`                 | [Official](https://github.com/GMPavanLab/Swarm-CG)                                    |
-| \`swarmlib\`                 | [Official](https://pypi.org/project/swarmlib/)                                        |
-| \`swarmpackagepy\`           | [Official](https://pypi.org/project/SwarmPackagePy/)                                  |
-| \`tgo\`                      | [Official](https://github.com/stefan-endres/tgo)                                      |
-| \`turbo-NeurIPS\`            | [Official](https://github.com/nphdang/turbo_bbo_neurips_2020)                         |
-| \`turbo\`                    | [Official](https://github.com/uber-research/TuRBO)                                    |
-| \`ultraopt\`                 | [Official](https://auto-flow.github.io/ultraopt/zh/)                                  |
-| \`yabox\`                    | [Official](https://github.com/pablormier/yabox)                                       |
-| \`zoofs\`                    | [Official](https://github.com/jaswinder9051998/zoofs)                                 |
-| \`zoopt\`                    | [Official](https://github.com/polixir/ZOOpt)                                          |
+### CP Packages (12)
 
 
-###  MOP Packages (6)
-
-| Package            | Link                                                                                             |
-| ------------------ | ------------------------------------------------------------------------------------------------ |
-| \`feloopy\`          | [Official](https://github.com/feloopy/feloopy)                                                |
-| \`optuna\`           | [Official](https://optuna.readthedocs.io/en/stable/tutorial/20_recipes/002_multi_objective.html) |
-| \`parmoo\`           | [Official](https://github.com/parmoo/parmoo)                                                     |
-| \`pydecision\`       | [Official](https://github.com/Valdecy/pyDecision)                                                |
-| \`pymoo\`            | [Official](https://pymoo.org/)                                                                   |
-| \`pymultiobjective\` | [Official](https://github.com/Valdecy/pyMultiobjective)                                          |
-
-###  QPP Packages (3)
-
-| Package            | Link                                                                                             |
-| ------------------ | ------------------------------------------------------------------------------------------------ |
-| \`dwave-optimization\`   | [Official](https://github.com/dwavesystems/dwave-optimization)                             |
-| \`qiskit-optimization\`| [Official](https://github.com/qiskit-community/qiskit-optimization) |
-
-###  PSP Packages (3)
-
-| Package            | Link                                                                                             |
-| ------------------ | ------------------------------------------------------------------------------------------------ |
-| \`optimization-algorithms\`   | [Official](https://github.com/alqmase/optimization-algorithms)                        |
-| \`gurobi-optimods\`   | [Official](https://pypi.org/project/gurobi-optimods/)                        |
-| \`qubots\`   | [Official](https://github.com/Rastion/qubots/tree/main)                             |
+| Package                 | Official Link                                                                                                 | Version                                                 | License                                                | Last commit                                                                                   |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| \`choco\`               | [Official](https://pypi.org/project/pychoco/)                                                                 | ![PyPI version](https://img.shields.io/pypi/v/pychoco)   | ![License](https://img.shields.io/pypi/l/pychoco)       | –                                                                                             |
+| \`cplex\`               | [Official](https://www.ibm.com/analytics/cplex-cp-optimizer)                                                  | ![PyPI version](https://img.shields.io/pypi/v/cplex)     | ![License](https://img.shields.io/pypi/l/cplex)         | –                                                                                             |
+| \`cpmpy\`               | [Official](https://github.com/CPMpy/cpmpy)                                                                     | ![PyPI version](https://img.shields.io/pypi/v/cpmpy)     | ![License](https://img.shields.io/pypi/l/cpmpy)         | ![Last commit](https://img.shields.io/github/last-commit/CPMpy/cpmpy)                         |
+| \`feloopy\`             | [Official](https://github.com/feloopy/feloopy)                                                                 | ![PyPI version](https://img.shields.io/pypi/v/feloopy)   | ![License](https://img.shields.io/pypi/l/feloopy)       | ![Last commit](https://img.shields.io/github/last-commit/feloopy/feloopy)                     |
+| \`gecode-python\`       | [Official](https://launchpad.net/gecode-python)                                                                | ![PyPI version](https://img.shields.io/pypi/v/gecode-python) | ![License](https://img.shields.io/pypi/l/gecode-python) | –                                                                                             |
+| \`hexaly\`              | [Official](https://www.hexaly.com/)                                                                            | –                                                       | –                                                      | –                                                                                             |
+| \`kalis\`               | [Official](https://www.artelys.com/docs/kalis/index.html)                                                      | –                                                       | –                                                      | –                                                                                             |
+| \`minizinc\`            | [Official](https://minizinc-python.readthedocs.io/en/latest/index.html)                                        | ![PyPI version](https://img.shields.io/pypi/v/minizinc-python) | ![License](https://img.shields.io/pypi/l/minizinc-python) | –                                                                                             |
+| \`optapy\`              | [Official](https://www.optapy.org/docs/latest/planner-introduction/planner-introduction.html)                  | ![PyPI version](https://img.shields.io/pypi/v/optapy)    | ![License](https://img.shields.io/pypi/l/optapy)        | ![Last commit](https://img.shields.io/github/last-commit/optapy/optapy)                       |
+| \`ortools\`             | [Official](https://developers.google.com/optimization/cp)                                                      | ![PyPI version](https://img.shields.io/pypi/v/ortools)   | ![License](https://img.shields.io/pypi/l/ortools)       | ![Last commit](https://img.shields.io/github/last-commit/google/or-tools)                     |
+| \`python-constraint\`   | [Official](https://github.com/python-constraint/python-constraint)                                             | ![PyPI version](https://img.shields.io/pypi/v/python-constraint) | ![License](https://img.shields.io/pypi/l/python-constraint) | ![Last commit](https://img.shields.io/github/last-commit/python-constraint/python-constraint) |
+| \`z3-solver\`           | [Official](https://github.com/Z3Prover/z3)                                                                      | ![PyPI version](https://img.shields.io/pypi/v/z3-solver) | ![License](https://img.shields.io/pypi/l/z3-solver)     | ![Last commit](https://img.shields.io/github/last-commit/Z3Prover/z3)                           |
 
 
-###  Benchmarking Packages (5)
+### GPP Packages (97)
 
-| Benchmark  | Link                                                     |
-| ---------- | -------------------------------------------------------- |
-| \`feloopy\`  | [Official](https://github.com/feloopy/feloopy)        |
-| \`humpday\`  | [Official](https://www.microprediction.com/blog/humpday) |
-| \`pycutest\` | [Official](https://github.com/jfowkes/pycutest)          |
-| \`benchopt\` | [Official](https://github.com/benchopt/benchopt)          |
-| Mittelmann | [Official](http://plato.la.asu.edu/bench.html)           |
+
+| Package                     | Official Link                                                                                                           | Version                                                                                       | License                                                                                       | Last commit                                                                                                    |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| \`arm-mango\`               | [Official](https://github.com/ARM-software/mango)                                                                        | ![PyPI version](https://img.shields.io/pypi/v/arm-mango)                                       | ![License](https://img.shields.io/pypi/l/arm-mango)                                           | ![Last commit](https://img.shields.io/github/last-commit/ARM-software/mango)                                   |
+| \`ax\`                      | [Official](https://github.com/facebook/Ax)                                                                               | ![PyPI version](https://img.shields.io/pypi/v/ax)                                             | ![License](https://img.shields.io/pypi/l/ax)                                                 | ![Last commit](https://img.shields.io/github/last-commit/facebook/Ax)                                          |
+| \`bayesian-optimization\`   | [Official](https://github.com/fmfn/BayesianOptimization)                                                                  | ![PyPI version](https://img.shields.io/pypi/v/bayesian-optimization)                          | ![License](https://img.shields.io/pypi/l/bayesian-optimization)                               | ![Last commit](https://img.shields.io/github/last-commit/fmfn/BayesianOptimization)                           |
+| \`bayesianevolution\`       | [Official](https://github.com/subhodipbiswas/BayesianEvolution)                                                           | ![PyPI version](https://img.shields.io/pypi/v/bayesianevolution)                              | ![License](https://img.shields.io/pypi/l/bayesianevolution)                                   | ![Last commit](https://img.shields.io/github/last-commit/subhodipbiswas/BayesianEvolution)                     |
+| \`bayeso\`                  | [Official](https://bayeso.readthedocs.io/en/main/)                                                                        | ![PyPI version](https://img.shields.io/pypi/v/bayeso)                                         | ![License](https://img.shields.io/pypi/l/bayeso)                                            | ![Last commit](https://img.shields.io/github/last-commit/bayeso-dev/bayeso)                                   |
+| \`bayesopt\`                | [Official](https://bayesopt.github.io/)                                                                                   | ![PyPI version](https://img.shields.io/pypi/v/bayesopt)                                       | ![License](https://img.shields.io/pypi/l/bayesopt)                                          | ![Last commit](https://img.shields.io/github/last-commit/bayesopt/bayesopt)                                  |
+| \`black-box\`               | [Official](https://github.com/paulknysh/blackbox)                                                                          | ![PyPI version](https://img.shields.io/pypi/v/black-box)                                      | ![License](https://img.shields.io/pypi/l/black-box)                                         | ![Last commit](https://img.shields.io/github/last-commit/paulknysh/blackbox)                                  |
+| \`bolib\`                   | [Official](https://gitlab.com/ibaidev/bolib)                                                                               | –                                                                                             | –                                                                                             | ![Last commit](https://img.shields.io/gitlab/last-commit/ibaidev/bolib)                                       |
+| \`cbx\`                     | [Official](https://github.com/PdIPS/CBXpy)                                                                                 | ![PyPI version](https://img.shields.io/pypi/v/cbx)                                            | ![License](https://img.shields.io/pypi/l/cbx)                                               | ![Last commit](https://img.shields.io/github/last-commit/PdIPS/CBXpy)                                         |
+| \`cma\`                     | [Official](https://github.com/CMA-ES/pycma)                                                                                | ![PyPI version](https://img.shields.io/pypi/v/cma)                                            | ![License](https://img.shields.io/pypi/l/cma)                                               | ![Last commit](https://img.shields.io/github/last-commit/CMA-ES/pycma)                                       |
+| \`cmaes\`                   | [Official](https://github.com/CyberAgentAILab/cmaes)                                                                        | ![PyPI version](https://img.shields.io/pypi/v/cmaes)                                          | ![License](https://img.shields.io/pypi/l/cmaes)                                             | ![Last commit](https://img.shields.io/github/last-commit/CyberAgentAILab/cmaes)                              |
+| \`cobyqa\`                  | [Official](https://github.com/ragonneau/cobyqa)                                                                             | ![PyPI version](https://img.shields.io/pypi/v/cobyqa)                                         | ![License](https://img.shields.io/pypi/l/cobyqa)                                            | ![Last commit](https://img.shields.io/github/last-commit/ragonneau/cobyqa)                                   |
+| \`cuopt\`                   | [Official](https://developer.nvidia.com/cuopt-logistics-optimization)                                                       | –                                                                                             | –                                                                                             | –                                                                                                              |
+| \`deap\`                    | [Official](https://github.com/7ossam81/EvoloPy)                                                                              | ![PyPI version](https://img.shields.io/pypi/v/deap)                                           | ![License](https://img.shields.io/pypi/l/deap)                                              | ![Last commit](https://img.shields.io/github/last-commit/7ossam81/EvoloPy)                                    |
+| \`dfoalgos\`                | [Official](https://pypi.org/project/dfoalgos/)                                                                               | ![PyPI version](https://img.shields.io/pypi/v/dfoalgos)                                       | ![License](https://img.shields.io/pypi/l/dfoalgos)                                          | –                                                                                                              |
+| \`dfogn\`                   | [Official](https://pypi.org/project/DFOGN/)                                                                                 | ![PyPI version](https://img.shields.io/pypi/v/DFOGN)                                          | ![License](https://img.shields.io/pypi/l/DFOGN)                                             | –                                                                                                              |
+| \`didppy\`                  | [Official](https://didppy.readthedocs.io/en/stable/)                                                                         | ![PyPI version](https://img.shields.io/pypi/v/didppy)                                        | ![License](https://img.shields.io/pypi/l/didppy)                                           | ![Last commit](https://img.shields.io/github/last-commit/hdco/didppy)                                        |
+| \`dlib\`                    | [Official](http://dlib.net/)                                                                                                | ![PyPI version](https://img.shields.io/pypi/v/dlib)                                          | ![License](https://img.shields.io/pypi/l/dlib)                                             | ![Last commit](https://img.shields.io/github/last-commit/davisking/dlib)                                     |
+| \`evolopy\`                 | [Official](https://github.com/7ossam81/EvoloPy)                                                                               | ![PyPI version](https://img.shields.io/pypi/v/evolopy)                                       | ![License](https://img.shields.io/pypi/l/evolopy)                                          | ![Last commit](https://img.shields.io/github/last-commit/7ossam81/EvoloPy)                                    |
+| \`evoopt\`                  | [Official](https://github.com/tsyet12/EvoOpt)                                                                                 | ![PyPI version](https://img.shields.io/pypi/v/evoopt)                                        | ![License](https://img.shields.io/pypi/l/evoopt)                                           | ![Last commit](https://img.shields.io/github/last-commit/tsyet12/EvoOpt)                                     |
+| \`evostra\`                 | [Official](https://github.com/alirezamika/evostra)                                                                            | ![PyPI version](https://img.shields.io/pypi/v/evostra)                                       | ![License](https://img.shields.io/pypi/l/evostra)                                          | ![Last commit](https://img.shields.io/github/last-commit/alirezamika/evostra)                               |
+| \`feloopy\`                 | [Official](https://github.com/feloopy/feloopy)                                                                                | ![PyPI version](https://img.shields.io/pypi/v/feloopy)                                       | ![License](https://img.shields.io/pypi/l/feloopy)                                          | ![Last commit](https://img.shields.io/github/last-commit/feloopy/feloopy)                                   |
+| \`freelunch\`               | [Official](https://pypi.org/project/freelunch/)                                                                               | ![PyPI version](https://img.shields.io/pypi/v/freelunch)                                     | ![License](https://img.shields.io/pypi/l/freelunch)                                        | –                                                                                                              |
+| \`gaft\`                    | [Official](https://github.com/PytLab/gaft)                                                                                    | ![PyPI version](https://img.shields.io/pypi/v/gaft)                                          | ![License](https://img.shields.io/pypi/l/gaft)                                             | ![Last commit](https://img.shields.io/github/last-commit/PytLab/gaft)                                        |
+| \`geneticalgorithm\`        | [Official](https://github.com/rmsolgi/geneticalgorithm)                                                                         | ![PyPI version](https://img.shields.io/pypi/v/geneticalgorithm)                             | ![License](https://img.shields.io/pypi/l/geneticalgorithm)                                | ![Last commit](https://img.shields.io/github/last-commit/rmsolgi/geneticalgorithm)                          |
+| \`goptpy\`                  | [Official](https://github.com/redb0/gotpy)                                                                                    | ![PyPI version](https://img.shields.io/pypi/v/goptpy)                                        | ![License](https://img.shields.io/pypi/l/goptpy)                                           | ![Last commit](https://img.shields.io/github/last-commit/redb0/gotpy)                                       |
+| \`gradient-free-optimizers\`| [Official](https://github.com/SimonBlanke/Gradient-Free-Optimizers)                                                             | ![PyPI version](https://img.shields.io/pypi/v/gradient-free-optimizers)                     | ![License](https://img.shields.io/pypi/l/gradient-free-optimizers)                       | ![Last commit](https://img.shields.io/github/last-commit/SimonBlanke/Gradient-Free-Optimizers)              |
+| \`gyopt\`                   | [Official](http://sheffieldml.github.io/GPyOpt/)                                                                               | ![PyPI version](https://img.shields.io/pypi/v/GPyOpt)                                        | ![License](https://img.shields.io/pypi/l/GPyOpt)                                           | ![Last commit](https://img.shields.io/github/last-commit/sheffieldml/GPyOpt)                                |
+| \`hebo\`                    | [Official](https://pypi.org/project/HEBO/)                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/HEBO)                                          | ![License](https://img.shields.io/pypi/l/HEBO)                                             | ![Last commit](https://img.shields.io/github/last-commit/huawei-noah/HEBO)                                  |
+| \`heuristic_optimization\`  | [Official](https://github.com/tjanson/heuristic_optimization)                                                                     | ![PyPI version](https://img.shields.io/pypi/v/heuristic_optimization)                       | ![License](https://img.shields.io/pypi/l/heuristic_optimization)                         | ![Last commit](https://img.shields.io/github/last-commit/tjanson/heuristic_optimization)                   |
+| \`hexaly\`                  | [Official](https://www.hexaly.com/)                                                                                             | –                                                                                           | –                                                                                           | –                                                                                                              |
+| \`hpbandster\`              | [Official](https://github.com/automl/HpBandSter)                                                                                 | ![PyPI version](https://img.shields.io/pypi/v/hpbandster)                                   | ![License](https://img.shields.io/pypi/l/hpbandster)                                      | ![Last commit](https://img.shields.io/github/last-commit/automl/HpBandSter)                                 |
+| \`hyperopt-sklearn\`        | [Official](https://github.com/hyperopt/hyperopt-sklearn)                                                                           | ![PyPI version](https://img.shields.io/pypi/v/hyperopt-sklearn)                             | ![License](https://img.shields.io/pypi/l/hyperopt-sklearn)                               | ![Last commit](https://img.shields.io/github/last-commit/hyperopt/hyperopt-sklearn)                       |
+| \`hyperopt\`                | [Official](http://hyperopt.github.io/hyperopt/)                                                                                   | ![PyPI version](https://img.shields.io/pypi/v/hyperopt)                                     | ![License](https://img.shields.io/pypi/l/hyperopt)                                       | ![Last commit](https://img.shields.io/github/last-commit/hyperopt/hyperopt)                               |
+| \`inspyred\`                | [Official](https://github.com/aarongarrett/inspyred)                                                                                | ![PyPI version](https://img.shields.io/pypi/v/inspyred)                                     | ![License](https://img.shields.io/pypi/l/inspyred)                                       | ![Last commit](https://img.shields.io/github/last-commit/aarongarrett/inspyred)                           |
+| \`jmetalpy\`                | [Official](https://github.com/jMetal/jMetalPy)                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/jmetalpy)                                     | ![License](https://img.shields.io/pypi/l/jmetalpy)                                       | ![Last commit](https://img.shields.io/github/last-commit/jMetal/jMetalPy)                                 |
+| \`mealpy\`                  | [Official](https://github.com/thieu1995/mealpy)                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/mealpy)                                       | ![License](https://img.shields.io/pypi/l/mealpy)                                         | ![Last commit](https://img.shields.io/github/last-commit/thieu1995/mealpy)                                |
+| \`mipego\`                  | [Official](https://github.com/wangronin/MIP-EGO)                                                                                    | ![PyPI version](https://img.shields.io/pypi/v/mipego)                                       | ![License](https://img.shields.io/pypi/l/mipego)                                         | ![Last commit](https://img.shields.io/github/last-commit/wangronin/MIP-EGO)                               |
+| \`moptipy\`                 | [Official](https://thomasweise.github.io/moptipy/)                                                                                 | ![PyPI version](https://img.shields.io/pypi/v/moptipy)                                      | ![License](https://img.shields.io/pypi/l/moptipy)                                        | ![Last commit](https://img.shields.io/github/last-commit/thomasweise/moptipy)                            |
+| \`mystic\`                  | [Official](https://github.com/uqfoundation/mystic)                                                                                  | ![PyPI version](https://img.shields.io/pypi/v/mystic)                                       | ![License](https://img.shields.io/pypi/l/mystic)                                         | ![Last commit](https://img.shields.io/github/last-commit/uqfoundation/mystic)                            |
+| \`nevergrad\`               | [Official](https://facebookresearch.github.io/nevergrad/)                                                                           | ![PyPI version](https://img.shields.io/pypi/v/nevergrad)                                    | ![License](https://img.shields.io/pypi/l/nevergrad)                                      | ![Last commit](https://img.shields.io/github/last-commit/facebookresearch/nevergrad)                     |
+| \`niapy\`                   | [Official](https://github.com/NiaOrg/NiaPy)                                                                                         | ![PyPI version](https://img.shields.io/pypi/v/niapy)                                        | ![License](https://img.shields.io/pypi/l/niapy)                                          | ![Last commit](https://img.shields.io/github/last-commit/NiaOrg/NiaPy) |
+| \`oasis\`                     | [Official](https://github.com/MAfarrag/Oasis)                                                                                       | ![PyPI version](https://img.shields.io/pypi/v/oasis)        | ![License](https://img.shields.io/pypi/l/oasis)            | ![Last commit](https://img.shields.io/github/last-commit/MAfarrag/Oasis)                         |
+| \`opro\`                      | [Official](https://github.com/google-deepmind/opro)                                                                                 | ![PyPI version](https://img.shields.io/pypi/v/farsight-opro)¹ | ![License](https://img.shields.io/pypi/l/farsight-opro)¹   | ![Last commit](https://img.shields.io/github/last-commit/google-deepmind/opro)                   |
+| \`optimus\`                   | [Official](https://github.com/teshnizi/OptiMUS)                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/optimus)      | ![License](https://img.shields.io/pypi/l/optimus)          | ![Last commit](https://img.shields.io/github/last-commit/teshnizi/OptiMUS)                       |
+| \`optuna\`                    | [Official](https://optuna.org/)                                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/optuna)       | ![License](https://img.shields.io/pypi/l/optuna)           | ![Last commit](https://img.shields.io/github/last-commit/optuna/optuna)                           |
+| \`optuner\`                   | [Official](https://opentuner.org/)                                                                                                  | ![PyPI version](https://img.shields.io/pypi/v/opentuner)    | ![License](https://img.shields.io/pypi/l/opentuner)        | –                                                                                                 |
+| \`opytimizer\`                | [Official](https://github.com/gugarosa/opytimizer)                                                                                  | ![PyPI version](https://img.shields.io/pypi/v/opytimizer)   | ![License](https://img.shields.io/pypi/l/opytimizer)       | ![Last commit](https://img.shields.io/github/last-commit/gugarosa/opytimizer)                     |
+| \`orion\`                     | [Official](https://github.com/Epistimio/orion)                                                                                       | ![PyPI version](https://img.shields.io/pypi/v/orion)        | ![License](https://img.shields.io/pypi/l/orion)            | ![Last commit](https://img.shields.io/github/last-commit/Epistimio/orion)                         |
+| \`orlm\`                      | [Official](https://github.com/Cardinal-Operations/ORLM)                                                                              | ![PyPI version](https://img.shields.io/pypi/v/orlm)         | ![License](https://img.shields.io/pypi/l/orlm)             | ![Last commit](https://img.shields.io/github/last-commit/Cardinal-Operations/ORLM)                |
+| \`pagmo\`                     | [Official](https://esa.github.io/pagmo2/index.html)                                                                                 | ![PyPI version](https://img.shields.io/pypi/v/pygmo)¹       | ![License](https://img.shields.io/pypi/l/pygmo)¹           | ![Last commit](https://img.shields.io/github/last-commit/esa/pagmo2)                               |
+| \`pdfo\`                      | [Official](https://www.pdfo.net/index.html)                                                                                         | ![PyPI version](https://img.shields.io/pypi/v/pdfo)         | ![License](https://img.shields.io/pypi/l/pdfo)             | ![Last commit](https://img.shields.io/github/last-commit/jundia/pdfo)                             |
+| \`platypus\`                  | [Official](https://platypus.readthedocs.io/en/latest/)                                                                               | ![PyPI version](https://img.shields.io/pypi/v/Platypus-Opt) | ![License](https://img.shields.io/pypi/l/Platypus-Opt)     | ![Last commit](https://img.shields.io/github/last-commit/Platypus/Platypus)                       |
+| \`poppy\`                     | [Official](https://github.com/instadeepai/poppy)                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/poppy-py)¹    | ![License](https://img.shields.io/pypi/l/poppy-py)¹        | ![Last commit](https://img.shields.io/github/last-commit/instadeepai/poppy)                       |
+| \`prodyn\`                    | [Official](https://prodyn.readthedocs.io/)                                                                                            | ![PyPI version](https://img.shields.io/pypi/v/prodyn)       | ![License](https://img.shields.io/pypi/l/prodyn)           | ![Last commit](https://img.shields.io/github/last-commit/matthew-brett/prodyn)                     |
+| \`proxmin\`                   | [Official](https://github.com/pmelchior/proxmin)                                                                                      | ![PyPI version](https://img.shields.io/pypi/v/proxmin)      | ![License](https://img.shields.io/pypi/l/proxmin)          | ![Last commit](https://img.shields.io/github/last-commit/pmelchior/proxmin)                       |
+| \`psopt\`                     | [Official](https://pypi.org/project/psopt/)                                                                                            | ![PyPI version](https://img.shields.io/pypi/v/psopt)        | ![License](https://img.shields.io/pypi/l/psopt)            | –                                                                                                 |
+| \`psopy\`                     | [Official](https://github.com/jerrytheo/psopy)                                                                                         | ![PyPI version](https://img.shields.io/pypi/v/psopy)        | ![License](https://img.shields.io/pypi/l/psopy)            | ![Last commit](https://img.shields.io/github/last-commit/jerrytheo/psopy)                         |
+| \`py-bobyqa\`                 | [Official](https://numericalalgorithmsgroup.github.io/pybobyqa/build/html/index.html)                                                  | ![PyPI version](https://img.shields.io/pypi/v/py-bobyqa)    | ![License](https://img.shields.io/pypi/l/py-bobyqa)        | ![Last commit](https://img.shields.io/github/last-commit/numericalalgorithmsgroup/pybobyqa)       |
+| \`pydogs\`                    | [Official](https://pypi.org/project/pydogs/)                                                                                            | ![PyPI version](https://img.shields.io/pypi/v/pydogs)       | ![License](https://img.shields.io/pypi/l/pydogs)           | –                                                                                                 |
+| \`pygad\`                     | [Official](https://github.com/ahmedfgad/GeneticAlgorithmPython)                                                                          | ![PyPI version](https://img.shields.io/pypi/v/pygad)        | ![License](https://img.shields.io/pypi/l/pygad)            | ![Last commit](https://img.shields.io/github/last-commit/ahmedfgad/GeneticAlgorithmPython)         |
+| \`pygmo\`                     | [Official](https://esa.github.io/pygmo2/)                                                                                               | ![PyPI version](https://img.shields.io/pypi/v/pygmo)¹       | ![License](https://img.shields.io/pypi/l/pygmo)¹           | ![Last commit](https://img.shields.io/github/last-commit/esa/pygmo2)                               |
+| \`pygpgo\`                    | [Official](https://pygpgo.readthedocs.io/en/latest/)                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/pygpgo)       | ![License](https://img.shields.io/pypi/l/pygpgo)            | ![Last commit](https://img.shields.io/github/last-commit/johannesbader/pygpgo)                    |
+| \`pymetaheuristic\`           | [Official](https://github.com/Valdecy/pyMetaheuristic)                                                                                    | ![PyPI version](https://img.shields.io/pypi/v/pymetaheuristic) | ![License](https://img.shields.io/pypi/l/pymetaheuristic)   | ![Last commit](https://img.shields.io/github/last-commit/Valdecy/pyMetaheuristic)                 |
+| \`pymoo\`                     | [Official](https://pymoo.org/)                                                                                                           | ![PyPI version](https://img.shields.io/pypi/v/pymoo)        | ![License](https://img.shields.io/pypi/l/pymoo)            | ![Last commit](https://img.shields.io/github/last-commit/mojtabaz/pymoo)                         |
+| \`pyopus\`                    | [Official](https://fides.fe.uni-lj.si/pyopus/)                                                                                            | ![PyPI version](https://img.shields.io/pypi/v/pyopus)       | ![License](https://img.shields.io/pypi/l/pyopus)           | –                                                                                                 |
+| \`pypesto\`                   | [Official](https://github.com/icb-dcm/pypesto)                                                                                             | ![PyPI version](https://img.shields.io/pypi/v/pypesto)     | ![License](https://img.shields.io/pypi/l/pypesto)          | ![Last commit](https://img.shields.io/github/last-commit/icb-dcm/pypesto)                         |
+| \`pyriad\`                    | [Official](https://pypi.org/project/pyriad/)                                                                                               | ![PyPI version](https://img.shields.io/pypi/v/pyriad)      | ![License](https://img.shields.io/pypi/l/pyriad)           | –                                                                                                 |
+| \`pysmac\`                    | [Official](https://github.com/automl/pysmac)                                                                                                | ![PyPI version](https://img.shields.io/pypi/v/pysmac)      | ![License](https://img.shields.io/pypi/l/pysmac)           | ![Last commit](https://img.shields.io/github/last-commit/automl/pysmac)                          |
+| \`pysot\`                     | [Official](https://pysot.readthedocs.io/en/latest/)                                                                                       | ![PyPI version](https://img.shields.io/pypi/v/pysot)       | ![License](https://img.shields.io/pypi/l/pysot)            | ![Last commit](https://img.shields.io/github/last-commit/borglab/pysot)                           |
+| \`pyswarms\`                  | [Official](https://pyswarms.readthedocs.io/en/latest/)                                                                                      | ![PyPI version](https://img.shields.io/pypi/v/pyswarms)    | ![License](https://img.shields.io/pypi/l/pyswarms)         | ![Last commit](https://img.shields.io/github/last-commit/ljvmiranda921/pyswarms)                  |
+| \`qiskit-optimization\`       | [Official](https://pypi.org/project/qiskit-optimization/)                                                                                   | ![PyPI version](https://img.shields.io/pypi/v/qiskit-optimization) | ![License](https://img.shields.io/pypi/l/qiskit-optimization) | ![Last commit](https://img.shields.io/github/last-commit/qiskit-community/qiskit-optimization)    |
+| \`rapids-NeurIPS\`            | [Official](https://github.com/daxiongshu/rapids-ai-BBO-2nd-place-solution)                                                                     | –                                                          | –                                                          | ![Last commit](https://img.shields.io/github/last-commit/daxiongshu/rapids-ai-BBO-2nd-place-solution) |
+| \`ray\`                       | [Official](https://github.com/ray-project/ray)                                                                                                | ![PyPI version](https://img.shields.io/pypi/v/ray)         | ![License](https://img.shields.io/pypi/l/ray)              | ![Last commit](https://img.shields.io/github/last-commit/ray-project/ray)                         |
+| \`rbfopt\`                    | [Official](https://github.com/coin-or/rbfopt)                                                                                                   | ![PyPI version](https://img.shields.io/pypi/v/rbfopt)      | ![License](https://img.shields.io/pypi/l/rbfopt)           | ![Last commit](https://img.shields.io/github/last-commit/coin-or/rbfopt)                         |
+| \`rl4co\`                     | [Official](https://github.com/ai4co/rl4co)                                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/rl4co)       | ![License](https://img.shields.io/pypi/l/rl4co)            | ![Last commit](https://img.shields.io/github/last-commit/ai4co/rl4co)                             |
+| \`robo\`                      | [Official](https://github.com/automl/RoBO)                                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/robo)        | ![License](https://img.shields.io/pypi/l/robo)             | ![Last commit](https://img.shields.io/github/last-commit/automl/RoBO)                            |
+| \`safeopt\`                   | [Official](https://github.com/befelix/safeopt)                                                                                                 | ![PyPI version](https://img.shields.io/pypi/v/safeopt)     | ![License](https://img.shields.io/pypi/l/safeopt)          | ![Last commit](https://img.shields.io/github/last-commit/befelix/safeopt)                        |
+| \`scikit-opt\`                | [Official](https://github.com/guofei9987/scikit-opt)                                                                                           | ![PyPI version](https://img.shields.io/pypi/v/scikit-opt)  | ![License](https://img.shields.io/pypi/l/scikit-opt)       | ![Last commit](https://img.shields.io/github/last-commit/guofei9987/scikit-opt)                  |
+| \`scikit-optimize\`           | [Official](https://scikit-optimize.github.io/stable/)                                                                                          | ![PyPI version](https://img.shields.io/pypi/v/scikit-optimize) | ![License](https://img.shields.io/pypi/l/scikit-optimize) | ![Last commit](https://img.shields.io/github/last-commit/scikit-optimize/scikit-optimize)        |
+| \`simanneal\`                 | [Official](https://github.com/perrygeo/simanneal)                                                                                                | ![PyPI version](https://img.shields.io/pypi/v/simanneal)   | ![License](https://img.shields.io/pypi/l/simanneal)         | ![Last commit](https://img.shields.io/github/last-commit/perrygeo/simanneal)                      |
+| \`simple\`                    | [Official](https://github.com/chrisstroemel/Simple)                                                                                             | ![PyPI version](https://img.shields.io/pypi/v/simple)      | ![License](https://img.shields.io/pypi/l/simple)           | ![Last commit](https://img.shields.io/github/last-commit/chrisstroemel/Simple)                    |
+| \`solidpy\`                   | [Official](https://github.com/100/Solid)                                                                                                        | ![PyPI version](https://img.shields.io/pypi/v/solidpy)     | ![License](https://img.shields.io/pypi/l/solidpy)          | ![Last commit](https://img.shields.io/github/last-commit/100/Solid)                               |
+| \`spearmint\`                 | [Official](https://github.com/HIPS/Spearmint)                                                                                                   | ![PyPI version](https://img.shields.io/pypi/v/spearmint)   | ![License](https://img.shields.io/pypi/l/spearmint)         | ![Last commit](https://img.shields.io/github/last-commit/HIPS/Spearmint)                          |
+| \`spotpy\`                    | [Official](https://spotpy.readthedocs.io/en/stable/)                                                                                             | ![PyPI version](https://img.shields.io/pypi/v/spotpy)      | ![License](https://img.shields.io/pypi/l/spotpy)           | ![Last commit](https://img.shields.io/github/last-commit/UVic-EnviroLab/spotpy)                   |
+| \`ssb-optimize\`              | [Official](https://github.com/theleftcoast/swarm-simplex-bootstrap)                                                                               | ![PyPI version](https://img.shields.io/pypi/v/ssb-optimize) | ![License](https://img.shields.io/pypi/l/ssb-optimize)      | ![Last commit](https://img.shields.io/github/last-commit/theleftcoast/swarm-simplex-bootstrap)     |
+| \`swarm-cg\`                  | [Official](https://github.com/GMPavanLab/Swarm-CG)                                                                                                | ![PyPI version](https://img.shields.io/pypi/v/swarm-cg)    | ![License](https://img.shields.io/pypi/l/swarm-cg)          | ![Last commit](https://img.shields.io/github/last-commit/GMPavanLab/Swarm-CG)                      |
+| \`swarmlib\`                  | [Official](https://pypi.org/project/swarmlib/)                                                                                                   | ![PyPI version](https://img.shields.io/pypi/v/swarmlib)    | ![License](https://img.shields.io/pypi/l/swarmlib)         | –                                                                                                 |
+| \`swarmpackagepy\`            | [Official](https://pypi.org/project/SwarmPackagePy/)                                                                                             | ![PyPI version](https://img.shields.io/pypi/v/SwarmPackagePy) | ![License](https://img.shields.io/pypi/l/SwarmPackagePy)   | –                                                                                                 |
+| \`tgo\`                       | [Official](https://github.com/stefan-endres/tgo)                                                                                                 | ![PyPI version](https://img.shields.io/pypi/v/tgo)         | ![License](https://img.shields.io/pypi/l/tgo)              | ![Last commit](https://img.shields.io/github/last-commit/stefan-endres/tgo)                        |
+| \`timefold\`                  | [Official](https://timefold.ai/)                                                                                                                 | –                                                          | –                                                          | –                                                                                                 |
+| \`turbo-NeurIPS\`             | [Official](https://github.com/nphdang/turbo_bbo_neurips_2020)                                                                                     | –                                                          | –                                                          | ![Last commit](https://img.shields.io/github/last-commit/nphdang/turbo_bbo_neurips_2020)           |
+| \`turbo\`                     | [Official](https://github.com/uber-research/TuRBO)                                                                                               | ![PyPI version](https://img.shields.io/pypi/v/turbo)       | ![License](https://img.shields.io/pypi/l/turbo)            | ![Last commit](https://img.shields.io/github/last-commit/uber-research/TuRBO)                     |
+| \`ultraopt\`                  | [Official](https://auto-flow.github.io/ultraopt/zh/)                                                                                             | ![PyPI version](https://img.shields.io/pypi/v/ultraopt)    | ![License](https://img.shields.io/pypi/l/ultraopt)         | ![Last commit](https://img.shields.io/github/last-commit/auto-flow/ultraopt)                     |
+| \`yabox\`                     | [Official](https://github.com/pablormier/yabox)                                                                                                   | ![PyPI version](https://img.shields.io/pypi/v/yabox)       | ![License](https://img.shields.io/pypi/l/yabox)            | ![Last commit](https://img.shields.io/github/last-commit/pablormier/yabox)                        |
+| \`zoofs\`                     | [Official](https://github.com/jaswinder9051998/zoofs)                                                                                             | ![PyPI version](https://img.shields.io/pypi/v/zoofs)       | ![License](https://img.shields.io/pypi/l/zoofs)            | ![Last commit](https://img.shields.io/github/last-commit/jaswinder9051998/zoofs)                  |
+| \`zoopt\`                     | [Official](https://github.com/polixir/ZOOpt)                                                                                                       | ![PyPI version](https://img.shields.io/pypi/v/zoopt)       | ![License](https://img.shields.io/pypi/l/zoopt)            | ![Last commit](https://img.shields.io/github/last-commit/polixir/ZOOpt)                            |
+
+### MOP Packages (7)
+
+
+| Package                 | Official Link                                                                                                                   | Version                                                      | License                                                     | Last commit                                                                                   |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| \`feloopy\`             | [Official](https://github.com/feloopy/feloopy)                                                                                  | ![PyPI version](https://img.shields.io/pypi/v/feloopy)        | ![License](https://img.shields.io/pypi/l/feloopy)            | ![Last commit](https://img.shields.io/github/last-commit/feloopy/feloopy)                     |
+| \`hexaly\`              | [Official](https://www.hexaly.com/)                                                                                              | –                                                            | –                                                           | –                                                                                             |
+| \`optuna\`              | [Official](https://optuna.readthedocs.io/en/stable/tutorial/20_recipes/002_multi_objective.html)                                 | ![PyPI version](https://img.shields.io/pypi/v/optuna)         | ![License](https://img.shields.io/pypi/l/optuna)             | ![Last commit](https://img.shields.io/github/last-commit/optuna/optuna)                       |
+| \`parmoo\`              | [Official](https://github.com/parmoo/parmoo)                                                                                     | ![PyPI version](https://img.shields.io/pypi/v/parmoo)         | ![License](https://img.shields.io/pypi/l/parmoo)             | ![Last commit](https://img.shields.io/github/last-commit/parmoo/parmoo)                       |
+| \`pydecision\`          | [Official](https://github.com/Valdecy/pyDecision)                                                                                | ![PyPI version](https://img.shields.io/pypi/v/pydecision)     | ![License](https://img.shields.io/pypi/l/pydecision)         | ![Last commit](https://img.shields.io/github/last-commit/Valdecy/pyDecision)                  |
+| \`pymoo\`               | [Official](https://pymoo.org/)                                                                                                   | ![PyPI version](https://img.shields.io/pypi/v/pymoo)          | ![License](https://img.shields.io/pypi/l/pymoo)              | ![Last commit](https://img.shields.io/github/last-commit/mojtabaz/pymoo)                      |
+| \`pymultiobjective\`    | [Official](https://github.com/Valdecy/pyMultiobjective)                                                                           | ![PyPI version](https://img.shields.io/pypi/v/pymultiobjective) | ![License](https://img.shields.io/pypi/l/pymultiobjective)   | ![Last commit](https://img.shields.io/github/last-commit/Valdecy/pyMultiobjective)            |
+
+
+### QPP Packages (2)
+
+
+| Package                   | Official Link                                                                                          | Version                                                      | License                                                       | Last commit                                                                                   |
+| ------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| \`dwave-optimization\`    | [Official](https://github.com/dwavesystems/dwave-optimization)                                         | ![PyPI version](https://img.shields.io/pypi/v/dwave-optimization) | ![License](https://img.shields.io/pypi/l/dwave-optimization)    | ![Last commit](https://img.shields.io/github/last-commit/dwavesystems/dwave-optimization)    |
+| \`qiskit-optimization\`   | [Official](https://github.com/qiskit-community/qiskit-optimization)                                    | ![PyPI version](https://img.shields.io/pypi/v/qiskit-optimization) | ![License](https://img.shields.io/pypi/l/qiskit-optimization)   | ![Last commit](https://img.shields.io/github/last-commit/qiskit-community/qiskit-optimization) |
+
+
+### PSP Packages (5)
+
+
+| Package                     | Official Link                                                                                   | Version                                                      | License                                                       | Last commit                                                                                   |
+| --------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| \`feloopy\`                 | [Official](https://github.com/feloopy/feloopy)                                                 | ![PyPI version](https://img.shields.io/pypi/v/feloopy)        | ![License](https://img.shields.io/pypi/l/feloopy)              | ![Last commit](https://img.shields.io/github/last-commit/feloopy/feloopy)                     |
+| \`gurobi-optimods\`         | [Official](https://pypi.org/project/gurobi-optimods/)                                          | ![PyPI version](https://img.shields.io/pypi/v/gurobi-optimods) | ![License](https://img.shields.io/pypi/l/gurobi-optimods)      | ![Last commit](https://img.shields.io/github/last-commit/Gurobi/gurobi-optimods)              |
+| \`optimization-algorithms\` | [Official](https://github.com/alqmase/optimization-algorithms)                                 | –                                                            | –                                                              | ![Last commit](https://img.shields.io/github/last-commit/alqmase/optimization-algorithms)     |
+| \`qubots\`                  | [Official](https://github.com/Rastion/qubots/tree/main)                                        | –                                                            | –                                                              | ![Last commit](https://img.shields.io/github/last-commit/Rastion/qubots)                      |
+| \`pyvrp\`                  | [Official](https://github.com/PyVRP/PyVRP)                                         | –                                                            | –                                                              | ![Last commit](https://img.shields.io/github/last-commit/PyVRP/PyVRP)                      |
+
+
+
+
+### Benchmarking Packages (6)
+
+
+| Benchmark    | Official Link                                                                                          | Version                                                      | License                                                       | Last commit                                                                                   |
+| ------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| \`benchopt\` | [Official](https://github.com/benchopt/benchopt)                                                      | ![PyPI version](https://img.shields.io/pypi/v/benchopt)       | ![License](https://img.shields.io/pypi/l/benchopt)             | ![Last commit](https://img.shields.io/github/last-commit/benchopt/benchopt)                   |
+| \`feloopy\`  | [Official](https://github.com/feloopy/feloopy)                                                        | ![PyPI version](https://img.shields.io/pypi/v/feloopy)        | ![License](https://img.shields.io/pypi/l/feloopy)              | ![Last commit](https://img.shields.io/github/last-commit/feloopy/feloopy)                     |
+| \`humpday\`  | [Official](https://www.microprediction.com/blog/humpday)                                              | ![PyPI version](https://img.shields.io/pypi/v/humpday)        | ![License](https://img.shields.io/pypi/l/humpday)              | ![Last commit](https://img.shields.io/github/last-commit/microprediction/humpday)             |
+| \`pycutest\` | [Official](https://github.com/jfowkes/pycutest)                                                        | ![PyPI version](https://img.shields.io/pypi/v/pycutest)       | ![License](https://img.shields.io/pypi/l/pycutest)             | ![Last commit](https://img.shields.io/github/last-commit/jfowkes/pycutest)                    |
+| \`qubots\`   | [Official](https://github.com/Rastion/qubots/tree/main)                                                | –                                                            | –                                                              | ![Last commit](https://img.shields.io/github/last-commit/Rastion/qubots)                      |
+| Mittelmann   | [Official](http://plato.la.asu.edu/bench.html)                                                        | –                                                            | –                                                              | –                                                                                             |
+
+
 
 
 
 
 `;
 
-        const htmlContent = marked.parse(markdownText);
-        document.getElementById('html-output').innerHTML = htmlContent;
-        window.onload = function () {
-            Prism.highlightAll();
-        };
+      const htmlContent = marked.parse(markdownText);
+      document.getElementById("html-output").innerHTML = htmlContent;
+      window.onload = function () {
+        Prism.highlightAll();
+      };
     </script>
 
         <style>
-    body {
-        font-family: 'Chakra Petch', sans-serif;
+      body {
+        font-family: "Chakra Petch", sans-serif;
         background-color: #f9f9f9;
         margin: 0;
         padding: 0;
@@ -364,9 +387,9 @@ _Note: Some packages might not accept a mixed group of discrete and continuous v
         display: flex;
         justify-content: center;
         align-items: flex-start;
-    }
+      }
 
-    #content {
+      #content {
         background-color: white;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -375,74 +398,77 @@ _Note: Some packages might not accept a mixed group of discrete and continuous v
         margin-bottom: 5vh;
         max-width: 1800px;
         width: 100%;
-    }
+      }
 
-    h1 {
-    font-size: x-large;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0px;
-    font-weight: 700;
-    text-align: center;
-}
+      h1 {
+        font-size: x-large;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0px;
+        font-weight: 700;
+        text-align: center;
+      }
 
-    h1 img {
+      h1 img {
         width: 30px;
         height: 30px;
         margin-right: 10px;
         margin-left: 10px;
-    }
+      }
 
-    h2 {
-    font-size: medium;
-    color: #333;
-    display: flex;
-    justify-content: center; 
-    align-items: center;   
-    margin-bottom: 0px;
-    font-weight: 500;
-    text-align: center;    
-    }
+      h2 {
+        font-size: medium;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0px;
+        font-weight: 500;
+        text-align: center;
+      }
 
-    h3 {
+      h3 {
         color: #333;
         font-weight: 600;
-    }
+      }
 
-    pre {
+      pre {
         background-color: #f1f1f1;
         padding: 10px;
         border-radius: 8px;
         border: 1px solid #ccc;
         position: relative;
         overflow-x: auto;
-    }
+      }
 
-    code {
+      code {
         font-family: monospace;
         background-color: #f5f5f5;
         padding: 2px 4px;
         border-radius: 4px;
-    }
-    
-    table {
+      }
+
+      table {
         width: 100%;
         margin-top: 20px;
         border-collapse: collapse;
-    }
+      }
 
-    table, th, td {
+      table,
+      th,
+      td {
         border: 1px solid #ccc;
-    }
+      }
 
-    th, td {
+      th,
+      td {
         padding: 10px;
         text-align: left;
-    }
+      }
 
-    .copy-btn {
+      .copy-btn {
         position: absolute;
         top: 10px;
         right: 10px;
@@ -453,45 +479,44 @@ _Note: Some packages might not accept a mixed group of discrete and continuous v
         padding: 5px 10px;
         cursor: pointer;
         font-size: 12px;
-    }
+      }
 
-    .copy-btn:hover {
+      .copy-btn:hover {
         background-color: #f0f0f0;
-    }
+      }
 
-    .copy-btn:disabled {
+      .copy-btn:disabled {
         background-color: #dcdcdc;
         color: #666;
-    }
-</style>
+      }
+    </style>
 
         <script>
-    
-        document.querySelectorAll('pre').forEach(block => {
-            const button = document.createElement('button');
-            button.innerText = 'Copy';
-            button.classList.add('copy-btn');
-            block.appendChild(button);
+      document.querySelectorAll("pre").forEach((block) => {
+        const button = document.createElement("button");
+        button.innerText = "Copy";
+        button.classList.add("copy-btn");
+        block.appendChild(button);
 
-            const code = block.querySelector('code');
-            if (code) {
-                code.classList.add('language-python');
-            }
+        const code = block.querySelector("code");
+        if (code) {
+          code.classList.add("language-python");
+        }
 
-            button.addEventListener('click', () => {
-                const range = document.createRange();
-                range.selectNode(code);
-                window.getSelection().removeAllRanges();  
-                window.getSelection().addRange(range);  
-                document.execCommand('copy');  
-                button.innerText = 'Copied!';  
-                button.disabled = true;
-                setTimeout(() => {
-                    button.innerText = 'Copy';
-                    button.disabled = false;
-                }, 2000);
-            });
+        button.addEventListener("click", () => {
+          const range = document.createRange();
+          range.selectNode(code);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(range);
+          document.execCommand("copy");
+          button.innerText = "Copied!";
+          button.disabled = true;
+          setTimeout(() => {
+            button.innerText = "Copy";
+            button.disabled = false;
+          }, 2000);
         });
+      });
     </script>
 
         <script src="../scripts/githubbutton.js"></script>
@@ -503,7 +528,5 @@ _Note: Some packages might not accept a mixed group of discrete and continuous v
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
-
     </body>
-
 </html>
