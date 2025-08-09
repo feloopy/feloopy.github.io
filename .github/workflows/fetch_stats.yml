@@ -2,8 +2,8 @@ name: fetch-stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'    
-  workflow_dispatch:       
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   update-stats:
@@ -18,102 +18,168 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4 pypistats
+          pip install --upgrade requests beautifulsoup4 pypistats
 
       - name: Fetch stats & build JSON
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python << 'EOF'
-          import json
-          import datetime
-          import requests
+          python - <<'PY'
+          import os, json, datetime, time, requests
+          from requests.exceptions import RequestException
+
+          def get_json(url, headers=None, default=None, retries=3, backoff=1.0, timeout=10):
+              for attempt in range(1, retries+1):
+                  try:
+                      r = requests.get(url, headers=headers or {}, timeout=timeout)
+                  except RequestException as e:
+                      print(f"[{attempt}] RequestException for {url}: {e}")
+                      if attempt < retries:
+                          time.sleep(backoff * attempt)
+                          continue
+                      return default
+                  if r.status_code != 200:
+                      print(f"[{attempt}] Non-200 for {url}: {r.status_code} - {r.reason}")
+                      # If it's 404/204/other, don't try to parse JSON; return default
+                      if attempt < retries:
+                          time.sleep(backoff * attempt)
+                          continue
+                      return default
+                  # try to parse JSON
+                  try:
+                      return r.json()
+                  except ValueError as e:
+                      # body is not valid JSON
+                      snippet = (r.text or "")[:500].replace("\n", " ")
+                      print(f"[{attempt}] JSON decode failed for {url}: {e}. Body snippet: {snippet!s}")
+                      if attempt < retries:
+                          time.sleep(backoff * attempt)
+                          continue
+                      return default
+              return default
 
           stats = {}
 
-          r = requests.get('https://pypistats.org/api/packages/feloopy/recent').json()
-          d = r.get('data', {})
-          stats['day'] = d.get('last_day', 0)
-          stats['week'] = d.get('last_week', 0)
-          stats['month'] = d.get('last_month', 0)
+          # GitHub auth header if token present (helps with rate limits)
+          gh_token = os.environ.get("GITHUB_TOKEN")
+          gh_headers = {"Accept": "application/vnd.github.v3+json"}
+          if gh_token:
+              gh_headers["Authorization"] = f"token {gh_token}"
 
-          o = requests.get('https://pypistats.org/api/packages/feloopy/overall').json()
-          stats['total'] = sum(item['downloads'] 
-                              for item in o.get('data', []) 
-                              if item.get('category') == 'without_mirrors')
+          # pypistats recent
+          pypi_recent = get_json('https://pypistats.org/api/packages/feloopy/recent', default={})
+          d = pypi_recent.get('data', {}) if isinstance(pypi_recent, dict) else {}
+          stats['day'] = d.get('last_day', 0) or 0
+          stats['week'] = d.get('last_week', 0) or 0
+          stats['month'] = d.get('last_month', 0) or 0
 
-          gh = requests.get('https://api.github.com/repos/feloopy/feloopy').json()
-          stats['stars'] = gh.get('stargazers_count', 0)
+          # pypistats overall (might be a list)
+          pypi_overall = get_json('https://pypistats.org/api/packages/feloopy/overall', default={})
+          overall_data = pypi_overall.get('data', []) if isinstance(pypi_overall, dict) else []
+          total = 0
+          for item in overall_data:
+              try:
+                  if item.get('category') == 'without_mirrors':
+                      total += int(item.get('downloads') or 0)
+              except Exception:
+                  continue
+          stats['total'] = total
 
-          feloopy_latest_res = requests.get('https://api.github.com/repos/feloopy/feloopy/releases/latest')
-          if feloopy_latest_res.status_code == 200:
-              feloopy_release = feloopy_latest_res.json()
-              raw_tag = feloopy_release.get('tag_name', 'unknown')
-              stats['feloopy_version'] = raw_tag[1:] if isinstance(raw_tag, str) and raw_tag.startswith('v') else raw_tag
-              stats['feloopy_release_date'] = feloopy_release.get('published_at', 'unknown')
-          else:
-              stats['feloopy_version'] = 'unknown'
-              stats['feloopy_release_date'] = 'unknown'
-
-          engine_latest_res = requests.get('https://api.github.com/repos/feloopy/engine/releases/latest')
-          if engine_latest_res.status_code == 200:
-              engine_release = engine_latest_res.json()
-              raw_engine_tag = engine_release.get('tag_name', 'unknown')
-              stats['engine_version'] = raw_engine_tag[1:] if isinstance(raw_engine_tag, str) and raw_engine_tag.startswith('v') else raw_engine_tag
-              stats['engine_release_date'] = engine_release.get('published_at', 'unknown')
-          else:
-              stats['engine_version'] = 'unknown'
-              stats['engine_release_date'] = 'unknown'
-
-          engine_releases = requests.get('https://api.github.com/repos/feloopy/engine/releases').json()
-          stats['engine_downloads'] = sum(
-              asset.get('download_count', 0)
-              for release in engine_releases
-              for asset in release.get('assets', [])
-          )
-
-          feloopy_releases = requests.get('https://api.github.com/repos/feloopy/feloopy/releases').json()
-          stats['source_downloads'] = sum(
-              asset.get('download_count', 0)
-              for release in feloopy_releases
-              for asset in release.get('assets', [])
-              if asset.get('name', '').startswith('Source code')
-          )
-
-          stats['star_pct'] = round((stats['stars'] / stats['month'] * 100)) if stats['month'] else 0
+          # GitHub repo info (stars, pushed_at)
+          gh = get_json('https://api.github.com/repos/feloopy/feloopy', headers=gh_headers, default={})
+          stats['stars'] = int(gh.get('stargazers_count', 0) or 0)
 
           pushed_at_str = gh.get('pushed_at')
           if pushed_at_str:
-              pushed_at = datetime.datetime.strptime(pushed_at_str, '%Y-%m-%dT%H:%M:%SZ')
-              now = datetime.datetime.utcnow()
-              delta = now - pushed_at
-              stats['last_push'] = pushed_at_str
-              stats['days_since_push'] = delta.days
+              try:
+                  pushed_at = datetime.datetime.strptime(pushed_at_str, '%Y-%m-%dT%H:%M:%SZ')
+                  now = datetime.datetime.utcnow()
+                  delta = now - pushed_at
+                  stats['last_push'] = pushed_at_str
+                  stats['days_since_push'] = delta.days
+              except Exception:
+                  stats['last_push'] = pushed_at_str
+                  stats['days_since_push'] = None
           else:
               stats['last_push'] = None
               stats['days_since_push'] = None
 
+          # Releases: feloopy and engine - use /releases/latest but handle 404/no releases
+          feloopy_latest = get_json('https://api.github.com/repos/feloopy/feloopy/releases/latest', headers=gh_headers, default=None)
+          if feloopy_latest:
+              raw_tag = feloopy_latest.get('tag_name', 'unknown')
+              stats['feloopy_version'] = raw_tag[1:] if isinstance(raw_tag, str) and raw_tag.startswith('v') else raw_tag
+              stats['feloopy_release_date'] = feloopy_latest.get('published_at', 'unknown')
+          else:
+              stats['feloopy_version'] = 'unknown'
+              stats['feloopy_release_date'] = 'unknown'
+
+          engine_latest = get_json('https://api.github.com/repos/feloopy/engine/releases/latest', headers=gh_headers, default=None)
+          if engine_latest:
+              raw_engine_tag = engine_latest.get('tag_name', 'unknown')
+              stats['engine_version'] = raw_engine_tag[1:] if isinstance(raw_engine_tag, str) and raw_engine_tag.startswith('v') else raw_engine_tag
+              stats['engine_release_date'] = engine_latest.get('published_at', 'unknown')
+          else:
+              stats['engine_version'] = 'unknown'
+              stats['engine_release_date'] = 'unknown'
+
+          # engine downloads (sum of asset download_count)
+          engine_releases = get_json('https://api.github.com/repos/feloopy/engine/releases', headers=gh_headers, default=[])
+          engine_downloads = 0
+          if isinstance(engine_releases, list):
+              for release in engine_releases:
+                  for asset in release.get('assets', []) or []:
+                      try:
+                          engine_downloads += int(asset.get('download_count', 0) or 0)
+                      except Exception:
+                          continue
+          stats['engine_downloads'] = engine_downloads
+
+          # source downloads from feloopy releases (assets named like Source*)
+          feloopy_releases = get_json('https://api.github.com/repos/feloopy/feloopy/releases', headers=gh_headers, default=[])
+          source_downloads = 0
+          if isinstance(feloopy_releases, list):
+              for release in feloopy_releases:
+                  for asset in release.get('assets', []) or []:
+                      name = asset.get('name', '') or ''
+                      if name.startswith('Source'):
+                          try:
+                              source_downloads += int(asset.get('download_count', 0) or 0)
+                          except Exception:
+                              continue
+          stats['source_downloads'] = source_downloads
+
+          # star percentage relative to monthly downloads
+          try:
+              stats['star_pct'] = round((stats['stars'] / stats['month'] * 100)) if stats['month'] else 0
+          except Exception:
+              stats['star_pct'] = 0
+
+          # history file safe read/write
           hist_file = 'stars_history.json'
           today = datetime.date.today().isoformat()
           try:
-              with open(hist_file) as f:
-                  history = json.load(f)
-          except FileNotFoundError:
+              with open(hist_file, 'r', encoding='utf-8') as f:
+                  history = json.load(f) if f.readable() else {}
+          except (FileNotFoundError, json.JSONDecodeError):
               history = {}
-          history[today] = stats['stars']
-          with open(hist_file, 'w') as f:
-              json.dump(history, f, indent=2)
+          history[today] = stats.get('stars', 0)
+          with open(hist_file, 'w', encoding='utf-8') as f:
+              json.dump(history, f, indent=2, ensure_ascii=False)
 
           stats['fetched_at'] = datetime.datetime.utcnow().isoformat() + 'Z'
-          with open('stats.json', 'w') as f:
-              json.dump(stats, f, indent=2)
+          with open('stats.json', 'w', encoding='utf-8') as f:
+              json.dump(stats, f, indent=2, ensure_ascii=False)
 
           print("Stats successfully collected and saved:")
           print(json.dumps(stats, indent=2))
-          EOF
+          PY
 
       - name: Commit & push
         run: |
           git config user.name github-actions
           git config user.email actions@github.com
-          git add stats.json stars_history.json
+          git add stats.json stars_history.json || true
           git diff --staged --quiet || git commit -m "updated stats.json file."
-          git push
+          # push using the token-provided origin (should be configured by checkout action)
+          git push || echo "Nothing to push or push failed"
