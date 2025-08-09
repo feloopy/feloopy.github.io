@@ -38,20 +38,19 @@ jobs:
                           time.sleep(backoff * attempt)
                           continue
                       return default
+                  print(f"[{attempt}] {url} -> status {r.status_code}")
+                  # log small snippet for debugging
+                  snippet = (r.text or "")[:600].replace("\n", " ")
+                  print(f"Body snippet: {snippet!s}")
                   if r.status_code != 200:
-                      print(f"[{attempt}] Non-200 for {url}: {r.status_code} - {r.reason}")
-                      # If it's 404/204/other, don't try to parse JSON; return default
                       if attempt < retries:
                           time.sleep(backoff * attempt)
                           continue
                       return default
-                  # try to parse JSON
                   try:
                       return r.json()
                   except ValueError as e:
-                      # body is not valid JSON
-                      snippet = (r.text or "")[:500].replace("\n", " ")
-                      print(f"[{attempt}] JSON decode failed for {url}: {e}. Body snippet: {snippet!s}")
+                      print(f"[{attempt}] JSON decode failed for {url}: {e}")
                       if attempt < retries:
                           time.sleep(backoff * attempt)
                           continue
@@ -60,32 +59,50 @@ jobs:
 
           stats = {}
 
-          # GitHub auth header if token present (helps with rate limits)
           gh_token = os.environ.get("GITHUB_TOKEN")
           gh_headers = {"Accept": "application/vnd.github.v3+json"}
           if gh_token:
               gh_headers["Authorization"] = f"token {gh_token}"
 
-          # pypistats recent
-          pypi_recent = get_json('https://pypistats.org/api/packages/feloopy/recent', default={})
+          # ---------- pypistats recent (day/week/month) ----------
+          pkg = "feloopy"
+          pypi_recent = get_json(f'https://pypistats.org/api/packages/{pkg}/recent', default={})
           d = pypi_recent.get('data', {}) if isinstance(pypi_recent, dict) else {}
-          stats['day'] = d.get('last_day', 0) or 0
-          stats['week'] = d.get('last_week', 0) or 0
-          stats['month'] = d.get('last_month', 0) or 0
+          stats['day'] = int(d.get('last_day', 0) or 0)
+          stats['week'] = int(d.get('last_week', 0) or 0)
+          stats['month'] = int(d.get('last_month', 0) or 0)
 
-          # pypistats overall (might be a list)
-          pypi_overall = get_json('https://pypistats.org/api/packages/feloopy/overall', default={})
+          # ---------- pypistats overall (total by category) ----------
+          pypi_overall = get_json(f'https://pypistats.org/api/packages/{pkg}/overall', default={})
           overall_data = pypi_overall.get('data', []) if isinstance(pypi_overall, dict) else []
           total = 0
           for item in overall_data:
               try:
                   if item.get('category') == 'without_mirrors':
-                      total += int(item.get('downloads') or 0)
+                      total += int(item.get('downloads', 0) or 0)
               except Exception:
                   continue
           stats['total'] = total
 
-          # GitHub repo info (stars, pushed_at)
+          # If pypistats gave 0 for total, try pepy.tech as a fallback
+          if stats['total'] == 0:
+              pepy = get_json(f'https://pepy.tech/api/projects/{pkg}', default={})
+              # pepy may return 'total_downloads' or 'total' or 'downloads' depending on API
+              if isinstance(pepy, dict):
+                  possible = (
+                      pepy.get('total_downloads')
+                      or pepy.get('total')
+                      or pepy.get('downloads')
+                      or pepy.get('total_downloads_all') if 'total_downloads_all' in pepy else None
+                  )
+                  try:
+                      stats['total'] = int(possible or 0)
+                      if stats['total'] > 0:
+                          print("Using pepy.tech fallback for total downloads:", stats['total'])
+                  except Exception:
+                      stats['total'] = 0
+
+          # ---------- GitHub repo info ----------
           gh = get_json('https://api.github.com/repos/feloopy/feloopy', headers=gh_headers, default={})
           stats['stars'] = int(gh.get('stargazers_count', 0) or 0)
 
@@ -104,62 +121,65 @@ jobs:
               stats['last_push'] = None
               stats['days_since_push'] = None
 
-          # Releases: feloopy and engine - use /releases/latest but handle 404/no releases
-          feloopy_latest = get_json('https://api.github.com/repos/feloopy/feloopy/releases/latest', headers=gh_headers, default=None)
-          if feloopy_latest:
-              raw_tag = feloopy_latest.get('tag_name', 'unknown')
-              stats['feloopy_version'] = raw_tag[1:] if isinstance(raw_tag, str) and raw_tag.startswith('v') else raw_tag
-              stats['feloopy_release_date'] = feloopy_latest.get('published_at', 'unknown')
-          else:
-              stats['feloopy_version'] = 'unknown'
-              stats['feloopy_release_date'] = 'unknown'
+          # ---------- Releases (feloopy and engine) ----------
+          def get_release_info(repo_owner, repo_name, headers):
+              base = f'https://api.github.com/repos/{repo_owner}/{repo_name}'
+              latest = get_json(base + '/releases/latest', headers=headers, default=None)
+              if latest:
+                  tag = latest.get('tag_name', 'unknown')
+                  rv = {
+                      'version': tag[1:] if isinstance(tag, str) and tag.startswith('v') else tag,
+                      'release_date': latest.get('published_at', 'unknown')
+                  }
+              else:
+                  rv = {'version': 'unknown', 'release_date': 'unknown'}
+              all_releases = get_json(base + '/releases', headers=headers, default=[])
+              downloads = 0
+              if isinstance(all_releases, list):
+                  for rel in all_releases:
+                      for asset in rel.get('assets', []) or []:
+                          try:
+                              downloads += int(asset.get('download_count', 0) or 0)
+                          except Exception:
+                              continue
+              rv['downloads'] = downloads
+              return rv
 
-          engine_latest = get_json('https://api.github.com/repos/feloopy/engine/releases/latest', headers=gh_headers, default=None)
-          if engine_latest:
-              raw_engine_tag = engine_latest.get('tag_name', 'unknown')
-              stats['engine_version'] = raw_engine_tag[1:] if isinstance(raw_engine_tag, str) and raw_engine_tag.startswith('v') else raw_engine_tag
-              stats['engine_release_date'] = engine_latest.get('published_at', 'unknown')
-          else:
-              stats['engine_version'] = 'unknown'
-              stats['engine_release_date'] = 'unknown'
+          feloopy_info = get_release_info('feloopy', 'feloopy', gh_headers)
+          stats['feloopy_version'] = feloopy_info['version']
+          stats['feloopy_release_date'] = feloopy_info['release_date']
 
-          # engine downloads (sum of asset download_count)
-          engine_releases = get_json('https://api.github.com/repos/feloopy/engine/releases', headers=gh_headers, default=[])
-          engine_downloads = 0
-          if isinstance(engine_releases, list):
-              for release in engine_releases:
-                  for asset in release.get('assets', []) or []:
-                      try:
-                          engine_downloads += int(asset.get('download_count', 0) or 0)
-                      except Exception:
-                          continue
-          stats['engine_downloads'] = engine_downloads
+          engine_info = get_release_info('feloopy', 'engine', gh_headers)
+          stats['engine_version'] = engine_info['version']
+          stats['engine_release_date'] = engine_info['release_date']
+          stats['engine_downloads'] = engine_info['downloads']
 
-          # source downloads from feloopy releases (assets named like Source*)
+          # source_downloads: look for assets that include 'Source' or 'source'
           feloopy_releases = get_json('https://api.github.com/repos/feloopy/feloopy/releases', headers=gh_headers, default=[])
           source_downloads = 0
           if isinstance(feloopy_releases, list):
               for release in feloopy_releases:
                   for asset in release.get('assets', []) or []:
-                      name = asset.get('name', '') or ''
-                      if name.startswith('Source'):
+                      name = (asset.get('name') or '').lower()
+                      if 'source' in name:
                           try:
                               source_downloads += int(asset.get('download_count', 0) or 0)
                           except Exception:
                               continue
           stats['source_downloads'] = source_downloads
 
-          # star percentage relative to monthly downloads
+          # star percentage relative to monthly downloads (guarded)
           try:
               stats['star_pct'] = round((stats['stars'] / stats['month'] * 100)) if stats['month'] else 0
           except Exception:
               stats['star_pct'] = 0
 
-          # history file safe read/write
+          # ---------- history file ----------
           hist_file = 'stars_history.json'
           today = datetime.date.today().isoformat()
           try:
               with open(hist_file, 'r', encoding='utf-8') as f:
+                  f.seek(0)
                   history = json.load(f) if f.readable() else {}
           except (FileNotFoundError, json.JSONDecodeError):
               history = {}
@@ -181,5 +201,4 @@ jobs:
           git config user.email actions@github.com
           git add stats.json stars_history.json || true
           git diff --staged --quiet || git commit -m "updated stats.json file."
-          # push using the token-provided origin (should be configured by checkout action)
           git push || echo "Nothing to push or push failed"
