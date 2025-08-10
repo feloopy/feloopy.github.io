@@ -88,6 +88,7 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0; 
   }
 
   .title-block-en, .title-block-fa { text-align: left; }
@@ -280,6 +281,14 @@
   }
   .rtl .badge { right: auto; left: 20px; }
 
+  .main-title,
+  .main-title.fa,
+  .subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   /* helper class used by JS to hide content on small screens while keeping it available to screen readers when desired */
   .is-hidden-mobile { display:none !important; }
 
@@ -321,7 +330,7 @@
     <!-- English title block (visible on desktop; JS will control mobile visibility) -->
     <div class="title-block title-block-en" id="title-en">
       <h1 class="main-title">Become a Pro FelooPy User!</h1>
-      <p class="subtitle">Unlock premium features &amp; exclusive content, go from x to x*!</p>
+      <p class="subtitle">Go from x to x*!</p>
     </div>
 
     <div class="logo-container" aria-hidden="true">
@@ -332,7 +341,7 @@
     <!-- Persian title block (visible on desktop; JS will control mobile visibility) -->
     <div class="title-block title-block-fa rtl" id="title-fa" lang="fa" dir="rtl">
       <h1 class="main-title fa">کاربر حرفه‌ای فلوپای شوید!</h1>
-      <p class="subtitle">دسترسی به امکانات ویژه و محتوای اختصاصی، از x به x* بروید!</p>
+      <p class="subtitle">از x به x* بروید!</p>
     </div>
   </header>
 
