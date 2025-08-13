@@ -160,7 +160,7 @@
   </main>
 
   <script>
-    const namespace = 'feloopy-wallpapers'; // unique namespace for your site
+    const namespace = 'feloopy-wallpapers';
 
     function incrementCounter(key) {
       fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
@@ -170,7 +170,6 @@
         });
     }
 
-    // Fetch initial counts for all wallpapers
     ['felooPy-wallpaper-1', 'felooPy-wallpaper-noText-1'].forEach(key => {
       fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
         .then(res => res.json())
