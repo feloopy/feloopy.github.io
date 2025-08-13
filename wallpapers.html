@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download FelooPy Wallpapers</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    :root {
+      --bg-1: #f9fafb;
+      --bg-2: #eef2f6;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --text: #0f172a;
+      --green-500: #28a745;
+      --blue-600: #3d3d3d;
+      --max-width: 1200px;
+      --radius-lg: 14px;
+      --space: 20px;
+      --base: 16px;
+      --shadow-1: 0 8px 30px rgba(8,15,25,0.06);
+      --shadow-2: 0 18px 40px rgba(8,15,25,0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Vazirmatn", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      font-size: var(--base);
+      background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 28px;
+      min-height: 100vh;
+    }
+    .stage {
+      width: 100%;
+      max-width: var(--max-width);
+      display: grid;
+      gap: var(--space);
+    }
+    .hero {
+      background: var(--card);
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-1);
+      text-align: center;
+    }
+    .main-title {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: clamp(22px, 3.8vw, 36px);
+      font-weight: 800;
+      margin: 0 0 8px;
+      background: linear-gradient(45deg, var(--blue-600), var(--green-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0;
+    }
+    .grid-panels {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    .panel-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      flex: 1;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(90deg, var(--blue-600), #3d3d3d);
+      margin-top: 12px;
+      align-self: flex-start;
+    }
+    .cta i { font-size: 1rem; }
+    .download-count {
+      margin-left: 8px;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <header class="hero">
+      <h1 class="main-title">FelooPy Wallpapers</h1>
+      <p class="subtitle">Download stunning desktop, home, and lock screen wallpapers for your devices — completely free.</p>
+    </header>
+
+    <section class="grid-panels">
+      <article class="card">
+        <img src="assets/wallpapers/FelooPy-Wallpaper-1.jpg" alt="FelooPy Dark Theme">
+        <div class="card-body">
+          <h2 class="panel-title">FelooPy Dark Theme</h2>
+          <p class="panel-desc">A sleek, dark-mode inspired wallpaper perfect for desktops or mobile lock screens.</p>
+          <a href="assets/wallpapers/FelooPy-Wallpaper-1.jpg"
+             download
+             class="cta"
+             onclick="incrementCounter('felooPy-wallpaper-1')">
+            <i class="fa-solid fa-download"></i> Download
+            <span id="count-felooPy-wallpaper-1" class="download-count">0</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/wallpapers/FelooPy-Wallpaper-NoText-1.jpg" alt="FelooPy Gradient">
+        <div class="card-body">
+          <h2 class="panel-title">FelooPy Gradient</h2>
+          <p class="panel-desc">Soft gradients blending FelooPy brand colors for a minimalist, clean look.</p>
+          <a href="assets/wallpapers/FelooPy-Wallpaper-NoText-1.jpg"
+             download
+             class="cta"
+             onclick="incrementCounter('felooPy-wallpaper-noText-1')">
+            <i class="fa-solid fa-download"></i> Download
+            <span id="count-felooPy-wallpaper-noText-1" class="download-count">0</span>
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const namespace = 'feloopy-wallpapers'; // unique namespace for your site
+
+    function incrementCounter(key) {
+      fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById(`count-${key}`).textContent = data.value;
+        });
+    }
+
+    // Fetch initial counts for all wallpapers
+    ['felooPy-wallpaper-1', 'felooPy-wallpaper-noText-1'].forEach(key => {
+      fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById(`count-${key}`).textContent = data.value || 0;
+        });
+    });
+  </script>
+</body>
+</html>
