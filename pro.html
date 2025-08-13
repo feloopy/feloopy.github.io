@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <!-- Keep zooming available for users on mobile (do NOT set maximum-scale or disable zoom). -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Become a Pro FelooPy User</title>
 
@@ -35,17 +34,14 @@
     color:var(--text);
     background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
     -webkit-font-smoothing:antialiased;
-
-    /* center horizontally, but let vertical positioning change with viewport size */
     display:flex;
-    align-items:flex-start; /* default to top-aligned to avoid cutoffs on small screens */
+    align-items:flex-start;
     justify-content:center;
     padding:28px;
     min-height:100vh;
     overflow-y:auto;
   }
 
-  /* On larger viewports, vertically center the content for nicer layout */
   @media (min-width: 769px) {
     body { align-items:center; }
   }
@@ -59,10 +55,9 @@
     align-items:start;
   }
 
-  /* HERO */
   .hero {
     display: grid;
-    grid-template-columns: 1fr auto 1fr; /* left title, logo, right title */
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 40px;
     background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.94));
@@ -133,7 +128,6 @@
     letter-spacing: -0.01em;
   }
 
-  /* Cards */
   .grid-panels{ 
     display:grid; 
     grid-template-columns: 1fr 1fr; 
@@ -168,7 +162,6 @@
     background: linear-gradient(90deg, var(--green-500), #169243);
   }
 
-  /* Glowing Hover */
   .card:hover{ 
     transform: translateY(-8px); 
   }
@@ -204,16 +197,14 @@
     color: var(--green-500);
   }
 
-  /* Fix: avoid extreme negative letter-spacing for panel titles to stop rendering issues */
   .panel-title{ 
     margin:0; 
     font-size:1.25rem; 
     font-weight:700;
-    letter-spacing: -0.02em; /* mild tightening only */
+    letter-spacing: -0.02em;
     font-family: 'Chakra Petch', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
   }
 
-  /* Persian card title should use Persian-friendly font */
   #persian .panel-title { font-family: 'Vazirmatn', sans-serif; letter-spacing: -0.01em; }
 
   .panel-desc{ 
@@ -289,10 +280,8 @@
     text-overflow: ellipsis;
   }
 
-  /* helper class used by JS to hide content on small screens while keeping it available to screen readers when desired */
   .is-hidden-mobile { display:none !important; }
 
-  /* small screens responsive rules */
   @media (max-width:1000px){ 
     .grid-panels{ grid-template-columns: 1fr; }
     .logo{ width: 120px; }
@@ -305,16 +294,11 @@
     body { padding: 16px; }
     .card { padding: 18px; }
     .panel-head { padding-top: 28px; }
-
-    /* shrink CTA so it fits nicely on narrow screens */
     .cta { min-width: 140px; padding: 12px 14px; font-size: 0.95rem; }
-
-    /* move badges in a bit to avoid overflow */
     .badge { top: 12px; right: 12px; padding: 6px 10px; font-size: 0.8rem; }
     .rtl .badge { left: 12px; right: auto; }
   }
 
-  /* Very small screens safe-guards */
   @media (max-width: 420px) {
     .main-title { font-size: clamp(20px, 6vw, 30px); }
     .subtitle { font-size: 0.95rem; }
@@ -327,18 +311,15 @@
 <main class="stage" role="main" aria-label="Become a Pro User — FelooPy">
 
   <header class="hero" role="banner">
-    <!-- English title block (visible on desktop; JS will control mobile visibility) -->
     <div class="title-block title-block-en" id="title-en">
       <h1 class="main-title">Become a Pro FelooPy User!</h1>
       <p class="subtitle">Go from x to x*!</p>
     </div>
 
     <div class="logo-container" aria-hidden="true">
-      <!-- keep image responsive; replace the src with your real asset path -->
       <img src="assets/images/logo-pro.png" alt="FelooPy logo" class="logo" />
     </div>
 
-    <!-- Persian title block (visible on desktop; JS will control mobile visibility) -->
     <div class="title-block title-block-fa rtl" id="title-fa" lang="fa" dir="rtl">
       <h1 class="main-title fa">کاربر حرفه‌ای فلوپای شوید!</h1>
       <p class="subtitle">از x به x* بروید!</p>
@@ -383,7 +364,6 @@
 </main>
 
 <script>
-  /* Public form URLs */
   const FORMS = {
     en: "https://forms.gle/AgQ7tztwciraRXSE9",
     fa: "https://forms.gle/2cQ48WW1D8JVZ4Ls8"
@@ -400,15 +380,11 @@
     }
   }
 
-  // Detect country by IP using a public geolocation API with a short timeout.
-  // NOTE: this sends the client's IP to the chosen provider. You can replace the endpoint
-  // with your own server-side lookup if you prefer not to call a third-party service from the browser.
   async function detectCountryCode(timeoutMs = 2500) {
-    // Try a list of fallback providers for resilience (some may be rate-limited).
     const providers = [
-      'https://ipapi.co/json/',      // returns { country: 'IR', country_name: 'Iran', ... }
-      'https://ipwhois.app/json/',   // returns { country_code: 'IR', ... }
-      'https://ipinfo.io/json?token=' // you may add a token if you have one; without token CORS may fail
+      'https://ipapi.co/json/',
+      'https://ipwhois.app/json/',
+      'https://ipinfo.io/json?token='
     ];
 
     for (const url of providers) {
@@ -419,31 +395,22 @@
         clearTimeout(id);
         if (!res.ok) throw new Error('non-ok');
         const json = await res.json();
-        // Normalize possible fields
         const code = (json.country || json.country_code || json.countryCode || json.countryCodeISO2 || '').toString().toUpperCase();
         if (code) return code;
-      } catch (e) {
-        // try next provider silently
-        // console.debug('geo provider failed', url, e);
-      }
+      } catch (e) {}
     }
-    return null; // unknown
+    return null;
   }
 
   async function applyMobileVisibility() {
     const params = new URLSearchParams(window.location.search);
-    const forcedLang = (params.get('lang') || '').toLowerCase(); // allow ?lang=fa or ?lang=en to force
-
+    const forcedLang = (params.get('lang') || '').toLowerCase();
     const preferFa = (navigator.language || navigator.userLanguage || '').toLowerCase().startsWith('fa');
-
     const enBlock = document.getElementById('title-en');
     const faBlock = document.getElementById('title-fa');
-
-    // On narrow screens we want only one title to be visible to avoid vertical overflow.
     const isNarrow = window.matchMedia('(max-width: 768px)').matches;
 
     if (!isNarrow) {
-      // On wider screens show both
       enBlock.classList.remove('is-hidden-mobile');
       faBlock.classList.remove('is-hidden-mobile');
       enBlock.setAttribute('aria-hidden', 'false');
@@ -451,7 +418,6 @@
       return;
     }
 
-    // If ?lang= is provided it takes precedence
     if (forcedLang === 'fa') {
       enBlock.classList.add('is-hidden-mobile');
       faBlock.classList.remove('is-hidden-mobile');
@@ -467,7 +433,6 @@
       return;
     }
 
-    // Otherwise: attempt IP geolocation. If request fails, fallback to browser language.
     let country = null;
     try {
       country = await detectCountryCode(2500);
@@ -475,7 +440,6 @@
       country = null;
     }
 
-    // If inside Iran (country code 'IR') => show Persian. Else show English.
     const insideIran = country === 'IR';
     if (insideIran) {
       enBlock.classList.add('is-hidden-mobile');
@@ -483,7 +447,6 @@
       enBlock.setAttribute('aria-hidden', 'true');
       faBlock.setAttribute('aria-hidden', 'false');
     } else {
-      // fallback: if detection failed, use browser preference (preferFa), otherwise default to English
       if (country === null) {
         if (preferFa) {
           enBlock.classList.add('is-hidden-mobile');
@@ -497,7 +460,6 @@
           enBlock.setAttribute('aria-hidden', 'false');
         }
       } else {
-        // detected outside Iran
         faBlock.classList.add('is-hidden-mobile');
         enBlock.classList.remove('is-hidden-mobile');
         faBlock.setAttribute('aria-hidden', 'true');
@@ -509,11 +471,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     setFormLinks();
     applyMobileVisibility();
-
-    // Re-apply if orientation or width changes (user rotates phone)
     window.addEventListener('resize', () => applyMobileVisibility());
-
-    // Optional: quick keyboard + accessibility enhancement — allow Enter on focused CTA anchors
     document.querySelectorAll('.cta').forEach(a => {
       a.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') { a.click(); }
@@ -521,7 +479,6 @@
     });
   });
 
-  // Public helper in case other scripts want to open a form programmatically
   function openForm(lang) {
     const url = FORMS[lang];
     if (!url) return console.warn('Form URL not set for:', lang);
