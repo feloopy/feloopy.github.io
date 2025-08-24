@@ -1,17 +1,17 @@
 {
-  "day": 1,
-  "week": 23,
-  "month": 99,
-  "total": 1740,
+  "day": 0,
+  "week": 22,
+  "month": 75,
+  "total": 1713,
   "stars": 31,
   "last_push": "2025-07-05T15:34:34Z",
-  "days_since_push": 48,
+  "days_since_push": 49,
   "feloopy_version": "0.3.9",
   "feloopy_release_date": "2025-07-01T21:03:01Z",
   "engine_version": "0.0.6",
   "engine_release_date": "2025-04-08T14:19:00Z",
   "engine_downloads": 151,
   "source_downloads": 0,
-  "star_pct": 31,
-  "fetched_at": "2025-08-23T00:37:48.689641Z"
+  "star_pct": 41,
+  "fetched_at": "2025-08-24T00:43:58.527290Z"
 }
