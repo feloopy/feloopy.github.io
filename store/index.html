@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>App StORe — FelooPy (Industrial)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
+  <style>
+    :root {
+      --bg: #0a1605;
+      --muted: #9aa0a6;
+      --accent: #1e991a;
+      --card-shadow: 0 8px 36px rgba(44, 139, 52, 0.6);
+      --header-h: 88px;
+      --footer-h: 96px;
+      --radius: 12px
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg), #240132);
+      color: #e8eaec;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
+      line-height: 1.35;
+      -webkit-font-smoothing: antialiased
+    }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 140;
+      background: rgba(2, 72, 14, 0.66);
+      backdrop-filter: blur(6px);
+      padding: 12px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+    }
+
+    .header-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 8px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .brand img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      filter: grayscale(1) brightness(0) invert(1);
+      background: transparent
+    }
+
+    .brand-text {
+      line-height: 1
+    }
+
+    .store-name {
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+      margin: 0
+    }
+
+    .store-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0
+    }
+
+    .top-search {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative
+    }
+
+    .top-search input[type="search"] {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.02);
+      color: #eaf0f0;
+      font-size: 14px;
+      box-sizing: border-box
+    }
+
+    .page-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 18px;
+      padding-top: calc(var(--header-h) + 8px);
+      padding-bottom: calc(var(--footer-h) + 20px);
+      box-sizing: border-box
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px
+    }
+
+    @media(min-width:1100px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media(min-width:720px)and(max-width:1099px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:719px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .card {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
+      transition: transform .16s, box-shadow .16s;
+      cursor: pointer;
+      min-height: 84px
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow)
+    }
+
+    .card:focus {
+      outline: 3px solid rgba(111, 179, 168, 0.14);
+      outline-offset: 2px
+    }
+
+    .icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent
+    }
+
+    .icon-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .card p {
+      margin: 4px 0 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.2;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden
+    }
+
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--accent);
+      background: rgba(111, 179, 168, 0.06);
+      padding: 2px 6px;
+      border-radius: 999px
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      z-index: 220;
+      display: none;
+      align-items: center;
+      justify-content: center
+    }
+
+    .overlay.open {
+      display: flex
+    }
+
+    .modal-full {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      padding: 28px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      background: linear-gradient(180deg, rgba(8, 9, 10, 0.98), rgba(8, 9, 10, 0.98))
+    }
+
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px
+    }
+
+    .modal-main {
+      flex: 1 1 auto;
+      display: grid;
+      grid-template-columns: 1fr 0.5fr;
+      gap: 10px;
+      align-items: start
+    }
+
+    @media(max-width:920px) {
+      .modal-main {
+        grid-template-columns: 1fr
+      }
+
+      .modal-full {
+        padding: 16px
+      }
+    }
+
+    .screenshot-wrap {
+      width: 80%;
+      display: flex;
+      gap: 12px;
+      flex-direction: column
+    }
+
+    .media-fill {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .media-fill img {
+      width: 100%;
+      height: auto;
+      max-height: 62vh;
+      object-fit: contain;
+      display: block
+    }
+
+    .media-fill iframe {
+      width: 100%;
+      height: 56vh;
+      border: 0;
+      display: block
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      cursor: pointer
+    }
+
+    .dot.active {
+      background: var(--accent)
+    }
+
+    .carousel-nav {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 8px
+    }
+
+    .carousel-nav button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      padding: 6px;
+      cursor: pointer;
+      border-radius: 8px
+    }
+
+    .download-panel {
+      padding: 12px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
+
+      top: 28px;
+      height: max-content;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6)
+    }
+
+    .download-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 8px;
+      border-radius: 8px
+    }
+
+    .download-left {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      min-width: 0
+    }
+
+    .download-left .meta {
+      min-width: 0
+    }
+
+    .download-left .meta .name {
+      font-weight: 700;
+      color: #fff
+    }
+
+    .download-left .meta .fn {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px
+    }
+
+    .download-cta {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .iconify {
+      display: inline-flex;
+      vertical-align: middle
+    }
+
+    footer.site-footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: var(--footer-h);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      background: rgba(2, 72, 14, 0.66);
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      z-index: 200;
+      padding: 12px 18px;
+      box-sizing: border-box
+    }
+
+    footer .inner {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .footer-stats {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 8px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;;
+    }
+
+    .publish-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+      padding: 12px;
+      border-radius: 10px
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 9px;
+      border: none;
+      cursor: pointer
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block
+    }
+
+    .tooltip .tt {
+      visibility: hidden;
+      width: max-content;
+      max-width: 320px;
+      background: #0b0b0b;
+      color: #fff;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      z-index: 300;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      font-size: 13px
+    }
+
+    .tooltip:hover .tt {
+      visibility: visible
+    }
+
+    .pypi-badges {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 12px
+    }
+
+    .badge-img {
+      height: 20px;
+      display: inline-block
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    .no-scroll {
+      position: fixed;
+      width: 100%
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-row" aria-label="Top header">
+      <div class="brand" aria-hidden="false">
+        <img src="../assets/images/feloopy-logo.png" alt="Feloopy logo" loading="lazy"
+          onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=30 height=30><rect width=30 height=30 fill=%23000/></svg>'">
+        <div class="brand-text">
+          <div class="store-name">App StORe</div>
+        </div>
+      </div>
+      <div class="top-search" role="search">
+        <label for="globalSearch" class="sr-only">Search apps</label>
+        <input id="globalSearch" type="search" placeholder="Search apps — e.g. vim, image editor, windows"
+          aria-label="Global search">
+      </div>
+      <div class="header-right" aria-hidden="true">
+        <button id="hamburgerBtn" class="hamburger" aria-expanded="false" aria-controls="mobileMenu"
+          aria-label="Open menu">☰</button>
+      </div>
+      <div id="mobileMenu"
+        style="display:none;position:absolute;z-index:180;background:rgba(6,8,10,0.98);padding:10px;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,0.6)">
+        <a href="./index.html" class="btn" style="display:block;margin-bottom:8px">Home</a>
+        <a href="https://feloopy.github.io/" class="btn" style="display:block">FelooPy</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-inner" id="pageRoot" role="main" aria-live="polite">
+    <section id="gridView" aria-atomic="true">
+      <div id="grid" class="grid" aria-live="polite"></div>
+      <div style="display:flex;justify-content:center;margin-top:18px;margin-bottom:28px">
+        <button id="loadMore" class="btn">Load more</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-full" role="document" aria-labelledby="appTitleArea">
+      <div class="modal-top">
+        <div style="display:flex;gap:12px;align-items:center;">
+          <button id="closeApp" class="btn" aria-label="Close details">✕</button>
+          <div id="appTitleArea" style="display:flex;align-items:center;gap:12px"></div>
+        </div>
+        <div id="appTopActions"></div>
+      </div>
+      <div class="modal-main">
+        <div class="screenshot-wrap" id="modalLeft">
+          <div id="shortDesc" class="muted"></div>
+          <div id="mediaArea" class="media-fill" aria-live="polite"></div>
+          <div class="carousel-nav" id="carouselNav"></div>
+          <div id="carouselDots" class="carousel-controls" aria-hidden="true"></div>
+          <div id="longHtml" style="margin-top:12px"></div>
+          <div id="pypiBadges" class="pypi-badges" aria-hidden="false"></div>
+        </div>
+        <aside class="download-panel" id="downloadPanel" aria-labelledby="downloadTitle">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div>
+              <div id="downloadTitle" style="font-weight:800;font-size:16px">Downloads</div>
+              <div id="downloadSubtitle" class="small-muted">Choose an asset</div>
+            </div>
+            <div>
+              <button id="copyLink" class="btn" title="Copy selected link"><span class="iconify"
+                  data-icon="mdi:content-copy" data-inline="false"></span></button>
+            </div>
+          </div>
+          <div id="downloadList" aria-live="polite"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="inner">
+      <div class="footer-stats" id="footerStats">
+        <div id="footerStatsLeft" class="muted">Loading…</div>
+        <div id="footerStatsRight" class="small-muted">Report issues on GitHub</div>
+      </div>
+      <div class="publish-bar" id="publishBar">
+        <div>
+          <div style="font-weight:800">Publish Your App</div>
+          <div class="muted" style="margin-top:6px">Use the buttons to open the template or email form.</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button id="openTemplate" class="btn">Template</button>
+          <button id="openEmail" class="btn">Email</button>
+          <a class="btn" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer">PR</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="publishModal" class="overlay" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;">
+    <div class="modal-full" style="max-width:900px;">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:800">App JSON template</div>
+        <div><button id="closePublish" class="btn">Close</button></div>
+      </div>
+      <div>
+        <pre id="jsonTemplate"
+          style="white-space:pre-wrap;background:#0b0b0b;padding:12px;border-radius:8px;color:#e8eaec;max-height:60vh;overflow:auto;"></pre>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:flex-end">
+        <button id="copyTemplate" class="btn">Copy JSON</button>
+        <a id="downloadTemplate" class="btn" href="#" download="app-template.json">Download</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      const state = { apps: [], filtered: [], pageSize: 18, page: 1 };
+      let lastScrollY = 0, lastFocused = null, currentApp = null, mediaList = [], currentMediaIndex = 0;
+      const _cache = { longText: new Map(), pypiMeta: new Map(), pypiBadges: new Map(), prefetching: new Set() };
+
+      const e = s => s == null ? '' : String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+
+      async function fetchWithTimeout(url, timeout = 9000) {
+        const ctrl = new AbortController(); const id = setTimeout(() => ctrl.abort(), timeout);
+        try { const r = await fetch(url, { signal: ctrl.signal, cache: 'no-cache' }); clearTimeout(id); return r; } catch (err) { clearTimeout(id); throw err; }
+      }
+      function isRemotePath(u) { try { const s = String(u || '').trim(); return s.startsWith('http://') || s.startsWith('https://'); } catch (e) { return false; } }
+      function isSourceArtifact(url, label) { const s = (String(url || '') + ' ' + String(label || '')).toLowerCase(); return /(^|[\/\-_\.])(src|source|sources|sourcecode|source-code|src\.tar|_src|-src)/.test(s) || /\/tree\/|\/blob\//.test(s); }
+      function detectPlatformFromUrl(u) { if (!u) return 'other'; const s = u.toLowerCase(); if (s.match(/(\.exe|\.msi|windows|win64|win32|mingw|cygwin)/)) return 'windows'; if (s.match(/(\.dmg|\.pkg|macos|darwin|macosx|\.app|apple)/)) return 'mac'; if (s.match(/(\.appimage|\.deb|\.rpm|\.tar\.gz|\.tgz|linux|x86_64|aarch64|arm64)/)) return 'linux'; return 'other' }
+      function detectArch(u, label) { const s = ((label || '') + ' ' + (u || '')).toLowerCase(); if (s.match(/(mingw64|x86_64|x64|amd64|win64|64bit)/)) return 'x86_64'; if (s.match(/(mingw32|i386|x86|32bit|i686)/)) return 'x86'; if (s.match(/(arm64|aarch64|armv8|armhf)/)) return 'arm64'; return '' }
+
+      function normalizeDownloads(raw) {
+        const out = [];
+        if (Array.isArray(raw.downloads)) out.push(...raw.downloads.map(d => typeof d === 'string' ? { url: d } : d));
+        if (raw.downloads && !Array.isArray(raw.downloads) && typeof raw.downloads === 'object') out.push(raw.downloads);
+        if (Array.isArray(raw.officialDownload)) out.push(...raw.officialDownload.map(d => typeof d === 'string' ? { url: d } : d));
+        if (raw.officialDownload && typeof raw.officialDownload === 'string') out.push({ url: raw.officialDownload });
+        const seen = new Map();
+        out.forEach(d => {
+          if (!d || !d.url) return;
+          const key = d.url.split('?')[0].split('#')[0];
+          if (!seen.has(key)) {
+            const label = d.label || '';
+            const isSrc = isSourceArtifact(d.url, label);
+            const arch = isSrc ? '' : detectArch(d.url, label);
+            const platform = isSrc ? 'source' : detectPlatformFromUrl(d.url);
+            seen.set(key, { url: d.url, label: label || '', arch, variant: d.variant || '', install_cmd: d.install_cmd || '', hint: d.hint || '', variants: d.variants || [], platform, source: !!isSrc });
+          }
+        });
+        return Array.from(seen.values());
+      }
+
+      function scoreDownload(d) {
+        const ua = navigator.userAgent || '';
+        const up = ua.toLowerCase();
+        const pref = up.includes('windows') ? 'windows' : up.includes('mac') || up.includes('darwin') ? 'mac' : up.includes('linux') && !up.includes('android') ? 'linux' : '';
+        let s = 0;
+        const p = d.platform || detectPlatformFromUrl(d.url);
+        if (pref && p === pref) s += 4;
+        const arch = d.arch || detectArch(d.url, d.label || '');
+        if (arch && up.includes(arch.replace('_', ''))) s += 2;
+        if (d.url.match(/release|latest|stable/i)) s += 1;
+        if (d.url.match(/(win|exe|msi|dmg|pkg|AppImage|deb|rpm|tar\.gz|tgz|zip|apk|whl)$/i)) s += 1;
+        if (d.source) s -= 1;
+        return s;
+      }
+      function sortDownloads(list) { return list.slice().sort((a, b) => scoreDownload(b) - scoreDownload(a)); }
+
+      function youtubeIdFromUrl(url) { try { const u = new URL(url); if (u.hostname.includes('youtu.be')) return u.pathname.slice(1); if (u.searchParams.get('v')) return u.searchParams.get('v'); if (u.pathname.includes('/embed/')) return u.pathname.split('/embed/')[1]; return null } catch (e) { return null; } }
+      function vimeoIdFromUrl(url) { try { const u = new URL(url); return u.pathname.split('/').filter(Boolean).pop(); } catch (e) { return null; } }
+
+      function renderMediaArea() {
+        const area = document.getElementById('mediaArea');
+        const dots = document.getElementById('carouselDots');
+        const nav = document.getElementById('carouselNav');
+        if (!mediaList || mediaList.length === 0) { area.innerHTML = '<div class="media-fill muted">No media</div>'; dots.innerHTML = ''; nav.innerHTML = ''; return; }
+        const item = mediaList[currentMediaIndex] || mediaList[0];
+        if (item.type === 'video') {
+          let iframe = '';
+          const src = item.src || '';
+          if (src.includes('youtube.com') || src.includes('youtu.be')) { const id = youtubeIdFromUrl(src); iframe = id ? `<iframe src="https://www.youtube.com/embed/${id}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` : `<iframe src="${e(src)}" frameborder="0" allowfullscreen></iframe>`; }
+          else if (src.includes('vimeo.com')) { const id = vimeoIdFromUrl(src); iframe = id ? `<iframe src="https://player.vimeo.com/video/${id}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>` : `<iframe src="${e(src)}" frameborder="0" allowfullscreen></iframe>`; }
+          else iframe = `<iframe src="${e(src)}" frameborder="0" allowfullscreen></iframe>`;
+          area.innerHTML = `<div class="media-fill">${iframe}</div>`;
+        } else {
+          const src = item.src || '';
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = 'screenshot';
+          img.loading = 'lazy';
+          img.onerror = () => { img.src = 'data:image/svg+xml;utf8,<svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=640 height=360><rect width=100% height=100% fill=%230a0a0a/><text x=50% y=50% fill=%23aaa dominant-baseline=middle text-anchor=middle font-family=Arial font-size=18>No image</text></svg>'; };
+          area.innerHTML = ''; area.appendChild(img);
+        }
+
+        if (mediaList.length > 1) {
+          dots.innerHTML = ''; for (let i = 0; i < mediaList.length; i++) { const d = document.createElement('div'); d.className = 'dot' + (i === currentMediaIndex ? ' active' : ''); d.setAttribute('data-i', String(i)); d.tabIndex = 0; d.setAttribute('role', 'button'); d.addEventListener('click', () => { currentMediaIndex = i; renderMediaArea(); }); d.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); currentMediaIndex = i; renderMediaArea(); } }); dots.appendChild(d); }
+          nav.innerHTML = ''; const prev = document.createElement('button'); prev.id = 'prevMedia'; prev.ariaLabel = 'Previous'; prev.innerText = '◀'; prev.addEventListener('click', () => { currentMediaIndex = (currentMediaIndex - 1 + mediaList.length) % mediaList.length; renderMediaArea(); }); const next = document.createElement('button'); next.id = 'nextMedia'; next.ariaLabel = 'Next'; next.innerText = '▶'; next.addEventListener('click', () => { currentMediaIndex = (currentMediaIndex + 1) % mediaList.length; renderMediaArea(); }); nav.appendChild(prev); nav.appendChild(next);
+        } else { dots.innerHTML = ''; nav.innerHTML = ''; }
+      }
+
+      function mdToHtml(md) {
+        if (!md) return '';
+        let s = String(md).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        s = s.replace(/```([\s\S]*?)```/g, (m, c) => `<pre style="background:#0b0b0b;border-radius:6px;padding:10px;overflow:auto;margin:8px 0"><code>${e(c)}</code></pre>`);
+        s = s.replace(/`([^`]+)`/g, (m, c) => `<code style="background:#0b0b0b;border-radius:4px;padding:2px 6px">${e(c)}</code>`);
+        s = s.replace(/^###### (.*$)/gim, '<h6>$1</h6>');
+        s = s.replace(/^##### (.*$)/gim, '<h5>$1</h5>');
+        s = s.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
+        s = s.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+        s = s.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+        s = s.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+        s = s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        s = s.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, t, u) => `<a href="${e(u)}" target="_blank" rel="noopener noreferrer">${t}</a>`);
+        const paragraphs = s.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+        s = paragraphs.map(p => { if (p.match(/^<(h|pre|ul|ol|blockquote|img|div)/i)) return p; if (/^\-\s+/.test(p)) { const items = p.split(/\n/).map(l => l.replace(/^-+\s*/, '')).map(li => `<li>${li}</li>`).join(''); return `<ul>${items}</ul>` } return `<p>${p}</p>` }).join('\n');
+        if (window.DOMPurify && typeof window.DOMPurify.sanitize === 'function') { return window.DOMPurify.sanitize(s); }
+        return s;
+      }
+
+      async function fetchText(url) {
+        try { const r = await fetchWithTimeout(url, 9000); if (!r.ok) return null; return await r.text(); } catch (e) { return null; }
+      }
+
+      async function resolveLongDescription(app) {
+        const raw = app._raw || app;
+        const candidates = [];
+        if (raw.long_description && typeof raw.long_description === 'string') candidates.push(raw.long_description);
+        if (raw.readme_url && typeof raw.readme_url === 'string') candidates.push(raw.readme_url);
+        if (Array.isArray(raw.documentation)) candidates.push(...raw.documentation.filter(d => typeof d === 'string'));
+        if (raw.description && typeof raw.description === 'string') candidates.push(raw.description);
+        for (const c of candidates) {
+          if (!c) continue;
+          if (_cache.longText.has(c)) return _cache.longText.get(c);
+          if (isRemotePath(c)) {
+            const t = await fetchText(c);
+            if (t) { _cache.longText.set(c, t); return t; }
+            continue;
+          } else {
+            try {
+              const path = c.replace(/^\.\//, '');
+              const t = await fetchText(path);
+              if (t) { _cache.longText.set(c, t); return t; }
+            } catch (e) { }
+          }
+        }
+        if (raw.long_description && typeof raw.long_description === 'string') { _cache.longText.set(raw.long_description, raw.long_description); return raw.long_description; }
+        if (raw.description && typeof raw.description === 'string') { _cache.longText.set(app.id || app.name, raw.description); return raw.description; }
+        return '';
+      }
+
+      async function fetchPypiJson(name, indexUrl = null) {
+        if (!name) return null;
+        const key = (indexUrl ? (indexUrl + '|' + name) : name);
+        if (_cache.pypiMeta.has(key)) return _cache.pypiMeta.get(key);
+        const endpoint = indexUrl ? `${indexUrl.replace(/\/+$/, '')}/pypi/${encodeURIComponent(name)}/json` : `https://pypi.org/pypi/${encodeURIComponent(name)}/json`;
+        try { const r = await fetchWithTimeout(endpoint, 9000); if (!r.ok) return null; const j = await r.json(); _cache.pypiMeta.set(key, j); return j; } catch (e) { return null; }
+      }
+      async function fetchPypiBadges(name) {
+        if (!name) return null;
+        if (_cache.pypiBadges.has(name)) return _cache.pypiBadges.get(name);
+        const badges = [{ src: `https://img.shields.io/pypi/v/${encodeURIComponent(name)}.svg`, alt: `PyPI (version)` }, { src: `https://img.shields.io/pypi/python-v/${encodeURIComponent(name)}.svg`, alt: 'PyPI (python versions)' }, { src: `https://pepy.tech/badge/${encodeURIComponent(name)}`, alt: 'Downloads' }];
+        _cache.pypiBadges.set(name, badges);
+        return badges;
+      }
+
+      function renderPythonInstallSection(app, pypiMeta) {
+        const raw = app._raw || app;
+        const name = raw.pypi || app.id || app.name;
+        const extrasList = [];
+        if (pypiMeta && pypiMeta.info) {
+          const info = pypiMeta.info;
+          if (Array.isArray(info.extras) && info.extras.length) extrasList.push(...info.extras);
+          if (Array.isArray(info.requires_dist)) {
+            info.requires_dist.forEach(s => {
+              const m = s.match(/^\s*([A-Za-z0-9_\-\.]+)\[([A-Za-z0-9_,\s\-]+)\]/);
+              if (m) { const ex = m[2].split(',').map(x => x.trim()).filter(Boolean); ex.forEach(x => { if (!extrasList.includes(x)) extrasList.push(x); }); }
+            });
+          }
+        }
+        if (raw.extras && Array.isArray(raw.extras)) raw.extras.forEach(x => { if (!extrasList.includes(x)) extrasList.push(x); });
+
+        const extrasSuffix = extrasList.length ? `[${extrasList.join(',')}]` : '';
+        const quotedName = extrasSuffix ? `${name}${extrasSuffix}` : name;
+        const commands = {
+          pip_global: `pip install "${quotedName}"`,
+          pip_user: `pip install --user "${quotedName}"`,
+          venv_unix: `python -m venv .venv && source .venv/bin/activate && pip install "${quotedName}"`,
+          venv_win: `python -m venv .venv && .\\.venv\\Scripts\\activate && pip install "${quotedName}"`,
+          docker_quick: `docker run --rm -it python:3.12 sh -c "pip install '${quotedName}' && python -c 'import ${name.split(/[-_]/)[0]}; print(\"ok\")'"`
+        };
+
+        let html = `<div style="margin-bottom:12px"><div style="font-weight:700;margin-bottom:6px">Install</div><div class="muted" style="margin-bottom:8px">Copy & paste commands</div><div style="display:flex;flex-direction:column;gap:8px">`;
+        html += `<div><code>${e(commands.pip_global)}</code> <button class="btn copy-cmd" data-copy="${e(commands.pip_global)}">Copy</button></div>`;
+        html += `<div><code>${e(commands.pip_user)}</code> <button class="btn copy-cmd" data-copy="${e(commands.pip_user)}">Copy</button></div>`;
+        html += `<div><code>${e(commands.venv_unix)}</code> <button class="btn copy-cmd" data-copy="${e(commands.venv_unix)}">Copy</button></div>`;
+        html += `<div><code>${e(commands.venv_win)}</code> <button class="btn copy-cmd" data-copy="${e(commands.venv_win)}">Copy</button></div>`;
+        html += `<div><code>${e(commands.docker_quick)}</code> <button class="btn copy-cmd" data-copy="${e(commands.docker_quick)}">Copy</button></div>`;
+        html += `</div></div>`;
+
+        if (pypiMeta && pypiMeta.info) {
+          const info = pypiMeta.info;
+          html += `<div style="margin-top:8px"><div style="font-weight:700;margin-bottom:6px">Project links</div><ul>`;
+          const add = (label, u) => { if (u) html += `<li><a href="${e(u)}" target="_blank" rel="noopener noreferrer">${e(label)}</a></li>`; };
+          add('PyPI project', info.package_url || `https://pypi.org/project/${encodeURIComponent(name)}/`);
+          add('Homepage', info.home_page || info.homepage);
+          if (info.project_urls) {
+            Object.keys(info.project_urls).forEach(k => add(k, info.project_urls[k]));
+          }
+          add('Source/repo', raw.repo || raw.github || (info.project_urls && (info.project_urls.Source || info.project_urls.Source_Code || info.project_urls.source)));
+          html += `</ul></div>`;
+        }
+
+        if (pypiMeta && pypiMeta.releases) {
+          const ver = (pypiMeta.info && pypiMeta.info.version) || (app.latest_version || '');
+          const files = Array.isArray(pypiMeta.releases[ver]) ? pypiMeta.releases[ver] : [];
+          if (files && files.length) {
+            html += `<div style="margin-top:10px"><div style="font-weight:700;margin-bottom:6px">Files on PyPI (${e(ver)})</div>`;
+            html += files.map(f => {
+              const fn = f.filename || f.url || '';
+              const size = f.size ? Math.round(f.size / 1024) + ' KB' : '';
+              return `<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0">
+              <div style="min-width:0"><div class="name">${e(fn)}</div><div class="fn muted" style="font-size:12px">${e(f.packagetype || 'file')} ${size}</div></div>
+              <div style="display:flex;gap:8px"><a class="btn" href="${e(f.url)}" target="_blank" rel="noopener noreferrer">Open</a><button class="btn copy" data-url="${e(f.url)}" type="button"><span class="iconify" data-icon="mdi:content-copy"></span></button></div>
+            </div>`;
+            }).join('');
+            html += `</div>`;
+          }
+        }
+
+        return html;
+      }
+
+      async function renderDownloadsForApp(app) {
+        const raw = app._raw || app;
+        const container = document.getElementById('downloadList');
+        if (raw && raw.pypi) {
+          container.innerHTML = '<div class="muted">Loading package metadata…</div>';
+          const meta = await fetchPypiJson(raw.pypi, raw.pypi_index || null);
+          let html = renderPythonInstallSection(app, meta);
+          const version = (meta && meta.info && meta.info.version) || (app.latest_version || '');
+          html += `<div style="margin-top:10px" class="muted">Version: <strong>${e(version)}</strong></div>`;
+          const badges = await fetchPypiBadges(raw.pypi);
+          if (badges && badges.length) html += `<div style="margin-top:8px">${badges.map(b => `<img class="badge-img" src="${e(b.src)}" alt="${e(b.alt)}" onerror="this.onerror=null;this.style.display='none'">`).join('')}</div>`;
+          container.innerHTML = html;
+
+          Array.from(container.querySelectorAll('.copy')).forEach(b => {
+            b.addEventListener('click', ev => {
+              const u = b.dataset.url;
+              navigator.clipboard?.writeText(u).then(() => { b.innerHTML = '<span class="iconify" data-icon="mdi:check" data-inline="false"></span>'; setTimeout(() => b.innerHTML = '<span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span>', 1200); }).catch(() => alert('Copy failed'));
+            });
+          });
+          Array.from(container.querySelectorAll('.copy-cmd')).forEach(b => {
+            b.addEventListener('click', ev => {
+              const c = b.dataset.copy;
+              navigator.clipboard?.writeText(c).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1200); }).catch(() => alert('Copy failed'));
+            });
+          });
+          return;
+        }
+
+        const list = normalizeDownloads(raw);
+        if (!list.length) { container.innerHTML = '<div class="muted">No downloads available.</div>'; document.getElementById('downloadTitle').textContent = 'Downloads'; document.getElementById('downloadSubtitle').textContent = 'No assets'; return; }
+        const sorted = sortDownloads(list);
+        const byPlatform = {};
+        sorted.forEach(d => { const p = d.platform || 'other'; (byPlatform[p] || (byPlatform[p] = [])).push(d); });
+        let out = '';
+        Object.keys(byPlatform).forEach(p => {
+          const icon = p === 'windows' ? 'mdi:microsoft-windows' : p === 'mac' ? 'mdi:apple' : p === 'linux' ? 'mdi:linux' : p === 'source' ? 'mdi:code-tags' : 'mdi:cloud';
+          out += `<div style="margin-bottom:12px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="iconify" data-icon="${icon}" data-inline="false"></span><strong style="text-transform:capitalize">${e(p)}</strong></div>`;
+          byPlatform[p].forEach(d => {
+            const fn = d.url.split('/').pop() || d.url;
+            const isDirect = !!fn.match(/\.(exe|msi|dmg|pkg|appimage|deb|rpm|tar\.gz|tgz|zip|apk|whl)$/i);
+            const cIcon = d.source ? 'mdi:code-tags' : (isDirect ? 'mdi:cloud-download' : 'mdi:open-in-new');
+            const hover = d.hint ? `<span class="tooltip"><span class="tt">${e(d.hint)}</span></span>` : '';
+            let installHtml = '';
+            if ((app._raw && (app._raw.pypi || (app._raw.tags && app._raw.tags.includes('python')))) && (d.install_cmd || d.variant || (d.variants && d.variants.length))) {
+              const cmds = [];
+              if (d.install_cmd) cmds.push(d.install_cmd);
+              if (Array.isArray(d.variants) && d.variants.length) d.variants.forEach(v => { if (v.cmd) cmds.push(v.cmd); });
+              if (cmds.length) installHtml = `<div style="margin-top:6px"><div class="muted" style="font-size:13px">Install variants</div>${cmds.map(c => `<div style="display:inline-block;margin-right:8px"><button class="btn" data-cmd="${e(c)}">${e(c.split(' ')[0])}</button></div>`).join('')}</div>`;
+            }
+            const actionLabel = d.source ? 'View source' : (isDirect ? 'Download' : 'Open');
+            out += `<div class="download-item" data-url="${e(d.url)}" role="button" tabindex="0"><div class="download-left"><span class="iconify" data-icon="${cIcon}" data-inline="false"></span><div class="meta" style="margin-left:8px"><div class="name">${e(d.label || fn)} ${hover}</div><div class="fn">${e(fn)}${d.arch ? ' · ' + e(d.arch) : ''}${d.source ? ' · source' : ''}</div>${installHtml}</div></div><div class="download-cta"><a class="btn" href="${e(d.url)}" target="_blank" rel="noopener noreferrer">${actionLabel}</a><button class="btn copy" data-url="${e(d.url)}" type="button"><span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span></button></div></div>`;
+          });
+          out += `</div>`;
+        });
+        container.innerHTML = out;
+        document.getElementById('downloadTitle').textContent = `${list.length} asset${list.length > 1 ? 's' : ''}`;
+        document.getElementById('downloadSubtitle').textContent = `${Object.keys(byPlatform).length} platform${Object.keys(byPlatform).length > 1 ? 's' : ''}`;
+
+        Array.from(container.querySelectorAll('.copy')).forEach(b => { b.addEventListener('click', ev => { ev.stopPropagation(); const u = b.dataset.url; navigator.clipboard?.writeText(u).then(() => { b.innerHTML = '<span class="iconify" data-icon=\"mdi:check\" data-inline=\"false\"></span>'; setTimeout(() => b.innerHTML = '<span class=\"iconify\" data-icon=\"mdi:content-copy\" data-inline=\"false\"></span>', 1200); }).catch(() => alert('Copy failed')); }); });
+        Array.from(container.querySelectorAll('.download-item')).forEach(row => { row.addEventListener('click', () => { window.open(row.dataset.url, '_blank'); }); row.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); window.open(row.dataset.url, '_blank'); } }); });
+        Array.from(container.querySelectorAll('button[data-cmd]')).forEach(b => { b.addEventListener('click', ev => { const cmd = b.dataset.cmd; navigator.clipboard?.writeText(cmd).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = cmd.split(' ')[0], 1200); }).catch(() => alert('Copy failed')); }); });
+      }
+
+      function cardHTML(app) {
+        const short = app.short_description || (app._raw && app._raw.description) || '';
+        const icon = app.icon || '';
+        const verified = app.verified || (app._raw && app._raw.verified);
+        return `<article class="card" tabindex="0" role="button" data-id="${e(app.id)}">
+        <div class="icon-wrap"><img src="${e(icon)}" alt="${e(app.name)}" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=64 height=64><rect width=64 height=64 fill=%230b0b0b/></svg>'"></div>
+        <div style="flex:1;min-width:0">
+          <h3>${e(app.name)} ${verified ? '<span class="verified-badge" title="Verified"><span class="iconify" data-icon=\"mdi:check-circle\" data-inline=\"false\"></span>Verified</span>' : ''}</h3>
+          <p class="muted">${e(short)}</p>
+        </div>
+      </article>`;
+      }
+
+      function renderGrid(apps) {
+        const grid = document.getElementById('grid');
+        if (!apps || apps.length === 0) { grid.innerHTML = '<div class="muted">No apps found.</div>'; document.getElementById('loadMore').style.display = 'none'; updateFooterStats(); return; }
+        const pageApps = apps.slice(0, state.pageSize * state.page);
+        grid.innerHTML = pageApps.map(cardHTML).join('');
+        if (pageApps.length >= apps.length) document.getElementById('loadMore').style.display = 'none'; else document.getElementById('loadMore').style.display = 'inline-block';
+        updateFooterStats();
+      }
+
+      function updateFooterStats() {
+        const total = state.apps.length;
+        const shown = Math.min(state.page * state.pageSize, state.filtered.length);
+        const cats = new Set();
+        state.apps.forEach(a => { const t = (a._raw && Array.isArray(a._raw.tags)) ? a._raw.tags : (a._raw && a._raw.tags ? [a._raw.tags] : []); (t || []).forEach(x => { if (x) cats.add(x); }); });
+        const verified = state.apps.filter(a => a.verified).length;
+        const autos = state.apps.filter(a => a.auto_update).length;
+        document.getElementById('footerStatsLeft').innerHTML = `Showing <strong>${shown}</strong> of <strong>${total}</strong> apps · <strong>${cats.size}</strong> categories · <strong>${verified}</strong> verified · <strong>${autos}</strong> auto-updates`;
+      }
+
+      function prefetchAppDetails(app) {
+        if (!app || !app.id || _cache.prefetching.has(app.id)) return;
+        _cache.prefetching.add(app.id);
+        resolveLongDescription(app).finally(() => _cache.prefetching.delete(app.id));
+        if (app._raw && (app._raw.pypi || (app._raw.tags && app._raw.tags.includes('python')))) {
+          const name = app._raw.pypi || app.id || app.name;
+          if (!_cache.pypiBadges.has(name)) fetchPypiBadges(name).then(b => _cache.pypiBadges.set(name, b)).catch(() => {/*ignore*/ });
+        }
+      }
+
+      function trapFocus(container) {
+        const focusable = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
+        const el = container;
+        const nodes = Array.from(el.querySelectorAll(focusable)).filter(n => n.offsetWidth > 0 || n.offsetHeight > 0 || n.getClientRects().length);
+        if (nodes.length === 0) return () => { };
+        const first = nodes[0], last = nodes[nodes.length - 1];
+        function handle(e) { if (e.key !== 'Tab') return; if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } } else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } } }
+        document.addEventListener('keydown', handle);
+        return () => document.removeEventListener('keydown', handle);
+      }
+
+      async function openApp(id, pushState = true) {
+        const app = state.apps.find(a => a.id === id);
+        if (!app) return;
+        currentApp = app;
+        lastScrollY = window.scrollY || window.pageYOffset || 0;
+        lastFocused = document.activeElement;
+
+        document.body.classList.add('no-scroll');
+        document.body.style.top = `-${lastScrollY}px`;
+
+        const verified = app.verified || (app._raw && app._raw.verified);
+        const titleHtml = `<div style="display:flex;gap:12px;align-items:center"><div style="width:84px;height:84px;border-radius:12px;overflow:hidden">${app.icon ? `<img src="${e(app.icon)}" alt="${e(app.name)}" style="width:84px;height:84px;object-fit:cover">` : e((app.name || '').charAt(0))}</div><div><div style="font-size:1.2rem;font-weight:800">${e(app.name)} ${verified ? '<span class="verified-badge" title="Verified"><span class="iconify" data-icon=\"mdi:check-circle\" data-inline=\"false\"></span>Verified</span>' : ''}</div><div class="muted">${e(app.vendor || '')} ${app.latest_version ? ' • ' + e(app.latest_version) : ''}</div></div></div>`;
+        document.getElementById('appTitleArea').innerHTML = titleHtml;
+        document.getElementById('appTopActions').innerHTML = app.homepage ? `<a class="btn" href="${e(app.homepage)}" target="_blank" rel="noopener noreferrer">Homepage</a>` : '';
+        document.getElementById('shortDesc').textContent = app.short_description || (app._raw && app._raw.description) || '';
+
+        mediaList = [];
+        try { if (app._raw && app._raw.video) mediaList.push({ type: 'video', src: app._raw.video }); (app.screenshots || []).forEach(s => { if (typeof s === 'string' && (s.includes('youtube.com') || s.includes('youtu.be') || s.includes('vimeo.com'))) mediaList.push({ type: 'video', src: s }); else mediaList.push({ type: 'image', src: s }); }); } catch (e) { mediaList = []; }
+        currentMediaIndex = 0; renderMediaArea();
+
+        renderDownloadsForApp(app).catch(() => {/*ignore*/ });
+
+        const key = (app._raw && (app._raw.long_description || app._raw.readme_url)) || app.id;
+        if (_cache.longText.has(key)) {
+          const resolved = _cache.longText.get(key);
+          const longHtml = resolved ? ((resolved.trim().startsWith('#') || resolved.includes('\n')) ? mdToHtml(resolved) : e(resolved)) : '';
+          document.getElementById('longHtml').innerHTML = longHtml || '<div class="muted">No long description provided.</div>';
+        } else {
+          document.getElementById('longHtml').innerHTML = '<div class="muted">Loading long description…</div>';
+          resolveLongDescription(app).then(resolved => { const longHtml = resolved ? ((resolved.trim().startsWith('#') || resolved.includes('\n')) ? mdToHtml(resolved) : e(resolved)) : ''; document.getElementById('longHtml').innerHTML = longHtml || '<div class="muted">No long description provided.</div>'; }).catch(() => { document.getElementById('longHtml').innerHTML = '<div class="muted">Could not load detailed description.</div>'; });
+        }
+
+        if (app._raw && (app._raw.pypi || (app._raw.tags && app._raw.tags.includes('python')))) {
+          const name = app._raw.pypi || app.id || app.name;
+          if (_cache.pypiBadges.has(name)) renderPypiBadges(_cache.pypiBadges.get(name));
+          else fetchPypiBadges(name).then(b => { _cache.pypiBadges.set(name, b); renderPypiBadges(b); }).catch(() => renderPypiBadges(null));
+        } else renderPypiBadges(null);
+
+        const overlay = document.getElementById('overlay'); overlay.classList.add('open'); overlay.setAttribute('aria-hidden', 'false');
+
+        const releaseTrap = trapFocus(overlay);
+        setTimeout(() => { document.getElementById('closeApp').focus(); }, 60);
+
+        function onKey(e) { if (e.key === 'Escape') { closeApp(); } }
+        document.addEventListener('keydown', onKey);
+        overlay._cleanup = () => { releaseTrap(); document.removeEventListener('keydown', onKey); overlay._cleanup = null; };
+
+        if (pushState) {
+          try { history.pushState({ app: id }, '', '#/app/' + encodeURIComponent(id)); } catch (e) { }
+        }
+      }
+
+      function closeApp(pushHistory = true) {
+        const overlay = document.getElementById('overlay');
+        if (overlay._cleanup) overlay._cleanup();
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.top = '';
+        document.body.classList.remove('no-scroll');
+        try { window.scrollTo(0, lastScrollY || 0); } catch (e) { }
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
+        currentApp = null;
+        if (pushHistory) { try { history.pushState({}, '', location.pathname); } catch (e) { } }
+      }
+
+      async function fetchJson(paths, timeout = 12000) {
+        for (const p of paths) {
+          try {
+            const ctrl = new AbortController();
+            const id = setTimeout(() => ctrl.abort(), timeout);
+            const r = await fetch(p, { signal: ctrl.signal, cache: 'no-cache' });
+            clearTimeout(id);
+            if (r.ok) return await r.json();
+          } catch (e) { }
+        }
+        const el = document.getElementById('sample-json');
+        try { return JSON.parse(el.textContent); } catch (e) { return []; }
+      }
+
+      function renderPypiBadges(badges) { const container = document.getElementById('pypiBadges'); if (!badges || !badges.length) { container.innerHTML = ''; return; } container.innerHTML = badges.map(b => `<img class="badge-img" src="${e(b.src)}" alt="${e(b.alt)}" onerror="this.onerror=null;this.style.display='none'">`).join(''); }
+
+      document.addEventListener('DOMContentLoaded', async function () {
+        document.getElementById('loadMore').addEventListener('click', () => { state.page++; renderGrid(state.filtered); });
+
+        document.getElementById('closeApp').addEventListener('click', () => { closeApp(); });
+
+        document.getElementById('overlay').addEventListener('click', ev => { if (ev.target === ev.currentTarget) closeApp(); });
+
+        const hamb = document.getElementById('hamburgerBtn'); const mobileMenu = document.getElementById('mobileMenu');
+        hamb.addEventListener('click', ev => { const rect = hamb.getBoundingClientRect(); mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block'; mobileMenu.style.left = `${Math.max(8, rect.left)}px`; mobileMenu.style.top = `${rect.bottom + 8 + window.scrollY}px`; hamb.setAttribute('aria-expanded', String(mobileMenu.style.display === 'block')); });
+        document.addEventListener('click', ev => { const t = ev.target; if (mobileMenu.style.display !== 'block') return; if (t === hamb || mobileMenu.contains(t)) return; mobileMenu.style.display = 'none'; hamb.setAttribute('aria-expanded', 'false'); });
+
+        document.getElementById('openTemplate').addEventListener('click', () => { const pm = document.getElementById('publishModal'); const tpl = { id: 'my-app', name: 'My App', vendor: 'Your Name', short_description: 'Short summary (shown in cards)', long_description: 'Long description or a URL to README.md (rendered as Markdown)', tags: ['category'], license: 'MIT', officialDownload: ['https://example.com/download'], homepage: 'https://example.com', icon: '/market/icons/myapp.png', screenshots: [], auto_update: false, update_method: '', repo: '' }; document.getElementById('jsonTemplate').textContent = JSON.stringify(tpl, null, 2); pm.style.display = 'flex'; pm.setAttribute('aria-hidden', 'false'); document.getElementById('copyTemplate').focus(); });
+        document.getElementById('closePublish').addEventListener('click', () => { const pm = document.getElementById('publishModal'); pm.style.display = 'none'; pm.setAttribute('aria-hidden', 'true'); });
+        document.getElementById('copyTemplate').addEventListener('click', () => { const t = document.getElementById('jsonTemplate').textContent; navigator.clipboard?.writeText(t).then(() => { document.getElementById('copyTemplate').textContent = 'Copied'; setTimeout(() => document.getElementById('copyTemplate').textContent = 'Copy JSON', 1200) }).catch(() => alert('Copy failed')) });
+        document.getElementById('downloadTemplate').addEventListener('click', () => { const blob = new Blob([document.getElementById('jsonTemplate').textContent], { type: 'application/json' }); const url = URL.createObjectURL(blob); document.getElementById('downloadTemplate').href = url; setTimeout(() => URL.revokeObjectURL(url), 30000); });
+
+        try {
+          const raw = await fetchJson(['./market/apps.json', '/market/apps.json', 'market/apps.json']);
+          const arr = Array.isArray(raw) ? raw : (raw.apps || raw);
+          state.apps = arr.map(a => ({ _raw: a, id: a.id || (a.name || '').toLowerCase().replace(/\s+/g, '-'), name: a.name || 'Unnamed', vendor: a.vendor || '', short_description: a.short_description || (a.description || '').slice(0, 140), long_description: a.long_description || a.description || '', downloads: normalizeDownloads(a), homepage: a.homepage || '', screenshots: a.screenshots || [], icon: a.icon || '', popularity: a.popularity || 0, latest_version: a.latest_version || '', auto_update: !!a.auto_update, update_method: a.update_method || '', repo: a.repo || '', verified: !!a.verified }));
+          state.filtered = state.apps.slice().sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+          renderGrid(state.filtered);
+
+          const grid = document.getElementById('grid');
+
+          // main delegation for clicks and keyboard events on cards (robust)
+          grid.addEventListener('click', ev => {
+            const c = ev.target.closest('.card');
+            if (!c) return;
+            const id = c.getAttribute('data-id');
+            if (!id) return;
+            openApp(id);
+          });
+          grid.addEventListener('keydown', ev => {
+            if (ev.key === 'Enter' || ev.key === ' ') {
+              const c = ev.target.closest('.card');
+              if (!c) return;
+              ev.preventDefault();
+              const id = c.getAttribute('data-id');
+              if (!id) return;
+              openApp(id);
+            }
+          });
+
+          // prefetch on hover/focus
+          grid.addEventListener('pointerenter', ev => { const card = ev.target.closest('.card'); if (!card) return; const id = card.getAttribute('data-id'); const app = state.apps.find(a => a.id === id); if (app) prefetchAppDetails(app); }, { capture: true, passive: true });
+          grid.addEventListener('focusin', ev => { const card = ev.target.closest('.card'); if (!card) return; const id = card.getAttribute('data-id'); const app = state.apps.find(a => a.id === id); if (app) prefetchAppDetails(app); });
+
+          document.getElementById('globalSearch').addEventListener('input', debounce(() => { const q = document.getElementById('globalSearch').value.trim().toLowerCase(); state.filtered = state.apps.filter(a => { if (!q) return true; const hay = [a.name, a.vendor, a.short_description, a.long_description, (a._raw.tags || []).join(' '), (a.downloads || []).map(d => d.url || '').join(' ')].join(' ').toLowerCase(); return hay.includes(q); }).sort((a, b) => (b.popularity || 0) - (a.popularity || 0)); state.page = 1; renderGrid(state.filtered); }, 180));
+
+          if (location.hash.startsWith('#/app/')) { const id = decodeURIComponent(location.hash.slice(6)); setTimeout(() => openApp(id, false), 50); }
+          updateFooterStats();
+          window.addEventListener('resize', debounce(updateFooterStats, 160));
+          window.addEventListener('scroll', debounce(updateFooterStats, 140));
+        } catch (e) {
+          document.getElementById('grid').innerHTML = '<div class="muted">Failed to load market/apps.json — check path/format.</div>';
+          updateFooterStats();
+        }
+      });
+
+      window.addEventListener('popstate', () => {
+        if (location.hash.startsWith('#/app/')) { const id = decodeURIComponent(location.hash.slice(6)); openApp(id, false); } else closeApp(false);
+      });
+
+    })();
+  </script>
+</body>
+
+</html>

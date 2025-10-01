@@ -1,0 +1,36 @@
+[
+  {
+    "id": "picat",
+    "name": "PICAT",
+    "vendor": "Neng-Fa Zhou",
+    "short_description": "Compact rule-based scripting & modeling language for constraint solving, planning and general-purpose scripting.",
+    "long_description": "PICAT is a compact, rule-based scripting and modeling language designed for combinatorial search, constraint programming (CP), satisfiability solving (SAT), mixed-integer programming (MIP), planning, natural language processing (NLP) and complex data processing. It combines pattern-matching rules (predicates and functions), imperative conveniences (assignable variables, loops and comprehensions), event-driven actors (action rules and channels) and tabling (memoization and term-sharing). The integrated planner uses tabled, resource-bounded search and is often competitive with ASP and PDDL planners on benchmarks. Picat is suitable for teaching and solving NP-like problems (examples: shortest path, knapsack, n-queens, Sudoku) without hand-coding backtracking. Picat’s C sources are distributed under the Mozilla Public License 2.0 (MPL-2.0). Development is led by Neng-Fa Zhou with community contributions.",
+    "tags": [
+      "programming",
+      "logic",
+      "constraint",
+      "solver"
+    ],
+    "license": "MPL-2.0",
+    "officialDownload": [
+      "https://picat-lang.org/download/picat39_linux64.tar.gz",
+      "https://picat-lang.org/download/picat39_mingw64.zip",
+      "https://picat-lang.org/download/picat391_src.tar.gz"
+    ],
+    "homepage": "https://picat-lang.org/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://picat-lang.org/images/picat_logo.png",
+    "screenshots": [
+      "https://picat-lang.org/images/springer_11845.jpg"
+    ],
+    "popularity": 98,
+    "documentation": [
+      "https://picat-lang.org/download/picat_guide_html/picat_guide.html",
+      "https://picat-lang.org/download/picat_guide.pdf"
+    ],
+    "auto_update": true,
+    "latest_version": "3.9"
+  }
+]
