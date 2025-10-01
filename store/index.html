@@ -2,8 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>App StORe — FelooPy</title>
+  <script>
+  (function(){
+    try{
+      var ua = navigator.userAgent || '';
+      var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints && navigator.msMaxTouchPoints > 0);
+      var isInApp = /linkedin|fbav|fb_iab|instagram|whtsapp|fb_iab/i.test(ua);
+      if(isTouch || isInApp){
+        document.documentElement.classList.add('force-mobile');
+      }
+      window.__dumpViewport = function(){
+        return {
+          userAgent: ua,
+          innerWidth: window.innerWidth,
+          outerWidth: window.outerWidth,
+          clientWidth: document.documentElement.clientWidth,
+          visualViewportWidth: (window.visualViewport && window.visualViewport.width) || null,
+          screenWidth: screen.width,
+          devicePixelRatio: window.devicePixelRatio || 1
+        };
+      };
+    }catch(e){}
+  })();
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
@@ -15,20 +38,32 @@
       --pill-blue-bg: rgba(59,130,246,0.12); --pill-blue-color: #3b82f6;
       --pill-green-bg: rgba(30,153,26,0.12); --pill-green-color: #1e991a;
     }
-
+    html.force-mobile{
+      --header-h:64px;
+      --footer-h:76px;
+    }
+    html.force-mobile .brand-text { display:none; }
+    html.force-mobile .publish-bar .left .muted { display:none; }
+    html.force-mobile .grid { grid-template-columns:1fr !important; }
+    html.force-mobile .right-pane{ width:100% !important; flex:0 0 auto !important; }
     @media (max-width:719px){
       :root { --header-h:64px; --footer-h:76px; }
       .brand-text { display:none; }
       .publish-bar .left .muted { display:none; }
     }
-
+    @media (pointer:coarse), (hover: none) {
+      :root { --header-h:64px; --footer-h:76px; }
+      .brand-text { display:none; }
+      .publish-bar .left .muted { display:none; }
+      .grid{ grid-template-columns:1fr; }
+      .right-pane{ width:100%; flex:0 0 auto; }
+    }
     html,body{height:100%}
     body{
       margin:0; background:linear-gradient(180deg,var(--bg),#240132);
       color:#e8eaec; font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial;
       -webkit-font-smoothing:antialiased; line-height:1.35;
     }
-
     header.site-header{ position:sticky; top:0; z-index:140; background:var(--header-bg); backdrop-filter:blur(6px); padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.03); }
     .header-row{ display:grid; grid-template-columns:auto 1fr auto; gap:8px; align-items:center; max-width:1100px; margin:0 auto; position:relative; }
     .brand{ display:flex;align-items:center;gap:8px; cursor:pointer; outline:none; }
@@ -36,63 +71,47 @@
     .brand img{ width:30px;height:30px;object-fit:contain; filter:grayscale(1) brightness(0) invert(1); background:transparent; transition: filter 280ms cubic-bezier(.2,.9,.3,1), transform 280ms cubic-bezier(.2,.9,.3,1); will-change: filter, transform; }
     .brand:hover img, .brand:focus img, .brand:focus-visible img { filter: none; transform: scale(1.06); }
     @media (prefers-reduced-motion: reduce){ .brand img{ transition: none !important; transform: none !important; } }
-
     .brand-text{line-height:1}
     .store-name{font-weight:700;font-size:18px;color:#fff;margin:0}
     .top-search{width:100%;max-width:860px;margin:0 auto;position:relative}
     .top-search input[type="search"]{width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#eaf0f0;font-size:14px;box-sizing:border-box}
-
     .page-inner{max-width:1100px;margin:0 auto;padding:20px 18px;padding-top:calc(var(--header-h) + 8px);padding-bottom:calc(var(--footer-h) + 40px);box-sizing:border-box}
     .grid{display:grid;gap:16px}
     @media(min-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
     @media(min-width:720px)and(max-width:1099px){.grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:719px){.grid{grid-template-columns:1fr}}
-
     .card{display:flex;gap:12px;align-items:center;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0));transition:transform .16s,box-shadow .16s;cursor:pointer;min-height:84px}
     .card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow)}
-
     .icon-wrap{width:64px;height:64px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:transparent;flex:0 0 64px;padding:6px;box-sizing:border-box}
     .icon-wrap img{max-width:84%; max-height:84%; object-fit:contain; display:block; border-radius:6px}
-
     .card h3{margin:0;font-size:16px;font-weight:700;color:#fff;display:flex;gap:8px;align-items:center}
     .card p{margin:4px 0 0 0;color:var(--muted);font-size:13px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-
     .verified-only { display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:999px; opacity:0.95; }
-
     .mobile-menu{ display:none; position:absolute; right:18px; top:100%; margin-top:8px; z-index:180; background:var(--header-bg); padding:10px; border-radius:10px; box-shadow:0 12px 40px rgba(0,0,0,0.6); min-width:180px; width:min(92vw,320px); transform-origin:top right; }
     .mobile-menu.open{ display:block; }
     .mobile-menu a{ display:block; margin-bottom:8px; }
     .mobile-menu a:last-child{ margin-bottom:0; }
-
     .overlay{ position:fixed; inset:0; z-index:220; display:none; background:rgba(0,0,0,0.88); align-items:stretch; justify-content:center; }
     .overlay.open{ display:flex; }
     .modal-full{ width:100%; height:100dvh; box-sizing:border-box; padding: max(16px, env(safe-area-inset-top)) 18px max(16px, env(safe-area-inset-bottom)); display:flex; flex-direction:column; gap:12px; background:linear-gradient(180deg,rgba(8,9,10,0.98),rgba(8,9,10,0.98)); overflow:auto; -webkit-overflow-scrolling:touch; }
     .modal-top{ display:flex; justify-content:space-between; align-items:center; gap:12px; flex:0 0 auto; }
     .modal-main{ flex:1 1 auto; display:flex; gap:12px; align-items:flex-start; min-height:0; }
     @media (max-width:919px){ .modal-main{ flex-direction:column; } }
-
     .left-pane{ flex:1 1 0; display:flex; flex-direction:column; gap:12px; min-width:0; }
     .right-pane{ width:420px; flex:0 0 420px; }
     @media (max-width:919px){ .right-pane{ width:100%; flex:0 0 auto; } }
-
     .media-fill{ width:100%; border-radius:10px; background:linear-gradient(180deg,rgba(255,255,255,0.01), rgba(255,255,255,0)); display:flex; align-items:center; justify-content:center; max-width:100%; box-sizing:border-box; overflow:hidden; }
     .media-fill { max-height: calc(100vh - var(--header-h) - var(--footer-h) - 64px); }
-
     .video-wrapper { width: 100%; position: relative; aspect-ratio: 16 / 9; max-height: 62vh; display: block; box-sizing: border-box; touch-action: pan-y; }
     .video-wrapper.fallback { height: 0; padding-top: 56.25%; position: relative; }
-
     .video-wrapper iframe, .video-wrapper video, .video-wrapper img { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; border-radius: 10px; object-fit: contain; }
-
     .video-placeholder { position: absolute; inset: 0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)); color:var(--muted); border-radius:10px; text-align:center; padding:12px; cursor:pointer; }
     .video-placeholder .muted { color: var(--muted); }
-
     .media-fill img { max-width: 100%; max-height: calc(100vh - var(--header-h) - var(--footer-h) - 120px); width: auto; height: auto; object-fit: contain; border-radius: 10px; display: block; }
-
     .carousel-controls{ display:flex; justify-content:center; gap:8px; margin-top:8px }
     .dot{ width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.12); cursor:pointer }
     .dot.active{ background:var(--accent) }
     .carousel-nav{ display:flex; gap:8px; justify-content:center; margin-top:8px }
-
     .download-panel{ padding:12px; border-radius:10px; background:linear-gradient(180deg,rgba(255,255,255,0.01), rgba(255,255,255,0)); height:100%; box-sizing:border-box; overflow:auto; -webkit-overflow-scrolling:touch; }
     .download-section { margin-bottom:12px; }
     .download-section h3 { margin:0 0 8px 0; font-size:14px; color:#fff; text-transform:capitalize; display:flex; align-items:center; gap:8px; }
@@ -100,34 +119,27 @@
     .download-left { display:flex; gap:10px; align-items:center; min-width:0; }
     .download-left .fn { color:var(--muted); font-size:13px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:220px; }
     .download-cta { display:flex; gap:8px; align-items:center; }
-
     .btn{ background:rgba(255,255,255,0.04); color:#fff; padding:8px 12px; border-radius:9px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px }
     .icon-btn{ padding:8px; display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px }
     .pill{ display:inline-flex; align-items:center; gap:8px; padding:6px 8px; border-radius:999px; font-size:13px; font-weight:600; white-space:nowrap }
     .pill.general{ background:var(--pill-blue-bg); color:var(--pill-blue-color); border:1px solid rgba(59,130,246,0.14) }
     .pill.preferred{ background:var(--pill-green-bg); color:var(--pill-green-color); border:1px solid rgba(30,153,26,0.12) }
-
     footer.site-footer{ position:fixed; left:0; right:0; bottom:0; height:var(--footer-h); display:flex; align-items:flex-end; justify-content:center; background:var(--header-bg); border-top:1px solid rgba(255,255,255,0.03); z-index:200; padding:12px 18px; box-sizing:border-box }
     footer .inner{ max-width:1100px; width:100%; display:flex; flex-direction:column; gap:8px; color:var(--muted); font-size:13px }
     .footer-stats{ background:rgba(0,0,0,0.25); padding:8px 12px; border-radius:10px; color:var(--muted); display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:6px }
-
     .publish-bar{ display:flex; align-items:flex-end; justify-content:space-between; gap:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); padding:12px; border-radius:10px }
     .publish-bar .left { min-width:0; flex:1; display:flex; flex-direction:column; gap:6px; }
     .publish-bar .right { display:flex; gap:8px; align-items:center; justify-self:flex-end; }
-
     @media (max-width:520px){
       .publish-bar { flex-direction:row; align-items:flex-end; gap:12px; }
       .publish-bar .left { order:1; }
       .publish-bar .right { order:2; margin-left:auto; }
       .publish-bar .left .muted { display:none; }
     }
-
-    .legal { display:flex; gap:12px; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; flex-wrap:wrap; }
+    .legal { display:flex; gap:12px; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; flex-wrap:wrap; margin-bottom:20px}
     .legal .copyright, .legal .disclaimer { margin:0; }
     .footer-link { text-decoration:underline; color:inherit; }
-
     @media (max-width:640px){ .legal { gap:8px; align-items:flex-start; } }
-
     .muted{ color:var(--muted) }
     .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
     .hidden{ display:none!important }
@@ -141,17 +153,14 @@
              onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=30 height=30><rect width=30 height=30 fill=%23000/></svg>'">
         <div class="brand-text"><div class="store-name">App StORe</div></div>
       </div>
-
       <div class="top-search" role="search">
         <label for="globalSearch" class="sr-only">Search apps</label>
         <input id="globalSearch" type="search" placeholder="Search apps..." aria-label="Global search">
       </div>
-
       <div class="header-right" aria-hidden="true">
         <button id="hamburgerBtn" class="btn icon-btn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
           <span class="iconify" data-icon="mdi:menu" data-inline="false"></span>
         </button>
-
         <div id="mobileMenu" class="mobile-menu" role="menu" aria-hidden="true">
           <a href="./index.html" class="btn" role="menuitem">Home</a>
           <a href="https://feloopy.github.io/" class="btn" role="menuitem">FelooPy</a>
@@ -159,7 +168,6 @@
       </div>
     </div>
   </header>
-
   <main class="page-inner" id="pageRoot" role="main" aria-live="polite">
     <section id="gridView" aria-atomic="true">
       <div id="grid" class="grid" aria-live="polite"></div>
@@ -168,7 +176,6 @@
       </div>
     </section>
   </main>
-
   <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-full" role="document" aria-labelledby="appTitleArea">
       <div class="modal-top">
@@ -180,7 +187,6 @@
         </div>
         <div id="appTopActions"></div>
       </div>
-
       <div class="modal-main">
         <div class="left-pane">
           <div id="shortDesc" class="muted"></div>
@@ -190,7 +196,6 @@
           <div id="longHtml" style="margin-top:12px"></div>
           <div id="pypiBadges" class="pypi-badges" aria-hidden="false" style="margin-top:12px"></div>
         </div>
-
         <aside class="right-pane">
           <div class="download-panel" aria-labelledby="downloadTitle">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
@@ -205,19 +210,16 @@
       </div>
     </div>
   </div>
-
   <footer class="site-footer" role="contentinfo">
     <div class="inner">
       <div class="footer-stats" id="footerStats">
         <div id="footerStatsLeft" class="muted">Loading…</div>
         <div id="footerStatsRight" class="small-muted">Report issues on <a id="ghRepo" class="footer-link" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></div>
       </div>
-
       <div class="legal" aria-hidden="false">
         <div class="copyright">&copy; <span id="copyrightYear"></span> Feloopy. All rights reserved.</div>
-        <div class="disclaimer muted">This listing is for informational purposes only and does not constitute an endorsement of any app.</div>
+        <div class="disclaimer muted">For info only; not an endorsement.</div>
       </div>
-
       <div class="publish-bar" id="publishBar" role="region" aria-label="Publish actions">
         <div class="left">
           <div style="font-weight:800">Publish Your App</div>
@@ -240,7 +242,6 @@
       </div>
     </div>
   </footer>
-
   <div id="publishModal" class="hidden" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;">
     <div class="modal-full" style="max-width:900px;">
       <div style="display:flex;justify-content:space-between;align-items:center">
@@ -256,20 +257,16 @@
       </div>
     </div>
   </div>
-
   <script>
   (function(){
     'use strict';
     const state = { apps: [], filtered: [], pageSize: 18, page: 1 };
     let lastFocused = null, currentApp = null, mediaList = [], currentMediaIndex = 0;
     const _cache = { longText: new Map(), pypiMeta: new Map(), pypiBadges: new Map(), prefetching: new Set() };
-
     const e = s => s == null ? '' : String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     const debounce = (fn, ms=150) => { let t; return (...a)=>{ clearTimeout(t); t = setTimeout(()=>fn(...a), ms); }; };
-
     function isRemotePath(u){ try{ const s=String(u||'').trim(); return s.startsWith('http://')||s.startsWith('https://'); }catch(e){return false} }
     function fetchWithTimeout(url, timeout=9000){ const ctrl = new AbortController(); const id=setTimeout(()=>ctrl.abort(), timeout); return fetch(url,{signal:ctrl.signal, cache:'no-cache'}).finally(()=>clearTimeout(id)); }
-
     function sanitizeColor(c){
       if(!c) return null;
       const s=String(c).trim();
@@ -278,7 +275,6 @@
       if(/^[a-zA-Z]+$/.test(s) && s.length<=20) return s;
       return null;
     }
-
     function detectPlatformFromUrl(u){
       if(!u) return 'other';
       const s = u.toLowerCase();
@@ -294,10 +290,8 @@
       if (s.match(/(arm64|aarch64|armv8|armhf)/)) return 'arm64';
       return '';
     }
-
     const _uaLower = (navigator.userAgent||'').toLowerCase();
     const preferredPlatform = _uaLower.includes('windows') ? 'windows' : (_uaLower.includes('mac')||_uaLower.includes('darwin')) ? 'mac' : (_uaLower.includes('linux')&&!_uaLower.includes('android')) ? 'linux' : '';
-
     function normalizeDownloads(raw){
       const out = [];
       if(Array.isArray(raw.downloads)) out.push(...raw.downloads.map(d=>typeof d==='string'?{url:d}:d));
@@ -317,7 +311,6 @@
       });
       return Array.from(seen.values());
     }
-
     function scoreDownload(d){
       let s=0;
       const p = d.platform || detectPlatformFromUrl(d.url);
@@ -331,25 +324,19 @@
     }
     function sortDownloads(list){ return list.slice().sort((a,b)=>scoreDownload(b)-scoreDownload(a)); }
     function groupByPlatform(list){ const by={}; list.forEach(d=>{ const p=d.platform||'other'; (by[p]||(by[p]=[])).push(d); }); return by; }
-
     function youtubeIdFromUrl(url){ try{ const u=new URL(url); if(u.hostname.includes('youtu.be')) return u.pathname.slice(1); if(u.searchParams.get('v')) return u.searchParams.get('v'); if(u.pathname.includes('/embed/')) return u.pathname.split('/embed/')[1]; return null }catch(e){return null} }
     function vimeoIdFromUrl(url){ try{ const u=new URL(url); return u.pathname.split('/').filter(Boolean).pop(); }catch(e){return null} }
-
     function renderMediaArea(){
       const area = document.getElementById('mediaArea');
       const dots = document.getElementById('carouselDots');
       const nav = document.getElementById('carouselNav');
       if(!mediaList||mediaList.length===0){ area.innerHTML = '<div class="media-fill muted">No media</div>'; dots.innerHTML=''; nav.innerHTML=''; return; }
-
       const item = mediaList[currentMediaIndex] || mediaList[0];
       area.innerHTML = '';
-
       const supportsAspect = (typeof window.CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('aspect-ratio', '16/9'));
       const fallbackClass = supportsAspect ? '' : ' fallback';
-
       const wrapper = document.createElement('div');
       wrapper.className = 'video-wrapper' + fallbackClass;
-
       if(item.type === 'video'){
         const src = item.src || '';
         let frameSrc = src;
@@ -360,24 +347,19 @@
           const id = vimeoIdFromUrl(src);
           frameSrc = id ? `https://player.vimeo.com/video/${id}` : src;
         }
-
         const iframe = document.createElement('iframe');
         iframe.setAttribute('src', frameSrc);
         iframe.setAttribute('frameborder', '0');
         iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
         iframe.setAttribute('allowfullscreen', '');
         iframe.setAttribute('title', 'App demo video');
-
         const placeholder = document.createElement('div');
         placeholder.className = 'video-placeholder';
         placeholder.innerHTML = '<span class="iconify" data-icon="mdi:video-off" data-inline="false" style="font-size:44px"></span><div class="muted">Video unavailable</div><div class="muted" style="font-size:12px">Tap to open in a new tab</div>';
-
         placeholder.addEventListener('click', ()=> { try { window.open(frameSrc, '_blank'); } catch(e) {} });
-
         wrapper.appendChild(iframe);
         wrapper.appendChild(placeholder);
         area.appendChild(wrapper);
-
         let settled = false;
         const failTimeout = setTimeout(()=> {
           if(settled) return;
@@ -385,7 +367,6 @@
           if(iframe.parentNode) iframe.parentNode.removeChild(iframe);
           placeholder.style.display = 'flex';
         }, 8000);
-
         iframe.onload = function(){
           if(settled) return;
           settled = true;
@@ -399,7 +380,6 @@
           if(iframe.parentNode) iframe.parentNode.removeChild(iframe);
           placeholder.style.display = 'flex';
         };
-
       } else {
         const img = document.createElement('img');
         img.src = item.src || '';
@@ -411,7 +391,6 @@
         img.style.height = '100%';
         img.style.objectFit = 'contain';
         img.onerror = function(){ img.src = 'data:image/svg+xml;utf8,<svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=640 height=360><rect width=100% height=100% fill=%230a0a0a/><text x=50% y=50% fill=%23aaa dominant-baseline=middle text-anchor=middle font-family=Arial font-size=18>No image</text></svg>'; };
-
         img.onload = function(){
           const w = img.naturalWidth || 16;
           const h = img.naturalHeight || 9;
@@ -425,13 +404,10 @@
             }
           }
         };
-
         if (img.complete && img.naturalWidth) img.onload();
-
         wrapper.appendChild(img);
         area.appendChild(wrapper);
       }
-
       if(mediaList.length > 1){
         dots.innerHTML = '';
         for(let i=0;i<mediaList.length;i++){
@@ -444,7 +420,6 @@
           d.addEventListener('keydown', ev => { if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); currentMediaIndex = i; renderMediaArea(); } });
           dots.appendChild(d);
         }
-
         nav.innerHTML = '';
         const prev = document.createElement('button');
         prev.id = 'prevMedia'; prev.ariaLabel = 'Previous'; prev.innerText = '◀';
@@ -454,7 +429,6 @@
         next.addEventListener('click', ()=>{ currentMediaIndex = (currentMediaIndex + 1) % mediaList.length; renderMediaArea(); });
         nav.appendChild(prev);
         nav.appendChild(next);
-
         let startX = null;
         let currentX = null;
         let isDown = false;
@@ -487,11 +461,8 @@
         dots.innerHTML = ''; nav.innerHTML = '';
       }
     }
-
     function mdToHtml(md){ if(!md) return ''; let s=String(md).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); s=s.replace(/```([\s\S]*?)```/g,(m,c)=>`<pre style="background:#0b0b0b;border-radius:6px;padding:10px;overflow:auto;margin:8px 0"><code>${e(c)}</code></pre>`); s=s.replace(/`([^`]+)`/g,(m,c)=>`<code style="background:#0b0b0b;border-radius:4px;padding:2px 6px">${e(c)}</code>`); s=s.replace(/^###### (.*$)/gim,'<h6>$1</h6>'); s=s.replace(/^##### (.*$)/gim,'<h5>$1</h5>'); s=s.replace(/^#### (.*$)/gim,'<h4>$1</h4>'); s=s.replace(/^### (.*$)/gim,'<h3>$1</h3>'); s=s.replace(/^## (.*$)/gim,'<h2>$1</h2>'); s=s.replace(/^# (.*$)/gim,'<h1>$1</h1>'); s=s.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>'); s=s.replace(/\*(.*?)\*/g,'<em>$1</em>'); s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,(m,t,u)=>`<a href="${e(u)}" target="_blank" rel="noopener noreferrer">${t}</a>`); const paragraphs = s.split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean); s = paragraphs.map(p=>{ if(p.match(/^<(h|pre|ul|ol|blockquote|img|div)/i)) return p; if(/^\-\s+/.test(p)){ const items = p.split(/\n/).map(l=>l.replace(/^-+\s*/,'')).map(li=>`<li>${li}</li>`).join(''); return `<ul>${items}</ul>` } return `<p>${p}</p>` }).join('\n'); if(window.DOMPurify && typeof window.DOMPurify.sanitize === 'function') return window.DOMPurify.sanitize(s); return s; }
-
     async function fetchText(url){ try{ const r = await fetchWithTimeout(url,9000); if(!r.ok) return null; return await r.text(); }catch(e){ return null; } }
-
     async function resolveLongDescription(app){
       const raw = app._raw || app;
       const candidates = [];
@@ -509,7 +480,6 @@
       if(raw.description && typeof raw.description === 'string'){ _cache.longText.set(app.id || app.name, raw.description); return raw.description; }
       return '';
     }
-
     async function fetchPypiJson(name, indexUrl=null){
       if(!name) return null;
       const key = (indexUrl ? (indexUrl + '|' + name) : name);
@@ -519,7 +489,6 @@
     }
     async function fetchPypiBadges(name){ if(!name) return null; if(_cache.pypiBadges.has(name)) return _cache.pypiBadges.get(name); const badges=[{src:`https://img.shields.io/pypi/v/${encodeURIComponent(name)}.svg`, alt:`PyPI (version)`},{src:`https://img.shields.io/pypi/python-v/${encodeURIComponent(name)}.svg`, alt:'PyPI (python versions)'},{src:`https://pepy.tech/badge/${encodeURIComponent(name)}`, alt:'Downloads'}]; _cache.pypiBadges.set(name,badges); return badges; }
     function renderPypiBadges(badges){ const container=document.getElementById('pypiBadges'); if(!badges||!badges.length){ container.innerHTML=''; return; } container.innerHTML = badges.map(b=>`<img class="badge-img" src="${e(b.src)}" alt="${e(b.alt)}" onerror="this.onerror=null;this.style.display='none'">`).join(''); }
-
     async function renderDownloadsForApp(app){
       const raw = app._raw || app;
       const container = document.getElementById('downloadList');
@@ -535,14 +504,11 @@
         container.innerHTML = html;
         return;
       }
-
       const list = normalizeDownloads(raw);
       if(!list.length){ container.innerHTML = '<div class="muted">No downloads available.</div>'; document.getElementById('downloadTitle').textContent='Downloads'; document.getElementById('downloadSubtitle').textContent='No assets'; return; }
-
       const sorted = sortDownloads(list);
       const grouped = groupByPlatform(sorted);
       const order = ['windows','mac','linux','source','other'];
-
       function platformIcon(p){
         if(p==='windows') return 'mdi:microsoft-windows';
         if(p==='mac') return 'mdi:apple';
@@ -550,7 +516,6 @@
         if(p==='source') return 'mdi:code-tags';
         return 'mdi:cloud';
       }
-
       let html = '';
       order.forEach(p=>{
         if(!grouped[p]||!grouped[p].length) return;
@@ -579,7 +544,6 @@
         });
         html += `</div>`;
       });
-
       Object.keys(grouped).forEach(k=>{ if(order.includes(k)) return; html += `<div class="download-section" data-platform="${e(k)}"><h3><span class="iconify" data-icon="${platformIcon(k)}" data-inline="false"></span> ${e(k)}</h3>` + grouped[k].map(d=>{
         const fn = (d.url.split('/').pop()||d.url).split('?')[0].split('#')[0];
         const archLabel = d.arch || d.platform || 'other';
@@ -600,11 +564,9 @@
           </div>
         </div>`;
       }).join('') + `</div>`; });
-
       container.innerHTML = html;
       document.getElementById('downloadTitle').textContent = `${list.length} asset${list.length>1?'s':''}`;
       document.getElementById('downloadSubtitle').textContent = `${new Set(list.map(d=>d.platform||'other')).size} platform${(new Set(list.map(d=>d.platform||'other')).size)>1?'s':''}`;
-
       Array.from(container.querySelectorAll('.copy')).forEach(b=>{
         b.addEventListener('click', ev=>{ ev.stopPropagation(); const u=b.dataset.url; navigator.clipboard?.writeText(u).then(()=>{ b.innerHTML='<span class="iconify" data-icon="mdi:check" data-inline="false"></span>'; setTimeout(()=>b.innerHTML='<span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span>',1200); }).catch(()=>alert('Copy failed')); });
       });
@@ -613,7 +575,6 @@
         row.addEventListener('keydown', ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); window.open(row.dataset.url, '_blank'); } });
       });
     }
-
     function renderPythonInstallSection(app,pypiMeta){
       const raw = app._raw || app;
       const name = raw.pypi || app.id || app.name;
@@ -638,7 +599,6 @@
         venv_win: `python -m venv .venv && .\\.venv\\Scripts\\activate && pip install "${quotedName}"`,
         docker_quick: `docker run --rm -it python:3.12 sh -c "pip install '${quotedName}' && python -c 'import ${name.split(/[-_]/)[0]}; print(\"ok\")'"`
       };
-
       let html = `<div style="margin-bottom:12px"><div style="font-weight:700;margin-bottom:6px">Install</div><div class="muted" style="margin-bottom:8px">Copy & paste commands</div><div style="display:flex;flex-direction:column;gap:8px">`;
       html += `<div><code>${e(commands.pip_global)}</code> <button class="btn copy-cmd" data-copy="${e(commands.pip_global)}">Copy</button></div>`;
       html += `<div><code>${e(commands.pip_user)}</code> <button class="btn copy-cmd" data-copy="${e(commands.pip_user)}">Copy</button></div>`;
@@ -646,7 +606,6 @@
       html += `<div><code>${e(commands.venv_win)}</code> <button class="btn copy-cmd" data-copy="${e(commands.venv_win)}">Copy</button></div>`;
       html += `<div><code>${e(commands.docker_quick)}</code> <button class="btn copy-cmd" data-copy="${e(commands.docker_quick)}">Copy</button></div>`;
       html += `</div></div>`;
-
       if(pypiMeta && pypiMeta.info){
         const info=pypiMeta.info;
         html += `<div style="margin-top:8px"><div style="font-weight:700;margin-bottom:6px">Project links</div><ul>`;
@@ -657,7 +616,6 @@
         add('Source/repo', raw.repo || raw.github || (info.project_urls && (info.project_urls.Source || info.project_urls.Source_Code || info.project_urls.source)));
         html += `</ul></div>`;
       }
-
       if(pypiMeta && pypiMeta.releases){
         const ver = (pypiMeta.info && pypiMeta.info.version) || (app.latest_version || '');
         const files = Array.isArray(pypiMeta.releases[ver]) ? pypiMeta.releases[ver] : [];
@@ -674,10 +632,8 @@
           html += `</div>`;
         }
       }
-
       return html;
     }
-
     function cardHTML(app){
       const short = app.short_description || (app._raw && app._raw.description) || '';
       const icon = app.icon || '';
@@ -693,7 +649,6 @@
         </div>
       </article>`;
     }
-
     function renderGrid(apps){
       const grid=document.getElementById('grid');
       if(!apps||apps.length===0){ grid.innerHTML='<div class="muted">No apps found.</div>'; document.getElementById('loadMore').style.display='none'; updateFooterStats(); return; }
@@ -702,13 +657,11 @@
       if(pageApps.length >= apps.length) document.getElementById('loadMore').style.display='none'; else document.getElementById('loadMore').style.display='inline-block';
       updateFooterStats();
     }
-
     function updateFooterStats(){
       const total = state.apps.length; const shown = Math.min(state.page*state.pageSize, state.filtered.length);
       const cats = new Set(); state.apps.forEach(a=>{ const t = (a._raw && Array.isArray(a._raw.tags)) ? a._raw.tags : (a._raw && a._raw.tags? [a._raw.tags]:[]); (t||[]).forEach(x=>{ if(x) cats.add(x); }); });
       document.getElementById('footerStatsLeft').innerHTML = `Showing <strong>${shown}</strong> of <strong>${total}</strong> apps · <strong>${cats.size}</strong> categories`;
     }
-
     function prefetchAppDetails(app){
       if(!app||!app.id||_cache.prefetching.has(app.id)) return;
       _cache.prefetching.add(app.id);
@@ -718,7 +671,6 @@
         if(!_cache.pypiBadges.has(name)) fetchPypiBadges(name).then(b=>_cache.pypiBadges.set(name,b)).catch(()=>{});
       }
     }
-
     function trapFocus(container){
       const focusable = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
       const el = container;
@@ -729,35 +681,26 @@
       document.addEventListener('keydown', handle);
       return ()=>document.removeEventListener('keydown', handle);
     }
-
     async function openApp(id, pushState=true){
       const app = state.apps.find(a=>a.id===id); if(!app) return;
       currentApp = app; lastFocused = document.activeElement;
-
       const verified = app.verified || (app._raw && app._raw.verified);
       const bg = sanitizeColor(app._raw && app._raw.background_color) || 'transparent';
       const imgHtml = app.icon ? `<img src="${e(app.icon)}" alt="${e(app.name)}" style="max-width:84%; max-height:84%; object-fit:contain">` : e((app.name||'').charAt(0));
       const verHtml = verified ? `<span class="verified-only" title="Verified"><span class="iconify" data-icon="mdi:check-circle" data-inline="false" style="color:var(--pill-green-color);font-size:18px"></span></span>` : '';
-
       const metaParts = [];
       if(app.vendor) metaParts.push(e(app.vendor));
       if(app.latest_version) metaParts.push('v' + e(app.latest_version));
       if(app._raw && app._raw.license) metaParts.push(e(app._raw.license));
       const metaText = metaParts.join(' • ');
-
       const titleHtml = `<div style="display:flex;gap:12px;align-items:center"><div style="width:84px;height:84px;border-radius:12px;overflow:hidden;background:${e(bg)};display:flex;align-items:center;justify-content:center">${imgHtml}</div><div><div style="font-size:1.2rem;font-weight:800">${verHtml}${e(app.name)}</div><div class="muted">${metaText}</div></div></div>`;
       document.getElementById('appTitleArea').innerHTML = titleHtml;
-
       document.getElementById('appTopActions').innerHTML = app.homepage ? `<a class="btn" href="${e(app.homepage)}" target="_blank" rel="noopener noreferrer" title="Homepage"><span class="iconify" data-icon="mdi:home" data-inline="false"></span></a>` : '';
-
       document.getElementById('shortDesc').textContent = app.short_description || (app._raw && app._raw.description) || '';
-
       mediaList = [];
       try{ if(app._raw && app._raw.video) mediaList.push({type:'video', src: app._raw.video}); (app.screenshots||[]).forEach(s=>{ if(typeof s==='string' && (s.includes('youtube.com')||s.includes('youtu.be')||s.includes('vimeo.com'))) mediaList.push({type:'video', src:s}); else mediaList.push({type:'image', src:s}); }); }catch(e){ mediaList=[]; }
       currentMediaIndex = 0; renderMediaArea();
-
       renderDownloadsForApp(app).catch(()=>{});
-
       const key = (app._raw && (app._raw.long_description || app._raw.readme_url)) || app.id;
       if(_cache.longText.has(key)){
         const resolved = _cache.longText.get(key);
@@ -767,26 +710,20 @@
         document.getElementById('longHtml').innerHTML = '<div class="muted">Loading long description…</div>';
         resolveLongDescription(app).then(resolved=>{ const longHtml = resolved ? ((resolved.trim().startsWith('#')||resolved.includes('\n')) ? mdToHtml(resolved) : e(resolved)) : ''; document.getElementById('longHtml').innerHTML = longHtml || '<div class="muted">No long description provided.</div>'; }).catch(()=>{ document.getElementById('longHtml').innerHTML = '<div class="muted">Could not load detailed description.</div>'; });
       }
-
       if(app._raw && (app._raw.pypi || (app._raw.tags && app._raw.tags.includes('python')))){
         const name = app._raw.pypi || app.id || app.name;
         if(_cache.pypiBadges.has(name)) renderPypiBadges(_cache.pypiBadges.get(name));
         else fetchPypiBadges(name).then(b=>{ _cache.pypiBadges.set(name,b); renderPypiBadges(b); }).catch(()=>renderPypiBadges(null));
       } else renderPypiBadges(null);
-
       const overlay = document.getElementById('overlay');
       overlay.classList.add('open'); overlay.setAttribute('aria-hidden','false');
-
       const releaseTrap = trapFocus(overlay);
       setTimeout(()=>{ document.getElementById('closeApp').focus(); }, 60);
-
       function onKey(e){ if(e.key==='Escape') closeApp(); }
       document.addEventListener('keydown', onKey);
       overlay._cleanup = ()=>{ releaseTrap(); document.removeEventListener('keydown', onKey); overlay._cleanup = null; };
-
       if(pushState){ try{ history.pushState({app:id}, '', '#/app/' + encodeURIComponent(id)); }catch(e){} }
     }
-
     function closeApp(pushHistory=true){
       const overlay=document.getElementById('overlay');
       if(overlay._cleanup) overlay._cleanup();
@@ -795,7 +732,6 @@
       currentApp = null;
       if(pushHistory){ try{ history.pushState({}, '', location.pathname); }catch(e){} }
     }
-
     async function fetchJson(paths, timeout=12000){
       for(const p of paths){
         try{
@@ -806,7 +742,6 @@
       }
       return [];
     }
-
     document.addEventListener('DOMContentLoaded', async function(){
       const brand = document.getElementById('brandBtn');
       if(brand){
@@ -818,19 +753,15 @@
           }
         });
       }
-
       document.getElementById('copyrightYear').textContent = new Date().getFullYear();
       const gh = document.getElementById('ghRepo');
       if(gh){ gh.href = 'https://github.com/feloopy/feloopy.github.io'; gh.textContent = 'GitHub'; gh.classList.add('footer-link'); }
-
       document.getElementById('loadMore').addEventListener('click', ()=>{ state.page++; renderGrid(state.filtered); });
       document.getElementById('closeApp').addEventListener('click', ()=>{ closeApp(); });
       document.getElementById('overlay').addEventListener('click', ev => { if(ev.target === ev.currentTarget) closeApp(); });
-
       const hamb = document.getElementById('hamburgerBtn'); const mobileMenu = document.getElementById('mobileMenu');
       hamb.addEventListener('click', ev => { const open = mobileMenu.classList.toggle('open'); mobileMenu.setAttribute('aria-hidden', String(!open)); hamb.setAttribute('aria-expanded', String(open)); });
       document.addEventListener('click', ev => { const t = ev.target; if(!mobileMenu.classList.contains('open')) return; if(t===hamb || mobileMenu.contains(t)) return; mobileMenu.classList.remove('open'); mobileMenu.setAttribute('aria-hidden','true'); hamb.setAttribute('aria-expanded','false'); });
-
       document.getElementById('openTemplate').addEventListener('click', ()=>{
         const pm = document.getElementById('publishModal');
         const tpl = {
@@ -850,22 +781,18 @@
           repo: ''
         };
         document.getElementById('jsonTemplate').textContent = JSON.stringify(tpl,null,2);
-
         pm.classList.remove('hidden');
         pm.style.display = 'flex';
         pm.setAttribute('aria-hidden','false');
-
         const copyBtn = document.getElementById('copyTemplate');
         if (copyBtn) copyBtn.focus();
       });
-
       document.getElementById('closePublish')?.addEventListener('click', ()=>{
         const pm=document.getElementById('publishModal');
         pm.style.display = 'none';
         pm.setAttribute('aria-hidden', 'true');
         pm.classList.add('hidden');
       });
-
       document.getElementById('copyTemplate')?.addEventListener('click', ()=>{
         const t=document.getElementById('jsonTemplate').textContent;
         navigator.clipboard?.writeText(t).then(()=>{ const btn = document.getElementById('copyTemplate'); btn.textContent='Copied'; setTimeout(()=>btn.textContent='Copy JSON',1200) }).catch(()=>alert('Copy failed'));
@@ -876,11 +803,9 @@
         document.getElementById('downloadTemplate').href = url;
         setTimeout(()=>URL.revokeObjectURL(url), 30000);
       });
-
       document.getElementById('openEmail').addEventListener('click', ()=>{
         const tplText = document.getElementById('jsonTemplate')?.textContent || '';
         const subject = encodeURIComponent('App submission to Feloopy');
-
         const maxLen = 1500;
         let body = 'Hi,%0A%0APlease find my app submission below (JSON). Attach files if needed.%0A%0A';
         if (tplText) {
@@ -889,46 +814,35 @@
         } else {
           body += encodeURIComponent('\n(Please paste your app JSON here.)\n');
         }
-
         window.location.href = `mailto:feloopy@gmail.com?subject=${subject}&body=${body}`;
       });
-
       document.getElementById('githubPR').addEventListener('click', ()=>{ });
-
       try{
         const raw = await fetchJson(['./store/apps.json','/store/apps.json','store/apps.json']);
         const arr = Array.isArray(raw) ? raw : (raw.apps || raw);
         state.apps = (arr||[]).map(a=>({ _raw: a, id: a.id || (a.name||'').toLowerCase().replace(/\s+/g,'-'), name: a.name||'Unnamed', vendor: a.vendor||'', short_description: a.short_description || (a.description||'').slice(0,140), long_description: a.long_description || a.description || '', downloads: normalizeDownloads(a), homepage: a.homepage||'', screenshots: a.screenshots||[], icon: a.icon||'', popularity: a.popularity||0, latest_version: a.latest_version||'', auto_update: !!a.auto_update, update_method: a.update_method||'', repo: a.repo||'', verified: !!a.verified }));
         state.filtered = state.apps.slice().sort((a,b)=> (b.popularity||0)-(a.popularity||0));
         renderGrid(state.filtered);
-
         const grid = document.getElementById('grid');
-
         grid.addEventListener('click', ev => {
           const c = ev.target.closest('.card'); if(!c) return; const id = c.getAttribute('data-id'); if(!id) return; openApp(id);
         });
         grid.addEventListener('keydown', ev => {
           if(ev.key === 'Enter' || ev.key === ' '){ const c = ev.target.closest('.card'); if(!c) return; ev.preventDefault(); const id = c.getAttribute('data-id'); if(!id) return; openApp(id); }
         });
-
         grid.addEventListener('pointerenter', ev => { const card = ev.target.closest('.card'); if(!card) return; const id = card.getAttribute('data-id'); const app = state.apps.find(a=>a.id===id); if(app) prefetchAppDetails(app); }, { capture:true, passive:true });
         grid.addEventListener('focusin', ev => { const card = ev.target.closest('.card'); if(!card) return; const id = card.getAttribute('data-id'); const app = state.apps.find(a=>a.id===id); if(app) prefetchAppDetails(app); });
-
         document.getElementById('globalSearch').addEventListener('input', debounce(()=>{ const q = document.getElementById('globalSearch').value.trim().toLowerCase(); state.filtered = state.apps.filter(a=>{ if(!q) return true; const hay = [a.name,a.vendor,a.short_description,a.long_description,(a._raw.tags||[]).join(' '),(a.downloads||[]).map(d=>d.url||'').join(' ')].join(' ').toLowerCase(); return hay.includes(q); }).sort((a,b)=> (b.popularity||0)-(a.popularity||0)); state.page=1; renderGrid(state.filtered); }, 180));
-
         if(location.hash.startsWith('#/app/')){ const id = decodeURIComponent(location.hash.slice(6)); setTimeout(()=>openApp(id,false), 50); }
         updateFooterStats();
         window.addEventListener('resize', debounce(updateFooterStats, 160));
         window.addEventListener('scroll', debounce(updateFooterStats, 140));
-
       }catch(e){
         document.getElementById('grid').innerHTML = '<div class="muted">Failed to load store/apps.json — check path/format.</div>';
         updateFooterStats();
       }
     });
-
     window.addEventListener('popstate', ()=>{ if(location.hash.startsWith('#/app/')){ const id = decodeURIComponent(location.hash.slice(6)); openApp(id,false); } else closeApp(false); });
-
   })();
   </script>
 </body>
