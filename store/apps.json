@@ -34,5 +34,40 @@
     "auto_update": true,
     "latest_version": "3.9",
     "background_color": "white"
+  },
+
+    {
+    "id": "gusek",
+    "name": "GUSEK",
+    "vendor": "Luiz Bettoni",
+    "short_description": "Integrated development environment",
+    "long_description": "./info/gusek.md",
+    "tags": [
+      "programming",
+      "ide"
+    ],
+    "license": "GPL",
+    "officialDownload": [
+      "https://sourceforge.net/projects/gusek/files/gusek/0.2.24/gusek_0-2-24.zip/download"
+    ],
+    "homepage": "https://gusek.sourceforge.net/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://a.fsdn.com/allura/p/gusek/icon?1367005723",
+    "screenshots": [
+      "https://a.fsdn.com/con/app/proj/gusek/screenshots/196830.jpg/max/max/1",
+      "https://a.fsdn.com/con/app/proj/gusek/screenshots/196826.jpg/245/183/1.5",
+      "https://a.fsdn.com/con/app/proj/gusek/screenshots/196824.jpg/max/max/1",
+      "https://a.fsdn.com/con/app/proj/gusek/screenshots/196828.jpg/245/183/1.5"
+    ],
+    "popularity": 98,
+    "documentation": [
+      "https://gusek.sourceforge.net/gusek.html#3"
+    ],
+    "auto_update": true,
+    "latest_version": "0.2.24",
+    "background_color": "white"
   }
+
 ]
