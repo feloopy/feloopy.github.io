@@ -1036,13 +1036,13 @@
         hamb.addEventListener('click', ev => { const rect = hamb.getBoundingClientRect(); mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block'; mobileMenu.style.left = `${Math.max(8, rect.left)}px`; mobileMenu.style.top = `${rect.bottom + 8 + window.scrollY}px`; hamb.setAttribute('aria-expanded', String(mobileMenu.style.display === 'block')); });
         document.addEventListener('click', ev => { const t = ev.target; if (mobileMenu.style.display !== 'block') return; if (t === hamb || mobileMenu.contains(t)) return; mobileMenu.style.display = 'none'; hamb.setAttribute('aria-expanded', 'false'); });
 
-        document.getElementById('openTemplate').addEventListener('click', () => { const pm = document.getElementById('publishModal'); const tpl = { id: 'my-app', name: 'My App', vendor: 'Your Name', short_description: 'Short summary (shown in cards)', long_description: 'Long description or a URL to README.md (rendered as Markdown)', tags: ['category'], license: 'MIT', officialDownload: ['https://example.com/download'], homepage: 'https://example.com', icon: '/market/icons/myapp.png', screenshots: [], auto_update: false, update_method: '', repo: '' }; document.getElementById('jsonTemplate').textContent = JSON.stringify(tpl, null, 2); pm.style.display = 'flex'; pm.setAttribute('aria-hidden', 'false'); document.getElementById('copyTemplate').focus(); });
+        document.getElementById('openTemplate').addEventListener('click', () => { const pm = document.getElementById('publishModal'); const tpl = { id: 'my-app', name: 'My App', vendor: 'Your Name', short_description: 'Short summary (shown in cards)', long_description: 'Long description or a URL to README.md (rendered as Markdown)', tags: ['category'], license: 'MIT', officialDownload: ['https://example.com/download'], homepage: 'https://example.com', icon: '/store/icons/myapp.png', screenshots: [], auto_update: false, update_method: '', repo: '' }; document.getElementById('jsonTemplate').textContent = JSON.stringify(tpl, null, 2); pm.style.display = 'flex'; pm.setAttribute('aria-hidden', 'false'); document.getElementById('copyTemplate').focus(); });
         document.getElementById('closePublish').addEventListener('click', () => { const pm = document.getElementById('publishModal'); pm.style.display = 'none'; pm.setAttribute('aria-hidden', 'true'); });
         document.getElementById('copyTemplate').addEventListener('click', () => { const t = document.getElementById('jsonTemplate').textContent; navigator.clipboard?.writeText(t).then(() => { document.getElementById('copyTemplate').textContent = 'Copied'; setTimeout(() => document.getElementById('copyTemplate').textContent = 'Copy JSON', 1200) }).catch(() => alert('Copy failed')) });
         document.getElementById('downloadTemplate').addEventListener('click', () => { const blob = new Blob([document.getElementById('jsonTemplate').textContent], { type: 'application/json' }); const url = URL.createObjectURL(blob); document.getElementById('downloadTemplate').href = url; setTimeout(() => URL.revokeObjectURL(url), 30000); });
 
         try {
-          const raw = await fetchJson(['./market/apps.json', '/market/apps.json', 'market/apps.json']);
+          const raw = await fetchJson(['./store/apps.json', '/store/apps.json', 'store/apps.json']);
           const arr = Array.isArray(raw) ? raw : (raw.apps || raw);
           state.apps = arr.map(a => ({ _raw: a, id: a.id || (a.name || '').toLowerCase().replace(/\s+/g, '-'), name: a.name || 'Unnamed', vendor: a.vendor || '', short_description: a.short_description || (a.description || '').slice(0, 140), long_description: a.long_description || a.description || '', downloads: normalizeDownloads(a), homepage: a.homepage || '', screenshots: a.screenshots || [], icon: a.icon || '', popularity: a.popularity || 0, latest_version: a.latest_version || '', auto_update: !!a.auto_update, update_method: a.update_method || '', repo: a.repo || '', verified: !!a.verified }));
           state.filtered = state.apps.slice().sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
@@ -1080,7 +1080,7 @@
           window.addEventListener('resize', debounce(updateFooterStats, 160));
           window.addEventListener('scroll', debounce(updateFooterStats, 140));
         } catch (e) {
-          document.getElementById('grid').innerHTML = '<div class="muted">Failed to load market/apps.json — check path/format.</div>';
+          document.getElementById('grid').innerHTML = '<div class="muted">Failed to load store/apps.json — check path/format.</div>';
           updateFooterStats();
         }
       });
