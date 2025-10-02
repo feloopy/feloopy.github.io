@@ -6,6 +6,7 @@
     "vendor": "Michel Berkelaar & Henri Gourvest",
     "short_description": "Modeling language & IDE",
     "long_description": "./info/lpsolve.md",
+    "video": "https://www.youtube.com/watch?v=oPX0HEs5X-Y",
     "tags": [
       "programming",
       "solver"
