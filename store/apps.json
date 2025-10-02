@@ -4,7 +4,7 @@
     "id": "lpsolve",
     "name": "LPSOLVE",
     "vendor": "Michel Berkelaar & Henri Gourvest",
-    "short_description": "Modeling language and IDE",
+    "short_description": "Modeling language & IDE",
     "long_description": "./info/lpsolve.md",
     "tags": [
       "programming",
