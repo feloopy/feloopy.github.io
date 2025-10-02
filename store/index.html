@@ -660,7 +660,7 @@
     function updateFooterStats(){
       const total = state.apps.length; const shown = Math.min(state.page*state.pageSize, state.filtered.length);
       const cats = new Set(); state.apps.forEach(a=>{ const t = (a._raw && Array.isArray(a._raw.tags)) ? a._raw.tags : (a._raw && a._raw.tags? [a._raw.tags]:[]); (t||[]).forEach(x=>{ if(x) cats.add(x); }); });
-      document.getElementById('footerStatsLeft').innerHTML = `Showing <strong>${shown}</strong> of <strong>${total}</strong> apps · <strong>${cats.size}</strong> categories`;
+      document.getElementById('footerStatsLeft').innerHTML = `Showing <strong>${shown}</strong> of <strong>${total}</strong> apps`;
     }
     function prefetchAppDetails(app){
       if(!app||!app.id||_cache.prefetching.has(app.id)) return;
