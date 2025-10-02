@@ -1,4 +1,40 @@
 [
+
+    {
+    "id": "lpsolve",
+    "name": "LPSOLVE",
+    "vendor": "Michel Berkelaar & Henri Gourvest",
+    "short_description": "Modeling language and IDE",
+    "long_description": "./info/lpsolve.md",
+    "tags": [
+      "programming",
+      "solver"
+    ],
+    "license": "LGPL",
+    "officialDownload": [
+      "https://github.com/lp-solve/lp_solve/releases/download/5.5.2.14/lp_solve_5.5.2.14_IDE_Setup.exe",
+      "https://github.com/lp-solve/lp_solve/releases/download/5.5.2.14/lp_solve_5.5.2.14_IDE_source.zip",
+      "https://github.com/lp-solve/lp_solve/releases/download/5.5.2.14/lp_solve_5.5.2.14_c.tar.gz"
+    ],
+    "homepage": "https://lp-solve.github.io/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://avatars.githubusercontent.com/u/204413353?s=200&v=4",
+    "screenshots": [
+      "https://lp-solve.github.io/IDE/IDE1.gif",
+      "https://lp-solve.github.io/IDE/IDE2.gif",
+      "https://lp-solve.github.io/IDE/IDE3.gif",
+      "https://lp-solve.github.io/IDE/IDE4.gif"
+    ],
+    "popularity": 98,
+    "documentation": [
+      "https://github.com/lp-solve"
+    ],
+    "auto_update": true,
+    "latest_version": "5.5.2.14",
+    "background_color": "white"
+  },
   {
     "id": "picat",
     "name": "PICAT",
