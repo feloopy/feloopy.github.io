@@ -78,6 +78,7 @@
     "vendor": "Luiz Bettoni",
     "short_description": "Integrated development environment",
     "long_description": "./info/gusek.md",
+    "video": "https://www.youtube.com/watch?v=q88HgdgxtLs&list=PLpmuXL_Dd1RmAFIrQ261n5PykOaaygb85",
     "tags": [
       "programming",
       "ide"
