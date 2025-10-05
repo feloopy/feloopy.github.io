@@ -1,11 +1,11 @@
 {
-  "day": 3,
-  "week": 18,
+  "day": 0,
+  "week": 17,
   "month": 94,
-  "total": 1194,
+  "total": 1193,
   "stars": 32,
   "last_push": "2025-09-25T17:57:39Z",
-  "days_since_push": 8,
+  "days_since_push": 9,
   "feloopy_version": "0.3.9",
   "feloopy_release_date": "2025-07-01T21:03:01Z",
   "engine_version": "0.0.6",
@@ -13,5 +13,5 @@
   "engine_downloads": 163,
   "source_downloads": 0,
   "star_pct": 34,
-  "fetched_at": "2025-10-04T00:35:09.132470Z"
+  "fetched_at": "2025-10-05T00:41:42.988802Z"
 }
