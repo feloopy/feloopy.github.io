@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Styles & vendor scripts loaded with defer to avoid race conditions -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+    <title>On large language models and decision science</title>
+
+    <style>
+      :root {
+        --bg: #ffffff;
+        --muted: #6b7280;
+        --accent: #2563eb;
+        --surface: #f8fafc;
+        --card-shadow: 0 10px 25px rgba(16, 24, 40, 0.06);
+        --radius: 12px;
+      }
+
+      /* Page base */
+      body {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
+        color: #0f172a;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin: 0;
+        padding: 0;
+      }
+
+      .top-bar {
+        display: flex;
+        gap: 0.5rem;
+        padding: 12px;
+        position: fixed;
+        left: 12px;
+        top: 12px;
+        z-index: 30;
+      }
+      .github-button,
+      .blog-button {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+        border: 0;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 8px 12px;
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      #content {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px;
+        margin-top: 72px;
+      }
+
+      /* Preserve & style an inline markdown header that has image - text - image */
+      .md-inline-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin: 8px 0 20px 0;
+        flex-wrap: nowrap;
+      }
+      .md-inline-header img {
+        display: block;
+        max-height: 48px;
+        width: auto;
+        object-fit: contain;
+      }
+      .md-inline-header h1 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #0b1220;
+        text-align: center;
+      }
+      /* On small screens shrink text a bit */
+      @media (max-width: 520px) {
+        .md-inline-header {
+          gap: 8px;
+        }
+        .md-inline-header img {
+          max-height: 36px;
+        }
+        .md-inline-header h1 {
+          font-size: 16px;
+        }
+      }
+
+      /* Table toolbar and table styles (kept) */
+      .table-toolbar {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 12px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .filter {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .filter input {
+        border: 1px solid #e6eef8;
+        background: #fff;
+        padding: 8px 12px;
+        border-radius: 10px;
+        min-width: 220px;
+        box-shadow: 0 2px 8px rgba(16, 24, 40, 0.04);
+        outline: none;
+      }
+
+      .table-responsive {
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        border: 1px solid rgba(15, 23, 42, 0.04);
+        margin-bottom: 22px;
+      }
+
+      table.modern-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        min-width: 600px;
+        background: var(--bg);
+      }
+      table.modern-table thead th {
+        position: sticky;
+        top: 0;
+        background: linear-gradient(180deg, #ffffff, #fbfdff);
+        backdrop-filter: blur(4px);
+        z-index: 2;
+        text-align: left;
+        padding: 12px 16px;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      }
+      table.modern-table tbody td {
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+        vertical-align: middle;
+      }
+      table.modern-table tbody tr:nth-child(even) {
+        background: var(--surface);
+      }
+      table.modern-table tbody tr:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
+      }
+      table.modern-table tbody tr {
+        transition: all 180ms ease;
+      }
+      table.modern-table thead tr th:first-child {
+        border-top-left-radius: var(--radius);
+      }
+      table.modern-table thead tr th:last-child {
+        border-top-right-radius: var(--radius);
+      }
+      td code,
+      th code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+          monospace;
+        font-size: 13px;
+        background: rgba(2, 6, 23, 0.03);
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+
+      caption {
+        text-align: left;
+        font-weight: 600;
+        padding: 10px 0;
+        color: var(--muted);
+      }
+
+      @media (max-width: 720px) {
+        .filter input {
+          min-width: 140px;
+        }
+        table.modern-table {
+          font-size: 13px;
+          min-width: unset;
+        }
+      }
+
+      table.modern-table th.number-col,
+      table.modern-table td.number-col {
+        width: 48px;
+        text-align: center;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      table.modern-table td.number-col {
+        color: var(--muted);
+      }
+      .center-text { text-align: center; }
+      .filter { display: inline-flex; align-items: center; gap: 8px; }
+      .filter input { min-width: 240px; max-width: 80vw; }
+
+      /* Side-by-side images */
+      .side-by-side {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+      .side-by-side img {
+        width: 50%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      }
+      @media (max-width: 640px) {
+        .side-by-side { flex-direction: column; gap: 12px; }
+        .side-by-side img { width: 100%; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="top-bar">
+      <a href="https://github.com/feloopy/feloopy" target="_blank">
+        <button id="github-button1" class="github-button">
+          <i class="fab fa-github" aria-hidden="true" id="github-icon"></i>
+          <span>GitHub</span>
+        </button>
+      </a>
+      <a href="../blog.html" target="_self">
+        <button id="blog-button1" class="blog-button">
+          <i class="fas fa-pencil-alt" aria-hidden="true" id="blog-icon"></i>
+          <span>Blog</span>
+        </button>
+      </a>
+    </div>
+
+    <div id="content">
+      <div class="table-toolbar" id="table-toolbar" style="display:none;"></div>
+      <div id="html-output"></div>
+    </div>
+
+    <script>
+      // Run after DOM is ready and (deferred) vendors loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        // sanity checks for vendor libs
+        if (typeof marked === "undefined") {
+          console.warn("marked.js not loaded yet. Ensure the script is reachable and has 'defer'.");
+        }
+        if (typeof Prism === "undefined") {
+          console.warn("Prism.js not loaded yet. Syntax highlighting won't run.");
+        }
+
+        // Your markdown (note: adjust image paths if this file is in a different folder)
+        const markdownText = `
+<h1>On large language models and decision science</h1>
+
+<h3 style="text-align:center">Keivan Tafakkori</h3>
+
+Plainly put, I see large language models (LLMs), including the current generation of Generative AI, as systems meant to find "logical" tours/routes among characters, words, phrases, and larger linguistic patterns from a set of vocabularies/dictionaries/blogs/papers to generate text that fits a user’s prompt. There is nothing mystical about it.
+
+LLMs can be thought of as input distance graphs for repeatedly solving a traveling salesman problem. Each sentence, paragraph, or article is a route through a set of nodes (characters, words, concepts), and the “distance” between nodes is learned or adjusted during training or fine-tuning. 
+
+Frequent co-occurrences in widely shared sources and recurring patterns pull some nodes closer together, so the model tends to favor those routes. That tendency explains why it leans toward familiar phrasings and can overproduce common sequences. When it follows less-traveled routes, "hallucination" becomes more likely.
+
+Because of this mechanism, LLMs can follow formal logic, manipulate algebraic or code structures, and produce step-by-step instructions, demonstrating coherent chains of reasoning when the selected paths match valid patterns.
+
+It is like a closed-book versus an open-book exam. I have written about optimization and learning two years ago, and I believe this perspective remains valid in 2025 and beyond (see https://lnkd.in/dsxcmMAq).
+
+LLMs solve problems along paths they have learned. Before November 2022, people saved time and cost by outsourcing coding to experts in a field; now, they save time and cost by outsourcing prompting to experts in a field.
+
+However, a small deviation from expectations from decisions suggested by LLMs can erode ROI and create real business losses. That is why, in many cases, the adoption of LLMs does not deliver a clear return on investment.
+
+To conclude, there may already be one or two experts who can instantly respond to your request or who have documented how to respond to a prompt. 
+
+No expert can instantly solve a decision problem. 
+
+Decision problems require explicit preferences, context, and trade-offs. 
+
+That is Decision Science.
+
+#Optimization101 #DecisionScience #OperationsResearch #LLM #GenAI
+
+<div class="side-by-side">
+  <img src="../assets/images/1-llm.png" alt="LLM illustration 1" loading="lazy">
+  <img src="../assets/images/2-llm.png" alt="LLM illustration 2" loading="lazy">
+</div>
+`;
+
+        const htmlOutput = document.getElementById("html-output");
+
+        // parse markdown (if marked exists) otherwise inject raw text
+        if (typeof marked !== "undefined") {
+          htmlOutput.innerHTML = marked.parse(markdownText);
+        } else {
+          htmlOutput.innerHTML = markdownText;
+        }
+
+        // ---------- helper functions (copied from your original file) ----------
+        (function preserveInlineHeader() {
+          const paragraphs = Array.from(htmlOutput.querySelectorAll("p"));
+          paragraphs.forEach((p) => {
+            const imgs = p.querySelectorAll("img");
+            const textNodes = Array.from(p.childNodes).filter(
+              (n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim().length > 0
+            );
+
+            if (imgs.length === 2 && textNodes.length > 0) {
+              const leftImg = imgs[0].cloneNode(true);
+              const rightImg = imgs[1].cloneNode(true);
+
+              const titleText = textNodes.map((n) => n.textContent.trim()).join(" ").trim();
+
+              const container = document.createElement("div");
+              container.className = "md-inline-header";
+
+              const leftWrap = document.createElement("div");
+              leftWrap.appendChild(leftImg);
+
+              const centerWrap = document.createElement("div");
+              const h1 = document.createElement("h1");
+              h1.textContent = titleText;
+              centerWrap.appendChild(h1);
+
+              const rightWrap = document.createElement("div");
+              rightWrap.appendChild(rightImg);
+
+              container.appendChild(leftWrap);
+              container.appendChild(centerWrap);
+              container.appendChild(rightWrap);
+
+              p.parentNode.replaceChild(container, p);
+            }
+          });
+        })();
+
+        function styleTablesAndToolbar() {
+          const tables = htmlOutput.querySelectorAll("table");
+          const toolbar = document.getElementById("table-toolbar");
+          if (tables.length > 0) {
+            toolbar.style.display = "flex";
+
+            if (!document.getElementById("filterInput")) {
+              toolbar.innerHTML = '<div class="filter"><input id="filterInput" placeholder="Filter table rows (type to search)…" /></div><div class="center-text"></div>';
+            }
+          } else {
+            toolbar.style.display = "none";
+            toolbar.innerHTML = "";
+          }
+
+          tables.forEach((t) => {
+            t.classList.add("modern-table");
+
+            t.querySelectorAll("a").forEach((a) => a.setAttribute("target", "_blank"));
+
+            if (!t.parentNode.classList.contains("table-responsive")) {
+              const wrapper = document.createElement("div");
+              wrapper.className = "table-responsive";
+              t.parentNode.insertBefore(wrapper, t);
+              wrapper.appendChild(t);
+            }
+          });
+        }
+
+        function addOrRefreshRowNumbers() {
+          document.querySelectorAll('table.modern-table').forEach(table => {
+
+            const thead = table.tHead || table.querySelector('thead');
+            if (thead) {
+              const firstRow = thead.rows[0];
+              if (firstRow && !firstRow.querySelector('th.number-col')) {
+                const th = document.createElement('th');
+                th.className = 'number-col';
+                th.textContent = '#';
+
+                firstRow.insertBefore(th, firstRow.firstChild);
+              }
+            }
+
+            const tbody = table.tBodies[0];
+            if (!tbody) return;
+
+            let visibleCount = 0;
+            Array.from(tbody.rows).forEach((tr) => {
+
+              let numberCell = tr.querySelector('td.number-col');
+              if (!numberCell) {
+
+                numberCell = tr.insertCell(0);
+                numberCell.className = 'number-col';
+              } else {
+
+                if (tr.cells[0] !== numberCell) {
+                  tr.insertBefore(numberCell, tr.cells[0]);
+                }
+              }
+
+              const isHidden = tr.style.display === 'none' ||
+                               tr.hidden ||
+                               tr.getAttribute('aria-hidden') === 'true';
+
+              if (isHidden) {
+                numberCell.textContent = '';
+              } else {
+                visibleCount += 1;
+                numberCell.textContent = visibleCount;
+              }
+            });
+          });
+        }
+
+        function updateTableCounts() {
+          const headings = htmlOutput.querySelectorAll("h2, h3, h4");
+          headings.forEach((h) => {
+
+            let node = h.nextElementSibling;
+            while (node && node.nodeName !== "TABLE") {
+              node = node.nextElementSibling;
+            }
+            if (!node || node.nodeName !== "TABLE") return;
+            const tbody = node.tBodies[0];
+            if (!tbody) return;
+            const rows = Array.from(tbody.rows);
+            const visibleCount = rows.filter(r => {
+              return !(r.style.display === 'none' || r.hidden || r.getAttribute('aria-hidden') === 'true');
+            }).length;
+
+            const base = h.textContent.replace(/\s*\(\d+\)\s*$/, "").trim();
+            h.textContent = `${base} (${visibleCount})`;
+          });
+        }
+
+        // initial render steps
+        styleTablesAndToolbar();
+        addOrRefreshRowNumbers();
+        updateTableCounts();
+        if (window.Prism) {
+          Prism.highlightAll();
+        }
+
+        // filter input behavior
+        function setupFilterListener() {
+          const filterInputEl = document.getElementById("filterInput");
+          if (!filterInputEl) return;
+
+          filterInputEl.addEventListener("input", (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            const trs = document.querySelectorAll("table.modern-table tbody tr");
+            trs.forEach((row) => {
+              if (!q) {
+                row.style.display = "";
+                return;
+              }
+              const text = row.textContent.toLowerCase();
+              row.style.display = text.includes(q) ? "" : "none";
+            });
+
+            addOrRefreshRowNumbers();
+            updateTableCounts();
+          });
+        }
+
+        setupFilterListener();
+
+        // observe table-responsive wrappers for dynamic changes
+        const tableObserver = new MutationObserver(() => {
+          clearTimeout(window.__table_update_timeout__);
+          window.__table_update_timeout__ = setTimeout(() => {
+            styleTablesAndToolbar();
+            addOrRefreshRowNumbers();
+            updateTableCounts();
+            setupFilterListener();
+          }, 50);
+        });
+
+        // attach observers to existing wrappers
+        document.querySelectorAll('div.table-responsive').forEach(node => {
+          tableObserver.observe(node, { childList: true, subtree: true, attributes: true });
+        });
+
+        // root observer to detect when content changes
+        const rootObserver = new MutationObserver(() => {
+          clearTimeout(window.__root_table_scan__);
+          window.__root_table_scan__ = setTimeout(() => {
+            styleTablesAndToolbar();
+            addOrRefreshRowNumbers();
+            updateTableCounts();
+            document.querySelectorAll('div.table-responsive').forEach(node => {
+              tableObserver.observe(node, { childList: true, subtree: true, attributes: true });
+            });
+            setupFilterListener();
+          }, 100);
+        });
+        rootObserver.observe(htmlOutput, { childList: true, subtree: true, attributes: false });
+
+        // Bonus: check images loaded, warn in console if missing
+        const imgs = htmlOutput.querySelectorAll('img');
+        imgs.forEach(img => {
+          img.addEventListener('error', () => {
+            console.warn('Image failed to load:', img.getAttribute('src'), ' — check the path relative to this HTML file.');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
