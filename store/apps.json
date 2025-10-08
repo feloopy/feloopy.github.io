@@ -1,5 +1,41 @@
 [
 
+     {
+    "id": "seeker",
+    "name": "SEEKER",
+    "vendor": "InsideOpt",
+    "short_description": "The Next Generation Primal Solver",
+    "long_description": "./info/seeker.md",
+    "tags": [
+      "programming",
+      "solver"
+    ],
+    "license": "Proprietary",
+    "video": "https://www.youtube.com/watch?v=E7meP8wph3w&list=PLHULWUkgcw3KkeaFHnX9X5pMw1GzU4llc",   
+    "officialDownload": [
+      "https://insideopt.com/pages/install-insideopt-seeker"
+    ],
+    "homepage": "https://insideopt.com/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://insideopt.com/cdn/shop/files/Logo_InsideOpt_Neu2-removebg-preview_130x@2x.png?v=1685794392",
+    "screenshots": [
+      "https://insideopt.com/cdn/shop/files/Snapseed_8.jpg?v=1686791647",
+      "https://insideopt.com/cdn/shop/articles/Seeker_Short_-_Google_Slides_2025-09-24_16-08-47_1500x.png?v=1758744926"
+    ],
+    "popularity": 98,
+    "documentation": [
+      "https://insideopt.com/pages/seeker-workshop",
+      "http://linkedin.com/build-relation/newsletter-follow?entityUrn=7055208705293733889",
+      "https://insideopt.com/blogs/news",
+      "https://cdn.shopify.com/s/files/1/0577/5602/4854/files/Seeker_User_s_Manual.pdf",
+      "https://cdn.shopify.com/s/files/1/0577/5602/4854/files/IO_License_Terms.pdf"
+    ],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "white"
+  },
    {
     "id": "lpl",
     "name": "LPL",
@@ -27,7 +63,7 @@
     ],
     "popularity": 98,
     "documentation": [
-      "https://lnkd.in/d3fbTjRE"
+      "https://matmod.ch/lpl/doc/modelbook.pdf"
     ],
     "auto_update": true,
     "latest_version": "",
@@ -64,7 +100,7 @@
     ],
     "popularity": 98,
     "documentation": [
-      "https://github.com/lp-solve"
+      "https://lp-solve.github.io/"
     ],
     "auto_update": true,
     "latest_version": "5.5.2.14",
