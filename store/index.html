@@ -73,11 +73,11 @@ main.page-inner{flex:1 1 auto;max-width:1100px;margin:0 auto;padding:20px 18px;p
 .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 8px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap}
 .pill.general{background:var(--pill-blue-bg);color:var(--pill-blue-color);border:1px solid rgba(59,130,246,.14)}
 .pill.preferred{background:var(--pill-green-bg);color:var(--pill-green-color);border:1px solid rgba(30,153,26,.12)}
-/* footer: make it neutral/light (no green). move green to publish-bar only */
+
 footer.site-footer{position:relative;left:0;right:0;height:auto;display:flex;align-items:flex-end;justify-content:center;background:transparent;border-top:1px solid rgba(255,255,255,.03);z-index:200;padding:12px 18px;box-sizing:border-box;margin-top:12px}
 footer .inner{max-width:1100px;width:100%;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:13px}
 .footer-stats{background:rgba(0,0,0,.25);padding:8px 12px;border-radius:10px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
-.publish-bar{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:12px;border-radius:10px; /* move green bg here */ background:var(--header-bg);backdrop-filter:blur(6px)}
+.publish-bar{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:12px;border-radius:10px;  background:var(--header-bg);backdrop-filter:blur(6px)}
 @media (max-width:520px){.publish-bar{flex-direction:row;align-items:flex-end;gap:12px}.publish-bar .left{order:1}.publish-bar .right{order:2;margin-left:auto}.publish-bar .left .muted{display:none}}
 .legal{display:flex;gap:12px;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;flex-wrap:wrap;margin-bottom:20px}
 .footer-link{text-decoration:underline;color:inherit}
@@ -86,13 +86,13 @@ footer .inner{max-width:1100px;width:100%;display:flex;flex-direction:column;gap
 .hidden{display:none!important}
 img.badge-img{max-height:20px;margin-right:6px}
 
-/* small install banner (mobile) */
+
 #installBanner{position:fixed;left:12px;right:12px;bottom:calc(var(--footer-h) + 16px);z-index:260;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.7));box-shadow:0 12px 40px rgba(0,0,0,.6);font-size:14px}
 #installBanner .title{font-weight:700}
 #installBanner .small{font-size:13px;color:var(--muted)}
 #installBanner .install-btn{background:var(--pill-green-color);color:#fff;padding:8px 10px;border-radius:9px;border:none;cursor:pointer}
 #installBanner .dismiss{background:transparent;color:var(--muted);border:0;cursor:pointer;padding:6px}
-@media(min-width:900px){#installBanner{display:none}} /* only on mobile widths */
+@media(min-width:900px){#installBanner{display:none}} 
 </style>
 </head>
 <body>
@@ -101,17 +101,20 @@ img.badge-img{max-height:20px;margin-right:6px}
 <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal-full" role="document" aria-labelledby="appTitleArea"><div class="modal-top"><div style="display:flex;gap:12px;align-items:center"><button id="closeApp" class="btn icon-btn" aria-label="Back"><span class="iconify" data-icon="mdi:arrow-left" data-inline="false"></span></button><div style="display:flex;align-items:center;gap:12px" id="appTitleArea"></div></div><div id="appTopActions"></div></div><div class="modal-main"><div class="left-pane"><div id="shortDesc" class="muted"></div><div id="mediaArea" class="media-fill" aria-live="polite"></div><div id="carouselNav" class="carousel-nav"></div><div id="carouselDots" class="carousel-controls" aria-hidden="true"></div><div id="longHtml" style="margin-top:12px"></div><div id="pypiBadges" class="pypi-badges" aria-hidden="false" style="margin-top:12px"></div></div><aside class="right-pane"><div class="download-panel" aria-labelledby="downloadTitle"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div><div id="downloadTitle" style="font-weight:800;font-size:16px">Downloads</div><div id="downloadSubtitle" class="small-muted">Choose an asset</div></div></div><div id="downloadList" aria-live="polite"></div><div id="documentationArea" class="download-section" style="display:none;margin-top:12px"><h3><span class="iconify" data-icon="mdi:file-document-outline" data-inline="false"></span>Documentation</h3><div id="documentationList" class="muted" style="display:flex;flex-direction:column;gap:8px"></div></div></div></aside></div></div></div>
 <footer class="site-footer" role="contentinfo"><div class="inner"><div class="footer-stats" id="footerStats"><div id="footerStatsLeft" class="muted">Loading…</div><div id="footerStatsRight" class="small-muted">Report issues on <a id="ghRepo" class="footer-link" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></div></div><div class="legal" aria-hidden="false"><div class="copyright">&copy;<span id="copyrightYear"></span> FelooPy. All rights reserved.</div><div class="disclaimer muted">For info only; not an endorsement.</div></div><div class="publish-bar" id="publishBar" role="region" aria-label="Publish actions"><div class="left"><div style="font-weight:800">Publish Your App</div><div class="muted" style="margin-top:6px">Fill the template, then email or open a pull request.</div></div><div class="right"><button id="openTemplate" class="btn" aria-label="Open template"><span class="iconify" data-icon="mdi:file-document-edit" data-inline="false"></span><span class="sr-only">Template</span></button><button id="openEmail" class="btn" aria-label="Open email form"><span class="iconify" data-icon="mdi:email" data-inline="false"></span><span class="sr-only">Email</span></button><a class="btn" id="githubPR" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repository"><span class="iconify" data-icon="mdi:github" data-inline="false"></span><span class="sr-only">PR</span></a></div></div></div></footer>
 
-<!-- small install banner (hidden by default) -->
-<div id="installBanner" class="hidden" role="dialog" aria-hidden="true" aria-label="Install app suggestion" style="display:none">
-  <div style="display:flex;flex-direction:column;min-width:0">
-    <div class="title">Add App to your device</div>
+
+
+<div id="installBanner" class="hidden" role="dialog" aria-hidden="true" aria-label="Install App StORe" style="display:none">
+  <img id="installLogo" src="../assets/images/feloopy-logo.png" alt="App StORe logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=48 height=48><rect width=100% height=100% fill=%230b0b0b/></svg>'" style="width:44px;height:44px;border-radius:10px;padding:6px;background:var(--header-bg);object-fit:contain;flex:0 0 auto">
+  <div style="display:flex;flex-direction:column;min-width:0;margin-left:8px">
+    <div class="title">Install App StORe</div>
     <div class="small" id="installHint">Install FelooPy as an app for faster access.</div>
   </div>
   <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
-    <button id="installBtn" class="install-btn" type="button">Install</button>
-    <button id="installDismiss" class="dismiss" aria-label="Dismiss">Dismiss</button>
+    <button id="installBtn" class="install-btn" type="button" aria-label="Install App StORe">Install App StORe</button>
+    <button id="installDismiss" class="dismiss" aria-label="Dismiss install suggestion">Dismiss</button>
   </div>
 </div>
+
 
 <div id="publishModal" class="hidden" role="dialog" aria-modal="true" aria-hidden="true" style="display:none"><div class="modal-full" style="max-width:900px"><div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:800">App JSON template</div><div><button id="closePublish" class="btn">Close</button></div></div><div><pre id="jsonTemplate" style="white-space:pre-wrap;background:#0b0b0b;padding:12px;border-radius:8px;color:#e8eaec;max-height:60vh;overflow:auto"></pre></div><div style="display:flex;gap:8px;justify-content:flex-end"><button id="copyTemplate" class="btn">Copy JSON</button><a id="downloadTemplate" class="btn" href="#" download="app-template.json">Download</a></div></div></div>
 
@@ -119,7 +122,108 @@ img.badge-img{max-height:20px;margin-right:6px}
 (function(){
 'use strict';
 const state={apps:[],filtered:[],pageSize:18,page:1};let lastFocused=null,currentApp=null,mediaList=[],currentMediaIndex=0;const _cache={longText:new Map(),pypiMeta:new Map(),pypiBadges:new Map(),prefetching:new Set()};const e=s=>s==null?'':String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');const debounce=(fn,ms=150)=>{let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms);};};function isRemotePath(u){try{const s=String(u||'').trim();return s.startsWith('http://')||s.startsWith('https://')}catch(e){return false}}function fetchWithTimeout(url,timeout=9000){const ctrl=new AbortController();const id=setTimeout(()=>ctrl.abort(),timeout);return fetch(url,{signal:ctrl.signal,cache:'no-cache'}).finally(()=>clearTimeout(id));}function sanitizeColor(c){if(!c)return null;const s=String(c).trim();if(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(s))return s;if(/^(rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+(?:\s*,\s*(0|0?\.\d+|1(\.0)?))?\s*\))$/.test(s))return s;if(/^[a-zA-Z]+$/.test(s)&&s.length<=20)return s;return null}function detectPlatformFromUrl(u){if(!u)return'other';const s=u.toLowerCase();if(s.match(/(\.exe|\.msi|windows|win64|win32|mingw|cygwin)/))return'windows';if(s.match(/(\.dmg|\.pkg|macos|darwin|macosx|\.app|apple)/))return'mac';if(s.match(/(\.appimage|\.deb|\.rpm|\.tar\.gz|\.tgz|linux|x86_64|aarch64|arm64)/))return'linux';return'other'}function detectArch(u,label){const s=((label||'')+' '+(u||'')).toLowerCase();if(s.match(/(mingw64|x86_64|x64|amd64|win64|64bit)/))return'x86_64';if(s.match(/(mingw32|i386|x86|32bit|i686)/))return'x86';if(s.match(/(arm64|aarch64|armv8|armhf)/))return'arm64';return''}const _uaLower=(navigator.userAgent||'').toLowerCase();const preferredPlatform=_uaLower.includes('windows')?'windows':(_uaLower.includes('mac')||_uaLower.includes('darwin'))?'mac':(_uaLower.includes('linux')&&!_uaLower.includes('android'))?'linux':'';function normalizeDownloads(raw){const out=[];if(Array.isArray(raw.downloads)) out.push(...raw.downloads.map(d=>typeof d==='string'?{url:d}:d));if(raw.downloads && typeof raw.downloads==='object' && !Array.isArray(raw.downloads)) out.push(raw.downloads);if(Array.isArray(raw.officialDownload)) out.push(...raw.officialDownload.map(d=>typeof d==='string'?{url:d}:d));if(raw.officialDownload && typeof raw.officialDownload==='string') out.push({url:raw.officialDownload});const seen=new Map();out.forEach(d=>{ if(!d||!d.url)return; const key=d.url.split('?')[0].split('#')[0]; if(seen.has(key))return; const label=d.label||''; const isSrc=/(^|[\/\-_\.])(src|source|sources|sourcecode|source-code|src\.tar|_src|-src)/i.test(d.url+' '+label)||/\/tree\/|\/blob\//.test(d.url); const arch=isSrc?'':detectArch(d.url,label)||''; const platform=isSrc?'source':detectPlatformFromUrl(d.url); seen.set(key,{url:d.url,label:label||'',arch,variant:d.variant||'',install_cmd:d.install_cmd||'',hint:d.hint||'',variants:d.variants||[],platform,source:!!isSrc});});return Array.from(seen.values())}function scoreDownload(d){let s=0;const p=d.platform||detectPlatformFromUrl(d.url);if(preferredPlatform&&p===preferredPlatform)s+=4;const arch=d.arch||detectArch(d.url,d.label||'');if(arch&&_uaLower.includes(arch.replace('_','')))s+=2;if(d.url.match(/release|latest|stable/i))s+=1;if(d.url.match(/(win|exe|msi|dmg|pkg|AppImage|deb|rpm|tar\.gz|tgz|zip|apk|whl)$/i))s+=1;if(d.source)s-=1;return s}function sortDownloads(list){return list.slice().sort((a,b)=>scoreDownload(b)-scoreDownload(a))}function groupByPlatform(list){const by={};list.forEach(d=>{const p=d.platform||'other';(by[p]||(by[p]=[])).push(d)});return by}function youtubeInfoFromUrl(url){try{const u=new URL(url);const info={id:null,list:null};if(u.hostname.includes('youtu.be')){info.id=u.pathname.split('/').filter(Boolean)[0]||null;info.list=u.searchParams.get('list')||null;return info}if(u.searchParams.get('v')){info.id=u.searchParams.get('v');info.list=u.searchParams.get('list')||null;return info}if(u.pathname.includes('/embed/')){const parts=u.pathname.split('/embed/');info.id=parts[1]?parts[1].split('/')[0]:null;info.list=u.searchParams.get('list')||null;return info}return{id:null,list:u.searchParams.get('list')||null}}catch(e){return{id:null,list:null}}}function vimeoIdFromUrl(url){try{const u=new URL(url);return u.pathname.split('/').filter(Boolean).pop()}catch(e){return null}}
-function renderMediaArea(){const area=document.getElementById('mediaArea'),dots=document.getElementById('carouselDots'),nav=document.getElementById('carouselNav');if(!mediaList||mediaList.length===0){area.innerHTML='<div class="media-fill muted">No media</div>';dots.innerHTML='';nav.innerHTML='';return}const item=mediaList[currentMediaIndex]||mediaList[0];area.innerHTML='';const supportsAspect=(typeof window.CSS!=='undefined'&&typeof CSS.supports==='function'&&CSS.supports('aspect-ratio','16/9'));const fallbackClass=supportsAspect?'':' fallback';const wrapper=document.createElement('div');wrapper.className='video-wrapper'+fallbackClass;if(item.type==='video'){const src=item.src||'';let frameSrc=src;if(src.includes('youtube.com')||src.includes('youtu.be')){const info=youtubeInfoFromUrl(src);if(info.id)frameSrc=`https://www.youtube.com/embed/${info.id}?rel=0${info.list?('&list='+encodeURIComponent(info.list)):''}`;else frameSrc=`https://www.youtube.com/embed/?rel=0${info.list?('&list='+encodeURIComponent(info.list)):''}`}else if(src.includes('vimeo.com')){const id=vimeoIdFromUrl(src);frameSrc=id?`https://player.vimeo.com/video/${id}`:src}const iframe=document.createElement('iframe');iframe.setAttribute('src',frameSrc);iframe.setAttribute('frameborder','0');iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('title','App demo video');const placeholder=document.createElement('div');placeholder.className='loading-placeholder';placeholder.innerHTML='<div class=\"spinner\" aria-hidden=\"true\"></div><div class=\"muted\" style=\"font-weight:700\">Loading…</div><div class=\"muted\" style=\"font-size:12px\">If loading takes too long, open in a new tab</div>';const openBtn=document.createElement('a');openBtn.href=src||frameSrc;openBtn.target='_blank';openBtn.rel='noopener noreferrer';openBtn.className='btn';openBtn.style.display='none';openBtn.style.marginTop='8px';openBtn.textContent='Open in new tab';placeholder.appendChild(openBtn);wrapper.appendChild(iframe);wrapper.appendChild(placeholder);area.appendChild(wrapper);let settled=false;const failTimeout=setTimeout(()=>{if(settled)return;settled=true;placeholder.querySelector('.spinner').style.display='none';placeholder.querySelector('.muted').textContent='Failed to load';openBtn.style.display='inline-flex'},12000);iframe.onload=function(){if(settled)return;settled=true;clearTimeout(failTimeout);placeholder.style.display='none'};iframe.onerror=function(){if(settled)return;settled=true;clearTimeout(failTimeout);placeholder.querySelector('.spinner').style.display='none';placeholder.querySelector('.muted').textContent='Failed to load';openBtn.style.display='inline-flex'}}else{const img=document.createElement('img');img.src=item.src||'';img.alt=item.alt||'screenshot';img.loading='lazy';img.style.position='absolute';img.style.inset='0';img.style.width='100%';img.style.height='100%';img.style.objectFit='contain';img.onerror=function(){img.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=640 height=360><rect width=100% height=100% fill=%230a0a0a/><text x=50% y=50% fill=%23aaa dominant-baseline=middle text-anchor=middle font-family=Arial font-size=18>No image</text></svg>'};img.onload=function(){const w=img.naturalWidth||16,h=img.naturalHeight||9;if(w&&h){if(supportsAspect){wrapper.style.aspectRatio=`${w}/${h}`}else{wrapper.style.paddingTop=(100*(h/w)).toFixed(4)+'%';wrapper.classList.add('fallback')}}};if(img.complete&&img.naturalWidth)img.onload();wrapper.appendChild(img);area.appendChild(wrapper)}if(mediaList.length>1){dots.innerHTML='';for(let i=0;i<mediaList.length;i++){const d=document.createElement('div');d.className='dot'+(i===currentMediaIndex?' active':'');d.setAttribute('data-i',String(i));d.tabIndex=0;d.setAttribute('role','button');d.addEventListener('click',()=>{currentMediaIndex=i;renderMediaArea()});d.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();currentMediaIndex=i;renderMediaArea()}});dots.appendChild(d)}nav.innerHTML='';const prev=document.createElement('button');prev.id='prevMedia';prev.setAttribute('aria-label','Previous');prev.innerText='◀';prev.addEventListener('click',()=>{currentMediaIndex=(currentMediaIndex-1+mediaList.length)%mediaList.length;renderMediaArea()});const next=document.createElement('button');next.id='nextMedia';next.setAttribute('aria-label','Next');next.innerText='▶';next.addEventListener('click',()=>{currentMediaIndex=(currentMediaIndex+1)%mediaList.length;renderMediaArea()});nav.appendChild(prev);nav.appendChild(next);let startX=null,currentX=null,isDown=false;wrapper.addEventListener('pointerdown',function(e){startX=e.clientX;currentX=startX;isDown=true;try{wrapper.setPointerCapture(e.pointerId)}catch(err){}});wrapper.addEventListener('pointermove',function(e){if(!isDown)return;currentX=e.clientX});wrapper.addEventListener('pointerup',function(e){if(!isDown)return;isDown=false;try{wrapper.releasePointerCapture(e.pointerId)}catch(err){};const dx=(currentX||e.clientX)-startX;if(Math.abs(dx)>50){currentMediaIndex=dx>0?(currentMediaIndex-1+mediaList.length)%mediaList.length:(currentMediaIndex+1)%mediaList.length;renderMediaArea()}});wrapper.addEventListener('pointercancel',function(){isDown=false})}else{dots.innerHTML='';nav.innerHTML=''}}
+function renderMediaArea(){
+  const area=document.getElementById('mediaArea'), dots=document.getElementById('carouselDots'), nav=document.getElementById('carouselNav');
+  if(!mediaList||mediaList.length===0){ area.innerHTML='<div class="media-fill muted">No media</div>'; dots.innerHTML=''; nav.innerHTML=''; return; }
+  const item=mediaList[currentMediaIndex]||mediaList[0];
+  area.innerHTML='';
+  const supportsAspect=(typeof window.CSS!=='undefined'&&typeof CSS.supports==='function'&&CSS.supports('aspect-ratio','16/9'));
+  const fallbackClass=supportsAspect?'':' fallback';
+  const wrapper=document.createElement('div'); wrapper.className='video-wrapper'+fallbackClass;
+
+  const src=(item && item.src)||'';
+  const lowerSrc = String(src||'').toLowerCase();
+
+  // direct video file (mp4/webm/etc)
+  if(lowerSrc.match(/\.(mp4|webm|ogg)([\?#].*)?$/i) || item.type==='video' && (item.kind==='file' || item.isFile)){
+    const video = document.createElement('video');
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = 'metadata';
+    if(item.poster) video.poster = item.poster;
+    video.style.position = 'absolute';
+    video.style.inset = 0;
+    video.style.width = '100%';
+    video.style.height = '100%';
+    video.style.objectFit = 'contain';
+    const srcEl = document.createElement('source');
+    srcEl.src = src;
+    video.appendChild(srcEl);
+    video.onerror = function(){
+      wrapper.innerHTML = '<div class="loading-placeholder"><div class="muted">Failed to load video</div></div>';
+    };
+    wrapper.appendChild(video);
+    area.appendChild(wrapper);
+    return;
+  }
+
+  // YouTube
+  function youtubeEmbed(s){
+    try{
+      const info=(function(url){try{const u=new URL(url); if(u.hostname.includes('youtu.be'))return {id:u.pathname.split('/').filter(Boolean)[0]}; if(u.searchParams.get('v'))return {id:u.searchParams.get('v')}; if(u.pathname.includes('/embed/'))return {id:u.pathname.split('/embed/')[1].split('/')[0]}; }catch(e){} return {}; })(s);
+      if(info.id) return `https://www.youtube.com/embed/${info.id}?rel=0&modestbranding=1`;
+    }catch(e){}
+    return null;
+  }
+  // Vimeo
+  function vimeoEmbed(s){
+    try{const u=new URL(s); const id=u.pathname.split('/').filter(Boolean).pop(); return id?`https://player.vimeo.com/video/${id}`:null}catch(e){return null}
+  }
+
+  let frameSrc = null;
+  if(lowerSrc.includes('youtube.com')||lowerSrc.includes('youtu.be')) frameSrc = youtubeEmbed(src);
+  else if(lowerSrc.includes('vimeo.com')) frameSrc = vimeoEmbed(src);
+
+  if(frameSrc){
+    const iframe = document.createElement('iframe');
+    iframe.src = frameSrc;
+    iframe.loading = 'lazy';
+    iframe.setAttribute('frameborder','0');
+    iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+    iframe.allowFullscreen = true;
+    iframe.title = item.alt || 'App demo video';
+    iframe.style.position = 'absolute';
+    iframe.style.inset = 0;
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    wrapper.appendChild(iframe);
+    const placeholder=document.createElement('div');
+    placeholder.className='loading-placeholder';
+    placeholder.innerHTML = '<div class="spinner" aria-hidden="true"></div><div class="muted" style="font-weight:700">Loading…</div>';
+    const openBtn=document.createElement('a');
+    openBtn.href = src;
+    openBtn.target = '_blank';
+    openBtn.rel = 'noopener noreferrer';
+    openBtn.className = 'btn';
+    openBtn.style.display='none';
+    openBtn.textContent = 'Open in new tab';
+    placeholder.appendChild(openBtn);
+    wrapper.appendChild(placeholder);
+    area.appendChild(wrapper);
+    let settled=false;
+    const failTimeout=setTimeout(()=>{ if(settled) return; settled=true; placeholder.querySelector('.spinner').style.display='none'; placeholder.querySelector('.muted').textContent='Failed to load'; openBtn.style.display='inline-flex'; },12000);
+    iframe.onload = function(){ if(settled) return; settled=true; clearTimeout(failTimeout); placeholder.style.display='none'; };
+    iframe.onerror = function(){ if(settled) return; settled=true; clearTimeout(failTimeout); placeholder.querySelector('.spinner').style.display='none'; placeholder.querySelector('.muted').textContent='Failed to load'; openBtn.style.display='inline-flex'; };
+    return;
+  }
+  const img=document.createElement('img');
+  img.src = src;
+  img.alt = item.alt||'screenshot';
+  img.loading = 'lazy';
+  img.style.position='absolute';
+  img.style.inset=0;
+  img.style.width='100%';
+  img.style.height='100%';
+  img.style.objectFit='contain';
+  img.onerror=function(){ img.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=640 height=360><rect width=100% height=100% fill=%230a0a0a/><text x=50% y=50% fill=%23aaa dominant-baseline=middle text-anchor=middle font-family=Arial font-size=18>No image</text></svg>' };
+  img.onload=function(){ const w=img.naturalWidth||16, h=img.naturalHeight||9; if(w&&h){ if(supportsAspect){ wrapper.style.aspectRatio=`${w}/${h}` } else { wrapper.style.paddingTop=(100*(h/w)).toFixed(4)+'%'; wrapper.classList.add('fallback') } } };
+  wrapper.appendChild(img);
+  area.appendChild(wrapper);
+  if(mediaList.length>1){
+    dots.innerHTML=''; for(let i=0;i<mediaList.length;i++){ const d=document.createElement('div'); d.className='dot'+(i===currentMediaIndex?' active':''); d.setAttribute('data-i',String(i)); d.tabIndex=0; d.setAttribute('role','button'); d.addEventListener('click',()=>{ currentMediaIndex=i; renderMediaArea() }); d.addEventListener('keydown',ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); currentMediaIndex=i; renderMediaArea() }}); dots.appendChild(d) }
+    nav.innerHTML=''; const prev=document.createElement('button'); prev.id='prevMedia'; prev.setAttribute('aria-label','Previous'); prev.innerText='◀'; prev.addEventListener('click',()=>{ currentMediaIndex=(currentMediaIndex-1+mediaList.length)%mediaList.length; renderMediaArea() }); const next=document.createElement('button'); next.id='nextMedia'; next.setAttribute('aria-label','Next'); next.innerText='▶'; next.addEventListener('click',()=>{ currentMediaIndex=(currentMediaIndex+1)%mediaList.length; renderMediaArea() }); nav.appendChild(prev); nav.appendChild(next);
+  } else { dots.innerHTML=''; nav.innerHTML=''; }
+}
 function mdToHtml(md){if(!md)return'';let s=String(md).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');s=s.replace(/```([\s\S]*?)```/g,(m,c)=>`<pre style="background:#0b0b0b;border-radius:6px;padding:10px;overflow:auto;margin:8px 0"><code>${e(c)}</code></pre>`);s=s.replace(/`([^`]+)`/g,(m,c)=>`<code style="background:#0b0b0b;border-radius:4px;padding:2px 6px">${e(c)}</code>`);s=s.replace(/^###### (.*$)/gim,'<h6>$1</h6>').replace(/^##### (.*$)/gim,'<h5>$1</h5>').replace(/^#### (.*$)/gim,'<h4>$1</h4>').replace(/^### (.*$)/gim,'<h3>$1</h3>').replace(/^## (.*$)/gim,'<h2>$1</h2>').replace(/^# (.*$)/gim,'<h1>$1</h1>');s=s.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>');s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,(m,t,u)=>`<a href="${e(u)}" target="_blank" rel="noopener noreferrer">${t}</a>`);const paragraphs=s.split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean);s=paragraphs.map(p=>{if(p.match(/^<(h|pre|ul|ol|blockquote|img|div)/i))return p;if(/^\-\s+/.test(p)){const items=p.split(/\n/).map(l=>l.replace(/^-+\s*/,'')).map(li=>`<li>${li}</li>`).join('');return`<ul>${items}</ul>`}return`<p>${p}</p>`}).join('\n');if(window.DOMPurify&&typeof window.DOMPurify.sanitize==='function')return window.DOMPurify.sanitize(s);return s}
 async function fetchText(url){try{const r=await fetchWithTimeout(url,9000);if(!r.ok)return null;return await r.text()}catch(e){return null}}
 async function resolveLongDescription(app){const raw=app._raw||app;const candidates=[];if(raw.long_description&&typeof raw.long_description==='string')candidates.push(raw.long_description);if(raw.readme_url&&typeof raw.readme_url==='string')candidates.push(raw.readme_url);if(Array.isArray(raw.documentation))candidates.push(...raw.documentation.filter(d=>typeof d==='string'));if(raw.description&&typeof raw.description==='string')candidates.push(raw.description);for(const c of candidates){if(!c)continue;if(_cache.longText.has(c))return _cache.longText.get(c);if(isRemotePath(c)){const t=await fetchText(c);if(t){_cache.longText.set(c,t);return t;}continue}else{try{const path=c.replace(/^\.\//,'');const t=await fetchText(path);if(t){_cache.longText.set(c,t);return t}}catch(e){}}}if(raw.long_description&&typeof raw.long_description==='string'){_cache.longText.set(raw.long_description,raw.long_description);return raw.long_description}if(raw.description&&typeof raw.description==='string'){_cache.longText.set(app.id||app.name,raw.description);return raw.description}return ''}
@@ -140,9 +244,9 @@ document.addEventListener('DOMContentLoaded',async function(){const brand=docume
     const banner = document.getElementById('installBanner');
     const installBtn = document.getElementById('installBtn');
     const dismiss = document.getElementById('installDismiss');
+    const logo = document.getElementById('installLogo');
     let deferredPrompt = null;
     const lsKey = 'feloopy_install_shown_v1';
-
     const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 900 && ('ontouchstart' in window);
     const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
 
@@ -155,29 +259,32 @@ document.addEventListener('DOMContentLoaded',async function(){const brand=docume
       banner.setAttribute('aria-hidden','false');
       if(hint && document.getElementById('installHint')) document.getElementById('installHint').textContent = hint;
     }
-    function hideBanner() {
+    function hideBanner(){
       if(!banner) return;
-      banner.style.display = 'none';
+      banner.style.display='none';
       banner.classList.add('hidden');
       banner.setAttribute('aria-hidden','true');
-      localStorage.setItem(lsKey, '1');
+      localStorage.setItem(lsKey,'1');
     }
+
     window.addEventListener('beforeinstallprompt', (e) => {
-      try {
+      try{
         e.preventDefault();
         deferredPrompt = e;
-        showBanner('Install FelooPy for faster access! Tap Install.');
-      } catch(e){}
+        showBanner('Install App StORe for quick access. Tap Install.');
+      }catch(e){}
     });
-    window.addEventListener('load', () => {
-      try {
+
+    window.addEventListener('load', ()=>{
+      try{
         const inStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+        if(inStandalone) return;
         setTimeout(()=>{
           if(deferredPrompt) return;
           if(isiOS) showBanner('iOS: tap Share → Add to Home Screen.');
-          else showBanner('Add to home screen for quick access.');
-        },1200);
-      } catch(e){}
+          else showBanner('Use your browser menu → Add to Home Screen.');
+        },800);
+      }catch(e){}
     });
 
     if(installBtn) installBtn.addEventListener('click', async function(){
@@ -185,28 +292,25 @@ document.addEventListener('DOMContentLoaded',async function(){const brand=docume
         if(deferredPrompt){
           deferredPrompt.prompt();
           const choice = await deferredPrompt.userChoice;
-          if(choice && choice.outcome === 'accepted') localStorage.setItem(lsKey, '1');
+          if(choice && choice.outcome === 'accepted') localStorage.setItem(lsKey,'1');
           deferredPrompt = null;
           hideBanner();
         } else if(isiOS){
-          alert('To install: tap the browser Share button, then "Add to Home Screen".');
+          alert('To install App StORe: tap the browser Share button, then "Add to Home Screen".');
           hideBanner();
         } else {
-          if(navigator?.installTrigger) {
-            navigator.installTrigger();
-            localStorage.setItem(lsKey, '1');
-            hideBanner();
-          } else {
-            showBanner('Use your browser menu → Add to Home Screen.');
-          }
+          alert('To install: use your browser menu → Add to Home Screen.');
+          hideBanner();
         }
       } catch(err){
         hideBanner();
       }
     });
+
     if(dismiss) dismiss.addEventListener('click', hideBanner);
   } catch(e){}
 })();
+
 </script>
 </body>
 </html>
