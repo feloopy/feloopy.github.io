@@ -1,329 +1,1054 @@
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-<link rel="shortcut icon" href="../favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="FelooPy" />
-<link rel="manifest" href="site.webmanifest" />
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><title>App StORe — FelooPy</title>
-<script>!function(){try{var ua=navigator.userAgent||"",isTouch="ontouchstart"in window||navigator.maxTouchPoints&&navigator.maxTouchPoints>0||navigator.msMaxTouchPoints&&navigator.msMaxTouchPoints>0,isInApp=/linkedin|fbav|fb_iab|instagram|whtsapp|fb_iab/i.test(ua);(isTouch||isInApp)&&document.documentElement.classList.add("force-mobile");window.__dumpViewport=function(){return{userAgent:ua,innerWidth:window.innerWidth,outerWidth:window.outerWidth,clientWidth:document.documentElement.clientWidth,visualViewportWidth:(window.visualViewport&&window.visualViewport.width)||null,screenWidth:screen.width,devicePixelRatio:window.devicePixelRatio||1}}}catch(e){} }()</script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
-<style>
-:root{--bg:#0a1605;--muted:#9aa0a6;--accent:#1e991a;--card-shadow:0 8px 36px rgba(44,139,52,0.6);--header-h:88px;--footer-h:96px;--radius:12px;--header-bg:rgba(2,72,14,0.66);--pill-blue-bg:rgba(59,130,246,0.12);--pill-blue-color:#3b82f6;--pill-green-bg:rgba(30,153,26,0.12);--pill-green-color:#1e991a}
-html.force-mobile{--header-h:64px;--footer-h:76px}
-html.force-mobile .brand-text{display:none}
-html.force-mobile .publish-bar .left .muted{display:none}
-html.force-mobile .grid{grid-template-columns:1fr!important}
-html.force-mobile .right-pane{width:100%!important;flex:0 0 auto!important}
-@media(max-width:719px){:root{--header-h:64px;--footer-h:76px}.brand-text{display:none}.publish-bar .left .muted{display:none}}
-@media(pointer:coarse),(hover:none){:root{--header-h:64px;--footer-h:76px}.brand-text{display:none}.publish-bar .left .muted{display:none}.grid{grid-template-columns:1fr}.right-pane{width:100%;flex:0 0 auto}}
-html,body{height:100%;margin:0}
-body{display:flex;flex-direction:column;min-height:100vh;background:linear-gradient(180deg,var(--bg),#240132);color:#e8eaec;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial;-webkit-font-smoothing:antialiased;line-height:1.35}
-header.site-header{position:sticky;top:0;z-index:140;background:var(--header-bg);backdrop-filter:blur(6px);padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.03)}
-.header-row{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;max-width:1100px;margin:0 auto;position:relative}
-.brand{display:flex;align-items:center;gap:8px;cursor:pointer;outline:0}
-.brand img{width:30px;height:30px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);transition:filter .28s,transform .28s}
-.brand:focus img,.brand:hover img{filter:none;transform:scale(1.06)}
-.brand-text{line-height:1}
-.store-name{font-weight:700;font-size:18px;color:#fff;margin:0}
-.top-search{width:100%;max-width:860px;margin:0 auto;position:relative}
-.top-search input[type=search]{width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02);color:#eaf0f0;font-size:14px;box-sizing:border-box}
-main.page-inner{flex:1 1 auto;max-width:1100px;margin:0 auto;padding:20px 18px;padding-top:calc(var(--header-h) + 8px);padding-bottom:20px;box-sizing:border-box}
-.grid{display:grid;gap:16px}
-@media(min-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:720px)and(max-width:1099px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:719px){.grid{grid-template-columns:1fr}}
-.card{display:flex;gap:12px;align-items:center;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.01),rgba(255,255,255,0));transition:transform .16s,box-shadow .16s;cursor:pointer;min-height:84px}
-.card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow)}
-.icon-wrap{width:64px;height:64px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:6px;box-sizing:border-box}
-.icon-wrap img{max-width:84%;max-height:84%;object-fit:contain;display:block;border-radius:6px}
-.card h3{margin:0;font-size:16px;font-weight:700;color:#fff;display:flex;gap:8px;align-items:center}
-.card p{margin:4px 0 0 0;color:var(--muted);font-size:13px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.verified-only{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;opacity:.95}
-.mobile-menu{display:none;position:absolute;right:18px;top:100%;margin-top:8px;z-index:180;background:var(--header-bg);padding:10px;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.6);min-width:180px;width:min(92vw,320px);transform-origin:top right}
-.mobile-menu.open{display:block}
-.overlay{position:fixed;inset:0;z-index:220;display:none;background:rgba(0,0,0,.88);align-items:stretch;justify-content:center}
-.overlay.open{display:flex}
-.modal-full{width:100%;height:100dvh;padding:max(16px,env(safe-area-inset-top)) 18px max(16px,env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,rgba(8,9,10,.98),rgba(8,9,10,.98));overflow:auto}
-.modal-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex:0 0 auto}
-.modal-main{flex:1 1 auto;display:flex;gap:12px;align-items:flex-start;min-height:0}
-@media (max-width:919px){.modal-main{flex-direction:column}}
-.left-pane{flex:1 1 0;display:flex;flex-direction:column;gap:12px;min-width:0}
-.right-pane{width:420px;flex:0 0 420px}
-@media (max-width:919px){.right-pane{width:100%;flex:0 0 auto}}
-.media-fill{width:100%;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.01),rgba(255,255,255,0));display:flex;align-items:center;justify-content:center;max-width:100%;box-sizing:border-box;overflow:hidden;position:relative}
-.media-fill{max-height:calc(100vh - var(--header-h) - var(--footer-h) - 64px)}
-.video-wrapper{width:100%;position:relative;aspect-ratio:16/9;max-height:62vh;display:block;box-sizing:border-box;touch-action:pan-y}
-.video-wrapper.fallback{height:0;padding-top:56.25%;position:relative}
-.video-wrapper iframe,.video-wrapper img,.video-wrapper video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;border-radius:10px;object-fit:contain}
-.spinner{width:36px;height:36px;border-radius:50%;border:4px solid rgba(255,255,255,0.08);border-top-color:var(--accent);animation:spin 1s linear infinite;margin-bottom:8px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.loading-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.25));color:var(--muted);border-radius:10px;text-align:center;padding:12px;pointer-events:auto}
-.carousel-controls{display:flex;justify-content:center;gap:8px;margin-top:8px}
-.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.12);cursor:pointer}
-.dot.active{background:var(--accent)}
-.carousel-nav{display:flex;gap:8px;justify-content:center;margin-top:8px}
-.download-panel{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.01),rgba(255,255,255,0));height:100%;box-sizing:border-box;overflow:auto}
-.download-section{margin-bottom:12px}
-.download-section h3{margin:0 0 8px 0;font-size:14px;color:#fff;text-transform:capitalize;display:flex;align-items:center;gap:8px}
-.download-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px;border-radius:8px;background:0 0;margin-bottom:6px}
-.download-left{display:flex;gap:10px;align-items:center;min-width:0}
-.download-left .fn{color:var(--muted);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px}
-.download-cta{display:flex;gap:8px;align-items:center}
-.btn{background:rgba(255,255,255,.04);color:#fff;padding:8px 12px;border-radius:9px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-.icon-btn{padding:8px;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px}
-.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 8px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap}
-.pill.general{background:var(--pill-blue-bg);color:var(--pill-blue-color);border:1px solid rgba(59,130,246,.14)}
-.pill.preferred{background:var(--pill-green-bg);color:var(--pill-green-color);border:1px solid rgba(30,153,26,.12)}
-
-footer.site-footer{position:relative;left:0;right:0;height:auto;display:flex;align-items:flex-end;justify-content:center;background:transparent;border-top:1px solid rgba(255,255,255,.03);z-index:200;padding:12px 18px;box-sizing:border-box;margin-top:12px}
-footer .inner{max-width:1100px;width:100%;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:13px}
-.footer-stats{background:rgba(0,0,0,.25);padding:8px 12px;border-radius:10px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
-.publish-bar{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:12px;border-radius:10px;  background:var(--header-bg);backdrop-filter:blur(6px)}
-@media (max-width:520px){.publish-bar{flex-direction:row;align-items:flex-end;gap:12px}.publish-bar .left{order:1}.publish-bar .right{order:2;margin-left:auto}.publish-bar .left .muted{display:none}}
-.legal{display:flex;gap:12px;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;flex-wrap:wrap;margin-bottom:20px}
-.footer-link{text-decoration:underline;color:inherit}
-.muted{color:var(--muted)}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.hidden{display:none!important}
-img.badge-img{max-height:20px;margin-right:6px}
-
-
-#installBanner{position:fixed;left:12px;right:12px;bottom:calc(var(--footer-h) + 16px);z-index:260;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.7));box-shadow:0 12px 40px rgba(0,0,0,.6);font-size:14px}
-#installBanner .title{font-weight:700}
-#installBanner .small{font-size:13px;color:var(--muted)}
-#installBanner .install-btn{background:var(--pill-green-color);color:#fff;padding:8px 10px;border-radius:9px;border:none;cursor:pointer}
-#installBanner .dismiss{background:transparent;color:var(--muted);border:0;cursor:pointer;padding:6px}
-@media(min-width:900px){#installBanner{display:none}} 
-</style>
+  <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="FelooPy">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>App StORe — FelooPy</title>
+  <script>!function(){try{var i=navigator.userAgent||"",t="ontouchstart"in window||navigator.maxTouchPoints&&0<navigator.maxTouchPoints||navigator.msMaxTouchPoints&&0<navigator.msMaxTouchPoints,n=/linkedin|fbav|fb_iab|instagram|whtsapp|fb_iab/i.test(i);(t||n)&&document.documentElement.classList.add("force-mobile"),window.__dumpViewport=function(){return{userAgent:i,innerWidth:window.innerWidth,outerWidth:window.outerWidth,clientWidth:document.documentElement.clientWidth,visualViewportWidth:window.visualViewport&&window.visualViewport.width||null,screenWidth:screen.width,devicePixelRatio:window.devicePixelRatio||1}}}catch(i){}}()</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
+  <style>
+    :root{--bg:#0a1605;--muted:#9aa0a6;--accent:#1e991a;--card-shadow:0 8px 36px rgba(44, 139, 52, 0.6);--header-h:88px;--footer-h:96px;--radius:12px;--header-bg:rgba(2, 72, 14, 0.66);--pill-blue-bg:rgba(59, 130, 246, 0.12);--pill-blue-color:#3b82f6;--pill-green-bg:rgba(30, 153, 26, 0.12);--pill-green-color:#1e991a}
+    html.force-mobile{--header-h:64px;--footer-h:76px}
+    html.force-mobile .brand-text{display:none}
+    html.force-mobile .publish-bar .left .muted{display:none}
+    html.force-mobile .grid{grid-template-columns:1fr!important}
+    html.force-mobile .right-pane{width:100%!important;flex:0 0 auto!important}
+    @media(max-width:719px){:root{--header-h:64px;--footer-h:76px}.brand-text{display:none}.publish-bar .left .muted{display:none}}
+    @media(pointer:coarse),(hover:none){:root{--header-h:64px;--footer-h:76px}.brand-text{display:none}.publish-bar .left .muted{display:none}.grid{grid-template-columns:1fr}.right-pane{width:100%;flex:0 0 auto}}
+    body,html{height:100%;margin:0}
+    body{display:flex;flex-direction:column;min-height:100vh;background:linear-gradient(180deg,var(--bg),#240132);color:#e8eaec;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial;-webkit-font-smoothing:antialiased;line-height:1.35}
+    header.site-header{position:sticky;top:0;z-index:140;background:var(--header-bg);backdrop-filter:blur(6px);padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.03)}
+    .header-row{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;max-width:1100px;margin:0 auto;position:relative}
+    .brand{display:flex;align-items:center;gap:8px;cursor:pointer;outline:0}
+    .brand img{width:30px;height:30px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);transition:filter .28s,transform .28s}
+    .brand:focus img,.brand:hover img{filter:none;transform:scale(1.06)}
+    .brand-text{line-height:1}
+    .store-name{font-weight:700;font-size:18px;color:#fff;margin:0}
+    .top-search{width:100%;max-width:860px;margin:0 auto;position:relative}
+    .top-search input[type=search]{width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02);color:#eaf0f0;font-size:14px;box-sizing:border-box}
+    main.page-inner{flex:1 1 auto;max-width:1100px;margin:0 auto;padding:20px 18px;padding-top:calc(var(--header-h) + 8px);padding-bottom:20px;box-sizing:border-box}
+    .grid{display:grid;gap:16px}
+    @media(min-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:720px)and(max-width:1099px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:719px){.grid{grid-template-columns:1fr}}
+    .card{display:flex;gap:12px;align-items:center;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.01),rgba(255,255,255,0));transition:transform .16s,box-shadow .16s;cursor:pointer;min-height:84px}
+    .card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow)}
+    .icon-wrap{width:64px;height:64px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:6px;box-sizing:border-box}
+    .icon-wrap img{max-width:84%;max-height:84%;object-fit:contain;display:block;border-radius:6px}
+    .card h3{margin:0;font-size:16px;font-weight:700;color:#fff;display:flex;gap:8px;align-items:center}
+    .card p{margin:4px 0 0 0;color:var(--muted);font-size:13px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .verified-only{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;opacity:.95}
+    .mobile-menu{display:none;position:absolute;right:18px;top:100%;margin-top:8px;z-index:180;background:var(--header-bg);padding:10px;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.6);min-width:180px;width:min(92vw,320px);transform-origin:top right}
+    .mobile-menu.open{display:block}
+    .overlay{position:fixed;inset:0;z-index:220;display:none;background:rgba(0,0,0,.88);align-items:stretch;justify-content:center}
+    .overlay.open{display:flex}
+    .modal-full{width:100%;height:100dvh;padding:max(16px,env(safe-area-inset-top)) 18px max(16px,env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,rgba(8,9,10,.98),rgba(8,9,10,.98));overflow:auto}
+    .modal-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex:0 0 auto}
+    .modal-main{flex:1 1 auto;display:flex;gap:12px;align-items:flex-start;min-height:0}
+    @media (max-width:919px){.modal-main{flex-direction:column}}
+    .left-pane{flex:1 1 0;display:flex;flex-direction:column;gap:12px;min-width:0}
+    .right-pane{width:420px;flex:0 0 420px}
+    @media (max-width:919px){.right-pane{width:100%;flex:0 0 auto}}
+    .media-fill{width:100%;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.01),rgba(255,255,255,0));display:flex;align-items:center;justify-content:center;max-width:100%;box-sizing:border-box;overflow:hidden;position:relative}
+    .media-fill{max-height:calc(100vh - var(--header-h) - var(--footer-h) - 64px)}
+    .video-wrapper{width:100%;position:relative;aspect-ratio:16/9;max-height:62vh;display:block;box-sizing:border-box;touch-action:pan-y}
+    .video-wrapper.fallback{height:0;padding-top:56.25%;position:relative}
+    .video-wrapper iframe,.video-wrapper img,.video-wrapper video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;border-radius:10px;object-fit:contain}
+    .spinner{width:36px;height:36px;border-radius:50%;border:4px solid rgba(255,255,255,.08);border-top-color:var(--accent);animation:spin 1s linear infinite;margin-bottom:8px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .loading-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.25));color:var(--muted);border-radius:10px;text-align:center;padding:12px;pointer-events:none}
+    .loading-placeholder .btn,
+    .loading-placeholder a { pointer-events:auto; }
+    .carousel-controls{display:flex;justify-content:center;gap:8px;margin-top:8px}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.12);cursor:pointer}
+    .dot.active{background:var(--accent)}
+    .carousel-nav{display:flex;gap:8px;justify-content:center;margin-top:8px}
+    .download-panel{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.01),rgba(255,255,255,0));height:100%;box-sizing:border-box;overflow:auto}
+    .download-section{margin-bottom:12px}
+    .download-section h3{margin:0 0 8px 0;font-size:14px;color:#fff;text-transform:capitalize;display:flex;align-items:center;gap:8px}
+    .download-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px;border-radius:8px;background:0 0;margin-bottom:6px}
+    .download-left{display:flex;gap:10px;align-items:center;min-width:0}
+    .download-left .fn{color:var(--muted);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px}
+    .download-cta{display:flex;gap:8px;align-items:center}
+    .btn{background:rgba(255,255,255,.04);color:#fff;padding:8px 12px;border-radius:9px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+    .icon-btn{padding:8px;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 8px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap}
+    .pill.general{background:var(--pill-blue-bg);color:var(--pill-blue-color);border:1px solid rgba(59,130,246,.14)}
+    .pill.preferred{background:var(--pill-green-bg);color:var(--pill-green-color);border:1px solid rgba(30,153,26,.12)}
+    footer.site-footer{position:relative;left:0;right:0;height:auto;display:flex;align-items:flex-end;justify-content:center;background:0 0;border-top:1px solid rgba(255,255,255,.03);z-index:200;padding:12px 18px;box-sizing:border-box;margin-top:12px}
+    footer .inner{max-width:1100px;width:100%;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:13px}
+    .footer-stats{background:rgba(0,0,0,.25);padding:8px 12px;border-radius:10px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+    .publish-bar{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:12px;border-radius:10px;background:var(--header-bg);backdrop-filter:blur(6px)}
+    @media (max-width:520px){.publish-bar{flex-direction:row;align-items:flex-end;gap:12px}.publish-bar .left{order:1}.publish-bar .right{order:2;margin-left:auto}.publish-bar .left .muted{display:none}}
+    .legal{display:flex;gap:12px;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;flex-wrap:wrap;margin-bottom:20px}
+    .footer-link{text-decoration:underline;color:inherit}
+    .muted{color:var(--muted)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .hidden{display:none!important}
+    img.badge-img{max-height:20px;margin-right:6px}
+    #installBanner{position:fixed;left:12px;right:12px;bottom:calc(var(--footer-h) + 16px);z-index:260;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.7));box-shadow:0 12px 40px rgba(0,0,0,.6);font-size:14px}
+    #installBanner .title{font-weight:700}
+    #installBanner .small{font-size:13px;color:var(--muted)}
+    #installBanner .install-btn{background:var(--pill-green-color);color:#fff;padding:8px 10px;border-radius:9px;border:none;cursor:pointer}
+    #installBanner .dismiss{background:0 0;color:var(--muted);border:0;cursor:pointer;padding:6px}
+    @media(min-width:900px){#installBanner{display:none}}
+  </style>
 </head>
 <body>
-<header class="site-header" role="banner"><div class="header-row" aria-label="Top header"><div class="brand" role="button" tabindex="0" aria-label="Go to homepage" id="brandBtn"><img src="../assets/images/feloopy-logo.png" alt="FelooPy logo" loading="lazy" onerror='this.onerror=null;this.src="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=30 height=30><rect width=30 height=30 fill=%23000/></svg>"'><div class="brand-text"><div class="store-name">App StORe</div></div></div><div class="top-search" role="search"><label for="globalSearch" class="sr-only">Search apps</label><input id="globalSearch" type="search" placeholder="Search apps..." aria-label="Global search"></div><div class="header-right" aria-hidden="true"><button id="hamburgerBtn" class="btn icon-btn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span class="iconify" data-icon="mdi:menu" data-inline="false"></span></button><div id="mobileMenu" class="mobile-menu" role="menu" aria-hidden="true"><a href="./index.html" class="btn" role="menuitem">Home</a><a href="https://feloopy.github.io/" class="btn" role="menuitem">FelooPy</a></div></div></div></header>
-<main class="page-inner" id="pageRoot" role="main" aria-live="polite"><section id="gridView" aria-atomic="true"><div id="grid" class="grid" aria-live="polite"></div><div style="display:flex;justify-content:center;margin-top:18px;margin-bottom:28px"><button id="loadMore" class="btn">Load more</button></div></section></main>
-<div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal-full" role="document" aria-labelledby="appTitleArea"><div class="modal-top"><div style="display:flex;gap:12px;align-items:center"><button id="closeApp" class="btn icon-btn" aria-label="Back"><span class="iconify" data-icon="mdi:arrow-left" data-inline="false"></span></button><div style="display:flex;align-items:center;gap:12px" id="appTitleArea"></div></div><div id="appTopActions"></div></div><div class="modal-main"><div class="left-pane"><div id="shortDesc" class="muted"></div><div id="mediaArea" class="media-fill" aria-live="polite"></div><div id="carouselNav" class="carousel-nav"></div><div id="carouselDots" class="carousel-controls" aria-hidden="true"></div><div id="longHtml" style="margin-top:12px"></div><div id="pypiBadges" class="pypi-badges" aria-hidden="false" style="margin-top:12px"></div></div><aside class="right-pane"><div class="download-panel" aria-labelledby="downloadTitle"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div><div id="downloadTitle" style="font-weight:800;font-size:16px">Downloads</div><div id="downloadSubtitle" class="small-muted">Choose an asset</div></div></div><div id="downloadList" aria-live="polite"></div><div id="documentationArea" class="download-section" style="display:none;margin-top:12px"><h3><span class="iconify" data-icon="mdi:file-document-outline" data-inline="false"></span>Documentation</h3><div id="documentationList" class="muted" style="display:flex;flex-direction:column;gap:8px"></div></div></div></aside></div></div></div>
-<footer class="site-footer" role="contentinfo"><div class="inner"><div class="footer-stats" id="footerStats"><div id="footerStatsLeft" class="muted">Loading…</div><div id="footerStatsRight" class="small-muted">Report issues on <a id="ghRepo" class="footer-link" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></div></div><div class="legal" aria-hidden="false"><div class="copyright">&copy;<span id="copyrightYear"></span> FelooPy. All rights reserved.</div><div class="disclaimer muted">For info only; not an endorsement.</div></div><div class="publish-bar" id="publishBar" role="region" aria-label="Publish actions"><div class="left"><div style="font-weight:800">Publish Your App</div><div class="muted" style="margin-top:6px">Fill the template, then email or open a pull request.</div></div><div class="right"><button id="openTemplate" class="btn" aria-label="Open template"><span class="iconify" data-icon="mdi:file-document-edit" data-inline="false"></span><span class="sr-only">Template</span></button><button id="openEmail" class="btn" aria-label="Open email form"><span class="iconify" data-icon="mdi:email" data-inline="false"></span><span class="sr-only">Email</span></button><a class="btn" id="githubPR" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repository"><span class="iconify" data-icon="mdi:github" data-inline="false"></span><span class="sr-only">PR</span></a></div></div></div></footer>
+<header class="site-header" role="banner">
+  <div class="header-row" aria-label="Top header">
+    <div class="brand" role="button" tabindex="0" aria-label="Go to homepage" id="brandBtn">
+      <img src="../assets/images/feloopy-logo.png" alt="FelooPy logo" loading="lazy" onerror='this.onerror=null,this.src="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=30 height=30><rect width=30 height=30 fill=%23000/></svg>"'>
+      <div class="brand-text"><div class="store-name">App StORe</div></div>
+    </div>
+    <div class="top-search" role="search">
+      <label for="globalSearch" class="sr-only">Search apps</label>
+      <input id="globalSearch" type="search" placeholder="Search apps..." aria-label="Global search">
+    </div>
+    <div class="header-right" aria-hidden="true">
+      <button id="hamburgerBtn" class="btn icon-btn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span class="iconify" data-icon="mdi:menu" data-inline="false"></span></button>
+      <div id="mobileMenu" class="mobile-menu" role="menu" aria-hidden="true">
+        <a href="./index.html" class="btn" role="menuitem">Home</a>
+        <a href="https://feloopy.github.io/" class="btn" role="menuitem">FelooPy</a>
+      </div>
+    </div>
+  </div>
+</header>
 
+<main class="page-inner" id="pageRoot" role="main" aria-live="polite">
+  <section id="gridView" aria-atomic="true">
+    <div id="grid" class="grid" aria-live="polite"></div>
+    <div style="display:flex;justify-content:center;margin-top:18px;margin-bottom:28px">
+      <button id="loadMore" class="btn">Load more</button>
+    </div>
+  </section>
+</main>
 
+<div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-full" role="document" aria-labelledby="appTitleArea">
+    <div class="modal-top">
+      <div style="display:flex;gap:12px;align-items:center">
+        <button id="closeApp" class="btn icon-btn" aria-label="Back" type="button"><span class="iconify" data-icon="mdi:arrow-left" data-inline="false"></span></button>
+        <div style="display:flex;align-items:center;gap:12px" id="appTitleArea"></div>
+      </div>
+      <div id="appTopActions"></div>
+    </div>
+
+    <div class="modal-main">
+      <div class="left-pane">
+        <div id="shortDesc" class="muted"></div>
+        <div id="mediaArea" class="media-fill" aria-live="polite"></div>
+        <div id="carouselNav" class="carousel-nav" aria-hidden="false" role="group" aria-label="Media navigation"></div>
+        <div id="carouselDots" class="carousel-controls" aria-hidden="true"></div>
+        <div id="longHtml" style="margin-top:12px"></div>
+        <div id="pypiBadges" class="pypi-badges" aria-hidden="false" style="margin-top:12px"></div>
+      </div>
+
+      <aside class="right-pane">
+        <div class="download-panel" aria-labelledby="downloadTitle">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div>
+              <div id="downloadTitle" style="font-weight:800;font-size:16px">Downloads</div>
+              <div id="downloadSubtitle" class="small-muted">Choose an asset</div>
+            </div>
+          </div>
+          <div id="downloadList" aria-live="polite"></div>
+          <div id="documentationArea" class="download-section" style="display:none;margin-top:12px">
+            <h3><span class="iconify" data-icon="mdi:file-document-outline" data-inline="false"></span>Documentation</h3>
+            <div id="documentationList" class="muted" style="display:flex;flex-direction:column;gap:8px"></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="inner">
+    <div class="footer-stats" id="footerStats">
+      <div id="footerStatsLeft" class="muted">Loading…</div>
+      <div id="footerStatsRight" class="small-muted">Report issues on<a id="ghRepo" class="footer-link" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+    <div class="legal" aria-hidden="false">
+      <div class="copyright">&copy;<span id="copyrightYear"></span>FelooPy. All rights reserved.</div>
+      <div class="disclaimer muted">For info only; not an endorsement.</div>
+    </div>
+    <div class="publish-bar" id="publishBar" role="region" aria-label="Publish actions">
+      <div class="left">
+        <div style="font-weight:800">Publish Your App</div>
+        <div class="muted" style="margin-top:6px">Fill the template, then email or open a pull request.</div>
+      </div>
+      <div class="right">
+        <button id="openTemplate" class="btn" aria-label="Open template" type="button"><span class="iconify" data-icon="mdi:file-document-edit" data-inline="false"></span><span class="sr-only">Template</span></button>
+        <button id="openEmail" class="btn" aria-label="Open email form" type="button"><span class="iconify" data-icon="mdi:email" data-inline="false"></span><span class="sr-only">Email</span></button>
+        <a class="btn" id="githubPR" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repository"><span class="iconify" data-icon="mdi:github" data-inline="false"></span><span class="sr-only">PR</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <div id="installBanner" class="hidden" role="dialog" aria-hidden="true" aria-label="Install App StORe" style="display:none">
-  <img id="installLogo" src="../assets/images/feloopy-logo.png" alt="App StORe logo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=48 height=48><rect width=100% height=100% fill=%230b0b0b/></svg>'" style="width:44px;height:44px;border-radius:10px;padding:6px;background:var(--header-bg);object-fit:contain;flex:0 0 auto">
+  <img id="installLogo" src="../assets/images/feloopy-logo.png" alt="App StORe logo" onerror='this.onerror=null,this.src="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=48 height=48><rect width=100% height=100% fill=%230b0b0b/></svg>"' style="width:44px;height:44px;border-radius:10px;padding:6px;background:var(--header-bg);object-fit:contain;flex:0 0 auto">
   <div style="display:flex;flex-direction:column;min-width:0;margin-left:8px">
     <div class="title">Install App StORe</div>
     <div class="small" id="installHint">Install FelooPy as an app for faster access.</div>
   </div>
   <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
     <button id="installBtn" class="install-btn" type="button" aria-label="Install App StORe">Install App StORe</button>
-    <button id="installDismiss" class="dismiss" aria-label="Dismiss install suggestion">Dismiss</button>
+    <button id="installDismiss" class="dismiss" aria-label="Dismiss install suggestion" type="button">Dismiss</button>
   </div>
 </div>
 
-
-<div id="publishModal" class="hidden" role="dialog" aria-modal="true" aria-hidden="true" style="display:none"><div class="modal-full" style="max-width:900px"><div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:800">App JSON template</div><div><button id="closePublish" class="btn">Close</button></div></div><div><pre id="jsonTemplate" style="white-space:pre-wrap;background:#0b0b0b;padding:12px;border-radius:8px;color:#e8eaec;max-height:60vh;overflow:auto"></pre></div><div style="display:flex;gap:8px;justify-content:flex-end"><button id="copyTemplate" class="btn">Copy JSON</button><a id="downloadTemplate" class="btn" href="#" download="app-template.json">Download</a></div></div></div>
+<div id="publishModal" class="hidden" role="dialog" aria-modal="true" aria-hidden="true" style="display:none">
+  <div class="modal-full" style="max-width:900px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="font-weight:800">App JSON template</div>
+      <div><button id="closePublish" class="btn" type="button">Close</button></div>
+    </div>
+    <div><pre id="jsonTemplate" style="white-space:pre-wrap;background:#0b0b0b;padding:12px;border-radius:8px;color:#e8eaec;max-height:60vh;overflow:auto"></pre></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button id="copyTemplate" class="btn" type="button">Copy JSON</button>
+      <a id="downloadTemplate" class="btn" href="#" download="app-template.json">Download</a>
+    </div>
+  </div>
+</div>
 
 <script>
-(function(){
-'use strict';
-const state={apps:[],filtered:[],pageSize:18,page:1};let lastFocused=null,currentApp=null,mediaList=[],currentMediaIndex=0;const _cache={longText:new Map(),pypiMeta:new Map(),pypiBadges:new Map(),prefetching:new Set()};const e=s=>s==null?'':String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');const debounce=(fn,ms=150)=>{let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms);};};function isRemotePath(u){try{const s=String(u||'').trim();return s.startsWith('http://')||s.startsWith('https://')}catch(e){return false}}function fetchWithTimeout(url,timeout=9000){const ctrl=new AbortController();const id=setTimeout(()=>ctrl.abort(),timeout);return fetch(url,{signal:ctrl.signal,cache:'no-cache'}).finally(()=>clearTimeout(id));}function sanitizeColor(c){if(!c)return null;const s=String(c).trim();if(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(s))return s;if(/^(rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+(?:\s*,\s*(0|0?\.\d+|1(\.0)?))?\s*\))$/.test(s))return s;if(/^[a-zA-Z]+$/.test(s)&&s.length<=20)return s;return null}function detectPlatformFromUrl(u){if(!u)return'other';const s=u.toLowerCase();if(s.match(/(\.exe|\.msi|windows|win64|win32|mingw|cygwin)/))return'windows';if(s.match(/(\.dmg|\.pkg|macos|darwin|macosx|\.app|apple)/))return'mac';if(s.match(/(\.appimage|\.deb|\.rpm|\.tar\.gz|\.tgz|linux|x86_64|aarch64|arm64)/))return'linux';return'other'}function detectArch(u,label){const s=((label||'')+' '+(u||'')).toLowerCase();if(s.match(/(mingw64|x86_64|x64|amd64|win64|64bit)/))return'x86_64';if(s.match(/(mingw32|i386|x86|32bit|i686)/))return'x86';if(s.match(/(arm64|aarch64|armv8|armhf)/))return'arm64';return''}const _uaLower=(navigator.userAgent||'').toLowerCase();const preferredPlatform=_uaLower.includes('windows')?'windows':(_uaLower.includes('mac')||_uaLower.includes('darwin'))?'mac':(_uaLower.includes('linux')&&!_uaLower.includes('android'))?'linux':'';function normalizeDownloads(raw){const out=[];if(Array.isArray(raw.downloads)) out.push(...raw.downloads.map(d=>typeof d==='string'?{url:d}:d));if(raw.downloads && typeof raw.downloads==='object' && !Array.isArray(raw.downloads)) out.push(raw.downloads);if(Array.isArray(raw.officialDownload)) out.push(...raw.officialDownload.map(d=>typeof d==='string'?{url:d}:d));if(raw.officialDownload && typeof raw.officialDownload==='string') out.push({url:raw.officialDownload});const seen=new Map();out.forEach(d=>{ if(!d||!d.url)return; const key=d.url.split('?')[0].split('#')[0]; if(seen.has(key))return; const label=d.label||''; const isSrc=/(^|[\/\-_\.])(src|source|sources|sourcecode|source-code|src\.tar|_src|-src)/i.test(d.url+' '+label)||/\/tree\/|\/blob\//.test(d.url); const arch=isSrc?'':detectArch(d.url,label)||''; const platform=isSrc?'source':detectPlatformFromUrl(d.url); seen.set(key,{url:d.url,label:label||'',arch,variant:d.variant||'',install_cmd:d.install_cmd||'',hint:d.hint||'',variants:d.variants||[],platform,source:!!isSrc});});return Array.from(seen.values())}function scoreDownload(d){let s=0;const p=d.platform||detectPlatformFromUrl(d.url);if(preferredPlatform&&p===preferredPlatform)s+=4;const arch=d.arch||detectArch(d.url,d.label||'');if(arch&&_uaLower.includes(arch.replace('_','')))s+=2;if(d.url.match(/release|latest|stable/i))s+=1;if(d.url.match(/(win|exe|msi|dmg|pkg|AppImage|deb|rpm|tar\.gz|tgz|zip|apk|whl)$/i))s+=1;if(d.source)s-=1;return s}function sortDownloads(list){return list.slice().sort((a,b)=>scoreDownload(b)-scoreDownload(a))}function groupByPlatform(list){const by={};list.forEach(d=>{const p=d.platform||'other';(by[p]||(by[p]=[])).push(d)});return by}function youtubeInfoFromUrl(url){try{const u=new URL(url);const info={id:null,list:null};if(u.hostname.includes('youtu.be')){info.id=u.pathname.split('/').filter(Boolean)[0]||null;info.list=u.searchParams.get('list')||null;return info}if(u.searchParams.get('v')){info.id=u.searchParams.get('v');info.list=u.searchParams.get('list')||null;return info}if(u.pathname.includes('/embed/')){const parts=u.pathname.split('/embed/');info.id=parts[1]?parts[1].split('/')[0]:null;info.list=u.searchParams.get('list')||null;return info}return{id:null,list:u.searchParams.get('list')||null}}catch(e){return{id:null,list:null}}}function vimeoIdFromUrl(url){try{const u=new URL(url);return u.pathname.split('/').filter(Boolean).pop()}catch(e){return null}}
-function renderMediaArea(){
-  const area=document.getElementById('mediaArea'), dots=document.getElementById('carouselDots'), nav=document.getElementById('carouselNav');
-  if(!mediaList||mediaList.length===0){ area.innerHTML='<div class="media-fill muted">No media</div>'; dots.innerHTML=''; nav.innerHTML=''; return; }
-  const item=mediaList[currentMediaIndex]||mediaList[0];
-  area.innerHTML='';
-  const supportsAspect=(typeof window.CSS!=='undefined'&&typeof CSS.supports==='function'&&CSS.supports('aspect-ratio','16/9'));
-  const fallbackClass=supportsAspect?'':' fallback';
-  const wrapper=document.createElement('div'); wrapper.className='video-wrapper'+fallbackClass;
+(function() { 'use strict';
 
-  const src=(item && item.src)||'';
-  const lowerSrc = String(src||'').toLowerCase();
+  const state = { apps: [], filtered: [], pageSize: 18, page: 1 };
+  let lastFocused = null, currentApp = null, mediaList = [], currentMediaIndex = 0;
+  const _cache = { longText: new Map(), pypiMeta: new Map(), pypiBadges: new Map(), prefetching: new Set() };
 
-  // direct video file (mp4/webm/etc)
-  if(lowerSrc.match(/\.(mp4|webm|ogg)([\?#].*)?$/i) || item.type==='video' && (item.kind==='file' || item.isFile)){
-    const video = document.createElement('video');
-    video.controls = true;
-    video.playsInline = true;
-    video.preload = 'metadata';
-    if(item.poster) video.poster = item.poster;
-    video.style.position = 'absolute';
-    video.style.inset = 0;
-    video.style.width = '100%';
-    video.style.height = '100%';
-    video.style.objectFit = 'contain';
-    const srcEl = document.createElement('source');
-    srcEl.src = src;
-    video.appendChild(srcEl);
-    video.onerror = function(){
-      wrapper.innerHTML = '<div class="loading-placeholder"><div class="muted">Failed to load video</div></div>';
-    };
-    wrapper.appendChild(video);
-    area.appendChild(wrapper);
-    return;
-  }
+  const e = s => s == null ? '' : String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-  // YouTube
-  function youtubeEmbed(s){
-    try{
-      const info=(function(url){try{const u=new URL(url); if(u.hostname.includes('youtu.be'))return {id:u.pathname.split('/').filter(Boolean)[0]}; if(u.searchParams.get('v'))return {id:u.searchParams.get('v')}; if(u.pathname.includes('/embed/'))return {id:u.pathname.split('/embed/')[1].split('/')[0]}; }catch(e){} return {}; })(s);
-      if(info.id) return `https://www.youtube.com/embed/${info.id}?rel=0&modestbranding=1`;
-    }catch(e){}
-    return null;
-  }
-  // Vimeo
-  function vimeoEmbed(s){
-    try{const u=new URL(s); const id=u.pathname.split('/').filter(Boolean).pop(); return id?`https://player.vimeo.com/video/${id}`:null}catch(e){return null}
-  }
+  const debounce = (fn, ms = 150) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
 
-  let frameSrc = null;
-  if(lowerSrc.includes('youtube.com')||lowerSrc.includes('youtu.be')) frameSrc = youtubeEmbed(src);
-  else if(lowerSrc.includes('vimeo.com')) frameSrc = vimeoEmbed(src);
+  function isRemotePath(u) { try { const s = String(u || '').trim(); return s.startsWith('http://') || s.startsWith('https://') } catch (e) { return false } }
 
-  if(frameSrc){
-    const iframe = document.createElement('iframe');
-    iframe.src = frameSrc;
-    iframe.loading = 'lazy';
-    iframe.setAttribute('frameborder','0');
-    iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
-    iframe.allowFullscreen = true;
-    iframe.title = item.alt || 'App demo video';
-    iframe.style.position = 'absolute';
-    iframe.style.inset = 0;
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
-    wrapper.appendChild(iframe);
-    const placeholder=document.createElement('div');
-    placeholder.className='loading-placeholder';
-    placeholder.innerHTML = '<div class="spinner" aria-hidden="true"></div><div class="muted" style="font-weight:700">Loading…</div>';
-    const openBtn=document.createElement('a');
-    openBtn.href = src;
-    openBtn.target = '_blank';
-    openBtn.rel = 'noopener noreferrer';
-    openBtn.className = 'btn';
-    openBtn.style.display='none';
-    openBtn.textContent = 'Open in new tab';
-    placeholder.appendChild(openBtn);
-    wrapper.appendChild(placeholder);
-    area.appendChild(wrapper);
-    let settled=false;
-    const failTimeout=setTimeout(()=>{ if(settled) return; settled=true; placeholder.querySelector('.spinner').style.display='none'; placeholder.querySelector('.muted').textContent='Failed to load'; openBtn.style.display='inline-flex'; },12000);
-    iframe.onload = function(){ if(settled) return; settled=true; clearTimeout(failTimeout); placeholder.style.display='none'; };
-    iframe.onerror = function(){ if(settled) return; settled=true; clearTimeout(failTimeout); placeholder.querySelector('.spinner').style.display='none'; placeholder.querySelector('.muted').textContent='Failed to load'; openBtn.style.display='inline-flex'; };
-    return;
-  }
-  const img=document.createElement('img');
-  img.src = src;
-  img.alt = item.alt||'screenshot';
-  img.loading = 'lazy';
-  img.style.position='absolute';
-  img.style.inset=0;
-  img.style.width='100%';
-  img.style.height='100%';
-  img.style.objectFit='contain';
-  img.onerror=function(){ img.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=640 height=360><rect width=100% height=100% fill=%230a0a0a/><text x=50% y=50% fill=%23aaa dominant-baseline=middle text-anchor=middle font-family=Arial font-size=18>No image</text></svg>' };
-  img.onload=function(){ const w=img.naturalWidth||16, h=img.naturalHeight||9; if(w&&h){ if(supportsAspect){ wrapper.style.aspectRatio=`${w}/${h}` } else { wrapper.style.paddingTop=(100*(h/w)).toFixed(4)+'%'; wrapper.classList.add('fallback') } } };
-  wrapper.appendChild(img);
-  area.appendChild(wrapper);
-  if(mediaList.length>1){
-    dots.innerHTML=''; for(let i=0;i<mediaList.length;i++){ const d=document.createElement('div'); d.className='dot'+(i===currentMediaIndex?' active':''); d.setAttribute('data-i',String(i)); d.tabIndex=0; d.setAttribute('role','button'); d.addEventListener('click',()=>{ currentMediaIndex=i; renderMediaArea() }); d.addEventListener('keydown',ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); currentMediaIndex=i; renderMediaArea() }}); dots.appendChild(d) }
-    nav.innerHTML=''; const prev=document.createElement('button'); prev.id='prevMedia'; prev.setAttribute('aria-label','Previous'); prev.innerText='◀'; prev.addEventListener('click',()=>{ currentMediaIndex=(currentMediaIndex-1+mediaList.length)%mediaList.length; renderMediaArea() }); const next=document.createElement('button'); next.id='nextMedia'; next.setAttribute('aria-label','Next'); next.innerText='▶'; next.addEventListener('click',()=>{ currentMediaIndex=(currentMediaIndex+1)%mediaList.length; renderMediaArea() }); nav.appendChild(prev); nav.appendChild(next);
-  } else { dots.innerHTML=''; nav.innerHTML=''; }
-}
-function mdToHtml(md){if(!md)return'';let s=String(md).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');s=s.replace(/```([\s\S]*?)```/g,(m,c)=>`<pre style="background:#0b0b0b;border-radius:6px;padding:10px;overflow:auto;margin:8px 0"><code>${e(c)}</code></pre>`);s=s.replace(/`([^`]+)`/g,(m,c)=>`<code style="background:#0b0b0b;border-radius:4px;padding:2px 6px">${e(c)}</code>`);s=s.replace(/^###### (.*$)/gim,'<h6>$1</h6>').replace(/^##### (.*$)/gim,'<h5>$1</h5>').replace(/^#### (.*$)/gim,'<h4>$1</h4>').replace(/^### (.*$)/gim,'<h3>$1</h3>').replace(/^## (.*$)/gim,'<h2>$1</h2>').replace(/^# (.*$)/gim,'<h1>$1</h1>');s=s.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>');s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,(m,t,u)=>`<a href="${e(u)}" target="_blank" rel="noopener noreferrer">${t}</a>`);const paragraphs=s.split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean);s=paragraphs.map(p=>{if(p.match(/^<(h|pre|ul|ol|blockquote|img|div)/i))return p;if(/^\-\s+/.test(p)){const items=p.split(/\n/).map(l=>l.replace(/^-+\s*/,'')).map(li=>`<li>${li}</li>`).join('');return`<ul>${items}</ul>`}return`<p>${p}</p>`}).join('\n');if(window.DOMPurify&&typeof window.DOMPurify.sanitize==='function')return window.DOMPurify.sanitize(s);return s}
-async function fetchText(url){try{const r=await fetchWithTimeout(url,9000);if(!r.ok)return null;return await r.text()}catch(e){return null}}
-async function resolveLongDescription(app){const raw=app._raw||app;const candidates=[];if(raw.long_description&&typeof raw.long_description==='string')candidates.push(raw.long_description);if(raw.readme_url&&typeof raw.readme_url==='string')candidates.push(raw.readme_url);if(Array.isArray(raw.documentation))candidates.push(...raw.documentation.filter(d=>typeof d==='string'));if(raw.description&&typeof raw.description==='string')candidates.push(raw.description);for(const c of candidates){if(!c)continue;if(_cache.longText.has(c))return _cache.longText.get(c);if(isRemotePath(c)){const t=await fetchText(c);if(t){_cache.longText.set(c,t);return t;}continue}else{try{const path=c.replace(/^\.\//,'');const t=await fetchText(path);if(t){_cache.longText.set(c,t);return t}}catch(e){}}}if(raw.long_description&&typeof raw.long_description==='string'){_cache.longText.set(raw.long_description,raw.long_description);return raw.long_description}if(raw.description&&typeof raw.description==='string'){_cache.longText.set(app.id||app.name,raw.description);return raw.description}return ''}
-async function fetchPypiJson(name,indexUrl=null){if(!name)return null;const key=(indexUrl?(indexUrl+'|'+name):name);if(_cache.pypiMeta.has(key))return _cache.pypiMeta.get(key);const endpoint=indexUrl?`${indexUrl.replace(/\/+$/,'')}/pypi/${encodeURIComponent(name)}/json`:`https://pypi.org/pypi/${encodeURIComponent(name)}/json`;try{const r=await fetchWithTimeout(endpoint,9000);if(!r.ok)return null;const j=await r.json();_cache.pypiMeta.set(key,j);return j}catch(e){return null}}async function fetchPypiBadges(name){if(!name)return null;if(_cache.pypiBadges.has(name))return _cache.pypiBadges.get(name);const badges=[{src:`https://img.shields.io/pypi/v/${encodeURIComponent(name)}.svg`,alt:`PyPI (version)`},{src:`https://img.shields.io/pypi/python-v/${encodeURIComponent(name)}.svg`,alt:'PyPI (python versions)'},{src:`https://pepy.tech/badge/${encodeURIComponent(name)}`,alt:'Downloads'}];_cache.pypiBadges.set(name,badges);return badges}function renderPypiBadges(badges){const container=document.getElementById('pypiBadges');if(!badges||!badges.length){container.innerHTML='';return}container.innerHTML=badges.map(b=>`<img class="badge-img" src="${e(b.src)}" alt="${e(b.alt)}" onerror="this.onerror=null;this.style.display='none'">`).join('')}
-async function renderDownloadsForApp(app){const raw=app._raw||app;const container=document.getElementById('downloadList');const docArea=document.getElementById('documentationArea');const docListEl=document.getElementById('documentationList');if(raw&&raw.pypi){container.innerHTML='<div class="muted">Loading package metadata…</div>';const meta=await fetchPypiJson(raw.pypi,raw.pypi_index||null);let html='';html+=renderPythonInstallSection(app,meta)||'';const version=(meta&&meta.info&&meta.info.version)||(app.latest_version||'');html+=`<div style="margin-top:10px" class="muted">Version: <strong>${e(version)}</strong></div>`;const badges=await fetchPypiBadges(raw.pypi);if(badges&&badges.length)html+=`<div style="margin-top:8px">${badges.map(b=>`<img class="badge-img" src="${e(b.src)}" alt="${e(b.alt)}" onerror="this.onerror=null;this.style.display='none'">`).join('')}</div>`;container.innerHTML=html}else{const list=normalizeDownloads(raw);if(!list.length){container.innerHTML='<div class="muted">No downloads available.</div>';document.getElementById('downloadTitle').textContent='Downloads';document.getElementById('downloadSubtitle').textContent='No assets';}else{const sorted=sortDownloads(list),grouped=groupByPlatform(sorted),order=['windows','mac','linux','source','other'];function platformIcon(p){if(p==='windows')return'mdi:microsoft-windows';if(p==='mac')return'mdi:apple';if(p==='linux')return'mdi:linux';if(p==='source')return'mdi:code-tags';return'mdi:cloud'}let html='';order.forEach(p=>{if(!grouped[p]||!grouped[p].length)return;html+=`<div class="download-section" data-platform="${e(p)}"><h3><span class="iconify" data-icon="${platformIcon(p)}" data-inline="false"></span> ${e(p)}</h3>`;grouped[p].forEach(d=>{const fn=(d.url.split('/').pop()||d.url).split('?')[0].split('#')[0];const archLabel=d.arch||(d.platform==='source'?'source':d.platform||'other');const isPreferred=(d.platform&&preferredPlatform&&d.platform===preferredPlatform);const pillClass=isPreferred?'pill preferred':'pill general';const isFile=/\.(exe|msi|dmg|pkg|appimage|deb|rpm|tar\.gz|tgz|zip|apk|whl)$/i.test(fn);const actionIcon=d.source?'mdi:code-tags':'mdi:download';html+=`<div class="download-item" data-url="${e(d.url)}" role="button" tabindex="0"><div class="download-left"><span class="iconify" data-icon="${d.source?'mdi:code-tags':(isFile?'mdi:file':'mdi:link')}" data-inline="false"></span><div class="meta"><div class="fn" title="${e(fn)}">${e(fn)}</div></div></div><div style="display:flex;align-items:center;gap:8px"><div class="${pillClass}" aria-hidden="true">${e(archLabel||'other')}</div><div class="download-cta"><a class="btn icon-btn" aria-label="Download" title="Download" href="${e(d.url)}" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="${actionIcon}" data-inline="false"></span></a><button class="btn icon-btn copy" data-url="${e(d.url)}" type="button" title="Copy URL"><span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span></button></div></div></div>`});html+=`</div>`});Object.keys(grouped).forEach(k=>{if(order.includes(k))return;html+=`<div class="download-section" data-platform="${e(k)}"><h3><span class="iconify" data-icon="${platformIcon(k)}" data-inline="false"></span> ${e(k)}</h3>`+grouped[k].map(d=>{const fn=(d.url.split('/').pop()||d.url).split('?')[0].split('#')[0];const archLabel=d.arch||d.platform||'other';const isPreferred=(d.platform&&preferredPlatform&&d.platform===preferredPlatform);const pillClass=isPreferred?'pill preferred':'pill general';const isFile=/\.(exe|msi|dmg|pkg|appimage|deb|rpm|tar\.gz|tgz|zip|apk|whl)$/i.test(fn);const actionIcon=d.source?'mdi:code-tags':'mdi:download';return`<div class="download-item" data-url="${e(d.url)}" role="button" tabindex="0"><div class="download-left"><span class="iconify" data-icon="${d.source?'mdi:code-tags':(isFile?'mdi:file':'mdi:link')}" data-inline="false"></span><div class="meta"><div class="fn" title="${e(fn)}">${e(fn)}</div></div></div><div style="display:flex;align-items:center;gap:8px"><div class="${pillClass}" aria-hidden="true">${e(archLabel||'other')}</div><div class="download-cta"><a class="btn icon-btn" aria-label="Download" title="Download" href="${e(d.url)}" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="${actionIcon}" data-inline="false"></span></a><button class="btn icon-btn copy" data-url="${e(d.url)}" type="button" title="Copy URL"><span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span></button></div></div></div>`}).join('')+`</div>`});container.innerHTML=html;document.getElementById('downloadTitle').textContent=`${list.length} asset${list.length>1?'s':''}`;document.getElementById('downloadSubtitle').textContent=`${new Set(list.map(d=>d.platform||'other')).size} platform${(new Set(list.map(d=>d.platform||'other')).size)>1?'s':''}`;Array.from(container.querySelectorAll('.copy')).forEach(b=>{b.addEventListener('click',ev=>{ev.stopPropagation();const u=b.getAttribute('data-url');navigator.clipboard?.writeText(u).then(()=>{b.innerHTML='<span class="iconify" data-icon="mdi:check" data-inline="false"></span>';setTimeout(()=>b.innerHTML='<span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span>',1200)}).catch(()=>alert('Copy failed'));});});Array.from(container.querySelectorAll('.download-item')).forEach(row=>{row.addEventListener('click',()=>{window.open(row.getAttribute('data-url'),'_blank')});row.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();window.open(row.getAttribute('data-url'),'_blank')}})})}}if(raw&&Array.isArray(raw.documentation)&&raw.documentation.length){docArea.style.display='';docListEl.innerHTML='';const docs=raw.documentation.filter(d=>typeof d==='string').map(d=>({url:d}));docs.forEach(d=>{const url=d.url;const label=(url.split('/').pop()||url);const short=(label.length>36?label.slice(0,34)+'…':label);const row=document.createElement('div');row.style.display='flex';row.style.justifyContent='space-between';row.style.alignItems='center';row.style.gap='8px';row.innerHTML=`<div style="min-width:0;display:flex;gap:10px;align-items:center"><span class="iconify" data-icon="mdi:file-document-outline" data-inline="false"></span><div style="min-width:0"><div class="fn" title="${e(url)}">${e(short)}</div></div></div><div style="display:flex;gap:8px"><a class="btn icon-btn" href="${e(url)}" target="_blank" rel="noopener noreferrer" title="${e(url)}"><span class="iconify" data-icon="mdi:open-in-new" data-inline="false"></span></a></div>`;docListEl.appendChild(row)})}else{docArea.style.display='none';docListEl.innerHTML=''}}
-function renderPythonInstallSection(app,pypiMeta){const raw=app._raw||app;const name=raw.pypi||app.id||app.name;const extrasList=[];if(pypiMeta&&pypiMeta.info){const info=pypiMeta.info;if(Array.isArray(info.extras)&&info.extras.length)extrasList.push(...info.extras);if(Array.isArray(info.requires_dist))info.requires_dist.forEach(s=>{const m=s.match(/^\s*([A-Za-z0-9_\-\.]+)\[([A-Za-z0-9_,\s\-]+)\]/);if(m){const ex=m[2].split(',').map(x=>x.trim()).filter(Boolean);ex.forEach(x=>{if(!extrasList.includes(x))extrasList.push(x)})}})}if(raw.extras&&Array.isArray(raw.extras))raw.extras.forEach(x=>{if(!extrasList.includes(x))extrasList.push(x)});const extrasSuffix=extrasList.length?`[${extrasList.join(',')}]`:'';const quotedName=extrasSuffix?`${name}${extrasSuffix}`:name;const commands={pip_global:`pip install "${quotedName}"`,pip_user:`pip install --user "${quotedName}"`,venv_unix:`python -m venv .venv && source .venv/bin/activate && pip install "${quotedName}"`,venv_win:`python -m venv .venv && .\\.venv\\Scripts\\activate && pip install "${quotedName}"`,docker_quick:`docker run --rm -it python:3.12 sh -c "pip install '${quotedName}' && python -c 'import ${name.split(/[-_]/)[0]}; print(\"ok\")'"`};let html=`<div style="margin-bottom:12px"><div style="font-weight:700;margin-bottom:6px">Install</div><div class="muted" style="margin-bottom:8px">Copy & paste commands</div><div style="display:flex;flex-direction:column;gap:8px">`;html+=`<div><code>${e(commands.pip_global)}</code> <button class="btn copy-cmd" data-copy="${e(commands.pip_global)}">Copy</button></div>`;html+=`<div><code>${e(commands.pip_user)}</code> <button class="btn copy-cmd" data-copy="${e(commands.pip_user)}">Copy</button></div>`;html+=`<div><code>${e(commands.venv_unix)}</code> <button class="btn copy-cmd" data-copy="${e(commands.venv_unix)}">Copy</button></div>`;html+=`<div><code>${e(commands.venv_win)}</code> <button class="btn copy-cmd" data-copy="${e(commands.venv_win)}">Copy</button></div>`;html+=`<div><code>${e(commands.docker_quick)}</code> <button class="btn copy-cmd" data-copy="${e(commands.docker_quick)}">Copy</button></div>`;html+=`</div></div>`;if(pypiMeta&&pypiMeta.info){const info=pypiMeta.info;html+=`<div style="margin-top:8px"><div style="font-weight:700;margin-bottom:6px">Project links</div><ul>`;const add=(label,u)=>{if(u)html+=`<li><a href="${e(u)}" target="_blank" rel="noopener noreferrer">${e(label)}</a></li>`};add('PyPI project',info.package_url||`https://pypi.org/project/${encodeURIComponent(name)}/`);add('Homepage',info.home_page||info.homepage);if(info.project_urls)Object.keys(info.project_urls).forEach(k=>add(k,info.project_urls[k]));add('Source/repo',raw.repo||raw.github||(info.project_urls&&(info.project_urls.Source||info.project_urls.Source_Code||info.project_urls.source)));html+=`</ul></div>`}if(pypiMeta&&pypiMeta.releases){const ver=(pypiMeta.info&&pypiMeta.info.version)||(app.latest_version||'');const files=Array.isArray(pypiMeta.releases[ver])?pypiMeta.releases[ver]:[];if(files&&files.length){html+=`<div style="margin-top:10px"><div style="font-weight:700;margin-bottom:6px">Files on PyPI (${e(ver)})</div>`;html+=files.map(f=>{const fn=f.filename||f.url||'';const size=f.size?Math.round(f.size/1024)+' KB':'';return`<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0"><div style="min-width:0"><div class="name">${e(fn)}</div><div class="fn muted" style="font-size:12px">${e(f.packagetype||'file')} ${e(size)}</div></div><div style="display:flex;gap:8px"><a class="btn icon-btn" aria-label="Open file" href="${e(f.url)}" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="mdi:open-in-new" data-inline="false"></span></a><button class="btn icon-btn copy" data-url="${e(f.url)}" type="button" title="Copy URL"><span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span></button></div></div>`}).join('');html+=`</div>`}}return html}
-function cardHTML(app){const short=app.short_description||app._raw&&app._raw.description||'';const icon=app.icon||'';const verified=app.verified||(app._raw&&app._raw.verified);const rawBg=app._raw&&app._raw.background_color?sanitizeColor(app._raw.background_color):null;const bgStyle=rawBg?`style="background:${e(rawBg)}"`:'';const verHtml=verified?`<span class="verified-only" title="Verified"><span class="iconify" data-icon="mdi:check-circle" data-inline="false" style="color:var(--pill-green-color);font-size:18px"></span></span>`:'';return`<article class="card" tabindex="0" role="button" data-id="${e(app.id)}"><div class="icon-wrap" ${bgStyle}>${icon?`<img src="${e(icon)}" alt="${e(app.name)}" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=64 height=64><rect width=64 height=64 fill=%230b0b0b/></svg>'">`:`<div aria-hidden="true" style="font-weight:800;color:#fff">${e((app.name||'').charAt(0))}</div>`}</div><div style="flex:1;min-width:0"><h3>${verHtml}${e(app.name)}</h3><p class="muted">${e(short)}</p></div></article>`}
-function renderGrid(apps){const grid=document.getElementById('grid');if(!apps||apps.length===0){grid.innerHTML='<div class="muted">No apps found.</div>';document.getElementById('loadMore').style.display='none';updateFooterStats();return}const pageApps=apps.slice(0,state.pageSize*state.page);grid.innerHTML=pageApps.map(cardHTML).join('');document.getElementById('loadMore').style.display=pageApps.length>=apps.length?'none':'inline-block';updateFooterStats()}
-function updateFooterStats(){const total=state.apps.length;const shown=Math.min(state.page*state.pageSize,state.filtered.length);document.getElementById('footerStatsLeft').innerHTML=`Showing <strong>${shown}</strong> of <strong>${total}</strong> apps`}
-function prefetchAppDetails(app){if(!app||!app.id||_cache.prefetching.has(app.id))return;_cache.prefetching.add(app.id);resolveLongDescription(app).finally(()=>_cache.prefetching.delete(app.id));if(app._raw&&(app._raw.pypi||(app._raw.tags&&app._raw.tags.includes('python')))){const name=app._raw.pypi||app.id||app.name;if(!_cache.pypiBadges.has(name))fetchPypiBadges(name).then(b=>_cache.pypiBadges.set(name,b)).catch(()=>{})}}
-function trapFocus(container){const focusable='a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';const el=container;const nodes=Array.from(el.querySelectorAll(focusable)).filter(n=>n.offsetWidth>0||n.offsetHeight>0||n.getClientRects().length);if(nodes.length===0)return()=>{};const first=nodes[0],last=nodes[nodes.length-1];function handle(e){if(e.key!=='Tab')return; if(e.shiftKey){if(document.activeElement===first){e.preventDefault();last.focus()}}else{if(document.activeElement===last){e.preventDefault();first.focus()}}}document.addEventListener('keydown',handle);return()=>document.removeEventListener('keydown',handle)}
-async function openApp(id,pushState=true){const app=state.apps.find(a=>a.id===id);if(!app)return;currentApp=app;lastFocused=document.activeElement;const verified=app.verified||(app._raw&&app._raw.verified);const bg=sanitizeColor(app._raw&&app._raw.background_color)||'transparent';const imgHtml=app.icon?`<img src="${e(app.icon)}" alt="${e(app.name)}" style="max-width:84%; max-height:84%; object-fit:contain">`:e((app.name||'').charAt(0));const verHtml=verified?`<span class="verified-only" title="Verified"><span class="iconify" data-icon="mdi:check-circle" data-inline="false" style="color:var(--pill-green-color);font-size:18px"></span></span>`:'';const metaParts=[];if(app.vendor)metaParts.push(e(app.vendor));if(app.latest_version)metaParts.push('v'+e(app.latest_version));if(app._raw&&app._raw.license)metaParts.push(e(app._raw.license));const metaText=metaParts.join(' • ');const titleHtml=`<div style="display:flex;gap:12px;align-items:center"><div style="width:84px;height:84px;border-radius:12px;overflow:hidden;background:${e(bg)};display:flex;align-items:center;justify-content:center">${imgHtml}</div><div><div style="font-size:1.2rem;font-weight:800">${verHtml}${e(app.name)}</div><div class="muted">${metaText}</div></div></div>`;document.getElementById('appTitleArea').innerHTML=titleHtml;document.getElementById('appTopActions').innerHTML=app.homepage?`<a class="btn" href="${e(app.homepage)}" target="_blank" rel="noopener noreferrer" title="Homepage"><span class="iconify" data-icon="mdi:home" data-inline="false"></span></a>`:'';document.getElementById('shortDesc').textContent=app.short_description||(app._raw&&app._raw.description)||'';mediaList=[];try{if(app._raw&&app._raw.video)mediaList.push({type:'video',src:app._raw.video});(app.screenshots||[]).forEach(s=>{if(typeof s==='string'&&(s.includes('youtube.com')||s.includes('youtu.be')||s.includes('vimeo.com')))mediaList.push({type:'video',src:s});else mediaList.push({type:'image',src:s})})}catch(e){mediaList=[]}currentMediaIndex=0;renderMediaArea();renderDownloadsForApp(app).catch(()=>{});const key=(app._raw&&(app._raw.long_description||app._raw.readme_url))||app.id;if(_cache.longText.has(key)){const resolved=_cache.longText.get(key);const longHtml=resolved?((resolved.trim().startsWith('#')||resolved.includes('\n'))?mdToHtml(resolved):e(resolved)):'';document.getElementById('longHtml').innerHTML=longHtml||'<div class="muted">No long description provided.</div>'}else{document.getElementById('longHtml').innerHTML='<div class="muted">Loading long description…</div>';resolveLongDescription(app).then(resolved=>{const longHtml=resolved?((resolved.trim().startsWith('#')||resolved.includes('\n'))?mdToHtml(resolved):e(resolved)):'';document.getElementById('longHtml').innerHTML=longHtml||'<div class="muted">No long description provided.</div>'}).catch(()=>{document.getElementById('longHtml').innerHTML='<div class="muted">Could not load detailed description.</div>'})}if(app._raw&&(app._raw.pypi||(app._raw.tags&&app._raw.tags.includes('python')))){const name=app._raw.pypi||app.id||app.name; if(_cache.pypiBadges.has(name))renderPypiBadges(_cache.pypiBadges.get(name)); else fetchPypiBadges(name).then(b=>{_cache.pypiBadges.set(name,b);renderPypiBadges(b)}).catch(()=>renderPypiBadges(null))}else renderPypiBadges(null);const overlay=document.getElementById('overlay');overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');const releaseTrap=trapFocus(overlay);setTimeout(()=>{document.getElementById('closeApp').focus()},60);function onKey(e){if(e.key==='Escape')closeApp()}document.addEventListener('keydown',onKey);overlay._cleanup=()=>{releaseTrap();document.removeEventListener('keydown',onKey);overlay._cleanup=null};if(pushState){try{history.pushState({app:id},'', '#/app/'+encodeURIComponent(id))}catch(e){}}}
-function closeApp(pushHistory=true){const overlay=document.getElementById('overlay');if(overlay._cleanup)overlay._cleanup();overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');if(lastFocused&&lastFocused.focus)lastFocused.focus();currentApp=null;if(pushHistory){try{history.pushState({},'',location.pathname)}catch(e){}}}
-async function fetchJson(paths,timeout=12000){for(const p of paths){try{const ctrl=new AbortController();const id=setTimeout(()=>ctrl.abort(),timeout);const r=await fetch(p,{signal:ctrl.signal,cache:'no-cache'});clearTimeout(id);if(r.ok)return await r.json()}catch(e){}}return []}
-document.addEventListener('DOMContentLoaded',async function(){
-    if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(()=>{/* ignore registration errors */});
-    }
-    const brand=document.getElementById('brandBtn');if(brand){brand.addEventListener('click',()=>{try{window.location.href='./index.html'}catch(e){}});brand.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();try{window.location.href='./index.html'}catch(e){}}})}document.getElementById('copyrightYear').textContent=new Date().getFullYear();const gh=document.getElementById('ghRepo');if(gh){gh.href='https://github.com/feloopy/feloopy.github.io';gh.textContent='GitHub';gh.classList.add('footer-link')}document.getElementById('loadMore').addEventListener('click',()=>{state.page++;renderGrid(state.filtered)});document.getElementById('closeApp').addEventListener('click',()=>{closeApp()});document.getElementById('overlay').addEventListener('click',ev=>{if(ev.target===ev.currentTarget)closeApp()});const hamb=document.getElementById('hamburgerBtn'),mobileMenu=document.getElementById('mobileMenu'); if(hamb&&mobileMenu){hamb.addEventListener('click',ev=>{const open=mobileMenu.classList.toggle('open');mobileMenu.setAttribute('aria-hidden',String(!open));hamb.setAttribute('aria-expanded',String(open))});document.addEventListener('click',ev=>{const t=ev.target;if(!mobileMenu.classList.contains('open'))return;if(t===hamb||mobileMenu.contains(t))return;mobileMenu.classList.remove('open');mobileMenu.setAttribute('aria-hidden','true');hamb.setAttribute('aria-expanded','false')})}const openTemplateBtn=document.getElementById('openTemplate');if(openTemplateBtn)openTemplateBtn.addEventListener('click',()=>{const pm=document.getElementById('publishModal');const tpl={id:'my-app',name:'My App',vendor:'Your Name',short_description:'Short summary (shown in cards)',long_description:'Long description or a URL to README.md (rendered as Markdown)',tags:['category'],license:'MIT',officialDownload:['https://example.com/download'],homepage:'https://example.com',icon:'/store/icons/myapp.png',screenshots:[],auto_update:false,update_method:'',repo:''};document.getElementById('jsonTemplate').textContent=JSON.stringify(tpl,null,2);pm.classList.remove('hidden');pm.style.display='flex';pm.setAttribute('aria-hidden','false');const copyBtn=document.getElementById('copyTemplate');if(copyBtn)copyBtn.focus()});const closePublishBtn=document.getElementById('closePublish');if(closePublishBtn)closePublishBtn.addEventListener('click',()=>{const pm=document.getElementById('publishModal');pm.style.display='none';pm.setAttribute('aria-hidden','true');pm.classList.add('hidden')});const copyTemplate=document.getElementById('copyTemplate');if(copyTemplate)copyTemplate.addEventListener('click',()=>{const t=document.getElementById('jsonTemplate')?.textContent||'';navigator.clipboard?.writeText(t).then(()=>{copyTemplate.textContent='Copied';setTimeout(()=>copyTemplate.textContent='Copy JSON',1200)}).catch(()=>alert('Copy failed'))});const downloadTemplate=document.getElementById('downloadTemplate');if(downloadTemplate)downloadTemplate.addEventListener('click',()=>{const blob=new Blob([document.getElementById('jsonTemplate').textContent],{type:'application/json'});const url=URL.createObjectURL(blob);downloadTemplate.href=url;setTimeout(()=>URL.revokeObjectURL(url),30000)});const openEmail=document.getElementById('openEmail');if(openEmail)openEmail.addEventListener('click',()=>{const tplText=document.getElementById('jsonTemplate')?.textContent||'';const subject=encodeURIComponent('App submission to FelooPy');const maxLen=1500;let body='Hi,%0A%0APlease find my app submission below (JSON). Attach files if needed.%0A%0A';if(tplText){const snippet=tplText.length>maxLen?tplText.slice(0,maxLen)+'\n\n(Truncated)':tplText;body+=encodeURIComponent(snippet)}else{body+=encodeURIComponent('\n(Please paste your app JSON here.)\n')}window.location.href=`mailto:feloopy@gmail.com?subject=${subject}&body=${body}`});const githubPR=document.getElementById('githubPR');if(githubPR)githubPR.addEventListener('click',()=>{});try{const raw=await fetchJson(['./store/apps.json','/store/apps.json','store/apps.json']);const arr=Array.isArray(raw)?raw:(raw.apps||raw);state.apps=(arr||[]).map(a=>({_raw:a,id:a.id||(a.name||'').toLowerCase().replace(/\s+/g,'-'),name:a.name||'Unnamed',vendor:a.vendor||'',short_description:a.short_description||(a.description||'').slice(0,140),long_description:a.long_description||a.description||'',downloads:normalizeDownloads(a),homepage:a.homepage||'',screenshots:a.screenshots||[],icon:a.icon||'',popularity:a.popularity||0,latest_version:a.latest_version||'',auto_update:!!a.auto_update,update_method:a.update_method||'',repo:a.repo||'',verified:!!a.verified}));state.filtered=state.apps.slice().sort((a,b)=>(b.popularity||0)-(a.popularity||0));renderGrid(state.filtered);const grid=document.getElementById('grid');grid.addEventListener('click',ev=>{const c=ev.target.closest('.card');if(!c)return;const id=c.getAttribute('data-id');if(!id)return;openApp(id)});grid.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){const c=ev.target.closest('.card');if(!c)return;ev.preventDefault();const id=c.getAttribute('data-id');if(!id)return;openApp(id)}});grid.addEventListener('pointerenter',ev=>{const card=ev.target.closest('.card');if(!card)return;const id=card.getAttribute('data-id');const app=state.apps.find(a=>a.id===id);if(app)prefetchAppDetails(app)},{capture:true,passive:true});grid.addEventListener('focusin',ev=>{const card=ev.target.closest('.card');if(!card)return;const id=card.getAttribute('data-id');const app=state.apps.find(a=>a.id===id);if(app)prefetchAppDetails(app)});const searchEl=document.getElementById('globalSearch');if(searchEl)searchEl.addEventListener('input',debounce(()=>{const q=searchEl.value.trim().toLowerCase();state.filtered=state.apps.filter(a=>{if(!q)return true;const hay=[a.name,a.vendor,a.short_description,a.long_description,(a._raw.tags||[]).join(' '),(a.downloads||[]).map(d=>d.url||'').join(' ')].join(' ').toLowerCase();return hay.includes(q)}).sort((a,b)=>(b.popularity||0)-(a.popularity||0));state.page=1;renderGrid(state.filtered)},180));if(location.hash.startsWith('#/app/')){const id=decodeURIComponent(location.hash.slice(6));setTimeout(()=>openApp(id,false),50)}updateFooterStats();window.addEventListener('resize',debounce(updateFooterStats,160));window.addEventListener('scroll',debounce(updateFooterStats,140));}catch(e){document.getElementById('grid').innerHTML='<div class="muted">Failed to load store/apps.json — check path/format.</div>';updateFooterStats()}});document.addEventListener('click',function(ev){let el=ev.target;while(el&&el!==document){if(el.getAttribute&&(el.getAttribute('data-copy')!==null||el.getAttribute('data-url')!==null||el.classList.contains('copy')||el.classList.contains('copy-cmd')))break;el=el.parentNode}if(!el||el===document)return;const toCopy=el.getAttribute('data-copy')||el.getAttribute('data-url');if(!toCopy)return;navigator.clipboard?.writeText(toCopy).then(()=>{const prev=el.innerHTML||'Copied';el.innerHTML='Copied';setTimeout(()=>{el.innerHTML=prev},1200)}).catch(()=>alert('Copy failed'))});window.addEventListener('popstate',()=>{if(location.hash.startsWith('#/app/')){const id=decodeURIComponent(location.hash.slice(6));openApp(id,false)}else closeApp(false)});})();
-(function(){
-  try {
-    const banner = document.getElementById('installBanner');
-    const installBtn = document.getElementById('installBtn');
-    const dismiss = document.getElementById('installDismiss');
-    const logo = document.getElementById('installLogo');
-    let deferredPrompt = null;
-    const lsKey = 'feloopy_install_shown_v1';
-    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 900 && ('ontouchstart' in window);
-    const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
+  function fetchWithTimeout(url, timeout = 9000) { const ctrl = new AbortController(); const id = setTimeout(() => ctrl.abort(), timeout); return fetch(url, { signal: ctrl.signal, cache: 'no-cache' }).finally(() => clearTimeout(id)); }
 
-    function showBanner(hint){
-      if(!isMobile) return;
-      if(localStorage.getItem(lsKey)) return;
-      if(!banner) return;
-      banner.style.display = 'flex';
-      banner.classList.remove('hidden');
-      banner.setAttribute('aria-hidden','false');
-      if(hint && document.getElementById('installHint')) document.getElementById('installHint').textContent = hint;
-    }
-    function hideBanner(){
-      if(!banner) return;
-      banner.style.display='none';
-      banner.classList.add('hidden');
-      banner.setAttribute('aria-hidden','true');
-      localStorage.setItem(lsKey,'1');
-    }
+  function sanitizeColor(c) { if (!c) return null; const s = String(c).trim(); if (/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(s)) return s; if (/^(rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+(?:\s*,\s*(0|0?\.\d+|1(\.0)?))?\s*\))$/.test(s)) return s; if (/^[a-zA-Z]+$/.test(s) && s.length <= 20) return s; return null }
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-      try{
-        e.preventDefault();
-        deferredPrompt = e;
-        showBanner('Install App StORe for quick access. Tap Install.');
-      }catch(e){}
+  function detectPlatformFromUrl(u) { if (!u) return 'other'; const s = u.toLowerCase(); if (s.match(/(\.exe|\.msi|windows|win64|win32|mingw|cygwin)/)) return 'windows'; if (s.match(/(\.dmg|\.pkg|macos|darwin|macosx|\.app|apple)/)) return 'mac'; if (s.match(/(\.appimage|\.deb|\.rpm|\.tar\.gz|\.tgz|linux|x86_64|aarch64|arm64)/)) return 'linux'; return 'other' }
+
+  function detectArch(u, label) { const s = ((label || '') + ' ' + (u || '')).toLowerCase(); if (s.match(/(mingw64|x86_64|x64|amd64|win64|64bit)/)) return 'x86_64'; if (s.match(/(mingw32|i386|x86|32bit|i686)/)) return 'x86'; if (s.match(/(arm64|aarch64|armv8|armhf)/)) return 'arm64'; return '' }
+
+  const _uaLower = (navigator.userAgent || '').toLowerCase();
+  const preferredPlatform = _uaLower.includes('windows') ? 'windows' : (_uaLower.includes('mac') || _uaLower.includes('darwin')) ? 'mac' : (_uaLower.includes('linux') && !_uaLower.includes('android')) ? 'linux' : '';
+
+  function normalizeDownloads(raw) {
+    const out = [];
+    if (Array.isArray(raw.downloads)) out.push(...raw.downloads.map(d => typeof d === 'string' ? { url: d } : d));
+    if (raw.downloads && typeof raw.downloads === 'object' && !Array.isArray(raw.downloads)) out.push(raw.downloads);
+    if (Array.isArray(raw.officialDownload)) out.push(...raw.officialDownload.map(d => typeof d === 'string' ? { url: d } : d));
+    if (raw.officialDownload && typeof raw.officialDownload === 'string') out.push({ url: raw.officialDownload });
+    const seen = new Map();
+    out.forEach(d => {
+      if (!d || !d.url) return;
+      const key = d.url.split('?')[0].split('#')[0];
+      if (seen.has(key)) return;
+      const label = d.label || '';
+      const isSrc = /(^|[\/\-_\.])(src|source|sources|sourcecode|source-code|src\.tar|_src|-src)/i.test(d.url + ' ' + label) || /\/tree\/|\/blob\//.test(d.url);
+      const arch = isSrc ? '' : detectArch(d.url, label) || '';
+      const platform = isSrc ? 'source' : detectPlatformFromUrl(d.url);
+      seen.set(key, { url: d.url, label: label || '', arch, variant: d.variant || '', install_cmd: d.install_cmd || '', hint: d.hint || '', variants: d.variants || [], platform, source: !!isSrc });
     });
+    return Array.from(seen.values());
+  }
 
-    window.addEventListener('load', ()=>{
-      try{
-        const inStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-        if(inStandalone) return;
-        setTimeout(()=>{
-          if(deferredPrompt) return;
-          if(isiOS) showBanner('iOS: tap Share → Add to Home Screen.');
-          else showBanner('Use your browser menu → Add to Home Screen.');
-        },800);
-      }catch(e){}
-    });
+  function scoreDownload(d) {
+    let s = 0;
+    const p = d.platform || detectPlatformFromUrl(d.url);
+    if (preferredPlatform && p === preferredPlatform) s += 4;
+    const arch = d.arch || detectArch(d.url, d.label || '');
+    if (arch && _uaLower.includes(arch.replace('_', ''))) s += 2;
+    if (d.url.match(/release|latest|stable/i)) s += 1;
+    if (d.url.match(/(win|exe|msi|dmg|pkg|AppImage|deb|rpm|tar\.gz|tgz|zip|apk|whl)$/i)) s += 1;
+    if (d.source) s -= 1;
+    return s;
+  }
 
-    if(installBtn) installBtn.addEventListener('click', async function(){
+  function sortDownloads(list) { return list.slice().sort((a, b) => scoreDownload(b) - scoreDownload(a)) }
+
+  function groupByPlatform(list) { const by = {}; list.forEach(d => { const p = d.platform || 'other'; (by[p] || (by[p] = [])).push(d) }); return by }
+
+  function youtubeInfoFromUrl(url) {
+    try {
+      const u = new URL(url);
+      const info = { id: null, list: null };
+      if (u.hostname.includes('youtu.be')) { info.id = u.pathname.split('/').filter(Boolean)[0] || null; info.list = u.searchParams.get('list') || null; return info }
+      if (u.searchParams.get('v')) { info.id = u.searchParams.get('v'); info.list = u.searchParams.get('list') || null; return info }
+      if (u.pathname.includes('/embed/')) { const parts = u.pathname.split('/embed/'); info.id = parts[1] ? parts[1].split('/')[0] : null; info.list = u.searchParams.get('list') || null; return info }
+      return { id: null, list: u.searchParams.get('list') || null }
+    } catch (e) { return { id: null, list: null } }
+  }
+
+  function vimeoIdFromUrl(url) { try { const u = new URL(url); return u.pathname.split('/').filter(Boolean).pop() } catch (e) { return null } }
+
+  function renderMediaArea() {
+    const area = document.getElementById('mediaArea'), dots = document.getElementById('carouselDots'), nav = document.getElementById('carouselNav');
+    if (!mediaList || mediaList.length === 0) {
+      area.innerHTML = '<div class="media-fill muted">No media</div>';
+      dots.innerHTML = '';
+      nav.innerHTML = '';
+      return;
+    }
+
+    const item = mediaList[currentMediaIndex] || mediaList[0];
+    area.innerHTML = '';
+
+    const supportsAspect = (typeof window.CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('aspect-ratio', '16/9'));
+    const fallbackClass = supportsAspect ? '' : ' fallback';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'video-wrapper' + fallbackClass;
+
+    const src = (item && item.src) || '';
+    const lowerSrc = String(src || '').toLowerCase();
+
+    if (lowerSrc.match(/\.(mp4|webm|ogg)([\?#].*)?$/i) || (item.type === 'video' && (item.kind === 'file' || item.isFile))) {
+      const video = document.createElement('video');
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      if (item.poster) video.poster = item.poster;
+      video.style.position = 'absolute';
+      video.style.inset = 0;
+      video.style.width = '100%';
+      video.style.height = '100%';
+      video.style.objectFit = 'contain';
+      const srcEl = document.createElement('source');
+      srcEl.src = src;
+      video.appendChild(srcEl);
+      video.onerror = function() { wrapper.innerHTML = '<div class="loading-placeholder"><div class="muted">Failed to load video</div></div>'; };
+      wrapper.appendChild(video);
+      area.appendChild(wrapper);
+      buildCarouselControls();
+      return;
+    }
+
+    function youtubeEmbed(s) {
       try {
-        if(deferredPrompt){
-          deferredPrompt.prompt();
-          const choice = await deferredPrompt.userChoice;
-          if(choice && choice.outcome === 'accepted') localStorage.setItem(lsKey,'1');
-          deferredPrompt = null;
-          hideBanner();
-        } else if(isiOS){
-          alert('To install App StORe: tap the browser Share button, then "Add to Home Screen".');
-          hideBanner();
+        const info = (function(url) {
+          try {
+            const u = new URL(url);
+            if (u.hostname.includes('youtu.be')) return { id: u.pathname.split('/').filter(Boolean)[0] };
+            if (u.searchParams.get('v')) return { id: u.searchParams.get('v') };
+            if (u.pathname.includes('/embed/')) return { id: u.pathname.split('/embed/')[1].split('/')[0] };
+          } catch (e) {}
+          return {};
+        })(s);
+        if (info.id) return `https://www.youtube.com/embed/${info.id}?rel=0&modestbranding=1`;
+      } catch (e) {}
+      return null;
+    }
+
+    function vimeoEmbed(s) {
+      try {
+        const u = new URL(s);
+        const id = u.pathname.split('/').filter(Boolean).pop();
+        return id ? `https://player.vimeo.com/video/${id}` : null;
+      } catch (e) { return null; }
+    }
+
+    let frameSrc = null;
+    if (lowerSrc.includes('youtube.com') || lowerSrc.includes('youtu.be')) frameSrc = youtubeEmbed(src);
+    else if (lowerSrc.includes('vimeo.com')) frameSrc = vimeoEmbed(src);
+
+    if (frameSrc) {
+      const iframe = document.createElement('iframe');
+      iframe.src = frameSrc;
+      iframe.loading = 'lazy';
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+      iframe.allowFullscreen = true;
+      iframe.title = item.alt || 'App demo video';
+      iframe.style.position = 'absolute';
+      iframe.style.inset = 0;
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+
+      wrapper.appendChild(iframe);
+
+      const placeholder = document.createElement('div');
+      placeholder.className = 'loading-placeholder';
+      placeholder.innerHTML = '<div class="spinner" aria-hidden="true"></div><div class="muted" style="font-weight:700">Loading…</div>';
+      const openBtn = document.createElement('a');
+      openBtn.href = src;
+      openBtn.target = '_blank';
+      openBtn.rel = 'noopener noreferrer';
+      openBtn.className = 'btn';
+      openBtn.style.display = 'none';
+      openBtn.textContent = 'Open in new tab';
+      placeholder.appendChild(openBtn);
+
+      wrapper.appendChild(placeholder);
+      area.appendChild(wrapper);
+
+      let settled = false;
+      const failTimeout = setTimeout(() => {
+        if (settled) return;
+        settled = true;
+        const spinner = placeholder.querySelector('.spinner');
+        if (spinner) spinner.style.display = 'none';
+        const muted = placeholder.querySelector('.muted');
+        if (muted) muted.textContent = 'Failed to load';
+        openBtn.style.display = 'inline-flex';
+      }, 12000);
+
+      iframe.addEventListener('load', function() {
+        if (settled) return;
+        settled = true;
+        clearTimeout(failTimeout);
+        placeholder.style.display = 'none';
+      });
+
+      iframe.addEventListener('error', function() {
+        if (settled) return;
+        settled = true;
+        clearTimeout(failTimeout);
+        const spinner = placeholder.querySelector('.spinner');
+        if (spinner) spinner.style.display = 'none';
+        const muted = placeholder.querySelector('.muted');
+        if (muted) muted.textContent = 'Failed to load';
+        openBtn.style.display = 'inline-flex';
+      });
+
+      buildCarouselControls();
+      return;
+    }
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = item.alt || 'screenshot';
+    img.loading = 'lazy';
+    img.style.position = 'absolute';
+    img.style.inset = 0;
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'contain';
+    img.onerror = function() { img.src = 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=640 height=360><rect width=100% height=100% fill=%230a0a0a/><text x=50% y=50% fill=%23aaa dominant-baseline=middle text-anchor=middle font-family=Arial font-size=18>No image</text></svg>' };
+    img.onload = function() {
+      const w = img.naturalWidth || 16, h = img.naturalHeight || 9;
+      if (w && h) {
+        if (supportsAspect) {
+          wrapper.style.aspectRatio = `${w}/${h}`;
         } else {
-          alert('To install: use your browser menu → Add to Home Screen.');
-          hideBanner();
+          wrapper.style.paddingTop = (100 * (h / w)).toFixed(4) + '%';
+          wrapper.classList.add('fallback');
         }
-      } catch(err){
-        hideBanner();
       }
+    };
+    wrapper.appendChild(img);
+    area.appendChild(wrapper);
+
+    buildCarouselControls();
+    function buildCarouselControls() {
+      if (mediaList.length > 1) {
+        dots.innerHTML = '';
+        for (let i = 0; i < mediaList.length; i++) {
+          const d = document.createElement('div');
+          d.className = 'dot' + (i === currentMediaIndex ? ' active' : '');
+          d.setAttribute('data-i', String(i));
+          d.tabIndex = 0;
+          d.setAttribute('role', 'button');
+          d.setAttribute('aria-label', 'View media ' + (i + 1));
+          d.addEventListener('pointerdown', (ev) => {
+            ev.preventDefault();
+            currentMediaIndex = i;
+            renderMediaArea();
+          });
+          d.addEventListener('keydown', ev => {
+            if (ev.key === 'Enter' || ev.key === ' ') {
+              ev.preventDefault();
+              currentMediaIndex = i;
+              renderMediaArea();
+            }
+          });
+          dots.appendChild(d);
+        }
+      } else {
+        dots.innerHTML = '';
+      }
+
+      nav.innerHTML = '';
+      if (mediaList.length > 1) {
+        const prev = document.createElement('button');
+        prev.className = 'carousel-prev';
+        prev.setAttribute('aria-label', 'Previous media');
+        prev.setAttribute('type', 'button');
+        prev.textContent = '◀';
+        prev.addEventListener('pointerdown', (ev) => {
+          ev.preventDefault();
+          currentMediaIndex = (currentMediaIndex - 1 + mediaList.length) % mediaList.length;
+          renderMediaArea();
+        });
+        prev.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); currentMediaIndex = (currentMediaIndex - 1 + mediaList.length) % mediaList.length; renderMediaArea(); } });
+
+        const next = document.createElement('button');
+        next.className = 'carousel-next';
+        next.setAttribute('aria-label', 'Next media');
+        next.setAttribute('type', 'button');
+        next.textContent = '▶';
+        next.addEventListener('pointerdown', (ev) => {
+          ev.preventDefault();
+          currentMediaIndex = (currentMediaIndex + 1) % mediaList.length;
+          renderMediaArea();
+        });
+        next.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); currentMediaIndex = (currentMediaIndex + 1) % mediaList.length; renderMediaArea(); } });
+
+        nav.appendChild(prev);
+        nav.appendChild(next);
+      } else {
+        nav.innerHTML = '';
+      }
+    }
+  }
+
+  function mdToHtml(md) {
+    if (!md) return '';
+    let s = String(md).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    s = s.replace(/```([\s\S]*?)```/g, (m, c) => `<pre style="background:#0b0b0b;border-radius:6px;padding:10px;overflow:auto;margin:8px 0"><code>${e(c)}</code></pre>`);
+    s = s.replace(/`([^`]+)`/g, (m, c) => `<code style="background:#0b0b0b;border-radius:4px;padding:2px 6px">${e(c)}</code>`);
+    s = s.replace(/^###### (.*$)/gim, '<h6>$1</h6>').replace(/^##### (.*$)/gim, '<h5>$1</h5>').replace(/^#### (.*$)/gim, '<h4>$1</h4>').replace(/^### (.*$)/gim, '<h3>$1</h3>').replace(/^## (.*$)/gim, '<h2>$1</h2>').replace(/^# (.*$)/gim, '<h1>$1</h1>');
+    s = s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
+    s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, t, u) => `<a href="${e(u)}" target="_blank" rel="noopener noreferrer">${t}</a>`);
+    const paragraphs = s.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+    s = paragraphs.map(p => {
+      if (p.match(/^<(h|pre|ul|ol|blockquote|img|div)/i)) return p;
+      if (/^\-\s+/.test(p)) {
+        const items = p.split(/\n/).map(l => l.replace(/^-+\s*/, '')).map(li => `<li>${li}</li>`).join('');
+        return `<ul>${items}</ul>`;
+    }
+      return `<p>${p}</p>`;
+    }).join('\n');
+    if (window.DOMPurify && typeof window.DOMPurify.sanitize === 'function') return window.DOMPurify.sanitize(s);
+    return s;
+  }
+
+  async function fetchText(url) {
+    try { const r = await fetchWithTimeout(url, 9000); if (!r.ok) return null; return await r.text() } catch (e) { return null }
+  }
+
+  async function resolveLongDescription(app) {
+    const raw = app._raw || app;
+    const candidates = [];
+    if (raw.long_description && typeof raw.long_description === 'string') candidates.push(raw.long_description);
+    if (raw.readme_url && typeof raw.readme_url === 'string') candidates.push(raw.readme_url);
+    if (Array.isArray(raw.documentation)) candidates.push(...raw.documentation.filter(d => typeof d === 'string'));
+    if (raw.description && typeof raw.description === 'string') candidates.push(raw.description);
+    for (const c of candidates) {
+      if (!c) continue;
+      if (_cache.longText.has(c)) return _cache.longText.get(c);
+      if (isRemotePath(c)) {
+        const t = await fetchText(c);
+        if (t) { _cache.longText.set(c, t); return t; }
+        continue;
+      } else {
+        try {
+          const path = c.replace(/^\.\//, '');
+          const t = await fetchText(path);
+          if (t) { _cache.longText.set(c, t); return t }
+        } catch (e) {}
+      }
+    }
+    if (raw.long_description && typeof raw.long_description === 'string') { _cache.longText.set(raw.long_description, raw.long_description); return raw.long_description }
+    if (raw.description && typeof raw.description === 'string') { _cache.longText.set(app.id || app.name, raw.description); return raw.description }
+    return ''
+  }
+  async function fetchPypiJson(name, indexUrl = null) {
+    if (!name) return null;
+    const key = (indexUrl ? (indexUrl + '|' + name) : name);
+    if (_cache.pypiMeta.has(key)) return _cache.pypiMeta.get(key);
+    const endpoint = indexUrl ? `${indexUrl.replace(/\/+$/,'')}/pypi/${encodeURIComponent(name)}/json` : `https://pypi.org/pypi/${encodeURIComponent(name)}/json`;
+    try { const r = await fetchWithTimeout(endpoint, 9000); if (!r.ok) return null; const j = await r.json(); _cache.pypiMeta.set(key, j); return j } catch (e) { return null }
+  }
+
+  async function fetchPypiBadges(name) {
+    if (!name) return null;
+    if (_cache.pypiBadges.has(name)) return _cache.pypiBadges.get(name);
+    const badges = [{ src: `https://img.shields.io/pypi/v/${encodeURIComponent(name)}.svg`, alt: `PyPI (version)` }, { src: `https://img.shields.io/pypi/python-v/${encodeURIComponent(name)}.svg`, alt: 'PyPI (python versions)' }, { src: `https://pepy.tech/badge/${encodeURIComponent(name)}`, alt: 'Downloads' }];
+    _cache.pypiBadges.set(name, badges);
+    return badges;
+  }
+
+  function renderPypiBadges(badges) {
+    const container = document.getElementById('pypiBadges');
+    if (!badges || !badges.length) { container.innerHTML = ''; return }
+    container.innerHTML = badges.map(b => `<img class="badge-img" src="${e(b.src)}" alt="${e(b.alt)}" onerror="this.onerror=null;this.style.display='none'">`).join('');
+  }
+
+  async function renderDownloadsForApp(app) {
+    const raw = app._raw || app;
+    const container = document.getElementById('downloadList');
+    const docArea = document.getElementById('documentationArea');
+    const docListEl = document.getElementById('documentationList');
+    if (raw && raw.pypi) {
+      container.innerHTML = '<div class="muted">Loading package metadata…</div>';
+      const meta = await fetchPypiJson(raw.pypi, raw.pypi_index || null);
+      let html = '';
+      html += renderPythonInstallSection(app, meta) || '';
+      const version = (meta && meta.info && meta.info.version) || (app.latest_version || '');
+      html += `<div style="margin-top:10px" class="muted">Version: <strong>${e(version)}</strong></div>`;
+      const badges = await fetchPypiBadges(raw.pypi);
+      if (badges && badges.length) html += `<div style="margin-top:8px">${badges.map(b=>`<img class="badge-img" src="${e(b.src)}" alt="${e(b.alt)}" onerror="this.onerror=null;this.style.display='none'">`).join('')}</div>`;
+      container.innerHTML = html;
+    } else {
+      const list = normalizeDownloads(raw);
+      if (!list.length) {
+        container.innerHTML = '<div class="muted">No downloads available.</div>';
+        document.getElementById('downloadTitle').textContent = 'Downloads';
+        document.getElementById('downloadSubtitle').textContent = 'No assets';
+      } else {
+        const sorted = sortDownloads(list), grouped = groupByPlatform(sorted), order = ['windows','mac','linux','source','other'];
+        function platformIcon(p){ if(p==='windows')return'mdi:microsoft-windows'; if(p==='mac')return'mdi:apple'; if(p==='linux')return'mdi:linux'; if(p==='source')return'mdi:code-tags'; return'mdi:cloud' }
+        let html = '';
+        order.forEach(p=> {
+          if(!grouped[p]||!grouped[p].length) return;
+          html += `<div class="download-section" data-platform="${e(p)}"><h3><span class="iconify" data-icon="${platformIcon(p)}" data-inline="false"></span> ${e(p)}</h3>`;
+          grouped[p].forEach(d=> {
+            const fn = (d.url.split('/').pop()||d.url).split('?')[0].split('#')[0];
+            const archLabel = d.arch || (d.platform==='source'?'source':d.platform||'other');
+            const isPreferred = (d.platform && preferredPlatform && d.platform === preferredPlatform);
+            const pillClass = isPreferred ? 'pill preferred' : 'pill general';
+            const isFile = /\.(exe|msi|dmg|pkg|appimage|deb|rpm|tar\.gz|tgz|zip|apk|whl)$/i.test(fn);
+            const actionIcon = d.source ? 'mdi:code-tags' : 'mdi:download';
+            html += `<div class="download-item" data-url="${e(d.url)}" role="button" tabindex="0"><div class="download-left"><span class="iconify" data-icon="${d.source?'mdi:code-tags':(isFile?'mdi:file':'mdi:link')}" data-inline="false"></span><div class="meta"><div class="fn" title="${e(fn)}">${e(fn)}</div></div></div><div style="display:flex;align-items:center;gap:8px"><div class="${pillClass}" aria-hidden="true">${e(archLabel||'other')}</div><div class="download-cta"><a class="btn icon-btn" aria-label="Download" title="Download" href="${e(d.url)}" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="${actionIcon}" data-inline="false"></span></a><button class="btn icon-btn copy" data-url="${e(d.url)}" type="button" title="Copy URL"><span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span></button></div></div></div>`;
+          });
+          html += `</div>`;
+        });
+        Object.keys(grouped).forEach(k=>{
+          if(order.includes(k)) return;
+          html += `<div class="download-section" data-platform="${e(k)}"><h3><span class="iconify" data-icon="${platformIcon(k)}" data-inline="false"></span> ${e(k)}</h3>` + grouped[k].map(d=>{
+            const fn = (d.url.split('/').pop()||d.url).split('?')[0].split('#')[0];
+            const archLabel = d.arch || d.platform || 'other';
+            const isPreferred = (d.platform && preferredPlatform && d.platform === preferredPlatform);
+            const pillClass = isPreferred ? 'pill preferred' : 'pill general';
+            const isFile = /\.(exe|msi|dmg|pkg|appimage|deb|rpm|tar\.gz|tgz|zip|apk|whl)$/i.test(fn);
+            const actionIcon = d.source ? 'mdi:code-tags' : 'mdi:download';
+            return `<div class="download-item" data-url="${e(d.url)}" role="button" tabindex="0"><div class="download-left"><span class="iconify" data-icon="${d.source?'mdi:code-tags':(isFile?'mdi:file':'mdi:link')}" data-inline="false"></span><div class="meta"><div class="fn" title="${e(fn)}">${e(fn)}</div></div></div><div style="display:flex;align-items:center;gap:8px"><div class="${pillClass}" aria-hidden="true">${e(archLabel||'other')}</div><div class="download-cta"><a class="btn icon-btn" aria-label="Download" title="Download" href="${e(d.url)}" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="${actionIcon}" data-inline="false"></span></a><button class="btn icon-btn copy" data-url="${e(d.url)}" type="button" title="Copy URL"><span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span></button></div></div></div>`;
+          }).join('') + `</div>`;
+        });
+        container.innerHTML = html;
+        document.getElementById('downloadTitle').textContent = `${list.length} asset${list.length>1?'s':''}`;
+        document.getElementById('downloadSubtitle').textContent = `${new Set(list.map(d=>d.platform||'other')).size} platform${(new Set(list.map(d=>d.platform||'other')).size)>1?'s':''}`;
+
+        Array.from(container.querySelectorAll('.copy')).forEach(b=> {
+          b.addEventListener('click', ev => {
+            ev.stopPropagation();
+            const u = b.getAttribute('data-url');
+            navigator.clipboard?.writeText(u).then(()=> {
+              const prev = b.innerHTML;
+              b.innerHTML = '<span class="iconify" data-icon="mdi:check" data-inline="false"></span>';
+              setTimeout(()=> b.innerHTML = prev, 1200);
+            }).catch(()=> alert('Copy failed'));
+          });
+        });
+
+        Array.from(container.querySelectorAll('.download-item')).forEach(row=>{
+          row.addEventListener('click', ()=> { window.open(row.getAttribute('data-url'),'_blank') });
+          row.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); window.open(row.getAttribute('data-url'),'_blank') } });
+        });
+      }
+    }
+
+    if (raw && Array.isArray(raw.documentation) && raw.documentation.length) {
+      docArea.style.display = '';
+      docListEl.innerHTML = '';
+      const docs = raw.documentation.filter(d => typeof d === 'string').map(d => ({ url: d }));
+      docs.forEach(d => {
+        const url = d.url;
+        const label = (url.split('/').pop()||url);
+        const short = (label.length>36?label.slice(0,34)+'…':label);
+        const row = document.createElement('div');
+        row.style.display = 'flex';
+        row.style.justifyContent = 'space-between';
+        row.style.alignItems = 'center';
+        row.style.gap = '8px';
+        row.innerHTML = `<div style="min-width:0;display:flex;gap:10px;align-items:center"><span class="iconify" data-icon="mdi:file-document-outline" data-inline="false"></span><div style="min-width:0"><div class="fn" title="${e(url)}">${e(short)}</div></div></div><div style="display:flex;gap:8px"><a class="btn icon-btn" href="${e(url)}" target="_blank" rel="noopener noreferrer" title="${e(url)}"><span class="iconify" data-icon="mdi:open-in-new" data-inline="false"></span></a></div>`;
+        docListEl.appendChild(row);
+      });
+    } else {
+      docArea.style.display = 'none';
+      docListEl.innerHTML = '';
+    }
+  }
+
+  function renderPythonInstallSection(app,pypiMeta){
+    const raw=app._raw||app;
+    const name=raw.pypi||app.id||app.name;
+    const extrasList=[];
+    if(pypiMeta&&pypiMeta.info){
+      const info=pypiMeta.info;
+      if(Array.isArray(info.extras)&&info.extras.length)extrasList.push(...info.extras);
+      if(Array.isArray(info.requires_dist))info.requires_dist.forEach(s=>{
+        const m=s.match(/^\s*([A-Za-z0-9_\-\.]+)\[([A-Za-z0-9_,\s\-]+)\]/);
+        if(m){const ex=m[2].split(',').map(x=>x.trim()).filter(Boolean);ex.forEach(x=>{if(!extrasList.includes(x))extrasList.push(x)})}
+      });
+    }
+    if(raw.extras&&Array.isArray(raw.extras))raw.extras.forEach(x=>{if(!extrasList.includes(x))extrasList.push(x)});
+    const extrasSuffix=extrasList.length?`[${extrasList.join(',')}]`:'';const quotedName=extrasSuffix?`${name}${extrasSuffix}`:name;
+    const commands={pip_global:`pip install "${quotedName}"`,pip_user:`pip install --user "${quotedName}"`,venv_unix:`python -m venv .venv && source .venv/bin/activate && pip install "${quotedName}"`,venv_win:`python -m venv .venv && .\\.venv\\Scripts\\activate && pip install "${quotedName}"`,docker_quick:`docker run --rm -it python:3.12 sh -c "pip install '${quotedName}' && python -c 'import ${name.split(/[-_]/)[0]}; print(\"ok\")'"`};
+    let html=`<div style="margin-bottom:12px"><div style="font-weight:700;margin-bottom:6px">Install</div><div class="muted" style="margin-bottom:8px">Copy & paste commands</div><div style="display:flex;flex-direction:column;gap:8px">`;
+    html+=`<div><code>${e(commands.pip_global)}</code><button class="btn copy-cmd" data-copy="${e(commands.pip_global)}" type="button">Copy</button></div>`;
+    html+=`<div><code>${e(commands.pip_user)}</code><button class="btn copy-cmd" data-copy="${e(commands.pip_user)}" type="button">Copy</button></div>`;
+    html+=`<div><code>${e(commands.venv_unix)}</code><button class="btn copy-cmd" data-copy="${e(commands.venv_unix)}" type="button">Copy</button></div>`;
+    html+=`<div><code>${e(commands.venv_win)}</code><button class="btn copy-cmd" data-copy="${e(commands.venv_win)}" type="button">Copy</button></div>`;
+    html+=`<div><code>${e(commands.docker_quick)}</code><button class="btn copy-cmd" data-copy="${e(commands.docker_quick)}" type="button">Copy</button></div>`;
+    html+=`</div></div>`;
+    if(pypiMeta&&pypiMeta.info){
+      const info=pypiMeta.info;
+      html+=`<div style="margin-top:8px"><div style="font-weight:700;margin-bottom:6px">Project links</div><ul>`;
+      const add=(label,u)=>{ if(u) html+=`<li><a href="${e(u)}" target="_blank" rel="noopener noreferrer">${e(label)}</a></li>` };
+      add('PyPI project',info.package_url||`https://pypi.org/project/${encodeURIComponent(name)}/`);
+      add('Homepage',info.home_page||info.homepage);
+      if(info.project_urls)Object.keys(info.project_urls).forEach(k=>add(k,info.project_urls[k]));
+      add('Source/repo',raw.repo||raw.github||(info.project_urls&&(info.project_urls.Source||info.project_urls.Source_Code||info.project_urls.source)));
+      html+=`</ul></div>`;
+    }
+    if(pypiMeta&&pypiMeta.releases){
+      const ver=(pypiMeta.info&&pypiMeta.info.version)||(app.latest_version||'');
+      const files=Array.isArray(pypiMeta.releases[ver])?pypiMeta.releases[ver]:[];
+      if(files&&files.length){
+        html+=`<div style="margin-top:10px"><div style="font-weight:700;margin-bottom:6px">Files on PyPI (${e(ver)})</div>`;
+        html+=files.map(f=>{
+          const fn=f.filename||f.url||'';
+          const size=f.size?Math.round(f.size/1024)+' KB':'';
+          return `<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0"><div style="min-width:0"><div class="name">${e(fn)}</div><div class="fn muted" style="font-size:12px">${e(f.packagetype||'file')} ${e(size)}</div></div><div style="display:flex;gap:8px"><a class="btn icon-btn" aria-label="Open file" href="${e(f.url)}" target="_blank" rel="noopener noreferrer"><span class="iconify" data-icon="mdi:open-in-new" data-inline="false"></span></a><button class="btn icon-btn copy" data-url="${e(f.url)}" type="button" title="Copy URL"><span class="iconify" data-icon="mdi:content-copy" data-inline="false"></span></button></div></div>`;
+        }).join('');
+        html+=`</div>`;
+      }
+    }
+    return html;
+  }
+
+  function cardHTML(app) {
+    const short = app.short_description || app._raw && app._raw.description || '';
+    const icon = app.icon || '';
+    const verified = app.verified || (app._raw && app._raw.verified);
+    const rawBg = app._raw && app._raw.background_color ? sanitizeColor(app._raw.background_color) : null;
+    const bgStyle = rawBg ? `style="background:${e(rawBg)}"` : '';
+    const verHtml = verified ? `<span class="verified-only" title="Verified"><span class="iconify" data-icon="mdi:check-circle" data-inline="false" style="color:var(--pill-green-color);font-size:18px"></span></span>` : '';
+    return `<article class="card" tabindex="0" role="button" data-id="${e(app.id)}"><div class="icon-wrap" ${bgStyle}>${icon?`<img src="${e(icon)}" alt="${e(app.name)}" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=64 height=64><rect width=64 height=64 fill=%230b0b0b/></svg>'">`:`<div aria-hidden="true" style="font-weight:800;color:#fff">${e((app.name||'').charAt(0))}</div>`}</div><div style="flex:1;min-width:0"><h3>${verHtml}${e(app.name)}</h3><p class="muted">${e(short)}</p></div></article>`;
+  }
+
+  function renderGrid(apps) {
+    const grid = document.getElementById('grid');
+    if (!apps || apps.length === 0) { grid.innerHTML = '<div class="muted">No apps found.</div>'; document.getElementById('loadMore').style.display = 'none'; updateFooterStats(); return; }
+    const pageApps = apps.slice(0, state.pageSize * state.page);
+    grid.innerHTML = pageApps.map(cardHTML).join('');
+    document.getElementById('loadMore').style.display = pageApps.length >= apps.length ? 'none' : 'inline-block';
+    updateFooterStats();
+  }
+
+  function updateFooterStats() {
+    const total = state.apps.length;
+    const shown = Math.min(state.page * state.pageSize, state.filtered.length);
+    document.getElementById('footerStatsLeft').innerHTML = `Showing <strong>${shown}</strong> of <strong>${total}</strong> apps`;
+  }
+
+  function prefetchAppDetails(app) {
+    if (!app || !app.id || _cache.prefetching.has(app.id)) return;
+    _cache.prefetching.add(app.id);
+    resolveLongDescription(app).finally(() => _cache.prefetching.delete(app.id));
+    if (app._raw && (app._raw.pypi || (app._raw.tags && app._raw.tags.includes('python')))) {
+      const name = app._raw.pypi || app.id || app.name;
+      if (!_cache.pypiBadges.has(name)) fetchPypiBadges(name).then(b => _cache.pypiBadges.set(name, b)).catch(() => {});
+    }
+  }
+
+  function trapFocus(container) {
+    const focusable = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
+    const el = container;
+    const nodes = Array.from(el.querySelectorAll(focusable)).filter(n => n.offsetWidth > 0 || n.offsetHeight > 0 || n.getClientRects().length);
+    if (nodes.length === 0) return () => {};
+    const first = nodes[0], last = nodes[nodes.length - 1];
+    function handle(e) {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+    document.addEventListener('keydown', handle);
+    return () => document.removeEventListener('keydown', handle);
+  }
+
+  async function openApp(id, pushState = true) {
+    const app = state.apps.find(a => a.id === id);
+    if (!app) return;
+    currentApp = app;
+    lastFocused = document.activeElement;
+    const verified = app.verified || (app._raw && app._raw.verified);
+    const bg = sanitizeColor(app._raw && app._raw.background_color) || 'transparent';
+    const imgHtml = app.icon ? `<img src="${e(app.icon)}" alt="${e(app.name)}" style="max-width:84%; max-height:84%; object-fit:contain">` : e((app.name || '').charAt(0));
+    const verHtml = verified ? `<span class="verified-only" title="Verified"><span class="iconify" data-icon="mdi:check-circle" data-inline="false" style="color:var(--pill-green-color);font-size:18px"></span></span>` : '';
+    const metaParts = [];
+    if (app.vendor) metaParts.push(e(app.vendor));
+    if (app.latest_version) metaParts.push('v' + e(app.latest_version));
+    if (app._raw && app._raw.license) metaParts.push(e(app._raw.license));
+    const metaText = metaParts.join(' • ');
+    const titleHtml = `<div style="display:flex;gap:12px;align-items:center"><div style="width:84px;height:84px;border-radius:12px;overflow:hidden;background:${e(bg)};display:flex;align-items:center;justify-content:center">${imgHtml}</div><div><div style="font-size:1.2rem;font-weight:800">${verHtml}${e(app.name)}</div><div class="muted">${metaText}</div></div></div>`;
+    document.getElementById('appTitleArea').innerHTML = titleHtml;
+    document.getElementById('appTopActions').innerHTML = app.homepage ? `<a class="btn" href="${e(app.homepage)}" target="_blank" rel="noopener noreferrer" title="Homepage"><span class="iconify" data-icon="mdi:home" data-inline="false"></span></a>` : '';
+    document.getElementById('shortDesc').textContent = app.short_description || (app._raw && app._raw.description) || '';
+
+    mediaList = [];
+    try {
+      if (app._raw && app._raw.video) mediaList.push({ type: 'video', src: app._raw.video });
+      (app.screenshots || []).forEach(s => {
+        if (typeof s === 'string' && (s.includes('youtube.com') || s.includes('youtu.be') || s.includes('vimeo.com'))) mediaList.push({ type: 'video', src: s });
+        else mediaList.push({ type: 'image', src: s });
+      });
+    } catch (e) { mediaList = [] }
+    currentMediaIndex = 0;
+    renderMediaArea();
+
+    renderDownloadsForApp(app).catch(()=>{});
+
+    const key = (app._raw && (app._raw.long_description || app._raw.readme_url)) || app.id;
+    if (_cache.longText.has(key)) {
+      const resolved = _cache.longText.get(key);
+      const longHtml = resolved ? ((resolved.trim().startsWith('#') || resolved.includes('\n')) ? mdToHtml(resolved) : e(resolved)) : '';
+      document.getElementById('longHtml').innerHTML = longHtml || '<div class="muted">No long description provided.</div>';
+    } else {
+      document.getElementById('longHtml').innerHTML = '<div class="muted">Loading long description…</div>';
+      resolveLongDescription(app).then(resolved => {
+        const longHtml = resolved ? ((resolved.trim().startsWith('#') || resolved.includes('\n')) ? mdToHtml(resolved) : e(resolved)) : '';
+        document.getElementById('longHtml').innerHTML = longHtml || '<div class="muted">No long description provided.</div>';
+      }).catch(()=>{ document.getElementById('longHtml').innerHTML = '<div class="muted">Could not load detailed description.</div>' });
+    }
+
+    if (app._raw && (app._raw.pypi || (app._raw.tags && app._raw.tags.includes('python')))) {
+      const name = app._raw.pypi || app.id || app.name;
+      if (_cache.pypiBadges.has(name)) renderPypiBadges(_cache.pypiBadges.get(name));
+      else fetchPypiBadges(name).then(b => { _cache.pypiBadges.set(name, b); renderPypiBadges(b) }).catch(()=>renderPypiBadges(null));
+    } else renderPypiBadges(null);
+
+    const overlay = document.getElementById('overlay');
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden','false');
+    const releaseTrap = trapFocus(overlay);
+    setTimeout(()=>{ document.getElementById('closeApp').focus() },60);
+    function onKey(e){ if (e.key === 'Escape') closeApp() }
+    document.addEventListener('keydown', onKey);
+    overlay._cleanup = () => { releaseTrap(); document.removeEventListener('keydown', onKey); overlay._cleanup = null; };
+
+    if (pushState) {
+      try { history.pushState({ app: id }, '', '#/app/' + encodeURIComponent(id)); } catch (e) {}
+    }
+  }
+
+  function closeApp(pushHistory = true) {
+    const overlay = document.getElementById('overlay');
+    if (overlay._cleanup) overlay._cleanup();
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden','true');
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+    currentApp = null;
+    if (pushHistory) { try { history.pushState({}, '', location.pathname) } catch (e) {} }
+  }
+
+  async function fetchJson(paths, timeout = 12000) {
+    for (const p of paths) {
+      try {
+        const ctrl = new AbortController();
+        const id = setTimeout(() => ctrl.abort(), timeout);
+        const r = await fetch(p, { signal: ctrl.signal, cache: 'no-cache' });
+        clearTimeout(id);
+        if (r.ok) return await r.json();
+      } catch (e) {}
+    }
+    return [];
+  }
+
+  document.addEventListener('DOMContentLoaded', async function() {
+    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(()=>{/* ignore registration errors */}); }
+
+    const brand = document.getElementById('brandBtn');
+    if (brand) {
+      brand.addEventListener('click', () => { try { window.location.href = './index.html' } catch (e) {} });
+      brand.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); try { window.location.href = './index.html' } catch (e) {} } });
+    }
+
+    document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+    const gh = document.getElementById('ghRepo');
+    if (gh) { gh.href = 'https://github.com/feloopy/feloopy.github.io'; gh.textContent = 'GitHub'; gh.classList.add('footer-link') }
+
+    document.getElementById('loadMore').addEventListener('click', () => { state.page++; renderGrid(state.filtered) });
+
+    document.getElementById('closeApp').addEventListener('click', () => { closeApp() });
+
+    document.getElementById('overlay').addEventListener('click', ev => { if (ev.target === ev.currentTarget) closeApp() });
+
+    const hamb = document.getElementById('hamburgerBtn'), mobileMenu = document.getElementById('mobileMenu');
+    if (hamb && mobileMenu) {
+      hamb.addEventListener('click', ev => {
+        const open = mobileMenu.classList.toggle('open');
+        mobileMenu.setAttribute('aria-hidden', String(!open));
+        hamb.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', ev => {
+        const t = ev.target;
+        if (!mobileMenu.classList.contains('open')) return;
+        if (t === hamb || mobileMenu.contains(t)) return;
+        mobileMenu.classList.remove('open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        hamb.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    const openTemplateBtn = document.getElementById('openTemplate');
+    if (openTemplateBtn) openTemplateBtn.addEventListener('click', () => {
+      const pm = document.getElementById('publishModal');
+      const tpl = { id:'my-app',name:'My App',vendor:'Your Name',short_description:'Short summary (shown in cards)',long_description:'Long description or a URL to README.md (rendered as Markdown)',tags:['category'],license:'MIT',officialDownload:['https://example.com/download'],homepage:'https://example.com',icon:'/store/icons/myapp.png',screenshots:[],auto_update:false,update_method:'',repo:'' };
+      document.getElementById('jsonTemplate').textContent = JSON.stringify(tpl, null, 2);
+      pm.classList.remove('hidden'); pm.style.display = 'flex'; pm.setAttribute('aria-hidden','false');
+      const copyBtn = document.getElementById('copyTemplate');
+      if (copyBtn) copyBtn.focus();
     });
 
-    if(dismiss) dismiss.addEventListener('click', hideBanner);
-  } catch(e){}
-})();
+    const closePublishBtn = document.getElementById('closePublish');
+    if (closePublishBtn) closePublishBtn.addEventListener('click', () => {
+      const pm = document.getElementById('publishModal');
+      pm.style.display = 'none'; pm.setAttribute('aria-hidden','true'); pm.classList.add('hidden');
+    });
 
+    const copyTemplate = document.getElementById('copyTemplate');
+    if (copyTemplate) copyTemplate.addEventListener('click', () => {
+      const t = document.getElementById('jsonTemplate')?.textContent || '';
+      navigator.clipboard?.writeText(t).then(() => { copyTemplate.textContent = 'Copied'; setTimeout(()=>copyTemplate.textContent='Copy JSON',1200) }).catch(()=>alert('Copy failed'));
+    });
+
+    const downloadTemplate = document.getElementById('downloadTemplate');
+    if (downloadTemplate) downloadTemplate.addEventListener('click', () => {
+      const blob = new Blob([document.getElementById('jsonTemplate').textContent], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      downloadTemplate.href = url;
+      setTimeout(()=>URL.revokeObjectURL(url),30000);
+    });
+
+    const openEmail = document.getElementById('openEmail');
+    if (openEmail) openEmail.addEventListener('click', () => {
+      const tplText = document.getElementById('jsonTemplate')?.textContent || '';
+      const subject = encodeURIComponent('App submission to FelooPy');
+      const maxLen = 1500;
+      let body = 'Hi,%0A%0APlease find my app submission below (JSON). Attach files if needed.%0A%0A';
+      if (tplText) {
+        const snippet = tplText.length > maxLen ? tplText.slice(0, maxLen) + '\n\n(Truncated)' : tplText;
+        body += encodeURIComponent(snippet);
+      } else { body += encodeURIComponent('\n(Please paste your app JSON here.)\n') }
+      window.location.href = `mailto:feloopy@gmail.com?subject=${subject}&body=${body}`;
+    });
+
+    const githubPR = document.getElementById('githubPR');
+    if (githubPR) githubPR.addEventListener('click', ()=>{});
+
+    try {
+      const raw = await fetchJson(['./store/apps.json','/store/apps.json','store/apps.json']);
+      const arr = Array.isArray(raw) ? raw : (raw.apps || raw);
+      state.apps = (arr || []).map(a => ({ _raw: a, id: a.id || (a.name || '').toLowerCase().replace(/\s+/g,'-'), name: a.name || 'Unnamed', vendor: a.vendor || '', short_description: a.short_description || (a.description || '').slice(0,140), long_description: a.long_description || a.description || '', downloads: normalizeDownloads(a), homepage: a.homepage || '', screenshots: a.screenshots || [], icon: a.icon || '', popularity: a.popularity || 0, latest_version: a.latest_version || '', auto_update: !!a.auto_update, update_method: a.update_method || '', repo: a.repo || '', verified: !!a.verified }));
+      state.filtered = state.apps.slice().sort((a,b)=>(b.popularity||0)-(a.popularity||0));
+      renderGrid(state.filtered);
+
+      const grid = document.getElementById('grid');
+      grid.addEventListener('click', ev => {
+        const c = ev.target.closest('.card');
+        if (!c) return;
+        const id = c.getAttribute('data-id');
+        if (!id) return;
+        openApp(id);
+      });
+      grid.addEventListener('keydown', ev => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          const c = ev.target.closest('.card');
+          if (!c) return;
+          ev.preventDefault();
+          const id = c.getAttribute('data-id');
+          if (!id) return;
+          openApp(id);
+        }
+      });
+
+      grid.addEventListener('pointerenter', ev => {
+        const card = ev.target.closest('.card');
+        if (!card) return;
+        const id = card.getAttribute('data-id');
+        const app = state.apps.find(a => a.id === id);
+        if (app) prefetchAppDetails(app);
+      }, { capture: true, passive: true });
+
+      grid.addEventListener('focusin', ev => {
+        const card = ev.target.closest('.card');
+        if (!card) return;
+        const id = card.getAttribute('data-id');
+        const app = state.apps.find(a => a.id === id);
+        if (app) prefetchAppDetails(app);
+      });
+
+      const searchEl = document.getElementById('globalSearch');
+      if (searchEl) searchEl.addEventListener('input', debounce(()=>{
+        const q = searchEl.value.trim().toLowerCase();
+        state.filtered = state.apps.filter(a=>{
+          if(!q) return true;
+          const hay = [a.name,a.vendor,a.short_description,a.long_description,(a._raw.tags||[]).join(' '),(a.downloads||[]).map(d=>d.url||'').join(' ')].join(' ').toLowerCase();
+          return hay.includes(q);
+        }).sort((a,b)=>(b.popularity||0)-(a.popularity||0));
+        state.page = 1;
+        renderGrid(state.filtered);
+      },180));
+
+      if (location.hash.startsWith('#/app/')) {
+        const id = decodeURIComponent(location.hash.slice(6));
+        setTimeout(()=>openApp(id,false),50);
+      }
+
+      updateFooterStats();
+      window.addEventListener('resize', debounce(updateFooterStats,160));
+      window.addEventListener('scroll', debounce(updateFooterStats,140));
+
+    } catch (e) {
+      document.getElementById('grid').innerHTML = '<div class="muted">Failed to load store/apps.json — check path/format.</div>';
+      updateFooterStats();
+    }
+  });
+
+  document.addEventListener('click', function(ev) {
+    let el = ev.target;
+    while (el && el !== document) {
+      if (el.getAttribute && (el.getAttribute('data-copy') !== null || el.getAttribute('data-url') !== null || el.classList.contains('copy') || el.classList.contains('copy-cmd'))) break;
+      el = el.parentNode;
+    }
+    if (!el || el === document) return;
+    const toCopy = el.getAttribute('data-copy') || el.getAttribute('data-url');
+    if (!toCopy) return;
+    navigator.clipboard?.writeText(toCopy).then(() => {
+      const prev = el.innerHTML || 'Copied';
+      el.innerHTML = 'Copied';
+      setTimeout(() => { el.innerHTML = prev }, 1200);
+    }).catch(()=>alert('Copy failed'));
+  });
+
+  window.addEventListener('popstate', ()=> {
+    if (location.hash.startsWith('#/app/')) {
+      const id = decodeURIComponent(location.hash.slice(6));
+      openApp(id,false);
+    } else closeApp(false);
+  });
+
+})();
 </script>
 </body>
 </html>
