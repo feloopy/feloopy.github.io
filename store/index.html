@@ -73,12 +73,11 @@ main.page-inner{flex:1 1 auto;max-width:1100px;margin:0 auto;padding:20px 18px;p
 .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 8px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap}
 .pill.general{background:var(--pill-blue-bg);color:var(--pill-blue-color);border:1px solid rgba(59,130,246,.14)}
 .pill.preferred{background:var(--pill-green-bg);color:var(--pill-green-color);border:1px solid rgba(30,153,26,.12)}
-footer.site-footer{position:relative;left:0;right:0;height:auto;display:flex;align-items:flex-end;justify-content:center;background:var(--header-bg);border-top:1px solid rgba(255,255,255,.03);z-index:200;padding:12px 18px;box-sizing:border-box;margin-top:12px}
+/* footer: make it neutral/light (no green). move green to publish-bar only */
+footer.site-footer{position:relative;left:0;right:0;height:auto;display:flex;align-items:flex-end;justify-content:center;background:transparent;border-top:1px solid rgba(255,255,255,.03);z-index:200;padding:12px 18px;box-sizing:border-box;margin-top:12px}
 footer .inner{max-width:1100px;width:100%;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:13px}
 .footer-stats{background:rgba(0,0,0,.25);padding:8px 12px;border-radius:10px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
-.publish-bar{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));padding:12px;border-radius:10px}
-.publish-bar .left{min-width:0;flex:1;display:flex;flex-direction:column;gap:6px}
-.publish-bar .right{display:flex;gap:8px;align-items:center;justify-self:flex-end}
+.publish-bar{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:12px;border-radius:10px; /* move green bg here */ background:var(--header-bg);backdrop-filter:blur(6px)}
 @media (max-width:520px){.publish-bar{flex-direction:row;align-items:flex-end;gap:12px}.publish-bar .left{order:1}.publish-bar .right{order:2;margin-left:auto}.publish-bar .left .muted{display:none}}
 .legal{display:flex;gap:12px;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;flex-wrap:wrap;margin-bottom:20px}
 .footer-link{text-decoration:underline;color:inherit}
@@ -86,6 +85,14 @@ footer .inner{max-width:1100px;width:100%;display:flex;flex-direction:column;gap
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .hidden{display:none!important}
 img.badge-img{max-height:20px;margin-right:6px}
+
+/* small install banner (mobile) */
+#installBanner{position:fixed;left:12px;right:12px;bottom:calc(var(--footer-h) + 16px);z-index:260;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.7));box-shadow:0 12px 40px rgba(0,0,0,.6);font-size:14px}
+#installBanner .title{font-weight:700}
+#installBanner .small{font-size:13px;color:var(--muted)}
+#installBanner .install-btn{background:var(--pill-green-color);color:#fff;padding:8px 10px;border-radius:9px;border:none;cursor:pointer}
+#installBanner .dismiss{background:transparent;color:var(--muted);border:0;cursor:pointer;padding:6px}
+@media(min-width:900px){#installBanner{display:none}} /* only on mobile widths */
 </style>
 </head>
 <body>
@@ -93,7 +100,21 @@ img.badge-img{max-height:20px;margin-right:6px}
 <main class="page-inner" id="pageRoot" role="main" aria-live="polite"><section id="gridView" aria-atomic="true"><div id="grid" class="grid" aria-live="polite"></div><div style="display:flex;justify-content:center;margin-top:18px;margin-bottom:28px"><button id="loadMore" class="btn">Load more</button></div></section></main>
 <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal-full" role="document" aria-labelledby="appTitleArea"><div class="modal-top"><div style="display:flex;gap:12px;align-items:center"><button id="closeApp" class="btn icon-btn" aria-label="Back"><span class="iconify" data-icon="mdi:arrow-left" data-inline="false"></span></button><div style="display:flex;align-items:center;gap:12px" id="appTitleArea"></div></div><div id="appTopActions"></div></div><div class="modal-main"><div class="left-pane"><div id="shortDesc" class="muted"></div><div id="mediaArea" class="media-fill" aria-live="polite"></div><div id="carouselNav" class="carousel-nav"></div><div id="carouselDots" class="carousel-controls" aria-hidden="true"></div><div id="longHtml" style="margin-top:12px"></div><div id="pypiBadges" class="pypi-badges" aria-hidden="false" style="margin-top:12px"></div></div><aside class="right-pane"><div class="download-panel" aria-labelledby="downloadTitle"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div><div id="downloadTitle" style="font-weight:800;font-size:16px">Downloads</div><div id="downloadSubtitle" class="small-muted">Choose an asset</div></div></div><div id="downloadList" aria-live="polite"></div><div id="documentationArea" class="download-section" style="display:none;margin-top:12px"><h3><span class="iconify" data-icon="mdi:file-document-outline" data-inline="false"></span>Documentation</h3><div id="documentationList" class="muted" style="display:flex;flex-direction:column;gap:8px"></div></div></div></aside></div></div></div>
 <footer class="site-footer" role="contentinfo"><div class="inner"><div class="footer-stats" id="footerStats"><div id="footerStatsLeft" class="muted">Loading…</div><div id="footerStatsRight" class="small-muted">Report issues on <a id="ghRepo" class="footer-link" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></div></div><div class="legal" aria-hidden="false"><div class="copyright">&copy;<span id="copyrightYear"></span> FelooPy. All rights reserved.</div><div class="disclaimer muted">For info only; not an endorsement.</div></div><div class="publish-bar" id="publishBar" role="region" aria-label="Publish actions"><div class="left"><div style="font-weight:800">Publish Your App</div><div class="muted" style="margin-top:6px">Fill the template, then email or open a pull request.</div></div><div class="right"><button id="openTemplate" class="btn" aria-label="Open template"><span class="iconify" data-icon="mdi:file-document-edit" data-inline="false"></span><span class="sr-only">Template</span></button><button id="openEmail" class="btn" aria-label="Open email form"><span class="iconify" data-icon="mdi:email" data-inline="false"></span><span class="sr-only">Email</span></button><a class="btn" id="githubPR" href="https://github.com/feloopy/feloopy.github.io" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repository"><span class="iconify" data-icon="mdi:github" data-inline="false"></span><span class="sr-only">PR</span></a></div></div></div></footer>
+
+<!-- small install banner (hidden by default) -->
+<div id="installBanner" class="hidden" role="dialog" aria-hidden="true" aria-label="Install app suggestion" style="display:none">
+  <div style="display:flex;flex-direction:column;min-width:0">
+    <div class="title">Add App to your device</div>
+    <div class="small" id="installHint">Install FelooPy as an app for faster access.</div>
+  </div>
+  <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+    <button id="installBtn" class="install-btn" type="button">Install</button>
+    <button id="installDismiss" class="dismiss" aria-label="Dismiss">Dismiss</button>
+  </div>
+</div>
+
 <div id="publishModal" class="hidden" role="dialog" aria-modal="true" aria-hidden="true" style="display:none"><div class="modal-full" style="max-width:900px"><div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:800">App JSON template</div><div><button id="closePublish" class="btn">Close</button></div></div><div><pre id="jsonTemplate" style="white-space:pre-wrap;background:#0b0b0b;padding:12px;border-radius:8px;color:#e8eaec;max-height:60vh;overflow:auto"></pre></div><div style="display:flex;gap:8px;justify-content:flex-end"><button id="copyTemplate" class="btn">Copy JSON</button><a id="downloadTemplate" class="btn" href="#" download="app-template.json">Download</a></div></div></div>
+
 <script>
 (function(){
 'use strict';
@@ -114,6 +135,78 @@ async function openApp(id,pushState=true){const app=state.apps.find(a=>a.id===id
 function closeApp(pushHistory=true){const overlay=document.getElementById('overlay');if(overlay._cleanup)overlay._cleanup();overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');if(lastFocused&&lastFocused.focus)lastFocused.focus();currentApp=null;if(pushHistory){try{history.pushState({},'',location.pathname)}catch(e){}}}
 async function fetchJson(paths,timeout=12000){for(const p of paths){try{const ctrl=new AbortController();const id=setTimeout(()=>ctrl.abort(),timeout);const r=await fetch(p,{signal:ctrl.signal,cache:'no-cache'});clearTimeout(id);if(r.ok)return await r.json()}catch(e){}}return []}
 document.addEventListener('DOMContentLoaded',async function(){const brand=document.getElementById('brandBtn');if(brand){brand.addEventListener('click',()=>{try{window.location.href='./index.html'}catch(e){}});brand.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();try{window.location.href='./index.html'}catch(e){}}})}document.getElementById('copyrightYear').textContent=new Date().getFullYear();const gh=document.getElementById('ghRepo');if(gh){gh.href='https://github.com/feloopy/feloopy.github.io';gh.textContent='GitHub';gh.classList.add('footer-link')}document.getElementById('loadMore').addEventListener('click',()=>{state.page++;renderGrid(state.filtered)});document.getElementById('closeApp').addEventListener('click',()=>{closeApp()});document.getElementById('overlay').addEventListener('click',ev=>{if(ev.target===ev.currentTarget)closeApp()});const hamb=document.getElementById('hamburgerBtn'),mobileMenu=document.getElementById('mobileMenu'); if(hamb&&mobileMenu){hamb.addEventListener('click',ev=>{const open=mobileMenu.classList.toggle('open');mobileMenu.setAttribute('aria-hidden',String(!open));hamb.setAttribute('aria-expanded',String(open))});document.addEventListener('click',ev=>{const t=ev.target;if(!mobileMenu.classList.contains('open'))return;if(t===hamb||mobileMenu.contains(t))return;mobileMenu.classList.remove('open');mobileMenu.setAttribute('aria-hidden','true');hamb.setAttribute('aria-expanded','false')})}const openTemplateBtn=document.getElementById('openTemplate');if(openTemplateBtn)openTemplateBtn.addEventListener('click',()=>{const pm=document.getElementById('publishModal');const tpl={id:'my-app',name:'My App',vendor:'Your Name',short_description:'Short summary (shown in cards)',long_description:'Long description or a URL to README.md (rendered as Markdown)',tags:['category'],license:'MIT',officialDownload:['https://example.com/download'],homepage:'https://example.com',icon:'/store/icons/myapp.png',screenshots:[],auto_update:false,update_method:'',repo:''};document.getElementById('jsonTemplate').textContent=JSON.stringify(tpl,null,2);pm.classList.remove('hidden');pm.style.display='flex';pm.setAttribute('aria-hidden','false');const copyBtn=document.getElementById('copyTemplate');if(copyBtn)copyBtn.focus()});const closePublishBtn=document.getElementById('closePublish');if(closePublishBtn)closePublishBtn.addEventListener('click',()=>{const pm=document.getElementById('publishModal');pm.style.display='none';pm.setAttribute('aria-hidden','true');pm.classList.add('hidden')});const copyTemplate=document.getElementById('copyTemplate');if(copyTemplate)copyTemplate.addEventListener('click',()=>{const t=document.getElementById('jsonTemplate')?.textContent||'';navigator.clipboard?.writeText(t).then(()=>{copyTemplate.textContent='Copied';setTimeout(()=>copyTemplate.textContent='Copy JSON',1200)}).catch(()=>alert('Copy failed'))});const downloadTemplate=document.getElementById('downloadTemplate');if(downloadTemplate)downloadTemplate.addEventListener('click',()=>{const blob=new Blob([document.getElementById('jsonTemplate').textContent],{type:'application/json'});const url=URL.createObjectURL(blob);downloadTemplate.href=url;setTimeout(()=>URL.revokeObjectURL(url),30000)});const openEmail=document.getElementById('openEmail');if(openEmail)openEmail.addEventListener('click',()=>{const tplText=document.getElementById('jsonTemplate')?.textContent||'';const subject=encodeURIComponent('App submission to FelooPy');const maxLen=1500;let body='Hi,%0A%0APlease find my app submission below (JSON). Attach files if needed.%0A%0A';if(tplText){const snippet=tplText.length>maxLen?tplText.slice(0,maxLen)+'\n\n(Truncated)':tplText;body+=encodeURIComponent(snippet)}else{body+=encodeURIComponent('\n(Please paste your app JSON here.)\n')}window.location.href=`mailto:feloopy@gmail.com?subject=${subject}&body=${body}`});const githubPR=document.getElementById('githubPR');if(githubPR)githubPR.addEventListener('click',()=>{});try{const raw=await fetchJson(['./store/apps.json','/store/apps.json','store/apps.json']);const arr=Array.isArray(raw)?raw:(raw.apps||raw);state.apps=(arr||[]).map(a=>({_raw:a,id:a.id||(a.name||'').toLowerCase().replace(/\s+/g,'-'),name:a.name||'Unnamed',vendor:a.vendor||'',short_description:a.short_description||(a.description||'').slice(0,140),long_description:a.long_description||a.description||'',downloads:normalizeDownloads(a),homepage:a.homepage||'',screenshots:a.screenshots||[],icon:a.icon||'',popularity:a.popularity||0,latest_version:a.latest_version||'',auto_update:!!a.auto_update,update_method:a.update_method||'',repo:a.repo||'',verified:!!a.verified}));state.filtered=state.apps.slice().sort((a,b)=>(b.popularity||0)-(a.popularity||0));renderGrid(state.filtered);const grid=document.getElementById('grid');grid.addEventListener('click',ev=>{const c=ev.target.closest('.card');if(!c)return;const id=c.getAttribute('data-id');if(!id)return;openApp(id)});grid.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){const c=ev.target.closest('.card');if(!c)return;ev.preventDefault();const id=c.getAttribute('data-id');if(!id)return;openApp(id)}});grid.addEventListener('pointerenter',ev=>{const card=ev.target.closest('.card');if(!card)return;const id=card.getAttribute('data-id');const app=state.apps.find(a=>a.id===id);if(app)prefetchAppDetails(app)},{capture:true,passive:true});grid.addEventListener('focusin',ev=>{const card=ev.target.closest('.card');if(!card)return;const id=card.getAttribute('data-id');const app=state.apps.find(a=>a.id===id);if(app)prefetchAppDetails(app)});const searchEl=document.getElementById('globalSearch');if(searchEl)searchEl.addEventListener('input',debounce(()=>{const q=searchEl.value.trim().toLowerCase();state.filtered=state.apps.filter(a=>{if(!q)return true;const hay=[a.name,a.vendor,a.short_description,a.long_description,(a._raw.tags||[]).join(' '),(a.downloads||[]).map(d=>d.url||'').join(' ')].join(' ').toLowerCase();return hay.includes(q)}).sort((a,b)=>(b.popularity||0)-(a.popularity||0));state.page=1;renderGrid(state.filtered)},180));if(location.hash.startsWith('#/app/')){const id=decodeURIComponent(location.hash.slice(6));setTimeout(()=>openApp(id,false),50)}updateFooterStats();window.addEventListener('resize',debounce(updateFooterStats,160));window.addEventListener('scroll',debounce(updateFooterStats,140));}catch(e){document.getElementById('grid').innerHTML='<div class="muted">Failed to load store/apps.json — check path/format.</div>';updateFooterStats()}});document.addEventListener('click',function(ev){let el=ev.target;while(el&&el!==document){if(el.getAttribute&&(el.getAttribute('data-copy')!==null||el.getAttribute('data-url')!==null||el.classList.contains('copy')||el.classList.contains('copy-cmd')))break;el=el.parentNode}if(!el||el===document)return;const toCopy=el.getAttribute('data-copy')||el.getAttribute('data-url');if(!toCopy)return;navigator.clipboard?.writeText(toCopy).then(()=>{const prev=el.innerHTML||'Copied';el.innerHTML='Copied';setTimeout(()=>{el.innerHTML=prev},1200)}).catch(()=>alert('Copy failed'))});window.addEventListener('popstate',()=>{if(location.hash.startsWith('#/app/')){const id=decodeURIComponent(location.hash.slice(6));openApp(id,false)}else closeApp(false)});})();
+(function(){
+  try {
+    const banner = document.getElementById('installBanner');
+    const installBtn = document.getElementById('installBtn');
+    const dismiss = document.getElementById('installDismiss');
+    let deferredPrompt = null;
+    const lsKey = 'feloopy_install_shown_v1';
+
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 900 && ('ontouchstart' in window);
+    const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
+
+    function showBanner(hint){
+      if(!isMobile) return;
+      if(localStorage.getItem(lsKey)) return;
+      if(!banner) return;
+      banner.style.display = 'flex';
+      banner.classList.remove('hidden');
+      banner.setAttribute('aria-hidden','false');
+      if(hint && document.getElementById('installHint')) document.getElementById('installHint').textContent = hint;
+    }
+    function hideBanner() {
+      if(!banner) return;
+      banner.style.display = 'none';
+      banner.classList.add('hidden');
+      banner.setAttribute('aria-hidden','true');
+      localStorage.setItem(lsKey, '1');
+    }
+    window.addEventListener('beforeinstallprompt', (e) => {
+      try {
+        e.preventDefault();
+        deferredPrompt = e;
+        showBanner('Install FelooPy for faster access! Tap Install.');
+      } catch(e){}
+    });
+    window.addEventListener('load', () => {
+      try {
+        const inStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+        setTimeout(()=>{
+          if(deferredPrompt) return;
+          if(isiOS) showBanner('iOS: tap Share → Add to Home Screen.');
+          else showBanner('Add to home screen for quick access.');
+        },1200);
+      } catch(e){}
+    });
+
+    if(installBtn) installBtn.addEventListener('click', async function(){
+      try {
+        if(deferredPrompt){
+          deferredPrompt.prompt();
+          const choice = await deferredPrompt.userChoice;
+          if(choice && choice.outcome === 'accepted') localStorage.setItem(lsKey, '1');
+          deferredPrompt = null;
+          hideBanner();
+        } else if(isiOS){
+          alert('To install: tap the browser Share button, then "Add to Home Screen".');
+          hideBanner();
+        } else {
+          if(navigator?.installTrigger) {
+            navigator.installTrigger();
+            localStorage.setItem(lsKey, '1');
+            hideBanner();
+          } else {
+            showBanner('Use your browser menu → Add to Home Screen.');
+          }
+        }
+      } catch(err){
+        hideBanner();
+      }
+    });
+    if(dismiss) dismiss.addEventListener('click', hideBanner);
+  } catch(e){}
+})();
 </script>
 </body>
 </html>
