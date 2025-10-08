@@ -7,8 +7,15 @@
     "short_description": "The Next Generation Primal Solver",
     "long_description": "./info/seeker.md",
     "tags": [
-      "programming",
-      "solver"
+      "solver",
+      "lp",
+      "ip",
+      "milp",
+      "minlp",
+      "gpp",
+      "up",
+      "sop",
+      "mop"
     ],
     "license": "Proprietary",
     "video": "https://www.youtube.com/watch?v=E7meP8wph3w&list=PLHULWUkgcw3KkeaFHnX9X5pMw1GzU4llc",   
@@ -43,8 +50,12 @@
     "short_description": "Modeling Language & IDE",
     "long_description": "./info/lpl.md",
     "tags": [
-      "programming",
-      "solver"
+      "modeling",
+      "lp",
+      "ip",
+      "milp",
+      "minlp",
+      "sop"
     ],
     "license": "Proprietary",
     "officialDownload": [
@@ -78,8 +89,11 @@
     "long_description": "./info/lpsolve.md",
     "video": "https://www.youtube.com/watch?v=oPX0HEs5X-Y",
     "tags": [
-      "programming",
-      "solver"
+      "solver",
+      "lp",
+      "ip",
+      "milp",
+      "sop"
     ],
     "license": "LGPL",
     "officialDownload": [
@@ -110,13 +124,16 @@
     "id": "picat",
     "name": "PICAT",
     "vendor": "Neng-Fa Zhou",
-    "short_description": "Logical scripting & modeling language",
+    "short_description": "Logical Scripting & Modeling Language",
     "long_description": "./info/picat.md",
     "tags": [
-      "programming",
-      "logic",
-      "constraint",
-      "solver"
+      "modeling",
+      "scripting",
+      "lp",
+      "ip",
+      "milp",
+      "cp",
+      "sop"
     ],
     "video": "https://www.youtube.com/watch?v=cnfxMmyDAj4",
     "license": "MPL-2.0",
@@ -147,12 +164,15 @@
     "id": "gusek",
     "name": "GUSEK",
     "vendor": "Luiz Bettoni",
-    "short_description": "Integrated development environment",
+    "short_description": "Integrated Development Environment",
     "long_description": "./info/gusek.md",
     "video": "https://www.youtube.com/watch?v=q88HgdgxtLs&list=PLpmuXL_Dd1RmAFIrQ261n5PykOaaygb85",
     "tags": [
-      "programming",
-      "ide"
+      "ide",
+      "lp",
+      "ip",
+      "milp",
+      "sop"
     ],
     "license": "GPL",
     "officialDownload": [
