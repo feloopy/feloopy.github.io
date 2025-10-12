@@ -1,5 +1,45 @@
 [
 
+   {
+    "id": "scipt",
+    "name": "SCIP",
+    "vendor": "Zuse Institute Berlin",
+    "short_description": "A Solver Suite",
+    "long_description": "./info/scip.md",
+    "tags": [
+      "solver",
+      "lp",
+      "ip",
+      "milp",
+      "minlp",
+      "sop"
+    ],
+    "license": "Apache 2.0, LGPLv3",
+    "video": "https://www.youtube.com/watch?v=Rzk5GfUaLiY&list=PLRR7y4aaxzXNp0hgDY-1okOZLFf-pf5Kl&index=1&pp=iAQB",   
+    "officialDownload": [
+      "https://scipopt.org/download/release/SCIPOptSuite-9.2.3-win64.exe",
+      "https://scipopt.org/download/release/SCIPOptSuite-9.2.3-Linux-ubuntu24.deb",
+      "https://scipopt.org/download/release/SCIPOptSuite-9.2.3-Linux-debian12.deb",
+      "https://scipopt.org/download/release/SCIPOptSuite-9.2.3-Darwin.sh"
+    ],
+    "homepage": "https://scipopt.org/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://scipopt.org/images/newscippy.png",
+    "screenshots": [
+      "https://scipopt.org/images/scip_structure_landscape-compressed.png",
+      "https://ug.zib.de/images/ug_design.png"
+    ],
+    "popularity": 98,
+    "documentation": [
+      "https://scipopt.org/doc/html/"
+    ],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "blue"
+  },
+
      {
     "id": "seeker",
     "name": "SEEKER",
