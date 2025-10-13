@@ -29,7 +29,8 @@
     "icon": "https://scipopt.org/images/newscippy.png",
     "screenshots": [
       "https://scipopt.org/images/scip_structure_landscape-compressed.png",
-      "https://ug.zib.de/images/ug_design.png"
+      "https://ug.zib.de/images/ug_design.png",
+      "https://ug.zib.de/images/ug_tree.png"
     ],
     "popularity": 98,
     "documentation": [
