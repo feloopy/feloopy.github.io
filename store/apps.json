@@ -1,10 +1,49 @@
 [
 
+  
+   {
+    "id": "highs",
+    "name": "HiGHS",
+    "vendor": "Julian Hall, Ivet Galabova, Qi Huangfu, Lukas Schork",
+    "short_description": "High Performance Solver Suite",
+    "long_description": "./info/highs.md",
+    "tags": [
+      "solver",
+      "lp",
+      "ip",
+      "milp",
+      "sop"
+    ],
+    "license": "MIT",
+    "video": "https://www.youtube.com/watch?v=0U_s3Z3wS7o",   
+    "officialDownload": [
+      "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.x86_64-w64-mingw32.tar.gz",
+      "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.x86_64-linux-gnu-cxx11.tar.gz",
+      "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.x86_64-apple-darwin.tar.gz",
+      "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.aarch64-apple-darwin.tar.gz",
+      "https://github.com/ERGO-Code/HiGHS/releases/download/v1.11.0/source-archive.tar.gz"
+    ],
+    "homepage": "https://highs.dev/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://ergo-code.github.io/HiGHS/dev/assets/logo.png",
+    "screenshots": [
+    ],
+    "popularity": 98,
+    "documentation": [
+      "https://ergo-code.github.io/HiGHS/dev/"
+    ],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "white"
+  },
+
    {
     "id": "scipt",
     "name": "SCIP",
     "vendor": "Zuse Institute Berlin",
-    "short_description": "A Solver Suite",
+    "short_description": "Solver Suite",
     "long_description": "./info/scip.md",
     "tags": [
       "solver",
@@ -198,7 +237,7 @@
     ],
     "auto_update": true,
     "latest_version": "3.9",
-    "background_color": "white"
+    "background_color": "#8adce0"
   },
 
     {

@@ -1,0 +1,7 @@
+HiGHS is a C++11-based solver for LP (linear programming), MIP (mixed-integer programming), and convex QP (quadratic programming). Its origins date to late 2016, when presolve work by [Ivet Galabova](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#) was combined with dual/simplex work by [Qi Huangfu](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#) and [Julian Hall](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#); the project and name matured through 2018 onward.
+
+Primal & dual revised-simplex engines were originally implemented by Qi Huangfu and later developed further by Julian Hall. The interior-point (IPM) solver for large LPs was developed by Lukas Schork. The active-set QP solver for convex quadratic programs was developed by Michael Feldmeier. MIP (branch-and-cut) capabilities include more recent contributions from Leona Gottwald. Presolve, crash procedures, and general engineering work were led by Ivet Galabova (presolve) and Julian Hall (engineering & integration).
+
+HiGHS is written with minimal external dependencies (CMake build, no heavy third-party stack), ships as a library and an executable (bin/highs), and exposes language bindings for Python (highspy), C, C#, Fortran, Julia, and others. That makes it easy to call from modeling stacks and numerical ecosystems.
+
+HiGHS is published under the MIT license and provides prebuilt binaries and language packages for common platforms.
