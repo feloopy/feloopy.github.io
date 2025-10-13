@@ -15,7 +15,7 @@
       "sop"
     ],
     "license": "MIT",
-    "video": "https://www.youtube.com/watch?v=0U_s3Z3wS7o",   
+    "video": "",   
     "officialDownload": [
       "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.x86_64-w64-mingw32.tar.gz",
       "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.x86_64-linux-gnu-cxx11.tar.gz",
@@ -29,6 +29,7 @@
     "verified": true,
     "icon": "https://ergo-code.github.io/HiGHS/dev/assets/logo.png",
     "screenshots": [
+    "https://repository-images.githubusercontent.com/126994758/aac8de80-69ec-11e9-9432-19d01c60eb19"  
     ],
     "popularity": 98,
     "documentation": [
