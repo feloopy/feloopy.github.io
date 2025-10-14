@@ -5,7 +5,7 @@
     "id": "timefold",
     "name": "Timefold",
     "vendor": "Geoffrey De Smet and Maarten Vandenbroucke",
-    "short_description": "Solver for scheduling and routing",
+    "short_description": "Solver for Scheduling & Routing",
     "long_description": "./info/timefold.md",
     "tags": [
       "solver",
