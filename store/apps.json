@@ -2,6 +2,43 @@
 
   
    {
+    "id": "timefold",
+    "name": "Timefold",
+    "vendor": "Geoffrey De Smet and Maarten Vandenbroucke",
+    "short_description": "Solver for scheduling and routing",
+    "long_description": "./info/timefold.md",
+    "tags": [
+      "solver",
+      "lp",
+      "ip",
+      "milp",
+      "sop"
+    ],
+    "license": "Apache 2.0",
+    "video": "",   
+    "officialDownload": [
+      "https://github.com/TimefoldAI/timefold-solver/archive/refs/tags/v1.27.0.zip"
+    ],
+    "homepage": "https://solver.timefold.ai/",
+    "video": "https://www.youtube.com/watch?v=pM0-kebKUnU",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://timefold.ai/uploads/images/Brand-Assets/Logomark-Positive.png",
+    "screenshots": [
+    "https://repository-images.githubusercontent.com/126994758/aac8de80-69ec-11e9-9432-19d01c60eb19"  
+    ],
+    "popularity": 98,
+    "documentation": [
+      "https://github.com/TimefoldAI/timefold-quickstarts",
+      "https://docs.timefold.ai/"
+    ],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "white"
+  },
+
+   {
     "id": "highs",
     "name": "HiGHS",
     "vendor": "Julian Hall, Ivet Galabova, Qi Huangfu, Lukas Schork",
