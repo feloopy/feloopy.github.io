@@ -1,0 +1,9 @@
+ [MOSEK ApS](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#) is the company that offers an optimization suite that has been solving large-scale linear, quadratic, conic, and mixed-integer problems since the late 1990s.
+
+MOSEK ApS was incorporated on 15 October 1997 in Copenhagen, and the first MOSEK solver was released in 1999. The company was founded by [Erling Dalgaard Andersen](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#) and Knud D. Andersen.
+
+Today, the MOSEK Optimization Suite handles linear, convex quadratic, conic quadratic (SOCP), semidefinite, exponential, and power-cone models as well as mixed-integer variants, and is prized for high-performance interior-point and mixed-integer solvers. Support for the nonsymmetric cones, i.e., the exponential and power cones, was introduced in recent versions to broaden conic modeling power.
+
+MOSEK ships the Fusion object-oriented modeling API with a mature Python binding, provides low-level optimizer APIs and language interfaces for C, C#, Java, MATLAB, Python, R, Julia, and Rust, and plugs into modeling ecosystems and interfaces such as [AMPL Optimization](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#), [GAMS](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#), and [CVXPY](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#). The official docs and Fusion distribution include many worked examples and a modeling cookbook to help port and build models.
+
+MOSEK is a commercial product with floating and server licensing but offers free academic licenses for students and faculty, plus a 30-day trial for evaluation. MOSEK has financial institutions, engineering firms, and software vendors among its users and publishes extensive docs, examples, and release notes to support adoption.

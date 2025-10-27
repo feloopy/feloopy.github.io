@@ -1,6 +1,47 @@
 [
 
-  
+     {
+    "id": "mosek",
+    "name": "MOSEK",
+    "vendor": "MOSEK ApS",
+    "short_description": "Fast Interior Point Solver",
+    "long_description": "./info/mosek.md",
+    "tags": [
+      "solver",
+      "lp",
+      "ip",
+      "milp",
+      "sop"
+    ],
+    "license": "Proprietary",
+    "video": "",
+    "officialDownload": [
+      "https://download.mosek.com/stable/11.0.29/mosektoolslinux64x86.tar.bz2",
+      "https://download.mosek.com/stable/11.0.29/mosektoolslinuxaarch64.tar.bz2",
+      "https://download.mosek.com/stable/11.0.29/mosektoolsosxaarch64.tar.bz2",
+      "https://download.mosek.com/stable/11.0.29/moseksetupwin64x86.msi"
+    ],
+    "homepage": "https://www.mosek.com/",
+    "video": "https://www.youtube.com/watch?v=4e4FdYdyIU4",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://www.mosek.com/static/images/branding/icon48x48.png",
+    "screenshots": [
+"https://docs.mosek.com/graphics/cookbook_cover.jpg",
+"https://docs.mosek.com/graphics/portfolio_cover.jpg"
+    ],
+    "popularity": 98,
+    "documentation": [
+      "https://www.mosek.com/documentation/",
+      "https://docs.mosek.com/MOSEKModelingCookbook-letter.pdf",
+      "https://docs.mosek.com/MOSEKPortfolioCookbook-letter.pdf",
+      "https://www.mosek.com/resources/presentations/"
+    ],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "white"
+  },
    {
     "id": "timefold",
     "name": "Timefold",
