@@ -1,5 +1,43 @@
 [
 
+   {
+    "id": "copt",
+    "name": "COPT",
+    "vendor": "Cardinal Operations",
+    "short_description": "Ultimate Optimziation Engine",
+    "long_description": "./info/copt.md",
+    "tags": [
+      "solver",
+      "lp",
+      "ip",
+      "milp",
+      "sop"
+    ],
+    "license": "Proprietary",
+    "video": "",
+    "officialDownload": [
+      "https://www.shanshu.ai/copt"
+    ],
+    "homepage": "https://www.shanshu.ai/",
+    "video": "https://pub.shanshu.ai/cardinalsite_v2/video/20230118/%E6%A8%AA%E7%89%88.mp4",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://styles.redditmedia.com/t5_405odc/styles/communityIcon_8ycj3dtwb2j61.jpg?width=256&format=pjpg&s=1cc2d56bf35ff2564c8a973ac9a68a8951bc8f2d",
+    "screenshots": [
+"https://www.shanshu.ai/_nuxt/videos/115.dee43fd.mp4",
+"https://www.shanshu.ai/_nuxt/img/copt_big_en.46251ae.jpg"
+    ],
+    "popularity": 98,
+    "documentation": [
+      "https://www.shanshu.ai/copt-document"
+    ],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "white"
+  },
+
+
      {
     "id": "mosek",
     "name": "MOSEK",
