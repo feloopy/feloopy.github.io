@@ -1,5 +1,54 @@
 [
 
+  {
+  "id": "omelet",
+  "name": "OMELET",
+  "vendor": "Omelet",
+  "short_description": "AI-first Routing Solver",
+  "long_description": "./info/omelet.md",
+  "tags": [
+    "solver",
+    "routing",
+    "tms",
+    "optimization",
+    "ai",
+    "ml",
+    "vrp",
+    "vehicle-routing"
+  ],
+  "license": "Proprietary",
+  "video": "",
+  "officialDownload": [
+    "https://omelet.ai/en/"
+  ],
+  "homepage": "https://omelet.ai/en/",
+  "last_checked": "2025-11-01T00:00:00Z",
+  "official": true,
+  "verified": true,
+  "icon": "https://www.oaasis.cc/routing/static/media/omelet-icon-gradient.7248992b996b71720452.png",
+  "screenshots": [
+    "https://omelet.ai/_next/static/media/optimizationAI.ebd0a3e1.png",
+    "https://omelet.ai/_next/static/media/vision_optimizationAI-agent.cb3e8ecc.png",
+    "https://www.oaasis.cc/routing/static/media/how-img.ede4d5c7e127a4dd9ab5.png",
+    "https://omelet.ai/_next/static/media/op-aiagent-structure.af07542a.png",
+    "https://www.oaasis.cc/routing/static/media/step1-1.1cc377b1a7678fe99002.gif",
+    "https://www.oaasis.cc/routing/static/media/step2-1.a0bdb6efc1344989c22a.gif",
+    "https://www.oaasis.cc/routing/static/media/step3-1.d87d78203653867ddbb4.gif",
+    "https://www.oaasis.cc/routing/static/media/step4-1.0a58808285c650a9afd7.gif"
+
+  ],
+  "popularity": 98,
+  "documentation": [
+    "https://omelet.ai/en/research/",
+    "https://omelet.ai/en/history/",
+    "https://omelet.ai/en/members/",
+    "https://omelet.ai/en/contact/"
+  ],
+  "auto_update": false,
+  "latest_version": "",
+  "background_color": "white"
+},
+
    {
     "id": "copt",
     "name": "COPT",
