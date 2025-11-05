@@ -1,10 +1,20 @@
-.typing{
+
+
+/* Typing text */
+.typing {
   white-space: pre-wrap;
   word-break: break-word;
   display: inline;
   line-height: 1.05;
 }
-.typing::after{
+
+/* Hide pseudo-cursor while we use the explicit blinker element during blinking */
+.typing.blinking::after {
+  display: none;
+}
+
+/* Keep a small solid dot for .done state as pseudo element */
+.typing::after {
   content: "";
   display: inline-block;
   width: 0.55em;
@@ -13,10 +23,74 @@
   border-radius: 50%;
   background: currentColor;
   vertical-align: -0.05em;
-  transition: background-color 160ms ease;
+  transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  opacity: 0.9;
 }
-.typing.done::after{
-  background: #76B900;
+
+.typing.done::after {
+  background: #76b900;
+  box-shadow: 0 0 6px rgba(118, 185, 0, 0.9);
+}
+
+/* --- explicit blinker element used during idle (2-5s) --- */
+.blinker {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  margin-left: 0.45em;
+  margin-right: 0.4em;
+  border-radius: 50%;
+  background: #7ce12d;
+  vertical-align: -0.05em;
+  box-shadow: 0 0 10px rgba(124, 225, 45, 0.85);
+  animation: glowPulse 1.2s infinite;
+}
+
+/* pulse keyframes */
+@keyframes glowPulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 2px rgba(124, 225, 45, 0.3);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 18px rgba(124, 225, 45, 0.95);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 4px rgba(124, 225, 45, 0.35);
+  }
+}
+
+/* "Thinking" uses gradient text shimmer */
+.thinking-label {
+  font-weight: 500;
+  margin-top: 0.1em;
+  margin-left: 0.1em;
+  margin-right: 0.2em;
+  display: inline-block;
+  background: linear-gradient(90deg, #76b900, #aaff66, #76b900);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2.4s linear infinite;
+}
+
+/* Arrow '>' is solid and always visible */
+.thinking-arrow {
+  color: #7ce12d;
+  -webkit-text-fill-color: initial;
+  margin-left: 0.15em;
+  font-weight: 600;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 /*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */
 @layer properties {
@@ -102,7 +176,6 @@
     --color-blue-600: oklch(54.6% .245 262.881);
     --color-white: #fff;
     --spacing: .25rem;
-    --container-3xl: 48rem;
     --container-4xl: 56rem;
     --text-xs: .75rem;
     --text-xs--line-height: calc(1 / .75);
@@ -110,16 +183,10 @@
     --text-sm--line-height: calc(1.25 / .875);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
-    --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
-    --text-4xl: 2.25rem;
-    --text-4xl--line-height: calc(2.5 / 2.25);
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -633,10 +700,6 @@
     width: 100%;
   }
 
-  .max-w-3xl {
-    max-width: var(--container-3xl);
-  }
-
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
@@ -819,6 +882,10 @@
 
   .bg-\[length\:200\%_auto\] {
     background-size: 200%;
+  }
+
+  .bg-\[length\:800\%_auto\] {
+    background-size: 800%;
   }
 
   .bg-clip-text {
@@ -1300,13 +1367,6 @@
     color: var(--destructive);
   }
 
-  @media (min-width: 40rem) {
-    .sm\:text-xl {
-      font-size: var(--text-xl);
-      line-height: var(--tw-leading, var(--text-xl--line-height));
-    }
-  }
-
   @media (min-width: 48rem) {
     .md\:flex {
       display: flex;
@@ -1314,18 +1374,6 @@
 
     .md\:hidden {
       display: none;
-    }
-
-    .md\:text-4xl {
-      font-size: var(--text-4xl);
-      line-height: var(--tw-leading, var(--text-4xl--line-height));
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:text-5xl {
-      font-size: var(--text-5xl);
-      line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
 

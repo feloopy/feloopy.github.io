@@ -23385,7 +23385,7 @@ function Layout() {
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "h1",
             {
-              className: "\r\n    text-2xl font-bold \r\n    bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n    bg-[length:200%_auto] bg-clip-text text-transparent \r\n    animate-gradient\r\n  ",
+              className: "\r\n    text-2xl font-bold \r\n    bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n    bg-[length:800%_auto] bg-clip-text text-transparent \r\n    animate-gradient\r\n  ",
               children: "FelooPy"
             }
           )
@@ -23478,7 +23478,7 @@ function Layout() {
   ] });
 }
 function Home() {
-  const verbs = ["Redesign", "Replan", "Reschedule"];
+  const verbs = ["Redesign", "Replan", "Reschedule", "Recontrol"];
   const dataItems = [
     "sourcing",
     "routing",
@@ -23616,8 +23616,6 @@ function Home() {
   };
   const buildAllCombinations = () => {
     const combos = [];
-    if (verbs.length === 0 || dataItems.length === 0 || optimizeOptions.length === 0 || scopes.length === 0)
-      return combos;
     for (const v of verbs) {
       for (const d of dataItems) {
         for (const o of optimizeOptions) {
@@ -23639,15 +23637,13 @@ function Home() {
     }
     return a;
   };
-  const ALL_COMBINATIONS = React.useMemo(
-    () => shuffle(buildAllCombinations()),
-    []
-  );
+  const ALL_COMBINATIONS = React.useMemo(() => shuffle(buildAllCombinations()), []);
   const initialCombo = ALL_COMBINATIONS[0];
   const initialFull = buildSentenceFromCombo(initialCombo);
   const [text, setText] = reactExports.useState("");
   const [fullSentence, setFullSentence] = reactExports.useState(initialFull);
   const [isFullDisplayed, setIsFullDisplayed] = reactExports.useState(false);
+  const [isBlinking, setIsBlinking] = reactExports.useState(false);
   const charIndexRef = reactExports.useRef(0);
   const isDeletingRef = reactExports.useRef(false);
   const comboIndexRef = reactExports.useRef(0);
@@ -23659,18 +23655,21 @@ function Home() {
   const PER_WORD_END_MS = 300;
   const MIN_END_PAUSE = 1800;
   const MAX_END_PAUSE = 3e3;
+  const randBetween = (minMs, maxMs) => Math.floor(Math.random() * (maxMs - minMs + 1)) + minMs;
   reactExports.useEffect(() => {
     fullSentenceRef.current = fullSentence;
     charIndexRef.current = 0;
     isDeletingRef.current = false;
     setText("");
     setIsFullDisplayed(false);
-    startLoop();
+    setIsBlinking(true);
+    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setIsBlinking(false);
+      startLoop();
+    }, randBetween(2e3, 5e3));
     return () => {
-      if (timeoutRef.current !== null) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
-      }
+      if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
     };
   }, [fullSentence]);
   const computeEndPause = (sentence) => {
@@ -23685,10 +23684,7 @@ function Home() {
     setFullSentence(buildSentenceFromCombo(next));
   };
   function startLoop() {
-    if (timeoutRef.current !== null) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
+    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
     const loopTick = () => {
       const current = fullSentenceRef.current;
       if (!isDeletingRef.current) {
@@ -23715,10 +23711,14 @@ function Home() {
           timeoutRef.current = setTimeout(loopTick, deletePause);
           return;
         }
+        setIsBlinking(true);
+        if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(() => {
+          setIsBlinking(false);
           isDeletingRef.current = false;
           advanceToNextCombo();
-        }, START_PAUSE);
+          timeoutRef.current = setTimeout(loopTick, START_PAUSE);
+        }, randBetween(2e3, 5e3));
       }
     };
     timeoutRef.current = setTimeout(
@@ -23728,13 +23728,22 @@ function Home() {
   }
   reactExports.useEffect(() => {
     return () => {
-      if (timeoutRef.current !== null) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
-      }
+      if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
     };
   }, []);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen flex items-center justify-center p-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-3xl text-left", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl sm:text-xl md:text-4xl lg:text-5xl font-semibold leading-tight heading-responsive", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: isFullDisplayed ? "typing done" : "typing", children: text }) }) }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center p-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: " font-semibold leading-tight text-2xl", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        className: isFullDisplayed ? "typing done" : isBlinking ? "typing blinking" : "typing",
+        children: text
+      }
+    ),
+    isBlinking && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "blinker", "aria-hidden": "true" }),
+      "Thinking"
+    ] })
+  ] }) }) });
 }
 function About() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", {});
