@@ -23478,8 +23478,6 @@ function Layout() {
   ] });
 }
 function Home() {
-  const PROMPT = "What FelooPy can do?";
-  const PROMPT_THINK_REPEATS = 3;
   const verbs = ["Redesign", "Replan", "Reschedule", "Recontrol"];
   const dataItems = [
     "sourcing",
@@ -23640,159 +23638,269 @@ function Home() {
     return a;
   };
   const ALL_COMBINATIONS = React.useMemo(() => shuffle(buildAllCombinations()), []);
-  const [text, setText] = reactExports.useState("");
-  const [fullSentence, setFullSentence] = reactExports.useState(PROMPT);
-  const [isFullDisplayed, setIsFullDisplayed] = reactExports.useState(false);
-  const [isBlinking, setIsBlinking] = reactExports.useState(false);
-  const charIndexRef = reactExports.useRef(0);
-  const isDeletingRef = reactExports.useRef(false);
+  const QUESTION = "How does FelooPy help me?";
+  const [questionTypedText, setQuestionTypedText] = reactExports.useState("");
+  const questionCharRef = reactExports.useRef(0);
+  const [questionDone, setQuestionDone] = reactExports.useState(false);
+  const [currentAnswerText, setCurrentAnswerText] = reactExports.useState("");
+  const [isAnswerTyping, setIsAnswerTyping] = reactExports.useState(false);
+  const [isAnswerDone, setIsAnswerDone] = reactExports.useState(false);
+  const [isThinking, setIsThinking] = reactExports.useState(false);
   const comboIndexRef = reactExports.useRef(0);
-  const fullSentenceRef = reactExports.useRef(fullSentence);
   const timeoutRef = reactExports.useRef(null);
   const TYPING_SPEED = 28;
-  const DELETING_SPEED = 18;
-  const START_PAUSE = 220;
   const PER_WORD_END_MS = 300;
-  const MIN_END_PAUSE = 1800;
-  const MAX_END_PAUSE = 3e3;
+  const MIN_END_PAUSE = 1200;
+  const MAX_END_PAUSE = 2500;
   const randBetween = (minMs, maxMs) => Math.floor(Math.random() * (maxMs - minMs + 1)) + minMs;
-  reactExports.useEffect(() => {
-    fullSentenceRef.current = fullSentence;
-  }, [fullSentence]);
   const computeEndPause = (sentence) => {
     const wordCount = sentence.split(/\s+/).filter(Boolean).length;
     const calc = Math.round(wordCount * PER_WORD_END_MS);
     return Math.min(MAX_END_PAUSE, Math.max(MIN_END_PAUSE, calc));
   };
-  const advanceToNextCombo = () => {
-    const len = ALL_COMBINATIONS.length || 1;
-    comboIndexRef.current = (comboIndexRef.current + 1) % len;
-    const next = ALL_COMBINATIONS[comboIndexRef.current];
-    setFullSentence(buildSentenceFromCombo(next));
-  };
-  function startLoop() {
-    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
-    const loopTick = () => {
-      const current = fullSentenceRef.current;
-      if (!isDeletingRef.current) {
-        const nextIndex = Math.min(charIndexRef.current + 1, current.length);
-        charIndexRef.current = nextIndex;
-        setText(current.slice(0, nextIndex));
-        if (nextIndex === current.length) {
-          setIsFullDisplayed(true);
-          const endPause = computeEndPause(current);
-          timeoutRef.current = setTimeout(() => {
-            setIsFullDisplayed(false);
-            isDeletingRef.current = true;
-            loopTick();
-          }, endPause);
-          return;
-        }
-        timeoutRef.current = setTimeout(loopTick, TYPING_SPEED);
+  reactExports.useEffect(() => {
+    questionCharRef.current = 0;
+    setQuestionTypedText("");
+    setQuestionDone(false);
+    const tick = () => {
+      const next = Math.min(questionCharRef.current + 1, QUESTION.length);
+      questionCharRef.current = next;
+      setQuestionTypedText(QUESTION.slice(0, next));
+      if (next < QUESTION.length) {
+        timeoutRef.current = setTimeout(tick, TYPING_SPEED);
       } else {
-        if (charIndexRef.current > 0) {
-          charIndexRef.current = Math.max(charIndexRef.current - 1, 0);
-          setText(current.slice(0, charIndexRef.current));
-          const aboutToDeleteChar = current.charAt(charIndexRef.current);
-          const deletePause = aboutToDeleteChar === " " ? Math.max(8, DELETING_SPEED) : DELETING_SPEED;
-          timeoutRef.current = setTimeout(loopTick, deletePause);
-          return;
-        }
-        setIsBlinking(true);
-        if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
-        timeoutRef.current = setTimeout(() => {
-          setIsBlinking(false);
-          isDeletingRef.current = false;
-          advanceToNextCombo();
-          timeoutRef.current = setTimeout(loopTick, START_PAUSE);
-        }, randBetween(2e3, 5e3));
+        setQuestionDone(true);
+        timeoutRef.current = setTimeout(() => startAnswerCycle(), 600);
       }
     };
-    timeoutRef.current = setTimeout(
-      loopTick,
-      isDeletingRef.current ? DELETING_SPEED : TYPING_SPEED
-    );
-  }
-  reactExports.useEffect(() => {
-    charIndexRef.current = 0;
-    isDeletingRef.current = false;
-    setText("");
-    setIsFullDisplayed(false);
-    setIsBlinking(false);
-    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
-    const promptLoop = () => {
-      const current = PROMPT;
-      const step = () => {
-        const nextIndex = Math.min(charIndexRef.current + 1, current.length);
-        charIndexRef.current = nextIndex;
-        setText(current.slice(0, nextIndex));
-        if (nextIndex === current.length) {
-          setIsFullDisplayed(true);
-          const flashes = [];
-          for (let i = 0; i < PROMPT_THINK_REPEATS; i++) {
-            flashes.push(() => setIsBlinking(true));
-            flashes.push(() => setIsBlinking(false));
-          }
-          let t = 0;
-          const scheduleFlashes = () => {
-            if (t >= flashes.length) {
-              setIsFullDisplayed(false);
-              comboIndexRef.current = 0;
-              setFullSentence(buildSentenceFromCombo(ALL_COMBINATIONS[0]));
-              charIndexRef.current = 0;
-              isDeletingRef.current = false;
-              setIsBlinking(false);
-              timeoutRef.current = setTimeout(() => startLoop(), START_PAUSE);
-              return;
-            }
-            flashes[t++]();
-            const delay = t % 2 === 1 ? 900 : 400;
-            timeoutRef.current = setTimeout(scheduleFlashes, delay);
-          };
-          timeoutRef.current = setTimeout(scheduleFlashes, 700);
-          return;
-        }
+    timeoutRef.current = setTimeout(tick, 250);
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+  const startAnswerCycle = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    const runNext = () => {
+      setCurrentAnswerText("");
+      setIsAnswerTyping(false);
+      setIsAnswerDone(false);
+      setIsThinking(true);
+      timeoutRef.current = setTimeout(() => {
+        setIsThinking(false);
+        const idx = comboIndexRef.current % ALL_COMBINATIONS.length;
+        const nextCombo = ALL_COMBINATIONS[idx];
+        const full = buildSentenceFromCombo(nextCombo);
+        typeAnswer(full, () => {
+          setIsAnswerDone(true);
+          comboIndexRef.current = (comboIndexRef.current + 1) % ALL_COMBINATIONS.length;
+          timeoutRef.current = setTimeout(runNext, randBetween(900, 1600));
+        });
+      }, randBetween(MIN_END_PAUSE, MAX_END_PAUSE));
+    };
+    runNext();
+  };
+  const typeAnswer = (full, cb) => {
+    setIsAnswerTyping(true);
+    setIsAnswerDone(false);
+    let idx = 0;
+    const step = () => {
+      idx = Math.min(idx + 1, full.length);
+      setCurrentAnswerText(full.slice(0, idx));
+      if (idx < full.length) {
         timeoutRef.current = setTimeout(step, TYPING_SPEED);
-      };
-      step();
+      } else {
+        setIsAnswerTyping(false);
+        const endPause = computeEndPause(full);
+        timeoutRef.current = setTimeout(cb, endPause);
+      }
     };
-    promptLoop();
-    return () => {
-      if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
-    };
-  }, []);
+    timeoutRef.current = setTimeout(step, TYPING_SPEED);
+  };
   reactExports.useEffect(() => {
     return () => {
-      if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-[180px] flex items-center justify-center p-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-semibold leading-tight text-3xl sm:text-4xl lg:text-5xl", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "span",
-        {
-          className: `inline-block align-middle mr-2 ${isFullDisplayed ? "opacity-100" : "opacity-90"}`,
-          "aria-live": "polite",
-          children: text
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        width: "100vw",
+        maxWidth: "100vw",
+        marginLeft: 0,
+        paddingLeft: 0,
+        left: 0,
+        position: "relative",
+        textAlign: "left"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
+        @keyframes greenGlow {
+          0% { transform: scale(0.92); box-shadow: 0 0 2px rgba(118,185,0,0.25); }
+          50% { transform: scale(1.12); box-shadow: 0 0 18px rgba(124,225,45,0.95); }
+          100% { transform: scale(0.96); box-shadow: 0 0 6px rgba(118,185,0,0.5); }
         }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "span",
+        @keyframes shimmer {
+          0% { background-position: 0% center; }
+          100% { background-position: 200% center; }
+        }
+        .animate-greenGlow { animation: greenGlow 1.2s infinite; }
+        .animate-shimmer { animation: shimmer 2.4s linear infinite; }
+      ` }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
           {
-            className: `w-2 h-2 rounded-full mr-2 transition-opacity duration-200 ${isBlinking ? "animate-blink" : "opacity-0"}`,
-            "aria-hidden": "true"
+            style: {
+              display: "flex",
+              flexDirection: "column",
+              gap: 12,
+              // consistent gap between question / thinking / answer
+              paddingLeft: 12,
+              paddingTop: 12
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { style: { margin: 0, padding: 0, fontWeight: 600, fontSize: "1.25rem", lineHeight: 1.35 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { style: { whiteSpace: "pre-wrap", lineHeight: 1.35 }, children: [
+                questionTypedText,
+                !questionDone && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    "aria-hidden": "true",
+                    style: {
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "0.55em",
+                      height: "0.55em",
+                      marginLeft: "0.45em",
+                      borderRadius: "50%",
+                      verticalAlign: "middle"
+                    },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        style: {
+                          display: "inline-block",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          backgroundColor: "#222",
+                          transform: "scale(0.92)"
+                        }
+                      }
+                    )
+                  }
+                )
+              ] }) }),
+              isThinking && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    "aria-hidden": "true",
+                    style: {
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "0.55em",
+                      height: "0.55em",
+                      borderRadius: "50%",
+                      boxShadow: "0 0 10px rgba(124,225,45,0.85)",
+                      verticalAlign: "middle"
+                    },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "animate-greenGlow",
+                        style: {
+                          display: "inline-block",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          backgroundColor: "#7ce12d"
+                        }
+                      }
+                    )
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: "animate-shimmer",
+                    style: {
+                      display: "inline-block",
+                      fontWeight: 500,
+                      backgroundImage: "linear-gradient(90deg, #000000, #777777, #000000)",
+                      backgroundSize: "200% auto",
+                      WebkitBackgroundClip: "text",
+                      backgroundClip: "text",
+                      color: "transparent",
+                      paddingBottom: "0.04em",
+                      lineHeight: 1.35
+                    },
+                    children: "Thinking..."
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "block" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { whiteSpace: "pre-wrap", lineHeight: 1.35 }, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: currentAnswerText }),
+                (isAnswerTyping || currentAnswerText.length > 0 || isAnswerDone) && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    "aria-hidden": "true",
+                    style: {
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "0.55em",
+                      height: "0.55em",
+                      marginLeft: "0.45em",
+                      borderRadius: "50%",
+                      verticalAlign: "middle"
+                    },
+                    children: isAnswerTyping ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        style: {
+                          display: "inline-block",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          backgroundColor: "#222",
+                          transform: "scale(0.92)"
+                        }
+                      }
+                    ) : isAnswerDone ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        style: {
+                          display: "inline-block",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          backgroundColor: "#76b900",
+                          boxShadow: "0 0 6px rgba(118,185,0,0.9)"
+                        }
+                      }
+                    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        style: {
+                          display: "inline-block",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          backgroundColor: "#222"
+                        }
+                      }
+                    )
+                  }
+                )
+              ] }) })
+            ]
           }
-        ),
-        isBlinking && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: "Thinking" })
-      ] })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-sm text-gray-500", children: "AI-powered optimization examples" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
-          @keyframes blinkKey { 0% { opacity: 1 } 50% { opacity: 0.15 } 100% { opacity: 1 } }
-          .animate-blink { animation: blinkKey 1s linear infinite; }
-        ` })
-  ] }) });
+        )
+      ]
+    }
+  );
 }
 function About() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", {});
