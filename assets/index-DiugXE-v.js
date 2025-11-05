@@ -14743,7 +14743,13 @@ const createLucideIcon = (iconName, iconNode) => {
   Component.displayName = toPascalCase(iconName);
   return Component;
 };
-const __iconNode$1 = [
+const __iconNode$3 = [
+  ["path", { d: "M4 5h16", key: "1tepv9" }],
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 19h16", key: "1djgab" }]
+];
+const Menu$1 = createLucideIcon("menu", __iconNode$3);
+const __iconNode$2 = [
   [
     "path",
     {
@@ -14752,8 +14758,8 @@ const __iconNode$1 = [
     }
   ]
 ];
-const Moon = createLucideIcon("moon", __iconNode$1);
-const __iconNode = [
+const Moon = createLucideIcon("moon", __iconNode$2);
+const __iconNode$1 = [
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
   ["path", { d: "M12 2v2", key: "tus03m" }],
   ["path", { d: "M12 20v2", key: "1lh1kg" }],
@@ -14764,7 +14770,12 @@ const __iconNode = [
   ["path", { d: "m6.34 17.66-1.41 1.41", key: "1m8zz5" }],
   ["path", { d: "m19.07 4.93-1.41 1.41", key: "1shlcs" }]
 ];
-const Sun = createLucideIcon("sun", __iconNode);
+const Sun = createLucideIcon("sun", __iconNode$1);
+const __iconNode = [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+];
+const X = createLucideIcon("x", __iconNode);
 function setRef(ref, value) {
   if (typeof ref === "function") {
     return ref(value);
@@ -23295,17 +23306,19 @@ function ModeToggle() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(DropdownMenuTrigger, { asChild: true, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
       Button,
       {
-        variant: "outline",
+        variant: "default",
         size: "icon",
-        className: "active:scale-100 active:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 bg-background",
+        onMouseUp: (e) => e.currentTarget.blur(),
+        "aria-label": "Toggle theme",
+        className: "\r\n      w-10 h-10 rounded-md border\r\n      !bg-background hover:!bg-muted\r\n      transition-all active:scale-95\r\n      focus-visible:ring-0 focus-visible:ring-offset-0\r\n      relative overflow-hidden\r\n    ",
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Sun, { className: "h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Moon, { className: "absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Sun, { className: "text-foreground h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Moon, { className: "text-foreground absolute inset-0 m-auto h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "sr-only", children: "Toggle theme" })
         ]
       }
     ) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(DropdownMenuContent, { align: "end", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(DropdownMenuContent, { align: "end", className: "w-28", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(DropdownMenuItem, { onClick: () => setTheme("light"), children: "Light" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DropdownMenuItem, { onClick: () => setTheme("dark"), children: "Dark" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(DropdownMenuItem, { onClick: () => setTheme("system"), children: "System" })
@@ -23314,49 +23327,139 @@ function ModeToggle() {
 }
 function Layout() {
   const [logoAnimating, setLogoAnimating] = reactExports.useState(false);
+  const [menuOpen, setMenuOpen] = reactExports.useState(false);
+  const menuButtonRef = reactExports.useRef(null);
+  const mobileMenuRef = reactExports.useRef(null);
   const handleLogoClick = () => {
     setLogoAnimating(true);
     window.setTimeout(() => setLogoAnimating(false), 900);
   };
+  reactExports.useEffect(() => {
+    function handleClickOutside(e) {
+      const target = e.target;
+      const clickedInsideButton = menuButtonRef.current?.contains(target);
+      const clickedInsidePanel = mobileMenuRef.current?.contains(target);
+      if (!clickedInsideButton && !clickedInsidePanel) {
+        setMenuOpen(false);
+      }
+    }
+    function handleEscapeKey(e) {
+      if (e.key === "Escape") setMenuOpen(false);
+    }
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleEscapeKey);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [menuOpen]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex flex-col", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("header", { className: " shadow w-full fixed h-15 z-20 border-b", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 py-4 flex items-center justify-between", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Link,
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "shadow w-full fixed z-50 border-b bg-background", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 py-4 flex items-center justify-between", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Link,
+            {
+              to: "/",
+              onClick: () => {
+                handleLogoClick();
+                setMenuOpen(false);
+              },
+              className: "flex items-center",
+              "aria-label": "Go to home",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Logo$1,
+                {
+                  size: 32,
+                  title: "FelooPy logo",
+                  primaryColor: "#76B900",
+                  secondaryColor: "#A6D259",
+                  className: "shrink-0",
+                  animate: logoAnimating
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "h1",
+            {
+              className: "\r\n    text-2xl font-bold \r\n    bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n    bg-[length:200%_auto] bg-clip-text text-transparent \r\n    animate-gradient\r\n  ",
+              children: "FelooPy"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "nav",
           {
-            to: "/",
-            onClick: handleLogoClick,
-            className: "flex items-center",
-            "aria-label": "Go to home",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Logo$1,
-              {
-                size: 32,
-                title: "FelooPy logo",
-                primaryColor: "#76B900",
-                secondaryColor: "#A6D259",
-                className: "shrink-0",
-                animate: logoAnimating
-              }
-            )
+            className: "hidden md:flex items-center space-x-4",
+            "aria-label": "Primary Navigation",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/", children: "Home" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/about", children: "About" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/contact", children: "Contact" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ModeToggle, {})
+            ]
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "h1",
-          {
-            className: "text-lg font-semibold bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n                         bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient",
-            children: "FelooPy"
-          }
-        )
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:hidden flex items-center gap-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ModeToggle, {}),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              ref: menuButtonRef,
+              onClick: () => setMenuOpen((s) => !s),
+              onMouseUp: (e) => e.currentTarget.blur(),
+              "aria-controls": "mobile-menu",
+              "aria-expanded": menuOpen,
+              "aria-label": menuOpen ? "Close menu" : "Open menu",
+              className: "p-2 rounded-md border border-input bg-background hover:bg-muted transition-transform active:scale-95 focus-visible:ring-0 focus-visible:ring-offset-0",
+              children: menuOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-6 w-6" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu$1, { className: "h-6 w-6" })
+            }
+          )
+        ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "space-x-4", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/", children: "Home" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/about", children: "About" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/contact", children: "Contact" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ModeToggle, {})
-      ] })
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "max-w-4xl mx-auto px-4 py-8 grow pt-20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          id: "mobile-menu",
+          ref: mobileMenuRef,
+          className: `md:hidden transition-max-h duration-200 ease-in-out overflow-hidden ${menuOpen ? "max-h-60" : "max-h-0"}`,
+          "aria-hidden": !menuOpen,
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "px-4 pb-4 border-t", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "flex flex-col gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Link,
+              {
+                to: "/",
+                onClick: () => setMenuOpen(false),
+                className: "block w-full text-left py-2 hover:underline",
+                children: "Home"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Link,
+              {
+                to: "/about",
+                onClick: () => setMenuOpen(false),
+                className: "block w-full text-left py-2 hover:underline",
+                children: "About"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Link,
+              {
+                to: "/contact",
+                onClick: () => setMenuOpen(false),
+                className: "block w-full text-left py-2 hover:underline",
+                children: "Contact"
+              }
+            )
+          ] }) })
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "max-w-4xl mx-auto px-4 py-8 grow pt-25", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "bg-background border-t py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 text-sm", children: [
       "© 2022-",
       (/* @__PURE__ */ new Date()).getFullYear(),
