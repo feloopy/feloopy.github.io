@@ -23478,6 +23478,8 @@ function Layout() {
   ] });
 }
 function Home() {
+  const PROMPT = "What FelooPy can do?";
+  const PROMPT_THINK_REPEATS = 3;
   const verbs = ["Redesign", "Replan", "Reschedule", "Recontrol"];
   const dataItems = [
     "sourcing",
@@ -23638,10 +23640,8 @@ function Home() {
     return a;
   };
   const ALL_COMBINATIONS = React.useMemo(() => shuffle(buildAllCombinations()), []);
-  const initialCombo = ALL_COMBINATIONS[0];
-  const initialFull = buildSentenceFromCombo(initialCombo);
   const [text, setText] = reactExports.useState("");
-  const [fullSentence, setFullSentence] = reactExports.useState(initialFull);
+  const [fullSentence, setFullSentence] = reactExports.useState(PROMPT);
   const [isFullDisplayed, setIsFullDisplayed] = reactExports.useState(false);
   const [isBlinking, setIsBlinking] = reactExports.useState(false);
   const charIndexRef = reactExports.useRef(0);
@@ -23658,19 +23658,6 @@ function Home() {
   const randBetween = (minMs, maxMs) => Math.floor(Math.random() * (maxMs - minMs + 1)) + minMs;
   reactExports.useEffect(() => {
     fullSentenceRef.current = fullSentence;
-    charIndexRef.current = 0;
-    isDeletingRef.current = false;
-    setText("");
-    setIsFullDisplayed(false);
-    setIsBlinking(true);
-    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
-      setIsBlinking(false);
-      startLoop();
-    }, randBetween(2e3, 5e3));
-    return () => {
-      if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
-    };
   }, [fullSentence]);
   const computeEndPause = (sentence) => {
     const wordCount = sentence.split(/\s+/).filter(Boolean).length;
@@ -23727,23 +23714,85 @@ function Home() {
     );
   }
   reactExports.useEffect(() => {
+    charIndexRef.current = 0;
+    isDeletingRef.current = false;
+    setText("");
+    setIsFullDisplayed(false);
+    setIsBlinking(false);
+    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
+    const promptLoop = () => {
+      const current = PROMPT;
+      const step = () => {
+        const nextIndex = Math.min(charIndexRef.current + 1, current.length);
+        charIndexRef.current = nextIndex;
+        setText(current.slice(0, nextIndex));
+        if (nextIndex === current.length) {
+          setIsFullDisplayed(true);
+          const flashes = [];
+          for (let i = 0; i < PROMPT_THINK_REPEATS; i++) {
+            flashes.push(() => setIsBlinking(true));
+            flashes.push(() => setIsBlinking(false));
+          }
+          let t = 0;
+          const scheduleFlashes = () => {
+            if (t >= flashes.length) {
+              setIsFullDisplayed(false);
+              comboIndexRef.current = 0;
+              setFullSentence(buildSentenceFromCombo(ALL_COMBINATIONS[0]));
+              charIndexRef.current = 0;
+              isDeletingRef.current = false;
+              setIsBlinking(false);
+              timeoutRef.current = setTimeout(() => startLoop(), START_PAUSE);
+              return;
+            }
+            flashes[t++]();
+            const delay = t % 2 === 1 ? 900 : 400;
+            timeoutRef.current = setTimeout(scheduleFlashes, delay);
+          };
+          timeoutRef.current = setTimeout(scheduleFlashes, 700);
+          return;
+        }
+        timeoutRef.current = setTimeout(step, TYPING_SPEED);
+      };
+      step();
+    };
+    promptLoop();
     return () => {
       if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
     };
   }, []);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center p-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: " font-semibold leading-tight text-2xl", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "span",
-      {
-        className: isFullDisplayed ? "typing done" : isBlinking ? "typing blinking" : "typing",
-        children: text
-      }
-    ),
-    isBlinking && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "blinker", "aria-hidden": "true" }),
-      "Thinking"
-    ] })
-  ] }) }) });
+  reactExports.useEffect(() => {
+    return () => {
+      if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-[180px] flex items-center justify-center p-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-semibold leading-tight text-3xl sm:text-4xl lg:text-5xl", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "span",
+        {
+          className: `inline-block align-middle mr-2 ${isFullDisplayed ? "opacity-100" : "opacity-90"}`,
+          "aria-live": "polite",
+          children: text
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: `w-2 h-2 rounded-full mr-2 transition-opacity duration-200 ${isBlinking ? "animate-blink" : "opacity-0"}`,
+            "aria-hidden": "true"
+          }
+        ),
+        isBlinking && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: "Thinking" })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 text-sm text-gray-500", children: "AI-powered optimization examples" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
+          @keyframes blinkKey { 0% { opacity: 1 } 50% { opacity: 0.15 } 100% { opacity: 1 } }
+          .animate-blink { animation: blinkKey 1s linear infinite; }
+        ` })
+  ] }) });
 }
 function About() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", {});
