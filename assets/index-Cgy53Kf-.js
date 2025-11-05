@@ -23478,26 +23478,272 @@ function Layout() {
   ] });
 }
 function Home() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl font-bold mb-4", children: "Home" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6", children: "Coming soon!" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { children: "Primary" })
-  ] });
+  const verbs = ["Redesign", "Replan", "Reschedule"];
+  const dataItems = [
+    "sourcing",
+    "information system",
+    "prices",
+    "inventory management",
+    "transportations",
+    "facilities"
+  ];
+  const phrases = [
+    "maximize productivity",
+    "minimize duration",
+    "maximize utility",
+    "minimize errors",
+    "maximize accuracy",
+    "minimize redundancy",
+    "maximize employees",
+    "minimize employees",
+    "maximize personalization",
+    "minimize expenditure",
+    "maximize closeness",
+    "minimize cost",
+    "maximize equity",
+    "minimize deviation",
+    "maximize return on investment",
+    "minimize consumption",
+    "maximize resilience",
+    "minimize earliness",
+    "maximize profit",
+    "minimize establishments",
+    "maximize sales",
+    "minimize inventory",
+    "maximize net present value",
+    "minimize stockouts",
+    "minimize tardiness",
+    "maximize speed",
+    "minimize backlog",
+    "maximize viability",
+    "minimize downtime",
+    "minimize idleness",
+    "minimize waste",
+    "maximize satisfaction",
+    "minimize risks",
+    "maximize greenness",
+    "minimize workload",
+    "maximize performance",
+    "maximize sustainability",
+    "minimize transportation",
+    "maximize happiness",
+    "minimize returns",
+    "maximize turnover",
+    "minimize vulnerability",
+    "maximize impressions",
+    "minimize tardy jobs",
+    "maximize robustness",
+    "minimize shortage",
+    "minimize depreciation",
+    "maximize outputs",
+    "minimize dependencies",
+    "maximize exports",
+    "minimize resources",
+    "maximize reliability",
+    "minimize fatigue",
+    "maximize job creation",
+    "minimize fleet size",
+    "maximize social responsibility",
+    "minimize inputs",
+    "maximize efficiency",
+    "minimize loss",
+    "maximize effectiveness",
+    "minimize imports",
+    "maximize quality",
+    "minimize cycle time",
+    "maximize market share",
+    "minimize makespan",
+    "minimize perishability",
+    "minimize outsourcing",
+    "maximize yield",
+    "maximize coverage",
+    "minimize maintenance requirements",
+    "maximize savings",
+    "minimize requirements",
+    "minimize lead time",
+    "maximize uptime",
+    "minimize overtime"
+  ];
+  const optimizeOptions = phrases.map((p) => {
+    const parts = p.split(" ");
+    const action = parts.shift() ?? "";
+    const metric = parts.join(" ");
+    return { action, metric };
+  });
+  const aspects = [""];
+  const scopes = ["industry", "system", "supply chain"];
+  const naturalizer = (data) => {
+    const mapping = {
+      sourcing: "sourcing",
+      "information system": "information system",
+      prices: "prices",
+      "inventory management": "inventory",
+      transportations: "transportation",
+      facilities: "facilities"
+    };
+    return mapping[data] ?? data.toLowerCase();
+  };
+  const shortMetric = (metric) => {
+    if (!metric) return "value";
+    const m = metric.toLowerCase().trim();
+    const shortMap = {
+      "net present value": "npv",
+      "return on investment": "roi",
+      "maintenance requirements": "maintenance",
+      "job creation": "jobs",
+      "market share": "market share",
+      "tardy jobs": "tardy jobs",
+      "lead time": "lead time",
+      "cycle time": "cycle time",
+      stockouts: "stockouts"
+    };
+    if (shortMap[m]) return shortMap[m];
+    const words = m.split(/\s+/);
+    if (words.length <= 3) return words.join(" ");
+    return words.slice(0, 3).join(" ");
+  };
+  const buildSentenceFromCombo = (combo) => {
+    if (!combo) return "";
+    const naturalData = naturalizer(combo.data);
+    const metricShort = shortMetric(combo.opt.metric);
+    let sentence = `${combo.verb} your ${naturalData} to ${combo.opt.action} ${metricShort} for your ${combo.scope}.`;
+    if (sentence.length > 80) {
+      const firstWord = metricShort.split(/\s+/)[0] || "value";
+      sentence = `${combo.verb} your ${naturalData} to ${combo.opt.action} ${firstWord} for your ${combo.scope}.`;
+    }
+    return sentence.replace(/\s+/g, " ").trim();
+  };
+  const buildAllCombinations = () => {
+    const combos = [];
+    if (verbs.length === 0 || dataItems.length === 0 || optimizeOptions.length === 0 || scopes.length === 0)
+      return combos;
+    for (const v of verbs) {
+      for (const d of dataItems) {
+        for (const o of optimizeOptions) {
+          for (const a of aspects) {
+            for (const s of scopes) {
+              combos.push({ verb: v, data: d, opt: o, aspect: a, scope: s });
+            }
+          }
+        }
+      }
+    }
+    return combos;
+  };
+  const shuffle = (arr) => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+  const ALL_COMBINATIONS = React.useMemo(
+    () => shuffle(buildAllCombinations()),
+    []
+  );
+  const SUFFIX = ".";
+  const initialCombo = ALL_COMBINATIONS[0];
+  const initialFull = buildSentenceFromCombo(initialCombo);
+  const [text, setText] = reactExports.useState("");
+  const [fullSentence, setFullSentence] = reactExports.useState(initialFull);
+  const [isFullDisplayed, setIsFullDisplayed] = reactExports.useState(false);
+  const charIndexRef = reactExports.useRef(0);
+  const isDeletingRef = reactExports.useRef(false);
+  const comboIndexRef = reactExports.useRef(0);
+  const fullSentenceRef = reactExports.useRef(fullSentence);
+  const timeoutRef = reactExports.useRef(null);
+  const TYPING_SPEED = 28;
+  const DELETING_SPEED = 18;
+  const START_PAUSE = 220;
+  const PER_WORD_END_MS = 300;
+  const MIN_END_PAUSE = 1800;
+  const MAX_END_PAUSE = 3e3;
+  reactExports.useEffect(() => {
+    fullSentenceRef.current = fullSentence;
+    charIndexRef.current = 0;
+    isDeletingRef.current = false;
+    setText("");
+    setIsFullDisplayed(false);
+    startLoop();
+    return () => {
+      if (timeoutRef.current !== null) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
+  }, [fullSentence]);
+  const computeEndPause = (sentence) => {
+    const wordCount = sentence.split(/\s+/).filter(Boolean).length;
+    const calc = Math.round(wordCount * PER_WORD_END_MS);
+    return Math.min(MAX_END_PAUSE, Math.max(MIN_END_PAUSE, calc));
+  };
+  const advanceToNextCombo = () => {
+    const len = ALL_COMBINATIONS.length || 1;
+    comboIndexRef.current = (comboIndexRef.current + 1) % len;
+    const next = ALL_COMBINATIONS[comboIndexRef.current];
+    setFullSentence(buildSentenceFromCombo(next));
+  };
+  function startLoop() {
+    if (timeoutRef.current !== null) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    const loopTick = () => {
+      const current = fullSentenceRef.current;
+      if (!isDeletingRef.current) {
+        const nextIndex = Math.min(charIndexRef.current + 1, current.length);
+        charIndexRef.current = nextIndex;
+        setText(current.slice(0, nextIndex));
+        if (nextIndex === current.length) {
+          setIsFullDisplayed(true);
+          const endPause = computeEndPause(current);
+          timeoutRef.current = setTimeout(() => {
+            setIsFullDisplayed(false);
+            isDeletingRef.current = true;
+            loopTick();
+          }, endPause);
+          return;
+        }
+        timeoutRef.current = setTimeout(loopTick, TYPING_SPEED);
+      } else {
+        if (charIndexRef.current > 0) {
+          charIndexRef.current = Math.max(charIndexRef.current - 1, 0);
+          setText(current.slice(0, charIndexRef.current));
+          const aboutToDeleteChar = current.charAt(charIndexRef.current);
+          const deletePause = aboutToDeleteChar === " " ? Math.max(8, DELETING_SPEED) : DELETING_SPEED;
+          timeoutRef.current = setTimeout(loopTick, deletePause);
+          return;
+        }
+        timeoutRef.current = setTimeout(() => {
+          isDeletingRef.current = false;
+          advanceToNextCombo();
+        }, START_PAUSE);
+      }
+    };
+    timeoutRef.current = setTimeout(
+      loopTick,
+      isDeletingRef.current ? DELETING_SPEED : TYPING_SPEED
+    );
+  }
+  reactExports.useEffect(() => {
+    return () => {
+      if (timeoutRef.current !== null) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen flex items-center justify-center p-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-3xl text-left", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "text-3xl sm:text-2xl md:text-5xl font-semibold leading-tight", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: isFullDisplayed ? "typing done" : "typing", children: text }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { "aria-hidden": "true", children: SUFFIX })
+  ] }) }) });
 }
 function About() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl font-bold mb-4", children: "About" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "All rights reserved." })
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", {});
 }
 function Contact() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl font-bold mb-4", children: "Contact" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-      "Email: ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { className: "text-blue-600", href: "mailto:hello@example.com", children: "feloopy@gmail.com" })
-    ] })
-  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", {});
 }
 function App() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider, { defaultTheme: "dark", storageKey: "vite-ui-theme", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Routes, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Route, { element: /* @__PURE__ */ jsxRuntimeExports.jsx(Layout, {}), children: [

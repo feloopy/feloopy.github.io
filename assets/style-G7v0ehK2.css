@@ -1,3 +1,23 @@
+.typing{
+  white-space: pre-wrap;
+  word-break: break-word;
+  display: inline;
+  line-height: 1.05;
+}
+.typing::after{
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  margin-left: 0.45em;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: -0.05em;
+  transition: background-color 160ms ease;
+}
+.typing.done::after{
+  background: #76B900;
+}
 /*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
@@ -21,6 +41,7 @@
       --tw-gradient-from-position: 0%;
       --tw-gradient-via-position: 50%;
       --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-shadow: 0 0 #0000;
@@ -81,6 +102,7 @@
     --color-blue-600: oklch(54.6% .245 262.881);
     --color-white: #fff;
     --spacing: .25rem;
+    --container-3xl: 48rem;
     --container-4xl: 56rem;
     --text-xs: .75rem;
     --text-xs--line-height: calc(1 / .75);
@@ -92,10 +114,13 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --tracking-widest: .1em;
+    --leading-tight: 1.25;
     --radius-sm: calc(var(--radius)  - 4px);
     --radius-md: calc(var(--radius)  - 2px);
     --radius-lg: var(--radius);
@@ -604,6 +629,10 @@
     width: 100%;
   }
 
+  .max-w-3xl {
+    max-width: var(--container-3xl);
+  }
+
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
@@ -805,6 +834,10 @@
     padding: calc(var(--spacing) * 2);
   }
 
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -884,6 +917,11 @@
   .text-xs {
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
   }
 
   .font-bold {
@@ -1258,6 +1296,13 @@
     color: var(--destructive);
   }
 
+  @media (min-width: 40rem) {
+    .sm\:text-2xl {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+
   @media (min-width: 48rem) {
     .md\:flex {
       display: flex;
@@ -1265,6 +1310,11 @@
 
     .md\:hidden {
       display: none;
+    }
+
+    .md\:text-5xl {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
 
@@ -1662,6 +1712,11 @@
   syntax: "<length-percentage>";
   inherits: false;
   initial-value: 100%;
+}
+
+@property --tw-leading {
+  syntax: "*";
+  inherits: false
 }
 
 @property --tw-font-weight {
