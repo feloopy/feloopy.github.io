@@ -1,14 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feasible Logical Optimal - FelooPy </title>
-    <script type="module" crossorigin src="/assets/index-kwcf9Mc4.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/style-CZ07zjYn.css">
+    <meta name="google-site-verification" content="bVUxQ-dwS2OJIe_gchcWu-NqHJD3oR9Sl_KMNnR5-vQ" />
+    <title>Feasible Logical Optimal - FelooPy</title>
+    <script type="module" crossorigin src="/assets/index-VvgFN1Ss.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/style-CLdv9JuD.css">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Disable common inspect shortcuts and right-click menu
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+      document.addEventListener("keydown", (e) => {
+        if (
+          (e.ctrlKey &&
+            e.shiftKey &&
+            ["I", "J", "C"].includes(e.key.toUpperCase())) ||
+          (e.ctrlKey && e.key.toUpperCase() === "U") // Ctrl+U = View Source
+        ) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      });
+    </script>
+
+    <script>
+      setInterval(() => {
+        const threshold = 200;
+        if (window.outerHeight - window.innerHeight > threshold) {
+          document.body.innerHTML = "";
+          alert("Developer tools are not allowed on this site.");
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
