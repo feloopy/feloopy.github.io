@@ -23481,7 +23481,8 @@ function Home() {
   const verbs = ["Redesign", "Replan", "Reschedule"];
   const dataItems = [
     "sourcing",
-    "information system",
+    "routing",
+    "production",
     "prices",
     "inventory management",
     "transportations",
@@ -23642,7 +23643,6 @@ function Home() {
     () => shuffle(buildAllCombinations()),
     []
   );
-  const SUFFIX = ".";
   const initialCombo = ALL_COMBINATIONS[0];
   const initialFull = buildSentenceFromCombo(initialCombo);
   const [text, setText] = reactExports.useState("");
@@ -23734,10 +23734,7 @@ function Home() {
       }
     };
   }, []);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen flex items-center justify-center p-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-3xl text-left", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "text-3xl sm:text-2xl md:text-5xl font-semibold leading-tight", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: isFullDisplayed ? "typing done" : "typing", children: text }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { "aria-hidden": "true", children: SUFFIX })
-  ] }) }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-screen flex items-center justify-center p-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-3xl text-left", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl sm:text-xl md:text-4xl lg:text-5xl font-semibold leading-tight heading-responsive", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: isFullDisplayed ? "typing done" : "typing", children: text }) }) }) });
 }
 function About() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", {});
