@@ -52,8 +52,6 @@
       --tw-drop-shadow-color: initial;
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
-      --tw-duration: initial;
-      --tw-ease: initial;
       --tw-animation-delay: 0s;
       --tw-animation-direction: normal;
       --tw-animation-duration: initial;
@@ -79,6 +77,7 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-green-600: oklch(62.7% .194 149.214);
     --color-blue-600: oklch(54.6% .245 262.881);
     --color-white: #fff;
     --spacing: .25rem;
@@ -98,11 +97,11 @@
     --font-weight-bold: 700;
     --tracking-widest: .1em;
     --leading-tight: 1.25;
+    --leading-normal: 1.5;
     --radius-sm: calc(var(--radius)  - 4px);
     --radius-md: calc(var(--radius)  - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius)  + 4px);
-    --ease-in-out: cubic-bezier(.4, 0, .2, 1);
     --animate-spin: spin 1s linear infinite;
     --default-transition-duration: .15s;
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
@@ -416,10 +415,6 @@
     visibility: collapse;
   }
 
-  .visible {
-    visibility: visible;
-  }
-
   .sr-only {
     clip-path: inset(50%);
     white-space: nowrap;
@@ -472,40 +467,6 @@
     z-index: 50;
   }
 
-  .container {
-    width: 100%;
-  }
-
-  @media (min-width: 40rem) {
-    .container {
-      max-width: 40rem;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .container {
-      max-width: 48rem;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .container {
-      max-width: 64rem;
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .container {
-      max-width: 80rem;
-    }
-  }
-
-  @media (min-width: 96rem) {
-    .container {
-      max-width: 96rem;
-    }
-  }
-
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
@@ -526,8 +487,8 @@
     margin-block: calc(var(--spacing) * 1);
   }
 
-  .mr-0 {
-    margin-right: calc(var(--spacing) * 0);
+  .mt-\[-2px\] {
+    margin-top: -2px;
   }
 
   .mb-4 {
@@ -632,14 +593,6 @@
     max-height: var(--radix-dropdown-menu-content-available-height);
   }
 
-  .max-h-0 {
-    max-height: calc(var(--spacing) * 0);
-  }
-
-  .max-h-60 {
-    max-height: calc(var(--spacing) * 60);
-  }
-
   .min-h-screen {
     min-height: 100vh;
   }
@@ -722,10 +675,6 @@
     flex-direction: column;
   }
 
-  .items-baseline {
-    align-items: baseline;
-  }
-
   .items-center {
     align-items: center;
   }
@@ -752,6 +701,10 @@
 
   .gap-3 {
     gap: calc(var(--spacing) * 3);
+  }
+
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
   }
 
   :where(.space-x-4 > :not(:last-child)) {
@@ -1105,22 +1058,6 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
 
-  .transition-transform {
-    transition-property: transform, translate, scale, rotate;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-
-  .duration-200 {
-    --tw-duration: .2s;
-    transition-duration: .2s;
-  }
-
-  .ease-in-out {
-    --tw-ease: var(--ease-in-out);
-    transition-timing-function: var(--ease-in-out);
-  }
-
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
@@ -1150,10 +1087,6 @@
       }
     }
 
-    .hover\:bg-muted:hover {
-      background-color: var(--muted);
-    }
-
     .hover\:bg-primary\/90:hover {
       background-color: var(--primary);
     }
@@ -1176,6 +1109,10 @@
 
     .hover\:text-accent-foreground:hover {
       color: var(--accent-foreground);
+    }
+
+    .hover\:text-green-600:hover {
+      color: var(--color-green-600);
     }
 
     .hover\:underline:hover {
@@ -1361,12 +1298,37 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:mt-0 {
+      margin-top: calc(var(--spacing) * 0);
+    }
+
+    .md\:ml-2 {
+      margin-left: calc(var(--spacing) * 2);
+    }
+
     .md\:flex {
       display: flex;
     }
 
     .md\:hidden {
       display: none;
+    }
+
+    .md\:inline {
+      display: inline;
+    }
+
+    .md\:flex-row {
+      flex-direction: row;
+    }
+
+    .md\:items-baseline {
+      align-items: baseline;
+    }
+
+    .md\:leading-normal {
+      --tw-leading: var(--leading-normal);
+      line-height: var(--leading-normal);
     }
   }
 
@@ -1928,16 +1890,6 @@
 }
 
 @property --tw-drop-shadow-size {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-duration {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-ease {
   syntax: "*";
   inherits: false
 }

@@ -14743,6 +14743,17 @@ const createLucideIcon = (iconName, iconNode) => {
   Component.displayName = toPascalCase(iconName);
   return Component;
 };
+const __iconNode$4 = [
+  [
+    "path",
+    {
+      d: "M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4",
+      key: "tonef"
+    }
+  ],
+  ["path", { d: "M9 18c-4.51 2-5-2-7-2", key: "9comsn" }]
+];
+const Github = createLucideIcon("github", __iconNode$4);
 const __iconNode$3 = [
   ["path", { d: "M4 5h16", key: "1tepv9" }],
   ["path", { d: "M4 12h16", key: "1lakjw" }],
@@ -23337,9 +23348,7 @@ function Layout() {
   reactExports.useEffect(() => {
     function handleClickOutside(e) {
       const target = e.target;
-      const clickedInsideButton = menuButtonRef.current?.contains(target);
-      const clickedInsidePanel = mobileMenuRef.current?.contains(target);
-      if (!clickedInsideButton && !clickedInsidePanel) {
+      if (!menuButtonRef.current?.contains(target) && !mobileMenuRef.current?.contains(target)) {
         setMenuOpen(false);
       }
     }
@@ -23357,174 +23366,83 @@ function Layout() {
   }, [menuOpen]);
   const GITHUB_REPO = "feloopy/feloopy";
   const GITHUB_URL = `https://github.com/${GITHUB_REPO}`;
-  const [stars, setStars] = reactExports.useState(32);
+  const PEPY_URL = "https://pepy.tech/project/feloopy";
+  const [stars, setStars] = reactExports.useState(null);
   const [starsLoading, setStarsLoading] = reactExports.useState(true);
   reactExports.useEffect(() => {
     let mounted = true;
-    fetch(`https://api.github.com/repos/${GITHUB_REPO}`).then((res) => {
-      if (!res.ok) throw new Error("GitHub API error");
-      return res.json();
-    }).then((json) => {
-      if (!mounted) return;
-      if (typeof json.stargazers_count === "number") {
-        setStars(json.stargazers_count);
-      }
-    }).catch(() => {
-    }).finally(() => {
-      if (mounted) setStarsLoading(false);
-    });
+    fetch(`https://api.github.com/repos/${GITHUB_REPO}`).then((r2) => r2.json()).then((data) => {
+      if (mounted && data.stargazers_count)
+        setStars(data.stargazers_count);
+    }).finally(() => mounted && setStarsLoading(false));
     return () => {
       mounted = false;
     };
   }, []);
-  const formatStarLabel = (n) => {
-    if (n === null) return "";
-    if (n >= 1e3) return `${Math.round(n / 100) / 10}k`;
-    return String(n);
-  };
-  const PEPY_PROJECT = "feloopy";
+  const formatStarLabel = (n) => n ? n >= 1e3 ? `${Math.round(n / 100) / 10}k` : `${n}` : "";
   const [downloadsLabel, setDownloadsLabel] = reactExports.useState(null);
   const [downloadsLoading, setDownloadsLoading] = reactExports.useState(true);
-  const [downloadsUnavailable, setDownloadsUnavailable] = reactExports.useState(false);
   reactExports.useEffect(() => {
     let mounted = true;
-    async function fetchBadgeAndParse() {
+    async function fetchDownloads() {
       try {
-        const badgeUrl = `https://img.shields.io/pepy/dt/${encodeURIComponent(
-          PEPY_PROJECT
-        )}.svg`;
-        const res = await fetch(badgeUrl, {
-          method: "GET",
-          headers: {
-            Accept: "image/svg+xml, */*"
-          }
-          // no credentials
-        });
-        if (!res.ok) {
-          console.warn(`Shields badge fetch returned ${res.status} ${res.statusText} for ${badgeUrl}`);
-          if (mounted) setDownloadsUnavailable(true);
-          return;
-        }
-        const svgText = await res.text();
-        let label = null;
-        try {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(svgText, "image/svg+xml");
-          const textEls = Array.from(doc.querySelectorAll("text"));
-          if (textEls.length > 0) {
-            for (let i = textEls.length - 1; i >= 0; i--) {
-              const t = textEls[i].textContent?.trim();
-              if (t) {
-                const numMatch = t.match(/([0-9][0-9,\.]*\s*[kKmM]?)/);
-                if (numMatch) {
-                  label = numMatch[1].replace(/\s+/g, "");
-                  break;
-                }
-                label = t;
-                break;
-              }
-            }
-          }
-        } catch (err) {
-          const rawMatch = svgText.match(/>([0-9][0-9,\.]*\s*[kKmM]?)</);
-          if (rawMatch) label = rawMatch[1].replace(/\s+/g, "");
-        }
-        if (mounted) {
-          if (label) {
-            setDownloadsLabel(label);
-            setDownloadsUnavailable(false);
-          } else {
-            setDownloadsUnavailable(true);
-          }
-        }
-      } catch (err) {
-        console.error("Error fetching/parsing shields.io pepy badge:", err);
-        if (mounted) setDownloadsUnavailable(true);
-      } finally {
-        if (mounted) setDownloadsLoading(false);
+        const res = await fetch("https://img.shields.io/pepy/dt/feloopy.svg");
+        const svg = await res.text();
+        const match = svg.match(/>([0-9.,]+\s*[kKmM]?)</);
+        if (mounted && match) setDownloadsLabel(match[1].replace(/\s+/g, ""));
+      } catch {
       }
+      if (mounted) setDownloadsLoading(false);
     }
-    fetchBadgeAndParse();
+    fetchDownloads();
     return () => {
       mounted = false;
     };
-  }, [PEPY_PROJECT]);
-  function GitHubButton({ compact = false }) {
-    const openRepo = () => {
-      window.open(GITHUB_URL, "_blank", "noopener,noreferrer");
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative inline-flex items-center", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "span",
-        {
-          "aria-hidden": true,
-          className: `absolute -top-2 right-0 flex items-center justify-center rounded-full px-1.5 py-0.5 text-xs font-medium leading-none pointer-events-none`,
-          style: {
-            backgroundColor: "rgba(0,0,0,0.85)",
-            color: "#fff",
-            transform: "translateX(28%)",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.2)"
-          },
-          children: starsLoading ? "…" : formatStarLabel(stars)
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        Button,
-        {
-          onClick: openRepo,
-          title: "Support us by starring the repository!",
-          "aria-label": "Open FelooPy on GitHub.",
-          variant: "outline",
-          size: compact ? "sm" : "sm",
-          className: "inline-flex items-center gap-2 h-10 w-10 bg-background",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "svg",
-            {
-              width: "16",
-              height: "16",
-              viewBox: "0 0 16 16",
-              fill: "currentColor",
-              "aria-hidden": "true",
-              className: "mr-0",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2.01-.27c.68 0 1.36.09 2.01.27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z" })
-            }
-          )
-        }
-      )
-    ] });
-  }
+  }, []);
+  const GitHubButton = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative inline-flex items-center", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        "aria-hidden": true,
+        className: "absolute -top-2 right-0 flex items-center justify-center rounded-full px-1.5 py-0.5 text-xs font-medium leading-none pointer-events-none",
+        style: {
+          backgroundColor: "rgba(0,0,0,0.85)",
+          color: "#fff",
+          transform: "translateX(28%)",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.2)"
+        },
+        children: starsLoading ? "…" : formatStarLabel(stars)
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Button,
+      {
+        onClick: () => window.open(GITHUB_URL, "_blank"),
+        variant: "outline",
+        size: "sm",
+        className: "inline-flex items-center gap-2 h-10 w-10 bg-background",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { size: 16 })
+      }
+    )
+  ] });
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex flex-col", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "shadow w-full fixed z-50 border-b bg-background", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 py-4 flex items-center justify-between", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Link,
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", onClick: handleLogoClick, className: "flex items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Logo$1,
             {
-              to: "/",
-              onClick: () => {
-                handleLogoClick();
-                setMenuOpen(false);
-              },
-              className: "flex items-center",
-              "aria-label": "Go to home",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Logo$1,
-                {
-                  size: 32,
-                  title: "FelooPy logo",
-                  primaryColor: "#76B900",
-                  secondaryColor: "#A6D259",
-                  className: "shrink-0",
-                  animate: logoAnimating
-                }
-              )
+              size: 32,
+              primaryColor: "#76B900",
+              secondaryColor: "#A6D259",
+              animate: logoAnimating
             }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-baseline gap-3", children: [
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row md:items-baseline leading-tight md:leading-normal", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               "h1",
               {
-                className: "\r\n                  text-2xl font-bold \r\n                  bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n                  bg-[length:800%_auto] bg-clip-text text-transparent \r\n                  animate-gradient\r\n                ",
+                className: "text-2xl font-bold bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n                  bg-[length:800%_auto] bg-clip-text text-transparent animate-gradient",
                 children: "FelooPy"
               }
             ),
@@ -23532,109 +23450,85 @@ function Layout() {
               "span",
               {
                 "aria-hidden": true,
-                className: "text-sm font-medium text-muted-foreground",
-                title: downloadsLoading ? "Loading downloads…" : downloadsUnavailable ? "Downloads unavailable" : `Join thousands of users > FelooPy has already been downloaded ${downloadsLabel ?? "0"} times!`,
-                children: downloadsLoading ? "…" : downloadsUnavailable ? (
-                  // friendly fallback if shields/pepy blocked
-                  "• N/A downloads"
-                ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                  "• ",
-                  downloadsLabel,
-                  " downloads!"
+                className: "text-sm font-medium text-muted-foreground md:ml-2 mt-[-2px] md:mt-0",
+                children: downloadsLoading ? "…" : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden md:inline", children: "• " }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "a",
+                    {
+                      href: PEPY_URL,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      className: " hover:text-green-600",
+                      children: [
+                        downloadsLabel ?? "0",
+                        " downloads!"
+                      ]
+                    }
+                  )
                 ] })
               }
             )
           ] })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "nav",
-          {
-            className: "hidden md:flex items-center space-x-4",
-            "aria-label": "Primary Navigation",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/", children: "Home" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/about", children: "About" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/contact", children: "Contact" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(ModeToggle, {}),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(GitHubButton, {})
-              ] })
-            ]
-          }
-        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex items-center gap-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "flex gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "hover:text-green-600", children: "Home" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/about", className: "hover:text-green-600", children: "About" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", className: "hover:text-green-600", children: "Contact" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ModeToggle, {}),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GitHubButton, {})
+        ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:hidden flex items-center gap-2", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(ModeToggle, {}),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "inline-block", children: /* @__PURE__ */ jsxRuntimeExports.jsx(GitHubButton, { compact: true }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GitHubButton, {}),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "button",
             {
               ref: menuButtonRef,
-              onClick: () => setMenuOpen((s) => !s),
-              onMouseUp: (e) => e.currentTarget.blur(),
-              "aria-controls": "mobile-menu",
-              "aria-expanded": menuOpen,
-              "aria-label": menuOpen ? "Close menu" : "Open menu",
-              className: "p-2 rounded-md border border-input bg-background hover:bg-muted transition-transform active:scale-95 focus-visible:ring-0 focus-visible:ring-offset-0",
+              onClick: () => setMenuOpen(!menuOpen),
+              className: "p-2 rounded-md border border-input bg-background",
               children: menuOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-6 w-6" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu$1, { className: "h-6 w-6" })
             }
           )
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          id: "mobile-menu",
-          ref: mobileMenuRef,
-          className: `md:hidden transition-max-h duration-200 ease-in-out overflow-hidden ${menuOpen ? "max-h-60" : "max-h-0"}`,
-          "aria-hidden": !menuOpen,
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "px-4 pb-4 border-t", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "flex flex-col gap-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Link,
-              {
-                to: "/",
-                onClick: () => setMenuOpen(false),
-                className: "block w-full text-left py-2 hover:underline",
-                children: "Home"
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Link,
-              {
-                to: "/about",
-                onClick: () => setMenuOpen(false),
-                className: "block w-full text-left py-2 hover:underline",
-                children: "About"
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Link,
-              {
-                to: "/contact",
-                onClick: () => setMenuOpen(false),
-                className: "block w-full text-left py-2 hover:underline",
-                children: "Contact"
-              }
-            )
-          ] }) })
-        }
-      )
+      menuOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: mobileMenuRef, className: "md:hidden px-4 pb-4 border-t flex flex-col gap-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", onClick: () => setMenuOpen(false), className: "block py-2", children: "Home" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/about", onClick: () => setMenuOpen(false), className: "block py-2", children: "About" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/contact", onClick: () => setMenuOpen(false), className: "block py-2", children: "Contact" }),
+        !downloadsLoading && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "a",
+          {
+            href: PEPY_URL,
+            target: "_blank",
+            rel: "noopener noreferrer",
+            className: "block py-2 hover:text-green-600",
+            children: [
+              downloadsLabel ?? "0",
+              " downloads!"
+            ]
+          }
+        )
+      ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "grow pt-20 text-left", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "bg-background border-t py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 text-sm", children: [
-      "© 2022-",
+      "© 2022–",
       (/* @__PURE__ */ new Date()).getFullYear(),
       " FelooPy | All Rights Reserved."
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
-          @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-          .animate-gradient {
-            animation: gradient 3s ease infinite;
-          }
-        ` })
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+          animation: gradient 3s ease infinite;
+        }
+      ` })
   ] });
 }
 function Home() {
