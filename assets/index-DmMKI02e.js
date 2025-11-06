@@ -23385,7 +23385,7 @@ function Layout() {
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "h1",
             {
-              className: "\r\n    text-2xl font-bold \r\n    bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n    bg-[length:800%_auto] bg-clip-text text-transparent \r\n    animate-gradient\r\n  ",
+              className: "\r\n                text-2xl font-bold \r\n                bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n                bg-[length:800%_auto] bg-clip-text text-transparent \r\n                animate-gradient\r\n              ",
               children: "FelooPy"
             }
           )
@@ -23459,7 +23459,7 @@ function Layout() {
         }
       )
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "max-w-4xl mx-auto px-4 py-8 grow pt-25", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "grow pt-20 px-4 text-left", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "bg-background border-t py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 text-sm", children: [
       "© 2022-",
       (/* @__PURE__ */ new Date()).getFullYear(),
@@ -23637,7 +23637,29 @@ function Home() {
     }
     return a;
   };
-  const ALL_COMBINATIONS = React.useMemo(() => shuffle(buildAllCombinations()), []);
+  const ALL_COMBINATIONS = React.useMemo(
+    () => shuffle(buildAllCombinations()),
+    []
+  );
+  const USER_SENTENCES = [
+    "Elevate your mathematical modeling.",
+    "Focus on results, not on the tool. FelooPy handles the rest.",
+    "Eliminate the need to prompt LLMs to implement real-world models. FelooPy does it natively.",
+    "Enable vendor-neutral coding through its open, flexible ecosystem.",
+    "Accelerate model-to-deployment workflows with its unified environment.",
+    "Produce reproducible, auditable models for teams using its transparent framework. ",
+    "Teams can collaborate on the same project using different solvers or algorithms!",
+    "If you’re looking for a Python tool for optimization, it is the all-in-one solution that’s easiest to learn. ✅",
+    "Solve your real-world models at lightning speed, on demand. 😉"
+  ];
+  const GENERATED_SENTENCES = React.useMemo(
+    () => ALL_COMBINATIONS.map((c) => buildSentenceFromCombo(c)).filter(Boolean),
+    [ALL_COMBINATIONS]
+  );
+  const ALL_RESPONSES = React.useMemo(
+    () => shuffle([...GENERATED_SENTENCES, ...USER_SENTENCES]),
+    [GENERATED_SENTENCES, USER_SENTENCES]
+  );
   const QUESTION = "How does FelooPy help me?";
   const [questionTypedText, setQuestionTypedText] = reactExports.useState("");
   const questionCharRef = reactExports.useRef(0);
@@ -23646,7 +23668,7 @@ function Home() {
   const [isAnswerTyping, setIsAnswerTyping] = reactExports.useState(false);
   const [isAnswerDone, setIsAnswerDone] = reactExports.useState(false);
   const [isThinking, setIsThinking] = reactExports.useState(false);
-  const comboIndexRef = reactExports.useRef(0);
+  const responseIndexRef = reactExports.useRef(0);
   const timeoutRef = reactExports.useRef(null);
   const TYPING_SPEED = 28;
   const PER_WORD_END_MS = 300;
@@ -23687,12 +23709,11 @@ function Home() {
       setIsThinking(true);
       timeoutRef.current = setTimeout(() => {
         setIsThinking(false);
-        const idx = comboIndexRef.current % ALL_COMBINATIONS.length;
-        const nextCombo = ALL_COMBINATIONS[idx];
-        const full = buildSentenceFromCombo(nextCombo);
+        const idx = responseIndexRef.current % ALL_RESPONSES.length;
+        const full = ALL_RESPONSES[idx] ?? "";
         typeAnswer(full, () => {
           setIsAnswerDone(true);
-          comboIndexRef.current = (comboIndexRef.current + 1) % ALL_COMBINATIONS.length;
+          responseIndexRef.current = (responseIndexRef.current + 1) % ALL_RESPONSES.length;
           timeoutRef.current = setTimeout(runNext, randBetween(900, 1600));
         });
       }, randBetween(MIN_END_PAUSE, MAX_END_PAUSE));
@@ -23721,20 +23742,88 @@ function Home() {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "div",
-    {
-      style: {
-        width: "100vw",
-        maxWidth: "100vw",
-        marginLeft: 0,
-        paddingLeft: 0,
-        left: 0,
-        position: "relative",
-        textAlign: "left"
-      },
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
+  const splitToRestAndLastWord = (text) => {
+    if (!text) return { rest: "", last: "" };
+    const lastSpace = text.lastIndexOf(" ");
+    if (lastSpace === -1) {
+      return { rest: "", last: text };
+    }
+    return {
+      rest: text.slice(0, lastSpace + 1),
+      last: text.slice(lastSpace + 1)
+    };
+  };
+  const Blinker = ({ state }) => {
+    const commonStyle = {
+      display: "inline-block",
+      width: "0.55em",
+      height: "0.55em",
+      borderRadius: "50%",
+      verticalAlign: "middle",
+      marginLeft: "0.35ch"
+    };
+    if (state === "typing") {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "span",
+        {
+          "aria-hidden": true,
+          className: "inline-flex items-center justify-center",
+          style: { marginLeft: "0.35ch" },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              style: {
+                ...commonStyle,
+                backgroundColor: "#444",
+                transform: "scale(0.92)"
+              }
+            }
+          )
+        }
+      );
+    }
+    if (state === "done") {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "span",
+        {
+          "aria-hidden": true,
+          className: "inline-flex items-center justify-center",
+          style: { marginLeft: "0.35ch" },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              style: {
+                ...commonStyle,
+                backgroundColor: "#76b900",
+                boxShadow: "0 0 6px rgba(118,185,0,0.9)"
+              }
+            }
+          )
+        }
+      );
+    }
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        "aria-hidden": true,
+        className: "inline-flex items-center justify-center",
+        style: { marginLeft: "0.35ch" },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            style: {
+              ...commonStyle,
+              backgroundColor: "#76b900"
+            }
+          }
+        )
+      }
+    );
+  };
+  const questionParts = splitToRestAndLastWord(questionTypedText);
+  const answerParts = splitToRestAndLastWord(currentAnswerText);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-left", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
         @keyframes greenGlow {
           0% { transform: scale(0.92); box-shadow: 0 0 2px rgba(118,185,0,0.25); }
           50% { transform: scale(1.12); box-shadow: 0 0 18px rgba(124,225,45,0.95); }
@@ -23747,160 +23836,92 @@ function Home() {
         .animate-greenGlow { animation: greenGlow 1.2s infinite; }
         .animate-shimmer { animation: shimmer 2.4s linear infinite; }
       ` }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "div",
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-3 text-left items-start", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "h2",
+        {
+          className: "m-0 p-0 font-semibold text-lg leading-tight text-left w-full block",
+          style: { minHeight: "1.6rem", textAlign: "left" },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "span",
+            {
+              style: {
+                display: "block",
+                whiteSpace: "pre-wrap",
+                lineHeight: 1.35
+              },
+              children: [
+                questionParts.rest,
+                questionParts.last ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { style: { whiteSpace: "nowrap" }, children: [
+                  questionParts.last,
+                  !questionDone && /* @__PURE__ */ jsxRuntimeExports.jsx(Blinker, { state: "typing" })
+                ] }) : (
+                  // if nothing typed yet, still show blinker after empty (no wrap issue)
+                  !questionDone && /* @__PURE__ */ jsxRuntimeExports.jsx(Blinker, { state: "typing" })
+                )
+              ]
+            }
+          )
+        }
+      ),
+      isThinking && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 w-full pt-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
           {
+            "aria-hidden": "true",
+            className: "inline-flex items-center justify-center rounded-full",
             style: {
-              display: "flex",
-              flexDirection: "column",
-              gap: 12,
-              // consistent gap between question / thinking / answer
-              paddingLeft: 12,
-              paddingTop: 12
+              width: "0.55em",
+              height: "0.55em",
+              boxShadow: "0 0 10px rgba(124,225,45,0.85)"
             },
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { style: { margin: 0, padding: 0, fontWeight: 600, fontSize: "1.25rem", lineHeight: 1.35 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { style: { whiteSpace: "pre-wrap", lineHeight: 1.35 }, children: [
-                questionTypedText,
-                !questionDone && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "span",
-                  {
-                    "aria-hidden": "true",
-                    style: {
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      width: "0.55em",
-                      height: "0.55em",
-                      marginLeft: "0.45em",
-                      borderRadius: "50%",
-                      verticalAlign: "middle"
-                    },
-                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "span",
-                      {
-                        style: {
-                          display: "inline-block",
-                          width: "100%",
-                          height: "100%",
-                          borderRadius: "50%",
-                          backgroundColor: "#222",
-                          transform: "scale(0.92)"
-                        }
-                      }
-                    )
-                  }
-                )
-              ] }) }),
-              isThinking && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "span",
-                  {
-                    "aria-hidden": "true",
-                    style: {
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      width: "0.55em",
-                      height: "0.55em",
-                      borderRadius: "50%",
-                      boxShadow: "0 0 10px rgba(124,225,45,0.85)",
-                      verticalAlign: "middle"
-                    },
-                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "span",
-                      {
-                        className: "animate-greenGlow",
-                        style: {
-                          display: "inline-block",
-                          width: "100%",
-                          height: "100%",
-                          borderRadius: "50%",
-                          backgroundColor: "#7ce12d"
-                        }
-                      }
-                    )
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "span",
-                  {
-                    className: "animate-shimmer",
-                    style: {
-                      display: "inline-block",
-                      fontWeight: 500,
-                      backgroundImage: "linear-gradient(90deg, #000000, #777777, #000000)",
-                      backgroundSize: "200% auto",
-                      WebkitBackgroundClip: "text",
-                      backgroundClip: "text",
-                      color: "transparent",
-                      paddingBottom: "0.04em",
-                      lineHeight: 1.35
-                    },
-                    children: "Thinking..."
-                  }
-                )
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "block" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { whiteSpace: "pre-wrap", lineHeight: 1.35 }, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: currentAnswerText }),
-                (isAnswerTyping || currentAnswerText.length > 0 || isAnswerDone) && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "span",
-                  {
-                    "aria-hidden": "true",
-                    style: {
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      width: "0.55em",
-                      height: "0.55em",
-                      marginLeft: "0.45em",
-                      borderRadius: "50%",
-                      verticalAlign: "middle"
-                    },
-                    children: isAnswerTyping ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "span",
-                      {
-                        style: {
-                          display: "inline-block",
-                          width: "100%",
-                          height: "100%",
-                          borderRadius: "50%",
-                          backgroundColor: "#222",
-                          transform: "scale(0.92)"
-                        }
-                      }
-                    ) : isAnswerDone ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "span",
-                      {
-                        style: {
-                          display: "inline-block",
-                          width: "100%",
-                          height: "100%",
-                          borderRadius: "50%",
-                          backgroundColor: "#76b900",
-                          boxShadow: "0 0 6px rgba(118,185,0,0.9)"
-                        }
-                      }
-                    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "span",
-                      {
-                        style: {
-                          display: "inline-block",
-                          width: "100%",
-                          height: "100%",
-                          borderRadius: "50%",
-                          backgroundColor: "#222"
-                        }
-                      }
-                    )
-                  }
-                )
-              ] }) })
-            ]
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: "animate-greenGlow block rounded-full",
+                style: {
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "#7ce12d"
+                }
+              }
+            )
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: "animate-shimmer font-medium",
+            style: {
+              backgroundImage: "linear-gradient(90deg, #000000, #777777, #000000)",
+              backgroundSize: "200% auto",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+              paddingBottom: "0.04em",
+              lineHeight: 1.35
+            },
+            children: "Thinking..."
           }
         )
-      ]
-    }
-  );
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full pt-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { whiteSpace: "pre-wrap", lineHeight: 1.35 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+        answerParts.rest,
+        answerParts.last ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { style: { whiteSpace: "nowrap" }, children: [
+          answerParts.last,
+          (isAnswerTyping || isAnswerDone || currentAnswerText.length > 0) && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Blinker,
+            {
+              state: isAnswerTyping ? "typing" : isAnswerDone ? "done" : "idle"
+            }
+          )
+        ] }) : (
+          // If nothing typed yet but we still want to show an initial blinker when relevant:
+          (isAnswerTyping || currentAnswerText.length > 0 || isAnswerDone) && /* @__PURE__ */ jsxRuntimeExports.jsx(Blinker, { state: "idle" })
+        )
+      ] }) }) })
+    ] })
+  ] });
 }
 function About() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", {});
