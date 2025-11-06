@@ -23355,6 +23355,144 @@ function Layout() {
       document.removeEventListener("keydown", handleEscapeKey);
     };
   }, [menuOpen]);
+  const GITHUB_REPO = "feloopy/feloopy";
+  const GITHUB_URL = `https://github.com/${GITHUB_REPO}`;
+  const [stars, setStars] = reactExports.useState(32);
+  const [starsLoading, setStarsLoading] = reactExports.useState(true);
+  reactExports.useEffect(() => {
+    let mounted = true;
+    fetch(`https://api.github.com/repos/${GITHUB_REPO}`).then((res) => {
+      if (!res.ok) throw new Error("GitHub API error");
+      return res.json();
+    }).then((json) => {
+      if (!mounted) return;
+      if (typeof json.stargazers_count === "number") {
+        setStars(json.stargazers_count);
+      }
+    }).catch(() => {
+    }).finally(() => {
+      if (mounted) setStarsLoading(false);
+    });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+  const formatStarLabel = (n) => {
+    if (n === null) return "";
+    if (n >= 1e3) return `${Math.round(n / 100) / 10}k`;
+    return String(n);
+  };
+  const PEPY_PROJECT = "feloopy";
+  const [downloadsLabel, setDownloadsLabel] = reactExports.useState(null);
+  const [downloadsLoading, setDownloadsLoading] = reactExports.useState(true);
+  const [downloadsUnavailable, setDownloadsUnavailable] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    let mounted = true;
+    async function fetchBadgeAndParse() {
+      try {
+        const badgeUrl = `https://img.shields.io/pepy/dt/${encodeURIComponent(
+          PEPY_PROJECT
+        )}.svg`;
+        const res = await fetch(badgeUrl, {
+          method: "GET",
+          headers: {
+            Accept: "image/svg+xml, */*"
+          }
+          // no credentials
+        });
+        if (!res.ok) {
+          console.warn(`Shields badge fetch returned ${res.status} ${res.statusText} for ${badgeUrl}`);
+          if (mounted) setDownloadsUnavailable(true);
+          return;
+        }
+        const svgText = await res.text();
+        let label = null;
+        try {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(svgText, "image/svg+xml");
+          const textEls = Array.from(doc.querySelectorAll("text"));
+          if (textEls.length > 0) {
+            for (let i = textEls.length - 1; i >= 0; i--) {
+              const t = textEls[i].textContent?.trim();
+              if (t) {
+                const numMatch = t.match(/([0-9][0-9,\.]*\s*[kKmM]?)/);
+                if (numMatch) {
+                  label = numMatch[1].replace(/\s+/g, "");
+                  break;
+                }
+                label = t;
+                break;
+              }
+            }
+          }
+        } catch (err) {
+          const rawMatch = svgText.match(/>([0-9][0-9,\.]*\s*[kKmM]?)</);
+          if (rawMatch) label = rawMatch[1].replace(/\s+/g, "");
+        }
+        if (mounted) {
+          if (label) {
+            setDownloadsLabel(label);
+            setDownloadsUnavailable(false);
+          } else {
+            setDownloadsUnavailable(true);
+          }
+        }
+      } catch (err) {
+        console.error("Error fetching/parsing shields.io pepy badge:", err);
+        if (mounted) setDownloadsUnavailable(true);
+      } finally {
+        if (mounted) setDownloadsLoading(false);
+      }
+    }
+    fetchBadgeAndParse();
+    return () => {
+      mounted = false;
+    };
+  }, [PEPY_PROJECT]);
+  function GitHubButton({ compact = false }) {
+    const openRepo = () => {
+      window.open(GITHUB_URL, "_blank", "noopener,noreferrer");
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative inline-flex items-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "span",
+        {
+          "aria-hidden": true,
+          className: `absolute -top-2 right-0 flex items-center justify-center rounded-full px-1.5 py-0.5 text-xs font-medium leading-none pointer-events-none`,
+          style: {
+            backgroundColor: "rgba(0,0,0,0.85)",
+            color: "#fff",
+            transform: "translateX(28%)",
+            boxShadow: "0 1px 3px rgba(0,0,0,0.2)"
+          },
+          children: starsLoading ? "…" : formatStarLabel(stars)
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        Button,
+        {
+          onClick: openRepo,
+          title: "Support us by starring the repository!",
+          "aria-label": "Open FelooPy on GitHub.",
+          variant: "outline",
+          size: compact ? "sm" : "sm",
+          className: "inline-flex items-center gap-2 h-10 w-10 bg-background",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "svg",
+            {
+              width: "16",
+              height: "16",
+              viewBox: "0 0 16 16",
+              fill: "currentColor",
+              "aria-hidden": "true",
+              className: "mr-0",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2.01-.27c.68 0 1.36.09 2.01.27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z" })
+            }
+          )
+        }
+      )
+    ] });
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen flex flex-col", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "shadow w-full fixed z-50 border-b bg-background", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 py-4 flex items-center justify-between", children: [
@@ -23382,13 +23520,31 @@ function Layout() {
               )
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "h1",
-            {
-              className: "\r\n                text-2xl font-bold \r\n                bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n                bg-[length:800%_auto] bg-clip-text text-transparent \r\n                animate-gradient\r\n              ",
-              children: "FelooPy"
-            }
-          )
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-baseline gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                className: "\r\n                  text-2xl font-bold \r\n                  bg-gradient-to-r from-[#76B900] via-foreground to-[#76B900]\r\n                  bg-[length:800%_auto] bg-clip-text text-transparent \r\n                  animate-gradient\r\n                ",
+                children: "FelooPy"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                "aria-hidden": true,
+                className: "text-sm font-medium text-muted-foreground",
+                title: downloadsLoading ? "Loading downloads…" : downloadsUnavailable ? "Downloads unavailable" : `Join thousands of users > FelooPy has already been downloaded ${downloadsLabel ?? "0"} times!`,
+                children: downloadsLoading ? "…" : downloadsUnavailable ? (
+                  // friendly fallback if shields/pepy blocked
+                  "• N/A downloads"
+                ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                  "• ",
+                  downloadsLabel,
+                  " downloads!"
+                ] })
+              }
+            )
+          ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "nav",
@@ -23399,12 +23555,16 @@ function Layout() {
               /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/", children: "Home" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/about", children: "About" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { className: "hover:underline", to: "/contact", children: "Contact" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ModeToggle, {})
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(ModeToggle, {}),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(GitHubButton, {})
+              ] })
             ]
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:hidden flex items-center gap-2", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(ModeToggle, {}),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "inline-block", children: /* @__PURE__ */ jsxRuntimeExports.jsx(GitHubButton, { compact: true }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "button",
             {
@@ -23459,7 +23619,7 @@ function Layout() {
         }
       )
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "grow pt-20 px-4 text-left", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "grow pt-20 text-left", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "bg-background border-t py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto px-4 text-sm", children: [
       "© 2022-",
       (/* @__PURE__ */ new Date()).getFullYear(),
@@ -23478,15 +23638,20 @@ function Layout() {
   ] });
 }
 function Home() {
-  const verbs = ["Redesign", "Replan", "Reschedule", "Recontrol"];
+  const verbs = ["Redesigns", "Replans", "Reschedules", "Recontrols", "Designs", "Plans", "Schedules", "Controls"];
   const dataItems = [
     "sourcing",
+    "supplier network",
+    "distribution network",
+    "manufacturing network",
+    "customer network",
     "routing",
-    "production",
-    "prices",
+    "manufacturing system",
+    "pricing strategies",
     "inventory management",
-    "transportations",
-    "facilities"
+    "transportation system",
+    "facilities network",
+    "delivery vistis"
   ];
   const phrases = [
     "maximize productivity",
@@ -23499,7 +23664,8 @@ function Home() {
     "minimize employees",
     "maximize personalization",
     "minimize expenditure",
-    "maximize closeness",
+    "maximize closeness to goals",
+    "maximize closeness to customers",
     "minimize cost",
     "maximize equity",
     "minimize deviation",
@@ -23575,11 +23741,6 @@ function Home() {
   const scopes = ["industry", "system", "supply chain"];
   const naturalizer = (data) => {
     const mapping = {
-      sourcing: "sourcing",
-      "information system": "information system",
-      prices: "prices",
-      "inventory management": "inventory",
-      transportations: "transportation",
       facilities: "facilities"
     };
     return mapping[data] ?? data.toLowerCase();
@@ -23588,8 +23749,8 @@ function Home() {
     if (!metric) return "value";
     const m = metric.toLowerCase().trim();
     const shortMap = {
-      "net present value": "npv",
-      "return on investment": "roi",
+      "net present value": "NPV",
+      "return on investment": "ROI",
       "maintenance requirements": "maintenance",
       "job creation": "jobs",
       "market share": "market share",
