@@ -8,38 +8,106 @@ on:
         required: false
         default: 'production'
 
+permissions:
+  contents: write
+
 jobs:
   fetch-comments:
     runs-on: ubuntu-latest
+
+    env:
+  
+      COMMENTS_OUTPUT: ${{ secrets.COMMENTS_OUTPUT }}
+
     steps:
-      - name: Checkout repo
+      - name: Checkout (allow push)
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
-      - name: Setup output folder
-        run: |
-          mkdir -p data
+      - name: Validate and prepare output directory
         shell: bash
-
-      - name: Fetch comments
         run: |
-          echo "Fetching comments..."
-          mkdir -p $(dirname "$COMMENTS_OUTPUT")
-          RESPONSE=$(curl -s "https://script.google.com/macros/s/$APPS_SCRIPT_ID/exec?secret=$APPS_SCRIPT_SECRET")
-          echo "$RESPONSE" > "$COMMENTS_OUTPUT"
-          echo "Saved to $COMMENTS_OUTPUT"
+          set -euo pipefail
+          if [ -z "${COMMENTS_OUTPUT:-}" ]; then
+            echo "ERROR: COMMENTS_OUTPUT secret is empty. Set secret COMMENTS_OUTPUT to a path like 'data/comments.json'."
+            exit 2
+          fi
+          mkdir -p "$(dirname "$COMMENTS_OUTPUT")"
+          echo "Output path: $COMMENTS_OUTPUT"
+
+      - name: Fetch comments into temp file (with retries)
         shell: bash
         env:
           APPS_SCRIPT_ID: ${{ secrets.APPS_SCRIPT_ID }}
           APPS_SCRIPT_SECRET: ${{ secrets.APPS_SCRIPT_SECRET }}
-          COMMENTS_OUTPUT: data/comments.json
-
-      - name: Commit and push fetched comments
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add "$COMMENTS_OUTPUT"
-          git commit -m "updated comments." || echo "nothing changed."
-          git push origin HEAD:${{ github.ref }}
+          set -euo pipefail
+          TMP="$RUNNER_TEMP/comments.json.tmp"
+          rm -f "$TMP"
+          echo "Fetching comments to $TMP ..."
+          # reliable curl: fail on HTTP error, retry a few times
+          curl -fsS --max-time 30 --retry 3 --retry-connrefused --retry-delay 2 \
+            "https://script.google.com/macros/s/$APPS_SCRIPT_ID/exec?secret=$APPS_SCRIPT_SECRET" -o "$TMP" || {
+            echo "curl failed"; rm -f "$TMP"; exit 3;
+          }
+          if [ ! -s "$TMP" ]; then
+            echo "Fetched file is empty; aborting."
+            rm -f "$TMP"
+            exit 4
+          fi
+          echo "Fetched $(wc -c < "$TMP") bytes."
+
+      - name: Compare fetched content and commit only if changed (reliable)
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          TMP="$RUNNER_TEMP/comments.json.tmp"
+          OUT="$COMMENTS_OUTPUT"
+
+          if [ ! -f "$TMP" ]; then
+            echo "Temp file missing; aborting."
+            exit 5
+          fi
+
+          if [ -f "$OUT" ]; then
+            EXIST_HASH=$(sha256sum "$OUT" | awk '{print $1}')
+            TMP_HASH=$(sha256sum "$TMP" | awk '{print $1}')
+            if [ "$EXIST_HASH" = "$TMP_HASH" ]; then
+              echo "No change detected (hash match). Skipping commit/push."
+              rm -f "$TMP"
+              exit 0
+            fi
+          fi
+
+          BRANCH="${GITHUB_REF_NAME:-}"
+          if [ -z "$BRANCH" ]; then
+            BRANCH="${GITHUB_REF#refs/heads/}"
+          fi
+          if [ -z "$BRANCH" ]; then
+            BRANCH="main"
+            echo "Warning: branch not detected; falling back to '${BRANCH}'."
+          fi
+
+         
+          mkdir -p "$(dirname "$OUT")"
+          mv "$TMP" "$OUT"
+
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+          git add -- "$OUT"
+
+          if git diff --quiet --exit-code -- "$OUT"; then
+            echo "After staging, no difference from HEAD — nothing to commit."
+            exit 0
+          fi
+
+          git commit -m "updated comments."
+          echo "Committed changes; pushing to ${BRANCH}..."
+          git push origin "HEAD:${BRANCH}"
+          echo "Push completed."
