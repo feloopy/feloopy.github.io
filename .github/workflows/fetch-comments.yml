@@ -35,9 +35,8 @@ jobs:
             exit 2
           fi
           mkdir -p "$(dirname "$COMMENTS_OUTPUT")"
-          echo "Output path: $COMMENTS_OUTPUT"
 
-      - name: Fetch comments with diagnostics
+      - name: Fetch comments
         shell: bash
         env:
           APPS_SCRIPT_ID: ${{ secrets.APPS_SCRIPT_ID }}
@@ -45,8 +44,7 @@ jobs:
         run: |
           set -euo pipefail
           TMP="$RUNNER_TEMP/comments.json.tmp"
-          HDR="$RUNNER_TEMP/headers.tmp"
-          rm -f "$TMP" "$HDR"
+          rm -f "$TMP"
 
           if [ -z "${APPS_SCRIPT_ID:-}" ]; then
             echo "ERROR: APPS_SCRIPT_ID secret missing"; exit 3
@@ -56,36 +54,22 @@ jobs:
           fi
 
           URL="https://script.google.com/macros/s/${APPS_SCRIPT_ID}/exec?secret=${APPS_SCRIPT_SECRET}"
-          echo "Fetching from: $URL"
-          curl -v -fsSL -D "$HDR" --max-time 30 --retry 3 --retry-delay 2 "$URL" -o "$TMP" || {
-            echo "Curl failed, headers below:"
-            cat "$HDR" || true
-            echo "Body preview:"
-            head -n 30 "$TMP" || true
-            exit 5
-          }
 
-          echo "=== HEADERS ==="
-          sed -n '1,200p' "$HDR" || true
-          echo "=== BODY PREVIEW (first 1KB) ==="
-          head -c 1024 "$TMP" | sed -n '1,200p' || true
+          curl -fsSL --max-time 30 --retry 3 --retry-delay 2 "$URL" -o "$TMP"
 
           if head -c 256 "$TMP" | grep -qi '<html\|<!doctype'; then
-            echo "ERROR: HTML detected (redirect/login). Aborting."
+            echo "ERROR: HTML detected (redirect/login)."
             exit 6
           fi
 
           if command -v python3 >/dev/null 2>&1; then
             if ! python3 -m json.tool "$TMP" >/dev/null 2>&1; then
               echo "ERROR: Invalid JSON response."
-              head -n 50 "$TMP" || true
               exit 7
             fi
           fi
 
-          echo "Fetched $(wc -c < "$TMP") bytes."
           mv "$TMP" "$COMMENTS_OUTPUT"
-          echo "Saved to $COMMENTS_OUTPUT"
 
       - name: Commit and push if changed
         shell: bash
@@ -118,4 +102,3 @@ jobs:
 
           git commit -m "updated comments."
           git push origin "HEAD:${BRANCH}"
-          echo "Push successful."
