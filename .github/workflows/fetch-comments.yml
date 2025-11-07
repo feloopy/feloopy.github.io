@@ -17,8 +17,6 @@ jobs:
 
     env:
       COMMENTS_OUTPUT: ${{ secrets.COMMENTS_OUTPUT }}
-      APPS_SCRIPT_URL: ${{ secrets.APPS_SCRIPT_URL }}
-      APPS_SCRIPT_SECRET: ${{ secrets.APPS_SCRIPT_SECRET }}
 
     steps:
       - name: Checkout
@@ -28,106 +26,96 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Fetch comments (verbose diagnostics)
+      - name: Validate and prepare output directory
         shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${COMMENTS_OUTPUT:-}" ]; then
+            echo "ERROR: COMMENTS_OUTPUT secret is empty. Set it to a path like 'data/comments.json'."
+            exit 2
+          fi
+          mkdir -p "$(dirname "$COMMENTS_OUTPUT")"
+          echo "Output path: $COMMENTS_OUTPUT"
+
+      - name: Fetch comments with diagnostics
+        shell: bash
+        env:
+          APPS_SCRIPT_ID: ${{ secrets.APPS_SCRIPT_ID }}
+          APPS_SCRIPT_SECRET: ${{ secrets.APPS_SCRIPT_SECRET }}
         run: |
           set -euo pipefail
           TMP="$RUNNER_TEMP/comments.json.tmp"
           HDR="$RUNNER_TEMP/headers.tmp"
           rm -f "$TMP" "$HDR"
 
-          if [ -z "${APPS_SCRIPT_URL:-}" ]; then
-            echo "ERROR: APPS_SCRIPT_URL secret missing"; exit 2
+          if [ -z "${APPS_SCRIPT_ID:-}" ]; then
+            echo "ERROR: APPS_SCRIPT_ID secret missing"; exit 3
           fi
           if [ -z "${APPS_SCRIPT_SECRET:-}" ]; then
-            echo "ERROR: APPS_SCRIPT_SECRET secret missing"; exit 3
-          fi
-          if [ -z "${COMMENTS_OUTPUT:-}" ]; then
-            echo "ERROR: COMMENTS_OUTPUT secret missing"; exit 4
+            echo "ERROR: APPS_SCRIPT_SECRET secret missing"; exit 4
           fi
 
-          FULL_URL="${APPS_SCRIPT_URL}?secret=${APPS_SCRIPT_SECRET}"
-          echo "Requesting: $FULL_URL"
-
-          curl -fsSL -D "$HDR" --max-time 30 --retry 3 --retry-delay 2 "$FULL_URL" -o "$TMP" || {
-            echo "curl returned non-2xx; headers:"; sed -n '1,200p' "$HDR" || true; echo "body preview:"; head -c 1024 "$TMP" || true
+          URL="https://script.google.com/macros/s/${APPS_SCRIPT_ID}/exec?secret=${APPS_SCRIPT_SECRET}"
+          echo "Fetching from: $URL"
+          curl -v -fsSL -D "$HDR" --max-time 30 --retry 3 --retry-delay 2 "$URL" -o "$TMP" || {
+            echo "Curl failed, headers below:"
+            cat "$HDR" || true
+            echo "Body preview:"
+            head -n 30 "$TMP" || true
             exit 5
           }
 
-          echo "=== RESPONSE HEADERS ==="
+          echo "=== HEADERS ==="
           sed -n '1,200p' "$HDR" || true
-          echo "=== BODY PREVIEW (first 1024 bytes) ==="
+          echo "=== BODY PREVIEW (first 1KB) ==="
           head -c 1024 "$TMP" | sed -n '1,200p' || true
 
-          if head -c 512 "$TMP" | grep -qi '<html\|<!doctype'; then
-            echo "ERROR: Response looks like HTML (login/redirect or error). Aborting."
+          if head -c 256 "$TMP" | grep -qi '<html\|<!doctype'; then
+            echo "ERROR: HTML detected (redirect/login). Aborting."
             exit 6
           fi
 
           if command -v python3 >/dev/null 2>&1; then
             if ! python3 -m json.tool "$TMP" >/dev/null 2>&1; then
-              echo "ERROR: fetched body is not valid JSON. Show first lines:"; head -n 50 "$TMP"
+              echo "ERROR: Invalid JSON response."
+              head -n 50 "$TMP" || true
               exit 7
-            else
-              echo "JSON validated OK (python3 json.tool)."
             fi
-          else
-            echo "python3 not available; skipping JSON validation."
           fi
 
-          echo "Fetched $(wc -c < "$TMP") bytes into $TMP"
-          mkdir -p "$(dirname "$COMMENTS_OUTPUT")"
+          echo "Fetched $(wc -c < "$TMP") bytes."
           mv "$TMP" "$COMMENTS_OUTPUT"
-          echo "Saved to $COMMENTS_OUTPUT (size: $(wc -c < "$COMMENTS_OUTPUT") bytes)"
+          echo "Saved to $COMMENTS_OUTPUT"
 
-      - name: Commit & push (verbose)
+      - name: Commit and push if changed
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           OUT="$COMMENTS_OUTPUT"
-          echo "Working branch: ${GITHUB_REF}"
-          BRANCH="${GITHUB_REF_NAME:-}"
-          if [ -z "$BRANCH" ]; then BRANCH="${GITHUB_REF#refs/heads/}"; fi
-          echo "Resolved branch: $BRANCH"
 
           if [ ! -f "$OUT" ]; then
-            echo "No output file at $OUT; nothing to commit"; exit 0
-          fi
-
-          if git ls-files --error-unmatch "$OUT" >/dev/null 2>&1; then
-            sha256sum "$OUT" || true
-          else
-            echo "(file not tracked yet)"
-          fi
-
-          git status --porcelain --untracked-files=all
-          git add -- "$OUT"
-          git status --porcelain --untracked-files=all
-          git --no-pager diff --staged -- "$OUT" || true
-
-          if git diff --quiet --exit-code -- "$OUT"; then
-            echo "No staged changes vs HEAD — skipping commit"
+            echo "No output file found; skipping commit."
             exit 0
           fi
 
+          if git diff --quiet --exit-code -- "$OUT"; then
+            echo "No changes detected in $OUT"
+            exit 0
+          fi
+
+          BRANCH="${GITHUB_REF_NAME:-main}"
+
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
+          git add -- "$OUT"
 
-          set +e
-          git commit -m "updated comments."
-          COMMIT_RC=$?
-          set -e
-          if [ $COMMIT_RC -ne 0 ]; then
-            echo "git commit returned $COMMIT_RC"
-          else
-            echo "Commit created. Pushing..."
-            git push origin "HEAD:${BRANCH}" || {
-              echo "git push failed"
-              git remote -v
-              git branch -vv
-              exit 8
-            }
-            echo "Push succeeded."
+          if git diff --cached --quiet; then
+            echo "No staged changes, skipping commit."
+            exit 0
           fi
+
+          git commit -m "updated comments."
+          git push origin "HEAD:${BRANCH}"
+          echo "Push successful."
