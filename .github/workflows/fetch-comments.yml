@@ -1,0 +1,32 @@
+name: Fetch Comments
+
+on:
+  workflow_dispatch: # manual trigger
+  schedule:
+    - cron: "0 0 * * *" # optional: fetch daily at midnight UTC
+
+jobs:
+  fetch_comments:
+    runs-on: ubuntu-latest
+    env:
+      APPS_SCRIPT_ID: ${{ secrets.APPS_SCRIPT_ID }}
+      APPS_SCRIPT_SECRET: ${{ secrets.APPS_SCRIPT_SECRET }}
+      COMMENTS_OUTPUT: ${{ secrets.COMMENTS_OUTPUT }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Fetch comments from Apps Script
+        run: |
+          echo "Fetching comments..."
+          RESPONSE=$(curl -s "https://script.google.com/macros/s/$APPS_SCRIPT_ID/exec?secret=$APPS_SCRIPT_SECRET")
+          echo "$RESPONSE" > $COMMENTS_OUTPUT
+          echo "Saved to $COMMENTS_OUTPUT"
+
+      - name: Commit updated comments
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add $COMMENTS_OUTPUT
+          git commit -m "updated comments." || echo "nothing changed."
+          git push
