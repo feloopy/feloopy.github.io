@@ -1,32 +1,45 @@
 name: Fetch Comments
 
 on:
-  workflow_dispatch: # manual trigger
-  schedule:
-    - cron: "0 0 * * *" # optional: fetch daily at midnight UTC
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment (default: production)'
+        required: false
+        default: 'production'
 
 jobs:
-  fetch_comments:
+  fetch-comments:
     runs-on: ubuntu-latest
-    env:
-      APPS_SCRIPT_ID: ${{ secrets.APPS_SCRIPT_ID }}
-      APPS_SCRIPT_SECRET: ${{ secrets.APPS_SCRIPT_SECRET }}
-      COMMENTS_OUTPUT: ${{ secrets.COMMENTS_OUTPUT }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Fetch comments from Apps Script
+      - name: Setup output folder
+        run: |
+          mkdir -p data
+        shell: bash
+
+      - name: Fetch comments
         run: |
           echo "Fetching comments..."
+          mkdir -p $(dirname "$COMMENTS_OUTPUT")
           RESPONSE=$(curl -s "https://script.google.com/macros/s/$APPS_SCRIPT_ID/exec?secret=$APPS_SCRIPT_SECRET")
-          echo "$RESPONSE" > $COMMENTS_OUTPUT
+          echo "$RESPONSE" > "$COMMENTS_OUTPUT"
           echo "Saved to $COMMENTS_OUTPUT"
+        shell: bash
+        env:
+          APPS_SCRIPT_ID: ${{ secrets.APPS_SCRIPT_ID }}
+          APPS_SCRIPT_SECRET: ${{ secrets.APPS_SCRIPT_SECRET }}
+          COMMENTS_OUTPUT: data/comments.json
 
-      - name: Commit updated comments
+      - name: Commit and push fetched comments
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add $COMMENTS_OUTPUT
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add "$COMMENTS_OUTPUT"
           git commit -m "updated comments." || echo "nothing changed."
-          git push
+          git push origin HEAD:${{ github.ref }}
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
