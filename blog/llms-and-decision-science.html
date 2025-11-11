@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>On large language models and decision science</title>
+  <meta name="description" content="View LLMs as the traveling salesperson problem" />
+  <link rel="canonical" href="https://feloopy.github.io/blog/llms-and-decision-science.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="On large language models and decision science" />
+  <meta property="og:description" content="View LLMs as the traveling salesperson problem" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1580777361964-27e9cdd2f838?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=1528" />
+  <meta property="og:url" content="https://feloopy.github.io/blog/llms-and-decision-science.html" />
+  <meta property="article:published_time" content="2025-11-11" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="On large language models and decision science" />
+  <meta name="twitter:description" content="View LLMs as the traveling salesperson problem" />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1580777361964-27e9cdd2f838?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=1528" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Article&quot;,&quot;headline&quot;:&quot;On large language models and decision science&quot;,&quot;description&quot;:&quot;View LLMs as the traveling salesperson problem&quot;,&quot;url&quot;:&quot;https://feloopy.github.io/blog/llms-and-decision-science.html&quot;,&quot;datePublished&quot;:&quot;2025-11-11&quot;,&quot;author&quot;:{&quot;@type&quot;:&quot;Person&quot;,&quot;name&quot;:&quot;Keivan Tafakkori&quot;},&quot;image&quot;:&quot;https://images.unsplash.com/photo-1580777361964-27e9cdd2f838?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=1528&quot;}</script>
+
+  <link rel="stylesheet" href="https://feloopy.github.io/C:\Users\Ktafa\Documents\Repositories\feloopy.github.io\source\dist\assets\style-cyAVPddb.css">
+
+  <style>
+    /* Fallback minimal style while CSS loads */
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 32px; max-width: 880px; margin: auto; line-height: 1.6; color: #111; background: #fff; }
+    header { margin-bottom: 24px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .meta { color: #666; font-size: 14px; margin-bottom: 16px; }
+    article img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><a href="/">Home</a> · <a href="/blog">Blog</a></nav>
+  </header>
+
+  <main>
+    <article>
+      <h1>On large language models and decision science</h1>
+      <div class="meta">Published: 2025-11-11 • Keivan Tafakkori</div>
+      <div class="content"><h1>Introduction</h1>
+<p>Plainly put, I see large language models (LLMs), including the current generation of Generative AI, as systems meant to find logical tours/routes among characters, words, phrases, and larger linguistic patterns from a set of vocabularies/dictionaries/blogs/papers to generate text that fits a user’s prompt. There is nothing special about it.</p>
+<p>LLMs can be thought of as input distance graphs for repeatedly solving a traveling salesman problem. Each sentence, paragraph, or article is a route through a set of nodes (characters, words, concepts), and the “distance” between nodes is learned or adjusted during training or fine-tuning.</p>
+<p>Frequent co-occurrences in widely shared sources and recurring patterns pull some nodes closer together, so the model tends to favor those routes. That tendency explains why it leans toward familiar phrasings and can overproduce common sequences. When it follows less-traveled routes, &quot;hallucination&quot; becomes more likely.</p>
+<p>Because of this mechanism, LLMs can follow formal logic, manipulate algebraic or code structures, and produce step-by-step instructions, demonstrating coherent chains of reasoning when the selected paths match valid patterns.</p>
+<p>It is like a closed-book versus an open-book exam. I wrote about optimization and learning two years ago, and I believe this perspective remains valid in 2025 and beyond (refer to <a href="https://lnkd.in/dsxcmMAq">my LinkedIn post</a>).</p>
+<p>LLMs solve problems along paths they have learned. Before November 2022, people saved time and cost by outsourcing coding to experts in a field; now, they save time and cost by outsourcing prompting to experts in a field.</p>
+<p>However, a small deviation from expectations from decisions suggested by LLMs can erode ROI and create real business losses. That is why, in many cases, the adoption of LLMs does not deliver a clear return on investment.</p>
+<p>To conclude, there may already be one or two experts who can instantly respond to your request or who have documented how to respond to a prompt.</p>
+<p>No expert can instantly solve a decision problem.</p>
+<p>Decision problems require explicit preferences, context, and trade-offs.</p>
+<p>That is Decision Science.</p>
+<h1>Using LLMs as a non-expert decision maker</h1>
+<p>It was common that everyone wanted to share their experience using ChatGPT when it was first introduced on 30 November 2022. I try, however, to focus on writing key takeaways of mine for you, the reader. This is not for judging, but to reveal some facts of today.</p>
+<p>I prompted OpenAI’s latest free LLM through its ChatGPT 5 API, using its &quot;Thinking&quot; mode, with the following prompt: “I want to select from a set of items with different weights because my backpack has limited capacity. These items have different values to me. How can I decide which to take?”. The first conclusion is that <strong>ONE SHOULD BE ABLE TO IDENTIFY THIS IS EVEN A PROBLEM OR WEAKNESS TO THEN DECIDE ON OR COVER</strong>. However, this is not totally related to ChatGPT, and this problem existed in the past, is observable today, and would remain even in the future. We have always done it this way, which is a barrier for someone to even ask this question, as mentioned by Adam Dejans Jr. on LinkedIn (visit <a href="https://www.linkedin.com/posts/addejans_leadership-processimprovement-operations-activity-7393637316113854464-Jw4z">his post</a>)</p>
+<p>ChatGPT 5 outlined its response with a &quot;Quick plan&quot;, &quot;When to pick which&quot;, &quot;Code — full, ready-to-run Python&quot;, &quot;Steps you should follow (short)&quot;, &quot;Troubleshooting / &quot;if step fails, do this&quot;, and &quot;Complexity summary&quot;. As it has been engineered to ask followups, it ended the resposne with &quot;If you want, paste your item list and capacity (IDs, weights, values). I can run the appropriate routine and give you the exact selection quickly.&quot; The second conclusion is that <strong>IT ANSWERS TO YOUR PROMPT IN THE WAY YOU THOUGHT, RATED, OR INTERACTED BEFORE, SO REPRODUCIBILITY OF PROMPTING SIMILARLY TO GET THE SAME RESULT IS NOT ENSURED</strong>. <strong>IT IS CONSTANTLY PERSONALIZED BECAUSE OF THE FOLLOWING REINFORCEMENT LEARNING FROM HUMAN FEEDBACK.</strong> But for decision science, the way one thinks might be sub-optimal. Optimization algorithms can surpass human-level intelligence.</p>
+<p>Everything seems ok regarding the outline, but first of all, it seems to prefer Python, as the whole world mostly prefers to write blog posts on it, and it has become the #1 programming language in the world! The third conclusion is that it prefers <strong>REPEATED INFO ON THE INTERNET AS A MEASURE OF RELIABILITY</strong>. But most things that are written on the internet are not necessarily correct.</p>
+<p>Looking at the code it provided, the first thing it tried to do was to develop a heuristic, without relying on any specific solver, with pure Python programming skills. So telling that &quot;LLMs are an interface between YOUR tool and the user&quot; is not totally correct and is bypassable, it for sure, can surely design the tool to be used by the user; however, a tool that is designed based on a programming language and info available on the internet. The fourth conclusion is that: <strong>IT CAN SOLVE A DECISION PROBLEM WITHOUT A SOLVER TOOL</strong>. <strong>IT CAN EVEN DESIGN THE TOOL ITSELF</strong>. It can be an LP solver, MIP solver, etc.</p>
+<p>Looking at the code, however, it was uncertain to use a single solution algorithm; instead, it provided two options/alternatives. The fifth conclusion is that: SELECTING AMONG ALTERNATIVES THAT IT PROVIDES IS EVEN A DECISION PROBLEM. The non-expert user, however, has the fear that the solution might be wrong or which algorithm to use. The sixth conclusion is that: IT MAY CONFUSE YOU AND FORCE YOU TO OVERTHINK. Besides, the solution algorithms it used are based on the fractional knapsack, the value/weight fraction, and a dynamic programming solution. The common user, who is not an expert, however, does not care about these. Here is the code it provided:</p>
+<pre><code class="language-python"># knapsack_full.py
+from typing import List, Tuple
+
+def fractional_knapsack(items: List[Tuple[float, float, str]], capacity: float):
+    &quot;&quot;&quot;
+    items: list of (weight, value, id)
+    capacity: backpack capacity (float)
+    Returns: (total_value, list_of_taken (id, taken_weight, taken_value))
+    Greedy: takes highest value/weight ratio first.
+    &quot;&quot;&quot;
+    # compute ratio and sort descending
+    items_sorted = sorted(items, key=lambda it: (it[1]/it[0]) if it[0] &gt; 0 else float(&#39;inf&#39;), reverse=True)
+    taken = []
+    total_value = 0.0
+    remaining = capacity
+
+    for w, v, id_ in items_sorted:
+        if remaining &lt;= 0:
+            break
+        take_w = min(w, remaining)
+        take_v = (v * (take_w / w)) if w &gt; 0 else 0
+        taken.append((id_, take_w, take_v))
+        total_value += take_v
+        remaining -= take_w
+
+    return total_value, taken
+
+
+def knapsack_01_dp(items: List[Tuple[int, int, str]], capacity: int):
+    &quot;&quot;&quot;
+    0/1 knapsack DP.
+    items: list of (weight:int, value:int, id)
+    capacity: int
+    Returns: (max_value, list_of_taken ids)
+    Complexity: O(n * capacity) time and O(n * capacity) memory (we use optimized memory but still reconstruct choices).
+    &quot;&quot;&quot;
+    n = len(items)
+    # dp[w] = max value achievable with capacity w
+    dp = [0] * (capacity + 1)
+    # parent store: for reconstruction, store index of item used to reach dp[w] or -1
+    parent = [[False] * (capacity + 1) for _ in range(n)]  # parent[i][w] = True if item i taken in optimal for capacity w after processing i
+
+    for i, (wt, val, _) in enumerate(items):
+        # iterate w from high to low to avoid reuse
+        for w in range(capacity, wt - 1, -1):
+            if dp[w - wt] + val &gt; dp[w]:
+                dp[w] = dp[w - wt] + val
+                parent[i][w] = True
+
+    max_value = dp[capacity]
+
+    # reconstruct chosen items
+    chosen = []
+    w = capacity
+    for i in range(n - 1, -1, -1):
+        if parent[i][w]:
+            wt, val, id_ = items[i]
+            chosen.append(id_)
+            w -= wt
+
+    chosen.reverse()
+    return max_value, chosen
+
+
+# Example usage
+if __name__ == &quot;__main__&quot;:
+    # Example for fractional
+    items_frac = [
+        (10, 60, &quot;A&quot;),  # weight, value, id
+        (20, 100, &quot;B&quot;),
+        (30, 120, &quot;C&quot;)
+    ]
+    capacity = 50
+    total_val, taken = fractional_knapsack(items_frac, capacity)
+    print(&quot;Fractional knapsack result:&quot;)
+    print(&quot; Total value:&quot;, total_val)
+    print(&quot; Taken:&quot;, taken)
+
+    # Example for 0/1 knapsack (weights and capacity must be integers)
+    items_01 = [
+        (10, 60, &quot;A&quot;),
+        (20, 100, &quot;B&quot;),
+        (30, 120, &quot;C&quot;)
+    ]
+    cap_int = 50
+    max_val, chosen = knapsack_01_dp(items_01, cap_int)
+    print(&quot;\n0/1 knapsack result:&quot;)
+    print(&quot; Max value:&quot;, max_val)
+    print(&quot; Chosen items:&quot;, chosen)
+</code></pre>
+<p>Then I asked it to “please run the appropriate routine with simulated data,” as it had suggested. It generated the following simulated dataset, assuming the knapsack capacity was set to 50:</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>weight</th>
+<th>value</th>
+<th>value/weight</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>item_1</td>
+<td>4</td>
+<td>93</td>
+<td>23.25</td>
+</tr>
+<tr>
+<td>item_2</td>
+<td>9</td>
+<td>36</td>
+<td>4.00</td>
+</tr>
+<tr>
+<td>item_3</td>
+<td>5</td>
+<td>14</td>
+<td>2.80</td>
+</tr>
+<tr>
+<td>item_4</td>
+<td>4</td>
+<td>91</td>
+<td>22.75</td>
+</tr>
+<tr>
+<td>item_5</td>
+<td>3</td>
+<td>10</td>
+<td>3.33</td>
+</tr>
+<tr>
+<td>item_6</td>
+<td>19</td>
+<td>59</td>
+<td>3.11</td>
+</tr>
+<tr>
+<td>item_7</td>
+<td>2</td>
+<td>8</td>
+<td>4.00</td>
+</tr>
+<tr>
+<td>item_8</td>
+<td>3</td>
+<td>32</td>
+<td>10.67</td>
+</tr>
+<tr>
+<td>item_9</td>
+<td>8</td>
+<td>69</td>
+<td>8.63</td>
+</tr>
+<tr>
+<td>item_10</td>
+<td>5</td>
+<td>63</td>
+<td>12.60</td>
+</tr>
+</tbody></table>
+<p>Since it’s connected to a Python backend, it was able to execute the code and provide results. The results were as follows:</p>
+<pre><code>Fractional Knapsack (you can take fractions)
+
+Total value: 308.75
+
+Items (fully or partially taken):
+
+item_4: 4 weight, 91.0 value
+item_8: 3 weight, 32.0 value
+item_9: 8 weight, 69.0 value
+item_2: 9 weight, 36.0 value
+item_7: 2 weight, 8.0 value
+item_6: 19 weight, 59.0 value
+item_3: 5 weight (partially), 13.75 value
+</code></pre>
+<p>and</p>
+<pre><code>0/1 Knapsack (you must take whole items)
+
+Max total value: 303
+
+Optimal selection:
+
+item_1, item_2, item_4, item_6, item_7, item_8, item_9
+</code></pre>
+<p>ending with a summary sentence, of course:</p>
+<p>&quot;If your items cannot be split, select<br>item_1, item_2, item_4, item_6, item_7, item_8, item_9.<br>They fit within the 50-unit capacity and give the maximum total value = 303.&quot;</p>
+<p>A non-expert who doesn’t know optimization may stop here—and that’s fine. Non-experts often care more about practical life than technical detail. They were offered two reasonable options; which is best depends on how items are selected for the knapsack. Writing as a non-expert, I find the answer satisfactory and won’t pursue it further.</p>
+<h1>Using LLMs as a decision optimziation expert</h1>
+<p>Now, let’s assume the person using the LLM is an expert in the field. Experts typically use LLMs as tools—mainly to reduce repetitive, tedious tasks—when they are allowed to. They are usually provided with either a simulated dataset or a real-world one.</p>
+<p>Suppose I want to solve the problem using the simulated data from the non-expert. After deleting the previous chat, I prompted the following:</p>
+<p>“Please provide a Python code that solves the knapsack problem with the following data, using FelooPy:”</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>weight</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>item_1</td>
+<td>4</td>
+<td>93</td>
+</tr>
+<tr>
+<td>item_2</td>
+<td>9</td>
+<td>36</td>
+</tr>
+<tr>
+<td>item_3</td>
+<td>5</td>
+<td>14</td>
+</tr>
+<tr>
+<td>item_4</td>
+<td>4</td>
+<td>91</td>
+</tr>
+<tr>
+<td>item_5</td>
+<td>3</td>
+<td>10</td>
+</tr>
+<tr>
+<td>item_6</td>
+<td>19</td>
+<td>59</td>
+</tr>
+<tr>
+<td>item_7</td>
+<td>2</td>
+<td>8</td>
+</tr>
+<tr>
+<td>item_8</td>
+<td>3</td>
+<td>32</td>
+</tr>
+<tr>
+<td>item_9</td>
+<td>8</td>
+<td>69</td>
+</tr>
+<tr>
+<td>item_10</td>
+<td>5</td>
+<td>63</td>
+</tr>
+</tbody></table>
+<p>The first thing it did was search the web—without me asking it to. The main reason might be that FelooPy, the integrated decision environment used to solve decision problems, is still not well-documented despite being around for three years. It then presented the following code:</p>
+<pre><code class="language-python"># pip install feloopy[stock]   # uncomment &amp; run once if FelooPy is not installed
+
+import feloopy as flp
+
+# --- data (from your table) ---
+items = [
+    (&quot;item_1&quot;,  4,  93),
+    (&quot;item_2&quot;,  9,  36),
+    (&quot;item_3&quot;,  5,  14),
+    (&quot;item_4&quot;,  4,  91),
+    (&quot;item_5&quot;,  3,  10),
+    (&quot;item_6&quot;, 19,  59),
+    (&quot;item_7&quot;,  2,   8),
+    (&quot;item_8&quot;,  3,  32),
+    (&quot;item_9&quot;,  8,  69),
+    (&quot;item_10&quot;, 5,  63),
+]
+
+# Change this capacity as needed
+CAPACITY = 50
+
+def build_knapsack_model(m):
+    # create a binary decision var for each item
+    x_vars = []
+    for name, w, v in items:
+        # m.bvar creates a binary variable (per FelooPy examples)
+        x = m.bvar(name=name)
+        x_vars.append(x)
+
+    # objective: maximize total value
+    obj_expr = sum(v * x for (_, _, v), x in zip(items, x_vars))
+    m.obj(obj_expr)
+
+    # knapsack capacity constraint: sum(weights * x) &lt;= CAPACITY
+    cap_expr = sum(w * x for (_, w, _), x in zip(items, x_vars))
+    m.con(cap_expr &lt;= CAPACITY, name=&quot;capacity&quot;)
+
+    # expose variables so we can inspect them later
+    m._x_vars = x_vars
+    return m
+
+def try_get_var_value(var):
+    &quot;&quot;&quot;
+    Try several common attribute/method names to retrieve the solved value of a variable.
+    FelooPy interfaces may wrap solver variables differently, so we attempt multiple ways.
+    &quot;&quot;&quot;
+    for attr in (&quot;value&quot;, &quot;x&quot;, &quot;X&quot;, &quot;value_&quot;, &quot;solution_value&quot;):
+        if hasattr(var, attr):
+            val = getattr(var, attr)
+            # if it&#39;s callable (method), call it
+            try:
+                return val() if callable(val) else val
+            except Exception:
+                pass
+    # try call directly (some wrappers overload __call__)
+    try:
+        return var()
+    except Exception:
+        pass
+    # couldn&#39;t read
+    return None
+
+# Build model using FelooPy &#39;exact&#39; modelling interface and a common open solver (&#39;pulp&#39;)
+m = flp.model(&#39;exact&#39;, &#39;knapsack_problem&#39;, &#39;pulp&#39;)
+
+# Add the knapsack structure
+m = build_knapsack_model(m)
+
+# Solve: objective direction &#39;max&#39; with &#39;pulp&#39; solver
+# (You can replace &#39;pulp&#39; with any solver available on your machine/framework)
+m.sol([&#39;max&#39;], &#39;pulp&#39;)
+
+# Print FelooPy report (human-readable)
+m.report()
+
+# Try to display variables using FelooPy helper (prints to console)
+# This typically shows variable names and values in FelooPy
+try:
+    m.dis_variable(*m._x_vars)
+except Exception:
+    # if the helper is not available for the chosen interface, ignore
+    pass
+
+# Now attempt to collect solution values programmatically and print chosen items + totals
+selected = []
+total_weight = 0
+total_value = 0
+
+for (name, w, v), var in zip(items, m._x_vars):
+    val = try_get_var_value(var)
+    # Val might be float-like; treat &gt; 0.5 as chosen (binary)
+    chosen = False
+    if val is None:
+        # fallback: try to query model&#39;s solution summary if available
+        chosen = False
+    else:
+        try:
+            chosen = float(val) &gt; 0.5
+        except Exception:
+            chosen = bool(val)
+
+    if chosen:
+        selected.append(name)
+        total_weight += w
+        total_value += v
+
+# Print concise solution summary
+print(&quot;\n--- Solution summary ---&quot;)
+print(&quot;Capacity:&quot;, CAPACITY)
+print(&quot;Chosen items:&quot;, selected)
+print(&quot;Total weight:&quot;, total_weight)
+print(&quot;Total value:&quot;, total_value)
+</code></pre>
+<p>The code it generated contained errors and was unnecessarily complex. It seems the model couldn’t keep up with the updates that <code>feloopy</code> has undergone over the past three years.</p>
+<pre><code>    raise ValueError(f&quot;Invalid &#39;{label}&#39;. Please choose from: {str(list_of_allowed_values)}.&quot;)
+ValueError: Invalid &#39;method&#39;. Please choose from: [&#39;constraint&#39;, &#39;convex&#39;, &#39;exact&#39;, &#39;heuristic&#39;, &#39;uncertain&#39;].
+</code></pre>
+<p>I fixed the code myself, and tried to run that again:</p>
+<pre><code class="language-python">
+# pip install feloopy[stock]   # uncomment &amp; run once if FelooPy is not installed
+
+import feloopy as flp
+
+# --- data (from your table) ---
+items = [
+    (&quot;item_1&quot;,  4,  93),
+    (&quot;item_2&quot;,  9,  36),
+    (&quot;item_3&quot;,  5,  14),
+    (&quot;item_4&quot;,  4,  91),
+    (&quot;item_5&quot;,  3,  10),
+    (&quot;item_6&quot;, 19,  59),
+    (&quot;item_7&quot;,  2,   8),
+    (&quot;item_8&quot;,  3,  32),
+    (&quot;item_9&quot;,  8,  69),
+    (&quot;item_10&quot;, 5,  63),
+]
+
+# Change this capacity as needed
+CAPACITY = 50
+
+def build_knapsack_model(m):
+    # create a binary decision var for each item
+    x_vars = []
+    for name, w, v in items:
+        # m.bvar creates a binary variable (per FelooPy examples)
+        x = m.bvar(name=name)
+        x_vars.append(x)
+
+    # objective: maximize total value
+    obj_expr = sum(v * x for (_, _, v), x in zip(items, x_vars))
+    m.obj(obj_expr)
+
+    # knapsack capacity constraint: sum(weights * x) &lt;= CAPACITY
+    cap_expr = sum(w * x for (_, w, _), x in zip(items, x_vars))
+    m.con(cap_expr &lt;= CAPACITY, name=&quot;capacity&quot;)
+
+    # expose variables so we can inspect them later
+    m._x_vars = x_vars
+    return m
+
+def try_get_var_value(var):
+    &quot;&quot;&quot;
+    Try several common attribute/method names to retrieve the solved value of a variable.
+    FelooPy interfaces may wrap solver variables differently, so we attempt multiple ways.
+    &quot;&quot;&quot;
+    for attr in (&quot;value&quot;, &quot;x&quot;, &quot;X&quot;, &quot;value_&quot;, &quot;solution_value&quot;):
+        if hasattr(var, attr):
+            val = getattr(var, attr)
+            # if it&#39;s callable (method), call it
+            try:
+                return val() if callable(val) else val
+            except Exception:
+                pass
+    # try call directly (some wrappers overload __call__)
+    try:
+        return var()
+    except Exception:
+        pass
+    # couldn&#39;t read
+    return None
+
+# Build model using FelooPy &#39;exact&#39; modelling interface and a common open solver (&#39;pulp&#39;)
+m = flp.model(method=&#39;exact&#39;,name=&#39;knapsack_problem&#39;, interface=&#39;pulp&#39;)
+
+# Add the knapsack structure
+m = build_knapsack_model(m)
+
+# Solve: objective direction &#39;max&#39; with &#39;pulp&#39; solver
+# (You can replace &#39;pulp&#39; with any solver available on your machine/framework)
+m.sol([&#39;max&#39;], &#39;cbc&#39;)
+
+# Print FelooPy report (human-readable)
+m.report()
+
+# Try to display variables using FelooPy helper (prints to console)
+# This typically shows variable names and values in FelooPy
+try:
+    m.dis_variable(*m._x_vars)
+except Exception:
+    # if the helper is not available for the chosen interface, ignore
+    pass
+
+# Now attempt to collect solution values programmatically and print chosen items + totals
+selected = []
+total_weight = 0
+total_value = 0
+
+for (name, w, v), var in zip(items, m._x_vars):
+    val = try_get_var_value(var)
+    # Val might be float-like; treat &gt; 0.5 as chosen (binary)
+    chosen = False
+    if val is None:
+        # fallback: try to query model&#39;s solution summary if available
+        chosen = False
+    else:
+        try:
+            chosen = float(val) &gt; 0.5
+        except Exception:
+            chosen = bool(val)
+
+    if chosen:
+        selected.append(name)
+        total_weight += w
+        total_value += v
+
+# Print concise solution summary
+print(&quot;\n--- Solution summary ---&quot;)
+print(&quot;Capacity:&quot;, CAPACITY)
+print(&quot;Chosen items:&quot;, selected)
+print(&quot;Total weight:&quot;, total_weight)
+print(&quot;Total value:&quot;, total_value)
+</code></pre>
+<p>The result was:</p>
+<pre><code>
+┌─ FelooPy v0.3.9 ───────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ Date: 2025-11-11                                                        Time: 11:13:25 │
+│ Interface: pulp                                                            Solver: cbc │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌─ Model ────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ Name: knapsack_problem                                                                 │
+│ Feature:                                    Class:                            Total:   │
+│ Binary variable                             10                                10       │
+│ Total variables                             10                                10       │
+│ Objective                                   -                                 1        │
+│ Constraint                                  1                                 1        │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌─ Solve ────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ Method: exact                                                          Objective value │
+│ Status:                                                                            max │
+│ Optimal                                                                         429.00 │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌─ Metric ───────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ CPT (microseconds)                                                            8.70e+04 │
+│ CPT (hour:min:sec)                                                            00:00:00 │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌─ Decision ─────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ item_1 = 1.0                                                                           │
+│ item_3 = 1.0                                                                           │
+│ item_4 = 1.0                                                                           │
+│ item_6 = 1.0                                                                           │
+│ item_7 = 1.0                                                                           │
+│ item_8 = 1.0                                                                           │
+│ item_9 = 1.0                                                                           │
+│ item_10 = 1.0                                                                          │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+
+--- Solution summary ---
+Capacity: 50
+Chosen items: [&#39;item_1&#39;, &#39;item_3&#39;, &#39;item_4&#39;, &#39;item_6&#39;, &#39;item_7&#39;, &#39;item_8&#39;, &#39;item_9&#39;, &#39;item_10&#39;]
+Total weight: 50
+Total value: 429
+</code></pre>
+<p>Here it reaches a value of 429 — 38.96% better than the solution a non-expert obtained with ChatGPT. So yes, an LLM can act as an interface between user and solver, but it’s more like navigating a crowded road than walking an empty one: you save coding time but spend more time debugging. If you don’t know how to fix issues, even experts can spend much longer debugging. The code it produced works, but it could be written more cleanly as follows:</p>
+<pre><code class="language-python">import feloopy as flp
+
+n = 10
+id = [f&quot;item_{i+1}&quot; for i in range(n)]
+weight = [4,9,5,4,3,19,2,3,8,5]
+value = [93,36,14,91,10,59,8,32,69,63]
+capacity = 50
+
+def knapsack(m):
+    x = m.bvar(name=&quot;x&quot;, dim=[n])
+    m.con(m.sum(weight[i]*x[i] for i in range(n))&lt;=50)
+    m.obj(m.sum(value[i]*x[i] for i in range(n)))
+    return m
+
+problem = {
+    &quot;environment&quot;:knapsack,
+    &quot;interface&quot;: &quot;pulp&quot;,
+    &quot;solver&quot;: &quot;cbc&quot;,
+    &quot;directions&quot;: [&quot;max&quot;]
+}
+
+model = flp.search(**problem)
+x = model.get(&quot;x&quot;)
+
+for i in range(n):
+    if x[i]==1:
+        print(id[i], &quot;is selected&quot;)
+</code></pre>
+<p>Knowing the right tips and tricks can help you code better, build stronger models, and find better solutions. How much you improve depends on how much time you invest in learning. It’s not just about writing constraints in the correct mathematical form—each constraint is simple math. The real challenge is how constraints interact, and diagnosing those interactions is difficult even for experts.</p>
+<h1>Conclusion</h1>
+<p>Getting stakeholders to implement your recommendations—especially when they’ve relied on intuition for years—is one of the most cumbersome tasks for industrial engineers. When you write a research proposal or prepare a model/algorithm for deployment, you must clearly demonstrate business value to both the paper reviewer and the industry decision-maker; without that, your work risks rejection.</p>
+<p>LLMs can deliver real value for routine, repetitive tasks. In operations research—and any field that automates repetitive work—code, models, and algorithms are tools, not sources of competitive advantage. The real edge comes from continually clarifying and updating the assumptions that define the problem so solutions genuinely fit real-world expectations or address system weaknesses. That’s continuous improvement: be context- and result-oriented, not tool-oriented.</p>
+<p>We must also ask who builds systems, who makes decisions with LLMs, and who benefits. If an LLM only produces what an equally skilled developer could have written unaided, its added value is limited. Trust and expertise matter: a practitioner who understands the underlying theory and can actively collaborate with an LLM is far more reliable than someone who treats the process as a black box. Non-experts often remain uncertain about when to stop prompting or whether their prompts are adequate; experts, by contrast, can use LLMs to simplify repetitive tasks—but should avoid overreliance.</p>
+</div>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"><url><loc>https://feloopy.github.io/</loc><lastmod>2025-11-11T12:30:45.580Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url><loc>https://feloopy.github.io/</loc><lastmod>2025-11-11T12:30:45.580Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url><loc>https://feloopy.github.io/about</loc><lastmod>2025-11-11T12:30:45.580Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url><loc>https://feloopy.github.io/contact</loc><lastmod>2025-11-11T12:30:45.580Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url><loc>https://feloopy.github.io/blog</loc><lastmod>2025-11-11T12:30:45.580Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url><loc>https://feloopy.github.io/blog/*</loc><lastmod>2025-11-11T12:30:45.580Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://feloopy.github.io/</loc>
+    <lastmod>2025-11-11T13:28:24.004Z</lastmod>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/blog</loc>
+    <lastmod>2025-11-11T13:28:24.005Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/blog/list-of-optimization-packages.html</loc>
+    <lastmod>2024-01-15T00:00:00.000Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/blog/llms-and-decision-science.html</loc>
+    <lastmod>2025-11-11T00:00:00.000Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>
