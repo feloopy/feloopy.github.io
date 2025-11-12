@@ -161,19 +161,6 @@ code.hljs {
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
-      --tw-blur: initial;
-      --tw-brightness: initial;
-      --tw-contrast: initial;
-      --tw-grayscale: initial;
-      --tw-hue-rotate: initial;
-      --tw-invert: initial;
-      --tw-opacity: initial;
-      --tw-saturate: initial;
-      --tw-sepia: initial;
-      --tw-drop-shadow: initial;
-      --tw-drop-shadow-color: initial;
-      --tw-drop-shadow-alpha: 100%;
-      --tw-drop-shadow-size: initial;
       --tw-backdrop-blur: initial;
       --tw-backdrop-brightness: initial;
       --tw-backdrop-contrast: initial;
@@ -184,7 +171,6 @@ code.hljs {
       --tw-backdrop-saturate: initial;
       --tw-backdrop-sepia: initial;
       --tw-duration: initial;
-      --tw-ease: initial;
       --tw-animation-delay: 0s;
       --tw-animation-direction: normal;
       --tw-animation-duration: initial;
@@ -284,12 +270,7 @@ code.hljs {
     --leading-snug: 1.375;
     --leading-normal: 1.5;
     --leading-relaxed: 1.625;
-    --radius-sm: calc(var(--radius)  - 4px);
-    --radius-md: calc(var(--radius)  - 2px);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius)  + 4px);
     --radius-2xl: 1rem;
-    --ease-in-out: cubic-bezier(.4, 0, .2, 1);
     --animate-spin: spin 1s linear infinite;
     --animate-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
     --blur-sm: 8px;
@@ -297,37 +278,6 @@ code.hljs {
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
-    --color-chart-1: var(--chart-1);
-    --color-chart-2: var(--chart-2);
-    --color-chart-3: var(--chart-3);
-    --color-chart-4: var(--chart-4);
-    --color-chart-5: var(--chart-5);
-    --color-sidebar: var(--sidebar);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-ring: var(--sidebar-ring);
   }
 }
 
@@ -859,10 +809,6 @@ code.hljs {
     margin-top: calc(var(--spacing) * 12);
   }
 
-  .mt-\[-2px\] {
-    margin-top: -2px;
-  }
-
   .mt-auto {
     margin-top: auto;
   }
@@ -1009,10 +955,6 @@ code.hljs {
   .size-10 {
     width: calc(var(--spacing) * 10);
     height: calc(var(--spacing) * 10);
-  }
-
-  .\!h-10 {
-    height: calc(var(--spacing) * 10) !important;
   }
 
   .h-\(--radix-select-trigger-height\) {
@@ -1163,12 +1105,12 @@ code.hljs {
     min-height: 4.5rem;
   }
 
-  .min-h-screen {
-    min-height: 100vh;
+  .min-h-\[220px\] {
+    min-height: 220px;
   }
 
-  .\!w-10 {
-    width: calc(var(--spacing) * 10) !important;
+  .min-h-screen {
+    min-height: 100vh;
   }
 
   .w-1 {
@@ -1337,10 +1279,6 @@ code.hljs {
 
   .flex-none {
     flex: none;
-  }
-
-  .shrink {
-    flex-shrink: 1;
   }
 
   .shrink-0 {
@@ -1742,10 +1680,6 @@ code.hljs {
     border-color: var(--color-gray-300);
   }
 
-  .border-green-500 {
-    border-color: var(--color-green-500);
-  }
-
   .border-green-600 {
     border-color: var(--color-green-600);
   }
@@ -1756,10 +1690,6 @@ code.hljs {
 
   .border-transparent {
     border-color: #0000;
-  }
-
-  .\!bg-background {
-    background-color: var(--background) !important;
   }
 
   .bg-\[\#7ce12d\] {
@@ -1944,11 +1874,6 @@ code.hljs {
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  .bg-gradient-to-r {
-    --tw-gradient-position: to right in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
-  }
-
   .from-\[\#76B900\] {
     --tw-gradient-from: #76b900;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1975,7 +1900,7 @@ code.hljs {
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
-  .bg-\[length\:800\%_auto\], .bg-size-\[800\%_auto\] {
+  .bg-size-\[800\%_auto\] {
     background-size: 800%;
   }
 
@@ -1988,16 +1913,12 @@ code.hljs {
     fill: currentColor;
   }
 
-  .stroke-3, .stroke-\[3\] {
+  .stroke-3 {
     stroke-width: 3px;
   }
 
   .object-cover {
     object-fit: cover;
-  }
-
-  .\!p-0 {
-    padding: calc(var(--spacing) * 0) !important;
   }
 
   .p-0 {
@@ -2342,7 +2263,7 @@ code.hljs {
     text-wrap: balance;
   }
 
-  .break-words, .wrap-break-word {
+  .wrap-break-word {
     overflow-wrap: break-word;
   }
 
@@ -2602,10 +2523,6 @@ code.hljs {
     outline-width: 1px;
   }
 
-  .filter {
-    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
-  }
-
   .backdrop-blur-sm {
     --tw-backdrop-blur: blur(var(--blur-sm));
     -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
@@ -2672,11 +2589,6 @@ code.hljs {
     transition-duration: 1s;
   }
 
-  .ease-in-out {
-    --tw-ease: var(--ease-in-out);
-    transition-timing-function: var(--ease-in-out);
-  }
-
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
@@ -2690,6 +2602,10 @@ code.hljs {
   .select-none {
     -webkit-user-select: none;
     user-select: none;
+  }
+
+  .running {
+    animation-play-state: running;
   }
 
   @media (hover: hover) {
@@ -2816,10 +2732,6 @@ code.hljs {
       border-color: #76b900;
     }
 
-    .hover\:\!bg-muted:hover {
-      background-color: var(--muted) !important;
-    }
-
     .hover\:bg-accent:hover, .hover\:bg-accent\/10:hover {
       background-color: var(--accent);
     }
@@ -2836,10 +2748,6 @@ code.hljs {
 
     .hover\:bg-background:hover {
       background-color: var(--background);
-    }
-
-    .hover\:bg-black:hover {
-      background-color: var(--color-black);
     }
 
     .hover\:bg-blue-600:hover {
@@ -4285,72 +4193,6 @@ code.hljs {
   initial-value: solid;
 }
 
-@property --tw-blur {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-brightness {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-contrast {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-grayscale {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-hue-rotate {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-invert {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-opacity {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-saturate {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-sepia {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-drop-shadow {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-drop-shadow-color {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-drop-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-
-@property --tw-drop-shadow-size {
-  syntax: "*";
-  inherits: false
-}
-
 @property --tw-backdrop-blur {
   syntax: "*";
   inherits: false
@@ -4397,11 +4239,6 @@ code.hljs {
 }
 
 @property --tw-duration {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-ease {
   syntax: "*";
   inherits: false
 }

@@ -27954,8 +27954,8 @@ function pickColorForKey(key) {
   }
   return PALETTE_AROUND_76B900[h2 % PALETTE_AROUND_76B900.length];
 }
-const PAGE_SIZE_OPTIONS$1 = [5, 10, 20];
-const PAGE_SIZE_DEFAULT$1 = 10;
+const PAGE_SIZE_OPTIONS$1 = [10, 50, 100];
+const PAGE_SIZE_DEFAULT$1 = 100;
 function BlogCard({ post: post2 }) {
   const hasImage = Boolean(post2.image);
   const bg = hasImage ? void 0 : pickColorForKey(post2.slug ?? post2.title);
@@ -27969,7 +27969,7 @@ function BlogCard({ post: post2 }) {
       to: `/blog/${post2.slug}`,
       className: "block rounded-lg overflow-hidden group",
       "aria-label": `${post2.title} — ${post2.description}`,
-      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full pb-[100%] bg-transparent", children: [
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full pb-[100%] bg-transparent min-h-[220px]", children: [
         hasImage ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "img",
@@ -27980,14 +27980,7 @@ function BlogCard({ post: post2 }) {
               className: "absolute inset-0 w-full h-full object-cover"
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: "absolute inset-0",
-              "aria-hidden": true,
-              style: { background: IMAGE_DIM_OVERLAY }
-            }
-          )
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0", "aria-hidden": true, style: { background: IMAGE_DIM_OVERLAY } })
         ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
@@ -28040,14 +28033,7 @@ function BlogCard({ post: post2 }) {
                 children: post2.title
               }
             ),
-            post2.description && /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "p",
-              {
-                className: "mt-1 text-[12px] line-clamp-3",
-                style: { color: SECONDARY_TEXT },
-                children: post2.description
-              }
-            ),
+            post2.description && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[12px] line-clamp-3", style: { color: SECONDARY_TEXT }, children: post2.description }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 flex flex-wrap gap-1", children: (post2.tags ?? []).slice(0, 4).map((t) => /* @__PURE__ */ jsxRuntimeExports.jsx(
               Badge,
               {
@@ -28069,12 +28055,15 @@ function BlogCard({ post: post2 }) {
   );
 }
 function Blog() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageFromUrl = Number(searchParams.get("page") || "1");
   const [searchTerm, setSearchTerm] = reactExports.useState("");
   const [pageSize, setPageSize] = reactExports.useState(PAGE_SIZE_DEFAULT$1);
-  const [currentPage, setCurrentPage] = reactExports.useState(1);
+  const [currentPage, setCurrentPage] = reactExports.useState(pageFromUrl);
   const [prefetching, setPrefetching] = reactExports.useState(false);
   const allPosts = reactExports.useMemo(() => getAllBlogPosts(), []);
   const [contentCache, setContentCache] = reactExports.useState({});
+  const gridRef = reactExports.useRef(null);
   reactExports.useEffect(() => {
     let mounted = true;
     async function prefetchAll() {
@@ -28110,8 +28099,7 @@ function Blog() {
     const t = term.toLowerCase().trim();
     if (post2.title.toLowerCase().includes(t)) return true;
     if (post2.description?.toLowerCase().includes(t)) return true;
-    if ((post2.tags ?? []).some((tg) => tg.toLowerCase().includes(t)))
-      return true;
+    if ((post2.tags ?? []).some((tg) => tg.toLowerCase().includes(t))) return true;
     const cached = contentCache[post2.slug] ?? "";
     if (cached && cached.toLowerCase().includes(t)) return true;
     return false;
@@ -28122,14 +28110,23 @@ function Blog() {
   reactExports.useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, pageSize]);
-  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / pageSize));
   reactExports.useEffect(() => {
-    if (currentPage > totalPages) setCurrentPage(totalPages);
-  }, [currentPage, totalPages]);
-  const visiblePosts = filteredPosts.slice(
-    (currentPage - 1) * pageSize,
-    currentPage * pageSize
-  );
+    const totalPages2 = Math.max(1, Math.ceil(filteredPosts.length / pageSize));
+    if (currentPage > totalPages2) setCurrentPage(totalPages2);
+  }, [filteredPosts.length, pageSize]);
+  reactExports.useEffect(() => {
+    if (pageFromUrl !== currentPage) setCurrentPage(pageFromUrl);
+  }, [pageFromUrl]);
+  reactExports.useEffect(() => {
+    if (currentPage !== pageFromUrl) {
+      const next2 = new URLSearchParams(searchParams.toString());
+      if (currentPage <= 1) next2.delete("page");
+      else next2.set("page", String(currentPage));
+      setSearchParams(next2);
+    }
+  }, [currentPage]);
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / pageSize));
+  const visiblePosts = filteredPosts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
   const showPagination = filteredPosts.length > pageSize;
   const showSummary = filteredPosts.length > pageSize;
   function buildPagesArray(total, current) {
@@ -28142,14 +28139,47 @@ function Blog() {
     const left = Math.max(2, current - 1);
     const right = Math.min(total - 1, current + 1);
     if (left > 2) pages2.push("ellipsis");
-    for (let i = left; i <= right; i++) {
-      pages2.push(i);
-    }
+    for (let i = left; i <= right; i++) pages2.push(i);
     if (right < total - 1) pages2.push("ellipsis");
     pages2.push(total);
     return Array.from(new Set(pages2));
   }
   const pages = buildPagesArray(totalPages, currentPage);
+  reactExports.useEffect(() => {
+    try {
+      const el = gridRef.current;
+      if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
+      else window.scrollTo({ top: 0, behavior: "auto" });
+    } catch {
+    }
+  }, [currentPage]);
+  reactExports.useEffect(() => {
+    const remove = () => {
+      const prev = document.querySelector('link[rel="prev"]');
+      const next2 = document.querySelector('link[rel="next"]');
+      if (prev) prev.remove();
+      if (next2) next2.remove();
+    };
+    remove();
+    try {
+      if (totalPages > 1) {
+        if (currentPage > 1) {
+          const prev = document.createElement("link");
+          prev.rel = "prev";
+          prev.href = `${window.location.pathname}${currentPage - 1 > 1 ? `?page=${currentPage - 1}` : ""}`;
+          document.head.appendChild(prev);
+        }
+        if (currentPage < totalPages) {
+          const next2 = document.createElement("link");
+          next2.rel = "next";
+          next2.href = `${window.location.pathname}?page=${currentPage + 1}`;
+          document.head.appendChild(next2);
+        }
+      }
+    } catch {
+    }
+    return () => remove();
+  }, [currentPage, totalPages]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-8", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center space-y-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl font-bold", style: { color: "#76b900" }, children: "Blog" }),
@@ -28185,66 +28215,25 @@ function Blog() {
           ]
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          className: "flex-none text-sm text-muted-foreground ml-2",
-          "aria-hidden": true,
-          children: prefetching ? "Indexing..." : ""
-        }
-      )
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-none text-sm text-muted-foreground ml-2", "aria-hidden": true, children: prefetching ? "Indexing..." : "" })
     ] }) }),
     filteredPosts.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center py-12", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground", children: "No articles found matching your search." }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 max-w-4xl mx-auto", children: visiblePosts.map((post2) => {
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: gridRef, className: "grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 max-w-4xl mx-auto", children: visiblePosts.map((post2) => {
         return /* @__PURE__ */ jsxRuntimeExports.jsx(BlogCard, { post: post2 }, post2.slug);
       }) }),
-      showPagination && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Pagination, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(PaginationContent, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          PaginationPrevious,
-          {
-            href: "#",
-            onClick: (e) => {
-              e.preventDefault();
-              if (currentPage > 1) setCurrentPage(currentPage - 1);
-            },
-            "aria-disabled": currentPage <= 1
-          }
-        ) }),
+      showPagination && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { "aria-label": "Pagination", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Pagination, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(PaginationContent, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: `?page=${Math.max(1, currentPage - 1)}`, onClick: () => setCurrentPage(Math.max(1, currentPage - 1)), children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationPrevious, { "aria-disabled": currentPage <= 1 }) }) }),
         pages.map(
-          (p2, idx) => p2 === "ellipsis" ? /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationEllipsis, {}) }, `ell-${idx}`) : /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            PaginationLink,
-            {
-              href: "#",
-              isActive: p2 === currentPage,
-              onClick: (e) => {
-                e.preventDefault();
-                if (typeof p2 === "number") setCurrentPage(p2);
-              },
-              "aria-current": p2 === currentPage ? "page" : void 0,
-              children: p2
-            }
-          ) }, p2)
+          (p2, idx) => p2 === "ellipsis" ? /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationEllipsis, {}) }, `ell-${idx}`) : /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: `?page=${p2}`, onClick: () => typeof p2 === "number" && setCurrentPage(p2), children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationLink, { "aria-current": p2 === currentPage ? "page" : void 0, isActive: p2 === currentPage, children: p2 }) }) }, p2)
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          PaginationNext,
-          {
-            href: "#",
-            onClick: (e) => {
-              e.preventDefault();
-              if (currentPage < totalPages)
-                setCurrentPage(currentPage + 1);
-            },
-            "aria-disabled": currentPage >= totalPages
-          }
-        ) })
-      ] }) }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: `?page=${Math.min(currentPage + 1, totalPages)}`, onClick: () => setCurrentPage(Math.min(currentPage + 1, totalPages)), children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationNext, { "aria-disabled": currentPage >= totalPages }) }) })
+      ] }) }) }) }) }),
       showSummary && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-3 text-sm text-muted-foreground", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto text-center", children: [
         "Showing",
         " ",
         /* @__PURE__ */ jsxRuntimeExports.jsxs("strong", { children: [
           (currentPage - 1) * pageSize + 1,
-          " -",
-          " ",
+          " - ",
           Math.min(currentPage * pageSize, filteredPosts.length)
         ] }),
         " ",
@@ -83949,6 +83938,84 @@ function BlogPostWithStickyTOC() {
     observerRef.current = observer;
   };
   reactExports.useEffect(() => {
+    if (!post2) return;
+    const getAbsoluteImageUrl = (imagePath) => {
+      if (!imagePath) return "";
+      if (imagePath.startsWith("http")) return imagePath;
+      return `${window.location.origin}${imagePath.startsWith("/") ? "" : "/"}${imagePath}`;
+    };
+    const getOptimizedImageUrl = (imageUrl2) => {
+      if (!imageUrl2) return "";
+      const isExternal = imageUrl2.startsWith("http") && !imageUrl2.includes(window.location.hostname);
+      if (isExternal) {
+        return imageUrl2;
+      }
+      return imageUrl2;
+    };
+    const pageUrl = window.location.href;
+    const imageUrl = getOptimizedImageUrl(getAbsoluteImageUrl(post2.image || ""));
+    const isImageExternal = imageUrl.startsWith("http") && !imageUrl.includes(window.location.hostname);
+    const updateMetaTag = (name2, content2, property) => {
+      if (!content2) return;
+      const selector = property ? `meta[property="${property}"]` : `meta[name="${name2}"]`;
+      let metaTag = document.querySelector(selector);
+      if (!metaTag) {
+        metaTag = document.createElement("meta");
+        if (property) {
+          metaTag.setAttribute("property", property);
+        } else {
+          metaTag.setAttribute("name", name2);
+        }
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute("content", content2);
+    };
+    document.title = `${post2.title} | FelooPy`;
+    updateMetaTag("description", post2.description);
+    updateMetaTag("", post2.title, "og:title");
+    updateMetaTag("", post2.description, "og:description");
+    updateMetaTag("", imageUrl, "og:image");
+    updateMetaTag("", pageUrl, "og:url");
+    updateMetaTag("", "article", "og:type");
+    updateMetaTag("", "FelooPy", "og:site_name");
+    if (imageUrl) {
+      updateMetaTag("", "1200", "og:image:width");
+      updateMetaTag("", "630", "og:image:height");
+    }
+    updateMetaTag("twitter:card", "summary_large_image");
+    updateMetaTag("twitter:title", post2.title);
+    updateMetaTag("twitter:description", post2.description);
+    updateMetaTag("twitter:image", imageUrl);
+    updateMetaTag("twitter:site", "@FelooPy");
+    updateMetaTag("twitter:creator", "@FelooPy");
+    updateMetaTag("", new Date(post2.date).toISOString(), "article:published_time");
+    if (post2.modified) {
+      updateMetaTag("", new Date(post2.modified).toISOString(), "article:modified_time");
+    }
+    if (post2.tags) {
+      const existingTags = document.querySelectorAll('meta[property="article:tag"]');
+      existingTags.forEach((tag) => tag.remove());
+      post2.tags.forEach((tag) => {
+        updateMetaTag("", tag, "article:tag");
+      });
+    }
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", pageUrl);
+    console.log("Meta tags set for:", {
+      title: post2.title,
+      image: imageUrl,
+      isExternal: isImageExternal
+    });
+    return () => {
+      document.title = "FelooPy";
+    };
+  }, [post2]);
+  reactExports.useEffect(() => {
     const onScroll = () => {
       setShowTopButton(window.scrollY > 400);
       if (tocWrapperRef.current && headerRef.current) {
@@ -85203,8 +85270,8 @@ var FastAverageColor = (
     return FastAverageColor2;
   })()
 );
-const PAGE_SIZE_OPTIONS = [9, 18, 27];
-const PAGE_SIZE_DEFAULT = 9;
+const PAGE_SIZE_OPTIONS = [10, 58, 100];
+const PAGE_SIZE_DEFAULT = 100;
 const fac = new FastAverageColor();
 function parseRgbString$1(rgbStr) {
   const m = rgbStr.match(/rgba?\(\s*([0-9]+)[,\s]+([0-9]+)[,\s]+([0-9]+)/i);
@@ -85356,9 +85423,11 @@ function ensurePageScrollable() {
   }
 }
 function Store() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageFromUrl = Number(searchParams.get("page") || "1");
   const [searchTerm, setSearchTerm] = reactExports.useState("");
   const [pageSize, setPageSize] = reactExports.useState(PAGE_SIZE_DEFAULT);
-  const [currentPage, setCurrentPage] = reactExports.useState(1);
+  const [currentPage, setCurrentPage] = reactExports.useState(pageFromUrl);
   const [sortBy, setSortBy] = reactExports.useState("popularity");
   const [storeItems, setStoreItems] = reactExports.useState([]);
   const [loading, setLoading] = reactExports.useState(true);
@@ -85368,6 +85437,7 @@ function Store() {
   const [cardTextColors, setCardTextColors] = reactExports.useState({});
   const [cardOverlay, setCardOverlay] = reactExports.useState({});
   const [cardLogoBackdrops, setCardLogoBackdrops] = reactExports.useState({});
+  const gridRef = reactExports.useRef(null);
   reactExports.useEffect(() => {
     ensurePageScrollable();
     return () => ensurePageScrollable();
@@ -85509,7 +85579,6 @@ function Store() {
           item.short_description,
           item.long_description,
           item.long_text,
-          // <-- resolved markdown and doc content
           item.homepage,
           (item.tags || []).join(" "),
           (item.documentation || []).join(" "),
@@ -85535,6 +85604,17 @@ function Store() {
   reactExports.useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, pageSize, sortBy]);
+  reactExports.useEffect(() => {
+    if (pageFromUrl !== currentPage) setCurrentPage(pageFromUrl);
+  }, [pageFromUrl]);
+  reactExports.useEffect(() => {
+    if (currentPage !== pageFromUrl) {
+      const next2 = new URLSearchParams(searchParams.toString());
+      if (currentPage <= 1) next2.delete("page");
+      else next2.set("page", String(currentPage));
+      setSearchParams(next2);
+    }
+  }, [currentPage]);
   const totalPages = Math.max(1, Math.ceil(filteredItems.length / pageSize));
   const visibleItems = filteredItems.slice((currentPage - 1) * pageSize, currentPage * pageSize);
   reactExports.useEffect(() => {
@@ -85544,15 +85624,23 @@ function Store() {
       sessionStorage.removeItem("storeScroll");
     }
   }, [filteredItems]);
-  const renderPageItems = () => {
+  reactExports.useEffect(() => {
+    try {
+      const el = gridRef.current;
+      if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
+      else window.scrollTo({ top: 0, behavior: "auto" });
+    } catch {
+    }
+  }, [currentPage]);
+  function renderPageItems() {
     const items = [];
     for (let page = 1; page <= totalPages; page++) {
       items.push(
-        /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationLink, { onClick: () => setCurrentPage(page), isActive: page === currentPage, children: page }) }, page)
+        /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: `?page=${page}`, onClick: () => setCurrentPage(page), children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationLink, { isActive: page === currentPage, children: page }) }) }, page)
       );
     }
     return items;
-  };
+  }
   if (loading) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center items-center min-h-64", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center space-y-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto" }),
@@ -85570,67 +85658,36 @@ function Store() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl font-bold", style: { color: "#76b900" }, children: "Store" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-muted-foreground max-w-2xl mx-auto", children: "Discover optimization tools, solvers, and modeling environments" })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "div",
-      {
-        className: "flex flex-row flex-nowrap items-center gap-4 w-full",
-        style: { overflowX: "auto", paddingBottom: 6 },
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-1 min-w-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Input,
-              {
-                placeholder: "Search tools, vendors, tags, ids, docs, downloads...",
-                value: searchTerm,
-                onChange: (e) => setSearchTerm(e.target.value),
-                className: "pl-10 w-full"
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-row items-center gap-3 flex-none", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex-none", style: { minWidth: 140 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              Select,
-              {
-                value: sortBy,
-                onValueChange: (val) => setSortBy(val),
-                onOpenChange: (open2) => {
-                  if (open2) setTimeout(ensurePageScrollable, 0);
-                  else ensurePageScrollable();
-                },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { className: "w-36", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Sort by" }) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(SelectContent, { className: "absolute z-50", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "popularity", children: "Popularity" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "name", children: "Name" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "vendor", children: "Vendor" })
-                  ] })
-                ]
-              }
-            ) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex-none", style: { minWidth: 92 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              Select,
-              {
-                value: String(pageSize),
-                onValueChange: (val) => {
-                  const n = Number(val);
-                  if (PAGE_SIZE_OPTIONS.includes(n)) setPageSize(n);
-                },
-                onOpenChange: (open2) => {
-                  if (open2) setTimeout(ensurePageScrollable, 0);
-                  else ensurePageScrollable();
-                },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { className: "w-20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: `${PAGE_SIZE_DEFAULT}` }) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { className: "absolute z-50", children: PAGE_SIZE_OPTIONS.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: String(opt), children: opt }, opt)) })
-                ]
-              }
-            ) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-row flex-nowrap items-center gap-4 w-full", style: { overflowX: "auto", paddingBottom: 6 }, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-1 min-w-0", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Input, { placeholder: "Search tools, vendors, tags, ids, docs, downloads...", value: searchTerm, onChange: (e) => setSearchTerm(e.target.value), className: "pl-10 w-full" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-row items-center gap-3 flex-none", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex-none", style: { minWidth: 140 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Select, { value: sortBy, onValueChange: (val) => setSortBy(val), onOpenChange: (open2) => {
+          if (open2) setTimeout(ensurePageScrollable, 0);
+          else ensurePageScrollable();
+        }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { className: "w-36", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Sort by" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(SelectContent, { className: "absolute z-50", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "popularity", children: "Popularity" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "name", children: "Name" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "vendor", children: "Vendor" })
           ] })
-        ]
-      }
-    ) }),
-    filteredItems.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center py-12 text-muted-foreground", children: searchTerm ? "No tools found matching your search." : "No store items available." }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 max-w-4xl mx-auto", children: visibleItems.map((item) => {
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex-none", style: { minWidth: 92 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Select, { value: String(pageSize), onValueChange: (val) => {
+          const n = Number(val);
+          if (PAGE_SIZE_OPTIONS.includes(n)) setPageSize(n);
+        }, onOpenChange: (open2) => {
+          if (open2) setTimeout(ensurePageScrollable, 0);
+          else ensurePageScrollable();
+        }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { className: "w-20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: `${PAGE_SIZE_DEFAULT}` }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { className: "absolute z-50", children: PAGE_SIZE_OPTIONS.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: String(opt), children: opt }, opt)) })
+        ] }) })
+      ] })
+    ] }) }),
+    filteredItems.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center py-12 text-muted-foreground", children: searchTerm ? "No tools found matching your search." : "No store items available." }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: gridRef, className: "grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 max-w-4xl mx-auto", children: visibleItems.map((item) => {
       const explicitCardBg = item.background_color;
       const bg = cardBackgrounds[item.id] || explicitCardBg || "#ffffff";
       const hex = cardHex[item.id] || normalizeToHex$1(String(explicitCardBg || "#ffffff"));
@@ -85655,7 +85712,8 @@ function Store() {
             color: textColor,
             position: "relative",
             border: cardBorder,
-            boxShadow: cardBoxShadow
+            boxShadow: cardBoxShadow,
+            minHeight: 260
           },
           onClick: () => {
             sessionStorage.setItem("storeScroll", String(window.scrollY));
@@ -85670,58 +85728,26 @@ function Store() {
           },
           children: [
             overlay && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", inset: 0, background: overlay, pointerEvents: "none" } }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", top: 10, right: 10, zIndex: 5 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Badge,
-              {
-                variant: "secondary",
-                className: "text-xs",
-                style: {
-                  fontSize: 11,
-                  padding: "0.15rem 0.45rem",
-                  background: "rgba(0,0,0,0.06)",
-                  borderColor: "rgba(0,0,0,0.06)",
-                  color: textColor
-                },
-                children: item.license || "Unknown"
-              }
-            ) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", top: 10, right: 10, zIndex: 5 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "secondary", className: "text-xs", style: { fontSize: 11, padding: "0.15rem 0.45rem", background: "rgba(0,0,0,0.06)", borderColor: "rgba(0,0,0,0.06)", color: textColor }, children: item.license || "Unknown" }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full aspect-square p-5 flex flex-col justify-end", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "div",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", top: 12, left: 12, width: 56, height: 56, borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", background: logoBackdrop, border: logoBorder, boxShadow: logoBoxShadow, overflow: "hidden", padding: 6 }, children: item.icon ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "img",
                 {
-                  style: {
-                    position: "absolute",
-                    top: 12,
-                    left: 12,
-                    width: 56,
-                    height: 56,
-                    borderRadius: 12,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    background: logoBackdrop,
-                    border: logoBorder,
-                    boxShadow: logoBoxShadow,
-                    overflow: "hidden",
-                    padding: 6
-                  },
-                  children: item.icon ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "img",
-                    {
-                      src: item.icon,
-                      alt: item.name,
-                      style: { maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" },
-                      onError: (e) => {
-                        const target = e.target;
-                        if (!target.dataset.fallback) {
-                          target.src = `https://via.placeholder.com/64/1f2937/ffffff?text=${encodeURIComponent(item.name.slice(0, 2))}`;
-                          target.dataset.fallback = "1";
-                        }
-                      }
+                  src: item.icon,
+                  alt: item.name,
+                  style: { width: "100%", height: "100%", objectFit: "contain", display: "block" },
+                  onError: (e) => {
+                    const target = e.target;
+                    if (!target.dataset.fallback) {
+                      target.src = `https://via.placeholder.com/64/1f2937/ffffff?text=${encodeURIComponent(item.name.slice(0, 2))}`;
+                      target.dataset.fallback = "1";
                     }
-                  ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontWeight: 700, fontSize: 14, color: "#111" }, children: item.name.slice(0, 2).toUpperCase() })
+                  },
+                  width: 56,
+                  height: 56,
+                  loading: "lazy"
                 }
-              ),
+              ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontWeight: 700, fontSize: 14, color: "#111" }, children: item.name.slice(0, 2).toUpperCase() }) }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginTop: 56 }, className: "space-y-2 text-left pr-3 pl-1", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "font-semibold text-lg leading-tight flex items-center gap-2", style: { color: textColor }, children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: item.name }),
@@ -85736,40 +85762,11 @@ function Store() {
                   ] })
                 ] }) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-2 mt-2", children: [
-                  item.tags.slice(0, 3).map((tag) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    Badge,
-                    {
-                      variant: "outline",
-                      className: "text-xs",
-                      style: {
-                        background: badgeBg,
-                        borderColor: badgeBorder,
-                        color: textColor,
-                        padding: "0.18rem 0.45rem",
-                        lineHeight: 1
-                      },
-                      children: tag
-                    },
-                    tag
-                  )),
-                  item.tags.length > 3 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    Badge,
-                    {
-                      variant: "outline",
-                      className: "text-xs",
-                      style: {
-                        background: badgeBg,
-                        borderColor: badgeBorder,
-                        color: textColor,
-                        padding: "0.18rem 0.45rem",
-                        lineHeight: 1
-                      },
-                      children: [
-                        "+",
-                        item.tags.length - 3
-                      ]
-                    }
-                  )
+                  item.tags.slice(0, 3).map((tag) => /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "outline", className: "text-xs", style: { background: badgeBg, borderColor: badgeBorder, color: textColor, padding: "0.18rem 0.45rem", lineHeight: 1 }, children: tag }, tag)),
+                  item.tags.length > 3 && /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "outline", className: "text-xs", style: { background: badgeBg, borderColor: badgeBorder, color: textColor, padding: "0.18rem 0.45rem", lineHeight: 1 }, children: [
+                    "+",
+                    item.tags.length - 3
+                  ] })
                 ] })
               ] })
             ] })
@@ -85779,23 +85776,9 @@ function Store() {
       );
     }) }),
     totalPages > 1 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Pagination, { className: "justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(PaginationContent, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        PaginationPrevious,
-        {
-          onClick: currentPage === 1 ? void 0 : () => setCurrentPage(Math.max(1, currentPage - 1)),
-          "aria-disabled": currentPage === 1,
-          style: currentPage === 1 ? { opacity: 0.5, pointerEvents: "none" } : void 0
-        }
-      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: `?page=${Math.max(1, currentPage - 1)}`, onClick: () => setCurrentPage(Math.max(1, currentPage - 1)), children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationPrevious, { "aria-disabled": currentPage === 1, style: currentPage === 1 ? { opacity: 0.5, pointerEvents: "none" } : void 0 }) }) }),
       renderPageItems(),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        PaginationNext,
-        {
-          onClick: currentPage === totalPages ? void 0 : () => setCurrentPage(Math.min(totalPages, currentPage + 1)),
-          "aria-disabled": currentPage === totalPages,
-          style: currentPage === totalPages ? { opacity: 0.5, pointerEvents: "none" } : void 0
-        }
-      ) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: `?page=${Math.min(totalPages, currentPage + 1)}`, onClick: () => setCurrentPage(Math.min(totalPages, currentPage + 1)), children: /* @__PURE__ */ jsxRuntimeExports.jsx(PaginationNext, { "aria-disabled": currentPage === totalPages, style: currentPage === totalPages ? { opacity: 0.5, pointerEvents: "none" } : void 0 }) }) })
     ] }) }) })
   ] });
 }
