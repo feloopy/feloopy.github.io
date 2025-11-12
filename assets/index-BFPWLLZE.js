@@ -92701,6 +92701,10 @@ function App() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/payment-ref", element: /* @__PURE__ */ jsxRuntimeExports.jsx(PaymentRefPage, {}) })
   ] }) }) });
 }
-clientExports.createRoot(document.getElementById("root")).render(
-  /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(BrowserRouter, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) }) })
-);
+const rootEl = document.getElementById("root");
+const app = /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(BrowserRouter, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) }) });
+if (rootEl.hasChildNodes()) {
+  clientExports.hydrateRoot(rootEl, app);
+} else {
+  clientExports.createRoot(rootEl).render(app);
+}
