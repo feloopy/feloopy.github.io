@@ -14851,22 +14851,22 @@ const createLucideIcon = (iconName, iconNode) => {
   Component.displayName = toPascalCase(iconName);
   return Component;
 };
-const __iconNode$u = [
+const __iconNode$t = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$u);
-const __iconNode$t = [
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$t);
+const __iconNode$s = [
   ["path", { d: "m5 12 7-7 7 7", key: "hav0vg" }],
   ["path", { d: "M12 19V5", key: "x0mq9r" }]
 ];
-const ArrowUp = createLucideIcon("arrow-up", __iconNode$t);
-const __iconNode$s = [
+const ArrowUp = createLucideIcon("arrow-up", __iconNode$s);
+const __iconNode$r = [
   ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
   ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
 ];
-const Briefcase = createLucideIcon("briefcase", __iconNode$s);
-const __iconNode$r = [
+const Briefcase = createLucideIcon("briefcase", __iconNode$r);
+const __iconNode$q = [
   ["path", { d: "M12 20v-9", key: "1qisl0" }],
   ["path", { d: "M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z", key: "uouzyp" }],
   ["path", { d: "M14.12 3.88 16 2", key: "qol33r" }],
@@ -14879,66 +14879,66 @@ const __iconNode$r = [
   ["path", { d: "m8 2 1.88 1.88", key: "fmnt4t" }],
   ["path", { d: "M9 7.13V6a3 3 0 1 1 6 0v1.13", key: "1vgav8" }]
 ];
-const Bug = createLucideIcon("bug", __iconNode$r);
-const __iconNode$q = [
+const Bug = createLucideIcon("bug", __iconNode$q);
+const __iconNode$p = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$q);
-const __iconNode$p = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$p);
-const __iconNode$o = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$o);
-const __iconNode$n = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$n);
-const __iconNode$m = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$m);
-const __iconNode$l = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$l);
-const __iconNode$k = [
+const Calendar = createLucideIcon("calendar", __iconNode$p);
+const __iconNode$o = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$o);
+const __iconNode$n = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$n);
+const __iconNode$m = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$m);
+const __iconNode$l = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$l);
+const __iconNode$k = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$k);
+const __iconNode$j = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   ["path", { d: "M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2", key: "4jdomd" }],
   ["path", { d: "M16 4h2a2 2 0 0 1 2 2v4", key: "3hqy98" }],
   ["path", { d: "M21 14H11", key: "1bme5i" }],
   ["path", { d: "m15 10-4 4 4 4", key: "5dvupr" }]
 ];
-const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$k);
-const __iconNode$j = [
+const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$j);
+const __iconNode$i = [
   ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$j);
-const __iconNode$i = [
+const Clock = createLucideIcon("clock", __iconNode$i);
+const __iconNode$h = [
   ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
   ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ];
-const Copy = createLucideIcon("copy", __iconNode$i);
-const __iconNode$h = [
+const Copy = createLucideIcon("copy", __iconNode$h);
+const __iconNode$g = [
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
   ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const CreditCard = createLucideIcon("credit-card", __iconNode$h);
-const __iconNode$g = [
+const CreditCard = createLucideIcon("credit-card", __iconNode$g);
+const __iconNode$f = [
   ["path", { d: "M12 15V3", key: "m9g1x1" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const Download = createLucideIcon("download", __iconNode$g);
-const __iconNode$f = [
+const Download = createLucideIcon("download", __iconNode$f);
+const __iconNode$e = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   ["circle", { cx: "19", cy: "12", r: "1", key: "1wjl8i" }],
   ["circle", { cx: "5", cy: "12", r: "1", key: "1pcz8c" }]
 ];
-const Ellipsis = createLucideIcon("ellipsis", __iconNode$f);
-const __iconNode$e = [
+const Ellipsis = createLucideIcon("ellipsis", __iconNode$e);
+const __iconNode$d = [
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
   ["path", { d: "M10 14 21 3", key: "gplh6r" }],
   ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
 ];
-const ExternalLink = createLucideIcon("external-link", __iconNode$e);
-const __iconNode$d = [
+const ExternalLink = createLucideIcon("external-link", __iconNode$d);
+const __iconNode$c = [
   [
     "path",
     {
@@ -14947,24 +14947,18 @@ const __iconNode$d = [
     }
   ]
 ];
-const Heart = createLucideIcon("heart", __iconNode$d);
-const __iconNode$c = [
+const Heart = createLucideIcon("heart", __iconNode$c);
+const __iconNode$b = [
   ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
   ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
 ];
-const Mail = createLucideIcon("mail", __iconNode$c);
-const __iconNode$b = [
+const Mail = createLucideIcon("mail", __iconNode$b);
+const __iconNode$a = [
   ["path", { d: "M4 5h16", key: "1tepv9" }],
   ["path", { d: "M4 12h16", key: "1lakjw" }],
   ["path", { d: "M4 19h16", key: "1djgab" }]
 ];
-const Menu$1 = createLucideIcon("menu", __iconNode$b);
-const __iconNode$a = [
-  ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
-  ["line", { x1: "8", x2: "16", y1: "21", y2: "21", key: "1svkeh" }],
-  ["line", { x1: "12", x2: "12", y1: "17", y2: "21", key: "vw1qmm" }]
-];
-const Monitor = createLucideIcon("monitor", __iconNode$a);
+const Menu$1 = createLucideIcon("menu", __iconNode$a);
 const __iconNode$9 = [
   [
     "path",
@@ -18270,12 +18264,12 @@ const useTheme = () => {
     throw new Error("useTheme must be used within a ThemeProvider");
   return context;
 };
-const themes = ["light", "dark", "system"];
+const themes = ["dark", "light"];
 function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const handleToggle = () => {
     const currentIndex = themes.indexOf(theme);
-    const nextTheme = themes[(currentIndex + 1) % themes.length];
+    const nextTheme = themes[(Math.max(0, currentIndex) + 1) % themes.length];
     setTheme(nextTheme);
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -18299,13 +18293,6 @@ function ModeToggle() {
           {
             className: `text-foreground absolute inset-0 m-auto h-6 w-6 transition-all 
           ${theme === "dark" ? "rotate-0 scale-100" : "rotate-90 scale-0"}`
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Monitor,
-          {
-            className: `text-foreground absolute inset-0 m-auto h-6 w-6 transition-all 
-          ${theme === "system" ? "rotate-0 scale-100" : "rotate-90 scale-0"}`
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "sr-only", children: "Toggle theme" })
@@ -19285,7 +19272,7 @@ const __vite_glob_0_1 = `---
 title: On large language models and decision science
 description: View LLMs as the traveling salesperson problem
 date: '2025-11-11'
-readTime: 17 min read
+readTime: 18 min read
 image: https://images.unsplash.com/photo-1580777361964-27e9cdd2f838?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1528
 author: Keivan Tafakkori
 tags:
@@ -19296,41 +19283,35 @@ tags:
 
 # Introduction\r
 \r
-Plainly put, I see large language models (LLMs), including the current generation of Generative AI, as systems meant to find logical tours/routes among characters, words, phrases, and larger linguistic patterns from a set of vocabularies/dictionaries/blogs/papers to generate text that fits a user’s prompt. There is nothing special about it.\r
+Plainly put, I see current large language models (LLMs), those representing the current state of Generative AI, as systems that are trained to infer logical tours or routes among characters, words, phrases, and larger linguistic patterns from vocabularies, dictionaries, blogs, and papers to generate a piece of text that matches a user’s prompted context. Nothing is special about it. LLMs today are similar to advanced search engines or advanced researchers who know which keywords to search for to find internet content that satisfies their needs. But now, with much less time wasted. And somehow, LLMs can reason by connecting ideas, text, and programming instructions from each observed resource.\r
 \r
-LLMs can be thought of as input distance graphs for repeatedly solving a traveling salesman problem. Each sentence, paragraph, or article is a route through a set of nodes (characters, words, concepts), and the “distance” between nodes is learned or adjusted during training or fine-tuning.\r
+You, as an Operations Research (OR) scientist, can think of LLMs as systems that repeatedly use input-distance graphs to solve the traveling-salesman problem. Each sentence, paragraph, or article is a route through a set of nodes (characters, words, concepts), and the “distance” between nodes is learned or adjusted during training or fine-tuning. Because of featuring this property, frequent co-occurrences in widely shared sources and recurring patterns pull some nodes closer together, so the LLM tends to favor those routes. That tendency explains why it leans toward familiar phrasings and can overproduce common sequences. When it follows less-traveled routes, “hallucination” becomes more likely. Because of this mechanism, LLMs can follow formal logic, manipulate algebraic or code structures, and produce step-by-step instructions, demonstrating coherent chains of reasoning when the selected paths match valid patterns.\r
 \r
-Frequent co-occurrences in widely shared sources and recurring patterns pull some nodes closer together, so the model tends to favor those routes. That tendency explains why it leans toward familiar phrasings and can overproduce common sequences. When it follows less-traveled routes, "hallucination" becomes more likely.\r
+ LLMs solve problems along paths they have learned. It’s like a closed-book versus an open-book exam. I wrote about optimization and learning two years ago, and I believe this perspective remains valid in 2025 and beyond (refer to [my LinkedIn post](https://lnkd.in/dsxcmMAq)). In the real world, or over the internet, you may find at least one or two experts who can instantly respond to your prompt or who have documented how to respond to that prompt. But no expert can instantly solve a decision problem; finding a solution requires time for inference. Decision problems require explicit preferences, context, and trade-offs. That is Decision Science.\r
 \r
-Because of this mechanism, LLMs can follow formal logic, manipulate algebraic or code structures, and produce step-by-step instructions, demonstrating coherent chains of reasoning when the selected paths match valid patterns.\r
+Before 30 November 2022, people saved time and cost by outsourcing coding to experts in a field; now, they save time and cost by outsourcing prompting to experts in a field. However, a small deviation from expectations in decisions suggested by LLMs can erode ROI and create real business losses. That is why, in many cases, adoption of LLMs does not deliver a clear return on investment or value to the business. It is not clear who truly captures the value of LLMs: the LLM user or their customers, and why wouldn’t the customers use LLMs themselves?\r
 \r
-It is like a closed-book versus an open-book exam. I wrote about optimization and learning two years ago, and I believe this perspective remains valid in 2025 and beyond (refer to [my LinkedIn post](https://lnkd.in/dsxcmMAq)).\r
-\r
-LLMs solve problems along paths they have learned. Before November 2022, people saved time and cost by outsourcing coding to experts in a field; now, they save time and cost by outsourcing prompting to experts in a field.\r
-\r
-However, a small deviation from expectations from decisions suggested by LLMs can erode ROI and create real business losses. That is why, in many cases, the adoption of LLMs does not deliver a clear return on investment.\r
-\r
-To conclude, there may already be one or two experts who can instantly respond to your request or who have documented how to respond to a prompt.\r
-\r
-No expert can instantly solve a decision problem.\r
-\r
-Decision problems require explicit preferences, context, and trade-offs.\r
-\r
-That is Decision Science.\r
+In this article, I aim to outline potential use cases, and situations to avoid LLMs, for non-experts and experts in the decision science field, which will evolve over time. Stay tuned! Notably, when ChatGPT was first introduced on 30 November 2022, it was common for everyone to share their experiences using it. I try, however, to focus on writing key takeaways for you, the reader; not to judge, but to reveal some facts on today LLMs.\r
 \r
 # Using LLMs as a non-expert decision maker\r
 \r
-It was common that everyone wanted to share their experience using ChatGPT when it was first introduced on 30 November 2022. I try, however, to focus on writing key takeaways of mine for you, the reader. This is not for judging, but to reveal some facts of today.\r
+I prompted **OpenAI**’s latest free and publicly available LLM, the ChatGPT 5 API, using its **Thinking** mode, with the following prompt:\r
+*“I want to select from a set of items with different weights because my backpack has limited capacity. These items have different values to me. How can I decide which to take?”*\r
 \r
-I prompted OpenAI’s latest free LLM through its ChatGPT 5 API, using its "Thinking" mode, with the following prompt: “I want to select from a set of items with different weights because my backpack has limited capacity. These items have different values to me. How can I decide which to take?”. The first conclusion is that **ONE SHOULD BE ABLE TO IDENTIFY THIS IS EVEN A PROBLEM OR WEAKNESS TO THEN DECIDE ON OR COVER**. However, this is not totally related to ChatGPT, and this problem existed in the past, is observable today, and would remain even in the future. We have always done it this way, which is a barrier for someone to even ask this question, as mentioned by Adam Dejans Jr. on LinkedIn (visit [his post](https://www.linkedin.com/posts/addejans_leadership-processimprovement-operations-activity-7393637316113854464-Jw4z))\r
+Before even trying to ask this prompt, the non-expert *should first be able to recognize that this is even a problem or weakness to decide on or address it. This isn’t unique to using an LLM. The problem of not getting concerned about a critical aspect of a system, industry, or supply chain existed in the past, is observable today, and will likely remain in the future. This can be a barrier to even asking a question, as posted by Adam Dejans Jr. on LinkedIn (see [his post](https://www.linkedin.com/posts/addejans_leadership-processimprovement-operations-activity-7393637316113854464-Jw4z)).\r
 \r
-ChatGPT 5 outlined its response with a "Quick plan", "When to pick which", "Code — full, ready-to-run Python", "Steps you should follow (short)", "Troubleshooting / "if step fails, do this", and "Complexity summary". As it has been engineered to ask followups, it ended the resposne with "If you want, paste your item list and capacity (IDs, weights, values). I can run the appropriate routine and give you the exact selection quickly." The second conclusion is that **IT ANSWERS TO YOUR PROMPT IN THE WAY YOU THOUGHT, RATED, OR INTERACTED BEFORE, SO REPRODUCIBILITY OF PROMPTING SIMILARLY TO GET THE SAME RESULT IS NOT ENSURED**. **IT IS CONSTANTLY PERSONALIZED BECAUSE OF THE FOLLOWING REINFORCEMENT LEARNING FROM HUMAN FEEDBACK.** But for decision science, the way one thinks might be sub-optimal. Optimization algorithms can surpass human-level intelligence.\r
+ChatGPT 5 structured its response with sections titled “Quick plan,” “When to pick which,” “Code — full, ready-to-run Python,” “Steps you should follow (short),” “Troubleshooting / if step fails, do this,” and “Complexity summary.” Because it’s designed to ask follow-ups, it ended the response with:\r
+*“If you want, paste your item list and capacity (IDs, weights, values). I can run the appropriate routine and give you the exact selection quickly.”*\r
 \r
-Everything seems ok regarding the outline, but first of all, it seems to prefer Python, as the whole world mostly prefers to write blog posts on it, and it has become the #1 programming language in the world! The third conclusion is that it prefers **REPEATED INFO ON THE INTERNET AS A MEASURE OF RELIABILITY**. But most things that are written on the internet are not necessarily correct.\r
+Note that *it responds based on how one have thought, rated, or interacted before; so reproducing the same result from a similar prompt is not guaranteed.* It is *constantly personalized* because of reinforcement learning from human feedback. In decision science, however, the way one thinks might be suboptimal; optimization algorithms can sometimes surpass human-level reasoning.\r
 \r
-Looking at the code it provided, the first thing it tried to do was to develop a heuristic, without relying on any specific solver, with pure Python programming skills. So telling that "LLMs are an interface between YOUR tool and the user" is not totally correct and is bypassable, it for sure, can surely design the tool to be used by the user; however, a tool that is designed based on a programming language and info available on the internet. The fourth conclusion is that: **IT CAN SOLVE A DECISION PROBLEM WITHOUT A SOLVER TOOL**. **IT CAN EVEN DESIGN THE TOOL ITSELF**. It can be an LP solver, MIP solver, etc.\r
+Everything about the outline seems fine, but it clearly preferred Python; unsurprising, since this programming language dominates most blogs and tutorials and has become the world’s most popular programming language. Therefore, the LLM *tends to prefer information that is repeated frequently on the internet as a measure of reliability.* But, of course, repetition does not guarantee reliability.\r
 \r
-Looking at the code, however, it was uncertain to use a single solution algorithm; instead, it provided two options/alternatives. The fifth conclusion is that: SELECTING AMONG ALTERNATIVES THAT IT PROVIDES IS EVEN A DECISION PROBLEM. The non-expert user, however, has the fear that the solution might be wrong or which algorithm to use. The sixth conclusion is that: IT MAY CONFUSE YOU AND FORCE YOU TO OVERTHINK. Besides, the solution algorithms it used are based on the fractional knapsack, the value/weight fraction, and a dynamic programming solution. The common user, who is not an expert, however, does not care about these. Here is the code it provided:\r
+Looking at the code, the first thing it attempted was to develop a heuristic using pure Python, without relying on any external solver. So, the common claim that *LLMs are simply an interface between your tool and the user* isn’t entirely accurate. LLMs can, in fact, design the tool themselves. LLMs *can solve a decision problem without an external solver and it can even design the tool itself* (whether that’s an LP solver, MIP solver, etc.). But they still rely on a programming language, and cannot solve a decision problem by a direct, timely inference.\r
+\r
+Interestingly, the privided code by the LLM did not rely on a single solution algorithm; instead, it provided two alternatives. *Selecting among the alternatives it provides is itself a decision problem. A non-expert user might worry that the solution is incorrect, or be unsure which algorithm to use. LLMs* *may confuse you and lead you to overthink.* The algorithms it used, fractional knapsack (value-to-weight ratio) and dynamic programming, are technically sound, but the typical user is unlikely to care about these details.\r
+\r
+Here is the code it provided:\r
 \r
 \`\`\`python\r
 # knapsack_full.py\r
@@ -19424,8 +19405,11 @@ if __name__ == "__main__":\r
     print(" Chosen items:", chosen)\r
 \`\`\`\r
 \r
-Then I asked it to “please run the appropriate routine with simulated data,” as it had suggested. It generated the following simulated dataset, assuming the knapsack capacity was set to 50:\r
+Then I followed its suggestion and asked:\r
 \r
+*“Please run the appropriate routine with simulated data.”*\r
+\r
+ It responded by generating a simulated dataset, assuming the knapsack capacity is 50:\r
 \r
 | id      | weight | value | value/weight |\r
 | ------- | ------ | ----- | ------------ |\r
@@ -19440,7 +19424,7 @@ Then I asked it to “please run the appropriate routine with simulated data,”
 | item_9  | 8      | 69    | 8.63         |\r
 | item_10 | 5      | 63    | 12.60        |\r
 \r
-Since it’s connected to a Python backend, it was able to execute the code and provide results. The results were as follows:\r
+Since the LLM can be connected to a Python backend, or any other tool, it can execute the code directly and produce the results. The output is as follows:\r
 \r
 \`\`\`\r
 Fractional Knapsack (you can take fractions)\r
@@ -19470,21 +19454,19 @@ Optimal selection:\r
 item_1, item_2, item_4, item_6, item_7, item_8, item_9\r
 \`\`\`\r
 \r
-ending with a summary sentence, of course:\r
+LLMs can conclude the answer they provide with a concise summary sentence, of course:\r
 \r
 "If your items cannot be split, select\r
 item_1, item_2, item_4, item_6, item_7, item_8, item_9.\r
 They fit within the 50-unit capacity and give the maximum total value = 303."\r
 \r
-A non-expert who doesn’t know optimization may stop here—and that’s fine. Non-experts often care more about practical life than technical detail. They were offered two reasonable options; which is best depends on how items are selected for the knapsack. Writing as a non-expert, I find the answer satisfactory and won’t pursue it further.\r
+A non-expert who is not familiar with optimization might stop here; and that might seem perfectly fine. Non-experts often care more about practical outcomes than technical details. They were presented with two reasonable options, and which one is best depends on how the items are chosen for the knapsack. Writing from a non-expert’s perspective, I find the answer satisfactory and see no need to explore it further.\r
 \r
-# Using LLMs as a decision optimziation expert\r
+# Using LLMs as a Decision Optimization Expert\r
 \r
-Now, let’s assume the person using the LLM is an expert in the field. Experts typically use LLMs as tools—mainly to reduce repetitive, tedious tasks—when they are allowed to. They are usually provided with either a simulated dataset or a real-world one.\r
+Now, let’s assume the person using the LLM is an expert in the field. Experts typically use LLMs as tools, mainly to reduce repetitive or tedious tasks, when given the opportunity. They usually work with either simulated datasets or real-world data. Suppose I want to solve the same problem using the simulated data provided earlier by the answer of the LLM to the non-expert. After clearing the previous chat, I entered the following prompt:\r
 \r
-Suppose I want to solve the problem using the simulated data from the non-expert. After deleting the previous chat, I prompted the following:\r
-\r
-“Please provide a Python code that solves the knapsack problem with the following data, using FelooPy:”\r
+*“Please provide a Python code that solves the knapsack problem with the following data, using FelooPy:”*\r
 \r
 | id      | weight | value |\r
 | ------- | ------ | ----- |\r
@@ -19499,7 +19481,7 @@ Suppose I want to solve the problem using the simulated data from the non-expert
 | item_9  | 8      | 69    |\r
 | item_10 | 5      | 63    |\r
 \r
-The first thing it did was search the web—without me asking it to. The main reason might be that FelooPy, the integrated decision environment used to solve decision problems, is still not well-documented despite being around for three years. It then presented the following code:\r
+The first thing the LLM did was to search the web, without me asking it to. The likely reason is that FelooPy, the integrated decision environment used for solving decision problems, is still not well-documented yet despite being around for three years. It then presented the following code:\r
 \r
 \`\`\`python\r
 # pip install feloopy[stock]   # uncomment & run once if FelooPy is not installed\r
@@ -19616,14 +19598,14 @@ print("Total weight:", total_weight)\r
 print("Total value:", total_value)\r
 \`\`\`\r
 \r
-The code it generated contained errors and was unnecessarily complex. It seems the model couldn’t keep up with the updates that \`feloopy\` has undergone over the past three years.\r
+The code it generated contains several errors and is unnecessarily complex. It seems the LLM couldn’t keep up with the updates that \`feloopy\` has undergone over the past three years. The error is:\r
 \r
 \`\`\`\r
     raise ValueError(f"Invalid '{label}'. Please choose from: {str(list_of_allowed_values)}.")\r
 ValueError: Invalid 'method'. Please choose from: ['constraint', 'convex', 'exact', 'heuristic', 'uncertain'].\r
 \`\`\`\r
 \r
-I fixed the code myself, and tried to run that again:\r
+I fixed the code myself and tried running it again:\r
 \r
 \`\`\`python\r
 \r
@@ -19794,7 +19776,7 @@ Total weight: 50\r
 Total value: 429\r
 \`\`\`\r
 \r
-Here it reaches a value of 429 — 38.96% better than the solution a non-expert obtained with ChatGPT. So yes, an LLM can act as an interface between user and solver, but it’s more like navigating a crowded road than walking an empty one: you save coding time but spend more time debugging. If you don’t know how to fix issues, even experts can spend much longer debugging. The code it produced works, but it could be written more cleanly as follows:\r
+This run reached a value of 429! 38.96% better than the solution obtained by a non-expert using an LLM. So yes, an LLM can act as an interface between user and solver, but it’s more like navigating a crowded road than walking an empty one: you save coding time, but may spend more time debugging. Even experts can take much longer if they don’t know how to fix issues. The code it produced works, but it could be written more cleanly as follows:\r
 \r
 \`\`\`python\r
 import feloopy as flp\r
@@ -19826,16 +19808,15 @@ for i in range(n):\r
         print(id[i], "is selected")\r
 \`\`\`\r
 \r
-Knowing the right tips and tricks can help you code better, build stronger models, and find better solutions. How much you improve depends on how much time you invest in learning. It’s not just about writing constraints in the correct mathematical form—each constraint is simple math. The real challenge is how constraints interact, and diagnosing those interactions is difficult even for experts.\r
+Knowing the right tips and tricks can help you code more efficiently, build stronger models, and find better solutions. How much you improve depends on the time you invest in learning. It is not just about writing constraints in the correct mathematical form; each constraint is simple math. The real challenge lies in how constraints interact, and diagnosing those interactions is difficult even for experts.\r
 \r
 # Conclusion\r
 \r
-Getting stakeholders to implement your recommendations—especially when they’ve relied on intuition for years—is one of the most cumbersome tasks for industrial engineers. When you write a research proposal or prepare a model/algorithm for deployment, you must clearly demonstrate business value to both the paper reviewer and the industry decision-maker; without that, your work risks rejection.\r
+Getting stakeholders to implement your recommendations; especially when they have relied on intuition for years, is one of the most challenging tasks for industrial engineers. When you write a research proposal or prepare a model or algorithm for deployment, you must clearly demonstrate business value to both the paper reviewer and the industry decision-maker; without that, your work risks rejection.\r
 \r
-LLMs can deliver real value for routine, repetitive tasks. In operations research—and any field that automates repetitive work—code, models, and algorithms are tools, not sources of competitive advantage. The real edge comes from continually clarifying and updating the assumptions that define the problem so solutions genuinely fit real-world expectations or address system weaknesses. That’s continuous improvement: be context- and result-oriented, not tool-oriented.\r
+LLMs can deliver real value for routine, repetitive tasks. In operations research, and in any field that automates repetitive work; code, models, and algorithms are tools, not sources of competitive advantage. The real edge comes from continually clarifying and updating the assumptions that define the problem, ensuring solutions genuinely fit real-world expectations or address system weaknesses. That is continuous improvement: be context- and result-oriented, not tool-oriented.\r
 \r
-We must also ask who builds systems, who makes decisions with LLMs, and who benefits. If an LLM only produces what an equally skilled developer could have written unaided, its added value is limited. Trust and expertise matter: a practitioner who understands the underlying theory and can actively collaborate with an LLM is far more reliable than someone who treats the process as a black box. Non-experts often remain uncertain about when to stop prompting or whether their prompts are adequate; experts, by contrast, can use LLMs to simplify repetitive tasks—but should avoid overreliance.\r
-\r
+We must also consider who builds the systems, who makes decisions with LLMs, and who benefits. If an LLM only produces what an equally skilled developer could have written unaided, its added value is limited. Trust and expertise matter: a practitioner who understands the underlying theory and can actively collaborate with an LLM is far more reliable than someone who treats the process as a black box. Non-experts often remain uncertain about when to stop prompting or whether their prompts are adequate; experts, by contrast, can use LLMs to simplify repetitive tasks; but should avoid overreliance.\r
 `;
 function isNothing(subject) {
   return typeof subject === "undefined" || subject === null;
