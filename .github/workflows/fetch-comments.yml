@@ -82,7 +82,7 @@ jobs:
 
           mv "$TMP" "$COMMENTS_OUTPUT"
 
-      - name: Commit and push if changed
+      - name: Commit and push (commit new file even if previously untracked)
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -95,19 +95,28 @@ jobs:
             exit 0
           fi
 
-          if git diff --quiet --exit-code -- "$OUT"; then
-            echo "No changes detected in $OUT"
-            exit 0
+          if git ls-files --error-unmatch -- "$OUT" >/dev/null 2>&1; then
+            FILE_TRACKED=1
+          else
+            FILE_TRACKED=0
           fi
 
           BRANCH="${GITHUB_REF_NAME:-main}"
 
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
+
+          if [ "$FILE_TRACKED" -eq 1 ]; then
+            if git diff --quiet --exit-code -- "$OUT"; then
+              echo "No changes detected in tracked file $OUT; skipping commit."
+              exit 0
+            fi
+          fi
+
           git add -- "$OUT"
 
           if git diff --cached --quiet; then
-            echo "No staged changes, skipping commit."
+            echo "No staged changes after adding; skipping commit."
             exit 0
           fi
 
