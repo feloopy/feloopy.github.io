@@ -14851,22 +14851,22 @@ const createLucideIcon = (iconName, iconNode) => {
   Component.displayName = toPascalCase(iconName);
   return Component;
 };
-const __iconNode$t = [
+const __iconNode$w = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$t);
-const __iconNode$s = [
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$w);
+const __iconNode$v = [
   ["path", { d: "m5 12 7-7 7 7", key: "hav0vg" }],
   ["path", { d: "M12 19V5", key: "x0mq9r" }]
 ];
-const ArrowUp = createLucideIcon("arrow-up", __iconNode$s);
-const __iconNode$r = [
+const ArrowUp = createLucideIcon("arrow-up", __iconNode$v);
+const __iconNode$u = [
   ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
   ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
 ];
-const Briefcase = createLucideIcon("briefcase", __iconNode$r);
-const __iconNode$q = [
+const Briefcase = createLucideIcon("briefcase", __iconNode$u);
+const __iconNode$t = [
   ["path", { d: "M12 20v-9", key: "1qisl0" }],
   ["path", { d: "M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z", key: "uouzyp" }],
   ["path", { d: "M14.12 3.88 16 2", key: "qol33r" }],
@@ -14879,66 +14879,66 @@ const __iconNode$q = [
   ["path", { d: "m8 2 1.88 1.88", key: "fmnt4t" }],
   ["path", { d: "M9 7.13V6a3 3 0 1 1 6 0v1.13", key: "1vgav8" }]
 ];
-const Bug = createLucideIcon("bug", __iconNode$q);
-const __iconNode$p = [
+const Bug = createLucideIcon("bug", __iconNode$t);
+const __iconNode$s = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$p);
-const __iconNode$o = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$o);
-const __iconNode$n = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$n);
-const __iconNode$m = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$m);
-const __iconNode$l = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$l);
-const __iconNode$k = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$k);
-const __iconNode$j = [
+const Calendar = createLucideIcon("calendar", __iconNode$s);
+const __iconNode$r = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$r);
+const __iconNode$q = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$q);
+const __iconNode$p = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$p);
+const __iconNode$o = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$o);
+const __iconNode$n = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$n);
+const __iconNode$m = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   ["path", { d: "M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2", key: "4jdomd" }],
   ["path", { d: "M16 4h2a2 2 0 0 1 2 2v4", key: "3hqy98" }],
   ["path", { d: "M21 14H11", key: "1bme5i" }],
   ["path", { d: "m15 10-4 4 4 4", key: "5dvupr" }]
 ];
-const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$j);
-const __iconNode$i = [
+const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$m);
+const __iconNode$l = [
   ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$i);
-const __iconNode$h = [
+const Clock = createLucideIcon("clock", __iconNode$l);
+const __iconNode$k = [
   ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
   ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ];
-const Copy = createLucideIcon("copy", __iconNode$h);
-const __iconNode$g = [
+const Copy = createLucideIcon("copy", __iconNode$k);
+const __iconNode$j = [
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
   ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const CreditCard = createLucideIcon("credit-card", __iconNode$g);
-const __iconNode$f = [
+const CreditCard = createLucideIcon("credit-card", __iconNode$j);
+const __iconNode$i = [
   ["path", { d: "M12 15V3", key: "m9g1x1" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const Download = createLucideIcon("download", __iconNode$f);
-const __iconNode$e = [
+const Download = createLucideIcon("download", __iconNode$i);
+const __iconNode$h = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   ["circle", { cx: "19", cy: "12", r: "1", key: "1wjl8i" }],
   ["circle", { cx: "5", cy: "12", r: "1", key: "1pcz8c" }]
 ];
-const Ellipsis = createLucideIcon("ellipsis", __iconNode$e);
-const __iconNode$d = [
+const Ellipsis = createLucideIcon("ellipsis", __iconNode$h);
+const __iconNode$g = [
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
   ["path", { d: "M10 14 21 3", key: "gplh6r" }],
   ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
 ];
-const ExternalLink = createLucideIcon("external-link", __iconNode$d);
-const __iconNode$c = [
+const ExternalLink = createLucideIcon("external-link", __iconNode$g);
+const __iconNode$f = [
   [
     "path",
     {
@@ -14947,19 +14947,31 @@ const __iconNode$c = [
     }
   ]
 ];
-const Heart = createLucideIcon("heart", __iconNode$c);
-const __iconNode$b = [
+const Heart = createLucideIcon("heart", __iconNode$f);
+const __iconNode$e = [
+  [
+    "path",
+    {
+      d: "M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5",
+      key: "1gvzjb"
+    }
+  ],
+  ["path", { d: "M9 18h6", key: "x1upvd" }],
+  ["path", { d: "M10 22h4", key: "ceow96" }]
+];
+const Lightbulb = createLucideIcon("lightbulb", __iconNode$e);
+const __iconNode$d = [
   ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
   ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
 ];
-const Mail = createLucideIcon("mail", __iconNode$b);
-const __iconNode$a = [
+const Mail = createLucideIcon("mail", __iconNode$d);
+const __iconNode$c = [
   ["path", { d: "M4 5h16", key: "1tepv9" }],
   ["path", { d: "M4 12h16", key: "1lakjw" }],
   ["path", { d: "M4 19h16", key: "1djgab" }]
 ];
-const Menu$1 = createLucideIcon("menu", __iconNode$a);
-const __iconNode$9 = [
+const Menu$1 = createLucideIcon("menu", __iconNode$c);
+const __iconNode$b = [
   [
     "path",
     {
@@ -14968,8 +14980,8 @@ const __iconNode$9 = [
     }
   ]
 ];
-const Moon = createLucideIcon("moon", __iconNode$9);
-const __iconNode$8 = [
+const Moon = createLucideIcon("moon", __iconNode$b);
+const __iconNode$a = [
   [
     "path",
     {
@@ -14978,12 +14990,28 @@ const __iconNode$8 = [
     }
   ]
 ];
-const Paperclip = createLucideIcon("paperclip", __iconNode$8);
-const __iconNode$7 = [
+const Paperclip = createLucideIcon("paperclip", __iconNode$a);
+const __iconNode$9 = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+];
+const Plus = createLucideIcon("plus", __iconNode$9);
+const __iconNode$8 = [
   ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
 ];
-const Search = createLucideIcon("search", __iconNode$7);
+const Search = createLucideIcon("search", __iconNode$8);
+const __iconNode$7 = [
+  [
+    "path",
+    {
+      d: "M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z",
+      key: "1ffxy3"
+    }
+  ],
+  ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
+];
+const Send = createLucideIcon("send", __iconNode$7);
 const __iconNode$6 = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M8 14s1.5 2 4 2 4-2 4-2", key: "1y1vjs" }],
@@ -20101,7 +20129,7 @@ Schema$1$1.prototype.extend = function extend(definition2) {
   result.compiledTypeMap = compileMap(result.compiledImplicit, result.compiledExplicit);
   return result;
 };
-var schema$2 = Schema$1$1;
+var schema$3 = Schema$1$1;
 var str = new type("tag:yaml.org,2002:str", {
   kind: "scalar",
   construct: function(data) {
@@ -20120,7 +20148,7 @@ var map$2 = new type("tag:yaml.org,2002:map", {
     return data !== null ? data : {};
   }
 });
-var failsafe = new schema$2({
+var failsafe = new schema$3({
   explicit: [
     str,
     seq,
@@ -22388,7 +22416,7 @@ function renamed(from, to) {
   };
 }
 var Type = type;
-var Schema$2 = schema$2;
+var Schema$2 = schema$3;
 var FAILSAFE_SCHEMA = failsafe;
 var JSON_SCHEMA = json$1;
 var CORE_SCHEMA = core$1;
@@ -25383,7 +25411,7 @@ const arrow = (options, deps) => ({
   ...arrow$1(options),
   options: [options, deps]
 });
-var NAME$3 = "Arrow";
+var NAME$2 = "Arrow";
 var Arrow$1 = reactExports.forwardRef((props, forwardedRef) => {
   const { children: children2, width = 10, height = 5, ...arrowProps } = props;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -25399,7 +25427,7 @@ var Arrow$1 = reactExports.forwardRef((props, forwardedRef) => {
     }
   );
 });
-Arrow$1.displayName = NAME$3;
+Arrow$1.displayName = NAME$2;
 var Root$3 = Arrow$1;
 function useSize(element2) {
   const [size2, setSize] = reactExports.useState(void 0);
@@ -25700,7 +25728,7 @@ function getSideAndAlignFromPlacement(placement) {
   const [side, align = "center"] = placement.split("-");
   return [side, align];
 }
-var Root2$4 = Popper;
+var Root2$3 = Popper;
 var Anchor$1 = PopperAnchor;
 var Content$1 = PopperContent;
 var Arrow = PopperArrow;
@@ -25882,7 +25910,7 @@ var VISUALLY_HIDDEN_STYLES = Object.freeze({
   whiteSpace: "nowrap",
   wordWrap: "normal"
 });
-var NAME$2 = "VisuallyHidden";
+var NAME$1 = "VisuallyHidden";
 var VisuallyHidden = reactExports.forwardRef(
   (props, forwardedRef) => {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -25895,7 +25923,7 @@ var VisuallyHidden = reactExports.forwardRef(
     );
   }
 );
-VisuallyHidden.displayName = NAME$2;
+VisuallyHidden.displayName = NAME$1;
 var getDefaultParent = function(originalTarget) {
   if (typeof document === "undefined") {
     return null;
@@ -26714,7 +26742,7 @@ var Select$1 = (props) => {
   const isFormControl = trigger ? form || !!trigger.closest("form") : true;
   const [nativeOptionsSet, setNativeOptionsSet] = reactExports.useState(/* @__PURE__ */ new Set());
   const nativeSelectKey = Array.from(nativeOptionsSet).map((option) => option.props.value).join(";");
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$4, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$3, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
     SelectProvider,
     {
       required,
@@ -27431,8 +27459,8 @@ var SelectLabel = reactExports.forwardRef(
   }
 );
 SelectLabel.displayName = LABEL_NAME$2;
-var ITEM_NAME$5 = "SelectItem";
-var [SelectItemContextProvider, useSelectItemContext] = createSelectContext(ITEM_NAME$5);
+var ITEM_NAME$4 = "SelectItem";
+var [SelectItemContextProvider, useSelectItemContext] = createSelectContext(ITEM_NAME$4);
 var SelectItem$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
     const {
@@ -27442,8 +27470,8 @@ var SelectItem$1 = reactExports.forwardRef(
       textValue: textValueProp,
       ...itemProps
     } = props;
-    const context = useSelectContext(ITEM_NAME$5, __scopeSelect);
-    const contentContext = useSelectContentContext(ITEM_NAME$5, __scopeSelect);
+    const context = useSelectContext(ITEM_NAME$4, __scopeSelect);
+    const contentContext = useSelectContentContext(ITEM_NAME$4, __scopeSelect);
     const isSelected = context.value === value;
     const [textValue, setTextValue] = reactExports.useState(textValueProp ?? "");
     const [isFocused, setIsFocused] = reactExports.useState(false);
@@ -27533,7 +27561,7 @@ var SelectItem$1 = reactExports.forwardRef(
     );
   }
 );
-SelectItem$1.displayName = ITEM_NAME$5;
+SelectItem$1.displayName = ITEM_NAME$4;
 var ITEM_TEXT_NAME = "SelectItemText";
 var SelectItemText = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -27779,7 +27807,7 @@ function findNextItem(items, search2, currentItem) {
 function wrapArray$2(array, startIndex) {
   return array.map((_, index2) => array[(startIndex + index2) % array.length]);
 }
-var Root2$3 = Select$1;
+var Root2$2 = Select$1;
 var Trigger$2 = SelectTrigger$1;
 var Value = SelectValue$1;
 var Icon = SelectIcon;
@@ -27794,7 +27822,7 @@ var ScrollDownButton = SelectScrollDownButton$1;
 function Select({
   ...props
 }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$3, { "data-slot": "select", ...props });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$2, { "data-slot": "select", ...props });
 }
 function SelectValue({
   ...props
@@ -82403,13 +82431,13 @@ var AccordionImpl = React.forwardRef(
     );
   }
 );
-var ITEM_NAME$4 = "AccordionItem";
-var [AccordionItemProvider, useAccordionItemContext] = createAccordionContext(ITEM_NAME$4);
+var ITEM_NAME$3 = "AccordionItem";
+var [AccordionItemProvider, useAccordionItemContext] = createAccordionContext(ITEM_NAME$3);
 var AccordionItem$1 = React.forwardRef(
   (props, forwardedRef) => {
     const { __scopeAccordion, value, ...accordionItemProps } = props;
-    const accordionContext = useAccordionContext(ITEM_NAME$4, __scopeAccordion);
-    const valueContext = useAccordionValueContext(ITEM_NAME$4, __scopeAccordion);
+    const accordionContext = useAccordionContext(ITEM_NAME$3, __scopeAccordion);
+    const valueContext = useAccordionValueContext(ITEM_NAME$3, __scopeAccordion);
     const collapsibleScope = useCollapsibleScope(__scopeAccordion);
     const triggerId = useId();
     const open2 = value && valueContext.value.includes(value) || false;
@@ -82444,7 +82472,7 @@ var AccordionItem$1 = React.forwardRef(
     );
   }
 );
-AccordionItem$1.displayName = ITEM_NAME$4;
+AccordionItem$1.displayName = ITEM_NAME$3;
 var HEADER_NAME = "AccordionHeader";
 var AccordionHeader = React.forwardRef(
   (props, forwardedRef) => {
@@ -82515,7 +82543,7 @@ AccordionContent$1.displayName = CONTENT_NAME$2;
 function getState$1(open2) {
   return open2 ? "open" : "closed";
 }
-var Root2$2 = Accordion$1;
+var Root2$1 = Accordion$1;
 var Item$1 = AccordionItem$1;
 var Header = AccordionHeader;
 var Trigger2 = AccordionTrigger$1;
@@ -82523,7 +82551,7 @@ var Content2$2 = AccordionContent$1;
 function Accordion({
   ...props
 }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$2, { "data-slot": "accordion", ...props });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$1, { "data-slot": "accordion", ...props });
 }
 function AccordionItem({
   className,
@@ -82574,486 +82602,37 @@ function AccordionContent({
     }
   );
 }
-var ENTRY_FOCUS = "rovingFocusGroup.onEntryFocus";
-var EVENT_OPTIONS = { bubbles: false, cancelable: true };
-var GROUP_NAME$2 = "RovingFocusGroup";
-var [Collection$1, useCollection$1, createCollectionScope$1] = createCollection(GROUP_NAME$2);
-var [createRovingFocusGroupContext, createRovingFocusGroupScope] = createContextScope(
-  GROUP_NAME$2,
-  [createCollectionScope$1]
-);
-var [RovingFocusProvider, useRovingFocusContext] = createRovingFocusGroupContext(GROUP_NAME$2);
-var RovingFocusGroup = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
+const schema$2 = {
+  ...defaultSchema,
+  tagNames: Array.from(
+    /* @__PURE__ */ new Set([...defaultSchema.tagNames || [], "iframe", "details", "summary"])
+  ),
+  attributes: {
+    ...defaultSchema.attributes,
+    iframe: [
+      ...defaultSchema.attributes && defaultSchema.attributes.iframe ? defaultSchema.attributes.iframe : [],
+      "src",
+      "width",
+      "height",
+      "allow",
+      "allowfullscreen",
+      "frameborder",
+      "loading",
+      "title"
+    ],
+    details: ["open"]
   }
-);
-RovingFocusGroup.displayName = GROUP_NAME$2;
-var RovingFocusGroupImpl = reactExports.forwardRef((props, forwardedRef) => {
-  const {
-    __scopeRovingFocusGroup,
-    orientation,
-    loop = false,
-    dir,
-    currentTabStopId: currentTabStopIdProp,
-    defaultCurrentTabStopId,
-    onCurrentTabStopIdChange,
-    onEntryFocus,
-    preventScrollOnEntryFocus = false,
-    ...groupProps
-  } = props;
-  const ref = reactExports.useRef(null);
-  const composedRefs = useComposedRefs(forwardedRef, ref);
-  const direction = useDirection(dir);
-  const [currentTabStopId, setCurrentTabStopId] = useControllableState({
-    prop: currentTabStopIdProp,
-    defaultProp: defaultCurrentTabStopId ?? null,
-    onChange: onCurrentTabStopIdChange,
-    caller: GROUP_NAME$2
-  });
-  const [isTabbingBackOut, setIsTabbingBackOut] = reactExports.useState(false);
-  const handleEntryFocus = useCallbackRef$1(onEntryFocus);
-  const getItems = useCollection$1(__scopeRovingFocusGroup);
-  const isClickFocusRef = reactExports.useRef(false);
-  const [focusableItemsCount, setFocusableItemsCount] = reactExports.useState(0);
-  reactExports.useEffect(() => {
-    const node2 = ref.current;
-    if (node2) {
-      node2.addEventListener(ENTRY_FOCUS, handleEntryFocus);
-      return () => node2.removeEventListener(ENTRY_FOCUS, handleEntryFocus);
-    }
-  }, [handleEntryFocus]);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    RovingFocusProvider,
-    {
-      scope: __scopeRovingFocusGroup,
-      orientation,
-      dir: direction,
-      loop,
-      currentTabStopId,
-      onItemFocus: reactExports.useCallback(
-        (tabStopId) => setCurrentTabStopId(tabStopId),
-        [setCurrentTabStopId]
-      ),
-      onItemShiftTab: reactExports.useCallback(() => setIsTabbingBackOut(true), []),
-      onFocusableItemAdd: reactExports.useCallback(
-        () => setFocusableItemsCount((prevCount) => prevCount + 1),
-        []
-      ),
-      onFocusableItemRemove: reactExports.useCallback(
-        () => setFocusableItemsCount((prevCount) => prevCount - 1),
-        []
-      ),
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        Primitive$1.div,
-        {
-          tabIndex: isTabbingBackOut || focusableItemsCount === 0 ? -1 : 0,
-          "data-orientation": orientation,
-          ...groupProps,
-          ref: composedRefs,
-          style: { outline: "none", ...props.style },
-          onMouseDown: composeEventHandlers(props.onMouseDown, () => {
-            isClickFocusRef.current = true;
-          }),
-          onFocus: composeEventHandlers(props.onFocus, (event) => {
-            const isKeyboardFocus = !isClickFocusRef.current;
-            if (event.target === event.currentTarget && isKeyboardFocus && !isTabbingBackOut) {
-              const entryFocusEvent = new CustomEvent(ENTRY_FOCUS, EVENT_OPTIONS);
-              event.currentTarget.dispatchEvent(entryFocusEvent);
-              if (!entryFocusEvent.defaultPrevented) {
-                const items = getItems().filter((item) => item.focusable);
-                const activeItem = items.find((item) => item.active);
-                const currentItem = items.find((item) => item.id === currentTabStopId);
-                const candidateItems = [activeItem, currentItem, ...items].filter(
-                  Boolean
-                );
-                const candidateNodes = candidateItems.map((item) => item.ref.current);
-                focusFirst$1(candidateNodes, preventScrollOnEntryFocus);
-              }
-            }
-            isClickFocusRef.current = false;
-          }),
-          onBlur: composeEventHandlers(props.onBlur, () => setIsTabbingBackOut(false))
-        }
-      )
-    }
-  );
-});
-var ITEM_NAME$3 = "RovingFocusGroupItem";
-var RovingFocusGroupItem = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const {
-      __scopeRovingFocusGroup,
-      focusable = true,
-      active = false,
-      tabStopId,
-      children: children2,
-      ...itemProps
-    } = props;
-    const autoId = useId();
-    const id = tabStopId || autoId;
-    const context = useRovingFocusContext(ITEM_NAME$3, __scopeRovingFocusGroup);
-    const isCurrentTabStop = context.currentTabStopId === id;
-    const getItems = useCollection$1(__scopeRovingFocusGroup);
-    const { onFocusableItemAdd, onFocusableItemRemove, currentTabStopId } = context;
-    reactExports.useEffect(() => {
-      if (focusable) {
-        onFocusableItemAdd();
-        return () => onFocusableItemRemove();
-      }
-    }, [focusable, onFocusableItemAdd, onFocusableItemRemove]);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Collection$1.ItemSlot,
-      {
-        scope: __scopeRovingFocusGroup,
-        id,
-        focusable,
-        active,
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Primitive$1.span,
-          {
-            tabIndex: isCurrentTabStop ? 0 : -1,
-            "data-orientation": context.orientation,
-            ...itemProps,
-            ref: forwardedRef,
-            onMouseDown: composeEventHandlers(props.onMouseDown, (event) => {
-              if (!focusable) event.preventDefault();
-              else context.onItemFocus(id);
-            }),
-            onFocus: composeEventHandlers(props.onFocus, () => context.onItemFocus(id)),
-            onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
-              if (event.key === "Tab" && event.shiftKey) {
-                context.onItemShiftTab();
-                return;
-              }
-              if (event.target !== event.currentTarget) return;
-              const focusIntent = getFocusIntent(event, context.orientation, context.dir);
-              if (focusIntent !== void 0) {
-                if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
-                event.preventDefault();
-                const items = getItems().filter((item) => item.focusable);
-                let candidateNodes = items.map((item) => item.ref.current);
-                if (focusIntent === "last") candidateNodes.reverse();
-                else if (focusIntent === "prev" || focusIntent === "next") {
-                  if (focusIntent === "prev") candidateNodes.reverse();
-                  const currentIndex = candidateNodes.indexOf(event.currentTarget);
-                  candidateNodes = context.loop ? wrapArray$1(candidateNodes, currentIndex + 1) : candidateNodes.slice(currentIndex + 1);
-                }
-                setTimeout(() => focusFirst$1(candidateNodes));
-              }
-            }),
-            children: typeof children2 === "function" ? children2({ isCurrentTabStop, hasTabStop: currentTabStopId != null }) : children2
-          }
-        )
-      }
-    );
-  }
-);
-RovingFocusGroupItem.displayName = ITEM_NAME$3;
-var MAP_KEY_TO_FOCUS_INTENT = {
-  ArrowLeft: "prev",
-  ArrowUp: "prev",
-  ArrowRight: "next",
-  ArrowDown: "next",
-  PageUp: "first",
-  Home: "first",
-  PageDown: "last",
-  End: "last"
 };
-function getDirectionAwareKey(key, dir) {
-  if (dir !== "rtl") return key;
-  return key === "ArrowLeft" ? "ArrowRight" : key === "ArrowRight" ? "ArrowLeft" : key;
-}
-function getFocusIntent(event, orientation, dir) {
-  const key = getDirectionAwareKey(event.key, dir);
-  if (orientation === "vertical" && ["ArrowLeft", "ArrowRight"].includes(key)) return void 0;
-  if (orientation === "horizontal" && ["ArrowUp", "ArrowDown"].includes(key)) return void 0;
-  return MAP_KEY_TO_FOCUS_INTENT[key];
-}
-function focusFirst$1(candidates, preventScroll = false) {
-  const PREVIOUSLY_FOCUSED_ELEMENT = document.activeElement;
-  for (const candidate of candidates) {
-    if (candidate === PREVIOUSLY_FOCUSED_ELEMENT) return;
-    candidate.focus({ preventScroll });
-    if (document.activeElement !== PREVIOUSLY_FOCUSED_ELEMENT) return;
-  }
-}
-function wrapArray$1(array, startIndex) {
-  return array.map((_, index2) => array[(startIndex + index2) % array.length]);
-}
-var Root$1 = RovingFocusGroup;
-var Item = RovingFocusGroupItem;
-var NAME$1 = "Toggle";
-var Toggle = reactExports.forwardRef((props, forwardedRef) => {
-  const { pressed: pressedProp, defaultPressed, onPressedChange, ...buttonProps } = props;
-  const [pressed, setPressed] = useControllableState({
-    prop: pressedProp,
-    onChange: onPressedChange,
-    defaultProp: defaultPressed ?? false,
-    caller: NAME$1
-  });
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Primitive$1.button,
-    {
-      type: "button",
-      "aria-pressed": pressed,
-      "data-state": pressed ? "on" : "off",
-      "data-disabled": props.disabled ? "" : void 0,
-      ...buttonProps,
-      ref: forwardedRef,
-      onClick: composeEventHandlers(props.onClick, () => {
-        if (!props.disabled) {
-          setPressed(!pressed);
-        }
-      })
-    }
-  );
-});
-Toggle.displayName = NAME$1;
-var TOGGLE_GROUP_NAME = "ToggleGroup";
-var [createToggleGroupContext] = createContextScope(TOGGLE_GROUP_NAME, [
-  createRovingFocusGroupScope
-]);
-var useRovingFocusGroupScope$1 = createRovingFocusGroupScope();
-var ToggleGroup$1 = React.forwardRef((props, forwardedRef) => {
-  const { type: type2, ...toggleGroupProps } = props;
-  if (type2 === "single") {
-    const singleProps = toggleGroupProps;
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupImplSingle, { ...singleProps, ref: forwardedRef });
-  }
-  if (type2 === "multiple") {
-    const multipleProps = toggleGroupProps;
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupImplMultiple, { ...multipleProps, ref: forwardedRef });
-  }
-  throw new Error(`Missing prop \`type\` expected on \`${TOGGLE_GROUP_NAME}\``);
-});
-ToggleGroup$1.displayName = TOGGLE_GROUP_NAME;
-var [ToggleGroupValueProvider, useToggleGroupValueContext] = createToggleGroupContext(TOGGLE_GROUP_NAME);
-var ToggleGroupImplSingle = React.forwardRef((props, forwardedRef) => {
-  const {
-    value: valueProp,
-    defaultValue,
-    onValueChange = () => {
-    },
-    ...toggleGroupSingleProps
-  } = props;
-  const [value, setValue] = useControllableState({
-    prop: valueProp,
-    defaultProp: defaultValue ?? "",
-    onChange: onValueChange,
-    caller: TOGGLE_GROUP_NAME
-  });
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ToggleGroupValueProvider,
-    {
-      scope: props.__scopeToggleGroup,
-      type: "single",
-      value: React.useMemo(() => value ? [value] : [], [value]),
-      onItemActivate: setValue,
-      onItemDeactivate: React.useCallback(() => setValue(""), [setValue]),
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupImpl, { ...toggleGroupSingleProps, ref: forwardedRef })
-    }
-  );
-});
-var ToggleGroupImplMultiple = React.forwardRef((props, forwardedRef) => {
-  const {
-    value: valueProp,
-    defaultValue,
-    onValueChange = () => {
-    },
-    ...toggleGroupMultipleProps
-  } = props;
-  const [value, setValue] = useControllableState({
-    prop: valueProp,
-    defaultProp: defaultValue ?? [],
-    onChange: onValueChange,
-    caller: TOGGLE_GROUP_NAME
-  });
-  const handleButtonActivate = React.useCallback(
-    (itemValue) => setValue((prevValue = []) => [...prevValue, itemValue]),
-    [setValue]
-  );
-  const handleButtonDeactivate = React.useCallback(
-    (itemValue) => setValue((prevValue = []) => prevValue.filter((value2) => value2 !== itemValue)),
-    [setValue]
-  );
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    ToggleGroupValueProvider,
-    {
-      scope: props.__scopeToggleGroup,
-      type: "multiple",
-      value,
-      onItemActivate: handleButtonActivate,
-      onItemDeactivate: handleButtonDeactivate,
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupImpl, { ...toggleGroupMultipleProps, ref: forwardedRef })
-    }
-  );
-});
-ToggleGroup$1.displayName = TOGGLE_GROUP_NAME;
-var [ToggleGroupContext$1, useToggleGroupContext] = createToggleGroupContext(TOGGLE_GROUP_NAME);
-var ToggleGroupImpl = React.forwardRef(
-  (props, forwardedRef) => {
-    const {
-      __scopeToggleGroup,
-      disabled = false,
-      rovingFocus = true,
-      orientation,
-      dir,
-      loop = true,
-      ...toggleGroupProps
-    } = props;
-    const rovingFocusGroupScope = useRovingFocusGroupScope$1(__scopeToggleGroup);
-    const direction = useDirection(dir);
-    const commonProps = { role: "group", dir: direction, ...toggleGroupProps };
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupContext$1, { scope: __scopeToggleGroup, rovingFocus, disabled, children: rovingFocus ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Root$1,
-      {
-        asChild: true,
-        ...rovingFocusGroupScope,
-        orientation,
-        dir: direction,
-        loop,
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Primitive$1.div, { ...commonProps, ref: forwardedRef })
-      }
-    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(Primitive$1.div, { ...commonProps, ref: forwardedRef }) });
-  }
-);
-var ITEM_NAME$2 = "ToggleGroupItem";
-var ToggleGroupItem$1 = React.forwardRef(
-  (props, forwardedRef) => {
-    const valueContext = useToggleGroupValueContext(ITEM_NAME$2, props.__scopeToggleGroup);
-    const context = useToggleGroupContext(ITEM_NAME$2, props.__scopeToggleGroup);
-    const rovingFocusGroupScope = useRovingFocusGroupScope$1(props.__scopeToggleGroup);
-    const pressed = valueContext.value.includes(props.value);
-    const disabled = context.disabled || props.disabled;
-    const commonProps = { ...props, pressed, disabled };
-    const ref = React.useRef(null);
-    return context.rovingFocus ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Item,
-      {
-        asChild: true,
-        ...rovingFocusGroupScope,
-        focusable: !disabled,
-        active: pressed,
-        ref,
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupItemImpl, { ...commonProps, ref: forwardedRef })
-      }
-    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupItemImpl, { ...commonProps, ref: forwardedRef });
-  }
-);
-ToggleGroupItem$1.displayName = ITEM_NAME$2;
-var ToggleGroupItemImpl = React.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeToggleGroup, value, ...itemProps } = props;
-    const valueContext = useToggleGroupValueContext(ITEM_NAME$2, __scopeToggleGroup);
-    const singleProps = { role: "radio", "aria-checked": props.pressed, "aria-pressed": void 0 };
-    const typeProps = valueContext.type === "single" ? singleProps : void 0;
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Toggle,
-      {
-        ...typeProps,
-        ...itemProps,
-        ref: forwardedRef,
-        onPressedChange: (pressed) => {
-          if (pressed) {
-            valueContext.onItemActivate(value);
-          } else {
-            valueContext.onItemDeactivate(value);
-          }
-        }
-      }
-    );
-  }
-);
-var Root2$1 = ToggleGroup$1;
-var Item2$2 = ToggleGroupItem$1;
-const toggleVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-muted hover:text-muted-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap",
-  {
-    variants: {
-      variant: {
-        default: "bg-transparent",
-        outline: "border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground"
-      },
-      size: {
-        default: "h-9 px-2 min-w-9",
-        sm: "h-8 px-1.5 min-w-8",
-        lg: "h-10 px-2.5 min-w-10"
-      }
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default"
-    }
-  }
-);
-const ToggleGroupContext = reactExports.createContext({
-  size: "default",
-  variant: "default",
-  spacing: 0
-});
-function ToggleGroup({
-  className,
-  variant,
-  size: size2,
-  spacing: spacing2 = 0,
-  children: children2,
-  ...props
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Root2$1,
-    {
-      "data-slot": "toggle-group",
-      "data-variant": variant,
-      "data-size": size2,
-      "data-spacing": spacing2,
-      style: { "--gap": spacing2 },
-      className: cn(
-        "group/toggle-group flex w-fit items-center gap-[--spacing(var(--gap))] rounded-md data-[spacing=default]:data-[variant=outline]:shadow-xs",
-        className
-      ),
-      ...props,
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupContext.Provider, { value: { variant, size: size2, spacing: spacing2 }, children: children2 })
-    }
-  );
-}
-function ToggleGroupItem({
-  className,
-  children: children2,
-  variant,
-  size: size2,
-  ...props
-}) {
-  const context = reactExports.useContext(ToggleGroupContext);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Item2$2,
-    {
-      "data-slot": "toggle-group-item",
-      "data-variant": context.variant || variant,
-      "data-size": context.size || size2,
-      "data-spacing": context.spacing,
-      className: cn(
-        toggleVariants({
-          variant: context.variant || variant,
-          size: context.size || size2
-        }),
-        "w-auto min-w-0 shrink-0 px-3 focus:z-10 focus-visible:z-10",
-        "data-[spacing=0]:rounded-none data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-l-md data-[spacing=0]:last:rounded-r-md data-[spacing=0]:data-[variant=outline]:border-l-0 data-[spacing=0]:data-[variant=outline]:first:border-l",
-        className
-      ),
-      ...props,
-      children: children2
-    }
-  );
-}
 function CommentForm({
   formUrl,
   postUrl,
   commentsUrl = "/data/comments.json",
   cooldownSeconds = 300,
   recaptchaSiteKey = null,
-  onSubmitted
+  onSubmitted,
+  footerSelector = "footer"
 }) {
+  const isBrowser2 = typeof window !== "undefined";
   const [name2, setName] = reactExports.useState("");
   const [email, setEmail] = reactExports.useState("");
   const [comment2, setComment] = reactExports.useState("");
@@ -83067,35 +82646,147 @@ function CommentForm({
   const [comments, setComments] = reactExports.useState([]);
   const [loadingComments, setLoadingComments] = reactExports.useState(false);
   const [commentsError, setCommentsError] = reactExports.useState(null);
-  const [activeReplyThreadId, setActiveReplyThreadId] = reactExports.useState(
-    null
-  );
+  const [activeReplyThreadId, setActiveReplyThreadId] = reactExports.useState(null);
+  const [replyTarget, setReplyTarget] = reactExports.useState(null);
   const [inlineName, setInlineName] = reactExports.useState("");
   const [inlineEmail, setInlineEmail] = reactExports.useState("");
   const [inlineComment, setInlineComment] = reactExports.useState("");
-  const [inlineReaction, setInlineReaction] = reactExports.useState("");
+  const [inlineReaction] = reactExports.useState("");
   const [inlineCaptchaX, setInlineCaptchaX] = reactExports.useState(0);
   const [inlineCaptchaY, setInlineCaptchaY] = reactExports.useState(0);
-  const [inlineCaptchaInput, setInlineCaptchaInput] = reactExports.useState("");
-  const [inlineError, setInlineError] = reactExports.useState(null);
-  const formRef = reactExports.useRef(null);
-  const inlineTextareaRef = reactExports.useRef(null);
+  const [inlineCaptchaInput] = reactExports.useState("");
+  const [, setInlineError] = reactExports.useState(null);
+  const stickyTextareaRef = reactExports.useRef(null);
+  const stickyBarRef = reactExports.useRef(null);
+  const reactionMenuRef = reactExports.useRef(null);
+  const finishPanelRef = reactExports.useRef(null);
+  const commentsPanelRef = reactExports.useRef(null);
+  const previewPanelRef = reactExports.useRef(null);
+  const pendingListRef = reactExports.useRef(null);
   const storageKey = reactExports.useMemo(() => `lastCommentAt:${postUrl}`, [postUrl]);
+  const pendingStorageKey = reactExports.useMemo(() => `pendingComments:${postUrl}`, [postUrl]);
+  const persistentNameKey = reactExports.useMemo(() => `commenter:name`, []);
+  const persistentEmailKey = reactExports.useMemo(() => `commenter:email`, []);
+  const persistentAvatarMapKey = reactExports.useMemo(() => `commenter:avatars`, []);
+  const [openMenu, setOpenMenu] = reactExports.useState(null);
+  const [showFinishPanel, setShowFinishPanel] = reactExports.useState(false);
+  const [showCommentsPanel, setShowCommentsPanel] = reactExports.useState(false);
+  const [showPreviewPanel, setShowPreviewPanel] = reactExports.useState(false);
   const [cooldownLeft, setCooldownLeft] = reactExports.useState(0);
+  const [footerOffset, setFooterOffset] = reactExports.useState(0);
+  const [chatBarHeight, setChatBarHeight] = reactExports.useState(0);
+  const [showAllReplies, setShowAllReplies] = reactExports.useState({});
+  const [randomSentence, setRandomSentence] = reactExports.useState("");
+  const [expandedThreads, setExpandedThreads] = reactExports.useState({});
+  const safeLocalGet = (k) => {
+    if (!isBrowser2) return null;
+    try {
+      return window.localStorage.getItem(k);
+    } catch {
+      return null;
+    }
+  };
+  const safeLocalSet = (k, v) => {
+    if (!isBrowser2) return;
+    try {
+      window.localStorage.setItem(k, v);
+    } catch {
+    }
+  };
+  const loadAvatarMap = () => {
+    const raw2 = safeLocalGet(persistentAvatarMapKey);
+    try {
+      return raw2 ? JSON.parse(raw2) : {};
+    } catch {
+      return {};
+    }
+  };
+  const saveAvatarForEmail = (emailAddr, url) => {
+    if (!emailAddr) return;
+    const map2 = loadAvatarMap();
+    map2[emailAddr.toLowerCase()] = url;
+    safeLocalSet(persistentAvatarMapKey, JSON.stringify(map2));
+  };
+  const getAvatarForEmail = (emailAddr) => {
+    if (!emailAddr) return null;
+    const map2 = loadAvatarMap();
+    return map2[emailAddr.toLowerCase()] || null;
+  };
   reactExports.useEffect(() => {
-    const tick = () => {
-      const last = Number(localStorage.getItem(storageKey) || 0);
-      const diff2 = Math.max(
-        0,
-        Math.ceil((last + cooldownSeconds * 1e3 - Date.now()) / 1e3)
-      );
-      setCooldownLeft(diff2);
-    };
-    tick();
-    const id = window.setInterval(tick, 1e3);
-    return () => window.clearInterval(id);
-  }, [storageKey, cooldownSeconds]);
+    if (!isBrowser2) return;
+    const savedName = safeLocalGet(persistentNameKey);
+    const savedEmail = safeLocalGet(persistentEmailKey);
+    if (savedName) setName(savedName);
+    if (savedEmail) setEmail(savedEmail);
+    if (savedName) setInlineName(savedName);
+    if (savedEmail) setInlineEmail(savedEmail);
+    const sentences = [
+      "Thanks for being part of the discussion!",
+      "Pro tip: be kind and specific.",
+      "Share your thought in one sentence.",
+      "Short replies get read more often.",
+      "A friendly note: read twice, post once."
+    ];
+    setRandomSentence(sentences[Math.floor(Math.random() * sentences.length)]);
+  }, [isBrowser2]);
+  reactExports.useEffect(() => {
+    if (!isBrowser2) return;
+    safeLocalSet(persistentNameKey, name2 || "");
+  }, [name2, persistentNameKey, isBrowser2, safeLocalSet]);
+  reactExports.useEffect(() => {
+    if (!isBrowser2) return;
+    safeLocalSet(persistentEmailKey, email || "");
+  }, [email, persistentEmailKey, isBrowser2, safeLocalSet]);
   const isValidEmail = (s2) => /^\S+@\S+\.\S+$/.test(s2);
+  const generateThreadId = () => {
+    if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function")
+      return crypto.randomUUID();
+    return `thread-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+  };
+  const extractThreadIdFromItem = (it) => (it && (it.threadId || it.thread_id || it.thread || it["entry.917101990"]))?.toString?.() ?? null;
+  const newCaptcha = (setterX, setterY) => {
+    const a = Math.floor(Math.random() * 8) + 1;
+    const b = Math.floor(Math.random() * 8) + 1;
+    setterX(a);
+    setterY(b);
+  };
+  reactExports.useEffect(() => {
+    newCaptcha(setCaptchaX, setCaptchaY);
+    newCaptcha(setInlineCaptchaX, setInlineCaptchaY);
+  }, []);
+  reactExports.useEffect(() => {
+    let raf = 0;
+    const updateOffset = () => {
+      const el = document.querySelector(footerSelector);
+      if (!el) {
+        setFooterOffset(0);
+        return;
+      }
+      const rect = el.getBoundingClientRect();
+      const overlap = Math.max(0, window.innerHeight - rect.top);
+      setFooterOffset(overlap);
+    };
+    const measureChatBar = () => {
+      const el = stickyBarRef.current;
+      setChatBarHeight(el ? Math.ceil(el.getBoundingClientRect().height) : 0);
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        updateOffset();
+        measureChatBar();
+      });
+    };
+    updateOffset();
+    measureChatBar();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, [footerSelector]);
   const matchesPost = (it) => {
     const candidates = [
       it.postUrl,
@@ -83112,11 +82803,14 @@ function CommentForm({
       try {
         const s2 = String(c2);
         if (s2 === postUrl) return true;
-        try {
-          const u = new URL(s2, window.location.origin);
-          if (u.href === postUrl) return true;
-          if (u.pathname === new URL(postUrl).pathname) return true;
-        } catch {
+        if (isBrowser2) {
+          try {
+            const u = new URL(s2, window.location.origin);
+            const p2 = new URL(postUrl, window.location.origin);
+            if (u.href === p2.href) return true;
+            if (u.pathname === p2.pathname) return true;
+          } catch {
+          }
         }
       } catch {
       }
@@ -83124,75 +82818,123 @@ function CommentForm({
     return false;
   };
   const fetchComments = async () => {
+    if (!isBrowser2) return;
     setLoadingComments(true);
     setCommentsError(null);
     try {
       const res = await fetch(commentsUrl, { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const json2 = await res.json();
-      const items = Array.isArray(json2.items) ? json2.items : json2.items || [];
+      const items = Array.isArray(json2.items) ? json2.items : Array.isArray(json2) ? json2 : json2.items || [];
       const filtered = items.filter(matchesPost);
       setComments(filtered);
     } catch (err) {
-      setCommentsError(String(err?.message || err));
+      setCommentsError("No comments yet.");
       setComments([]);
     } finally {
       setLoadingComments(false);
     }
   };
   reactExports.useEffect(() => {
-    fetchComments();
-  }, [commentsUrl, postUrl]);
+    if (isBrowser2) fetchComments();
+  }, [commentsUrl, postUrl, isBrowser2]);
+  const getPendingRaw = () => {
+    if (!isBrowser2) return [];
+    try {
+      const raw2 = safeLocalGet(pendingStorageKey);
+      if (!raw2) return [];
+      return JSON.parse(raw2);
+    } catch {
+      return [];
+    }
+  };
+  const savePendingRaw = (arr) => {
+    if (!isBrowser2) return;
+    safeLocalSet(pendingStorageKey, JSON.stringify(arr || []));
+  };
+  const addPending = (obj) => {
+    const arr = getPendingRaw();
+    arr.unshift(obj);
+    savePendingRaw(arr);
+  };
+  const reconcilePending = async () => {
+    if (!isBrowser2) return;
+    const pendings = getPendingRaw();
+    if (!pendings.length) return;
+    try {
+      const res = await fetch(commentsUrl, { cache: "no-store" });
+      if (!res.ok) throw new Error("failed to fetch comments for reconciliation");
+      const json2 = await res.json();
+      const items = Array.isArray(json2.items) ? json2.items : json2.items || [];
+      const filtered = items.filter(matchesPost);
+      let changed = false;
+      const remaining = [];
+      for (const p2 of pendings) {
+        let found = false;
+        if (p2.threadId) {
+          found = filtered.some((it) => {
+            const tid = extractThreadIdFromItem(it);
+            return tid && String(tid) === String(p2.threadId);
+          });
+        }
+        if (!found && p2.name && p2.comment) {
+          const lowerComment = String(p2.comment).slice(0, 60).toLowerCase();
+          found = filtered.some((it) => {
+            const who = (it.name || it.Name || it.author || "").toString().toLowerCase();
+            const body = (it.comment || it.Comment || it.description || "").toString().toLowerCase();
+            return who.includes(String(p2.name).toLowerCase().slice(0, 10)) && body.includes(lowerComment.slice(0, 30));
+          });
+        }
+        if (!found) remaining.push(p2);
+        else changed = true;
+      }
+      if (changed) savePendingRaw(remaining);
+    } catch {
+    }
+  };
+  reactExports.useEffect(() => {
+    if (!isBrowser2) return;
+    const id = window.setInterval(() => {
+      const p2 = getPendingRaw();
+      if (!p2 || p2.length === 0) return;
+      reconcilePending();
+    }, 5e3);
+    return () => clearInterval(id);
+  }, [commentsUrl, pendingStorageKey, isBrowser2]);
+  reactExports.useEffect(() => {
+    if (!isBrowser2) return;
+    const tick = () => {
+      const last = Number(safeLocalGet(storageKey) || 0);
+      const diff2 = Math.max(0, Math.ceil((last + cooldownSeconds * 1e3 - Date.now()) / 1e3));
+      setCooldownLeft(diff2);
+    };
+    tick();
+    const id = window.setInterval(tick, 1e3);
+    return () => window.clearInterval(id);
+  }, [storageKey, cooldownSeconds, isBrowser2, safeLocalGet]);
   const runRecaptcha = async () => {
     if (!recaptchaSiteKey) return null;
     return null;
   };
-  const generateThreadId = () => {
-    if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
-      return crypto.randomUUID();
-    }
-    return `thread-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+  const bannedWords = reactExports.useMemo(() => ["fuck", "shit", "bitch", "porn"], []);
+  const hasUrl = (s2) => {
+    if (!s2) return false;
+    const urlRegex = /\b(?:https?:\/\/|www\.)[^\s<>]+/i;
+    const domainish = /\b[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/;
+    return urlRegex.test(s2) || domainish.test(s2);
   };
-  const extractThreadIdFromItem = (it) => {
-    return (it.threadId || it.thread_id || it.thread || it.other || it.Other || it.Thread || it["entry.917101990"] || null)?.toString?.() ?? null;
+  const containsBanned = (s2) => {
+    if (!s2) return false;
+    const lower = s2.toLowerCase();
+    return bannedWords.some((w) => lower.includes(w));
   };
-  const newCaptcha = (setterX, setterY) => {
-    const a = Math.floor(Math.random() * 8) + 1;
-    const b = Math.floor(Math.random() * 8) + 1;
-    setterX(a);
-    setterY(b);
-  };
-  reactExports.useEffect(() => {
-    newCaptcha(setCaptchaX, setCaptchaY);
-  }, []);
-  const handleReplyClick = (it) => {
-    const tid = extractThreadIdFromItem(it) || generateThreadId();
-    setOther(tid);
-    setActiveReplyThreadId(tid);
-    setInlineName(name2);
-    setInlineEmail(email);
-    setInlineComment("");
-    setInlineReaction("");
-    setInlineCaptchaInput("");
-    setInlineError(null);
-    newCaptcha(setInlineCaptchaX, setInlineCaptchaY);
-    setTimeout(() => inlineTextareaRef.current?.focus(), 50);
-  };
-  const cancelInlineReply = () => {
-    setActiveReplyThreadId(null);
-    setOther("");
-    setInlineComment("");
-    setInlineReaction("");
-    setInlineCaptchaInput("");
-    setInlineError(null);
-  };
-  const submitComment = async (opts) => {
+  const submitComment = async (opts = {}) => {
     setTopError(null);
     setInlineError(null);
     if (cooldownLeft > 0) return;
     setStatus("submitting");
     if (opts.isInline) {
-      if (!inlineName.trim() || !inlineEmail.trim() || !inlineComment.trim()) {
+      if (!inlineName.trim() || !inlineEmail.trim() || !(inlineComment.trim() || comment2.trim())) {
         setInlineError("Name, email and reply text are required.");
         setStatus("idle");
         return;
@@ -83210,7 +82952,7 @@ function CommentForm({
       }
     } else {
       if (!name2.trim() || !email.trim() || !comment2.trim()) {
-        setTopError("Name, email and comment are required.");
+        setTopError("Name, email, comment, and security answer are required.");
         setStatus("idle");
         return;
       }
@@ -83227,33 +82969,67 @@ function CommentForm({
       }
     }
     try {
+      const bodyText = opts.isInline ? inlineComment.trim() || comment2.trim() : comment2.trim();
+      if (hasUrl(bodyText)) {
+        if (opts.isInline) setInlineError("Comments may not contain links.");
+        else setTopError("Comments may not contain links.");
+        setStatus("idle");
+        return;
+      }
+      if (containsBanned(bodyText)) {
+        if (opts.isInline) setInlineError("Your comment contains disallowed language.");
+        else setTopError("Your comment contains disallowed language.");
+        setStatus("idle");
+        return;
+      }
       const recaptchaToken = await runRecaptcha();
-      const threadIdToSend = other || generateThreadId();
+      const threadIdToSend = opts.threadId || other || generateThreadId();
+      const avatarMap = loadAvatarMap();
+      const userEmail = (opts.isInline ? inlineEmail : email).toLowerCase();
+      const avatarForEmail = avatarMap[userEmail];
+      const finalBody = avatarForEmail ? bodyText + `
+<!--avatar:${avatarForEmail}-->` : bodyText;
       const data = new URLSearchParams();
       data.append("entry.638551959", postUrl);
       if (opts.isInline) {
         data.append("entry.122578945", inlineName);
         data.append("entry.1066671156", inlineEmail);
-        data.append("entry.2100067303", inlineComment);
+        data.append("entry.2100067303", finalBody);
         data.append("entry.1228204400", inlineReaction);
       } else {
         data.append("entry.122578945", name2);
         data.append("entry.1066671156", email);
-        data.append("entry.2100067303", comment2);
+        data.append("entry.2100067303", finalBody);
         data.append("entry.1228204400", reaction);
       }
       data.append("entry.917101990", threadIdToSend);
       if (recaptchaToken) data.append("g-recaptcha-response", recaptchaToken);
+      const pendingId = `pending-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+      addPending({
+        id: pendingId,
+        threadId: threadIdToSend,
+        name: opts.isInline ? inlineName : name2,
+        email: opts.isInline ? inlineEmail : email,
+        comment: finalBody,
+        reaction: opts.isInline ? inlineReaction : reaction,
+        createdAt: Date.now(),
+        status: "pending"
+      });
       await fetch(formUrl, { method: "POST", body: data, mode: "no-cors" });
-      const now = Date.now();
-      localStorage.setItem(storageKey, String(now));
+      if (!opts.isInline) {
+        safeLocalSet(persistentNameKey, name2 || "");
+        safeLocalSet(persistentEmailKey, email || "");
+      } else {
+        safeLocalSet(persistentNameKey, inlineName || "");
+        safeLocalSet(persistentEmailKey, inlineEmail || "");
+      }
+      safeLocalSet(storageKey, String(Date.now()));
       setStatus("success");
       if (opts.isInline) {
-        setInlineName("");
-        setInlineEmail("");
         setInlineComment("");
-        setInlineReaction("");
-        cancelInlineReply();
+        setActiveReplyThreadId(null);
+        setReplyTarget(null);
+        setComment("");
       } else {
         setName("");
         setEmail("");
@@ -83261,67 +83037,46 @@ function CommentForm({
         setReaction("");
         setCaptchaInput("");
         newCaptcha(setCaptchaX, setCaptchaY);
-        setTopError(null);
+        setShowFinishPanel(false);
       }
       setOther("");
       setTimeout(() => setStatus("idle"), 1500);
-      setTimeout(() => fetchComments(), 2500);
+      setTimeout(() => fetchComments().then(() => reconcilePending()), 2500);
       if (typeof onSubmitted === "function") onSubmitted();
     } catch (err) {
       setStatus("error");
       setTimeout(() => setStatus("idle"), 1500);
     }
   };
-  const reactionsMeta = [
-    {
-      id: "thumbs",
-      label: "Like",
-      Icon: ThumbsUp,
-      colorClass: "text-green-600"
-    },
-    { id: "heart", label: "Love", Icon: Heart, colorClass: "text-red-500" },
-    { id: "smile", label: "Smile", Icon: Smile, colorClass: "text-yellow-500" },
-    {
-      id: "star",
-      label: "Celebrate",
-      Icon: Star,
-      colorClass: "text-indigo-600"
+  const handleFinishSubmit = async () => {
+    setTopError(null);
+    if (!name2.trim() || !email.trim() || !comment2.trim()) {
+      setTopError("Name, email, comment, and security answer are required.");
+      return;
     }
-  ];
-  const ReactionSelector = ({
-    value,
-    onChange
-  }) => {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      ToggleGroup,
-      {
-        type: "single",
-        value: value || void 0,
-        onValueChange: (v) => onChange(v || ""),
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "inline-flex items-center gap-2 flex-wrap", children: reactionsMeta.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-          ToggleGroupItem,
-          {
-            value: r2.id,
-            className: `inline-flex items-center justify-center p-2 rounded-md border hover:bg-gray-50 dark:hover:bg-white/2 focus:outline-none ${value === r2.id ? "ring-2 ring-offset-1" : ""}`,
-            "aria-label": r2.label,
-            title: r2.label,
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              r2.Icon,
-              {
-                className: `${value === r2.id ? r2.colorClass : "text-gray-500"} h-4 w-4`
-              }
-            )
-          },
-          r2.id
-        )) })
-      }
-    );
+    if (!isValidEmail(email.trim())) {
+      setTopError("Please provide a valid email address.");
+      return;
+    }
+    const expected = captchaX + captchaY;
+    if (String(expected) !== String(captchaInput).trim()) {
+      setTopError("Security question answer is incorrect.");
+      return;
+    }
+    await submitComment({ isInline: false });
   };
-  const ReactionIcon = ({ id }) => {
-    const meta = reactionsMeta.find((m) => m.id === id);
-    if (!meta) return null;
-    const Cmp = meta.Icon;
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Cmp, { className: `${meta.colorClass} h-4 w-4` });
+  const reactionsMeta = [
+    { id: "thumbs", label: "Like", Icon: ThumbsUp, colorClass: "text-blue-500" },
+    { id: "heart", label: "Love", Icon: Heart, colorClass: "text-red-400" },
+    { id: "smile", label: "Happy", Icon: Smile, colorClass: "text-blue-300" },
+    { id: "star", label: "Insightful", Icon: Lightbulb, colorClass: "text-yellow-400" }
+  ];
+  const ReactionIcon = ({ id, size: size2 = 16 }) => {
+    if (!id) return /* @__PURE__ */ jsxRuntimeExports.jsx(Smile, { className: "text-yellow-400", style: { height: size2, width: size2 } });
+    const m = reactionsMeta.find((r2) => r2.id === id);
+    if (!m) return /* @__PURE__ */ jsxRuntimeExports.jsx(Smile, { className: "text-yellow-400", style: { height: size2, width: size2 } });
+    const Cmp = m.Icon;
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(Cmp, { className: `${m.colorClass}`, style: { height: size2, width: size2 } });
   };
   const getTimestampNumber = (it) => {
     const tsCandidate = it.Timestamp || it.timestamp || it.time || it.ts || it.createdAt || it.date;
@@ -83330,7 +83085,7 @@ function CommentForm({
     const n = d.getTime();
     return isNaN(n) ? 0 : n;
   };
-  const threads = reactExports.useMemo(() => {
+  const rawThreads = reactExports.useMemo(() => {
     const map2 = /* @__PURE__ */ new Map();
     for (const it of comments) {
       const tid = extractThreadIdFromItem(it) || generateThreadId();
@@ -83341,275 +83096,599 @@ function CommentForm({
       items.sort((a, b) => getTimestampNumber(a) - getTimestampNumber(b));
       return { tid, items };
     });
+    arr.sort((a, b) => getTimestampNumber(b.items[b.items.length - 1]) - getTimestampNumber(a.items[a.items.length - 1]));
     return arr;
   }, [comments]);
-  const [expandedThreads, setExpandedThreads] = reactExports.useState({});
-  const toggleThreadExpanded = (tid) => {
-    setExpandedThreads((s2) => ({ ...s2, [tid]: !s2[tid] }));
+  const parseLeadingMentions = (body) => {
+    if (!body) return [];
+    const trimmed = body.trim();
+    const tokens = trimmed.split(/\s+/);
+    const mentions = [];
+    for (const t of tokens) {
+      if (t.startsWith("@")) {
+        const who = t.replace(/^@+/, "").replace(/[.,;:!?]+$/g, "");
+        if (who) mentions.push(who);
+      } else break;
+    }
+    return mentions;
   };
-  const topFormValid = name2.trim() !== "" && isValidEmail(email.trim()) && comment2.trim() !== "" && String(captchaX + captchaY) === String(captchaInput).trim();
-  const inlineFormValid = inlineName.trim() !== "" && isValidEmail(inlineEmail.trim()) && inlineComment.trim() !== "" && String(inlineCaptchaX + inlineCaptchaY) === String(inlineCaptchaInput).trim();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 max-w-full", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "form",
-      {
-        ref: formRef,
-        onSubmit: (e) => {
-          e.preventDefault();
-          submitComment({ isInline: false });
-        },
-        className: "space-y-2 p-4 border rounded max-w-full",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "input",
-            {
-              className: "w-full p-2 border rounded",
-              type: "text",
-              placeholder: "Name",
-              value: name2,
-              onChange: (e) => setName(e.target.value),
-              required: true
+  function getCommentKey(it) {
+    const ts = it.createdAt || it.Timestamp || it.timestamp || it.time || Date.now();
+    const author = (it.name || it.author || "").toString();
+    const snippet2 = (it.comment || it.Comment || "").toString().slice(0, 24);
+    return `${String(ts)}::${author.replace(/\s+/g, "")}::${snippet2}`;
+  }
+  const buildThreadTrees = reactExports.useMemo(() => {
+    const result = [];
+    for (const thr of rawThreads) {
+      if (!thr.items || thr.items.length === 0) continue;
+      const rootItem = thr.items[0];
+      const rootAuthor = (rootItem.name || rootItem.author || "").toString();
+      const rootKey = getCommentKey(rootItem);
+      const rootNode = { item: rootItem, children: [], parent: null, author: rootAuthor, key: rootKey };
+      const processed = [rootNode];
+      for (let i = 1; i < thr.items.length; i++) {
+        const it = thr.items[i];
+        const body = (it.comment || it.Comment || it.description || "").toString();
+        const mentions = parseLeadingMentions(body);
+        let parent = rootNode;
+        if (mentions.length >= 2) {
+          const targetAuthor = mentions[mentions.length - 1];
+          for (let j = processed.length - 1; j >= 0; j--) {
+            const p2 = processed[j];
+            const pAuthor = (p2.author || "").toString();
+            if (!pAuthor) continue;
+            if (pAuthor.replace(/\s+/g, "").toLowerCase() === targetAuthor.replace(/\s+/g, "").toLowerCase()) {
+              parent = p2;
+              break;
             }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "input",
-            {
-              className: "w-full p-2 border rounded",
-              type: "email",
-              placeholder: "Email",
-              value: email,
-              onChange: (e) => setEmail(e.target.value),
-              required: true
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "textarea",
-            {
-              className: "w-full p-2 border rounded",
-              placeholder: "Comment",
-              value: comment2,
-              onChange: (e) => setComment(e.target.value),
-              required: true
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center gap-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-gray-600 flex-shrink-0", children: "Reaction:" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSelector, { value: reaction, onChange: setReaction }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ml-auto min-w-0 flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm text-gray-500 truncate", children: [
-                "Security: ",
-                captchaX,
-                " + ",
-                captchaY,
-                " ="
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "input",
-                {
-                  className: "w-16 sm:w-20 p-2 border rounded text-center flex-shrink-0",
-                  type: "text",
-                  inputMode: "numeric",
-                  placeholder: "?",
-                  value: captchaInput,
-                  onChange: (e) => setCaptchaInput(e.target.value),
-                  "aria-label": "Security question answer",
-                  required: true
-                }
-              )
-            ] })
-          ] }),
-          topError ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-red-600 text-sm", children: topError }) : null,
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Button,
-              {
-                variant: "outline",
-                className: "inline-flex items-center gap-2 rounded-0xl hover:border-[#76b900] dark:hover:border-[#76b900] border-foreground",
-                type: "submit",
-                disabled: status === "submitting" || cooldownLeft > 0 || !topFormValid,
-                children: status === "submitting" ? "Submitting..." : cooldownLeft > 0 ? `Wait ${cooldownLeft}s` : "Submit"
-              }
-            ),
-            recaptchaSiteKey ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-gray-500", children: "reCAPTCHA enabled" }) : null
-          ] }),
-          status === "success" && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-green-600", children: "Comment submitted!" }),
-          status === "error" && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-red-600", children: "Submission failed" })
-        ]
+          }
+        } else if (mentions.length === 1) {
+          parent = rootNode;
+        } else {
+          parent = rootNode;
+        }
+        const nodeAuthor = (it.name || it.author || "").toString();
+        const nodeKey = getCommentKey(it);
+        const node2 = { item: it, children: [], parent, author: nodeAuthor, key: nodeKey };
+        parent.children.push(node2);
+        processed.push(node2);
       }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 border rounded", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-semibold mb-2", children: "Comments" }),
-      loadingComments && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Loading comments…" }),
-      commentsError && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-red-600", children: "No comments yet." }),
-      !loadingComments && !commentsError && comments.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "No comments yet." }),
-      !loadingComments && !commentsError && threads.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-4", children: threads.map((t) => {
-        const items = t.items;
-        const root2 = items[0];
-        const replies = items.slice(1);
-        const rootWho = (root2.name || root2.Name || root2.author || "Anonymous")?.toString?.() ?? "Anonymous";
-        const rootBody = (root2.comment || root2.Comment || root2.description || root2.Description || "")?.toString?.() ?? "";
-        const rootReact = (root2.reaction || root2.Reaction || root2["entry.1228204400"] || "")?.toString?.() ?? "";
-        const rootWhen = (root2.Timestamp || root2.timestamp || root2.time || "")?.toString?.() ?? "";
-        const expanded = !!expandedThreads[t.tid];
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "p-3 border rounded", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between gap-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-sm text-gray-700 truncate", children: rootWho }),
-                rootWhen ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "ml-2 text-xs text-gray-500", children: rootWhen }) : null,
-                rootReact ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "ml-3 inline-flex items-center gap-1 text-sm text-gray-700", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: rootReact }) }) : null
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 whitespace-pre-wrap text-gray-800", children: rootBody })
+      result.push({ tid: thr.tid, rootNode });
+    }
+    return result;
+  }, [rawThreads]);
+  const postReactionSummary = reactExports.useMemo(() => {
+    const counts = {};
+    for (const t of buildThreadTrees) {
+      const root2 = t.rootNode.item;
+      const r2 = root2 && (root2.reaction || root2["entry.1228204400"]) || "";
+      if (!r2) continue;
+      counts[String(r2)] = (counts[String(r2)] || 0) + 1;
+    }
+    return counts;
+  }, [buildThreadTrees]);
+  const reactionSummaryForThread = (tid) => {
+    const t = buildThreadTrees.find((x) => x.tid === tid);
+    const counts = {};
+    if (!t) return counts;
+    const collectNodes = (node2, arr) => {
+      arr.push(node2);
+      for (const c2 of node2.children) collectNodes(c2, arr);
+    };
+    const nodes = [];
+    collectNodes(t.rootNode, nodes);
+    const authorToNode = {};
+    for (const n of nodes) {
+      const key = (n.author || "").toString().replace(/\s+/g, "").toLowerCase();
+      if (key) authorToNode[key] = n;
+    }
+    for (const n of nodes) {
+      const it = n.item;
+      const repReaction = it.reaction || it["entry.1228204400"] || "";
+      const body = (it.comment || it.Comment || it.description || "").toString();
+      const mentions = parseLeadingMentions(body);
+      if (repReaction && repReaction.toString().trim()) {
+        if (mentions.length >= 1) {
+          const targetName = mentions[mentions.length - 1].replace(/\s+/g, "").toLowerCase();
+          const targetNode = authorToNode[targetName];
+          if (targetNode) {
+            const key2 = repReaction.toString();
+            counts[key2] = (counts[key2] || 0) + 1;
+            continue;
+          }
+        }
+        const key = repReaction.toString();
+        counts[key] = (counts[key] || 0) + 1;
+      }
+    }
+    return counts;
+  };
+  const closeAllSmallMenus = () => setOpenMenu(null);
+  const openReactionMenu = () => {
+    setOpenMenu((prev) => prev === "reactionMenu" ? null : "reactionMenu");
+    setShowFinishPanel(false);
+    setShowCommentsPanel(false);
+  };
+  const openPendingList = () => {
+    closeAllSmallMenus();
+    setShowCommentsPanel(false);
+    setShowFinishPanel(false);
+    setOpenMenu("pendingList");
+  };
+  reactExports.useEffect(() => {
+    if (!isBrowser2) return;
+    const onPointerDown = (ev) => {
+      const target = ev.target;
+      if (!(target instanceof Node)) return;
+      const t = target;
+      if (stickyBarRef.current?.contains(t)) return;
+      if (showFinishPanel && finishPanelRef.current?.contains(t)) return;
+      if (showCommentsPanel && commentsPanelRef.current?.contains(t)) return;
+      if (showPreviewPanel && previewPanelRef.current?.contains(t)) return;
+      if (openMenu === "reactionMenu" && reactionMenuRef.current?.contains(t)) return;
+      if (openMenu === "pendingList" && pendingListRef.current?.contains(t)) return;
+      setOpenMenu(null);
+      if (showFinishPanel && !finishPanelRef.current?.contains(t)) setShowFinishPanel(false);
+      if (showCommentsPanel && !commentsPanelRef.current?.contains(t)) setShowCommentsPanel(false);
+      if (showPreviewPanel && !previewPanelRef.current?.contains(t)) setShowPreviewPanel(false);
+    };
+    const onKey = (ev) => {
+      if (ev.key === "Escape") {
+        setOpenMenu(null);
+        setShowFinishPanel(false);
+        setShowCommentsPanel(false);
+        setShowPreviewPanel(false);
+        setActiveReplyThreadId(null);
+        setReplyTarget(null);
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [openMenu, showFinishPanel, showCommentsPanel, showPreviewPanel, isBrowser2]);
+  const startReplyFor = (tid, target) => {
+    setActiveReplyThreadId(tid);
+    setReplyTarget(target || null);
+    const savedName = safeLocalGet(persistentNameKey);
+    const savedEmail = safeLocalGet(persistentEmailKey);
+    setInlineName(savedName || name2 || "");
+    setInlineEmail(savedEmail || email || "");
+    newCaptcha(setInlineCaptchaX, setInlineCaptchaY);
+    const thr = buildThreadTrees.find((t) => t.tid === tid);
+    const rootAuthor = thr && thr.rootNode ? thr.rootNode.author || "" : "";
+    const targetAuthor = target ? (target.name || target.author || "").toString() : "";
+    const mentionsArr = [];
+    if (rootAuthor) mentionsArr.push(`@${rootAuthor}`);
+    if (targetAuthor && targetAuthor !== rootAuthor) mentionsArr.push(`@${targetAuthor}`);
+    const prefix = mentionsArr.length ? mentionsArr.join(" ") + " " : "";
+    if (!comment2.trim()) {
+      setComment(prefix);
+      setTimeout(() => {
+        stickyTextareaRef.current?.focus();
+        const el = stickyTextareaRef.current;
+        if (el) {
+          const len = el.value.length;
+          el.setSelectionRange(len, len);
+        }
+      }, 50);
+    } else {
+      if (!comment2.trim().startsWith(prefix.trim())) {
+        setComment((c2) => `${prefix}${c2}`);
+        setTimeout(() => stickyTextareaRef.current?.focus(), 50);
+      }
+    }
+    setShowCommentsPanel(false);
+    setOpenMenu(null);
+  };
+  const cancelReply = () => {
+    setActiveReplyThreadId(null);
+    setReplyTarget(null);
+    if (replyTarget) {
+      const possiblePrefix = (() => {
+        const thr = buildThreadTrees.find((t) => t.tid === activeReplyThreadId);
+        const rootAuthor = thr ? (thr.rootNode.author || "").toString() : "";
+        const targetAuthor = replyTarget.name || replyTarget.author || "";
+        const mentions = [];
+        if (rootAuthor) mentions.push(`@${rootAuthor}`);
+        if (targetAuthor && `${targetAuthor}` !== rootAuthor) mentions.push(`@${targetAuthor}`);
+        return mentions.length ? mentions.join(" ") + " " : "";
+      })();
+      if (possiblePrefix && comment2.startsWith(possiblePrefix)) {
+        setComment((c2) => c2.slice(possiblePrefix.length));
+      }
+    }
+    setReplyTarget(null);
+  };
+  const pendingList = getPendingRaw();
+  const pendingCount = pendingList.length;
+  const hideScrollbarCss = `
+  .comment-ui ::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  .comment-ui { scrollbar-width: none; -ms-overflow-style: none; }
+  .comment-ui textarea::-webkit-scrollbar { display: none; height: 0; width: 0; }
+  .comment-ui textarea { scrollbar-width: none; -ms-overflow-style: none; }
+  `;
+  const initialsFromName = (fullName) => {
+    const s2 = String(fullName || "").trim();
+    if (!s2) return "A";
+    const parts = s2.split(/\s+/).filter(Boolean);
+    if (parts.length >= 2) return `${parts[0].charAt(0)}${parts[parts.length - 1].charAt(0)}`.toUpperCase();
+    if (parts.length === 1) {
+      const w = parts[0];
+      if (w.length >= 2) return `${w.charAt(0)}${w.charAt(1)}`.toUpperCase();
+      return w.charAt(0).toUpperCase();
+    }
+    return "A";
+  };
+  const colorFromKey = (key) => {
+    const s2 = String(key || "").trim();
+    if (!s2) return "hsl(200 60% 40%)";
+    let h2 = 0;
+    for (let i = 0; i < s2.length; i++) h2 = (h2 * 31 + s2.charCodeAt(i)) % 360;
+    return `hsl(${h2} 62% 44%)`;
+  };
+  const finishPanelBottom = footerOffset + chatBarHeight - 10;
+  const stripInternalTags = (s2) => (s2 || "").toString().replace(/<!--\s*avatar:.*?-->/gi, "").trim();
+  const ReactionSummaryBox = ({ tid, style: style2 }) => {
+    if (tid === "__post__") {
+      const counts2 = postReactionSummary;
+      const total2 = Object.values(counts2).reduce((s2, v) => s2 + v, 0);
+      if (total2 === 0) return null;
+      const entries = Object.entries(counts2).sort((a, b) => b[1] - a[1]).slice(0, 3);
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-2 px-2 py-1 rounded", style: { background: "rgba(0,0,0,0.5)", color: "#e5e7eb", border: "1px solid rgba(255,255,255,0.03)", ...style2 }, children: [
+        entries.map(([rid, cnt]) => {
+          const meta = reactionsMeta.find((r2) => r2.id === rid);
+          const Icon2 = meta ? meta.Icon : Smile;
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-1 px-2 py-0.5 rounded", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `${meta ? meta.colorClass : "text-gray-300"} h-4 w-4` }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: cnt })
+          ] }, rid);
+        }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-gray-400", children: [
+          "· ",
+          total2
+        ] })
+      ] });
+    }
+    const counts = reactionSummaryForThread(tid);
+    const total = Object.values(counts).reduce((s2, v) => s2 + v, 0);
+    if (total === 0) return null;
+  };
+  const handleCommentReactionClick = (tid, targetItem, reactionId) => {
+    startReplyFor(tid, targetItem);
+    setReaction(reactionId);
+    setTimeout(() => stickyTextareaRef.current?.focus(), 60);
+  };
+  const CommentNode = ({ node: node2, tid, depth = 0 }) => {
+    const it = node2.item;
+    const author = (it.name || it.author || "Anonymous").toString();
+    const ts = it.Timestamp || it.timestamp || it.time || "";
+    const ownReaction = (it.reaction || it["entry.1228204400"] || "")?.toString() || "";
+    const avatarTagMatch = String(it.comment || it.Comment || "").match(/<!--\s*avatar:(.*?)-->/i);
+    const internalAvatar = avatarTagMatch ? avatarTagMatch[1] : null;
+    const visibleBody = stripInternalTags((it.comment || it.Comment || it.description || "").toString());
+    const emailForAvatar = (it.email || "").toString() || null;
+    const storedAvatar = getAvatarForEmail(emailForAvatar) || internalAvatar || null;
+    const boxStyle = { border: "1px solid #1f1f1f", background: "rgba(255,255,255,0.01)", paddingRight: 110, position: "relative" };
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2 rounded", style: boxStyle, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: 40, height: 40, borderRadius: 999, overflow: "hidden", flexShrink: 0 }, children: storedAvatar ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: storedAvatar, alt: author, style: { width: "100%", height: "100%", objectFit: "cover" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: colorFromKey(it.email || it.name || "anon"), width: 40, height: 40 }, className: "rounded-full flex items-center justify-center text-white font-semibold", children: initialsFromName(author) }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-sm", children: author }),
+              ts ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-gray-400", children: String(ts) }) : null,
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-auto flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => startReplyFor(tid, it), children: "Reply" }) })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-end gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  className: "text-xs underline",
-                  onClick: () => handleReplyClick(root2),
-                  children: "Reply"
-                }
-              ),
-              replies.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  className: "text-xs px-2 py-1 rounded hover:bg-muted",
-                  onClick: () => toggleThreadExpanded(t.tid),
-                  children: expanded ? `Hide replies (${replies.length})` : `Show replies (${replies.length})`
-                }
-              )
-            ] })
-          ] }),
-          replies.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: `mt-3 transition-all ${expanded ? "max-h-screen" : "max-h-12 overflow-hidden"}`,
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pl-4 border-l ml-2 space-y-3", children: expanded ? replies.map((r2, i) => {
-                const who = (r2.name || r2.Name || r2.author || "Anonymous")?.toString?.() ?? "Anonymous";
-                const body = (r2.comment || r2.Comment || r2.description || r2.Description || "")?.toString?.() ?? "";
-                const react2 = (r2.reaction || r2.Reaction || r2["entry.1228204400"] || "")?.toString?.() ?? "";
-                const when = (r2.Timestamp || r2.timestamp || r2.time || "")?.toString?.() ?? "";
-                return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 prose max-w-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins: [remarkGfm, remarkMath], rehypePlugins: [[rehypeSanitize, schema$2], rehypeRaw, rehypeKatex, rehypeHighlight, rehypeSlug, rehypeAutolinkHeadings], children: visibleBody }) })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", right: 12, top: 12, display: "flex", gap: 8, alignItems: "center", zIndex: 30 }, children: ownReaction ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => handleCommentReactionClick(tid, it, ownReaction), title: "Use this reaction and reply", className: "inline-flex items-center gap-1 px-2 py-0.5 rounded bg-black/30 hover:bg-white/5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: ownReaction, size: 14 }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
+          startReplyFor(tid, it);
+          setOpenMenu("reactionMenu");
+        }, title: "React", className: "inline-flex items-center gap-1 px-2 py-0.5 rounded bg-black/10 hover:bg-white/5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-4 w-4 text-gray-300" }) }) })
+      ] }),
+      node2.children && node2.children.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 pl-8", children: [
+        node2.children.slice(0, showAllReplies[node2.key] ? node2.children.length : 2).map((c2, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CommentNode, { node: c2, tid, depth: depth + 1 }) }, `${c2.key || i}`)),
+        node2.children.length > 2 && !showAllReplies[node2.key] && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [node2.key]: true })), children: [
+          "View ",
+          node2.children.length - 2,
+          " more replies"
+        ] }) }),
+        node2.children.length > 2 && showAllReplies[node2.key] && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [node2.key]: false })), children: "Hide extra replies" }) })
+      ] })
+    ] });
+  };
+  const isMultiline = comment2.includes("\n") || comment2.length > 120;
+  const MAX_TEXTAREA_HEIGHT = 220;
+  reactExports.useEffect(() => {
+    const el = stickyTextareaRef.current;
+    if (!el) return;
+    el.style.height = "auto";
+    const newH = Math.min(el.scrollHeight, MAX_TEXTAREA_HEIGHT);
+    el.style.height = `${newH}px`;
+    el.style.overflowY = el.scrollHeight > MAX_TEXTAREA_HEIGHT ? "auto" : "hidden";
+    const barEl = stickyBarRef.current;
+    setChatBarHeight(barEl ? Math.ceil(barEl.getBoundingClientRect().height) : 0);
+  }, [comment2]);
+  reactExports.useEffect(() => {
+    const preventBubble = (e) => {
+      e.stopPropagation();
+    };
+    const el = reactionMenuRef.current;
+    if (el) {
+      el.addEventListener("wheel", preventBubble, { passive: false });
+    }
+    return () => {
+      if (el) el.removeEventListener("wheel", preventBubble);
+    };
+  }, []);
+  const promptForAvatar = (currentEmail) => {
+    const emailKey = (currentEmail || email || "").toLowerCase();
+    if (!emailKey) {
+      alert("Provide an email address first so avatar can be associated with it.");
+      return;
+    }
+    const incoming = window.prompt("Enter image URL for your avatar (Gravatar or social image):", getAvatarForEmail(emailKey) || "");
+    if (!incoming) return;
+    try {
+      const u = new URL(incoming);
+      if (u.protocol !== "http:" && u.protocol !== "https:") {
+        alert("Please provide an http(s) image URL.");
+        return;
+      }
+    } catch {
+      alert("Provided URL doesn't look valid.");
+      return;
+    }
+    if (/data:|javascript:/i.test(incoming)) {
+      alert("Provided URL not allowed.");
+      return;
+    }
+    saveAvatarForEmail(emailKey, incoming);
+    setTimeout(() => fetchComments(), 200);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "comment-ui space-y-4 max-w-full", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: hideScrollbarCss }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: "fixed left-0 right-0 z-100",
+          ref: stickyBarRef,
+          style: { bottom: footerOffset + (showFinishPanel || showCommentsPanel || showPreviewPanel ? 0 : 12) - 18, transition: "bottom 10ms cubic-bezier(.2,.9,.2,1)", pointerEvents: "auto" },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto px-4", children: (() => {
+            const ta = stickyTextareaRef.current;
+            const multiline = (comment2 || "").includes("\n") || (ta?.scrollHeight || 0) > 56;
+            const BG_RADIUS = multiline ? "rounded-2xl" : "rounded-full";
+            const paddingLeft = multiline ? 12 : 96;
+            const paddingRight = multiline ? 12 : 112;
+            const taStyle = {
+              maxHeight: `${MAX_TEXTAREA_HEIGHT}px`,
+              transition: "height 10ms linear",
+              border: "0",
+              outline: "none",
+              resize: "none",
+              boxSizing: "border-box",
+              WebkitAppearance: "none",
+              MozAppearance: "none",
+              background: "transparent",
+              paddingLeft,
+              paddingRight,
+              height: `${48}px`,
+              lineHeight: `${48}px`,
+              overscrollBehavior: "contain"
+            };
+            return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "transition-all duration-220 ease-in-out bg-background mt-4", style: { position: "relative", overflow: "visible", padding: 0, border: 0 }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "sticky-comment", className: "sr-only", children: "Add a comment" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${BG_RADIUS} transition-all duration-220`, style: { background: "#111315", position: "relative", overflow: "visible", height: multiline ? void 0 : `${48}px`, display: "flex", flexDirection: multiline ? "column" : "row", alignItems: multiline ? "stretch" : "center", padding: multiline ? "14px" : 0 }, children: [
+                activeReplyThreadId && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", left: 12, top: -22, zIndex: 70 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-2 px-3 py-1 rounded-full", style: { background: "#0f1720", color: "#e5e7eb", border: "1px solid #222" }, children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", children: [
+                    " Replying to ",
+                    replyTarget ? `@${(replyTarget.name || replyTarget.author || "user").toString()}` : "thread",
+                    " "
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: cancelReply, className: "text-xs px-2 py-0.5 rounded hover:bg-white/5", children: "×" })
+                ] }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `absolute left-3 top-1/2 transform -translate-y-1/2 transition-all duration-160 ${multiline ? "opacity-0 pointer-events-none -translate-x-1" : "opacity-100 pointer-events-auto translate-x-0"}`, style: { zIndex: 60, display: "flex", gap: 8, alignItems: "center" }, children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: `inline-flex items-center justify-center p-1.5 rounded-full transition-colors ${openMenu === "reactionMenu" ? "text-[#76b900]" : "text-gray-300"}`, "aria-expanded": openMenu === "reactionMenu", children: reaction ? (() => {
+                    const meta = reactionsMeta.find((r2) => r2.id === reaction);
+                    if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
+                    const Icon2 = meta.Icon;
+                    return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}`, stroke: "currentColor" });
+                  })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5", stroke: "currentColor" }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
+                    setShowPreviewPanel((v) => !v);
+                    setShowCommentsPanel(false);
+                    setShowFinishPanel(false);
+                    setOpenMenu(null);
+                  }, "aria-pressed": showPreviewPanel, className: `inline-flex items-center justify-center p-2 rounded-full transition-colors ${showPreviewPanel ? "text-[#76b900]" : "text-gray-300"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M2.5 12s4.5-7.5 9.5-7.5S21.5 12 21.5 12s-4.5 7.5-9.5 7.5S2.5 12 2.5 12z", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "3", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" })
+                  ] }) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `absolute right-3 top-1/2 transform -translate-y-1/2 transition-all duration-160 ${multiline ? "opacity-0 pointer-events-none translate-y-0" : "opacity-100 pointer-events-auto"}`, style: { zIndex: 60, display: "flex", gap: 10, alignItems: "center" }, children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "View comments", onClick: () => {
+                    setShowCommentsPanel((v) => !v);
+                    setShowFinishPanel(false);
+                    setOpenMenu(null);
+                    setShowPreviewPanel(false);
+                  }, "aria-pressed": showCommentsPanel, className: `inline-flex items-center gap-2 p-2 rounded-full transition-colors ${showCommentsPanel ? "text-[#76b900]" : "text-gray-300"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 5h18M3 12h18M3 19h18", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }) }) }),
+                  !comment2.includes("\n") && comment2.trim().length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Send reply" : "Send comment", onClick: () => submitComment?.({ isInline: true, threadId: activeReplyThreadId || void 0 }), className: "inline-flex items-center justify-center h-8 w-8 rounded-full bg-white shadow-md", "aria-label": "Send comment", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) }) : showFinishPanel ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Cancel", onClick: () => setShowFinishPanel?.(false), className: "inline-flex items-center justify-center h-8 w-8 rounded-full bg-white shadow-md", "aria-label": "Cancel", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { className: "h-4 w-4 text-gray-900" }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Send", onClick: () => {
+                    setShowFinishPanel?.(true);
+                    setShowCommentsPanel?.(false);
+                    setShowPreviewPanel(false);
+                    setOpenMenu?.(null);
+                  }, className: "inline-flex items-center justify-center h-8 w-8 rounded-full bg-white shadow-md", "aria-label": "Send", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { ref: stickyTextareaRef, id: "sticky-comment", value: comment2, onChange: (e) => {
+                  const val = e.target.value;
+                  setComment?.(val);
+                  const taEl = stickyTextareaRef.current;
+                  if (!taEl) return;
+                  taEl.style.height = "auto";
+                  const contentH = taEl.scrollHeight;
+                  const wantsMulti = val.includes("\n") || contentH > 56;
+                  const baselineMin = wantsMulti ? 88 : 48;
+                  const maxH = MAX_TEXTAREA_HEIGHT;
+                  const targetH = Math.min(Math.max(contentH, baselineMin), maxH);
+                  taEl.style.transition = "height 10ms linear";
+                  taEl.style.height = `${targetH}px`;
+                  taEl.style.overflowY = contentH > maxH ? "auto" : "hidden";
+                }, placeholder: activeReplyThreadId ? replyTarget ? `Replying to @${(replyTarget.name || replyTarget.author || "user").toString()}` : "Replying…" : "Add a comment...", className: `w-full bg-transparent text-sm text-gray-100 placeholder-gray-400 resize-none focus:outline-none ${isMultiline ? "text-base leading-relaxed py-0" : "text-sm leading-tight py-0"}`, rows: 1, onKeyDown: (e) => {
+                  if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+                    setShowFinishPanel?.(true);
+                    e.preventDefault();
+                  }
+                }, style: { ...taStyle, overflow: "auto", overscrollBehavior: "contain" } }),
+                openMenu === "reactionMenu" && /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
                   {
-                    className: "p-2 bg-white dark:bg-gray-900 border rounded",
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm text-gray-600", children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: who }),
-                          when ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "ml-2 text-xs text-gray-500", children: when }) : null
-                        ] }),
-                        react2 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: react2 }) }) : null
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 whitespace-pre-wrap text-gray-800", children: body })
-                    ]
-                  },
-                  `${t.tid}-reply-${i}`
-                );
-              }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gray-500 italic", children: 'Replies hidden — click "Show replies" to expand' }) })
-            }
-          ),
-          activeReplyThreadId === t.tid && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 p-3 border rounded bg-gray-50", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm mb-2", children: [
-              "Replying to ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: rootWho })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "input",
-              {
-                className: "w-full p-2 border rounded mb-2",
-                type: "text",
-                placeholder: "Name",
-                value: inlineName,
-                onChange: (e) => setInlineName(e.target.value),
-                required: true
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "input",
-              {
-                className: "w-full p-2 border rounded mb-2",
-                type: "email",
-                placeholder: "Email",
-                value: inlineEmail,
-                onChange: (e) => setInlineEmail(e.target.value),
-                required: true
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "textarea",
-              {
-                ref: (el) => {
-                  inlineTextareaRef.current = el;
-                },
-                className: "w-full p-2 border rounded mb-2",
-                placeholder: "Reply",
-                value: inlineComment,
-                onChange: (e) => setInlineComment(e.target.value),
-                required: true
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center gap-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-gray-600 flex-shrink-0", children: "Reaction:" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                ReactionSelector,
-                {
-                  value: inlineReaction,
-                  onChange: setInlineReaction
-                }
-              ) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ml-auto min-w-0 flex items-center gap-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm text-gray-500 truncate", children: [
-                  "Security: ",
-                  inlineCaptchaX,
-                  " + ",
-                  inlineCaptchaY,
-                  " ="
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "input",
-                  {
-                    className: "w-16 sm:w-20 p-2 border rounded text-center flex-shrink-0",
-                    type: "text",
-                    inputMode: "numeric",
-                    placeholder: "?",
-                    value: inlineCaptchaInput,
-                    onChange: (e) => setInlineCaptchaInput(e.target.value),
-                    "aria-label": "Security question answer",
-                    required: true
+                    className: "absolute left-3 bottom-full mb-2 z-50 ",
+                    ref: reactionMenuRef,
+                    style: { zIndex: 1e5, pointerEvents: "auto" },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-lg", style: { background: "#111315", color: "#e5e7eb", border: "1px solid #222", boxShadow: "0 10px 28px rgba(2,6,23,0.6)", maxWidth: 340, maxHeight: 260, overflow: "auto", overscrollBehavior: "contain" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2 items-center ", children: [
+                      reactionsMeta.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
+                        setReaction(r2.id);
+                        setOpenMenu(null);
+                      }, title: r2.label, className: "p-2 rounded inline-flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(r2.Icon, { className: `${reaction === r2.id ? r2.colorClass : "text-gray-400"} h-5 w-5` }) }, r2.id)),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
+                        setReaction("");
+                        setOpenMenu(null);
+                      }, className: "p-2 rounded inline-flex items-center justify-center", title: "Clear reaction", children: "Clear" })
+                    ] }) })
                   }
-                )
+                ),
+                isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: "inline-flex items-center justify-center p-2 rounded-full", "aria-expanded": openMenu === "reactionMenu", children: reaction ? (() => {
+                      const meta = reactionsMeta.find((r2) => r2.id === reaction);
+                      if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5 text-gray-300" });
+                      const Icon2 = meta.Icon;
+                      return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `${meta.colorClass} h-5 w-5` });
+                    })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5 text-gray-300" }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
+                      setShowPreviewPanel((v) => !v);
+                      setShowCommentsPanel(false);
+                      setShowFinishPanel(false);
+                      setOpenMenu(null);
+                    }, "aria-pressed": showPreviewPanel, className: `inline-flex items-center justify-center p-2 rounded-full transition-colors ${showPreviewPanel ? "text-[#76b900]" : "text-gray-300"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M2.5 12s4.5-7.5 9.5-7.5S21.5 12 21.5 12s-4.5 7.5-9.5 7.5S2.5 12 2.5 12z", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "3", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" })
+                    ] }) })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "View comments", onClick: () => {
+                      setShowCommentsPanel((v) => !v);
+                      setShowFinishPanel(false);
+                      setOpenMenu(null);
+                      setShowPreviewPanel(false);
+                    }, "aria-pressed": showCommentsPanel, className: `inline-flex items-center justify-center p-2 rounded-full ${showCommentsPanel ? "ring-2 ring-white" : ""}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-5 w-5 text-gray-300", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 5h18M3 12h18M3 19h18", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }) }) }),
+                    pendingCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative", ref: pendingListRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Pending comments", onClick: () => openPendingList?.(), className: "inline-flex items-center gap-2 p-2 rounded-full", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2 py-0.5 bg-red-100 text-red-700 rounded", children: pendingCount }) }) }),
+                    !comment2.includes("\n") && comment2.trim().length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Send reply" : "Send comment", onClick: () => submitComment?.({ isInline: true, threadId: activeReplyThreadId || void 0 }), className: "inline-flex items-center justify-center h-10 w-10 rounded-full shadow-md", "aria-label": "Send comment", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "h-5 w-5 text-gray-900" }) }) : showFinishPanel ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Cancel finish", onClick: () => setShowFinishPanel?.(false), className: "inline-flex items-center justify-center h-10 w-10 rounded-full shadow-md", "aria-label": "Cancel finish", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { className: "h-5 w-5 text-gray-900" }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Open finish panel", onClick: () => {
+                      setShowFinishPanel?.(true);
+                      setShowCommentsPanel?.(false);
+                      setOpenMenu?.(null);
+                      setShowPreviewPanel(false);
+                    }, className: "inline-flex items-center justify-center h-8 w-8 rounded-full bg-white shadow-md", "aria-label": "Open finish panel", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) })
+                  ] })
+                ] }) }),
+                !isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-3 px-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-3" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-3", children: pendingCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative", ref: pendingListRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Pending comments", onClick: () => openPendingList?.(), className: "inline-flex items-center gap-2 p-2 rounded-full", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2 py-0.5 bg-red-100 text-red-700 rounded", children: pendingCount }) }) }) })
+                ] }) })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 0, marginBottom: 5, display: "flex", justifyContent: "center" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", maxWidth: "100%", display: "flex", justifyContent: "center" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-background w-full", style: { padding: "6px 12px", color: "#cbd5e1", borderTop: "1px solid rgba(255,255,255,0.02)", borderRadius: 8, maxWidth: 1e3 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-center text-foreground", children: randomSentence }) }) }) })
+            ] });
+          })() })
+        }
+      ),
+      showFinishPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0 z-45 pointer-events-none", style: { bottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto px-4 pointer-events-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: finishPanelRef, className: "rounded-md shadow-lg px-2 py-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222" }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold mb-1", children: "Finalize your comment" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { title: "Send", className: `bg-transparent border border-gray-600 hover:border-[#76b900] transition-colors ${status === "submitting" || cooldownLeft > 0 ? "px-2 py-2 rounded-full" : " rounded-full h-9 w-9 flex items-center justify-center"}`, variant: "outline", onClick: handleFinishSubmit, disabled: status === "submitting" || cooldownLeft > 0, children: status === "submitting" ? "Submitting…" : cooldownLeft > 0 ? `Wait ${cooldownLeft}s` : /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "h-5 w-5" }) }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-2 mt-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: 30, height: 30, borderRadius: 999, overflow: "hidden", cursor: "pointer" }, onClick: () => promptForAvatar(email || inlineEmail || ""), children: getAvatarForEmail((email || "").toLowerCase()) ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: getAvatarForEmail((email || "").toLowerCase()), alt: "avatar", style: { width: "100%", height: "100%", objectFit: "cover" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: colorFromKey(email || name2 || "anon"), width: 30, height: 30 }, className: "rounded-full flex items-center justify-center text-white font-semibold", children: initialsFromName(name2 || inlineName) }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { id: "finish-name", className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border border-[#222] text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", placeholder: "Your name", value: name2, onChange: (e) => setName(e.target.value) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border border-[#222] text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "email", placeholder: "Email address", value: email, onChange: (e) => setEmail(e.target.value) }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border border-[#222] text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", inputMode: "numeric", placeholder: `${captchaX} + ${captchaY} = ?`, value: captchaInput, onChange: (e) => setCaptchaInput(e.target.value) }) })
+        ] }),
+        topError ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-red-600 text-sm mt-2", children: topError }) : null
+      ] }) }) }),
+      showCommentsPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0 z-45 pointer-events-none", style: { bottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto px-4 pointer-events-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: commentsPanelRef, className: "rounded-md shadow-lg p-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222" }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold", children: "Comments" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm text-gray-400", children: loadingComments ? "Loading…" : `${comments.length} comment${comments.length === 1 ? "" : "s"}` }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSummaryBox, { tid: "__post__", style: { display: "inline-flex", marginLeft: 6 } }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm text-gray-400" })
+        ] }),
+        loadingComments && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Loading comments…" }),
+        commentsError && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: "No comments yet." }),
+        !loadingComments && !commentsError && comments.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: "Be the first to comment." }),
+        !loadingComments && !commentsError && buildThreadTrees.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-4", children: buildThreadTrees.map((thr) => {
+          const root2 = thr.rootNode;
+          const rootChildrenCount = root2.children ? root2.children.length : 0;
+          const reactionCounts = reactionSummaryForThread(thr.tid);
+          const totalReactions = Object.values(reactionCounts).reduce((s2, v) => s2 + v, 0);
+          return /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "p-3 rounded relative", style: { border: "1px solid #222", background: "rgba(255,255,255,0.01)" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { backgroundColor: colorFromKey(String(root2.item.email || root2.item.name || "anon")), width: 40, height: 40 }, className: "rounded-full flex items-center justify-center text-white font-semibold", children: initialsFromName((root2.item.name || root2.item.Name || "A").toString()) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 relative", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-sm", children: (root2.item.name || root2.item.author || "Anonymous").toString() }),
+                root2.item.Timestamp || root2.item.timestamp || root2.item.time ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-gray-400", children: (root2.item.Timestamp || root2.item.timestamp || root2.item.time).toString() }) : null,
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: (root2.item.reaction || root2.item["entry.1228204400"])?.toString?.() || void 0 }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ml-auto flex items-center gap-2", children: [
+                  rootChildrenCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setExpandedThreads((s2) => ({ ...s2, [thr.tid]: !(s2 && s2[thr.tid]) })), children: expandedThreads[thr.tid] ? "Hide replies" : `View replies (${rootChildrenCount})` }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => startReplyFor(thr.tid, root2.item), children: "Reply" })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 prose max-w-none", style: {
+                paddingRight: 88
+                /* leave room for reaction chips */
+              }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins: [remarkGfm, remarkMath], rehypePlugins: [[rehypeSanitize, schema$2], rehypeRaw, rehypeKatex, rehypeHighlight, rehypeSlug, rehypeAutolinkHeadings], children: stripInternalTags((root2.item.comment || root2.item.Comment || root2.item.description || "").toString()) }) }),
+              totalReactions > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", left: 8, bottom: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSummaryBox, { tid: thr.tid }) }),
+              expandedThreads[thr.tid] && root2.children && root2.children.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 space-y-3 pl-12", children: [
+                root2.children.slice(0, 2).map((rep, ridx) => /* @__PURE__ */ jsxRuntimeExports.jsx(CommentNode, { node: rep, tid: thr.tid, depth: 0 }, `${rep.key || getCommentKey(rep.item)}::${ridx}`)),
+                root2.children.length > 2 && /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: !showAllReplies[root2.key] ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [root2.key]: true })), children: [
+                  "View ",
+                  root2.children.length - 2,
+                  " more replies"
+                ] }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 space-y-2 pl-4", children: [
+                  root2.children.slice(2).map((rep, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(CommentNode, { node: rep, tid: thr.tid, depth: 0 }, `${rep.key || getCommentKey(rep.item)}::more::${idx}`)),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [root2.key]: false })), children: "Hide extra replies" }) })
+                ] }) })
               ] })
-            ] }),
-            inlineError ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-red-600 text-sm mt-2", children: inlineError }) : null,
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mt-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "button",
-                  variant: "outline",
-                  onClick: () => submitComment({ isInline: true, threadId: t.tid }),
-                  disabled: status === "submitting" || cooldownLeft > 0 || !inlineFormValid,
-                  children: status === "submitting" ? "Submitting..." : cooldownLeft > 0 ? `Wait ${cooldownLeft}s` : "Reply"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "button",
-                  variant: "outline",
-                  className: "text-sm underline",
-                  onClick: cancelInlineReply,
-                  children: "Cancel"
-                }
-              )
             ] })
+          ] }) }, thr.tid);
+        }) })
+      ] }) }) }),
+      showPreviewPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0 z-45 pointer-events-none", style: { bottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto px-4 pointer-events-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: previewPanelRef, className: "rounded-md shadow-lg p-4", style: { maxHeight: "60vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222" }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-start justify-between mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold mb-1", children: "Preview" }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full rounded-lg p-3", style: { background: "rgba(255,255,255,0.01)", border: "1px solid #1f1f1f" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-10 w-10 rounded-full flex items-center justify-center text-white font-semibold", style: { backgroundColor: colorFromKey(name2 || "anon") }, children: initialsFromName(name2) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-semibold truncate", children: name2 || "Your name" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gray-400", children: "• just now" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-2 inline-flex items-center", children: reaction ? /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: reaction, size: 18 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Smile, { className: "text-yellow-400", style: { height: 18, width: 18 } }) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 text-sm whitespace-pre-wrap", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins: [remarkGfm, remarkMath], rehypePlugins: [[rehypeSanitize, schema$2], rehypeRaw, rehypeKatex, rehypeHighlight, rehypeSlug, rehypeAutolinkHeadings], children: comment2 || "(Your comment will appear here)" }) })
           ] })
-        ] }, t.tid);
-      }) })
-    ] })
+        ] }) })
+      ] }) }) })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
+        /* ensure popups (reaction menu, finish, comments, preview) scroll their content and do not let wheel events propagate to the body */
+        .comment-ui [style*="overscroll-behavior"] { overscroll-behavior: contain; }
+      ` })
   ] });
 }
 const schema$1 = {
@@ -83865,7 +83944,7 @@ function BlogPostWithStickyTOC() {
   const [tocOpen, setTocOpen] = reactExports.useState(false);
   const [tocVisibleDesktop, setTocVisibleDesktop] = reactExports.useState(false);
   const [, setIsSticky] = reactExports.useState(false);
-  const [showTopButton, setShowTopButton] = reactExports.useState(false);
+  const [, setShowTopButton] = reactExports.useState(false);
   const [controlsVisible, setControlsVisible] = reactExports.useState(true);
   const headerRef = reactExports.useRef(null);
   const articleRef = reactExports.useRef(null);
@@ -83874,10 +83953,6 @@ function BlogPostWithStickyTOC() {
   const observerRef = reactExports.useRef(null);
   const floatingButtonsRef = reactExports.useRef(null);
   const [buttonRightPx, setButtonRightPx] = reactExports.useState(null);
-  const [reactionCounts, setReactionCounts] = reactExports.useState(
-    {}
-  );
-  const [postCommentsCount, setPostCommentsCount] = reactExports.useState(0);
   const [, setIsDesktop] = reactExports.useState(
     () => typeof window !== "undefined" ? window.innerWidth >= 1024 : false
   );
@@ -84087,62 +84162,7 @@ function BlogPostWithStickyTOC() {
       if (observerRef.current) observerRef.current.disconnect();
     };
   }, [headings]);
-  reactExports.useEffect(() => {
-    if (!post2) return;
-    const commentsUrl = "/data/comments.json";
-    const postUrl = `${window.location.origin}/blog/${post2.slug}`;
-    const matchesPost = (it) => {
-      const candidates = [
-        it.postUrl,
-        it.posturl,
-        it.url,
-        it.pageUrl,
-        it.page_url,
-        it["entry.638551959"],
-        it.post,
-        it.page
-      ];
-      for (const c2 of candidates) {
-        if (!c2) continue;
-        try {
-          const s2 = String(c2);
-          if (s2 === postUrl) return true;
-          try {
-            const u = new URL(s2, window.location.origin);
-            if (u.href === postUrl) return true;
-            if (u.pathname === new URL(postUrl).pathname) return true;
-          } catch {
-          }
-        } catch {
-        }
-      }
-      return false;
-    };
-    const compute = async () => {
-      try {
-        const res = await fetch(commentsUrl, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json2 = await res.json();
-        const items = Array.isArray(json2.items) ? json2.items : json2.items || [];
-        const filtered = items.filter(matchesPost);
-        const counts = {};
-        for (const it of filtered) {
-          const r2 = it.reaction || it.Reaction || it["entry.1228204400"] || "";
-          const key = String(r2 || "").trim();
-          if (!key) continue;
-          counts[key] = (counts[key] || 0) + 1;
-        }
-        setReactionCounts(counts);
-        setPostCommentsCount(filtered.length);
-      } catch {
-        setReactionCounts({});
-        setPostCommentsCount(0);
-      }
-    };
-    compute();
-  }, [post2]);
   useAutoHide(floatingButtonsRef, controlsVisible, setControlsVisible, 1e4);
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const scrollToHeading = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -84202,23 +84222,6 @@ function BlogPostWithStickyTOC() {
       return a.name || a.fullName || a.title || String(a);
     return String(a);
   }).join(", ") : null;
-  const ReactionIcon = ({
-    id,
-    className
-  }) => {
-    switch (id) {
-      case "thumbs":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(ThumbsUp, { className: className ?? "h-4 w-4 text-green-600" });
-      case "heart":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Heart, { className: className ?? "h-4 w-4 text-red-500" });
-      case "smile":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Smile, { className: className ?? "h-4 w-4 text-yellow-500" });
-      case "star":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Star, { className: className ?? "h-4 w-4 text-indigo-600" });
-      default:
-        return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className, children: "?" });
-    }
-  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-6xl mx-auto px-2 lg:px-8", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
         .toc-scroll { scrollbar-width: thin; -ms-overflow-style: none; }
@@ -84247,21 +84250,7 @@ function BlogPostWithStickyTOC() {
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "div",
             {
-              className: `flex flex-col gap-3 transition-all ${!controlsVisible ? "opacity-0 pointer-events-none -translate-y-2" : "opacity-100"}`,
-              children: showTopButton && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "floating-btn", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  onClick: () => {
-                    scrollToTop();
-                    setControlsVisible(true);
-                  },
-                  className: "h-12 w-12 rounded-full shadow-lg bg-background border border-gray-200 dark:border-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-green-500",
-                  size: "icon",
-                  "aria-label": "Scroll to top",
-                  title: "Scroll to top",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-700 dark:text-gray-100" })
-                }
-              ) })
+              className: `flex flex-col gap-3 transition-all ${!controlsVisible ? "opacity-0 pointer-events-none -translate-y-2" : "opacity-100"}`
             }
           )
         ]
@@ -84440,7 +84429,7 @@ function BlogPostWithStickyTOC() {
             {
               to: "/blog",
               "aria-label": "Back to blog",
-              className: "absolute left-4 top-6 z-20",
+              className: "absolute left-0 top-11 z-20",
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 Button,
                 {
@@ -84659,38 +84648,15 @@ function BlogPostWithStickyTOC() {
               }
             )
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-12 max-w-4xl mx-auto", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4 flex items-center justify-between", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xl font-semibold", children: "Comments" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-                Object.keys(reactionCounts).length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-muted-foreground", children: "Be the first to react" }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: Object.entries(reactionCounts).map(([id, count2]) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "div",
-                  {
-                    className: "inline-flex items-center gap-2 px-2 py-1 rounded-full border bg-gray-50 dark:bg-gray-800 text-sm",
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: count2 })
-                    ]
-                  },
-                  id
-                )) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm text-muted-foreground", children: [
-                  postCommentsCount,
-                  " comment",
-                  postCommentsCount === 1 ? "" : "s"
-                ] })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              CommentForm,
-              {
-                formUrl: post2.formUrl || "https://docs.google.com/forms/d/e/1FAIpQLSfJqsAzy4IuBMLFWueCvdwZ496IdEf87-jUto2U1mqjCdoZjQ/formResponse",
-                postUrl: `${window.location.origin}/blog/${post2.slug}`,
-                commentsUrl: "/data/comments.json",
-                cooldownSeconds: 300
-              }
-            )
-          ] })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-12 max-w-4xl mx-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CommentForm,
+            {
+              formUrl: post2.formUrl || "https://docs.google.com/forms/d/e/1FAIpQLSfJqsAzy4IuBMLFWueCvdwZ496IdEf87-jUto2U1mqjCdoZjQ/formResponse",
+              postUrl: `${window.location.origin}/blog/${post2.slug}`,
+              commentsUrl: "/data/comments.json",
+              cooldownSeconds: 300
+            }
+          ) })
         ]
       }
     )
@@ -86527,13 +86493,13 @@ var Label$2 = reactExports.forwardRef((props, forwardedRef) => {
   );
 });
 Label$2.displayName = NAME;
-var Root = Label$2;
+var Root$1 = Label$2;
 function Label$1({
   className,
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Root,
+    Root$1,
     {
       "data-slot": "label",
       className: cn(
@@ -86825,6 +86791,215 @@ function Checkbox({
     }
   );
 }
+var ENTRY_FOCUS = "rovingFocusGroup.onEntryFocus";
+var EVENT_OPTIONS = { bubbles: false, cancelable: true };
+var GROUP_NAME$2 = "RovingFocusGroup";
+var [Collection$1, useCollection$1, createCollectionScope$1] = createCollection(GROUP_NAME$2);
+var [createRovingFocusGroupContext, createRovingFocusGroupScope] = createContextScope(
+  GROUP_NAME$2,
+  [createCollectionScope$1]
+);
+var [RovingFocusProvider, useRovingFocusContext] = createRovingFocusGroupContext(GROUP_NAME$2);
+var RovingFocusGroup = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
+  }
+);
+RovingFocusGroup.displayName = GROUP_NAME$2;
+var RovingFocusGroupImpl = reactExports.forwardRef((props, forwardedRef) => {
+  const {
+    __scopeRovingFocusGroup,
+    orientation,
+    loop = false,
+    dir,
+    currentTabStopId: currentTabStopIdProp,
+    defaultCurrentTabStopId,
+    onCurrentTabStopIdChange,
+    onEntryFocus,
+    preventScrollOnEntryFocus = false,
+    ...groupProps
+  } = props;
+  const ref = reactExports.useRef(null);
+  const composedRefs = useComposedRefs(forwardedRef, ref);
+  const direction = useDirection(dir);
+  const [currentTabStopId, setCurrentTabStopId] = useControllableState({
+    prop: currentTabStopIdProp,
+    defaultProp: defaultCurrentTabStopId ?? null,
+    onChange: onCurrentTabStopIdChange,
+    caller: GROUP_NAME$2
+  });
+  const [isTabbingBackOut, setIsTabbingBackOut] = reactExports.useState(false);
+  const handleEntryFocus = useCallbackRef$1(onEntryFocus);
+  const getItems = useCollection$1(__scopeRovingFocusGroup);
+  const isClickFocusRef = reactExports.useRef(false);
+  const [focusableItemsCount, setFocusableItemsCount] = reactExports.useState(0);
+  reactExports.useEffect(() => {
+    const node2 = ref.current;
+    if (node2) {
+      node2.addEventListener(ENTRY_FOCUS, handleEntryFocus);
+      return () => node2.removeEventListener(ENTRY_FOCUS, handleEntryFocus);
+    }
+  }, [handleEntryFocus]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    RovingFocusProvider,
+    {
+      scope: __scopeRovingFocusGroup,
+      orientation,
+      dir: direction,
+      loop,
+      currentTabStopId,
+      onItemFocus: reactExports.useCallback(
+        (tabStopId) => setCurrentTabStopId(tabStopId),
+        [setCurrentTabStopId]
+      ),
+      onItemShiftTab: reactExports.useCallback(() => setIsTabbingBackOut(true), []),
+      onFocusableItemAdd: reactExports.useCallback(
+        () => setFocusableItemsCount((prevCount) => prevCount + 1),
+        []
+      ),
+      onFocusableItemRemove: reactExports.useCallback(
+        () => setFocusableItemsCount((prevCount) => prevCount - 1),
+        []
+      ),
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        Primitive$1.div,
+        {
+          tabIndex: isTabbingBackOut || focusableItemsCount === 0 ? -1 : 0,
+          "data-orientation": orientation,
+          ...groupProps,
+          ref: composedRefs,
+          style: { outline: "none", ...props.style },
+          onMouseDown: composeEventHandlers(props.onMouseDown, () => {
+            isClickFocusRef.current = true;
+          }),
+          onFocus: composeEventHandlers(props.onFocus, (event) => {
+            const isKeyboardFocus = !isClickFocusRef.current;
+            if (event.target === event.currentTarget && isKeyboardFocus && !isTabbingBackOut) {
+              const entryFocusEvent = new CustomEvent(ENTRY_FOCUS, EVENT_OPTIONS);
+              event.currentTarget.dispatchEvent(entryFocusEvent);
+              if (!entryFocusEvent.defaultPrevented) {
+                const items = getItems().filter((item) => item.focusable);
+                const activeItem = items.find((item) => item.active);
+                const currentItem = items.find((item) => item.id === currentTabStopId);
+                const candidateItems = [activeItem, currentItem, ...items].filter(
+                  Boolean
+                );
+                const candidateNodes = candidateItems.map((item) => item.ref.current);
+                focusFirst$1(candidateNodes, preventScrollOnEntryFocus);
+              }
+            }
+            isClickFocusRef.current = false;
+          }),
+          onBlur: composeEventHandlers(props.onBlur, () => setIsTabbingBackOut(false))
+        }
+      )
+    }
+  );
+});
+var ITEM_NAME$2 = "RovingFocusGroupItem";
+var RovingFocusGroupItem = reactExports.forwardRef(
+  (props, forwardedRef) => {
+    const {
+      __scopeRovingFocusGroup,
+      focusable = true,
+      active = false,
+      tabStopId,
+      children: children2,
+      ...itemProps
+    } = props;
+    const autoId = useId();
+    const id = tabStopId || autoId;
+    const context = useRovingFocusContext(ITEM_NAME$2, __scopeRovingFocusGroup);
+    const isCurrentTabStop = context.currentTabStopId === id;
+    const getItems = useCollection$1(__scopeRovingFocusGroup);
+    const { onFocusableItemAdd, onFocusableItemRemove, currentTabStopId } = context;
+    reactExports.useEffect(() => {
+      if (focusable) {
+        onFocusableItemAdd();
+        return () => onFocusableItemRemove();
+      }
+    }, [focusable, onFocusableItemAdd, onFocusableItemRemove]);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Collection$1.ItemSlot,
+      {
+        scope: __scopeRovingFocusGroup,
+        id,
+        focusable,
+        active,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Primitive$1.span,
+          {
+            tabIndex: isCurrentTabStop ? 0 : -1,
+            "data-orientation": context.orientation,
+            ...itemProps,
+            ref: forwardedRef,
+            onMouseDown: composeEventHandlers(props.onMouseDown, (event) => {
+              if (!focusable) event.preventDefault();
+              else context.onItemFocus(id);
+            }),
+            onFocus: composeEventHandlers(props.onFocus, () => context.onItemFocus(id)),
+            onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
+              if (event.key === "Tab" && event.shiftKey) {
+                context.onItemShiftTab();
+                return;
+              }
+              if (event.target !== event.currentTarget) return;
+              const focusIntent = getFocusIntent(event, context.orientation, context.dir);
+              if (focusIntent !== void 0) {
+                if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+                event.preventDefault();
+                const items = getItems().filter((item) => item.focusable);
+                let candidateNodes = items.map((item) => item.ref.current);
+                if (focusIntent === "last") candidateNodes.reverse();
+                else if (focusIntent === "prev" || focusIntent === "next") {
+                  if (focusIntent === "prev") candidateNodes.reverse();
+                  const currentIndex = candidateNodes.indexOf(event.currentTarget);
+                  candidateNodes = context.loop ? wrapArray$1(candidateNodes, currentIndex + 1) : candidateNodes.slice(currentIndex + 1);
+                }
+                setTimeout(() => focusFirst$1(candidateNodes));
+              }
+            }),
+            children: typeof children2 === "function" ? children2({ isCurrentTabStop, hasTabStop: currentTabStopId != null }) : children2
+          }
+        )
+      }
+    );
+  }
+);
+RovingFocusGroupItem.displayName = ITEM_NAME$2;
+var MAP_KEY_TO_FOCUS_INTENT = {
+  ArrowLeft: "prev",
+  ArrowUp: "prev",
+  ArrowRight: "next",
+  ArrowDown: "next",
+  PageUp: "first",
+  Home: "first",
+  PageDown: "last",
+  End: "last"
+};
+function getDirectionAwareKey(key, dir) {
+  if (dir !== "rtl") return key;
+  return key === "ArrowLeft" ? "ArrowRight" : key === "ArrowRight" ? "ArrowLeft" : key;
+}
+function getFocusIntent(event, orientation, dir) {
+  const key = getDirectionAwareKey(event.key, dir);
+  if (orientation === "vertical" && ["ArrowLeft", "ArrowRight"].includes(key)) return void 0;
+  if (orientation === "horizontal" && ["ArrowUp", "ArrowDown"].includes(key)) return void 0;
+  return MAP_KEY_TO_FOCUS_INTENT[key];
+}
+function focusFirst$1(candidates, preventScroll = false) {
+  const PREVIOUSLY_FOCUSED_ELEMENT = document.activeElement;
+  for (const candidate of candidates) {
+    if (candidate === PREVIOUSLY_FOCUSED_ELEMENT) return;
+    candidate.focus({ preventScroll });
+    if (document.activeElement !== PREVIOUSLY_FOCUSED_ELEMENT) return;
+  }
+}
+function wrapArray$1(array, startIndex) {
+  return array.map((_, index2) => array[(startIndex + index2) % array.length]);
+}
+var Root = RovingFocusGroup;
+var Item = RovingFocusGroupItem;
 // @__NO_SIDE_EFFECTS__
 function createSlot(ownerName) {
   const SlotClone = /* @__PURE__ */ createSlotClone(ownerName);
@@ -86951,7 +87126,7 @@ var Menu = (props) => {
       document.removeEventListener("pointermove", handlePointer, { capture: true });
     };
   }, []);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$4, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$3, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     MenuProvider,
     {
       scope: __scopeMenu,
@@ -87155,7 +87330,7 @@ var MenuContentImpl = reactExports.forwardRef(
                 onInteractOutside,
                 onDismiss,
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Root$1,
+                  Root,
                   {
                     asChild: true,
                     ...rovingFocusGroupScope,

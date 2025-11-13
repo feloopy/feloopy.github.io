@@ -1,94 +1,94 @@
 [
   {
     "loc": "https://feloopy.github.io/",
-    "lastmod": "2025-11-13T07:39:18.048Z"
+    "lastmod": "2025-11-13T19:15:48.057Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/bug-report",
-    "lastmod": "2025-11-13T07:39:18.060Z"
+    "lastmod": "2025-11-13T19:15:48.068Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/feature-request",
-    "lastmod": "2025-11-13T07:39:18.082Z"
+    "lastmod": "2025-11-13T19:15:48.086Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/project",
-    "lastmod": "2025-11-13T07:39:18.137Z"
+    "lastmod": "2025-11-13T19:15:48.096Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/contact",
-    "lastmod": "2025-11-13T07:39:18.162Z"
+    "lastmod": "2025-11-13T19:15:48.099Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/payment",
-    "lastmod": "2025-11-13T07:39:18.177Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/submissions",
-    "lastmod": "2025-11-13T07:39:18.052Z"
+    "lastmod": "2025-11-13T19:15:48.100Z"
   },
   {
     "loc": "https://feloopy.github.io/docs",
-    "lastmod": "2025-11-13T07:39:18.065Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store",
-    "lastmod": "2025-11-13T07:39:18.117Z"
+    "lastmod": "2025-11-13T19:15:48.064Z"
   },
   {
     "loc": "https://feloopy.github.io/about",
-    "lastmod": "2025-11-13T07:39:18.055Z"
+    "lastmod": "2025-11-13T19:15:48.066Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/timefold",
-    "lastmod": "2025-11-13T07:39:33.496Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/copt",
-    "lastmod": "2025-11-13T07:39:33.196Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/blog",
-    "lastmod": "2025-11-13T07:39:18.058Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/seeker",
-    "lastmod": "2025-11-13T07:39:40.984Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/mosek",
-    "lastmod": "2025-11-13T07:39:32.038Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/highs",
-    "lastmod": "2025-11-13T07:39:34.843Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/picat",
-    "lastmod": "2025-11-13T07:39:47.628Z"
+    "loc": "https://feloopy.github.io/submissions",
+    "lastmod": "2025-11-13T19:15:48.045Z"
   },
   {
     "loc": "https://feloopy.github.io/blog/llms-and-decision-science",
-    "lastmod": "2025-11-13T07:39:18.221Z"
+    "lastmod": "2025-11-13T19:15:48.107Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/scip",
-    "lastmod": "2025-11-13T07:39:42.631Z"
+    "loc": "https://feloopy.github.io/blog",
+    "lastmod": "2025-11-13T19:15:48.067Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/copt",
+    "lastmod": "2025-11-13T19:15:55.976Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/highs",
+    "lastmod": "2025-11-13T19:15:56.430Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store",
+    "lastmod": "2025-11-13T19:15:48.102Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/seeker",
+    "lastmod": "2025-11-13T19:15:58.077Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog/list-of-optimization-packages",
+    "lastmod": "2025-11-13T19:15:56.001Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/picat",
+    "lastmod": "2025-11-13T19:16:03.099Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/timefold",
+    "lastmod": "2025-11-13T19:16:02.974Z"
   },
   {
     "loc": "https://feloopy.github.io/store/gusek",
-    "lastmod": "2025-11-13T07:39:51.930Z"
+    "lastmod": "2025-11-13T19:16:04.042Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/scip",
+    "lastmod": "2025-11-13T19:16:03.265Z"
   },
   {
     "loc": "https://feloopy.github.io/store/lpsolve",
-    "lastmod": "2025-11-13T07:39:57.862Z"
+    "lastmod": "2025-11-13T19:16:07.376Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/mosek",
+    "lastmod": "2025-11-13T19:15:55.907Z"
   },
   {
     "loc": "https://feloopy.github.io/store/lpl",
-    "lastmod": "2025-11-13T07:39:41.943Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/omelet",
-    "lastmod": "2025-11-13T07:39:46.718Z"
+    "lastmod": "2025-11-13T19:16:08.789Z"
   }
 ]
