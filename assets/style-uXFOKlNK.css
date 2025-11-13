@@ -1165,6 +1165,10 @@ code.hljs {
     width: calc(var(--spacing) * 12);
   }
 
+  .w-16 {
+    width: calc(var(--spacing) * 16);
+  }
+
   .w-20 {
     width: calc(var(--spacing) * 20);
   }
@@ -1281,7 +1285,7 @@ code.hljs {
     flex: none;
   }
 
-  .shrink-0 {
+  .flex-shrink-0, .shrink-0 {
     flex-shrink: 0;
   }
 
@@ -3265,6 +3269,10 @@ code.hljs {
       display: block;
     }
 
+    .sm\:w-20 {
+      width: calc(var(--spacing) * 20);
+    }
+
     .sm\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -3275,6 +3283,10 @@ code.hljs {
 
     .sm\:flex-row {
       flex-direction: row;
+    }
+
+    .sm\:items-center {
+      align-items: center;
     }
 
     .sm\:justify-end {
