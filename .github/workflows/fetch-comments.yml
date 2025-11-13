@@ -11,7 +11,6 @@ on:
     branches:
       - main
   schedule:
-    # cron uses UTC — these run at 00:00 and 12:00 UTC (twice per day)
     - cron: '0 0 * * *'
     - cron: '0 12 * * *'
 
@@ -19,8 +18,6 @@ permissions:
   contents: write
 
 jobs:
-  # Skip runs triggered by the bot's own push to avoid recursion.
-  # Allow non-push events (schedule, workflow_dispatch) to run normally.
   fetch-comments:
     if: ${{ github.event_name != 'push' || github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
