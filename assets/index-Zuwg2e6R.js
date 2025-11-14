@@ -14851,22 +14851,22 @@ const createLucideIcon = (iconName, iconNode) => {
   Component.displayName = toPascalCase(iconName);
   return Component;
 };
-const __iconNode$x = [
+const __iconNode$y = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$x);
-const __iconNode$w = [
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$y);
+const __iconNode$x = [
   ["path", { d: "m5 12 7-7 7 7", key: "hav0vg" }],
   ["path", { d: "M12 19V5", key: "x0mq9r" }]
 ];
-const ArrowUp = createLucideIcon("arrow-up", __iconNode$w);
-const __iconNode$v = [
+const ArrowUp = createLucideIcon("arrow-up", __iconNode$x);
+const __iconNode$w = [
   ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
   ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
 ];
-const Briefcase = createLucideIcon("briefcase", __iconNode$v);
-const __iconNode$u = [
+const Briefcase = createLucideIcon("briefcase", __iconNode$w);
+const __iconNode$v = [
   ["path", { d: "M12 20v-9", key: "1qisl0" }],
   ["path", { d: "M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z", key: "uouzyp" }],
   ["path", { d: "M14.12 3.88 16 2", key: "qol33r" }],
@@ -14879,66 +14879,66 @@ const __iconNode$u = [
   ["path", { d: "m8 2 1.88 1.88", key: "fmnt4t" }],
   ["path", { d: "M9 7.13V6a3 3 0 1 1 6 0v1.13", key: "1vgav8" }]
 ];
-const Bug = createLucideIcon("bug", __iconNode$u);
-const __iconNode$t = [
+const Bug = createLucideIcon("bug", __iconNode$v);
+const __iconNode$u = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$t);
-const __iconNode$s = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$s);
-const __iconNode$r = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$r);
-const __iconNode$q = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$q);
-const __iconNode$p = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$p);
-const __iconNode$o = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$o);
-const __iconNode$n = [
+const Calendar = createLucideIcon("calendar", __iconNode$u);
+const __iconNode$t = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$t);
+const __iconNode$s = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$s);
+const __iconNode$r = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$r);
+const __iconNode$q = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$q);
+const __iconNode$p = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$p);
+const __iconNode$o = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   ["path", { d: "M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2", key: "4jdomd" }],
   ["path", { d: "M16 4h2a2 2 0 0 1 2 2v4", key: "3hqy98" }],
   ["path", { d: "M21 14H11", key: "1bme5i" }],
   ["path", { d: "m15 10-4 4 4 4", key: "5dvupr" }]
 ];
-const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$n);
-const __iconNode$m = [
+const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$o);
+const __iconNode$n = [
   ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$m);
-const __iconNode$l = [
+const Clock = createLucideIcon("clock", __iconNode$n);
+const __iconNode$m = [
   ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
   ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ];
-const Copy = createLucideIcon("copy", __iconNode$l);
-const __iconNode$k = [
+const Copy = createLucideIcon("copy", __iconNode$m);
+const __iconNode$l = [
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
   ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const CreditCard = createLucideIcon("credit-card", __iconNode$k);
-const __iconNode$j = [
+const CreditCard = createLucideIcon("credit-card", __iconNode$l);
+const __iconNode$k = [
   ["path", { d: "M12 15V3", key: "m9g1x1" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const Download = createLucideIcon("download", __iconNode$j);
-const __iconNode$i = [
+const Download = createLucideIcon("download", __iconNode$k);
+const __iconNode$j = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   ["circle", { cx: "19", cy: "12", r: "1", key: "1wjl8i" }],
   ["circle", { cx: "5", cy: "12", r: "1", key: "1pcz8c" }]
 ];
-const Ellipsis = createLucideIcon("ellipsis", __iconNode$i);
-const __iconNode$h = [
+const Ellipsis = createLucideIcon("ellipsis", __iconNode$j);
+const __iconNode$i = [
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
   ["path", { d: "M10 14 21 3", key: "gplh6r" }],
   ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
 ];
-const ExternalLink = createLucideIcon("external-link", __iconNode$h);
-const __iconNode$g = [
+const ExternalLink = createLucideIcon("external-link", __iconNode$i);
+const __iconNode$h = [
   [
     "path",
     {
@@ -14948,8 +14948,8 @@ const __iconNode$g = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$g);
-const __iconNode$f = [
+const Eye = createLucideIcon("eye", __iconNode$h);
+const __iconNode$g = [
   [
     "path",
     {
@@ -14958,8 +14958,8 @@ const __iconNode$f = [
     }
   ]
 ];
-const Heart = createLucideIcon("heart", __iconNode$f);
-const __iconNode$e = [
+const Heart = createLucideIcon("heart", __iconNode$g);
+const __iconNode$f = [
   [
     "path",
     {
@@ -14970,18 +14970,28 @@ const __iconNode$e = [
   ["path", { d: "M9 18h6", key: "x1upvd" }],
   ["path", { d: "M10 22h4", key: "ceow96" }]
 ];
-const Lightbulb = createLucideIcon("lightbulb", __iconNode$e);
-const __iconNode$d = [
+const Lightbulb = createLucideIcon("lightbulb", __iconNode$f);
+const __iconNode$e = [
   ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
   ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
 ];
-const Mail = createLucideIcon("mail", __iconNode$d);
-const __iconNode$c = [
+const Mail = createLucideIcon("mail", __iconNode$e);
+const __iconNode$d = [
   ["path", { d: "M4 5h16", key: "1tepv9" }],
   ["path", { d: "M4 12h16", key: "1lakjw" }],
   ["path", { d: "M4 19h16", key: "1djgab" }]
 ];
-const Menu$1 = createLucideIcon("menu", __iconNode$c);
+const Menu$1 = createLucideIcon("menu", __iconNode$d);
+const __iconNode$c = [
+  [
+    "path",
+    {
+      d: "M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z",
+      key: "18887p"
+    }
+  ]
+];
+const MessageSquare = createLucideIcon("message-square", __iconNode$c);
 const __iconNode$b = [
   [
     "path",
@@ -82615,7 +82625,9 @@ function AccordionContent({
 }
 const schema$2 = {
   ...defaultSchema,
-  tagNames: Array.from(/* @__PURE__ */ new Set([...defaultSchema.tagNames || [], "iframe", "details", "summary"])),
+  tagNames: Array.from(
+    /* @__PURE__ */ new Set([...defaultSchema.tagNames || [], "iframe", "details", "summary"])
+  ),
   attributes: {
     ...defaultSchema.attributes,
     iframe: [
@@ -82643,7 +82655,8 @@ function CommentForm({
 }) {
   const isBrowser2 = typeof window !== "undefined";
   const CONTENT_MAX_WIDTH = 1e3;
-  const MAX_TEXTAREA_HEIGHT = 260;
+  const GLOBAL_HEIGHT_SCALE = 0.92;
+  const MAX_TEXTAREA_HEIGHT = Math.round(260 * GLOBAL_HEIGHT_SCALE);
   const [name2, setName] = reactExports.useState("");
   const [email, setEmail] = reactExports.useState("");
   const [comment2, setComment] = reactExports.useState("");
@@ -82671,11 +82684,15 @@ function CommentForm({
   const [footerOffset, setFooterOffset] = reactExports.useState(0);
   const [chatBarHeight, setChatBarHeight] = reactExports.useState(0);
   const [sentenceHeight, setSentenceHeight] = reactExports.useState(0);
-  const [showAllReplies, setShowAllReplies] = reactExports.useState({});
   const [randomSentence, setRandomSentence] = reactExports.useState("");
-  const [expandedThreads, setExpandedThreads] = reactExports.useState({});
   const [isMultiline, setIsMultiline] = reactExports.useState(false);
-  const [isMobile, setIsMobile] = reactExports.useState(typeof window !== "undefined" ? window.innerWidth < 640 : false);
+  const [isMobile, setIsMobile] = reactExports.useState(
+    typeof window !== "undefined" ? window.innerWidth < 640 : false
+  );
+  const [isVerySmall, setIsVerySmall] = reactExports.useState(
+    typeof window !== "undefined" ? window.innerWidth < 420 : false
+  );
+  const lastSeenCommentsKey = reactExports.useMemo(() => `comments:lastSeen:${postUrl}`, [postUrl]);
   const panelsOpenRef = reactExports.useRef(false);
   const stickyTextareaRef = reactExports.useRef(null);
   const stickyBarRef = reactExports.useRef(null);
@@ -82684,10 +82701,8 @@ function CommentForm({
   const finishPanelRef = reactExports.useRef(null);
   const commentsPanelRef = reactExports.useRef(null);
   const previewPanelRef = reactExports.useRef(null);
-  const pendingListRef = reactExports.useRef(null);
   const mirrorRef = reactExports.useRef(null);
   const storageKey = reactExports.useMemo(() => `lastCommentAt:${postUrl}`, [postUrl]);
-  const pendingStorageKey = reactExports.useMemo(() => `pendingComments:${postUrl}`, [postUrl]);
   const persistentNameKey = reactExports.useMemo(() => `commenter:name`, []);
   const persistentEmailKey = reactExports.useMemo(() => `commenter:email`, []);
   const persistentAvatarMapKey = reactExports.useMemo(() => `commenter:avatars`, []);
@@ -82714,17 +82729,23 @@ function CommentForm({
       return {};
     }
   }, [persistentAvatarMapKey, safeLocalGet]);
-  const saveAvatarForEmail = reactExports.useCallback((emailAddr, url) => {
-    if (!emailAddr) return;
-    const map2 = loadAvatarMap();
-    map2[emailAddr.toLowerCase()] = url;
-    safeLocalSet(persistentAvatarMapKey, JSON.stringify(map2));
-  }, [loadAvatarMap, persistentAvatarMapKey, safeLocalSet]);
-  const getAvatarForEmail = reactExports.useCallback((emailAddr) => {
-    if (!emailAddr) return null;
-    const map2 = loadAvatarMap();
-    return map2[emailAddr.toLowerCase()] || null;
-  }, [loadAvatarMap]);
+  const saveAvatarForEmail = reactExports.useCallback(
+    (emailAddr, url) => {
+      if (!emailAddr) return;
+      const map2 = loadAvatarMap();
+      map2[emailAddr.toLowerCase()] = url;
+      safeLocalSet(persistentAvatarMapKey, JSON.stringify(map2));
+    },
+    [loadAvatarMap, persistentAvatarMapKey, safeLocalSet]
+  );
+  const getAvatarForEmail = reactExports.useCallback(
+    (emailAddr) => {
+      if (!emailAddr) return null;
+      const map2 = loadAvatarMap();
+      return map2[emailAddr.toLowerCase()] || null;
+    },
+    [loadAvatarMap]
+  );
   reactExports.useEffect(() => {
     if (!isBrowser2) return;
     const savedName = safeLocalGet(persistentNameKey);
@@ -82752,10 +82773,14 @@ function CommentForm({
   }, [email, persistentEmailKey, isBrowser2, safeLocalSet]);
   const isValidEmail = reactExports.useCallback((s2) => /^\S+@\S+\.\S+$/.test(s2), []);
   const generateThreadId = reactExports.useCallback(() => {
-    if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") return crypto.randomUUID();
+    if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function")
+      return crypto.randomUUID();
     return `thread-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
   }, []);
-  const extractThreadIdFromItem = reactExports.useCallback((it) => (it && (it.threadId || it.thread_id || it.thread || it["entry.917101990"] || it.other))?.toString?.() ?? null, []);
+  const extractThreadIdFromItem = reactExports.useCallback(
+    (it) => (it && (it.threadId || it.thread_id || it.thread || it["entry.917101990"] || it.other))?.toString?.() ?? null,
+    []
+  );
   const newCaptcha = reactExports.useCallback((setterX, setterY) => {
     const a = Math.floor(Math.random() * 8) + 1;
     const b = Math.floor(Math.random() * 8) + 1;
@@ -82766,7 +82791,8 @@ function CommentForm({
     newCaptcha(setCaptchaX, setCaptchaY);
   }, [newCaptcha]);
   const getTextareaMetrics = reactExports.useCallback((el) => {
-    if (!el || typeof window === "undefined") return { singleRowHeight: 20, paddingLeft: 0, paddingRight: 0, clientInnerWidth: 0, lineHeight: 20 };
+    if (!el || typeof window === "undefined")
+      return { singleRowHeight: 20, paddingLeft: 0, paddingRight: 0, clientInnerWidth: 0, lineHeight: 20 };
     const cs = window.getComputedStyle(el);
     const lineHeight = parseFloat(cs.lineHeight || "0") || 20;
     const paddingTop = parseFloat(cs.paddingTop || "0") || 0;
@@ -82775,7 +82801,7 @@ function CommentForm({
     const paddingRight = parseFloat(cs.paddingRight || "0") || 0;
     const borderTop = parseFloat(cs.borderTopWidth || "0") || 0;
     const borderBottom = parseFloat(cs.borderBottomWidth || "0") || 0;
-    const singleRowHeight = Math.ceil(lineHeight + paddingTop + paddingBottom + borderTop + borderBottom);
+    const singleRowHeight = Math.ceil((lineHeight + paddingTop + paddingBottom + borderTop + borderBottom) * GLOBAL_HEIGHT_SCALE);
     const clientInnerWidth = Math.max(0, el.clientWidth - paddingLeft - paddingRight);
     return { singleRowHeight, paddingLeft, paddingRight, clientInnerWidth, lineHeight };
   }, []);
@@ -82826,8 +82852,9 @@ function CommentForm({
       }
       updateOffsets();
     };
-    const ro = window.ResizeObserver ? new window.ResizeObserver(handleVV) : null;
+    let ro = null;
     try {
+      ro = window.ResizeObserver ? new window.ResizeObserver(handleVV) : null;
       const footerEl = document.querySelector(footerSelector);
       if (ro) {
         if (footerEl) ro.observe(footerEl);
@@ -82863,13 +82890,25 @@ function CommentForm({
   }, [showFinishPanel, showCommentsPanel, showPreviewPanel]);
   reactExports.useEffect(() => {
     if (!isBrowser2) return;
-    const onResize = () => setIsMobile(window.innerWidth < 640);
+    const onResize = () => {
+      setIsMobile(window.innerWidth < 640);
+      setIsVerySmall(window.innerWidth < 420);
+    };
     onResize();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, [isBrowser2]);
   const matchesPost = reactExports.useCallback((it) => {
-    const candidates = [it.postUrl, it.posturl, it.url, it.pageUrl, it.page_url, it["entry.638551959"], it.post, it.page];
+    const candidates = [
+      it.postUrl,
+      it.posturl,
+      it.url,
+      it.pageUrl,
+      it.page_url,
+      it["entry.638551959"],
+      it.post,
+      it.page
+    ];
     for (const c2 of candidates) {
       if (!c2) continue;
       try {
@@ -82910,82 +82949,6 @@ function CommentForm({
   reactExports.useEffect(() => {
     if (isBrowser2) fetchComments();
   }, [fetchComments, isBrowser2]);
-  const getPendingRaw = reactExports.useCallback(() => {
-    if (!isBrowser2) return [];
-    try {
-      const raw2 = safeLocalGet(pendingStorageKey);
-      if (!raw2) return [];
-      return JSON.parse(raw2);
-    } catch {
-      return [];
-    }
-  }, [isBrowser2, pendingStorageKey, safeLocalGet]);
-  const savePendingRaw = reactExports.useCallback((arr) => {
-    if (!isBrowser2) return;
-    safeLocalSet(pendingStorageKey, JSON.stringify(arr || []));
-  }, [isBrowser2, pendingStorageKey, safeLocalSet]);
-  const addPending = reactExports.useCallback((obj) => {
-    const arr = getPendingRaw();
-    arr.unshift(obj);
-    savePendingRaw(arr);
-  }, [getPendingRaw, savePendingRaw]);
-  const reconcilePending = reactExports.useCallback(async () => {
-    if (!isBrowser2) return;
-    const pendings = getPendingRaw();
-    if (!pendings.length) return;
-    try {
-      const res = await fetch(commentsUrl, { cache: "no-store" });
-      if (!res.ok) throw new Error("failed to fetch comments for reconciliation");
-      const json2 = await res.json();
-      const items = Array.isArray(json2.items) ? json2.items : json2.items || [];
-      const filtered = items.filter(matchesPost);
-      let changed = false;
-      const remaining = [];
-      for (const p2 of pendings) {
-        let found = false;
-        if (p2.threadId) found = filtered.some((it) => {
-          const tid = extractThreadIdFromItem(it);
-          return tid && String(tid) === String(p2.threadId);
-        });
-        if (!found && p2.name && p2.comment) {
-          const lowerComment = String(p2.comment).slice(0, 60).toLowerCase();
-          found = filtered.some((it) => {
-            const who = (it.name || it.Name || it.author || "").toString().toLowerCase();
-            const body = (it.comment || it.Comment || it.description || "").toString().toLowerCase();
-            return who.includes(String(p2.name).toLowerCase().slice(0, 10)) && body.includes(lowerComment.slice(0, 30));
-          });
-        }
-        if (!found) remaining.push(p2);
-        else changed = true;
-      }
-      if (changed) savePendingRaw(remaining);
-    } catch {
-    }
-  }, [commentsUrl, extractThreadIdFromItem, getPendingRaw, isBrowser2, matchesPost, savePendingRaw]);
-  reactExports.useEffect(() => {
-    if (!isBrowser2) return;
-    let intervalId;
-    const maybeStartInterval = () => {
-      const p2 = getPendingRaw();
-      if (p2 && p2.length > 0 && !intervalId) intervalId = window.setInterval(() => reconcilePending(), 15e3);
-      else if ((!p2 || p2.length === 0) && intervalId) {
-        clearInterval(intervalId);
-        intervalId = void 0;
-      }
-    };
-    const onVis = () => {
-      reconcilePending();
-      maybeStartInterval();
-    };
-    document.addEventListener("visibilitychange", onVis);
-    window.addEventListener("focus", onVis);
-    maybeStartInterval();
-    return () => {
-      if (intervalId) clearInterval(intervalId);
-      document.removeEventListener("visibilitychange", onVis);
-      window.removeEventListener("focus", onVis);
-    };
-  }, [getPendingRaw, isBrowser2, reconcilePending]);
   reactExports.useEffect(() => {
     if (!isBrowser2) return;
     const tick = () => {
@@ -83001,159 +82964,144 @@ function CommentForm({
     if (!recaptchaSiteKey) return null;
     return null;
   }, [recaptchaSiteKey]);
-  const bannedWords = reactExports.useMemo(() => ["fuck", "shit", "bitch", "porn"], []);
   const hasUrl = reactExports.useCallback((s2) => {
     if (!s2) return false;
     const urlRegex = /\b(?:https?:\/\/|www\.)[^\s<>]+/i;
     const domainish = /\b[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/;
     return urlRegex.test(s2) || domainish.test(s2);
   }, []);
-  const containsBanned = reactExports.useCallback((s2) => {
-    if (!s2) return false;
-    const lower = s2.toLowerCase();
-    return bannedWords.some((w) => lower.includes(w));
-  }, [bannedWords]);
-  const submitComment = reactExports.useCallback(async (opts = {}) => {
-    setTopError(null);
-    setInlineError(null);
-    if (cooldownLeft > 0) return;
-    setStatus("submitting");
-    if (opts.isInline) {
-      if (!inlineName.trim() && !name2.trim()) {
-        setInlineError("Name is required.");
-        setStatus("idle");
-        return;
+  const submitComment = reactExports.useCallback(
+    async (opts = {}) => {
+      setTopError(null);
+      setInlineError(null);
+      if (cooldownLeft > 0) return;
+      setStatus("submitting");
+      if (opts.isInline) {
+        if (!inlineName.trim() && !name2.trim()) {
+          setInlineError("Name is required.");
+          setStatus("idle");
+          return;
+        }
+        if (!inlineEmail.trim() && !email.trim()) {
+          setInlineError("Email is required.");
+          setStatus("idle");
+          return;
+        }
+        const addr = inlineEmail.trim() || email.trim();
+        if (!isValidEmail(addr)) {
+          setInlineError("Please provide a valid email address.");
+          setStatus("idle");
+          return;
+        }
+      } else {
+        if (!name2.trim() || !email.trim() || !comment2.trim()) {
+          setTopError("Name, email, comment, and security answer are required.");
+          setStatus("idle");
+          return;
+        }
+        if (!isValidEmail(email.trim())) {
+          setTopError("Please provide a valid email address.");
+          setStatus("idle");
+          return;
+        }
+        const expected = captchaX + captchaY;
+        if (String(expected) !== String(captchaInput).trim()) {
+          setTopError("Security question answer is incorrect.");
+          setStatus("idle");
+          return;
+        }
       }
-      if (!inlineEmail.trim() && !email.trim()) {
-        setInlineError("Email is required.");
-        setStatus("idle");
-        return;
-      }
-      const addr = inlineEmail.trim() || email.trim();
-      if (!isValidEmail(addr)) {
-        setInlineError("Please provide a valid email address.");
-        setStatus("idle");
-        return;
-      }
-    } else {
-      if (!name2.trim() || !email.trim() || !comment2.trim()) {
-        setTopError("Name, email, comment, and security answer are required.");
-        setStatus("idle");
-        return;
-      }
-      if (!isValidEmail(email.trim())) {
-        setTopError("Please provide a valid email address.");
-        setStatus("idle");
-        return;
-      }
-      const expected = captchaX + captchaY;
-      if (String(expected) !== String(captchaInput).trim()) {
-        setTopError("Security question answer is incorrect.");
-        setStatus("idle");
-        return;
-      }
-    }
-    try {
-      const bodyText = opts.isInline ? inlineComment.trim() || comment2.trim() : comment2.trim();
-      if (hasUrl(bodyText)) {
-        if (opts.isInline) setInlineError("Comments may not contain links.");
-        else setTopError("Comments may not contain links.");
-        setStatus("idle");
-        return;
-      }
-      if (containsBanned(bodyText)) {
-        if (opts.isInline) setInlineError("Your comment contains disallowed language.");
-        else setTopError("Your comment contains disallowed language.");
-        setStatus("idle");
-        return;
-      }
-      const recaptchaToken = await runRecaptcha();
-      const threadIdToSend = opts.threadId || other || generateThreadId();
-      const avatarMap = loadAvatarMap();
-      const userEmail = (opts.isInline ? inlineEmail || email : email).toLowerCase();
-      const avatarForEmail = avatarMap[userEmail];
-      const finalBody = avatarForEmail ? bodyText + `
+      try {
+        const bodyText = opts.isInline ? inlineComment.trim() || comment2.trim() : comment2.trim();
+        if (hasUrl(bodyText)) {
+          if (opts.isInline) setInlineError("Comments may not contain links.");
+          else setTopError("Comments may not contain links.");
+          setStatus("idle");
+          return;
+        }
+        const recaptchaToken = await runRecaptcha();
+        const threadIdToSend = opts.threadId || other || generateThreadId();
+        const avatarMap = loadAvatarMap();
+        const userEmail = (opts.isInline ? inlineEmail || email : email).toLowerCase();
+        const avatarForEmail = avatarMap[userEmail];
+        const finalBody = avatarForEmail ? bodyText + `
 <!--avatar:${avatarForEmail}-->` : bodyText;
-      const data = new URLSearchParams();
-      data.append("entry.638551959", postUrl);
-      if (opts.isInline) {
-        data.append("entry.122578945", inlineName || name2);
-        data.append("entry.1066671156", inlineEmail || email);
-        data.append("entry.2100067303", finalBody);
-        data.append("entry.1228204400", reaction || "");
-      } else {
-        data.append("entry.122578945", name2);
-        data.append("entry.1066671156", email);
-        data.append("entry.2100067303", finalBody);
-        data.append("entry.1228204400", reaction || "");
+        const data = new URLSearchParams();
+        data.append("entry.638551959", postUrl);
+        if (opts.isInline) {
+          data.append("entry.122578945", inlineName || name2);
+          data.append("entry.1066671156", inlineEmail || email);
+          data.append("entry.2100067303", finalBody);
+          data.append("entry.1228204400", reaction || "");
+        } else {
+          data.append("entry.122578945", name2);
+          data.append("entry.1066671156", email);
+          data.append("entry.2100067303", finalBody);
+          data.append("entry.1228204400", reaction || "");
+        }
+        data.append("entry.917101990", threadIdToSend);
+        if (recaptchaToken) data.append("g-recaptcha-response", recaptchaToken);
+        if (!opts.isInline) {
+          safeLocalSet(persistentNameKey, name2 || "");
+          safeLocalSet(persistentEmailKey, email || "");
+        } else {
+          safeLocalSet(persistentNameKey, inlineName || name2 || "");
+          safeLocalSet(persistentEmailKey, inlineEmail || email || "");
+        }
+        safeLocalSet(storageKey, String(Date.now()));
+        setStatus("success");
+        if (opts.isInline) {
+          setInlineComment("");
+          setActiveReplyThreadId(null);
+          setReplyTarget(null);
+          setComment("");
+        } else {
+          setName("");
+          setEmail("");
+          setComment("");
+          setReaction("");
+          setCaptchaInput("");
+          newCaptcha(setCaptchaX, setCaptchaY);
+          setShowFinishPanel(false);
+        }
+        setOther("");
+        setTimeout(() => setStatus("idle"), 1500);
+        setTimeout(() => fetchComments(), 2e3);
+        if (typeof onSubmitted === "function") onSubmitted();
+      } catch (err) {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 1500);
       }
-      data.append("entry.917101990", threadIdToSend);
-      if (recaptchaToken) data.append("g-recaptcha-response", recaptchaToken);
-      const pendingId = `pending-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
-      addPending({ id: pendingId, threadId: threadIdToSend, name: opts.isInline ? inlineName || name2 : name2, email: opts.isInline ? inlineEmail || email : email, comment: finalBody, reaction, createdAt: Date.now(), status: "pending" });
-      await fetch(formUrl, { method: "POST", body: data, mode: "no-cors" });
-      if (!opts.isInline) {
-        safeLocalSet(persistentNameKey, name2 || "");
-        safeLocalSet(persistentEmailKey, email || "");
-      } else {
-        safeLocalSet(persistentNameKey, inlineName || name2 || "");
-        safeLocalSet(persistentEmailKey, inlineEmail || email || "");
-      }
-      safeLocalSet(storageKey, String(Date.now()));
-      setStatus("success");
-      if (opts.isInline) {
-        setInlineComment("");
-        setActiveReplyThreadId(null);
-        setReplyTarget(null);
-        setComment("");
-      } else {
-        setName("");
-        setEmail("");
-        setComment("");
-        setReaction("");
-        setCaptchaInput("");
-        newCaptcha(setCaptchaX, setCaptchaY);
-        setShowFinishPanel(false);
-      }
-      setOther("");
-      setTimeout(() => setStatus("idle"), 1500);
-      setTimeout(() => fetchComments().then(() => reconcilePending()), 2e3);
-      if (typeof onSubmitted === "function") onSubmitted();
-    } catch (err) {
-      setStatus("error");
-      setTimeout(() => setStatus("idle"), 1500);
-    }
-  }, [
-    captchaInput,
-    captchaX,
-    captchaY,
-    comment2,
-    containsBanned,
-    fetchComments,
-    generateThreadId,
-    hasUrl,
-    inlineComment,
-    inlineEmail,
-    inlineName,
-    newCaptcha,
-    onSubmitted,
-    other,
-    persistentEmailKey,
-    persistentNameKey,
-    postUrl,
-    reaction,
-    reconcilePending,
-    runRecaptcha,
-    saveAvatarForEmail,
-    safeLocalSet,
-    storageKey,
-    formUrl,
-    cooldownLeft,
-    addPending,
-    email,
-    name2,
-    isValidEmail
-  ]);
+    },
+    [
+      captchaInput,
+      captchaX,
+      captchaY,
+      comment2,
+      fetchComments,
+      generateThreadId,
+      hasUrl,
+      inlineComment,
+      inlineEmail,
+      inlineName,
+      newCaptcha,
+      onSubmitted,
+      other,
+      persistentEmailKey,
+      persistentNameKey,
+      postUrl,
+      reaction,
+      runRecaptcha,
+      safeLocalSet,
+      storageKey,
+      formUrl,
+      cooldownLeft,
+      email,
+      name2,
+      isValidEmail,
+      loadAvatarMap
+    ]
+  );
   const handleFinishSubmit = reactExports.useCallback(async () => {
     setTopError(null);
     if (!name2.trim() || !email.trim() || !comment2.trim()) {
@@ -83171,18 +83119,24 @@ function CommentForm({
     }
     await submitComment({ isInline: false });
   }, [captchaInput, captchaX, captchaY, comment2, email, isValidEmail, name2, submitComment]);
-  const reactionsMeta = reactExports.useMemo(() => [
-    { id: "thumbs", label: "Like", Icon: ThumbsUp, colorClass: "text-blue-500" },
-    { id: "heart", label: "Love", Icon: Heart, colorClass: "text-red-400" },
-    { id: "star", label: "Insightful", Icon: Lightbulb, colorClass: "text-yellow-400" }
-  ], []);
-  const ReactionIcon = reactExports.useCallback(({ id, size: size2 = 16 }) => {
-    if (!id) return /* @__PURE__ */ jsxRuntimeExports.jsx(Smile, { style: { height: size2, width: size2 } });
-    const m = reactionsMeta.find((r2) => r2.id === id);
-    if (!m) return /* @__PURE__ */ jsxRuntimeExports.jsx(Smile, { style: { height: size2, width: size2 } });
-    const Cmp = m.Icon;
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Cmp, { className: `${m.colorClass}`, style: { height: size2, width: size2 } });
-  }, [reactionsMeta]);
+  const reactionsMeta = reactExports.useMemo(
+    () => [
+      { id: "thumbs", label: "Like", Icon: ThumbsUp, colorClass: "text-blue-500" },
+      { id: "heart", label: "Love", Icon: Heart, colorClass: "text-red-400" },
+      { id: "star", label: "Insightful", Icon: Lightbulb, colorClass: "text-yellow-400" }
+    ],
+    []
+  );
+  const ReactionIcon = reactExports.useCallback(
+    ({ id, size: size2 = 16 }) => {
+      if (!id) return /* @__PURE__ */ jsxRuntimeExports.jsx(Smile, { style: { height: size2, width: size2 } });
+      const m = reactionsMeta.find((r2) => r2.id === id);
+      if (!m) return /* @__PURE__ */ jsxRuntimeExports.jsx(Smile, { style: { height: size2, width: size2 } });
+      const Cmp = m.Icon;
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(Cmp, { className: `${m.colorClass}`, style: { height: size2, width: size2 } });
+    },
+    [reactionsMeta]
+  );
   const getTimestampNumber = reactExports.useCallback((it) => {
     const tsCandidate = it.Timestamp || it.timestamp || it.time || it.ts || it.createdAt || it.date;
     const ts = typeof tsCandidate === "string" || typeof tsCandidate === "number" || tsCandidate instanceof Date ? tsCandidate : 0;
@@ -83252,7 +83206,7 @@ function CommentForm({
         const nodeAuthor = (it.name || it.author || "").toString();
         const nodeKey = getCommentKey(it);
         const node2 = { item: it, children: [], parent, author: nodeAuthor, key: nodeKey };
-        parent.children.push(node2);
+        if (parent) parent.children.push(node2);
         processed.push(node2);
       }
       result.push({ tid: thr.tid, rootNode });
@@ -83269,43 +83223,45 @@ function CommentForm({
     }
     return counts;
   }, [buildThreadTrees]);
-  const reactionSummaryForThread = reactExports.useCallback((tid) => {
-    const t = buildThreadTrees.find((x) => x.tid === tid);
-    const counts = {};
-    if (!t) return counts;
-    const collectNodes = (node2, arr) => {
-      arr.push(node2);
-      for (const c2 of node2.children) collectNodes(c2, arr);
-    };
-    const nodes = [];
-    collectNodes(t.rootNode, nodes);
-    const authorToNode = {};
-    for (const n of nodes) {
-      const key = (n.author || "").toString().replace(/\s+/g, "").toLowerCase();
-      if (key) authorToNode[key] = n;
-    }
-    for (const n of nodes) {
-      const it = n.item;
-      const repReaction = it.reaction || it["entry.1228204400"] || "";
-      const body = (it.comment || it.Comment || it.description || "").toString();
-      const mentions = parseLeadingMentions(body);
-      if (repReaction && repReaction.toString().trim()) {
-        if (mentions.length >= 1) {
-          const targetName = mentions[mentions.length - 1].replace(/\s+/g, "").toLowerCase();
-          const targetNode = authorToNode[targetName];
-          if (targetNode) {
-            const key2 = repReaction.toString();
-            counts[key2] = (counts[key2] || 0) + 1;
-            continue;
-          }
-        }
-        const key = repReaction.toString();
-        counts[key] = (counts[key] || 0) + 1;
+  const reactionSummaryForThread = reactExports.useCallback(
+    (tid) => {
+      const t = buildThreadTrees.find((x) => x.tid === tid);
+      const counts = {};
+      if (!t) return counts;
+      const collectNodes = (node2, arr) => {
+        arr.push(node2);
+        for (const c2 of node2.children) collectNodes(c2, arr);
+      };
+      const nodes = [];
+      collectNodes(t.rootNode, nodes);
+      const authorToNode = {};
+      for (const n of nodes) {
+        const key = (n.author || "").toString().replace(/\s+/g, "").toLowerCase();
+        if (key) authorToNode[key] = n;
       }
-    }
-    return counts;
-  }, [buildThreadTrees, parseLeadingMentions]);
-  const closeAllSmallMenus = reactExports.useCallback(() => setOpenMenu(null), []);
+      for (const n of nodes) {
+        const it = n.item;
+        const repReaction = it.reaction || it["entry.1228204400"] || "";
+        const body = (it.comment || it.Comment || it.description || "").toString();
+        const mentions = parseLeadingMentions(body);
+        if (repReaction && repReaction.toString().trim()) {
+          if (mentions.length >= 1) {
+            const targetName = mentions[mentions.length - 1].replace(/\s+/g, "").toLowerCase();
+            const targetNode = authorToNode[targetName];
+            if (targetNode) {
+              const key2 = repReaction.toString();
+              counts[key2] = (counts[key2] || 0) + 1;
+              continue;
+            }
+          }
+          const key = repReaction.toString();
+          counts[key] = (counts[key] || 0) + 1;
+        }
+      }
+      return counts;
+    },
+    [buildThreadTrees, parseLeadingMentions]
+  );
   const openReactionMenu = reactExports.useCallback(() => {
     setOpenMenu((prev) => prev === "reactionMenu" ? null : "reactionMenu");
     setShowFinishPanel(false);
@@ -83318,12 +83274,6 @@ function CommentForm({
     setShowCommentsPanel(false);
     setOpenMenu(null);
   }, [activeReplyThreadId, other, generateThreadId]);
-  const openPendingList = reactExports.useCallback(() => {
-    closeAllSmallMenus();
-    setShowCommentsPanel(false);
-    setShowFinishPanel(false);
-    setOpenMenu("pendingList");
-  }, [closeAllSmallMenus]);
   reactExports.useEffect(() => {
     if (!isBrowser2) return;
     const onPointerDown = (ev) => {
@@ -83335,7 +83285,6 @@ function CommentForm({
       if (showCommentsPanel && commentsPanelRef.current?.contains(t)) return;
       if (showPreviewPanel && previewPanelRef.current?.contains(t)) return;
       if (openMenu === "reactionMenu" && reactionMenuRef.current?.contains(t)) return;
-      if (openMenu === "pendingList" && pendingListRef.current?.contains(t)) return;
       setOpenMenu(null);
       if (showFinishPanel && !finishPanelRef.current?.contains(t)) setShowFinishPanel(false);
       if (showCommentsPanel && !commentsPanelRef.current?.contains(t)) setShowCommentsPanel(false);
@@ -83358,43 +83307,198 @@ function CommentForm({
       document.removeEventListener("keydown", onKey);
     };
   }, [openMenu, showFinishPanel, showCommentsPanel, showPreviewPanel, isBrowser2]);
-  const startReplyFor = reactExports.useCallback((tid, target) => {
-    setActiveReplyThreadId(tid);
-    setReplyTarget(target || null);
-    setOther(tid);
-    const savedName = safeLocalGet(persistentNameKey);
-    const savedEmail = safeLocalGet(persistentEmailKey);
-    setInlineName(savedName || name2 || "");
-    setInlineEmail(savedEmail || email || "");
-    const thr = buildThreadTrees.find((t) => t.tid === tid);
-    const rootAuthor = thr && thr.rootNode ? thr.rootNode.author || "" : "";
-    const targetAuthor = target ? (target.name || target.author || "").toString() : "";
-    const mentionsArr = [];
-    if (rootAuthor) mentionsArr.push(`@${rootAuthor}`);
-    if (targetAuthor && targetAuthor !== rootAuthor) mentionsArr.push(`@${targetAuthor}`);
-    const prefix = mentionsArr.length ? mentionsArr.join(" ") + " " : "";
-    if (!comment2.trim()) {
-      setComment(prefix);
-      setTimeout(() => {
-        stickyTextareaRef.current?.focus();
-        const el = stickyTextareaRef.current;
-        if (el) {
-          const len = el.value.length;
-          el.setSelectionRange(len, len);
+  const startReplyFor = reactExports.useCallback(
+    (tid, target) => {
+      setActiveReplyThreadId(tid);
+      setReplyTarget(target || null);
+      setOther(tid);
+      const savedName = safeLocalGet(persistentNameKey);
+      const savedEmail = safeLocalGet(persistentEmailKey);
+      setInlineName(savedName || name2 || "");
+      setInlineEmail(savedEmail || email || "");
+      const thr = buildThreadTrees.find((t) => t.tid === tid);
+      const rootAuthor = thr && thr.rootNode.author ? thr.rootNode.author || "" : "";
+      const targetAuthor = target ? (target.name || target.author || "").toString() : "";
+      const mentionsArr = [];
+      if (rootAuthor) mentionsArr.push(`@${rootAuthor}`);
+      if (targetAuthor && targetAuthor !== rootAuthor) mentionsArr.push(`@${targetAuthor}`);
+      const prefix = mentionsArr.length ? mentionsArr.join(" ") + " " : "";
+      if (!comment2.trim()) {
+        setComment(prefix);
+        setTimeout(() => {
+          stickyTextareaRef.current?.focus();
+          const el = stickyTextareaRef.current;
+          if (el) {
+            const len = el.value.length;
+            el.setSelectionRange(len, len);
+          }
+        }, 50);
+      } else {
+        if (!comment2.trim().startsWith(prefix.trim())) {
+          setComment((c2) => `${prefix}${c2}`);
+          setTimeout(() => stickyTextareaRef.current?.focus(), 50);
         }
-      }, 50);
-    } else {
-      if (!comment2.trim().startsWith(prefix.trim())) {
-        setComment((c2) => `${prefix}${c2}`);
-        setTimeout(() => stickyTextareaRef.current?.focus(), 50);
       }
+      setShowCommentsPanel(true);
+      setOpenMenu(null);
+      setShowPreviewPanel(false);
+      setShowFinishPanel(false);
+      setTimeout(() => {
+        try {
+          const targetId = target ? `comment-${encodeURIComponent(getCommentKey(target))}` : void 0;
+          if (targetId) {
+            const rootEl2 = commentsPanelRef.current;
+            const el = rootEl2?.querySelector(`#${CSS.escape(targetId)}`);
+            if (el && rootEl2) {
+              const panelRect = rootEl2.getBoundingClientRect();
+              const elRect = el.getBoundingClientRect();
+              rootEl2.scrollTo({ top: rootEl2.scrollTop + (elRect.top - panelRect.top) - 12, behavior: "smooth" });
+              el.style.outline = "2px solid rgba(118,185,0,0.5)";
+              setTimeout(() => {
+                if (el) el.style.outline = "";
+              }, 1500);
+            }
+          }
+        } catch {
+        }
+      }, 260);
+    },
+    [buildThreadTrees, comment2, email, name2, persistentEmailKey, persistentNameKey, safeLocalGet]
+  );
+  const flattenThread = reactExports.useCallback((rootNode) => {
+    const out = [];
+    const traverse = (node2, parent) => {
+      out.push({ node: node2, parent });
+      for (const c2 of node2.children) traverse(c2, node2);
+    };
+    traverse(rootNode, null);
+    return out;
+  }, []);
+  const recalcTextarea = reactExports.useCallback(
+    (val) => {
+      const el = stickyTextareaRef.current;
+      const text2 = typeof val === "string" ? val : el ? el.value : "";
+      if (!el || typeof window === "undefined") return;
+      const { singleRowHeight, clientInnerWidth } = getTextareaMetrics(el);
+      if (!text2 || !text2.trim()) {
+        el.style.height = `${singleRowHeight}px`;
+        el.style.overflowY = "hidden";
+        setIsMultiline(false);
+        const barEl2 = stickyBarRef.current;
+        setChatBarHeight(barEl2 ? Math.ceil(barEl2.getBoundingClientRect().height) : 0);
+        const sentenceEl2 = sentenceRef.current;
+        setSentenceHeight(sentenceEl2 ? Math.ceil(sentenceEl2.getBoundingClientRect().height) : 0);
+        return;
+      }
+      el.style.height = "auto";
+      const contentH = el.scrollHeight;
+      const newH = Math.min(Math.max(contentH, singleRowHeight), MAX_TEXTAREA_HEIGHT);
+      el.style.height = `${newH}px`;
+      el.style.overflowY = contentH > MAX_TEXTAREA_HEIGHT ? "auto" : "hidden";
+      const mirror = ensureMirror();
+      if (!mirror) {
+        setIsMultiline(Boolean(text2.includes("\n") || contentH > singleRowHeight + 1));
+        return;
+      }
+      const cs = window.getComputedStyle(el);
+      mirror.style.font = `${cs.fontStyle} ${cs.fontVariant} ${cs.fontWeight} ${cs.fontSize}/${cs.lineHeight} ${cs.fontFamily}`;
+      mirror.style.letterSpacing = cs.letterSpacing;
+      mirror.style.textTransform = cs.textTransform;
+      mirror.style.wordSpacing = cs.wordSpacing;
+      mirror.style.whiteSpace = "nowrap";
+      mirror.textContent = (text2 || "").replace(/\n/g, " ");
+      const unwrappedWidth = Math.ceil(mirror.getBoundingClientRect().width);
+      const available = Math.max(0, clientInnerWidth - 8);
+      const hasNewline = text2.includes("\n");
+      const wrapsToNextLine = contentH > singleRowHeight + 1;
+      const reachedRightEdge = unwrappedWidth >= available;
+      const wantsMulti = Boolean(hasNewline || wrapsToNextLine || reachedRightEdge);
+      setIsMultiline(wantsMulti);
+      const barEl = stickyBarRef.current;
+      setChatBarHeight(barEl ? Math.ceil(barEl.getBoundingClientRect().height) : 0);
+      const sentenceEl = sentenceRef.current;
+      setSentenceHeight(sentenceEl ? Math.ceil(sentenceEl.getBoundingClientRect().height) : 0);
+    },
+    [ensureMirror, getTextareaMetrics, MAX_TEXTAREA_HEIGHT]
+  );
+  reactExports.useEffect(() => {
+    if (!isBrowser2) return;
+    requestAnimationFrame(() => recalcTextarea(comment2));
+    if (!comment2) setIsMultiline(false);
+  }, [isBrowser2]);
+  reactExports.useEffect(() => {
+    recalcTextarea(comment2);
+  }, [comment2, recalcTextarea]);
+  const handleTextareaChange = reactExports.useCallback(
+    (e) => {
+      const val = e.target.value;
+      setComment(val);
+      recalcTextarea(val);
+    },
+    [recalcTextarea]
+  );
+  reactExports.useEffect(() => {
+    const preventBubble = (e) => {
+      e.stopPropagation();
+    };
+    const el = reactionMenuRef.current;
+    if (el) el.addEventListener("wheel", preventBubble, { passive: false });
+    return () => {
+      if (el) el.removeEventListener("wheel", preventBubble);
+    };
+  }, []);
+  const promptForAvatar = reactExports.useCallback(
+    (currentEmail) => {
+      const emailKey = (currentEmail || email || "").toLowerCase();
+      if (!emailKey) {
+        alert("Provide an email address first so avatar can be associated with it.");
+        return;
+      }
+      const incoming = window.prompt("Enter image URL for your avatar (Gravatar or social image):", getAvatarForEmail(emailKey) || "");
+      if (!incoming) return;
+      try {
+        const u = new URL(incoming);
+        if (u.protocol !== "http:" && u.protocol !== "https:") {
+          alert("Please provide an http(s) image URL.");
+          return;
+        }
+      } catch {
+        alert("Provided URL doesn't look valid.");
+        return;
+      }
+      if (/data:|javascript:/i.test(incoming)) {
+        alert("Provided URL not allowed.");
+        return;
+      }
+      saveAvatarForEmail(emailKey, incoming);
+      setTimeout(() => fetchComments(), 200);
+    },
+    [email, fetchComments, getAvatarForEmail, saveAvatarForEmail]
+  );
+  const safeAreaBottom = typeof window !== "undefined" ? getComputedStyle(document.documentElement).getPropertyValue("--safe-area-inset-bottom") || "env(safe-area-inset-bottom, 0px)" : "env(safe-area-inset-bottom, 0px)";
+  const bgHeight = Math.ceil((chatBarHeight - 10 || 0) + (sentenceHeight - 10 || 0) * GLOBAL_HEIGHT_SCALE);
+  const hasNewComments = reactExports.useMemo(() => {
+    if (!isBrowser2) return false;
+    try {
+      const lastSeen = Number(safeLocalGet(lastSeenCommentsKey) || 0);
+      const latest = comments.reduce((acc, it) => Math.max(acc, getTimestampNumber(it)), 0);
+      return latest > lastSeen;
+    } catch {
+      return false;
     }
-    setShowCommentsPanel(false);
-    setOpenMenu(null);
-  }, [buildThreadTrees, comment2, email, name2, persistentEmailKey, persistentNameKey, safeLocalGet]);
-  const pendingList = getPendingRaw();
-  const pendingCount = pendingList.length;
-  const hideScrollbarCss = ` .comment-ui ::-webkit-scrollbar { display: none; width: 0; height: 0; } .comment-ui { scrollbar-width: none; -ms-overflow-style: none; } .comment-ui textarea::-webkit-scrollbar { display: none; height: 0; width: 0; } .comment-ui textarea { scrollbar-width: none; -ms-overflow-style: none; } `;
+  }, [comments, isBrowser2, safeLocalGet, lastSeenCommentsKey, getTimestampNumber]);
+  reactExports.useEffect(() => {
+    if (!isBrowser2) return;
+    if (showCommentsPanel) {
+      safeLocalSet(lastSeenCommentsKey, String(Date.now()));
+    }
+  }, [showCommentsPanel, isBrowser2, safeLocalSet, lastSeenCommentsKey]);
+  const hideScrollbarCss = `
+    .comment-ui ::-webkit-scrollbar { display: none; width: 0; height: 0; }
+    .comment-ui { scrollbar-width: none; -ms-overflow-style: none; }
+    .comment-ui textarea::-webkit-scrollbar { display: none; height: 0; width: 0; }
+    .comment-ui textarea { scrollbar-width: none; -ms-overflow-style: none; }
+  `;
   const initialsFromName = reactExports.useCallback((fullName) => {
     const s2 = String(fullName || "").trim();
     if (!s2) return "A";
@@ -83414,7 +83518,7 @@ function CommentForm({
     for (let i = 0; i < s2.length; i++) h2 = (h2 * 31 + s2.charCodeAt(i)) % 360;
     return `hsl(${h2} 62% 44%)`;
   }, []);
-  const finishPanelBottom = footerOffset + chatBarHeight + 16;
+  const finishPanelBottom = Math.max(16, footerOffset + chatBarHeight + sentenceHeight + 5);
   const stripInternalTags = reactExports.useCallback((s2) => (s2 || "").toString().replace(/<!--\s*avatar:[\s\S]*?-->/gi, "").trim(), []);
   const remarkPlugins = reactExports.useMemo(() => [remarkGfm, remarkMath], []);
   const rehypePlugins = reactExports.useMemo(() => [
@@ -83431,11 +83535,11 @@ function CommentForm({
       const total2 = Object.values(counts2).reduce((s2, v) => s2 + v, 0);
       if (total2 === 0) return null;
       const entries = Object.entries(counts2).sort((a, b) => b[1] - a[1]).slice(0, 3);
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "inline-flex items-center gap-2 px-2 py-1 rounded", style: { background: "rgba(0,0,0,0.5)", color: "#e5e7eb", border: "1px solid rgba(255,255,255,0.03)", ...style2 }, children: entries.map(([rid, cnt]) => {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "inline-flex items-center gap-2 px-2 py-1 border rounded-4xl", style: { ...style2 }, children: entries.map(([rid, cnt]) => {
         const meta = reactionsMeta.find((r2) => r2.id === rid);
         const Icon2 = meta ? meta.Icon : ThumbsUp;
         return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-1 px-2 py-0.5 rounded", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `${meta ? meta.colorClass : "text-gray-300"} h-4 w-4` }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `${meta ? meta.colorClass : "text-foreground"} h-4 w-4` }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: cnt })
         ] }, rid);
       }) });
@@ -83450,8 +83554,7 @@ function CommentForm({
     setReaction(reactionId);
     setTimeout(() => stickyTextareaRef.current?.focus(), 60);
   }, [startReplyFor]);
-  const CommentNode = React.memo(({ node: node2, tid, depth = 0 }) => {
-    const it = node2.item;
+  const CompactCommentCard = ({ it, tid, parent }) => {
     const author = (it.name || it.author || "Anonymous").toString();
     const ts = it.Timestamp || it.timestamp || it.time || "";
     const ownReaction = (it.reaction || it["entry.1228204400"] || "")?.toString() || "";
@@ -83460,370 +83563,534 @@ function CommentForm({
     const visibleBody = stripInternalTags((it.comment || it.Comment || it.description || "").toString());
     const emailForAvatar = (it.email || "").toString() || null;
     const storedAvatar = getAvatarForEmail(emailForAvatar) || internalAvatar || null;
-    const boxStyle = { border: "1px solid #1f1f1f", background: "rgba(255,255,255,0.01)", paddingRight: 110, position: "relative" };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2 rounded", style: boxStyle, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: 40, height: 40, borderRadius: 999, overflow: "hidden", flexShrink: 0 }, children: storedAvatar ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: storedAvatar, alt: author, style: { width: "100%", height: "100%", objectFit: "cover" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: colorFromKey(it.email || it.name || "anon"), width: 40, height: 40 }, className: "rounded-full flex items-center justify-center text-white font-semibold", children: initialsFromName(author) }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-sm", children: author }),
-              ts ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-gray-400", children: String(ts) }) : null,
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-auto flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => startReplyFor(tid, it), children: "Reply" }) })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 prose max-w-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins, rehypePlugins, children: visibleBody }) })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", right: 12, top: 12, display: "flex", gap: 8, alignItems: "center", zIndex: 30 }, children: ownReaction ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => handleCommentReactionClick(tid, it, ownReaction), title: "Use this reaction and reply", className: "inline-flex items-center gap-1 px-2 py-0.5 rounded bg-black/30 hover:bg-white/5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: ownReaction, size: 14 }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
-          startReplyFor(tid, it);
-          setOpenMenu("reactionMenu");
-        }, title: "React", className: "inline-flex items-center gap-1 px-2 py-0.5 rounded bg-black/10 hover:bg-white/5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-4 w-4 text-gray-300" }) }) })
-      ] }),
-      node2.children && node2.children.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 pl-8", children: [
-        node2.children.slice(0, showAllReplies[node2.key] ? node2.children.length : 2).map((c2, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CommentNode, { node: c2, tid, depth: depth + 1 }) }, `${c2.key || i}`)),
-        node2.children.length > 2 && !showAllReplies[node2.key] && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [node2.key]: true })), children: [
-          "View ",
-          node2.children.length - 2,
-          " more replies"
-        ] }) }),
-        node2.children.length > 2 && showAllReplies[node2.key] && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [node2.key]: false })), children: "Hide extra replies" }) })
-      ] })
-    ] });
-  }, (prev, next2) => prev.node?.key === next2.node?.key && prev.tid === next2.tid && prev.depth === next2.depth);
-  const recalcTextarea = reactExports.useCallback((val) => {
-    const el = stickyTextareaRef.current;
-    const text2 = typeof val === "string" ? val : el ? el.value : "";
-    if (!el || typeof window === "undefined") return;
-    const { singleRowHeight, clientInnerWidth } = getTextareaMetrics(el);
-    if (!text2 || !text2.trim()) {
-      el.style.height = `${singleRowHeight}px`;
-      el.style.overflowY = "hidden";
-      setIsMultiline(false);
-      const barEl2 = stickyBarRef.current;
-      setChatBarHeight(barEl2 ? Math.ceil(barEl2.getBoundingClientRect().height) : 0);
-      const sentenceEl2 = sentenceRef.current;
-      setSentenceHeight(sentenceEl2 ? Math.ceil(sentenceEl2.getBoundingClientRect().height) : 0);
-      return;
-    }
-    el.style.height = "auto";
-    const contentH = el.scrollHeight;
-    const newH = Math.min(Math.max(contentH, singleRowHeight), MAX_TEXTAREA_HEIGHT);
-    el.style.height = `${newH}px`;
-    el.style.overflowY = contentH > MAX_TEXTAREA_HEIGHT ? "auto" : "hidden";
-    const mirror = ensureMirror();
-    if (!mirror) {
-      setIsMultiline(Boolean(text2.includes("\n") || contentH > singleRowHeight + 1));
-      return;
-    }
-    const cs = window.getComputedStyle(el);
-    mirror.style.font = `${cs.fontStyle} ${cs.fontVariant} ${cs.fontWeight} ${cs.fontSize}/${cs.lineHeight} ${cs.fontFamily}`;
-    mirror.style.letterSpacing = cs.letterSpacing;
-    mirror.style.textTransform = cs.textTransform;
-    mirror.style.wordSpacing = cs.wordSpacing;
-    mirror.style.whiteSpace = "nowrap";
-    mirror.textContent = (text2 || "").replace(/\n/g, " ");
-    const unwrappedWidth = Math.ceil(mirror.getBoundingClientRect().width);
-    const available = Math.max(0, clientInnerWidth - 8);
-    const hasNewline = text2.includes("\n");
-    const wrapsToNextLine = contentH > singleRowHeight + 1;
-    const reachedRightEdge = unwrappedWidth >= available;
-    const wantsMulti = Boolean(hasNewline || wrapsToNextLine || reachedRightEdge);
-    setIsMultiline(wantsMulti);
-    const barEl = stickyBarRef.current;
-    setChatBarHeight(barEl ? Math.ceil(barEl.getBoundingClientRect().height) : 0);
-    const sentenceEl = sentenceRef.current;
-    setSentenceHeight(sentenceEl ? Math.ceil(sentenceEl.getBoundingClientRect().height) : 0);
-  }, [ensureMirror, getTextareaMetrics]);
-  reactExports.useEffect(() => {
-    if (!isBrowser2) return;
-    requestAnimationFrame(() => recalcTextarea(comment2));
-    if (!comment2) setIsMultiline(false);
-  }, [isBrowser2]);
-  reactExports.useEffect(() => {
-    recalcTextarea(comment2);
-  }, [comment2, recalcTextarea]);
-  const handleTextareaChange = reactExports.useCallback((e) => {
-    const val = e.target.value;
-    setComment(val);
-    recalcTextarea(val);
-  }, [recalcTextarea]);
-  reactExports.useEffect(() => {
-    const preventBubble = (e) => {
-      e.stopPropagation();
+    const anchorId = `comment-${encodeURIComponent(getCommentKey(it))}`;
+    const onClickReply = () => {
+      startReplyFor(tid, it);
+      setTimeout(() => stickyTextareaRef.current?.focus(), 60);
+      setShowCommentsPanel(true);
     };
-    const el = reactionMenuRef.current;
-    if (el) el.addEventListener("wheel", preventBubble, { passive: false });
-    return () => {
-      if (el) el.removeEventListener("wheel", preventBubble);
-    };
-  }, []);
-  const promptForAvatar = reactExports.useCallback((currentEmail) => {
-    const emailKey = (currentEmail || email || "").toLowerCase();
-    if (!emailKey) {
-      alert("Provide an email address first so avatar can be associated with it.");
-      return;
-    }
-    const incoming = window.prompt("Enter image URL for your avatar (Gravatar or social image):", getAvatarForEmail(emailKey) || "");
-    if (!incoming) return;
-    try {
-      const u = new URL(incoming);
-      if (u.protocol !== "http:" && u.protocol !== "https:") {
-        alert("Please provide an http(s) image URL.");
-        return;
+    const onClickJumpToParent = () => {
+      if (!parent) return;
+      const parentId = `comment-${encodeURIComponent(getCommentKey(parent))}`;
+      const rootEl2 = commentsPanelRef.current;
+      if (!rootEl2) return;
+      const el = rootEl2.querySelector(`#${CSS.escape(parentId)}`);
+      if (el && rootEl2) {
+        rootEl2.scrollTo({ top: rootEl2.scrollTop + (el.getBoundingClientRect().top - rootEl2.getBoundingClientRect().top) - 12, behavior: "smooth" });
+        el.style.outline = "2px solid rgba(118,185,0,0.5)";
+        setTimeout(() => {
+          if (el) el.style.outline = "";
+        }, 1500);
       }
-    } catch {
-      alert("Provided URL doesn't look valid.");
-      return;
-    }
-    if (/data:|javascript:/i.test(incoming)) {
-      alert("Provided URL not allowed.");
-      return;
-    }
-    saveAvatarForEmail(emailKey, incoming);
-    setTimeout(() => fetchComments(), 200);
-  }, [email, fetchComments, getAvatarForEmail, saveAvatarForEmail]);
-  const safeAreaBottom = typeof window !== "undefined" ? getComputedStyle(document.documentElement).getPropertyValue("--safe-area-inset-bottom") || "env(safe-area-inset-bottom, 0px)" : "env(safe-area-inset-bottom, 0px)";
-  const bgHeight = Math.ceil((chatBarHeight - 10 || 0) + (sentenceHeight - 10 || 0));
+    };
+    const avatarW = 36 * GLOBAL_HEIGHT_SCALE;
+    const gapW = 10 * GLOBAL_HEIGHT_SCALE;
+    const coverHeight = 44 * GLOBAL_HEIGHT_SCALE;
+    const coverMargin = 8 * GLOBAL_HEIGHT_SCALE;
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: anchorId, className: "mb-2 bg-muted", style: { outline: "none" }, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
+        .reply-cover-row {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: ${1 * GLOBAL_HEIGHT_SCALE}px;
+          height: var(--cover-h);
+          z-index: 30;
+          display: flex;
+          gap: ${8 * GLOBAL_HEIGHT_SCALE}px;
+          align-items: center;
+          padding: 0 ${10 * GLOBAL_HEIGHT_SCALE}px;
+          border-radius: 8px;
+          box-sizing: border-box;
+          cursor: pointer;
+          pointer-events: auto;
+          background: rgba(156,163,175,0.06);
+          border: 1px solid rgba(156,163,175,0.09);
+          box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+          overflow: hidden;
+        }
+
+        /* tighten spacing on small screens so the cover doesn't dominate */
+        @media (max-width: 640px) {
+          .reply-cover-row {
+            top: ${6 * GLOBAL_HEIGHT_SCALE}px;
+            padding: 0 ${8 * GLOBAL_HEIGHT_SCALE}px;
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+          }
+          .reply-cover-row .parent-title { font-size: ${11 * GLOBAL_HEIGHT_SCALE}px; }
+          .reply-cover-row .parent-snippet { font-size: ${11 * GLOBAL_HEIGHT_SCALE}px; opacity: .9; }
+        }
+      ` }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: "compact-comment border",
+          style: {
+            position: "relative",
+            padding: 10 * GLOBAL_HEIGHT_SCALE,
+            borderRadius: 9,
+            overflow: "visible"
+          },
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", gap: gapW, alignItems: "flex-start" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "mt-0",
+              style: {
+                flex: 1,
+                minWidth: 0,
+                position: "relative",
+                ["--cover-h"]: parent ? `${coverHeight}px` : void 0,
+                paddingTop: parent ? `calc(var(--cover-h) + ${coverMargin}px)` : 0
+                // removed --action-col-w and paddingRight so content can use full width
+                // ['--action-col-w' as any]: `${actionColW}px`,
+                // paddingRight: `calc(var(--action-col-w) + ${4 * GLOBAL_HEIGHT_SCALE}px)`,
+              },
+              children: [
+                parent && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    role: "button",
+                    onClick: onClickJumpToParent,
+                    title: "Jump to parent comment",
+                    className: "reply-cover-row bg-muted ",
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { minWidth: 0, overflow: "hidden" }, children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "parent-title",
+                          style: {
+                            display: "flex",
+                            gap: 6,
+                            alignItems: "center",
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis"
+                          },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { style: { fontSize: 12 * GLOBAL_HEIGHT_SCALE, lineHeight: 1 }, children: (parent.name || parent.author || "Anonymous").toString() }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 11 * GLOBAL_HEIGHT_SCALE, color: "var(--muted-text, #9ca3af)" }, children: (parent.Timestamp || parent.timestamp || "")?.toString() || "" })
+                          ]
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          className: "parent-snippet",
+                          style: {
+                            marginTop: 4,
+                            fontSize: 12 * GLOBAL_HEIGHT_SCALE,
+                            color: "var(--muted-text, #9ca3af)",
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis"
+                          },
+                          children: [
+                            String(stripInternalTags(parent.comment || parent.Comment || "").replace(/\n/g, " ")).slice(0, 140),
+                            (parent.comment || "").toString().length > 140 ? "…" : ""
+                          ]
+                        }
+                      )
+                    ] })
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-2 mt-2", style: { display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }, children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: avatarW, height: avatarW, borderRadius: 999, overflow: "hidden", flexShrink: 0 }, children: storedAvatar ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: storedAvatar, alt: author, style: { width: "100%", height: "100%", objectFit: "cover" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      style: {
+                        background: colorFromKey(it.email || it.name || "anon"),
+                        width: avatarW,
+                        height: avatarW
+                      },
+                      className: "rounded-full flex items-center justify-center text-white font-semibold",
+                      children: initialsFromName(author)
+                    }
+                  ) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { style: { fontSize: 13 * GLOBAL_HEIGHT_SCALE }, children: author }),
+                  ts ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 11 * GLOBAL_HEIGHT_SCALE, color: "var(--muted-text, #9ca3af)" }, children: String(ts) }) : null
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 1, fontSize: 13 * GLOBAL_HEIGHT_SCALE, color: "inherit" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins, rehypePlugins, children: visibleBody }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    style: {
+                      display: "flex",
+                      gap: 8,
+                      marginTop: 8 * GLOBAL_HEIGHT_SCALE,
+                      alignItems: "center",
+                      justifyContent: "flex-end",
+                      // aligns actions to the right; change to 'flex-start' if you prefer left
+                      flexWrap: "wrap",
+                      // allows buttons to wrap on narrow viewports
+                      zIndex: 4,
+                      pointerEvents: "auto"
+                    },
+                    "aria-hidden": false,
+                    children: [
+                      ownReaction ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          onClick: () => handleCommentReactionClick(tid, it, ownReaction),
+                          title: "Use this reaction and reply",
+                          className: "inline-flex items-center justify-center px-1.5 py-0.5 rounded",
+                          style: {
+                            minWidth: 30,
+                            height: 26,
+                            pointerEvents: "auto",
+                            background: "transparent",
+                            border: "1px solid transparent"
+                          },
+                          "aria-label": "Your reaction",
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: ownReaction, size: 14 })
+                        }
+                      ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          onClick: () => {
+                            startReplyFor(tid, it);
+                            setOpenMenu("reactionMenu");
+                          },
+                          title: "React",
+                          className: "inline-flex items-center justify-center px-1.5 py-0.5 rounded",
+                          style: {
+                            minWidth: 30,
+                            height: 26,
+                            pointerEvents: "auto",
+                            background: "transparent",
+                            border: "1px solid transparent"
+                          },
+                          "aria-label": "React to comment",
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-3.5 w-3.5 text-gray-600 dark:text-gray-300" })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          onClick: onClickReply,
+                          className: "text-sm rounded hover:bg-white/5",
+                          title: "Reply",
+                          "aria-label": "Reply to comment",
+                          style: {
+                            pointerEvents: "auto",
+                            background: "transparent",
+                            border: "none",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            height: 26,
+                            padding: "0 6px",
+                            fontSize: 13 * GLOBAL_HEIGHT_SCALE
+                          },
+                          children: "Reply"
+                        }
+                      )
+                    ]
+                  }
+                )
+              ]
+            }
+          ) })
+        }
+      )
+    ] });
+  };
+  const composerBottomCss = `calc(${Math.max(12, footerOffset) - 10}px + ${safeAreaBottom})`;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "comment-ui", style: { position: "relative", zIndex: 50 }, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: hideScrollbarCss }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "aria-hidden": true, className: "bg-background", style: {
-        position: "fixed",
-        left: 0,
-        right: 0,
-        bottom: 0,
-        height: `${bgHeight}px`,
-        pointerEvents: "none",
-        zIndex: 40
-      } }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: stickyBarRef, className: "comment-composer fixed left-0 right-0", style: {
-        bottom: `calc(12px + ${safeAreaBottom} + ${footerOffset}px)`,
-        padding: 12,
-        pointerEvents: "auto",
-        display: "flex",
-        justifyContent: "center",
-        zIndex: 60
-      }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, padding: "0 12px" }, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `composer-card ${isMultiline ? "multiline" : "singleline"}`, style: {
-          background: "#111315",
-          borderRadius: 12,
-          border: "1px solid #222",
-          padding: isMultiline ? "10px 12px" : "6px 8px",
-          display: "flex",
-          gap: 8,
-          alignItems: isMultiline ? "flex-start" : "center",
-          transition: "padding 140ms ease",
-          flexDirection: isMultiline ? "column" : "row",
-          position: "relative",
-          overflow: "visible",
-          minHeight: isMultiline ? void 0 : 44
-        }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: "inline-flex items-center justify-center", style: {
-              padding: 6,
-              borderRadius: 999,
-              color: openMenu === "reactionMenu" ? "#76b900" : "#b8c0c8",
-              background: "transparent",
-              minWidth: 36,
-              minHeight: 36,
-              display: isMultiline ? "none" : "inline-flex"
-            }, children: reaction ? (() => {
-              const meta = reactionsMeta.find((r2) => r2.id === reaction);
-              if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
-              const Icon2 = meta.Icon;
-              return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}`, stroke: "currentColor" });
-            })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5", stroke: "currentColor" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
-              setShowPreviewPanel((v) => !v);
-              setShowCommentsPanel(false);
-              setShowFinishPanel(false);
-              setOpenMenu(null);
-            }, "aria-pressed": showPreviewPanel, className: "inline-flex items-center justify-center", style: {
-              padding: 8,
-              borderRadius: 999,
-              color: showPreviewPanel ? "#76b900" : "#b8c0c8",
-              display: isMultiline ? "none" : "inline-flex",
-              minWidth: 36,
-              minHeight: 36,
-              background: "transparent",
-              border: "none"
-            }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" }) })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: `${isMultiline ? "mb-5" : ""}`,
-              style: { flex: 1, display: "flex", alignItems: "center", width: "100%" },
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "textarea",
-                {
-                  ref: stickyTextareaRef,
-                  id: "sticky-comment",
-                  value: comment2,
-                  onChange: handleTextareaChange,
-                  placeholder: activeReplyThreadId ? replyTarget ? `Replying to @${(replyTarget.name || replyTarget.author || "user").toString()}` : "Replying…" : "Add a comment...",
-                  className: "w-full bg-transparent text-sm text-gray-100 placeholder-gray-400 resize-none focus:outline-none",
-                  rows: 1,
-                  onKeyDown: (e) => {
-                    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
-                      setShowFinishPanel?.(true);
-                      e.preventDefault();
-                    }
-                  },
-                  style: {
-                    minHeight: isMultiline ? 60 : 40,
-                    maxHeight: MAX_TEXTAREA_HEIGHT,
-                    lineHeight: "20px",
-                    padding: isMultiline ? "4px 12px 20px 12px" : "10px 10px",
-                    borderRadius: 8,
-                    overflow: "auto",
-                    background: "transparent",
-                    color: "#e5e7eb",
-                    border: "none",
-                    outline: "none",
-                    transition: "font-size 120ms ease, padding 120ms ease",
-                    fontSize: isMultiline ? isMobile ? 17 : 15 : isMobile ? 16 : 13
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          style: {
+            position: "fixed",
+            left: 0,
+            right: 0,
+            bottom: composerBottomCss,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            pointerEvents: "none",
+            // inner elements set pointerEvents:auto where needed
+            zIndex: 60
+          },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "aria-hidden": true, className: "bg-background", style: { position: "absolute", left: 0, right: 0, bottom: 0, height: `${bgHeight}px`, pointerEvents: "none", zIndex: 0 } }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                ref: stickyBarRef,
+                className: "comment-composer",
+                style: {
+                  padding: 1 * GLOBAL_HEIGHT_SCALE,
+                  pointerEvents: "auto",
+                  display: "flex",
+                  justifyContent: "center",
+                  width: "100%"
+                },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, padding: `0 ${10 * GLOBAL_HEIGHT_SCALE}px` }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: `bg-background shadow-2xl border composer-card ${isMultiline ? "multiline" : "singleline"}`,
+                    style: {
+                      padding: isMultiline ? `${10 * GLOBAL_HEIGHT_SCALE}px ${12 * GLOBAL_HEIGHT_SCALE}px` : `${6 * GLOBAL_HEIGHT_SCALE}px ${8 * GLOBAL_HEIGHT_SCALE}px`,
+                      display: "flex",
+                      gap: 8 * GLOBAL_HEIGHT_SCALE,
+                      alignItems: isMultiline ? "flex-start" : "center",
+                      transition: "padding 140ms ease",
+                      flexDirection: isMultiline ? "column" : "row",
+                      position: "relative",
+                      overflow: "visible",
+                      minHeight: isMultiline ? void 0 : 40 * GLOBAL_HEIGHT_SCALE
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 1 * GLOBAL_HEIGHT_SCALE }, children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            title: reaction ? `Reaction: ${reaction}` : "Add reaction",
+                            onClick: () => openReactionMenu(),
+                            className: "inline-flex items-center justify-center",
+                            style: {
+                              padding: 6 * GLOBAL_HEIGHT_SCALE,
+                              borderRadius: 999,
+                              background: "transparent",
+                              minWidth: 36 * GLOBAL_HEIGHT_SCALE,
+                              minHeight: 36 * GLOBAL_HEIGHT_SCALE,
+                              display: isMultiline ? "none" : "inline-flex",
+                              pointerEvents: "auto"
+                            },
+                            children: reaction ? (() => {
+                              const meta = reactionsMeta.find((r2) => r2.id === reaction);
+                              if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
+                              const Icon2 = meta.Icon;
+                              return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}` });
+                            })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" })
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            title: "Preview comment",
+                            onClick: () => {
+                              setShowPreviewPanel((v) => !v);
+                              setShowCommentsPanel(false);
+                              setShowFinishPanel(false);
+                              setOpenMenu(null);
+                            },
+                            "aria-pressed": showPreviewPanel,
+                            className: "inline-flex items-center justify-center text-gray-600 dark:text-gray-300",
+                            style: {
+                              padding: 8 * GLOBAL_HEIGHT_SCALE,
+                              borderRadius: 999,
+                              display: isMultiline ? "none" : "inline-flex",
+                              minWidth: 36 * GLOBAL_HEIGHT_SCALE,
+                              minHeight: 36 * GLOBAL_HEIGHT_SCALE,
+                              background: "transparent",
+                              border: "none",
+                              pointerEvents: "auto"
+                            },
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" })
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${isMultiline ? "mb-5" : ""}`, style: { flex: 1, display: "flex", alignItems: "center", width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "textarea",
+                        {
+                          ref: stickyTextareaRef,
+                          id: "sticky-comment",
+                          value: comment2,
+                          onChange: handleTextareaChange,
+                          placeholder: activeReplyThreadId ? replyTarget ? `Replying to @${(replyTarget.name || replyTarget.author || "user").toString()}` : "Replying…" : isVerySmall ? "Comment..." : "Add a comment...",
+                          className: "w-full bg-transparent text-sm placeholder-gray-500 resize-none focus:outline-none",
+                          rows: 1,
+                          onKeyDown: (e) => {
+                            if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+                              setShowFinishPanel?.(true);
+                              e.preventDefault();
+                            }
+                          },
+                          style: {
+                            minHeight: isMultiline ? 60 * GLOBAL_HEIGHT_SCALE : 36 * GLOBAL_HEIGHT_SCALE,
+                            maxHeight: MAX_TEXTAREA_HEIGHT,
+                            lineHeight: `${20 * GLOBAL_HEIGHT_SCALE}px`,
+                            padding: isMultiline ? `${4 * GLOBAL_HEIGHT_SCALE}px ${12 * GLOBAL_HEIGHT_SCALE}px ${20 * GLOBAL_HEIGHT_SCALE}px ${12 * GLOBAL_HEIGHT_SCALE}px` : `${10 * GLOBAL_HEIGHT_SCALE}px ${10 * GLOBAL_HEIGHT_SCALE}px`,
+                            borderRadius: 8 * GLOBAL_HEIGHT_SCALE,
+                            overflow: "auto",
+                            background: "transparent",
+                            border: "none",
+                            outline: "none",
+                            transition: "font-size 120ms ease, padding 120ms ease",
+                            fontSize: isMultiline ? isMobile ? 17 * GLOBAL_HEIGHT_SCALE : 15 * GLOBAL_HEIGHT_SCALE : isMobile ? 16 * GLOBAL_HEIGHT_SCALE : 13 * GLOBAL_HEIGHT_SCALE,
+                            pointerEvents: "auto"
+                          }
+                        }
+                      ) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 * GLOBAL_HEIGHT_SCALE }, children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "button",
+                          {
+                            type: "button",
+                            title: "View comments",
+                            onClick: () => {
+                              setShowCommentsPanel((v) => !v);
+                              setShowFinishPanel(false);
+                              setOpenMenu(null);
+                              setShowPreviewPanel(false);
+                            },
+                            "aria-pressed": showCommentsPanel,
+                            className: "inline-flex items-center gap-2 text-gray-600 dark:text-gray-300",
+                            style: {
+                              padding: 8 * GLOBAL_HEIGHT_SCALE,
+                              borderRadius: 999,
+                              display: isMultiline ? "none" : "inline-flex",
+                              minWidth: 36 * GLOBAL_HEIGHT_SCALE,
+                              minHeight: 36 * GLOBAL_HEIGHT_SCALE,
+                              background: "transparent",
+                              border: "none",
+                              position: "relative",
+                              pointerEvents: "auto"
+                            },
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(MessageSquare, { className: "h-5 w-5" }),
+                              hasNewComments && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { position: "absolute", right: 2, top: 2, background: "#ef4444", padding: "4px 6px", borderRadius: 999, fontSize: 11 * GLOBAL_HEIGHT_SCALE, transform: "translate(50%,-50%)" }, children: "New" })
+                            ]
+                          }
+                        ),
+                        !comment2.includes("\n") && comment2.trim().length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            title: activeReplyThreadId ? "Finalize reply" : "Finalize comment",
+                            onClick: () => {
+                              setName(inlineName || name2);
+                              setEmail(inlineEmail || email);
+                              openFinishPanel();
+                            },
+                            className: "inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900",
+                            "aria-label": "Finalize comment",
+                            style: {
+                              height: 30 * GLOBAL_HEIGHT_SCALE,
+                              width: 30 * GLOBAL_HEIGHT_SCALE,
+                              borderRadius: 999,
+                              display: isMultiline ? "none" : "inline-flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              pointerEvents: "auto"
+                            },
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5" })
+                          }
+                        ) : showFinishPanel ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Cancel", onClick: () => setShowFinishPanel?.(false), className: "inline-flex items-center justify-center bg-white dark:bg-black", "aria-label": "Cancel", style: { background: "#fff", height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { className: "h-4 w-4 text-gray-900 dark:text-white" }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Finalize comment", onClick: () => {
+                          setShowFinishPanel?.(true);
+                          setShowCommentsPanel?.(false);
+                          setOpenMenu?.(null);
+                          setShowPreviewPanel(false);
+                        }, className: "inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900", "aria-label": "Finalize comment", style: { height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5" }) })
+                      ] }),
+                      openMenu === "reactionMenu" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: reactionMenuRef, style: { position: "absolute", left: 16, bottom: `calc(${safeAreaBottom} + ${footerOffset + 50}px)`, zIndex: 6e3, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-background border", style: { padding: 8, borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 8, alignItems: "center" }, children: [
+                        reactionsMeta.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            onClick: () => {
+                              setReaction(r2.id);
+                              setOpenMenu(null);
+                            },
+                            title: r2.label,
+                            style: { padding: 6, borderRadius: 6 },
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(r2.Icon, { className: `${reaction === r2.id ? r2.colorClass : "text-gray-400"} h-5 w-5` })
+                          },
+                          r2.id
+                        )),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
+                          setReaction("");
+                          setOpenMenu(null);
+                        }, title: "Clear reaction", style: { padding: 6, borderRadius: 6 }, children: "Clear" })
+                      ] }) }) }),
+                      isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", left: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: "inline-flex items-center justify-center", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, background: "transparent", minWidth: 36 * GLOBAL_HEIGHT_SCALE, minHeight: 36 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto" }, children: reaction ? (() => {
+                            const meta = reactionsMeta.find((r2) => r2.id === reaction);
+                            if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
+                            const Icon2 = meta.Icon;
+                            return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}` });
+                          })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" }) }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
+                            setShowPreviewPanel((v) => !v);
+                            setShowCommentsPanel(false);
+                            setShowFinishPanel(false);
+                            setOpenMenu(null);
+                          }, "aria-pressed": showPreviewPanel, className: "inline-flex items-center justify-center text-gray-600 dark:text-gray-300", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, background: "transparent", minWidth: 36 * GLOBAL_HEIGHT_SCALE, minHeight: 36 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" }) })
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", right: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "View comments", onClick: () => {
+                            setShowCommentsPanel((v) => !v);
+                            setShowFinishPanel(false);
+                            setOpenMenu(null);
+                            setShowPreviewPanel(false);
+                          }, "aria-pressed": showCommentsPanel, style: { padding: 8 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MessageSquare, { className: "h-5 w-5 text-gray-600 dark:text-gray-300" }) }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Finalize reply" : "Finalize comment", onClick: () => {
+                            setName(inlineName || name2);
+                            setEmail(inlineEmail || email);
+                            openFinishPanel();
+                          }, className: "inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900", "aria-label": "Finalize comment", style: { height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, alignItems: "center", justifyContent: "center", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5" }) })
+                        ] })
+                      ] })
+                    ]
                   }
-                }
-              )
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "View comments", onClick: () => {
-              setShowCommentsPanel((v) => !v);
-              setShowFinishPanel(false);
-              setOpenMenu(null);
-              setShowPreviewPanel(false);
-            }, "aria-pressed": showCommentsPanel, className: "inline-flex items-center gap-2", style: {
-              padding: 8,
-              borderRadius: 999,
-              color: showCommentsPanel ? "#76b900" : "#b8c0c8",
-              display: isMultiline ? "none" : "inline-flex",
-              minWidth: 36,
-              minHeight: 36,
-              background: "transparent",
-              border: "none"
-            }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 5h18M3 12h18M3 19h18", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }) }) }),
-            !comment2.includes("\n") && comment2.trim().length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Open finalize reply" : "Open finalize comment", onClick: () => {
-              setName(inlineName || name2);
-              setEmail(inlineEmail || email);
-              openFinishPanel();
-            }, className: "inline-flex items-center justify-center", "aria-label": "Open finalize panel", style: { background: "#fff", height: 40, width: 40, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", alignItems: "center", justifyContent: "center" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) }) : showFinishPanel ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Cancel", onClick: () => setShowFinishPanel?.(false), className: "inline-flex items-center justify-center", "aria-label": "Cancel", style: { background: "#fff", height: 36, width: 36, borderRadius: 999, display: isMultiline ? "none" : "inline-flex" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { className: "h-4 w-4 text-gray-900" }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Open finish panel", onClick: () => {
-              setShowFinishPanel?.(true);
-              setShowCommentsPanel?.(false);
-              setOpenMenu?.(null);
-              setShowPreviewPanel(false);
-            }, className: "inline-flex items-center justify-center", "aria-label": "Open finish panel", style: { background: "#fff", height: 36, width: 36, borderRadius: 999, display: isMultiline ? "none" : "inline-flex" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) })
-          ] }),
-          openMenu === "reactionMenu" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: reactionMenuRef, style: { position: "absolute", left: 16, bottom: `calc(${safeAreaBottom} + ${footerOffset + 82}px)`, zIndex: 6e3, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: "#111315", color: "#e5e7eb", border: "1px solid #222", boxShadow: "0 10px 28px rgba(2,6,23,0.6)", padding: 8, borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 8, alignItems: "center" }, children: [
-            reactionsMeta.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
-              setReaction(r2.id);
-              setOpenMenu(null);
-            }, title: r2.label, style: { padding: 6, borderRadius: 6 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(r2.Icon, { className: `${reaction === r2.id ? r2.colorClass : "text-gray-400"} h-5 w-5` }) }, r2.id)),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
-              setReaction("");
-              setOpenMenu(null);
-            }, title: "Clear reaction", style: { padding: 6, borderRadius: 6 }, children: "Clear" })
-          ] }) }) }),
-          isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", left: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: "inline-flex items-center justify-center", style: { padding: 8, borderRadius: 999, color: openMenu === "reactionMenu" ? "#76b900" : "#b8c0c8", background: "transparent", minWidth: 36, minHeight: 36 }, children: reaction ? (() => {
-                const meta = reactionsMeta.find((r2) => r2.id === reaction);
-                if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
-                const Icon2 = meta.Icon;
-                return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}`, stroke: "currentColor" });
-              })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5", stroke: "currentColor" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
-                setShowPreviewPanel((v) => !v);
-                setShowCommentsPanel(false);
-                setShowFinishPanel(false);
-                setOpenMenu(null);
-              }, "aria-pressed": showPreviewPanel, className: "inline-flex items-center justify-center", style: { padding: 8, borderRadius: 999, color: showPreviewPanel ? "#76b900" : "#b8c0c8", background: "transparent", minWidth: 36, minHeight: 36 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" }) })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", right: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
-              pendingCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: pendingListRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Pending comments", onClick: () => openPendingList?.(), style: { background: "transparent", border: "none", cursor: "pointer", padding: 6 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12, padding: "6px 10px", background: "#fee2e2", color: "#9b1c1c", borderRadius: 6 }, children: pendingCount }) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "View comments", onClick: () => {
-                setShowCommentsPanel((v) => !v);
-                setShowFinishPanel(false);
-                setOpenMenu(null);
-                setShowPreviewPanel(false);
-              }, "aria-pressed": showCommentsPanel, style: { padding: 8, borderRadius: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.03)" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 5h18M3 12h18M3 19h18", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Open finalize reply" : "Open finalize comment", onClick: () => {
-                setName(inlineName || name2);
-                setEmail(inlineEmail || email);
-                openFinishPanel();
-              }, className: "inline-flex items-center justify-center", "aria-label": "Open finalize panel", style: { background: "#fff", height: 40, width: 40, borderRadius: 999, alignItems: "center", justifyContent: "center" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) })
-            ] })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", justifyContent: "center", marginTop: 4, pointerEvents: "none" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, pointerEvents: "auto" }, ref: sentenceRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: "transparent", color: "#cbd5e1", padding: "6px 0", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.02)", borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 14 }, children: randomSentence }) }) }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", justifyContent: "center", marginTop: 8 }, children: pendingCount > 0 && !isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: pendingListRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Pending comments", onClick: () => openPendingList?.(), style: { background: "transparent", border: "none", cursor: "pointer" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12, padding: "4px 8px", background: "#fee2e2", color: "#9b1c1c", borderRadius: 6 }, children: pendingCount }) }) }) })
-      ] }) }),
-      showFinishPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: finishPanelRef, className: "rounded-md shadow-lg px-2 py-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222", pointerEvents: "auto" }, children: [
+                ) })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-foreground z-100 ", style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, pointerEvents: "auto" }, ref: sentenceRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-foreground ", style: { background: "transparent", padding: `${3 * GLOBAL_HEIGHT_SCALE}px 0`, textAlign: "center", borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-foreground ", style: { fontSize: 14 * GLOBAL_HEIGHT_SCALE }, children: randomSentence }) }) })
+          ]
+        }
+      ),
+      showFinishPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: finishPanelRef, className: "rounded-md shadow-lg px-2 py-4 bg-background border", style: { maxHeight: "60vh", overflowY: "auto", overscrollBehavior: "contain", pointerEvents: "auto" }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold mb-1", children: "Finalize your comment" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { title: "Send", className: `bg-transparent border border-gray-600 hover:border-[#76b900] transition-colors ${status === "submitting" || cooldownLeft > 0 ? "px-2 py-2 rounded-full" : " rounded-full h-9 w-9 flex items-center justify-center"}`, variant: "outline", onClick: handleFinishSubmit, disabled: status === "submitting" || cooldownLeft > 0, children: status === "submitting" ? "Submitting…" : cooldownLeft > 0 ? `Wait ${cooldownLeft}s` : /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "h-5 w-5" }) }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Button,
+            {
+              title: "Send",
+              className: `bg-transparent hover:border-[#76b900] transition-colors ${status === "submitting" || cooldownLeft > 0 ? "px-2 py-2 rounded-full" : " rounded-full h-9 w-9 flex items-center justify-center"} text-white dark:text-gray-900`,
+              variant: "outline",
+              onClick: handleFinishSubmit,
+              disabled: status === "submitting" || cooldownLeft > 0,
+              children: status === "submitting" ? "Submitting…" : cooldownLeft > 0 ? `Wait ${cooldownLeft}s` : /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "h-5 w-5" })
+            }
+          ) })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-2 mt-3", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex items-center gap-4 min-w-0", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", "aria-label": "Upload avatar", onClick: () => promptForAvatar(email || inlineEmail || ""), className: "shrink-0 w-8 h-8 rounded-full overflow-hidden cursor-pointer flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#76b900]", title: "Change avatar", children: getAvatarForEmail((email || "").toLowerCase()) ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: getAvatarForEmail((email || "").toLowerCase()), alt: name2 || inlineName || "avatar", className: "w-full h-full object-cover block", style: { borderRadius: "50%" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-full flex items-center justify-center text-white font-semibold", style: { background: colorFromKey(email || name2 || "anon") }, children: initialsFromName(name2 || inlineName) }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { id: "finish-name", className: "w-full min-w-0 pl-3 py-2 rounded bg-transparent placeholder-gray-400 border border-[#222] text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", placeholder: "Your name", value: name2, onChange: (e) => setName(e.target.value) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { id: "finish-name", className: "w-full min-w-0 pl-3 py-2 rounded bg-transparent placeholder-gray-400 border text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", placeholder: "Your name", value: name2, onChange: (e) => setName(e.target.value) })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border border-[#222] text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "email", placeholder: "Email address", value: email, onChange: (e) => setEmail(e.target.value) }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex items-center gap-2 min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border border-[#222] text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", inputMode: "numeric", placeholder: `${captchaX} + ${captchaY} = ?`, value: captchaInput, onChange: (e) => setCaptchaInput(e.target.value) }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border  text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "email", placeholder: "Email address", value: email, onChange: (e) => setEmail(e.target.value) }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex items-center gap-2 min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border  text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", inputMode: "numeric", placeholder: `${captchaX} + ${captchaY} = ?`, value: captchaInput, onChange: (e) => setCaptchaInput(e.target.value) }) })
         ] }),
         topError ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-red-600 text-sm mt-2", children: topError }) : null
       ] }) }) }),
-      showCommentsPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: commentsPanelRef, className: "rounded-md shadow-lg p-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222", pointerEvents: "auto" }, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between mb-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold", children: "Comments" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm text-gray-400", children: loadingComments ? "Loading…" : `${comments.length} comment${comments.length === 1 ? "" : "s"}` }),
+      showCommentsPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: commentsPanelRef, className: "rounded-md shadow-lg p-3 bg-background border", style: { maxHeight: "58vh", overflowY: "auto", overscrollBehavior: "contain", pointerEvents: "auto", padding: 12 * GLOBAL_HEIGHT_SCALE }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between mb-2", style: { gap: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 13 * GLOBAL_HEIGHT_SCALE }, children: loadingComments ? "Loading…" : `${comments.length} comment${comments.length === 1 ? "" : "s"}` }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSummaryBox, { tid: "__post__", style: { display: "inline-flex", marginLeft: 6 } }) })
         ] }) }),
-        loadingComments && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Loading comments…" }),
-        commentsError && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: "No comments yet." }),
-        !loadingComments && !commentsError && comments.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-gray-400", children: "Be the first to comment." }),
-        !loadingComments && !commentsError && buildThreadTrees.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-4", children: buildThreadTrees.map((thr) => {
-          const root2 = thr.rootNode;
-          const rootChildrenCount = root2.children ? root2.children.length : 0;
+        loadingComments && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { style: {}, children: "Loading comments…" }),
+        commentsError && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { style: {}, children: "No comments yet." }),
+        !loadingComments && !commentsError && comments.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { style: {}, children: "Be the first to comment." }),
+        !loadingComments && !commentsError && buildThreadTrees.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", flexDirection: "column", gap: 10 * GLOBAL_HEIGHT_SCALE }, children: buildThreadTrees.map((thr) => {
+          const flat = flattenThread(thr.rootNode);
           const reactionCounts = reactionSummaryForThread(thr.tid);
           const totalReactions = Object.values(reactionCounts).reduce((s2, v) => s2 + v, 0);
-          const rootAvatarMatch = String(root2.item.comment || "").match(/<!--\s*avatar:([\s\S]*?)-->/i);
-          const rootInternalAvatar = rootAvatarMatch ? rootAvatarMatch[1] : null;
-          const rootEmail = (root2.item.email || "").toString() || null;
-          const rootStoredAvatar = getAvatarForEmail(rootEmail) || rootInternalAvatar || null;
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "p-3 rounded relative", style: { border: "1px solid #222", background: "rgba(255,255,255,0.01)" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: 40, height: 40, borderRadius: 999, overflow: "hidden", flexShrink: 0 }, children: rootStoredAvatar ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: rootStoredAvatar, alt: (root2.item.name || "").toString(), style: { width: "100%", height: "100%", objectFit: "cover" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { backgroundColor: colorFromKey(String(root2.item.email || root2.item.name || "anon")), width: 40, height: 40 }, className: "rounded-full flex items-center justify-center text-white font-semibold", children: initialsFromName((root2.item.name || root2.item.Name || "A").toString()) }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 relative", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-sm", children: (root2.item.name || root2.item.author || "Anonymous").toString() }),
-                root2.item.Timestamp || root2.item.timestamp || root2.item.time ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-gray-400", children: (root2.item.Timestamp || root2.item.timestamp || root2.item.time).toString() }) : null,
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: (root2.item.reaction || root2.item["entry.1228204400"])?.toString?.() || void 0 }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ml-auto flex items-center gap-2", children: [
-                  rootChildrenCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setExpandedThreads((s2) => ({ ...s2, [thr.tid]: !(s2 && s2[thr.tid]) })), children: expandedThreads[thr.tid] ? "Hide replies" : `View replies (${rootChildrenCount})` }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => startReplyFor(thr.tid, root2.item), children: "Reply" })
-                ] })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 prose max-w-none", style: { paddingRight: 88 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins, rehypePlugins, children: stripInternalTags((root2.item.comment || root2.item.Comment || root2.item.description || "").toString()) }) }),
-              totalReactions > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", left: 8, bottom: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSummaryBox, { tid: thr.tid }) }),
-              expandedThreads[thr.tid] && root2.children && root2.children.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 space-y-3 pl-12", children: [
-                root2.children.slice(0, 2).map((rep, ridx) => /* @__PURE__ */ jsxRuntimeExports.jsx(CommentNode, { node: rep, tid: thr.tid, depth: 0 }, `${rep.key || getCommentKey(rep.item)}::${ridx}`)),
-                root2.children.length > 2 && (!showAllReplies[root2.key] ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [root2.key]: true })), children: [
-                  "View ",
-                  root2.children.length - 2,
-                  " more replies"
-                ] }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 space-y-2 pl-4", children: [
-                  root2.children.slice(2).map((rep, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(CommentNode, { node: rep, tid: thr.tid, depth: 0 }, `${rep.key || getCommentKey(rep.item)}::more::${idx}`)),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [root2.key]: false })), children: "Hide extra replies" }) })
-                ] }))
-              ] })
-            ] })
-          ] }) }, thr.tid);
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 8 }, children: [
+            flat.map(({ node: node2, parent }, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(CompactCommentCard, { it: node2.item, tid: thr.tid, parent: parent ? parent.item : null }, `${node2.key}::${idx}`)),
+            totalReactions > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSummaryBox, { tid: thr.tid }) })
+          ] }, thr.tid);
         }) })
       ] }) }) }),
-      showPreviewPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: previewPanelRef, className: "rounded-md shadow-lg p-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222", pointerEvents: "auto" }, children: [
+      showPreviewPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: previewPanelRef, className: "rounded-md shadow-lg p-4 bg-background border", style: { maxHeight: "60vh", overflowY: "auto", overscrollBehavior: "contain", pointerEvents: "auto" }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-start justify-between mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold mb-1", children: "Preview" }) }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full rounded-lg p-3", style: { background: "rgba(255,255,255,0.01)", border: "1px solid #1f1f1f" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full rounded-lg p-3 border bg-muted", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => promptForAvatar(email || inlineEmail || ""), className: "h-10 w-10 rounded-full flex items-center justify-center text-white font-semibold overflow-hidden", style: { backgroundColor: colorFromKey(name2 || "anon"), border: "none", padding: 0 }, title: "Click to set/change avatar for current email", children: getAvatarForEmail((email || "").toLowerCase()) ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: getAvatarForEmail((email || "").toLowerCase()), alt: name2 || "avatar", style: { width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }, children: initialsFromName(name2) }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
@@ -83836,12 +84103,14 @@ function CommentForm({
         ] }) })
       ] }) }) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
-        .comment-ui [style*="overscroll-behavior"] { overscroll-behavior: contain; }
-        .composer-card.multiline { border-radius: 12px; }
-        .comment-ui textarea { font-size: 16px; }
-        @media (min-width: 640px) { .comment-ui textarea { font-size: 13px; } }
-      ` })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `f
+      .comment-ui [style*="overscroll-behavior"] { overscroll-behavior: contain; }
+      .composer-card.multiline { border-radius: ${12 * GLOBAL_HEIGHT_SCALE}px; }
+      .comment-ui textarea { font-size: ${16 * GLOBAL_HEIGHT_SCALE}px; }
+      @media (min-width: 640px) { .comment-ui textarea { font-size: ${13 * GLOBAL_HEIGHT_SCALE}px; } }
+      .compact-comment { transition: background 120ms ease; }
+      .compact-comment:hover { background: rgba(255,255,255,0.02); }
+    ` })
   ] });
 }
 const schema$1 = {
