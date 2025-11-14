@@ -14851,22 +14851,22 @@ const createLucideIcon = (iconName, iconNode) => {
   Component.displayName = toPascalCase(iconName);
   return Component;
 };
-const __iconNode$w = [
+const __iconNode$x = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$w);
-const __iconNode$v = [
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$x);
+const __iconNode$w = [
   ["path", { d: "m5 12 7-7 7 7", key: "hav0vg" }],
   ["path", { d: "M12 19V5", key: "x0mq9r" }]
 ];
-const ArrowUp = createLucideIcon("arrow-up", __iconNode$v);
-const __iconNode$u = [
+const ArrowUp = createLucideIcon("arrow-up", __iconNode$w);
+const __iconNode$v = [
   ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
   ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
 ];
-const Briefcase = createLucideIcon("briefcase", __iconNode$u);
-const __iconNode$t = [
+const Briefcase = createLucideIcon("briefcase", __iconNode$v);
+const __iconNode$u = [
   ["path", { d: "M12 20v-9", key: "1qisl0" }],
   ["path", { d: "M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z", key: "uouzyp" }],
   ["path", { d: "M14.12 3.88 16 2", key: "qol33r" }],
@@ -14879,65 +14879,76 @@ const __iconNode$t = [
   ["path", { d: "m8 2 1.88 1.88", key: "fmnt4t" }],
   ["path", { d: "M9 7.13V6a3 3 0 1 1 6 0v1.13", key: "1vgav8" }]
 ];
-const Bug = createLucideIcon("bug", __iconNode$t);
-const __iconNode$s = [
+const Bug = createLucideIcon("bug", __iconNode$u);
+const __iconNode$t = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$s);
-const __iconNode$r = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$r);
-const __iconNode$q = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$q);
-const __iconNode$p = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$p);
-const __iconNode$o = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$o);
-const __iconNode$n = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$n);
-const __iconNode$m = [
+const Calendar = createLucideIcon("calendar", __iconNode$t);
+const __iconNode$s = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$s);
+const __iconNode$r = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$r);
+const __iconNode$q = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$q);
+const __iconNode$p = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$p);
+const __iconNode$o = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$o);
+const __iconNode$n = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   ["path", { d: "M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2", key: "4jdomd" }],
   ["path", { d: "M16 4h2a2 2 0 0 1 2 2v4", key: "3hqy98" }],
   ["path", { d: "M21 14H11", key: "1bme5i" }],
   ["path", { d: "m15 10-4 4 4 4", key: "5dvupr" }]
 ];
-const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$m);
-const __iconNode$l = [
+const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$n);
+const __iconNode$m = [
   ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$l);
-const __iconNode$k = [
+const Clock = createLucideIcon("clock", __iconNode$m);
+const __iconNode$l = [
   ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
   ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ];
-const Copy = createLucideIcon("copy", __iconNode$k);
-const __iconNode$j = [
+const Copy = createLucideIcon("copy", __iconNode$l);
+const __iconNode$k = [
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
   ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const CreditCard = createLucideIcon("credit-card", __iconNode$j);
-const __iconNode$i = [
+const CreditCard = createLucideIcon("credit-card", __iconNode$k);
+const __iconNode$j = [
   ["path", { d: "M12 15V3", key: "m9g1x1" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const Download = createLucideIcon("download", __iconNode$i);
-const __iconNode$h = [
+const Download = createLucideIcon("download", __iconNode$j);
+const __iconNode$i = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   ["circle", { cx: "19", cy: "12", r: "1", key: "1wjl8i" }],
   ["circle", { cx: "5", cy: "12", r: "1", key: "1pcz8c" }]
 ];
-const Ellipsis = createLucideIcon("ellipsis", __iconNode$h);
-const __iconNode$g = [
+const Ellipsis = createLucideIcon("ellipsis", __iconNode$i);
+const __iconNode$h = [
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
   ["path", { d: "M10 14 21 3", key: "gplh6r" }],
   ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
 ];
-const ExternalLink = createLucideIcon("external-link", __iconNode$g);
+const ExternalLink = createLucideIcon("external-link", __iconNode$h);
+const __iconNode$g = [
+  [
+    "path",
+    {
+      d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
+      key: "1nclc0"
+    }
+  ],
+  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+];
+const Eye = createLucideIcon("eye", __iconNode$g);
 const __iconNode$f = [
   [
     "path",
@@ -82631,6 +82642,8 @@ function CommentForm({
   footerSelector = "footer"
 }) {
   const isBrowser2 = typeof window !== "undefined";
+  const CONTENT_MAX_WIDTH = 1e3;
+  const MAX_TEXTAREA_HEIGHT = 260;
   const [name2, setName] = reactExports.useState("");
   const [email, setEmail] = reactExports.useState("");
   const [comment2, setComment] = reactExports.useState("");
@@ -82650,18 +82663,6 @@ function CommentForm({
   const [inlineEmail, setInlineEmail] = reactExports.useState("");
   const [inlineComment, setInlineComment] = reactExports.useState("");
   const [, setInlineError] = reactExports.useState(null);
-  const stickyTextareaRef = reactExports.useRef(null);
-  const stickyBarRef = reactExports.useRef(null);
-  const reactionMenuRef = reactExports.useRef(null);
-  const finishPanelRef = reactExports.useRef(null);
-  const commentsPanelRef = reactExports.useRef(null);
-  const previewPanelRef = reactExports.useRef(null);
-  const pendingListRef = reactExports.useRef(null);
-  const storageKey = reactExports.useMemo(() => `lastCommentAt:${postUrl}`, [postUrl]);
-  const pendingStorageKey = reactExports.useMemo(() => `pendingComments:${postUrl}`, [postUrl]);
-  const persistentNameKey = reactExports.useMemo(() => `commenter:name`, []);
-  const persistentEmailKey = reactExports.useMemo(() => `commenter:email`, []);
-  const persistentAvatarMapKey = reactExports.useMemo(() => `commenter:avatars`, []);
   const [openMenu, setOpenMenu] = reactExports.useState(null);
   const [showFinishPanel, setShowFinishPanel] = reactExports.useState(false);
   const [showCommentsPanel, setShowCommentsPanel] = reactExports.useState(false);
@@ -82669,10 +82670,27 @@ function CommentForm({
   const [cooldownLeft, setCooldownLeft] = reactExports.useState(0);
   const [footerOffset, setFooterOffset] = reactExports.useState(0);
   const [chatBarHeight, setChatBarHeight] = reactExports.useState(0);
+  const [sentenceHeight, setSentenceHeight] = reactExports.useState(0);
   const [showAllReplies, setShowAllReplies] = reactExports.useState({});
   const [randomSentence, setRandomSentence] = reactExports.useState("");
   const [expandedThreads, setExpandedThreads] = reactExports.useState({});
   const [isMultiline, setIsMultiline] = reactExports.useState(false);
+  const [isMobile, setIsMobile] = reactExports.useState(typeof window !== "undefined" ? window.innerWidth < 640 : false);
+  const panelsOpenRef = reactExports.useRef(false);
+  const stickyTextareaRef = reactExports.useRef(null);
+  const stickyBarRef = reactExports.useRef(null);
+  const sentenceRef = reactExports.useRef(null);
+  const reactionMenuRef = reactExports.useRef(null);
+  const finishPanelRef = reactExports.useRef(null);
+  const commentsPanelRef = reactExports.useRef(null);
+  const previewPanelRef = reactExports.useRef(null);
+  const pendingListRef = reactExports.useRef(null);
+  const mirrorRef = reactExports.useRef(null);
+  const storageKey = reactExports.useMemo(() => `lastCommentAt:${postUrl}`, [postUrl]);
+  const pendingStorageKey = reactExports.useMemo(() => `pendingComments:${postUrl}`, [postUrl]);
+  const persistentNameKey = reactExports.useMemo(() => `commenter:name`, []);
+  const persistentEmailKey = reactExports.useMemo(() => `commenter:email`, []);
+  const persistentAvatarMapKey = reactExports.useMemo(() => `commenter:avatars`, []);
   const safeLocalGet = reactExports.useCallback((k) => {
     if (!isBrowser2) return null;
     try {
@@ -82720,7 +82738,7 @@ function CommentForm({
       "Pro tip: be kind and specific.",
       "Share your thought in one sentence.",
       "Short replies get read more often.",
-      "A friendly note: read twice, post once."
+      "Read twice, post once."
     ];
     setRandomSentence(sentences[Math.floor(Math.random() * sentences.length)]);
   }, [isBrowser2, persistentEmailKey, persistentNameKey, safeLocalGet]);
@@ -82747,6 +82765,44 @@ function CommentForm({
   reactExports.useEffect(() => {
     newCaptcha(setCaptchaX, setCaptchaY);
   }, [newCaptcha]);
+  const getTextareaMetrics = reactExports.useCallback((el) => {
+    if (!el || typeof window === "undefined") return { singleRowHeight: 20, paddingLeft: 0, paddingRight: 0, clientInnerWidth: 0, lineHeight: 20 };
+    const cs = window.getComputedStyle(el);
+    const lineHeight = parseFloat(cs.lineHeight || "0") || 20;
+    const paddingTop = parseFloat(cs.paddingTop || "0") || 0;
+    const paddingBottom = parseFloat(cs.paddingBottom || "0") || 0;
+    const paddingLeft = parseFloat(cs.paddingLeft || "0") || 0;
+    const paddingRight = parseFloat(cs.paddingRight || "0") || 0;
+    const borderTop = parseFloat(cs.borderTopWidth || "0") || 0;
+    const borderBottom = parseFloat(cs.borderBottomWidth || "0") || 0;
+    const singleRowHeight = Math.ceil(lineHeight + paddingTop + paddingBottom + borderTop + borderBottom);
+    const clientInnerWidth = Math.max(0, el.clientWidth - paddingLeft - paddingRight);
+    return { singleRowHeight, paddingLeft, paddingRight, clientInnerWidth, lineHeight };
+  }, []);
+  const ensureMirror = reactExports.useCallback(() => {
+    if (mirrorRef.current) return mirrorRef.current;
+    if (typeof document === "undefined") return null;
+    const d = document.createElement("div");
+    d.style.position = "absolute";
+    d.style.visibility = "hidden";
+    d.style.whiteSpace = "nowrap";
+    d.style.left = "-9999px";
+    d.style.top = "0";
+    d.style.pointerEvents = "none";
+    d.setAttribute("aria-hidden", "true");
+    document.body.appendChild(d);
+    mirrorRef.current = d;
+    return d;
+  }, []);
+  reactExports.useEffect(() => {
+    return () => {
+      try {
+        if (mirrorRef.current && mirrorRef.current.parentElement) mirrorRef.current.parentElement.removeChild(mirrorRef.current);
+        mirrorRef.current = null;
+      } catch {
+      }
+    };
+  }, []);
   reactExports.useEffect(() => {
     if (!isBrowser2) return;
     const updateOffsets = () => {
@@ -82754,13 +82810,15 @@ function CommentForm({
       if (!footerEl) setFooterOffset(0);
       else {
         const rect = footerEl.getBoundingClientRect();
-        const overlap = Math.max(0, window.innerHeight - rect.top);
-        setFooterOffset(overlap);
+        setFooterOffset(Math.max(0, window.innerHeight - rect.top));
       }
       const barEl = stickyBarRef.current;
       setChatBarHeight(barEl ? Math.ceil(barEl.getBoundingClientRect().height) : 0);
+      const sentenceEl = sentenceRef.current;
+      setSentenceHeight(sentenceEl ? Math.ceil(sentenceEl.getBoundingClientRect().height) : 0);
     };
     const handleVV = () => {
+      if (panelsOpenRef.current) return;
       const vv = window.visualViewport;
       if (vv) {
         const bottomInset = Math.max(0, window.innerHeight - vv.height - (vv.offsetTop || 0));
@@ -82774,6 +82832,7 @@ function CommentForm({
       if (ro) {
         if (footerEl) ro.observe(footerEl);
         if (stickyBarRef.current) ro.observe(stickyBarRef.current);
+        if (sentenceRef.current) ro.observe(sentenceRef.current);
       }
     } catch {
     }
@@ -82799,17 +82858,18 @@ function CommentForm({
       window.removeEventListener("scroll", handleVV);
     };
   }, [footerSelector, isBrowser2]);
+  reactExports.useEffect(() => {
+    panelsOpenRef.current = !!(showFinishPanel || showCommentsPanel || showPreviewPanel);
+  }, [showFinishPanel, showCommentsPanel, showPreviewPanel]);
+  reactExports.useEffect(() => {
+    if (!isBrowser2) return;
+    const onResize = () => setIsMobile(window.innerWidth < 640);
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [isBrowser2]);
   const matchesPost = reactExports.useCallback((it) => {
-    const candidates = [
-      it.postUrl,
-      it.posturl,
-      it.url,
-      it.pageUrl,
-      it.page_url,
-      it["entry.638551959"],
-      it.post,
-      it.page
-    ];
+    const candidates = [it.postUrl, it.posturl, it.url, it.pageUrl, it.page_url, it["entry.638551959"], it.post, it.page];
     for (const c2 of candidates) {
       if (!c2) continue;
       try {
@@ -82883,12 +82943,10 @@ function CommentForm({
       const remaining = [];
       for (const p2 of pendings) {
         let found = false;
-        if (p2.threadId) {
-          found = filtered.some((it) => {
-            const tid = extractThreadIdFromItem(it);
-            return tid && String(tid) === String(p2.threadId);
-          });
-        }
+        if (p2.threadId) found = filtered.some((it) => {
+          const tid = extractThreadIdFromItem(it);
+          return tid && String(tid) === String(p2.threadId);
+        });
         if (!found && p2.name && p2.comment) {
           const lowerComment = String(p2.comment).slice(0, 60).toLowerCase();
           found = filtered.some((it) => {
@@ -82909,9 +82967,8 @@ function CommentForm({
     let intervalId;
     const maybeStartInterval = () => {
       const p2 = getPendingRaw();
-      if (p2 && p2.length > 0 && !intervalId) {
-        intervalId = window.setInterval(() => reconcilePending(), 15e3);
-      } else if ((!p2 || p2.length === 0) && intervalId) {
+      if (p2 && p2.length > 0 && !intervalId) intervalId = window.setInterval(() => reconcilePending(), 15e3);
+      else if ((!p2 || p2.length === 0) && intervalId) {
         clearInterval(intervalId);
         intervalId = void 0;
       }
@@ -83337,12 +83394,7 @@ function CommentForm({
   }, [buildThreadTrees, comment2, email, name2, persistentEmailKey, persistentNameKey, safeLocalGet]);
   const pendingList = getPendingRaw();
   const pendingCount = pendingList.length;
-  const hideScrollbarCss = `
-  .comment-ui ::-webkit-scrollbar { display: none; width: 0; height: 0; }
-  .comment-ui { scrollbar-width: none; -ms-overflow-style: none; }
-  .comment-ui textarea::-webkit-scrollbar { display: none; height: 0; width: 0; }
-  .comment-ui textarea { scrollbar-width: none; -ms-overflow-style: none; }
-  `;
+  const hideScrollbarCss = ` .comment-ui ::-webkit-scrollbar { display: none; width: 0; height: 0; } .comment-ui { scrollbar-width: none; -ms-overflow-style: none; } .comment-ui textarea::-webkit-scrollbar { display: none; height: 0; width: 0; } .comment-ui textarea { scrollbar-width: none; -ms-overflow-style: none; } `;
   const initialsFromName = reactExports.useCallback((fullName) => {
     const s2 = String(fullName || "").trim();
     if (!s2) return "A";
@@ -83438,28 +83490,69 @@ function CommentForm({
       ] })
     ] });
   }, (prev, next2) => prev.node?.key === next2.node?.key && prev.tid === next2.tid && prev.depth === next2.depth);
-  const MAX_TEXTAREA_HEIGHT = 260;
-  reactExports.useEffect(() => {
+  const recalcTextarea = reactExports.useCallback((val) => {
     const el = stickyTextareaRef.current;
-    if (!el) return;
+    const text2 = typeof val === "string" ? val : el ? el.value : "";
+    if (!el || typeof window === "undefined") return;
+    const { singleRowHeight, clientInnerWidth } = getTextareaMetrics(el);
+    if (!text2 || !text2.trim()) {
+      el.style.height = `${singleRowHeight}px`;
+      el.style.overflowY = "hidden";
+      setIsMultiline(false);
+      const barEl2 = stickyBarRef.current;
+      setChatBarHeight(barEl2 ? Math.ceil(barEl2.getBoundingClientRect().height) : 0);
+      const sentenceEl2 = sentenceRef.current;
+      setSentenceHeight(sentenceEl2 ? Math.ceil(sentenceEl2.getBoundingClientRect().height) : 0);
+      return;
+    }
     el.style.height = "auto";
     const contentH = el.scrollHeight;
-    const newH = Math.min(contentH, MAX_TEXTAREA_HEIGHT);
+    const newH = Math.min(Math.max(contentH, singleRowHeight), MAX_TEXTAREA_HEIGHT);
     el.style.height = `${newH}px`;
     el.style.overflowY = contentH > MAX_TEXTAREA_HEIGHT ? "auto" : "hidden";
-    const wantsMulti = comment2.includes("\n") || contentH > 72;
-    setIsMultiline(Boolean(wantsMulti));
+    const mirror = ensureMirror();
+    if (!mirror) {
+      setIsMultiline(Boolean(text2.includes("\n") || contentH > singleRowHeight + 1));
+      return;
+    }
+    const cs = window.getComputedStyle(el);
+    mirror.style.font = `${cs.fontStyle} ${cs.fontVariant} ${cs.fontWeight} ${cs.fontSize}/${cs.lineHeight} ${cs.fontFamily}`;
+    mirror.style.letterSpacing = cs.letterSpacing;
+    mirror.style.textTransform = cs.textTransform;
+    mirror.style.wordSpacing = cs.wordSpacing;
+    mirror.style.whiteSpace = "nowrap";
+    mirror.textContent = (text2 || "").replace(/\n/g, " ");
+    const unwrappedWidth = Math.ceil(mirror.getBoundingClientRect().width);
+    const available = Math.max(0, clientInnerWidth - 8);
+    const hasNewline = text2.includes("\n");
+    const wrapsToNextLine = contentH > singleRowHeight + 1;
+    const reachedRightEdge = unwrappedWidth >= available;
+    const wantsMulti = Boolean(hasNewline || wrapsToNextLine || reachedRightEdge);
+    setIsMultiline(wantsMulti);
     const barEl = stickyBarRef.current;
     setChatBarHeight(barEl ? Math.ceil(barEl.getBoundingClientRect().height) : 0);
-  }, [comment2]);
+    const sentenceEl = sentenceRef.current;
+    setSentenceHeight(sentenceEl ? Math.ceil(sentenceEl.getBoundingClientRect().height) : 0);
+  }, [ensureMirror, getTextareaMetrics]);
+  reactExports.useEffect(() => {
+    if (!isBrowser2) return;
+    requestAnimationFrame(() => recalcTextarea(comment2));
+    if (!comment2) setIsMultiline(false);
+  }, [isBrowser2]);
+  reactExports.useEffect(() => {
+    recalcTextarea(comment2);
+  }, [comment2, recalcTextarea]);
+  const handleTextareaChange = reactExports.useCallback((e) => {
+    const val = e.target.value;
+    setComment(val);
+    recalcTextarea(val);
+  }, [recalcTextarea]);
   reactExports.useEffect(() => {
     const preventBubble = (e) => {
       e.stopPropagation();
     };
     const el = reactionMenuRef.current;
-    if (el) {
-      el.addEventListener("wheel", preventBubble, { passive: false });
-    }
+    if (el) el.addEventListener("wheel", preventBubble, { passive: false });
     return () => {
       if (el) el.removeEventListener("wheel", preventBubble);
     };
@@ -83490,339 +83583,183 @@ function CommentForm({
     setTimeout(() => fetchComments(), 200);
   }, [email, fetchComments, getAvatarForEmail, saveAvatarForEmail]);
   const safeAreaBottom = typeof window !== "undefined" ? getComputedStyle(document.documentElement).getPropertyValue("--safe-area-inset-bottom") || "env(safe-area-inset-bottom, 0px)" : "env(safe-area-inset-bottom, 0px)";
+  const bgHeight = Math.ceil((chatBarHeight - 10 || 0) + (sentenceHeight - 10 || 0));
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "comment-ui space-y-4 max-w-full", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "comment-ui", style: { position: "relative", zIndex: 50 }, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: hideScrollbarCss }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          ref: stickyBarRef,
-          className: "comment-composer fixed left-0 right-0 z-50 bg-background",
-          style: {
-            // add footerOffset so the composer moves up when footer overlaps
-            bottom: `calc(12px + ${safeAreaBottom} + ${footerOffset}px)`,
-            padding: 12,
-            pointerEvents: "auto",
-            display: "flex",
-            justifyContent: "center"
-          },
-          children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { width: "100%", maxWidth: 1e3, padding: "0 12px" }, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "div",
-              {
-                className: `composer-card ${isMultiline ? "multiline" : "singleline"}`,
-                style: {
-                  background: "#111315",
-                  borderRadius: 16,
-                  border: "1px solid #222",
-                  padding: isMultiline ? 12 : 6,
-                  // reduced padding in single-line
-                  display: "flex",
-                  gap: 8,
-                  alignItems: isMultiline ? "stretch" : "center",
-                  transition: "padding 180ms ease, border-radius 180ms ease, height 180ms ease",
-                  flexDirection: isMultiline ? "column" : "row",
-                  position: "relative",
-                  // for absolute bottom controls
-                  overflow: "visible",
-                  // Slightly reduce height in singleline (minHeight)
-                  minHeight: isMultiline ? void 0 : 44
-                },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "button",
-                      {
-                        type: "button",
-                        title: reaction ? `Reaction: ${reaction}` : "Add reaction",
-                        onClick: () => openReactionMenu(),
-                        className: "inline-flex items-center justify-center transition-colors",
-                        style: {
-                          padding: isMultiline ? 6 : 6,
-                          borderRadius: 999,
-                          color: openMenu === "reactionMenu" ? "#76b900" : "#b8c0c8",
-                          background: "transparent",
-                          minWidth: 36,
-                          minHeight: 36,
-                          display: isMultiline ? "none" : "inline-flex"
-                          // hide in multiline (we place it bottom-left)
-                        },
-                        children: reaction ? (() => {
-                          const meta = reactionsMeta.find((r2) => r2.id === reaction);
-                          if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
-                          const Icon2 = meta.Icon;
-                          return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}`, stroke: "currentColor" });
-                        })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5", stroke: "currentColor" })
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "button",
-                      {
-                        type: "button",
-                        title: "Preview comment",
-                        onClick: () => {
-                          setShowPreviewPanel((v) => !v);
-                          setShowCommentsPanel(false);
-                          setShowFinishPanel(false);
-                          setOpenMenu(null);
-                        },
-                        "aria-pressed": showPreviewPanel,
-                        className: "inline-flex items-center justify-center",
-                        style: {
-                          padding: isMultiline ? 6 : 8,
-                          borderRadius: 999,
-                          color: showPreviewPanel ? "#76b900" : "#b8c0c8",
-                          display: isMultiline ? "none" : "inline-flex",
-                          minWidth: 36,
-                          minHeight: 36,
-                          background: "transparent",
-                          border: "none"
-                        },
-                        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M2.5 12s4.5-7.5 9.5-7.5S21.5 12 21.5 12s-4.5 7.5-9.5 7.5S2.5 12 2.5 12z", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "3", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" })
-                        ] })
-                      }
-                    )
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { flex: 1, display: "flex", alignItems: "center", width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "textarea",
-                    {
-                      ref: stickyTextareaRef,
-                      id: "sticky-comment",
-                      value: comment2,
-                      onChange: (e) => {
-                        const val = e.target.value;
-                        setComment?.(val);
-                        const taEl = stickyTextareaRef.current;
-                        if (!taEl) return;
-                        taEl.style.height = "auto";
-                        const contentH = taEl.scrollHeight;
-                        const maxH = MAX_TEXTAREA_HEIGHT;
-                        const targetH = Math.min(Math.max(contentH, isMultiline ? 72 : 40), maxH);
-                        taEl.style.transition = "height 120ms ease";
-                        taEl.style.height = `${targetH}px`;
-                        taEl.style.overflowY = contentH > maxH ? "auto" : "hidden";
-                        const wantsMulti = val.includes("\n") || contentH > 72;
-                        setIsMultiline(Boolean(wantsMulti));
-                      },
-                      placeholder: activeReplyThreadId ? replyTarget ? `Replying to @${(replyTarget.name || replyTarget.author || "user").toString()}` : "Replying…" : "Add a comment...",
-                      className: "w-full bg-transparent text-sm text-gray-100 placeholder-gray-400 resize-none focus:outline-none",
-                      rows: 1,
-                      onKeyDown: (e) => {
-                        if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
-                          setShowFinishPanel?.(true);
-                          e.preventDefault();
-                        }
-                      },
-                      style: {
-                        minHeight: isMultiline ? 72 : 40,
-                        // reduced single-line height
-                        maxHeight: MAX_TEXTAREA_HEIGHT,
-                        lineHeight: "20px",
-                        padding: isMultiline ? "10px 12px" : "6px 8px",
-                        borderRadius: 8,
-                        overflow: "auto",
-                        background: "transparent",
-                        color: "#e5e7eb",
-                        border: "none",
-                        outline: "none",
-                        transition: "font-size 120ms ease, padding 120ms ease",
-                        fontSize: isMultiline ? 15 : 13
-                      }
-                    }
-                  ) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "button",
-                      {
-                        type: "button",
-                        title: "View comments",
-                        onClick: () => {
-                          setShowCommentsPanel((v) => !v);
-                          setShowFinishPanel(false);
-                          setOpenMenu(null);
-                          setShowPreviewPanel(false);
-                        },
-                        "aria-pressed": showCommentsPanel,
-                        className: "inline-flex items-center gap-2",
-                        style: {
-                          padding: isMultiline ? 6 : 8,
-                          borderRadius: 999,
-                          color: showCommentsPanel ? "#76b900" : "#b8c0c8",
-                          display: isMultiline ? "none" : "inline-flex",
-                          // hide in multiline; we'll place it bottom-right
-                          minWidth: 36,
-                          minHeight: 36,
-                          background: "transparent",
-                          border: "none"
-                        },
-                        children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 5h18M3 12h18M3 19h18", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }) })
-                      }
-                    ),
-                    !comment2.includes("\n") && comment2.trim().length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "button",
-                      {
-                        title: activeReplyThreadId ? "Open finalize reply" : "Open finalize comment",
-                        onClick: () => {
-                          setName(inlineName || name2);
-                          setEmail(inlineEmail || email);
-                          openFinishPanel();
-                        },
-                        className: "inline-flex items-center justify-center",
-                        "aria-label": "Open finalize panel",
-                        style: {
-                          background: "#fff",
-                          height: isMultiline ? 40 : 40,
-                          width: isMultiline ? 40 : 40,
-                          borderRadius: 999,
-                          display: isMultiline ? "none" : "inline-flex",
-                          // single-line shows here; multiline moved to bottom-right
-                          alignItems: "center",
-                          justifyContent: "center"
-                        },
-                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" })
-                      }
-                    ) : showFinishPanel ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Cancel", onClick: () => setShowFinishPanel?.(false), className: "inline-flex items-center justify-center", "aria-label": "Cancel", style: { background: "#fff", height: 36, width: 36, borderRadius: 999, display: isMultiline ? "none" : "inline-flex" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { className: "h-4 w-4 text-gray-900" }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Open finish panel", onClick: () => {
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "aria-hidden": true, className: "bg-background", style: {
+        position: "fixed",
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: `${bgHeight}px`,
+        pointerEvents: "none",
+        zIndex: 40
+      } }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: stickyBarRef, className: "comment-composer fixed left-0 right-0", style: {
+        bottom: `calc(12px + ${safeAreaBottom} + ${footerOffset}px)`,
+        padding: 12,
+        pointerEvents: "auto",
+        display: "flex",
+        justifyContent: "center",
+        zIndex: 60
+      }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, padding: "0 12px" }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `composer-card ${isMultiline ? "multiline" : "singleline"}`, style: {
+          background: "#111315",
+          borderRadius: 12,
+          border: "1px solid #222",
+          padding: isMultiline ? "10px 12px" : "6px 8px",
+          display: "flex",
+          gap: 8,
+          alignItems: isMultiline ? "flex-start" : "center",
+          transition: "padding 140ms ease",
+          flexDirection: isMultiline ? "column" : "row",
+          position: "relative",
+          overflow: "visible",
+          minHeight: isMultiline ? void 0 : 44
+        }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: "inline-flex items-center justify-center", style: {
+              padding: 6,
+              borderRadius: 999,
+              color: openMenu === "reactionMenu" ? "#76b900" : "#b8c0c8",
+              background: "transparent",
+              minWidth: 36,
+              minHeight: 36,
+              display: isMultiline ? "none" : "inline-flex"
+            }, children: reaction ? (() => {
+              const meta = reactionsMeta.find((r2) => r2.id === reaction);
+              if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
+              const Icon2 = meta.Icon;
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}`, stroke: "currentColor" });
+            })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5", stroke: "currentColor" }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
+              setShowPreviewPanel((v) => !v);
+              setShowCommentsPanel(false);
+              setShowFinishPanel(false);
+              setOpenMenu(null);
+            }, "aria-pressed": showPreviewPanel, className: "inline-flex items-center justify-center", style: {
+              padding: 8,
+              borderRadius: 999,
+              color: showPreviewPanel ? "#76b900" : "#b8c0c8",
+              display: isMultiline ? "none" : "inline-flex",
+              minWidth: 36,
+              minHeight: 36,
+              background: "transparent",
+              border: "none"
+            }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: `${isMultiline ? "mb-5" : ""}`,
+              style: { flex: 1, display: "flex", alignItems: "center", width: "100%" },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "textarea",
+                {
+                  ref: stickyTextareaRef,
+                  id: "sticky-comment",
+                  value: comment2,
+                  onChange: handleTextareaChange,
+                  placeholder: activeReplyThreadId ? replyTarget ? `Replying to @${(replyTarget.name || replyTarget.author || "user").toString()}` : "Replying…" : "Add a comment...",
+                  className: "w-full bg-transparent text-sm text-gray-100 placeholder-gray-400 resize-none focus:outline-none",
+                  rows: 1,
+                  onKeyDown: (e) => {
+                    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
                       setShowFinishPanel?.(true);
-                      setShowCommentsPanel?.(false);
-                      setOpenMenu?.(null);
-                      setShowPreviewPanel(false);
-                    }, className: "inline-flex items-center justify-center", "aria-label": "Open finish panel", style: { background: "#fff", height: 36, width: 36, borderRadius: 999, display: isMultiline ? "none" : "inline-flex" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) })
-                  ] }),
-                  openMenu === "reactionMenu" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: reactionMenuRef, style: { position: "absolute", left: 16, bottom: `calc(${safeAreaBottom} + ${footerOffset + 82}px)`, zIndex: 6e3, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: "#111315", color: "#e5e7eb", border: "1px solid #222", boxShadow: "0 10px 28px rgba(2,6,23,0.6)", padding: 8, borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 8, alignItems: "center" }, children: [
-                    reactionsMeta.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
-                      setReaction(r2.id);
-                      setOpenMenu(null);
-                    }, title: r2.label, style: { padding: 6, borderRadius: 6 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(r2.Icon, { className: `${reaction === r2.id ? r2.colorClass : "text-gray-400"} h-5 w-5` }) }, r2.id)),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
-                      setReaction("");
-                      setOpenMenu(null);
-                    }, title: "Clear reaction", style: { padding: 6, borderRadius: 6 }, children: "Clear" })
-                  ] }) }) }),
-                  isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      "div",
-                      {
-                        style: {
-                          position: "absolute",
-                          left: 10,
-                          bottom: 10,
-                          display: "flex",
-                          gap: 8,
-                          alignItems: "center",
-                          pointerEvents: "auto",
-                          zIndex: 60
-                        },
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            "button",
-                            {
-                              type: "button",
-                              title: reaction ? `Reaction: ${reaction}` : "Add reaction",
-                              onClick: () => openReactionMenu(),
-                              className: "inline-flex items-center justify-center",
-                              style: {
-                                padding: 8,
-                                borderRadius: 999,
-                                color: openMenu === "reactionMenu" ? "#76b900" : "#b8c0c8",
-                                background: "transparent",
-                                minWidth: 36,
-                                minHeight: 36
-                              },
-                              children: reaction ? (() => {
-                                const meta = reactionsMeta.find((r2) => r2.id === reaction);
-                                if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
-                                const Icon2 = meta.Icon;
-                                return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}`, stroke: "currentColor" });
-                              })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5", stroke: "currentColor" })
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            "button",
-                            {
-                              type: "button",
-                              title: "Preview comment",
-                              onClick: () => {
-                                setShowPreviewPanel((v) => !v);
-                                setShowCommentsPanel(false);
-                                setShowFinishPanel(false);
-                                setOpenMenu(null);
-                              },
-                              "aria-pressed": showPreviewPanel,
-                              className: "inline-flex items-center justify-center",
-                              style: {
-                                padding: 8,
-                                borderRadius: 999,
-                                color: showPreviewPanel ? "#76b900" : "#b8c0c8",
-                                background: "transparent",
-                                minWidth: 36,
-                                minHeight: 36
-                              },
-                              children: /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M2.5 12s4.5-7.5 9.5-7.5S21.5 12 21.5 12s-4.5 7.5-9.5 7.5S2.5 12 2.5 12z", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "3", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" })
-                              ] })
-                            }
-                          )
-                        ]
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      "div",
-                      {
-                        style: {
-                          position: "absolute",
-                          right: 10,
-                          bottom: 10,
-                          display: "flex",
-                          gap: 8,
-                          alignItems: "center",
-                          pointerEvents: "auto",
-                          zIndex: 60
-                        },
-                        children: [
-                          pendingCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: pendingListRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Pending comments", onClick: () => openPendingList?.(), style: { background: "transparent", border: "none", cursor: "pointer", padding: 6 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12, padding: "6px 10px", background: "#fee2e2", color: "#9b1c1c", borderRadius: 6 }, children: pendingCount }) }) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            "button",
-                            {
-                              type: "button",
-                              title: "View comments",
-                              onClick: () => {
-                                setShowCommentsPanel((v) => !v);
-                                setShowFinishPanel(false);
-                                setOpenMenu(null);
-                                setShowPreviewPanel(false);
-                              },
-                              "aria-pressed": showCommentsPanel,
-                              style: { padding: 8, borderRadius: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.03)" },
-                              children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 5h18M3 12h18M3 19h18", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }) })
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Button,
-                            {
-                              title: "Send",
-                              className: `bg-transparent border border-gray-600 hover:border-[#76b900] transition-colors ${status === "submitting" || cooldownLeft > 0 ? "px-2 py-2 rounded-full" : " rounded-full h-9 w-9 flex items-center justify-center"}`,
-                              variant: "outline",
-                              onClick: handleFinishSubmit,
-                              disabled: status === "submitting" || cooldownLeft > 0,
-                              children: status === "submitting" ? "Submitting…" : cooldownLeft > 0 ? `Wait ${cooldownLeft}s` : /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "h-5 w-5" })
-                            }
-                          )
-                        ]
-                      }
-                    )
-                  ] })
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", justifyContent: "center", marginTop: 8, pointerEvents: "none" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", maxWidth: 1e3, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: "transparent", padding: "6px 0", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.02)", borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 14 }, children: randomSentence }) }) }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", justifyContent: "center", marginTop: 8 }, children: pendingCount > 0 && !isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: pendingListRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Pending comments", onClick: () => openPendingList?.(), style: { background: "transparent", border: "none", cursor: "pointer" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12, padding: "4px 8px", background: "#fee2e2", color: "#9b1c1c", borderRadius: 6 }, children: pendingCount }) }) }) })
+                      e.preventDefault();
+                    }
+                  },
+                  style: {
+                    minHeight: isMultiline ? 60 : 40,
+                    maxHeight: MAX_TEXTAREA_HEIGHT,
+                    lineHeight: "20px",
+                    padding: isMultiline ? "4px 12px 20px 12px" : "10px 10px",
+                    borderRadius: 8,
+                    overflow: "auto",
+                    background: "transparent",
+                    color: "#e5e7eb",
+                    border: "none",
+                    outline: "none",
+                    transition: "font-size 120ms ease, padding 120ms ease",
+                    fontSize: isMultiline ? isMobile ? 17 : 15 : isMobile ? 16 : 13
+                  }
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "View comments", onClick: () => {
+              setShowCommentsPanel((v) => !v);
+              setShowFinishPanel(false);
+              setOpenMenu(null);
+              setShowPreviewPanel(false);
+            }, "aria-pressed": showCommentsPanel, className: "inline-flex items-center gap-2", style: {
+              padding: 8,
+              borderRadius: 999,
+              color: showCommentsPanel ? "#76b900" : "#b8c0c8",
+              display: isMultiline ? "none" : "inline-flex",
+              minWidth: 36,
+              minHeight: 36,
+              background: "transparent",
+              border: "none"
+            }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 5h18M3 12h18M3 19h18", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }) }) }),
+            !comment2.includes("\n") && comment2.trim().length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Open finalize reply" : "Open finalize comment", onClick: () => {
+              setName(inlineName || name2);
+              setEmail(inlineEmail || email);
+              openFinishPanel();
+            }, className: "inline-flex items-center justify-center", "aria-label": "Open finalize panel", style: { background: "#fff", height: 40, width: 40, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", alignItems: "center", justifyContent: "center" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) }) : showFinishPanel ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Cancel", onClick: () => setShowFinishPanel?.(false), className: "inline-flex items-center justify-center", "aria-label": "Cancel", style: { background: "#fff", height: 36, width: 36, borderRadius: 999, display: isMultiline ? "none" : "inline-flex" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { className: "h-4 w-4 text-gray-900" }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Open finish panel", onClick: () => {
+              setShowFinishPanel?.(true);
+              setShowCommentsPanel?.(false);
+              setOpenMenu?.(null);
+              setShowPreviewPanel(false);
+            }, className: "inline-flex items-center justify-center", "aria-label": "Open finish panel", style: { background: "#fff", height: 36, width: 36, borderRadius: 999, display: isMultiline ? "none" : "inline-flex" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) })
+          ] }),
+          openMenu === "reactionMenu" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: reactionMenuRef, style: { position: "absolute", left: 16, bottom: `calc(${safeAreaBottom} + ${footerOffset + 82}px)`, zIndex: 6e3, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: "#111315", color: "#e5e7eb", border: "1px solid #222", boxShadow: "0 10px 28px rgba(2,6,23,0.6)", padding: 8, borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 8, alignItems: "center" }, children: [
+            reactionsMeta.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
+              setReaction(r2.id);
+              setOpenMenu(null);
+            }, title: r2.label, style: { padding: 6, borderRadius: 6 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(r2.Icon, { className: `${reaction === r2.id ? r2.colorClass : "text-gray-400"} h-5 w-5` }) }, r2.id)),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
+              setReaction("");
+              setOpenMenu(null);
+            }, title: "Clear reaction", style: { padding: 6, borderRadius: 6 }, children: "Clear" })
+          ] }) }) }),
+          isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", left: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: "inline-flex items-center justify-center", style: { padding: 8, borderRadius: 999, color: openMenu === "reactionMenu" ? "#76b900" : "#b8c0c8", background: "transparent", minWidth: 36, minHeight: 36 }, children: reaction ? (() => {
+                const meta = reactionsMeta.find((r2) => r2.id === reaction);
+                if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
+                const Icon2 = meta.Icon;
+                return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}`, stroke: "currentColor" });
+              })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5", stroke: "currentColor" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
+                setShowPreviewPanel((v) => !v);
+                setShowCommentsPanel(false);
+                setShowFinishPanel(false);
+                setOpenMenu(null);
+              }, "aria-pressed": showPreviewPanel, className: "inline-flex items-center justify-center", style: { padding: 8, borderRadius: 999, color: showPreviewPanel ? "#76b900" : "#b8c0c8", background: "transparent", minWidth: 36, minHeight: 36 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" }) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", right: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
+              pendingCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: pendingListRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Pending comments", onClick: () => openPendingList?.(), style: { background: "transparent", border: "none", cursor: "pointer", padding: 6 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12, padding: "6px 10px", background: "#fee2e2", color: "#9b1c1c", borderRadius: 6 }, children: pendingCount }) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "View comments", onClick: () => {
+                setShowCommentsPanel((v) => !v);
+                setShowFinishPanel(false);
+                setOpenMenu(null);
+                setShowPreviewPanel(false);
+              }, "aria-pressed": showCommentsPanel, style: { padding: 8, borderRadius: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.03)" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-5 w-5", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 5h18M3 12h18M3 19h18", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Open finalize reply" : "Open finalize comment", onClick: () => {
+                setName(inlineName || name2);
+                setEmail(inlineEmail || email);
+                openFinishPanel();
+              }, className: "inline-flex items-center justify-center", "aria-label": "Open finalize panel", style: { background: "#fff", height: 40, width: 40, borderRadius: 999, alignItems: "center", justifyContent: "center" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5 text-gray-900" }) })
+            ] })
           ] })
-        }
-      ),
-      showFinishPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0 z-45", style: { bottom: 0 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto px-4", style: { paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: finishPanelRef, className: "rounded-md shadow-lg px-2 py-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222", pointerEvents: "auto" }, children: [
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", justifyContent: "center", marginTop: 4, pointerEvents: "none" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, pointerEvents: "auto" }, ref: sentenceRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: "transparent", color: "#cbd5e1", padding: "6px 0", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.02)", borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 14 }, children: randomSentence }) }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", justifyContent: "center", marginTop: 8 }, children: pendingCount > 0 && !isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: pendingListRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Pending comments", onClick: () => openPendingList?.(), style: { background: "transparent", border: "none", cursor: "pointer" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12, padding: "4px 8px", background: "#fee2e2", color: "#9b1c1c", borderRadius: 6 }, children: pendingCount }) }) }) })
+      ] }) }),
+      showFinishPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: finishPanelRef, className: "rounded-md shadow-lg px-2 py-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222", pointerEvents: "auto" }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold mb-1", children: "Finalize your comment" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { title: "Send", className: `bg-transparent border border-gray-600 hover:border-[#76b900] transition-colors ${status === "submitting" || cooldownLeft > 0 ? "px-2 py-2 rounded-full" : " rounded-full h-9 w-9 flex items-center justify-center"}`, variant: "outline", onClick: handleFinishSubmit, disabled: status === "submitting" || cooldownLeft > 0, children: status === "submitting" ? "Submitting…" : cooldownLeft > 0 ? `Wait ${cooldownLeft}s` : /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "h-5 w-5" }) }) })
@@ -83837,7 +83774,7 @@ function CommentForm({
         ] }),
         topError ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-red-600 text-sm mt-2", children: topError }) : null
       ] }) }) }),
-      showCommentsPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0 z-45", style: { bottom: 0 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto px-4", style: { paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: commentsPanelRef, className: "rounded-md shadow-lg p-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222", pointerEvents: "auto" }, children: [
+      showCommentsPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: commentsPanelRef, className: "rounded-md shadow-lg p-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222", pointerEvents: "auto" }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between mb-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold", children: "Comments" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm text-gray-400", children: loadingComments ? "Loading…" : `${comments.length} comment${comments.length === 1 ? "" : "s"}` }),
@@ -83871,23 +83808,23 @@ function CommentForm({
               totalReactions > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { position: "absolute", left: 8, bottom: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSummaryBox, { tid: thr.tid }) }),
               expandedThreads[thr.tid] && root2.children && root2.children.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 space-y-3 pl-12", children: [
                 root2.children.slice(0, 2).map((rep, ridx) => /* @__PURE__ */ jsxRuntimeExports.jsx(CommentNode, { node: rep, tid: thr.tid, depth: 0 }, `${rep.key || getCommentKey(rep.item)}::${ridx}`)),
-                root2.children.length > 2 && /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: !showAllReplies[root2.key] ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [root2.key]: true })), children: [
+                root2.children.length > 2 && (!showAllReplies[root2.key] ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [root2.key]: true })), children: [
                   "View ",
                   root2.children.length - 2,
                   " more replies"
                 ] }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 space-y-2 pl-4", children: [
                   root2.children.slice(2).map((rep, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(CommentNode, { node: rep, tid: thr.tid, depth: 0 }, `${rep.key || getCommentKey(rep.item)}::more::${idx}`)),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-8 mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: "text-xs px-2 py-1 rounded hover:bg-white/5", onClick: () => setShowAllReplies((s2) => ({ ...s2, [root2.key]: false })), children: "Hide extra replies" }) })
-                ] }) })
+                ] }))
               ] })
             ] })
           ] }) }, thr.tid);
         }) })
       ] }) }) }),
-      showPreviewPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0 z-45", style: { bottom: 0 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-4xl mx-auto px-4", style: { paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: previewPanelRef, className: "rounded-md shadow-lg p-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222", pointerEvents: "auto" }, children: [
+      showPreviewPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: previewPanelRef, className: "rounded-md shadow-lg p-4", style: { maxHeight: "70vh", overflowY: "auto", overscrollBehavior: "contain", background: "#111315", color: "#e5e7eb", border: "1px solid #222", pointerEvents: "auto" }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-start justify-between mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold mb-1", children: "Preview" }) }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full rounded-lg p-3", style: { background: "rgba(255,255,255,0.01)", border: "1px solid #1f1f1f" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-10 w-10 rounded-full flex items-center justify-center text-white font-semibold", style: { backgroundColor: colorFromKey(name2 || "anon") }, children: initialsFromName(name2) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => promptForAvatar(email || inlineEmail || ""), className: "h-10 w-10 rounded-full flex items-center justify-center text-white font-semibold overflow-hidden", style: { backgroundColor: colorFromKey(name2 || "anon"), border: "none", padding: 0 }, title: "Click to set/change avatar for current email", children: getAvatarForEmail((email || "").toLowerCase()) ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: getAvatarForEmail((email || "").toLowerCase()), alt: name2 || "avatar", style: { width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }, children: initialsFromName(name2) }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-semibold truncate", children: name2 || "Your name" }),
@@ -83902,6 +83839,8 @@ function CommentForm({
     /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
         .comment-ui [style*="overscroll-behavior"] { overscroll-behavior: contain; }
         .composer-card.multiline { border-radius: 12px; }
+        .comment-ui textarea { font-size: 16px; }
+        @media (min-width: 640px) { .comment-ui textarea { font-size: 13px; } }
       ` })
   ] });
 }
