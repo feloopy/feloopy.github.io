@@ -1,94 +1,94 @@
 [
   {
     "loc": "https://feloopy.github.io/",
-    "lastmod": "2025-11-13T22:46:51.179Z"
+    "lastmod": "2025-11-14T07:47:37.686Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/bug-report",
-    "lastmod": "2025-11-13T22:46:51.192Z"
+    "lastmod": "2025-11-14T07:47:37.688Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/feature-request",
-    "lastmod": "2025-11-13T22:46:51.205Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/submissions/project",
-    "lastmod": "2025-11-13T22:46:51.212Z"
+    "lastmod": "2025-11-14T07:47:37.689Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/contact",
-    "lastmod": "2025-11-13T22:46:51.218Z"
+    "lastmod": "2025-11-14T07:47:37.697Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions/project",
+    "lastmod": "2025-11-14T07:47:37.699Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/payment",
-    "lastmod": "2025-11-13T22:46:51.220Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/docs",
-    "lastmod": "2025-11-13T22:46:51.174Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/about",
-    "lastmod": "2025-11-13T22:46:51.186Z"
+    "lastmod": "2025-11-14T07:47:37.700Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions",
-    "lastmod": "2025-11-13T22:46:51.188Z"
+    "lastmod": "2025-11-14T07:47:37.682Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/copt",
-    "lastmod": "2025-11-13T22:46:51.226Z"
+    "loc": "https://feloopy.github.io/docs",
+    "lastmod": "2025-11-14T07:47:37.687Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/about",
+    "lastmod": "2025-11-14T07:47:37.684Z"
   },
   {
     "loc": "https://feloopy.github.io/blog",
-    "lastmod": "2025-11-13T22:46:51.191Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/mosek",
-    "lastmod": "2025-11-13T22:47:01.001Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store",
-    "lastmod": "2025-11-13T22:46:51.225Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/highs",
-    "lastmod": "2025-11-13T22:47:01.908Z"
+    "lastmod": "2025-11-14T07:47:37.701Z"
   },
   {
     "loc": "https://feloopy.github.io/blog/llms-and-decision-science",
-    "lastmod": "2025-11-13T22:47:00.566Z"
+    "lastmod": "2025-11-14T07:47:37.702Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/timefold",
-    "lastmod": "2025-11-13T22:47:00.601Z"
+    "loc": "https://feloopy.github.io/store",
+    "lastmod": "2025-11-14T07:47:37.703Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/seeker",
-    "lastmod": "2025-11-13T22:47:03.552Z"
+    "loc": "https://feloopy.github.io/store/copt",
+    "lastmod": "2025-11-14T07:47:41.912Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/scip",
-    "lastmod": "2025-11-13T22:47:06.510Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/picat",
-    "lastmod": "2025-11-13T22:47:08.834Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/lpsolve",
-    "lastmod": "2025-11-13T22:47:09.336Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/gusek",
-    "lastmod": "2025-11-13T22:47:10.203Z"
+    "loc": "https://feloopy.github.io/store/highs",
+    "lastmod": "2025-11-14T07:47:42.055Z"
   },
   {
     "loc": "https://feloopy.github.io/blog/list-of-optimization-packages",
-    "lastmod": "2025-11-13T22:47:07.087Z"
+    "lastmod": "2025-11-14T07:47:41.964Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/timefold",
+    "lastmod": "2025-11-14T07:47:43.471Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/mosek",
+    "lastmod": "2025-11-14T07:47:43.872Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/seeker",
+    "lastmod": "2025-11-14T07:47:45.183Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/picat",
+    "lastmod": "2025-11-14T07:47:46.849Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/scip",
+    "lastmod": "2025-11-14T07:47:47.306Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/lpsolve",
+    "lastmod": "2025-11-14T07:47:48.875Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/gusek",
+    "lastmod": "2025-11-14T07:47:49.616Z"
   },
   {
     "loc": "https://feloopy.github.io/store/lpl",
-    "lastmod": "2025-11-13T22:47:10.499Z"
+    "lastmod": "2025-11-14T07:47:49.928Z"
   }
 ]
