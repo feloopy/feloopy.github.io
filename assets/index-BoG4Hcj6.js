@@ -14851,22 +14851,22 @@ const createLucideIcon = (iconName, iconNode) => {
   Component.displayName = toPascalCase(iconName);
   return Component;
 };
-const __iconNode$y = [
+const __iconNode$z = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$y);
-const __iconNode$x = [
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$z);
+const __iconNode$y = [
   ["path", { d: "m5 12 7-7 7 7", key: "hav0vg" }],
   ["path", { d: "M12 19V5", key: "x0mq9r" }]
 ];
-const ArrowUp = createLucideIcon("arrow-up", __iconNode$x);
-const __iconNode$w = [
+const ArrowUp = createLucideIcon("arrow-up", __iconNode$y);
+const __iconNode$x = [
   ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
   ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
 ];
-const Briefcase = createLucideIcon("briefcase", __iconNode$w);
-const __iconNode$v = [
+const Briefcase = createLucideIcon("briefcase", __iconNode$x);
+const __iconNode$w = [
   ["path", { d: "M12 20v-9", key: "1qisl0" }],
   ["path", { d: "M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z", key: "uouzyp" }],
   ["path", { d: "M14.12 3.88 16 2", key: "qol33r" }],
@@ -14879,66 +14879,66 @@ const __iconNode$v = [
   ["path", { d: "m8 2 1.88 1.88", key: "fmnt4t" }],
   ["path", { d: "M9 7.13V6a3 3 0 1 1 6 0v1.13", key: "1vgav8" }]
 ];
-const Bug = createLucideIcon("bug", __iconNode$v);
-const __iconNode$u = [
+const Bug = createLucideIcon("bug", __iconNode$w);
+const __iconNode$v = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$u);
-const __iconNode$t = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$t);
-const __iconNode$s = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$s);
-const __iconNode$r = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$r);
-const __iconNode$q = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$q);
-const __iconNode$p = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$p);
-const __iconNode$o = [
+const Calendar = createLucideIcon("calendar", __iconNode$v);
+const __iconNode$u = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$u);
+const __iconNode$t = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$t);
+const __iconNode$s = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$s);
+const __iconNode$r = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$r);
+const __iconNode$q = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$q);
+const __iconNode$p = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   ["path", { d: "M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2", key: "4jdomd" }],
   ["path", { d: "M16 4h2a2 2 0 0 1 2 2v4", key: "3hqy98" }],
   ["path", { d: "M21 14H11", key: "1bme5i" }],
   ["path", { d: "m15 10-4 4 4 4", key: "5dvupr" }]
 ];
-const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$o);
-const __iconNode$n = [
+const ClipboardCopy = createLucideIcon("clipboard-copy", __iconNode$p);
+const __iconNode$o = [
   ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$n);
-const __iconNode$m = [
+const Clock = createLucideIcon("clock", __iconNode$o);
+const __iconNode$n = [
   ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
   ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ];
-const Copy = createLucideIcon("copy", __iconNode$m);
-const __iconNode$l = [
+const Copy = createLucideIcon("copy", __iconNode$n);
+const __iconNode$m = [
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
   ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const CreditCard = createLucideIcon("credit-card", __iconNode$l);
-const __iconNode$k = [
+const CreditCard = createLucideIcon("credit-card", __iconNode$m);
+const __iconNode$l = [
   ["path", { d: "M12 15V3", key: "m9g1x1" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const Download = createLucideIcon("download", __iconNode$k);
-const __iconNode$j = [
+const Download = createLucideIcon("download", __iconNode$l);
+const __iconNode$k = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   ["circle", { cx: "19", cy: "12", r: "1", key: "1wjl8i" }],
   ["circle", { cx: "5", cy: "12", r: "1", key: "1pcz8c" }]
 ];
-const Ellipsis = createLucideIcon("ellipsis", __iconNode$j);
-const __iconNode$i = [
+const Ellipsis = createLucideIcon("ellipsis", __iconNode$k);
+const __iconNode$j = [
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
   ["path", { d: "M10 14 21 3", key: "gplh6r" }],
   ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
 ];
-const ExternalLink = createLucideIcon("external-link", __iconNode$i);
-const __iconNode$h = [
+const ExternalLink = createLucideIcon("external-link", __iconNode$j);
+const __iconNode$i = [
   [
     "path",
     {
@@ -14948,8 +14948,8 @@ const __iconNode$h = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$h);
-const __iconNode$g = [
+const Eye = createLucideIcon("eye", __iconNode$i);
+const __iconNode$h = [
   [
     "path",
     {
@@ -14958,8 +14958,8 @@ const __iconNode$g = [
     }
   ]
 ];
-const Heart = createLucideIcon("heart", __iconNode$g);
-const __iconNode$f = [
+const Heart = createLucideIcon("heart", __iconNode$h);
+const __iconNode$g = [
   [
     "path",
     {
@@ -14970,7 +14970,9 @@ const __iconNode$f = [
   ["path", { d: "M9 18h6", key: "x1upvd" }],
   ["path", { d: "M10 22h4", key: "ceow96" }]
 ];
-const Lightbulb = createLucideIcon("lightbulb", __iconNode$f);
+const Lightbulb = createLucideIcon("lightbulb", __iconNode$g);
+const __iconNode$f = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$f);
 const __iconNode$e = [
   ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
   ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
@@ -14986,12 +14988,19 @@ const __iconNode$c = [
   [
     "path",
     {
-      d: "M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z",
-      key: "18887p"
+      d: "M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z",
+      key: "1n2ejm"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1",
+      key: "1qfcsi"
     }
   ]
 ];
-const MessageSquare = createLucideIcon("message-square", __iconNode$c);
+const MessagesSquare = createLucideIcon("messages-square", __iconNode$c);
 const __iconNode$b = [
   [
     "path",
@@ -82768,8 +82777,7 @@ function CommentForm({
     safeLocalSet(persistentNameKey, name2 || "");
   }, [name2, persistentNameKey, isBrowser2, safeLocalSet]);
   reactExports.useEffect(() => {
-    if (!isBrowser2) return;
-    safeLocalSet(persistentEmailKey, email || "");
+    if (!isBrowser2) return safeLocalSet(persistentEmailKey, email || "");
   }, [email, persistentEmailKey, isBrowser2, safeLocalSet]);
   const isValidEmail = reactExports.useCallback((s2) => /^\S+@\S+\.\S+$/.test(s2), []);
   const generateThreadId = reactExports.useCallback(() => {
@@ -83041,6 +83049,11 @@ function CommentForm({
         }
         data.append("entry.917101990", threadIdToSend);
         if (recaptchaToken) data.append("g-recaptcha-response", recaptchaToken);
+        await fetch(formUrl, {
+          method: "POST",
+          body: data,
+          mode: "no-cors"
+        });
         if (!opts.isInline) {
           safeLocalSet(persistentNameKey, name2 || "");
           safeLocalSet(persistentEmailKey, email || "");
@@ -83223,45 +83236,42 @@ function CommentForm({
     }
     return counts;
   }, [buildThreadTrees]);
-  const reactionSummaryForThread = reactExports.useCallback(
-    (tid) => {
-      const t = buildThreadTrees.find((x) => x.tid === tid);
-      const counts = {};
-      if (!t) return counts;
-      const collectNodes = (node2, arr) => {
-        arr.push(node2);
-        for (const c2 of node2.children) collectNodes(c2, arr);
-      };
-      const nodes = [];
-      collectNodes(t.rootNode, nodes);
-      const authorToNode = {};
-      for (const n of nodes) {
-        const key = (n.author || "").toString().replace(/\s+/g, "").toLowerCase();
-        if (key) authorToNode[key] = n;
-      }
-      for (const n of nodes) {
-        const it = n.item;
-        const repReaction = it.reaction || it["entry.1228204400"] || "";
-        const body = (it.comment || it.Comment || it.description || "").toString();
-        const mentions = parseLeadingMentions(body);
-        if (repReaction && repReaction.toString().trim()) {
-          if (mentions.length >= 1) {
-            const targetName = mentions[mentions.length - 1].replace(/\s+/g, "").toLowerCase();
-            const targetNode = authorToNode[targetName];
-            if (targetNode) {
-              const key2 = repReaction.toString();
-              counts[key2] = (counts[key2] || 0) + 1;
-              continue;
-            }
+  const reactionSummaryForThread = reactExports.useCallback((tid) => {
+    const t = buildThreadTrees.find((x) => x.tid === tid);
+    const counts = {};
+    if (!t) return counts;
+    const collectNodes = (node2, arr) => {
+      arr.push(node2);
+      for (const c2 of node2.children) collectNodes(c2, arr);
+    };
+    const nodes = [];
+    collectNodes(t.rootNode, nodes);
+    const authorToNode = {};
+    for (const n of nodes) {
+      const key = (n.author || "").toString().replace(/\s+/g, "").toLowerCase();
+      if (key) authorToNode[key] = n;
+    }
+    for (const n of nodes) {
+      const it = n.item;
+      const repReaction = it.reaction || it["entry.1228204400"] || "";
+      const body = (it.comment || it.Comment || it.description || "").toString();
+      const mentions = parseLeadingMentions(body);
+      if (repReaction && repReaction.toString().trim()) {
+        if (mentions.length >= 1) {
+          const targetName = mentions[mentions.length - 1].replace(/\s+/g, "").toLowerCase();
+          const targetNode = authorToNode[targetName];
+          if (targetNode) {
+            const key2 = repReaction.toString();
+            counts[key2] = (counts[key2] || 0) + 1;
+            continue;
           }
-          const key = repReaction.toString();
-          counts[key] = (counts[key] || 0) + 1;
         }
+        const key = repReaction.toString();
+        counts[key] = (counts[key] || 0) + 1;
       }
-      return counts;
-    },
-    [buildThreadTrees, parseLeadingMentions]
-  );
+    }
+    return counts;
+  }, [buildThreadTrees, parseLeadingMentions]);
   const openReactionMenu = reactExports.useCallback(() => {
     setOpenMenu((prev) => prev === "reactionMenu" ? null : "reactionMenu");
     setShowFinishPanel(false);
@@ -83350,9 +83360,7 @@ function CommentForm({
             const rootEl2 = commentsPanelRef.current;
             const el = rootEl2?.querySelector(`#${CSS.escape(targetId)}`);
             if (el && rootEl2) {
-              const panelRect = rootEl2.getBoundingClientRect();
-              const elRect = el.getBoundingClientRect();
-              rootEl2.scrollTo({ top: rootEl2.scrollTop + (elRect.top - panelRect.top) - 12, behavior: "smooth" });
+              rootEl2.scrollTo({ top: rootEl2.scrollTop + (el.getBoundingClientRect().top - rootEl2.getBoundingClientRect().top) - 12, behavior: "smooth" });
               el.style.outline = "2px solid rgba(118,185,0,0.5)";
               setTimeout(() => {
                 if (el) el.style.outline = "";
@@ -83425,7 +83433,7 @@ function CommentForm({
     if (!isBrowser2) return;
     requestAnimationFrame(() => recalcTextarea(comment2));
     if (!comment2) setIsMultiline(false);
-  }, [isBrowser2]);
+  }, [comment2, isBrowser2, recalcTextarea]);
   reactExports.useEffect(() => {
     recalcTextarea(comment2);
   }, [comment2, recalcTextarea]);
@@ -83494,10 +83502,10 @@ function CommentForm({
     }
   }, [showCommentsPanel, isBrowser2, safeLocalSet, lastSeenCommentsKey]);
   const hideScrollbarCss = `
-    .comment-ui ::-webkit-scrollbar { display: none; width: 0; height: 0; }
-    .comment-ui { scrollbar-width: none; -ms-overflow-style: none; }
-    .comment-ui textarea::-webkit-scrollbar { display: none; height: 0; width: 0; }
-    .comment-ui textarea { scrollbar-width: none; -ms-overflow-style: none; }
+  .comment-ui ::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  .comment-ui { scrollbar-width: none; -ms-overflow-style: none; }
+  .comment-ui textarea::-webkit-scrollbar { display: none; height: 0; width: 0; }
+  .comment-ui textarea { scrollbar-width: none; -ms-overflow-style: none; }
   `;
   const initialsFromName = reactExports.useCallback((fullName) => {
     const s2 = String(fullName || "").trim();
@@ -83535,11 +83543,11 @@ function CommentForm({
       const total2 = Object.values(counts2).reduce((s2, v) => s2 + v, 0);
       if (total2 === 0) return null;
       const entries = Object.entries(counts2).sort((a, b) => b[1] - a[1]).slice(0, 3);
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "inline-flex items-center gap-2 px-2 py-1 border rounded-4xl", style: { ...style2 }, children: entries.map(([rid, cnt]) => {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "inline-flex items-center gap-2 px-1 border rounded-4xl", style: { ...style2 }, children: entries.map(([rid, cnt]) => {
         const meta = reactionsMeta.find((r2) => r2.id === rid);
         const Icon2 = meta ? meta.Icon : ThumbsUp;
         return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-1 px-2 py-0.5 rounded", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `${meta ? meta.colorClass : "text-foreground"} h-4 w-4` }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `${meta ? meta.colorClass : "text-foreground"} h-3 w-3` }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: cnt })
         ] }, rid);
       }) });
@@ -83587,493 +83595,181 @@ function CommentForm({
     const gapW = 10 * GLOBAL_HEIGHT_SCALE;
     const coverHeight = 44 * GLOBAL_HEIGHT_SCALE;
     const coverMargin = 8 * GLOBAL_HEIGHT_SCALE;
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: anchorId, className: "mb-2 bg-muted", style: { outline: "none" }, children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: anchorId, className: "mb-2 p-0", style: { outline: "none" }, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
-        .reply-cover-row {
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: ${1 * GLOBAL_HEIGHT_SCALE}px;
-          height: var(--cover-h);
-          z-index: 30;
-          display: flex;
-          gap: ${8 * GLOBAL_HEIGHT_SCALE}px;
-          align-items: center;
-          padding: 0 ${10 * GLOBAL_HEIGHT_SCALE}px;
-          border-radius: 8px;
-          box-sizing: border-box;
-          cursor: pointer;
-          pointer-events: auto;
-          background: rgba(156,163,175,0.06);
-          border: 1px solid rgba(156,163,175,0.09);
-          box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-          overflow: hidden;
-        }
-
-        /* tighten spacing on small screens so the cover doesn't dominate */
-        @media (max-width: 640px) {
-          .reply-cover-row {
-            top: ${6 * GLOBAL_HEIGHT_SCALE}px;
-            padding: 0 ${8 * GLOBAL_HEIGHT_SCALE}px;
-            border-radius: 6px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+          .reply-cover-row { position: absolute; left: 0; right: 0; top: ${0 * GLOBAL_HEIGHT_SCALE}px; height: var(--cover-h); z-index: 30; display: flex; gap: ${3 * GLOBAL_HEIGHT_SCALE}px; align-items: center; padding: 0 ${10 * GLOBAL_HEIGHT_SCALE}px; border-radius: 0px; box-sizing: border-box; cursor: pointer; pointer-events: auto; background: rgba(156,163,175,0.06); border: 1px solid rgba(156,163,175,0.09); box-shadow: 0 6px 14px rgba(0,0,0,0.06); overflow: hidden; }
+          @media (max-width: 640px) {
+            .reply-cover-row { top: ${0 * GLOBAL_HEIGHT_SCALE}px; padding: 0 ${8 * GLOBAL_HEIGHT_SCALE}px; border-radius: 0px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+            .reply-cover-row .parent-title { font-size: ${12 * GLOBAL_HEIGHT_SCALE}px; }
+            .reply-cover-row .parent-snippet { font-size: ${12 * GLOBAL_HEIGHT_SCALE}px; opacity: .9; }
           }
-          .reply-cover-row .parent-title { font-size: ${11 * GLOBAL_HEIGHT_SCALE}px; }
-          .reply-cover-row .parent-snippet { font-size: ${11 * GLOBAL_HEIGHT_SCALE}px; opacity: .9; }
-        }
-      ` }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          className: "compact-comment border",
-          style: {
-            position: "relative",
-            padding: 10 * GLOBAL_HEIGHT_SCALE,
-            borderRadius: 9,
-            overflow: "visible"
-          },
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", gap: gapW, alignItems: "flex-start" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "div",
-            {
-              className: "mt-0",
-              style: {
-                flex: 1,
-                minWidth: 0,
-                position: "relative",
-                ["--cover-h"]: parent ? `${coverHeight}px` : void 0,
-                paddingTop: parent ? `calc(var(--cover-h) + ${coverMargin}px)` : 0
-                // removed --action-col-w and paddingRight so content can use full width
-                // ['--action-col-w' as any]: `${actionColW}px`,
-                // paddingRight: `calc(var(--action-col-w) + ${4 * GLOBAL_HEIGHT_SCALE}px)`,
-              },
-              children: [
-                parent && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "div",
-                  {
-                    role: "button",
-                    onClick: onClickJumpToParent,
-                    title: "Jump to parent comment",
-                    className: "reply-cover-row bg-muted ",
-                    children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { minWidth: 0, overflow: "hidden" }, children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        "div",
-                        {
-                          className: "parent-title",
-                          style: {
-                            display: "flex",
-                            gap: 6,
-                            alignItems: "center",
-                            whiteSpace: "nowrap",
-                            overflow: "hidden",
-                            textOverflow: "ellipsis"
-                          },
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { style: { fontSize: 12 * GLOBAL_HEIGHT_SCALE, lineHeight: 1 }, children: (parent.name || parent.author || "Anonymous").toString() }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 11 * GLOBAL_HEIGHT_SCALE, color: "var(--muted-text, #9ca3af)" }, children: (parent.Timestamp || parent.timestamp || "")?.toString() || "" })
-                          ]
-                        }
-                      ),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        "div",
-                        {
-                          className: "parent-snippet",
-                          style: {
-                            marginTop: 4,
-                            fontSize: 12 * GLOBAL_HEIGHT_SCALE,
-                            color: "var(--muted-text, #9ca3af)",
-                            whiteSpace: "nowrap",
-                            overflow: "hidden",
-                            textOverflow: "ellipsis"
-                          },
-                          children: [
-                            String(stripInternalTags(parent.comment || parent.Comment || "").replace(/\n/g, " ")).slice(0, 140),
-                            (parent.comment || "").toString().length > 140 ? "…" : ""
-                          ]
-                        }
-                      )
-                    ] })
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-2 mt-2", style: { display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }, children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: avatarW, height: avatarW, borderRadius: 999, overflow: "hidden", flexShrink: 0 }, children: storedAvatar ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: storedAvatar, alt: author, style: { width: "100%", height: "100%", objectFit: "cover" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "div",
-                    {
-                      style: {
-                        background: colorFromKey(it.email || it.name || "anon"),
-                        width: avatarW,
-                        height: avatarW
-                      },
-                      className: "rounded-full flex items-center justify-center text-white font-semibold",
-                      children: initialsFromName(author)
-                    }
-                  ) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { style: { fontSize: 13 * GLOBAL_HEIGHT_SCALE }, children: author }),
-                  ts ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 11 * GLOBAL_HEIGHT_SCALE, color: "var(--muted-text, #9ca3af)" }, children: String(ts) }) : null
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 1, fontSize: 13 * GLOBAL_HEIGHT_SCALE, color: "inherit" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins, rehypePlugins, children: visibleBody }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "div",
-                  {
-                    style: {
-                      display: "flex",
-                      gap: 8,
-                      marginTop: 8 * GLOBAL_HEIGHT_SCALE,
-                      alignItems: "center",
-                      justifyContent: "flex-end",
-                      // aligns actions to the right; change to 'flex-start' if you prefer left
-                      flexWrap: "wrap",
-                      // allows buttons to wrap on narrow viewports
-                      zIndex: 4,
-                      pointerEvents: "auto"
-                    },
-                    "aria-hidden": false,
-                    children: [
-                      ownReaction ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "button",
-                        {
-                          onClick: () => handleCommentReactionClick(tid, it, ownReaction),
-                          title: "Use this reaction and reply",
-                          className: "inline-flex items-center justify-center px-1.5 py-0.5 rounded",
-                          style: {
-                            minWidth: 30,
-                            height: 26,
-                            pointerEvents: "auto",
-                            background: "transparent",
-                            border: "1px solid transparent"
-                          },
-                          "aria-label": "Your reaction",
-                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: ownReaction, size: 14 })
-                        }
-                      ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "button",
-                        {
-                          onClick: () => {
-                            startReplyFor(tid, it);
-                            setOpenMenu("reactionMenu");
-                          },
-                          title: "React",
-                          className: "inline-flex items-center justify-center px-1.5 py-0.5 rounded",
-                          style: {
-                            minWidth: 30,
-                            height: 26,
-                            pointerEvents: "auto",
-                            background: "transparent",
-                            border: "1px solid transparent"
-                          },
-                          "aria-label": "React to comment",
-                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-3.5 w-3.5 text-gray-600 dark:text-gray-300" })
-                        }
-                      ),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "button",
-                        {
-                          onClick: onClickReply,
-                          className: "text-sm rounded hover:bg-white/5",
-                          title: "Reply",
-                          "aria-label": "Reply to comment",
-                          style: {
-                            pointerEvents: "auto",
-                            background: "transparent",
-                            border: "none",
-                            display: "inline-flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            height: 26,
-                            padding: "0 6px",
-                            fontSize: 13 * GLOBAL_HEIGHT_SCALE
-                          },
-                          children: "Reply"
-                        }
-                      )
-                    ]
-                  }
-                )
-              ]
-            }
-          ) })
-        }
-      )
+        ` }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "compact-comment border", style: { position: "relative", padding: 10 * GLOBAL_HEIGHT_SCALE, borderRadius: 0, overflow: "visible" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", gap: gapW, alignItems: "flex-start" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-0", style: { flex: 1, minWidth: 0, position: "relative", ["--cover-h"]: parent ? `${coverHeight}px` : void 0, paddingTop: parent ? `calc(var(--cover-h) + ${coverMargin}px)` : 0 }, children: [
+        parent && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { role: "button", onClick: onClickJumpToParent, title: "Jump to parent comment", className: "reply-cover-row", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { minWidth: 0, overflow: "hidden" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "parent-title", style: { display: "flex", gap: 6, alignItems: "center", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { style: { fontSize: 12 * GLOBAL_HEIGHT_SCALE, lineHeight: 1 }, children: (parent.name || parent.author || "Anonymous").toString() }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "parent-snippet", style: { marginTop: 4, fontSize: 12 * GLOBAL_HEIGHT_SCALE, color: "var(--muted-text, #9ca3af)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }, children: [
+            String(stripInternalTags(parent.comment || parent.Comment || "").replace(/\n/g, " ")).slice(0, 140),
+            (parent.comment || "").toString().length > 140 ? "…" : ""
+          ] })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-2 mt-2", style: { display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: avatarW, height: avatarW, borderRadius: 999, overflow: "hidden", flexShrink: 0 }, children: storedAvatar ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: storedAvatar, alt: author, style: { width: "100%", height: "100%", objectFit: "cover" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: colorFromKey(it.email || it.name || "anon"), width: avatarW, height: avatarW }, className: "rounded-full flex items-center justify-center text-white font-semibold", children: initialsFromName(author) }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { style: { fontSize: 14 * GLOBAL_HEIGHT_SCALE }, children: author }),
+          ts ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 11 * GLOBAL_HEIGHT_SCALE, color: "var(--muted-text, #9ca3af)" }, children: String(ts) }) : null
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 1, fontSize: 16 * GLOBAL_HEIGHT_SCALE, color: "inherit" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins, rehypePlugins, children: visibleBody }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 0, marginTop: 0 * GLOBAL_HEIGHT_SCALE, alignItems: "center", justifyContent: "flex-end", flexWrap: "wrap", zIndex: 4, pointerEvents: "auto" }, children: [
+          ownReaction ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => handleCommentReactionClick(tid, it, ownReaction), title: "Use this reaction and reply", className: "inline-flex items-center justify-center px-1.5 py-0.5 rounded", style: { minWidth: 30, height: 26, pointerEvents: "auto", background: "transparent", border: "1px solid transparent" }, "aria-label": "Your reaction", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: ownReaction, size: 14 }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", {}),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: onClickReply, className: "text-sm rounded hover:bg-white/5", title: "Reply", "aria-label": "Reply to comment", style: { pointerEvents: "auto", background: "transparent", border: "none", display: "inline-flex", alignItems: "center", justifyContent: "center", height: 26, padding: "0 6px", fontSize: 13 * GLOBAL_HEIGHT_SCALE }, children: "Reply" })
+        ] })
+      ] }) }) })
     ] });
   };
-  const composerBottomCss = `calc(${Math.max(12, footerOffset) - 10}px + ${safeAreaBottom})`;
+  const composerBottomCss = `calc(${Math.max(12, footerOffset) - 12}px + ${safeAreaBottom})`;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "comment-ui", style: { position: "relative", zIndex: 50 }, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: hideScrollbarCss }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "div",
-        {
-          style: {
-            position: "fixed",
-            left: 0,
-            right: 0,
-            bottom: composerBottomCss,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            pointerEvents: "none",
-            // inner elements set pointerEvents:auto where needed
-            zIndex: 60
-          },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "aria-hidden": true, className: "bg-background", style: { position: "absolute", left: 0, right: 0, bottom: 0, height: `${bgHeight}px`, pointerEvents: "none", zIndex: 0 } }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
-              {
-                ref: stickyBarRef,
-                className: "comment-composer",
-                style: {
-                  padding: 1 * GLOBAL_HEIGHT_SCALE,
-                  pointerEvents: "auto",
-                  display: "flex",
-                  justifyContent: "center",
-                  width: "100%"
-                },
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, padding: `0 ${10 * GLOBAL_HEIGHT_SCALE}px` }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "div",
-                  {
-                    className: `bg-background shadow-2xl border composer-card ${isMultiline ? "multiline" : "singleline"}`,
-                    style: {
-                      padding: isMultiline ? `${10 * GLOBAL_HEIGHT_SCALE}px ${12 * GLOBAL_HEIGHT_SCALE}px` : `${6 * GLOBAL_HEIGHT_SCALE}px ${8 * GLOBAL_HEIGHT_SCALE}px`,
-                      display: "flex",
-                      gap: 8 * GLOBAL_HEIGHT_SCALE,
-                      alignItems: isMultiline ? "flex-start" : "center",
-                      transition: "padding 140ms ease",
-                      flexDirection: isMultiline ? "column" : "row",
-                      position: "relative",
-                      overflow: "visible",
-                      minHeight: isMultiline ? void 0 : 40 * GLOBAL_HEIGHT_SCALE
-                    },
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 1 * GLOBAL_HEIGHT_SCALE }, children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "button",
-                          {
-                            type: "button",
-                            title: reaction ? `Reaction: ${reaction}` : "Add reaction",
-                            onClick: () => openReactionMenu(),
-                            className: "inline-flex items-center justify-center",
-                            style: {
-                              padding: 6 * GLOBAL_HEIGHT_SCALE,
-                              borderRadius: 999,
-                              background: "transparent",
-                              minWidth: 36 * GLOBAL_HEIGHT_SCALE,
-                              minHeight: 36 * GLOBAL_HEIGHT_SCALE,
-                              display: isMultiline ? "none" : "inline-flex",
-                              pointerEvents: "auto"
-                            },
-                            children: reaction ? (() => {
-                              const meta = reactionsMeta.find((r2) => r2.id === reaction);
-                              if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
-                              const Icon2 = meta.Icon;
-                              return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}` });
-                            })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" })
-                          }
-                        ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "button",
-                          {
-                            type: "button",
-                            title: "Preview comment",
-                            onClick: () => {
-                              setShowPreviewPanel((v) => !v);
-                              setShowCommentsPanel(false);
-                              setShowFinishPanel(false);
-                              setOpenMenu(null);
-                            },
-                            "aria-pressed": showPreviewPanel,
-                            className: "inline-flex items-center justify-center text-gray-600 dark:text-gray-300",
-                            style: {
-                              padding: 8 * GLOBAL_HEIGHT_SCALE,
-                              borderRadius: 999,
-                              display: isMultiline ? "none" : "inline-flex",
-                              minWidth: 36 * GLOBAL_HEIGHT_SCALE,
-                              minHeight: 36 * GLOBAL_HEIGHT_SCALE,
-                              background: "transparent",
-                              border: "none",
-                              pointerEvents: "auto"
-                            },
-                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" })
-                          }
-                        )
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${isMultiline ? "mb-5" : ""}`, style: { flex: 1, display: "flex", alignItems: "center", width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "textarea",
-                        {
-                          ref: stickyTextareaRef,
-                          id: "sticky-comment",
-                          value: comment2,
-                          onChange: handleTextareaChange,
-                          placeholder: activeReplyThreadId ? replyTarget ? `Replying to @${(replyTarget.name || replyTarget.author || "user").toString()}` : "Replying…" : isVerySmall ? "Comment..." : "Add a comment...",
-                          className: "w-full bg-transparent text-sm placeholder-gray-500 resize-none focus:outline-none",
-                          rows: 1,
-                          onKeyDown: (e) => {
-                            if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
-                              setShowFinishPanel?.(true);
-                              e.preventDefault();
-                            }
-                          },
-                          style: {
-                            minHeight: isMultiline ? 60 * GLOBAL_HEIGHT_SCALE : 36 * GLOBAL_HEIGHT_SCALE,
-                            maxHeight: MAX_TEXTAREA_HEIGHT,
-                            lineHeight: `${20 * GLOBAL_HEIGHT_SCALE}px`,
-                            padding: isMultiline ? `${4 * GLOBAL_HEIGHT_SCALE}px ${12 * GLOBAL_HEIGHT_SCALE}px ${20 * GLOBAL_HEIGHT_SCALE}px ${12 * GLOBAL_HEIGHT_SCALE}px` : `${10 * GLOBAL_HEIGHT_SCALE}px ${10 * GLOBAL_HEIGHT_SCALE}px`,
-                            borderRadius: 8 * GLOBAL_HEIGHT_SCALE,
-                            overflow: "auto",
-                            background: "transparent",
-                            border: "none",
-                            outline: "none",
-                            transition: "font-size 120ms ease, padding 120ms ease",
-                            fontSize: isMultiline ? isMobile ? 17 * GLOBAL_HEIGHT_SCALE : 15 * GLOBAL_HEIGHT_SCALE : isMobile ? 16 * GLOBAL_HEIGHT_SCALE : 13 * GLOBAL_HEIGHT_SCALE,
-                            pointerEvents: "auto"
-                          }
-                        }
-                      ) }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 * GLOBAL_HEIGHT_SCALE }, children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                          "button",
-                          {
-                            type: "button",
-                            title: "View comments",
-                            onClick: () => {
-                              setShowCommentsPanel((v) => !v);
-                              setShowFinishPanel(false);
-                              setOpenMenu(null);
-                              setShowPreviewPanel(false);
-                            },
-                            "aria-pressed": showCommentsPanel,
-                            className: "inline-flex items-center gap-2 text-gray-600 dark:text-gray-300",
-                            style: {
-                              padding: 8 * GLOBAL_HEIGHT_SCALE,
-                              borderRadius: 999,
-                              display: isMultiline ? "none" : "inline-flex",
-                              minWidth: 36 * GLOBAL_HEIGHT_SCALE,
-                              minHeight: 36 * GLOBAL_HEIGHT_SCALE,
-                              background: "transparent",
-                              border: "none",
-                              position: "relative",
-                              pointerEvents: "auto"
-                            },
-                            children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(MessageSquare, { className: "h-5 w-5" }),
-                              hasNewComments && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { position: "absolute", right: 2, top: 2, background: "#ef4444", padding: "4px 6px", borderRadius: 999, fontSize: 11 * GLOBAL_HEIGHT_SCALE, transform: "translate(50%,-50%)" }, children: "New" })
-                            ]
-                          }
-                        ),
-                        !comment2.includes("\n") && comment2.trim().length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "button",
-                          {
-                            title: activeReplyThreadId ? "Finalize reply" : "Finalize comment",
-                            onClick: () => {
-                              setName(inlineName || name2);
-                              setEmail(inlineEmail || email);
-                              openFinishPanel();
-                            },
-                            className: "inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900",
-                            "aria-label": "Finalize comment",
-                            style: {
-                              height: 30 * GLOBAL_HEIGHT_SCALE,
-                              width: 30 * GLOBAL_HEIGHT_SCALE,
-                              borderRadius: 999,
-                              display: isMultiline ? "none" : "inline-flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              pointerEvents: "auto"
-                            },
-                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5" })
-                          }
-                        ) : showFinishPanel ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Cancel", onClick: () => setShowFinishPanel?.(false), className: "inline-flex items-center justify-center bg-white dark:bg-black", "aria-label": "Cancel", style: { background: "#fff", height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { className: "h-4 w-4 text-gray-900 dark:text-white" }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Finalize comment", onClick: () => {
-                          setShowFinishPanel?.(true);
-                          setShowCommentsPanel?.(false);
-                          setOpenMenu?.(null);
-                          setShowPreviewPanel(false);
-                        }, className: "inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900", "aria-label": "Finalize comment", style: { height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5" }) })
-                      ] }),
-                      openMenu === "reactionMenu" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: reactionMenuRef, style: { position: "absolute", left: 16, bottom: `calc(${safeAreaBottom} + ${footerOffset + 50}px)`, zIndex: 6e3, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-background border", style: { padding: 8, borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 8, alignItems: "center" }, children: [
-                        reactionsMeta.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "button",
-                          {
-                            onClick: () => {
-                              setReaction(r2.id);
-                              setOpenMenu(null);
-                            },
-                            title: r2.label,
-                            style: { padding: 6, borderRadius: 6 },
-                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(r2.Icon, { className: `${reaction === r2.id ? r2.colorClass : "text-gray-400"} h-5 w-5` })
-                          },
-                          r2.id
-                        )),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
-                          setReaction("");
-                          setOpenMenu(null);
-                        }, title: "Clear reaction", style: { padding: 6, borderRadius: 6 }, children: "Clear" })
-                      ] }) }) }),
-                      isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", left: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: "inline-flex items-center justify-center", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, background: "transparent", minWidth: 36 * GLOBAL_HEIGHT_SCALE, minHeight: 36 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto" }, children: reaction ? (() => {
-                            const meta = reactionsMeta.find((r2) => r2.id === reaction);
-                            if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
-                            const Icon2 = meta.Icon;
-                            return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}` });
-                          })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" }) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
-                            setShowPreviewPanel((v) => !v);
-                            setShowCommentsPanel(false);
-                            setShowFinishPanel(false);
-                            setOpenMenu(null);
-                          }, "aria-pressed": showPreviewPanel, className: "inline-flex items-center justify-center text-gray-600 dark:text-gray-300", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, background: "transparent", minWidth: 36 * GLOBAL_HEIGHT_SCALE, minHeight: 36 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" }) })
-                        ] }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", right: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "View comments", onClick: () => {
-                            setShowCommentsPanel((v) => !v);
-                            setShowFinishPanel(false);
-                            setOpenMenu(null);
-                            setShowPreviewPanel(false);
-                          }, "aria-pressed": showCommentsPanel, style: { padding: 8 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MessageSquare, { className: "h-5 w-5 text-gray-600 dark:text-gray-300" }) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Finalize reply" : "Finalize comment", onClick: () => {
-                            setName(inlineName || name2);
-                            setEmail(inlineEmail || email);
-                            openFinishPanel();
-                          }, className: "inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900", "aria-label": "Finalize comment", style: { height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, alignItems: "center", justifyContent: "center", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5" }) })
-                        ] })
-                      ] })
-                    ]
-                  }
-                ) })
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "fixed", left: 0, right: 0, bottom: composerBottomCss, display: "flex", flexDirection: "column", alignItems: "center", pointerEvents: "none", zIndex: 60 }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "aria-hidden": true, className: "bg-background", style: { position: "absolute", left: 0, right: 0, bottom: 0, height: `${bgHeight}px`, pointerEvents: "none", zIndex: 0 } }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: stickyBarRef, className: "comment-composer", style: { padding: 1 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto", display: "flex", justifyContent: "center", width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, padding: `0 ${10 * GLOBAL_HEIGHT_SCALE}px` }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `bg-background shadow-2xl border composer-card ${isMultiline ? "multiline" : "singleline"}`, style: { padding: isMultiline ? `${10 * GLOBAL_HEIGHT_SCALE}px ${12 * GLOBAL_HEIGHT_SCALE}px` : `${6 * GLOBAL_HEIGHT_SCALE}px ${8 * GLOBAL_HEIGHT_SCALE}px`, display: "flex", gap: 8 * GLOBAL_HEIGHT_SCALE, alignItems: isMultiline ? "flex-start" : "center", transition: "padding 140ms ease", flexDirection: isMultiline ? "column" : "row", position: "relative", overflow: "visible", minHeight: isMultiline ? void 0 : 40 * GLOBAL_HEIGHT_SCALE }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 1 * GLOBAL_HEIGHT_SCALE }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: "inline-flex items-center justify-center", style: { padding: 6 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, background: "transparent", minWidth: 36 * GLOBAL_HEIGHT_SCALE, minHeight: 36 * GLOBAL_HEIGHT_SCALE, display: isMultiline ? "none" : "inline-flex", pointerEvents: "auto" }, children: reaction ? (() => {
+              const meta = reactionsMeta.find((r2) => r2.id === reaction);
+              if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
+              const Icon2 = meta.Icon;
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}` });
+            })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
+              setShowPreviewPanel((v) => !v);
+              setShowCommentsPanel(false);
+              setShowFinishPanel(false);
+              setOpenMenu(null);
+            }, "aria-pressed": showPreviewPanel, className: "inline-flex items-center justify-center text-gray-600 dark:text-gray-300", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", minWidth: 36 * GLOBAL_HEIGHT_SCALE, minHeight: 36 * GLOBAL_HEIGHT_SCALE, background: "transparent", border: "none", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${isMultiline ? "mb-5" : ""}`, style: { flex: 1, display: "flex", alignItems: "center", width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "textarea",
+            {
+              ref: stickyTextareaRef,
+              id: "sticky-comment",
+              value: comment2,
+              onChange: handleTextareaChange,
+              placeholder: activeReplyThreadId ? replyTarget ? `Replying to @${(replyTarget.name || replyTarget.author || "user").toString()}` : "Replying…" : isVerySmall ? "Comment..." : "Add a comment...",
+              className: "w-full bg-transparent text-sm placeholder-gray-500 resize-none focus:outline-none",
+              rows: 1,
+              onKeyDown: (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+                  setShowFinishPanel?.(true);
+                  e.preventDefault();
+                }
+              },
+              style: {
+                minHeight: isMultiline ? 60 * GLOBAL_HEIGHT_SCALE : 36 * GLOBAL_HEIGHT_SCALE,
+                maxHeight: MAX_TEXTAREA_HEIGHT,
+                lineHeight: `${20 * GLOBAL_HEIGHT_SCALE}px`,
+                padding: isMultiline ? `${4 * GLOBAL_HEIGHT_SCALE}px ${12 * GLOBAL_HEIGHT_SCALE}px ${20 * GLOBAL_HEIGHT_SCALE}px ${12 * GLOBAL_HEIGHT_SCALE}px` : `${10 * GLOBAL_HEIGHT_SCALE}px ${10 * GLOBAL_HEIGHT_SCALE}px`,
+                borderRadius: 8 * GLOBAL_HEIGHT_SCALE,
+                overflow: "auto",
+                background: "transparent",
+                border: "none",
+                outline: "none",
+                transition: "font-size 120ms ease, padding 120ms ease",
+                fontSize: isMultiline ? isMobile ? 17 * GLOBAL_HEIGHT_SCALE : 15 * GLOBAL_HEIGHT_SCALE : isMobile ? 16 * GLOBAL_HEIGHT_SCALE : 13 * GLOBAL_HEIGHT_SCALE,
+                pointerEvents: "auto"
               }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-foreground z-100 ", style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, pointerEvents: "auto" }, ref: sentenceRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-foreground ", style: { background: "transparent", padding: `${3 * GLOBAL_HEIGHT_SCALE}px 0`, textAlign: "center", borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-foreground ", style: { fontSize: 14 * GLOBAL_HEIGHT_SCALE }, children: randomSentence }) }) })
-          ]
-        }
-      ),
-      showFinishPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: finishPanelRef, className: "rounded-md shadow-lg px-2 py-4 bg-background border", style: { maxHeight: "60vh", overflowY: "auto", overscrollBehavior: "contain", pointerEvents: "auto" }, children: [
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 * GLOBAL_HEIGHT_SCALE }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { type: "button", title: "View comments", onClick: () => {
+              setShowCommentsPanel((v) => !v);
+              setShowFinishPanel(false);
+              setOpenMenu(null);
+              setShowPreviewPanel(false);
+            }, "aria-pressed": showCommentsPanel, className: "inline-flex items-center gap-2 text-gray-600 dark:text-gray-300", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", minWidth: 36 * GLOBAL_HEIGHT_SCALE, minHeight: 36 * GLOBAL_HEIGHT_SCALE, background: "transparent", border: "none", position: "relative", pointerEvents: "auto" }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(MessagesSquare, { className: "h-5 w-5" }),
+              hasNewComments && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { position: "absolute", right: 2, top: 2, background: "#ef4444", padding: "4px 6px", borderRadius: 999, fontSize: 11 * GLOBAL_HEIGHT_SCALE, transform: "translate(50%,-50%)" }, children: " New " })
+            ] }),
+            !comment2.includes("\n") && comment2.trim().length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Finalize reply" : "Finalize comment", onClick: () => {
+              setName(inlineName || name2);
+              setEmail(inlineEmail || email);
+              openFinishPanel();
+            }, className: "inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900", "aria-label": "Finalize comment", style: { height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", alignItems: "center", justifyContent: "center", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5" }) }) : showFinishPanel ? /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Cancel", onClick: () => setShowFinishPanel?.(false), className: "inline-flex items-center justify-center bg-black dark:bg-white", "aria-label": "Cancel", style: { height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Square, { className: "h-4 w-4 text-white dark:text-black" }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: "Finalize comment", onClick: () => {
+              setShowFinishPanel?.(true);
+              setShowCommentsPanel?.(false);
+              setOpenMenu?.(null);
+              setShowPreviewPanel(false);
+            }, className: "inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900", "aria-label": "Finalize comment", style: { height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, display: isMultiline ? "none" : "inline-flex", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5" }) })
+          ] }),
+          openMenu === "reactionMenu" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: reactionMenuRef, style: { position: "absolute", left: 16, bottom: `calc(${safeAreaBottom} + ${footerOffset + 50}px)`, zIndex: 6e3, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-background border", style: { padding: 8, borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", gap: 8, alignItems: "center" }, children: [
+            reactionsMeta.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
+              setReaction(r2.id);
+              setOpenMenu(null);
+            }, title: r2.label, style: { padding: 6, borderRadius: 6 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(r2.Icon, { className: `${reaction === r2.id ? r2.colorClass : "text-gray-400"} h-5 w-5` }) }, r2.id)),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => {
+              setReaction("");
+              setOpenMenu(null);
+            }, title: "Clear reaction", style: { padding: 6, borderRadius: 6 }, children: "Clear" })
+          ] }) }) }),
+          isMultiline && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", left: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: reaction ? `Reaction: ${reaction}` : "Add reaction", onClick: () => openReactionMenu(), className: "inline-flex items-center justify-center", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, background: "transparent", minWidth: 36 * GLOBAL_HEIGHT_SCALE, minHeight: 36 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto" }, children: reaction ? (() => {
+                const meta = reactionsMeta.find((r2) => r2.id === reaction);
+                if (!meta) return /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" });
+                const Icon2 = meta.Icon;
+                return /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: `h-5 w-5 ${meta.colorClass}` });
+              })() : /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-5 w-5" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "Preview comment", onClick: () => {
+                setShowPreviewPanel((v) => !v);
+                setShowCommentsPanel(false);
+                setShowFinishPanel(false);
+                setOpenMenu(null);
+              }, "aria-pressed": showPreviewPanel, className: "inline-flex items-center justify-center text-gray-600 dark:text-gray-300", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, background: "transparent", minWidth: 36 * GLOBAL_HEIGHT_SCALE, minHeight: 36 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-5 w-5" }) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { position: "absolute", right: 10, bottom: 10, display: "flex", gap: 8, alignItems: "center", pointerEvents: "auto", zIndex: 70 }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", title: "View comments", onClick: () => {
+                setShowCommentsPanel((v) => !v);
+                setShowFinishPanel(false);
+                setOpenMenu(null);
+                setShowPreviewPanel(false);
+              }, "aria-pressed": showCommentsPanel, style: { padding: 8 * GLOBAL_HEIGHT_SCALE, pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(MessagesSquare, { className: "h-5 w-5 text-gray-600 dark:text-gray-300" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { title: activeReplyThreadId ? "Finalize reply" : "Finalize comment", onClick: () => {
+                setName(inlineName || name2);
+                setEmail(inlineEmail || email);
+                openFinishPanel();
+              }, className: "inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900", "aria-label": "Finalize comment", style: { height: 30 * GLOBAL_HEIGHT_SCALE, width: 30 * GLOBAL_HEIGHT_SCALE, borderRadius: 999, alignItems: "center", justifyContent: "center", pointerEvents: "auto" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUp, { className: "h-5 w-5" }) })
+            ] })
+          ] })
+        ] }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-foreground z-100 ", style: { width: "100%", maxWidth: CONTENT_MAX_WIDTH, pointerEvents: "auto" }, ref: sentenceRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-foreground ", style: { background: "transparent", padding: `${3 * GLOBAL_HEIGHT_SCALE}px 0`, textAlign: "center", borderRadius: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-foreground", style: { fontSize: 14 * GLOBAL_HEIGHT_SCALE }, children: randomSentence }) }) })
+      ] }),
+      showFinishPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: finishPanelRef, className: "shadow-lg px-2 py-4 bg-background border", style: { maxHeight: "60vh", overflowY: "auto", overscrollBehavior: "contain", pointerEvents: "auto" }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold mb-1", children: "Finalize your comment" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             Button,
             {
               title: "Send",
-              className: `bg-transparent hover:border-[#76b900] transition-colors ${status === "submitting" || cooldownLeft > 0 ? "px-2 py-2 rounded-full" : " rounded-full h-9 w-9 flex items-center justify-center"} text-white dark:text-gray-900`,
+              className: `bg-black hover:bg-black dark:hover:bg-white dark:bg-white transition-colors ${status === "submitting" || cooldownLeft > 0 ? "px-2 py-2 rounded-full" : " rounded-full h-7 w-7 flex items-center justify-center"} text-white dark:text-black bg-black dark:bg-white`,
               variant: "outline",
               onClick: handleFinishSubmit,
               disabled: status === "submitting" || cooldownLeft > 0,
-              children: status === "submitting" ? "Submitting…" : cooldownLeft > 0 ? `Wait ${cooldownLeft}s` : /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "h-5 w-5" })
+              children: status === "submitting" ? /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "h-5 w-5 animate-spin" }) : cooldownLeft > 0 ? `Wait ${cooldownLeft}s` : status === "success" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "h-5 w-5", style: { color: "#16a34a" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "h-5 w-5" })
             }
           ) })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-2 mt-3", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex items-center gap-4 min-w-0", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", "aria-label": "Upload avatar", onClick: () => promptForAvatar(email || inlineEmail || ""), className: "shrink-0 w-8 h-8 rounded-full overflow-hidden cursor-pointer flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#76b900]", title: "Change avatar", children: getAvatarForEmail((email || "").toLowerCase()) ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: getAvatarForEmail((email || "").toLowerCase()), alt: name2 || inlineName || "avatar", className: "w-full h-full object-cover block", style: { borderRadius: "50%" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-full flex items-center justify-center text-white font-semibold", style: { background: colorFromKey(email || name2 || "anon") }, children: initialsFromName(name2 || inlineName) }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { id: "finish-name", className: "w-full min-w-0 pl-3 py-2 rounded bg-transparent placeholder-gray-400 border text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", placeholder: "Your name", value: name2, onChange: (e) => setName(e.target.value) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { id: "finish-name", className: "w-full min-w-0 pl-3 py-2 rounded bg-transparent placeholder-gray-400 border focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", placeholder: "Your name", value: name2, onChange: (e) => setName(e.target.value) })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border  text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "email", placeholder: "Email address", value: email, onChange: (e) => setEmail(e.target.value) }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex items-center gap-2 min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border  text-gray-200 focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", inputMode: "numeric", placeholder: `${captchaX} + ${captchaY} = ?`, value: captchaInput, onChange: (e) => setCaptchaInput(e.target.value) }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "email", placeholder: "Email address", value: email, onChange: (e) => setEmail(e.target.value) }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative flex items-center gap-2 min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: "w-full pl-3 py-2 rounded bg-transparent placeholder-gray-400 border focus:outline-none focus:border-[#76b900] focus:ring-1 focus:ring-[#76b900]", type: "text", inputMode: "numeric", placeholder: `${captchaX} + ${captchaY} = ?`, value: captchaInput, onChange: (e) => setCaptchaInput(e.target.value) }) })
         ] }),
         topError ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-red-600 text-sm mt-2", children: topError }) : null
       ] }) }) }),
-      showCommentsPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: commentsPanelRef, className: "rounded-md shadow-lg p-3 bg-background border", style: { maxHeight: "58vh", overflowY: "auto", overscrollBehavior: "contain", pointerEvents: "auto", padding: 12 * GLOBAL_HEIGHT_SCALE }, children: [
+      showCommentsPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: commentsPanelRef, className: " shadow-lg p-3 bg-background border", style: { maxHeight: "58vh", overflowY: "auto", overscrollBehavior: "contain", pointerEvents: "auto", padding: 12 * GLOBAL_HEIGHT_SCALE }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between mb-2", style: { gap: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 13 * GLOBAL_HEIGHT_SCALE }, children: loadingComments ? "Loading…" : `${comments.length} comment${comments.length === 1 ? "" : "s"}` }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSummaryBox, { tid: "__post__", style: { display: "inline-flex", marginLeft: 6 } }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 16 * GLOBAL_HEIGHT_SCALE }, children: loadingComments ? "Loading…" : `${comments.length} comment${comments.length === 1 ? "" : "s"}` }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSummaryBox, { tid: "__post__", style: { display: "inline-flex", marginLeft: 0 } }) })
         ] }) }),
         loadingComments && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { style: {}, children: "Loading comments…" }),
         commentsError && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { style: {}, children: "No comments yet." }),
@@ -84082,15 +83778,15 @@ function CommentForm({
           const flat = flattenThread(thr.rootNode);
           const reactionCounts = reactionSummaryForThread(thr.tid);
           const totalReactions = Object.values(reactionCounts).reduce((s2, v) => s2 + v, 0);
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border", style: { padding: 8 * GLOBAL_HEIGHT_SCALE, borderRadius: 8 }, children: [
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "", style: { padding: 0 * GLOBAL_HEIGHT_SCALE, borderRadius: 0 }, children: [
             flat.map(({ node: node2, parent }, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(CompactCommentCard, { it: node2.item, tid: thr.tid, parent: parent ? parent.item : null }, `${node2.key}::${idx}`)),
             totalReactions > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 8 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionSummaryBox, { tid: thr.tid }) })
           ] }, thr.tid);
         }) })
       ] }) }) }),
-      showPreviewPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: previewPanelRef, className: "rounded-md shadow-lg p-4 bg-background border", style: { maxHeight: "60vh", overflowY: "auto", overscrollBehavior: "contain", pointerEvents: "auto" }, children: [
+      showPreviewPanel && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed left-0 right-0", style: { bottom: 0, zIndex: 55 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { maxWidth: CONTENT_MAX_WIDTH, margin: "0 auto", padding: "0 12px", paddingBottom: finishPanelBottom }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: previewPanelRef, className: "shadow-lg p-2 bg-background border", style: { maxHeight: "60vh", overflowY: "auto", overscrollBehavior: "contain", pointerEvents: "auto" }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-start justify-between mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-md font-semibold mb-1", children: "Preview" }) }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full rounded-lg p-3 border bg-muted", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full p-3 border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => promptForAvatar(email || inlineEmail || ""), className: "h-10 w-10 rounded-full flex items-center justify-center text-white font-semibold overflow-hidden", style: { backgroundColor: colorFromKey(name2 || "anon"), border: "none", padding: 0 }, title: "Click to set/change avatar for current email", children: getAvatarForEmail((email || "").toLowerCase()) ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: getAvatarForEmail((email || "").toLowerCase()), alt: name2 || "avatar", style: { width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }, children: initialsFromName(name2) }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
@@ -84098,19 +83794,19 @@ function CommentForm({
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gray-400", children: "• just now" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-2 inline-flex items-center", children: reaction ? /* @__PURE__ */ jsxRuntimeExports.jsx(ReactionIcon, { id: reaction, size: 18 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Smile, { style: { height: 18, width: 18 } }) })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 text-sm whitespace-pre-wrap", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins, rehypePlugins, children: comment2 || "(Your comment will appear here)" }) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 text-sm whitespace-pre-wrap", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Markdown, { remarkPlugins, rehypePlugins, children: comment2 || "Start commenting!" }) })
           ] })
         ] }) })
       ] }) }) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `f
-      .comment-ui [style*="overscroll-behavior"] { overscroll-behavior: contain; }
-      .composer-card.multiline { border-radius: ${12 * GLOBAL_HEIGHT_SCALE}px; }
-      .comment-ui textarea { font-size: ${16 * GLOBAL_HEIGHT_SCALE}px; }
-      @media (min-width: 640px) { .comment-ui textarea { font-size: ${13 * GLOBAL_HEIGHT_SCALE}px; } }
-      .compact-comment { transition: background 120ms ease; }
-      .compact-comment:hover { background: rgba(255,255,255,0.02); }
-    ` })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
+        f .comment-ui [style*="overscroll-behavior"] { overscroll-behavior: contain; }
+        .composer-card.multiline { border-radius: ${12 * GLOBAL_HEIGHT_SCALE}px; }
+        .comment-ui textarea { font-size: ${16 * GLOBAL_HEIGHT_SCALE}px; }
+        @media (min-width: 640px) { .comment-ui textarea { font-size: ${13 * GLOBAL_HEIGHT_SCALE}px; } }
+        .compact-comment { transition: background 120ms ease; }
+        .compact-comment:hover { background: rgba(255,255,255,0.02); }
+      ` })
   ] });
 }
 const schema$1 = {
@@ -84857,23 +84553,6 @@ function BlogPostWithStickyTOC() {
               ] })
             ] })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Link,
-            {
-              to: "/blog",
-              "aria-label": "Back to blog",
-              className: "absolute left-0 top-11 z-20",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  variant: "outline",
-                  className: "p-0! h-10! w-10! rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm bg-background/80 hover:bg-background border-gray-300 dark:border-gray-600",
-                  "aria-label": "Back to blog",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "h-4 w-4" })
-                }
-              )
-            }
-          ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "prose prose-lg dark:prose-invert max-w-none markdown-body", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               Markdown,

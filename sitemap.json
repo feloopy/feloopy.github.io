@@ -1,94 +1,94 @@
 [
   {
     "loc": "https://feloopy.github.io/",
-    "lastmod": "2025-11-14T14:05:46.962Z"
+    "lastmod": "2025-11-15T07:59:36.657Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/bug-report",
-    "lastmod": "2025-11-14T14:05:46.963Z"
+    "lastmod": "2025-11-15T07:59:36.672Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/feature-request",
-    "lastmod": "2025-11-14T14:05:46.963Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/submissions/payment",
-    "lastmod": "2025-11-14T14:05:46.968Z"
+    "lastmod": "2025-11-15T07:59:36.679Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/project",
-    "lastmod": "2025-11-14T14:05:46.970Z"
+    "lastmod": "2025-11-15T07:59:36.684Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/contact",
-    "lastmod": "2025-11-14T14:05:46.970Z"
+    "lastmod": "2025-11-15T07:59:36.688Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions/payment",
+    "lastmod": "2025-11-15T07:59:36.692Z"
   },
   {
     "loc": "https://feloopy.github.io/about",
-    "lastmod": "2025-11-14T14:05:46.962Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/submissions",
-    "lastmod": "2025-11-14T14:05:46.960Z"
+    "lastmod": "2025-11-15T07:59:36.655Z"
   },
   {
     "loc": "https://feloopy.github.io/docs",
-    "lastmod": "2025-11-14T14:05:46.962Z"
+    "lastmod": "2025-11-15T07:59:36.649Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions",
+    "lastmod": "2025-11-15T07:59:36.645Z"
   },
   {
     "loc": "https://feloopy.github.io/blog",
-    "lastmod": "2025-11-14T14:05:46.973Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/blog/llms-and-decision-science",
-    "lastmod": "2025-11-14T14:05:46.973Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/copt",
-    "lastmod": "2025-11-14T14:05:50.898Z"
+    "lastmod": "2025-11-15T07:59:36.658Z"
   },
   {
     "loc": "https://feloopy.github.io/store",
-    "lastmod": "2025-11-14T14:05:46.972Z"
+    "lastmod": "2025-11-15T07:59:36.658Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog/llms-and-decision-science",
+    "lastmod": "2025-11-15T07:59:36.696Z"
   },
   {
     "loc": "https://feloopy.github.io/store/highs",
-    "lastmod": "2025-11-14T14:05:50.956Z"
+    "lastmod": "2025-11-15T07:59:43.844Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/copt",
+    "lastmod": "2025-11-15T07:59:43.740Z"
   },
   {
     "loc": "https://feloopy.github.io/store/timefold",
-    "lastmod": "2025-11-14T14:05:50.937Z"
+    "lastmod": "2025-11-15T07:59:46.165Z"
   },
   {
     "loc": "https://feloopy.github.io/store/seeker",
-    "lastmod": "2025-11-14T14:05:52.685Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/mosek",
-    "lastmod": "2025-11-14T14:05:52.379Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/blog/list-of-optimization-packages",
-    "lastmod": "2025-11-14T14:05:55.714Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/picat",
-    "lastmod": "2025-11-14T14:05:56.867Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/lpsolve",
-    "lastmod": "2025-11-14T14:05:55.848Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/gusek",
-    "lastmod": "2025-11-14T14:05:57.849Z"
+    "lastmod": "2025-11-15T07:59:45.787Z"
   },
   {
     "loc": "https://feloopy.github.io/store/scip",
-    "lastmod": "2025-11-14T14:05:58.133Z"
+    "lastmod": "2025-11-15T07:59:49.955Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/picat",
+    "lastmod": "2025-11-15T07:59:51.243Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/lpsolve",
+    "lastmod": "2025-11-15T07:59:52.707Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/gusek",
+    "lastmod": "2025-11-15T07:59:52.744Z"
   },
   {
     "loc": "https://feloopy.github.io/store/lpl",
-    "lastmod": "2025-11-14T14:05:58.697Z"
+    "lastmod": "2025-11-15T07:59:57.821Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog/list-of-optimization-packages",
+    "lastmod": "2025-11-15T07:59:51.191Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/mosek",
+    "lastmod": "2025-11-15T07:59:43.739Z"
   }
 ]

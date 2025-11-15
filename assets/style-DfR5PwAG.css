@@ -616,10 +616,6 @@ code.hljs {
     top: calc(var(--spacing) * 3);
   }
 
-  .top-11 {
-    top: calc(var(--spacing) * 11);
-  }
-
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
@@ -658,10 +654,6 @@ code.hljs {
 
   .z-10 {
     z-index: 10;
-  }
-
-  .z-20 {
-    z-index: 20;
   }
 
   .z-40 {
@@ -978,10 +970,6 @@ code.hljs {
     height: calc(var(--spacing) * 3);
   }
 
-  .h-3\.5 {
-    height: calc(var(--spacing) * 3.5);
-  }
-
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
@@ -1128,10 +1116,6 @@ code.hljs {
 
   .w-3 {
     width: calc(var(--spacing) * 3);
-  }
-
-  .w-3\.5 {
-    width: calc(var(--spacing) * 3.5);
   }
 
   .w-4 {
@@ -2346,10 +2330,6 @@ code.hljs {
     }
   }
 
-  .text-gray-200 {
-    color: var(--color-gray-200);
-  }
-
   .text-gray-400 {
     color: var(--color-gray-400);
   }
@@ -2786,8 +2766,8 @@ code.hljs {
       background-color: var(--color-amber-600);
     }
 
-    .hover\:bg-background:hover {
-      background-color: var(--background);
+    .hover\:bg-black:hover {
+      background-color: var(--color-black);
     }
 
     .hover\:bg-blue-600:hover {
@@ -3460,10 +3440,6 @@ code.hljs {
     background-color: #b5ff5a;
   }
 
-  .dark\:bg-black:is(.dark *) {
-    background-color: var(--color-black);
-  }
-
   .dark\:bg-card\/30:is(.dark *) {
     background-color: var(--card);
   }
@@ -3582,10 +3558,6 @@ code.hljs {
 
   .dark\:text-neutral-200:is(.dark *) {
     color: var(--color-neutral-200);
-  }
-
-  .dark\:text-white:is(.dark *) {
-    color: var(--color-white);
   }
 
   .dark\:even\:bg-gray-800\/50:is(.dark *):nth-child(2n) {
