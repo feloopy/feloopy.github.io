@@ -1,19 +1,15 @@
 name: Fetch Comments
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: '0 0 * * *'
-    - cron: '0 12 * * *'
+    - cron: '0 */6 * * *'   
 
 permissions:
   contents: write
 
 jobs:
   fetch-comments:
-    if: ${{ github.event_name != 'push' || github.actor != 'github-actions[bot]' }}
+    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
 
     concurrency:
@@ -33,7 +29,6 @@ jobs:
       - name: Validate output directory
         shell: bash
         run: |
-          set -euo pipefail
           mkdir -p "$(dirname "$COMMENTS_OUTPUT")"
 
       - name: Fetch comments
@@ -62,51 +57,42 @@ jobs:
             exit 6
           fi
 
-          # optional JSON validation if python3 is available
           if command -v python3 >/dev/null 2>&1; then
-            if ! python3 -m json.tool "$TMP" >/dev/null 2>&1; then
-              echo "ERROR: Invalid JSON response."
-              exit 7
+            python3 -m json.tool "$TMP" >/dev/null 2>&1 || { echo "ERROR: Invalid JSON."; exit 7; }
+          fi
+
+
+          if [ -f "$COMMENTS_OUTPUT" ]; then
+            if cmp -s "$TMP" "$COMMENTS_OUTPUT"; then
+              echo "No content changes detected. Not writing or committing."
+              exit 0      
             fi
           fi
 
+          echo "Content changed. Replacing comments.json."
           mv "$TMP" "$COMMENTS_OUTPUT"
 
-      - name: Commit and push (commit new file even if previously untracked)
+      - name: Commit and push (only if file changed)
+        if: ${{ success() }}
         shell: bash
         run: |
           set -euo pipefail
           OUT="$COMMENTS_OUTPUT"
 
           if [ ! -f "$OUT" ]; then
-            echo "No output file found; skipping commit."
+            echo "Output file missing; skipping commit."
             exit 0
           fi
-
-          if git ls-files --error-unmatch -- "$OUT" >/dev/null 2>&1; then
-            FILE_TRACKED=1
-          else
-            FILE_TRACKED=0
-          fi
-
-          BRANCH="${GITHUB_REF_NAME:-main}"
 
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-          if [ "$FILE_TRACKED" -eq 1 ]; then
-            if git diff --quiet --exit-code -- "$OUT"; then
-              echo "No changes detected in tracked file $OUT; skipping commit."
-              exit 0
-            fi
-          fi
-
-          git add -- "$OUT"
+          git add "$OUT"
 
           if git diff --cached --quiet; then
-            echo "No staged changes after adding; skipping commit."
+            echo "No staged changes; skipping commit."
             exit 0
           fi
 
           git commit -m "updated comments."
-          git push origin "HEAD:${BRANCH}"
+          git push origin HEAD
