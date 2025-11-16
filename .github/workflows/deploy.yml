@@ -2,8 +2,7 @@ name: Build and Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -28,19 +27,42 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ] || [ -f package.json ]; then
+            npm ci
+          fi
+
+      - name: Build site (if build script exists)
+        run: |
+          if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
+            npm run build
+          else
+            echo "No build script found; skipping."
+          fi
+
       - name: Prepare publish directory
         run: |
           mkdir -p "${{ env.PUBLISH_DIR }}"
+
           if [ -d "dist" ] && [ -n "$(ls -A dist 2>/dev/null || true)" ]; then
             cp -r dist/. "${{ env.PUBLISH_DIR }}/"
           else
             rsync -a --delete --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='README*' --exclude='LICENSE*' --exclude='package.json' --exclude='package-lock.json' --exclude='.gitignore' ./ "${{ env.PUBLISH_DIR }}/"
           fi
+
           if [ -z "$(ls -A "${{ env.PUBLISH_DIR }}" 2>/dev/null || true)" ]; then
             echo "Error: '${{ env.PUBLISH_DIR }}' is empty."
             ls -la
             exit 1
           fi
+
           echo "Publish directory contains:"
           ls -la "${{ env.PUBLISH_DIR }}"
 
@@ -54,7 +76,7 @@ jobs:
             exit 1
           fi
 
-      - name: Disable Jekyll and write CNAME
+      - name: Disable Jekyll and write CNAME (if configured)
         run: |
           touch "${{ env.PUBLISH_DIR }}/.nojekyll"
           if [ -n "${{ env.CUSTOM_DOMAIN:- }}" ]; then
