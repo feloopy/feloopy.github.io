@@ -53,6 +53,13 @@ jobs:
           echo "Publish directory contains:"
           ls -la "$PUBLISH_DIR"
 
+      - name: Debug to show exact html files
+        run: |
+          echo "List all HTML files under $PUBLISH_DIR (paths and sizes):"
+          find "$PUBLISH_DIR" -type f -name '*.html' -exec ls -la {} \; || true
+          echo "Also list top-level of publish dir:"
+          ls -la "$PUBLISH_DIR" || true
+
       - name: Warn / fail if publish dir is too large
         run: |
           max_bytes=$((1024 * 1024 * 1024))
