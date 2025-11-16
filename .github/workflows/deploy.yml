@@ -12,7 +12,6 @@ permissions:
 
 env:
   PUBLISH_DIR: publish
-  NODE_OPTIONS: --max-old-space-size=4096
 
 jobs:
   build-and-deploy:
@@ -27,23 +26,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js (optional)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies only if lockfile exists
-        run: |
-          if [ -f package-lock.json ]; then
-            echo "package-lock.json found — running npm ci"
-            npm ci
-          elif [ -f package.json ]; then
-            echo "package.json found but no lockfile — skipping npm install (no build step required)"
-          else
-            echo "No package.json found; skipping npm install."
-          fi
-
       - name: Prepare publish directory (repo-root contains built site)
         run: |
           set -e
@@ -55,11 +37,11 @@ jobs:
             --exclude='node_modules' \
             --exclude='README*' \
             --exclude='LICENSE*' \
-            --exclude='package.json' \
-            --exclude='package-lock.json' \
             --exclude='.gitignore' \
             --exclude='*.yml' \
             --exclude='*.yaml' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
             ./ "$PUBLISH_DIR/"
 
           if [ -z "$(ls -A "$PUBLISH_DIR" 2>/dev/null || true)" ]; then
