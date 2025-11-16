@@ -1,12 +1,6 @@
 name: Fetch Comments
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment (default: production)'
-        required: false
-        default: 'production'
   push:
     branches:
       - main
@@ -27,7 +21,7 @@ jobs:
       cancel-in-progress: false
 
     env:
-      COMMENTS_OUTPUT: ${{ secrets.COMMENTS_OUTPUT }}
+      COMMENTS_OUTPUT: ./data/comments.json
 
     steps:
       - name: Checkout
@@ -40,30 +34,26 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ -z "${COMMENTS_OUTPUT:-}" ]; then
-            echo "ERROR: COMMENTS_OUTPUT secret is empty. Set it to a path like 'data/comments.json'."
-            exit 2
-          fi
           mkdir -p "$(dirname "$COMMENTS_OUTPUT")"
 
       - name: Fetch comments
         shell: bash
         env:
-          APPS_SCRIPT_ID: ${{ secrets.APPS_SCRIPT_ID }}
-          APPS_SCRIPT_SECRET: ${{ secrets.APPS_SCRIPT_SECRET }}
+          COMMENTS_APP_ID: ${{ secrets.COMMENTS_APP_ID }}
+          COMMENTS_APP_SECRET: ${{ secrets.COMMENTS_APP_SECRET }}
         run: |
           set -euo pipefail
           TMP="$RUNNER_TEMP/comments.json.tmp"
           rm -f "$TMP"
 
-          if [ -z "${APPS_SCRIPT_ID:-}" ]; then
-            echo "ERROR: APPS_SCRIPT_ID secret missing"; exit 3
+          if [ -z "${COMMENTS_APP_ID:-}" ]; then
+            echo "ERROR: COMMENTS_APP_ID secret missing"; exit 3
           fi
-          if [ -z "${APPS_SCRIPT_SECRET:-}" ]; then
-            echo "ERROR: APPS_SCRIPT_SECRET secret missing"; exit 4
+          if [ -z "${COMMENTS_APP_:-}" ]; then
+            echo "ERROR: COMMENTS_APP_SECRET secret missing"; exit 4
           fi
 
-          URL="https://script.google.com/macros/s/${APPS_SCRIPT_ID}/exec?secret=${APPS_SCRIPT_SECRET}"
+          URL="https://script.google.com/macros/s/${COMMENTS_APP_ID}/exec?secret=${COMMENTS_APP_SECRET}"
 
           curl -fsSL --max-time 30 --retry 3 --retry-delay 2 "$URL" -o "$TMP"
 
