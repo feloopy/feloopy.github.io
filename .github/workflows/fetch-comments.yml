@@ -30,7 +30,7 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
-      - name: Validate and prepare output directory
+      - name: Validate output directory
         shell: bash
         run: |
           set -euo pipefail
@@ -49,7 +49,7 @@ jobs:
           if [ -z "${COMMENTS_APP_ID:-}" ]; then
             echo "ERROR: COMMENTS_APP_ID secret missing"; exit 3
           fi
-          if [ -z "${COMMENTS_APP_:-}" ]; then
+          if [ -z "${COMMENTS_APP_SECRET:-}" ]; then
             echo "ERROR: COMMENTS_APP_SECRET secret missing"; exit 4
           fi
 
@@ -62,6 +62,7 @@ jobs:
             exit 6
           fi
 
+          # optional JSON validation if python3 is available
           if command -v python3 >/dev/null 2>&1; then
             if ! python3 -m json.tool "$TMP" >/dev/null 2>&1; then
               echo "ERROR: Invalid JSON response."
@@ -90,7 +91,6 @@ jobs:
 
           BRANCH="${GITHUB_REF_NAME:-main}"
 
-          # attribute commit to the Actions app
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
