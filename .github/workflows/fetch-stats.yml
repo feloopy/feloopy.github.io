@@ -94,6 +94,37 @@ jobs:
           fetch_to_file "https://pypi.org/pypi/${PACKAGE}/json" tmp/pypi.json
           fetch_to_file "https://pypistats.org/api/packages/${PACKAGE}/overall?mirrors=false" tmp/pypistats.json
 
+          START_DATE=$(date -u -I -d "90 days ago") || START_DATE=$(date -u -I -v -90d)
+          COMMIT_FILES=()
+          for p in $(seq 1 10); do
+            url="https://api.github.com/repos/${REPO_FULL}/commits?since=${START_DATE}T00:00:00Z&per_page=100&page=${p}"
+            out="tmp/commits_${p}.json"
+            fetch_to_file "$url" "$out"
+            if jq -e 'if type=="array" then . else empty end' "$out" >/dev/null 2>&1; then
+              len=$(jq 'length' "$out")
+              if [[ "$len" -eq 0 ]]; then
+                break
+              fi
+              COMMIT_FILES+=("$out")
+              if [[ "$len" -lt 100 ]]; then
+                break
+              fi
+            else
+              break
+            fi
+          done
+
+          if [ ${#COMMIT_FILES[@]} -eq 0 ]; then
+            echo '{"commit_counts": {}, "last_commit_date": null}' > tmp/commit_counts_full.json
+          else
+            jq -s '
+              [ .[] | .[]? | ( .commit?.author?.date // .author?.date // null ) ]
+              | map(select(. != null) | .[0:10]) as $dates
+              | ( $dates | group_by(.) | map({date: .[0], count: length}) ) as $arr
+              | { commit_counts: ( $arr | map({ (.date): .count }) | add // {} ), last_commit_date: ( ($arr | sort_by(.date) | .[-1]?.date) // null ) }
+            ' "${COMMIT_FILES[@]}" > tmp/commit_counts_full.json
+          fi
+
           jq -n \
             --rawfile gh tmp/github.json \
             --rawfile stars tmp/stargazers.json \
@@ -101,6 +132,7 @@ jobs:
             --rawfile rel tmp/releases.json \
             --rawfile pypi tmp/pypi.json \
             --rawfile pypistats tmp/pypistats.json \
+            --rawfile commits tmp/commit_counts_full.json \
             '
             def safe_fromraw: try fromjson catch null;
 
@@ -137,7 +169,10 @@ jobs:
                         $ps
                       end
                   )
-                )
+                ),
+          
+              commit_counts: ( (($commits | safe_fromraw) // {} ) .commit_counts // {} ),
+              last_commit_date: ( (($commits | safe_fromraw) // {} ) .last_commit_date // null )
             }
             ' > data/stats.json
 
