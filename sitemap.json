@@ -1,102 +1,98 @@
 [
   {
     "loc": "https://feloopy.github.io/",
-    "lastmod": "2025-11-16T15:11:40.517Z"
+    "lastmod": "2025-11-16T15:32:23.124Z"
   },
   {
     "loc": "https://feloopy.github.io/status",
-    "lastmod": "2025-11-16T15:11:40.518Z"
+    "lastmod": "2025-11-16T15:32:23.129Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/bug-report",
-    "lastmod": "2025-11-16T15:11:40.533Z"
+    "lastmod": "2025-11-16T15:32:23.130Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/feature-request",
-    "lastmod": "2025-11-16T15:11:40.535Z"
+    "lastmod": "2025-11-16T15:32:23.141Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/project",
-    "lastmod": "2025-11-16T15:11:40.539Z"
+    "lastmod": "2025-11-16T15:32:23.142Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/contact",
-    "lastmod": "2025-11-16T15:11:40.540Z"
+    "lastmod": "2025-11-16T15:32:23.146Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions/payment",
-    "lastmod": "2025-11-16T15:11:40.542Z"
+    "lastmod": "2025-11-16T15:32:23.148Z"
   },
   {
     "loc": "https://feloopy.github.io/about",
-    "lastmod": "2025-11-16T15:11:40.516Z"
+    "lastmod": "2025-11-16T15:32:23.128Z"
   },
   {
     "loc": "https://feloopy.github.io/docs",
-    "lastmod": "2025-11-16T15:11:40.513Z"
+    "lastmod": "2025-11-16T15:32:23.123Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions",
-    "lastmod": "2025-11-16T15:11:40.519Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/blog",
-    "lastmod": "2025-11-16T15:11:40.518Z"
+    "lastmod": "2025-11-16T15:32:23.121Z"
   },
   {
     "loc": "https://feloopy.github.io/blog/llms-and-decision-science",
-    "lastmod": "2025-11-16T15:11:40.546Z"
+    "lastmod": "2025-11-16T15:32:23.149Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog",
+    "lastmod": "2025-11-16T15:32:23.148Z"
   },
   {
     "loc": "https://feloopy.github.io/store/copt",
-    "lastmod": "2025-11-16T15:11:45.563Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/highs",
-    "lastmod": "2025-11-16T15:11:45.560Z"
+    "lastmod": "2025-11-16T15:32:29.008Z"
   },
   {
     "loc": "https://feloopy.github.io/store",
-    "lastmod": "2025-11-16T15:11:40.542Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/blog/list-of-optimization-packages",
-    "lastmod": "2025-11-16T15:11:45.944Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/seeker",
-    "lastmod": "2025-11-16T15:11:51.062Z"
+    "lastmod": "2025-11-16T15:32:23.155Z"
   },
   {
     "loc": "https://feloopy.github.io/store/timefold",
-    "lastmod": "2025-11-16T15:11:50.552Z"
+    "lastmod": "2025-11-16T15:32:29.457Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/lpsolve",
-    "lastmod": "2025-11-16T15:11:51.909Z"
+    "loc": "https://feloopy.github.io/store/highs",
+    "lastmod": "2025-11-16T15:32:30.682Z"
   },
   {
     "loc": "https://feloopy.github.io/store/mosek",
-    "lastmod": "2025-11-16T15:11:50.693Z"
+    "lastmod": "2025-11-16T15:32:31.520Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog/list-of-optimization-packages",
+    "lastmod": "2025-11-16T15:32:29.010Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/seeker",
+    "lastmod": "2025-11-16T15:32:34.782Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/lpsolve",
+    "lastmod": "2025-11-16T15:32:36.064Z"
   },
   {
     "loc": "https://feloopy.github.io/store/picat",
-    "lastmod": "2025-11-16T15:11:55.638Z"
+    "lastmod": "2025-11-16T15:32:36.039Z"
   },
   {
     "loc": "https://feloopy.github.io/store/scip",
-    "lastmod": "2025-11-16T15:11:52.262Z"
+    "lastmod": "2025-11-16T15:32:35.103Z"
   },
   {
     "loc": "https://feloopy.github.io/store/gusek",
-    "lastmod": "2025-11-16T15:11:57.339Z"
+    "lastmod": "2025-11-16T15:32:38.832Z"
   },
   {
     "loc": "https://feloopy.github.io/store/lpl",
-    "lastmod": "2025-11-16T15:11:59.758Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/omelet",
-    "lastmod": "2025-11-16T15:11:58.040Z"
+    "lastmod": "2025-11-16T15:32:39.613Z"
   }
 ]

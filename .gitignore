@@ -2,4 +2,4 @@ source
 build.bat
 show.bat
 .vscode
-sitemap.json
+./sitemap.json
