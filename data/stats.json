@@ -1,0 +1,1783 @@
+{
+  "github": {
+    "id": 848472316,
+    "node_id": "R_kgDOMpKo_A",
+    "name": "feloopy",
+    "full_name": "feloopy/feloopy",
+    "private": false,
+    "owner": {
+      "login": "feloopy",
+      "id": 179565745,
+      "node_id": "O_kgDOCrP0sQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/179565745?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/feloopy",
+      "html_url": "https://github.com/feloopy",
+      "followers_url": "https://api.github.com/users/feloopy/followers",
+      "following_url": "https://api.github.com/users/feloopy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/feloopy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/feloopy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/feloopy/subscriptions",
+      "organizations_url": "https://api.github.com/users/feloopy/orgs",
+      "repos_url": "https://api.github.com/users/feloopy/repos",
+      "events_url": "https://api.github.com/users/feloopy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/feloopy/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "html_url": "https://github.com/feloopy/feloopy",
+    "description": "Python API",
+    "fork": false,
+    "url": "https://api.github.com/repos/feloopy/feloopy",
+    "forks_url": "https://api.github.com/repos/feloopy/feloopy/forks",
+    "keys_url": "https://api.github.com/repos/feloopy/feloopy/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/feloopy/feloopy/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/feloopy/feloopy/teams",
+    "hooks_url": "https://api.github.com/repos/feloopy/feloopy/hooks",
+    "issue_events_url": "https://api.github.com/repos/feloopy/feloopy/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/feloopy/feloopy/events",
+    "assignees_url": "https://api.github.com/repos/feloopy/feloopy/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/feloopy/feloopy/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/feloopy/feloopy/tags",
+    "blobs_url": "https://api.github.com/repos/feloopy/feloopy/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/feloopy/feloopy/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/feloopy/feloopy/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/feloopy/feloopy/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/feloopy/feloopy/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/feloopy/feloopy/languages",
+    "stargazers_url": "https://api.github.com/repos/feloopy/feloopy/stargazers",
+    "contributors_url": "https://api.github.com/repos/feloopy/feloopy/contributors",
+    "subscribers_url": "https://api.github.com/repos/feloopy/feloopy/subscribers",
+    "subscription_url": "https://api.github.com/repos/feloopy/feloopy/subscription",
+    "commits_url": "https://api.github.com/repos/feloopy/feloopy/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/feloopy/feloopy/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/feloopy/feloopy/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/feloopy/feloopy/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/feloopy/feloopy/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/feloopy/feloopy/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/feloopy/feloopy/merges",
+    "archive_url": "https://api.github.com/repos/feloopy/feloopy/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/feloopy/feloopy/downloads",
+    "issues_url": "https://api.github.com/repos/feloopy/feloopy/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/feloopy/feloopy/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/feloopy/feloopy/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/feloopy/feloopy/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/feloopy/feloopy/labels{/name}",
+    "releases_url": "https://api.github.com/repos/feloopy/feloopy/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/feloopy/feloopy/deployments",
+    "created_at": "2024-08-27T20:28:30Z",
+    "updated_at": "2025-09-25T17:57:43Z",
+    "pushed_at": "2025-09-25T17:57:39Z",
+    "git_url": "git://github.com/feloopy/feloopy.git",
+    "ssh_url": "git@github.com:feloopy/feloopy.git",
+    "clone_url": "https://github.com/feloopy/feloopy.git",
+    "svn_url": "https://github.com/feloopy/feloopy",
+    "homepage": "",
+    "size": 1238,
+    "stargazers_count": 32,
+    "watchers_count": 32,
+    "language": "Python",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": true,
+    "has_wiki": true,
+    "has_pages": false,
+    "has_discussions": false,
+    "forks_count": 2,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 0,
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "allow_forking": true,
+    "is_template": false,
+    "web_commit_signoff_required": false,
+    "topics": [],
+    "visibility": "public",
+    "forks": 2,
+    "open_issues": 0,
+    "watchers": 32,
+    "default_branch": "main",
+    "temp_clone_token": null,
+    "custom_properties": {},
+    "organization": {
+      "login": "feloopy",
+      "id": 179565745,
+      "node_id": "O_kgDOCrP0sQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/179565745?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/feloopy",
+      "html_url": "https://github.com/feloopy",
+      "followers_url": "https://api.github.com/users/feloopy/followers",
+      "following_url": "https://api.github.com/users/feloopy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/feloopy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/feloopy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/feloopy/subscriptions",
+      "organizations_url": "https://api.github.com/users/feloopy/orgs",
+      "repos_url": "https://api.github.com/users/feloopy/repos",
+      "events_url": "https://api.github.com/users/feloopy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/feloopy/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "network_count": 2,
+    "subscribers_count": 2
+  },
+  "stargazers": [
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/76708545?v=4",
+      "login": "ivilaboa",
+      "starred_at": "2024-08-27T21:20:29Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/6748953?v=4",
+      "login": "ryanjoneil",
+      "starred_at": "2024-10-01T10:53:21Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/88702596?v=4",
+      "login": "amirmafzali",
+      "starred_at": "2024-10-07T11:05:02Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/113678271?v=4",
+      "login": "mmz1380",
+      "starred_at": "2024-10-14T11:36:48Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/146956292?v=4",
+      "login": "why-SEREIN",
+      "starred_at": "2024-10-14T12:22:07Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/151754108?v=4",
+      "login": "santosjmo88",
+      "starred_at": "2024-10-20T05:39:55Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/62355776?v=4",
+      "login": "SamanNsr",
+      "starred_at": "2024-10-30T10:53:33Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/96598264?v=4",
+      "login": "ShayanDarabi",
+      "starred_at": "2024-11-04T10:49:55Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/49610590?v=4",
+      "login": "glanch",
+      "starred_at": "2025-01-01T20:19:05Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/37483841?v=4",
+      "login": "saptadeepb",
+      "starred_at": "2025-01-19T16:11:36Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/83864623?v=4",
+      "login": "whackerama",
+      "starred_at": "2025-01-19T18:19:36Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/89526668?v=4",
+      "login": "dkkloimwieder",
+      "starred_at": "2025-01-19T21:53:00Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/2980804?v=4",
+      "login": "ati-ozgur",
+      "starred_at": "2025-01-20T14:14:49Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/1006521?v=4",
+      "login": "sohaibafifi",
+      "starred_at": "2025-01-25T19:29:16Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/7015067?v=4",
+      "login": "vanamalivanam",
+      "starred_at": "2025-01-27T17:35:43Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/58215069?v=4",
+      "login": "fabioscantamburlo",
+      "starred_at": "2025-02-05T10:17:01Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/6173109?v=4",
+      "login": "skadio",
+      "starred_at": "2025-03-16T09:17:20Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/67297083?v=4",
+      "login": "trevorb1",
+      "starred_at": "2025-03-26T02:23:38Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/87331736?v=4",
+      "login": "kilteris",
+      "starred_at": "2025-04-30T04:45:55Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/63538622?v=4",
+      "login": "Emadab",
+      "starred_at": "2025-05-10T08:14:43Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/50929989?v=4",
+      "login": "JanghoPark-LBL",
+      "starred_at": "2025-05-11T08:13:40Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/181911600?v=4",
+      "login": "neb6dav",
+      "starred_at": "2025-05-11T19:39:38Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/129569556?v=4",
+      "login": "Soheilasaeidi69",
+      "starred_at": "2025-06-01T16:35:29Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/82948606?v=4",
+      "login": "son-do05",
+      "starred_at": "2025-06-20T14:28:51Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/87609748?v=4",
+      "login": "liu331904724",
+      "starred_at": "2025-06-30T11:56:44Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/107637007?v=4",
+      "login": "jccamargo94",
+      "starred_at": "2025-06-30T13:44:30Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/88280202?v=4",
+      "login": "PatrickDiallo23",
+      "starred_at": "2025-07-11T16:15:32Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/53649764?v=4",
+      "login": "GalPerelman",
+      "starred_at": "2025-07-29T05:40:40Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/7991350?v=4",
+      "login": "kangkot",
+      "starred_at": "2025-08-01T02:55:05Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/103349402?v=4",
+      "login": "AKarimzadeh",
+      "starred_at": "2025-08-10T03:12:25Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/7195770?v=4",
+      "login": "SiddhuGanjal",
+      "starred_at": "2025-08-14T08:54:20Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/93426266?v=4",
+      "login": "kiagram",
+      "starred_at": "2025-09-01T07:21:18Z"
+    }
+  ],
+  "contributors": [
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/179344848?v=4",
+      "login": "k-tafakkori",
+      "contributions": 93
+    },
+    {
+      "avatar_url": null,
+      "login": null,
+      "contributions": 1
+    }
+  ],
+  "releases": [
+    {
+      "id": 229236840,
+      "tag_name": "v0.3.9",
+      "name": "FelooPy v0.3.9",
+      "body": "# What's New\r\n\r\n- Multi-dimensional variables are now fully supported in heuristic optimization workflows.\r\n- Encoded solutions in heuristic optimization can now be automatically decoded, streamlining post-processing.\r\n- Binary, integer, and sequence variables are now accurately reported in model summaries and logs.\r\n- The `load_from_excel` functionality in the Data Toolkit has been fixed and enhanced. A new `save_to_excel` feature has also been added for improved usability.\r\n- Simulation of spatial datasets (e.g., points, distances) is now supported.\r\n- Issues related to counting variables—particularly sequence variables—have been resolved, with improved reporting.\r\n- The metric box now includes the following metrics, reported uniformly:\r\n  - MGT – Model Generation Time  \r\n  - CPT – Computational (CPU) Time  \r\n  - DSR – Data Support Ratio  \r\n  - DTD – Decision Tensor Density  \r\n  - STG – Algorithm Stagnation  \r\n  - OBJ – Objective Function Value  \r\n  - OBJ ALT – Objective Function Value for an Alternative (i.e, a Pareto-Optimal Solution)\r\n- A new model generation indicator has been added to track generation progress more effectively.\r\n- `mdl.get` has been optimized for faster access to decision variables.\r\n- `mdl.dvar` has been enhanced to better support dependent variables in heuristic optimization.\r\n- Reports are now chiclet-style: modular and printable by section, useful for large industrial models.\r\n- Heuristic optimization workflows (single- and multi-objective) are now easier to configure, with built-in encoder and decoder automation.\r\n- Experimental support for NVIDIA cuOpt is now available for GPU-accelerated optimization.\r\n- General stability improvements and bug fixes have been applied across the platform.\r\n",
+      "published_at": "2025-07-01T21:03:01Z",
+      "html_url": "https://github.com/feloopy/feloopy/releases/tag/v0.3.9"
+    },
+    {
+      "id": 215570835,
+      "tag_name": "v0.3.8",
+      "name": "FelooPy v0.3.8",
+      "body": "What's new?\r\n\r\n• Fully resolved dependencies—no more conflicts.\r\n• Minor bug fixes & performance tweaks.\r\n• Pass your dataset into the search operator to observe the magic.",
+      "published_at": "2025-04-29T19:08:54Z",
+      "html_url": "https://github.com/feloopy/feloopy/releases/tag/v0.3.8"
+    },
+    {
+      "id": 211103628,
+      "tag_name": "v0.3.7",
+      "name": "FelooPy v0.3.7",
+      "body": "**What's new?**\r\n\r\n- **Dependency Fixes:** Resolved issues with outdated or deprecated Python packages and NumPy types (`np.float`, `np.int`).  \r\n- **Core Improvements:** Enhanced reporting, notifiers (search/model status), decision uncertainty handling, and model-data integration.  \r\n- **Bug Fixes:** Corrected float values showing for binary/integer types and fixed logging issues (e.g., `pymprog`).  \r\n- **New Features:**  \r\n  - Added bounds checker for heuristics  \r\n  - Warnings for `penalty_coefficient`  \r\n  - Imprecision/unreliability checkers  \r\n  - Data report box  \r\n- **Solver & Interface Updates:**  \r\n  - **Highspy 1.10.0:** Fixed deprecated NumPy type usage  \r\n  - **Gekko 1.3.0:** Compatibility verified  \r\n  - **CVXPY 1.6.4:** Highs solver supported; ECOS dropped  \r\n  - **OR-Tools 9.12:** Supported; NumPy fixes applied  \r\n  - **PyDecision 4.7.5:** Added LMAW & CPP-Tri algorithms  \r\n  - **NiaPy 2.5.2:** Added (pending algorithm checks)  \r\n  - **Xpress:** Supported; variable-adding method needs update",
+      "published_at": "2025-04-08T18:31:21Z",
+      "html_url": "https://github.com/feloopy/feloopy/releases/tag/v0.3.7"
+    },
+    {
+      "id": 177572230,
+      "tag_name": "v0.3.6",
+      "name": "FelooPy v0.3.6",
+      "body": "## What is new?\r\n\r\n- Project has moved from https://github.com/ktafakkori/feloopy to https://github.com/feloopy/feloopy\r\n- Introducing `track_history=False/True` as a new search attribute, allowing visualization of trends using heuristic optimization algorithms.\r\n- Introducing `flp.parallel_search()` to parallelize the solution environments over threads and processes.\r\n- Introducing environment-based usage of multi-attribute decision-making methods.\r\n- `m.sets()` or `flp.sets()` now accepts one or more than one set in defining for loops.\r\n- `m.sum()` is now the best way to have summation expressions in the model.\r\n- Fixed bugs in displaying decision variables.\r\n- Fixed bugs in defining and using zero-dimensional variables in heuristic optimization.\r\n- Updated the solvers (i.e., algorithms) provided by the `niapy` and `mealpy` heuristic optimization interfaces.\r\n- Updated free solvers installable by `flp setup` or through the [FelooPy Engine](https://github.com/feloopy/engine).\r\n- Introducing `save_io` as a new method for the data toolkit.\r\n- Testing grad-heuristics (gradient-based optimizers of the machine learning field) for upcoming versions.\r\n- Enhancing the consistency between FelooPy and the FelooPy engine.\r\n- Numerous bug fixes and feature improvements.",
+      "published_at": "2024-09-30T11:20:49Z",
+      "html_url": "https://github.com/feloopy/feloopy/releases/tag/v0.3.6"
+    }
+  ],
+  "pypi": {
+    "info": {
+      "author": "Keivan Tafakkori",
+      "author_email": "k.tafakkori@gmail.com",
+      "bugtrack_url": null,
+      "classifiers": [],
+      "description": "<div align=\"center\">\r\n  <p>\r\n    <a href=\"https://feloopy.github.io\" target=\"_blank\">\r\n      <picture>\r\n        <source media=\"(prefers-color-scheme: light)\" srcset=\"https://github.com/feloopy/feloopy/raw/main/repo/assets/feloopy-logo-name-light.png\">\r\n        <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://github.com/feloopy/feloopy/raw/main/repo/assets/feloopy-logo-name-dark.png\">\r\n        <img alt=\"FelooPy's logo.\" src=\"https://github.com/feloopy/feloopy/raw/main/repo/assets/feloopy-logo-name-light.png\" width=\"300\" height=\"auto\">\r\n      </picture>\r\n    </a>\r\n  </p>\r\n</div>\r\n\r\n<p align=\"center\">\r\n  <strong>Efficient & Feature-Rich Integrated Decision Environment</strong>\r\n</p>\r\n\r\n<div align=\"center\" style=\"margin-bottom: 2px;\">\r\n\r\n![PyPI](https://img.shields.io/pypi/v/feloopy?color=green&label=version&labelColor=grey)\r\n![Release Date](https://img.shields.io/github/release-date/feloopy/feloopy?label=release&color=green&labelColor=grey)\r\n[![Downloads](https://static.pepy.tech/personalized-badge/feloopy?period=total&units=international_system&left_color=grey&right_color=green&left_text=downloads)](https://pepy.tech/project/feloopy)\r\n![License](https://img.shields.io/static/v1?label=license&message=MIT&color=green&labelColor=grey)\r\n\r\n</div>\r\n\r\n<br>\r\n\r\n### Quick Intro\r\n\r\nFelooPy (/fɛlupaɪ/) is a user-friendly tool for coding, modeling, and solving decision problems. It helps you focus on analysis and offers and supports a wide range of mathematical and statistical models and algorithms for decision-making.\r\n\r\n<br>\r\n\r\n### Quick Features\r\n\r\n- **Linear & Non-Linear Programming**: Exact algorithms for LP/NLP.\r\n- **Integer & Mixed-Integer Programming**: Exact algorithms for IP/MIP.\r\n- **General Purpose Programming**: Heuristic algorithms for various problems.\r\n- **Constraint Programming**: Techniques for constraint satisfaction.\r\n- **Multi-Objective Decision-Making**: Optimizing multiple objectives (MODM/MCDM).\r\n- **Multi-Attribute Decision-Making**: Evaluating opinions on alternatives using multiple attributes (MADM/MCDM).\r\n\r\n<br>\r\n\r\n### Quick Installation\r\n\r\nYou can install `feloopy` inside a Python>=3.1x.x virtual environment:\r\n\r\n```bash\r\npip install -U \"feloopy[stock]==0.3.9\"\r\n```\r\n\r\nFor supporting the developer, testing the latest version, and reporting bugs or contributing to the codebase, use:\r\n\r\n```bash\r\npip install \"feloopy[stock] @ git+https://github.com/feloopy/feloopy.git\"\r\n```\r\n\r\n<br>\r\n\r\n### Quick Testing\r\n\r\nHere is an example to test FelooPy's functionality:\r\n\r\n```python\r\nimport feloopy as flp\r\n\r\ndef example(m):\r\n    x = m.bvar(name=\"x\")\r\n    y = m.pvar(name=\"y\", bound=[0, 1])\r\n    m.con(x + y <= 1, name=\"c1\")\r\n    m.con(x - y >= 1, name=\"c2\")\r\n    m.obj(x + y)\r\n    return m\r\n\r\nflp.search(example,directions=[\"max\"]).clean_report()\r\n```\r\n\r\n<br>\r\n\r\n## Quick Citation\r\n\r\nTo cite or give credit to FelooPy in publications, projects, presentations, web pages, blog posts, etc., please use one of the following entries based on the version you used:\r\n\r\n---\r\n\r\n### APA 7th Edition\r\n\r\n**Tafakkori, K.** (2022–2025). *FelooPy: Efficient and feature-rich integrated decision environment* (Version 0.3.9) [Computer software]. GitHub. [https://github.com/feloopy/feloopy](https://github.com/feloopy/feloopy)\r\n\r\n*For APA 6th Edition*, use:\r\n**Tafakkori, K.** (2025). *FelooPy: Efficient and feature-rich integrated decision environment* (Version 0.3.9) [Computer software]. Retrieved from [https://github.com/feloopy/feloopy](https://github.com/feloopy/feloopy)\r\n\r\n---\r\n\r\n### LaTeX/BibTeX\r\n\r\n```bibtex\r\n@software{tafakkori_feloopy_2025,\r\n  author      = {Keivan Tafakkori},\r\n  title       = {{FelooPy: Efficient and Feature-Rich Integrated Decision Environment}},\r\n  year        = {2025},\r\n  version     = {0.3.9},\r\n  publisher   = {GitHub},\r\n  url         = {https://github.com/feloopy/feloopy},\r\n  note        = {Original release: September 2022},\r\n}\r\n```\r\n\r\n<br>\r\n<br>\r\n\r\n<details>\r\n<summary>Previous citations</summary>\r\n\r\n#### Versions before 0.3.6\r\n\r\n##### APA 6th/7th Edition\r\n\r\nTafakkori, K. (2022). FelooPy: An integrated optimization environment for AutoOR in Python [Python Library]. Retrieved from https://github.com/ktafakkori/feloopy (Original work published September 2022).\r\n\r\n##### LaTeX/BiBTeX\r\n\r\n```\r\n@software{ktafakkori2022Sep,\r\nauthor       = {Keivan Tafakkori},\r\ntitle        = { {FelooPy: An integrated optimization environment for AutoOR in Python} },\r\nyear         = {2022},\r\nmonth        = sep,\r\npublisher    = {GitHub},\r\nurl          = {https://github.com/ktafakkori/feloopy/}\r\n}\r\n```\r\n\r\n</details>\r\n",
+      "description_content_type": "text/markdown",
+      "docs_url": null,
+      "download_url": "https://github.com/feloopy/feloopy/releases",
+      "downloads": {
+        "last_day": -1,
+        "last_month": -1,
+        "last_week": -1
+      },
+      "dynamic": [
+        "Author",
+        "Author-Email",
+        "Description",
+        "Description-Content-Type",
+        "Download-Url",
+        "Home-Page",
+        "Keywords",
+        "License",
+        "License-File",
+        "Maintainer",
+        "Maintainer-Email",
+        "Provides-Extra",
+        "Requires-Dist",
+        "Requires-Python",
+        "Summary"
+      ],
+      "home_page": "https://feloopy.github.io/",
+      "keywords": "computer science, data science, decision making, decision science, industrial engineering, machine learning, management science, mathematical modeling, operations management, operations research, optimization, simulation, supply chain",
+      "license": "MIT",
+      "license_expression": null,
+      "license_files": [
+        "license.txt"
+      ],
+      "maintainer": "Keivan Tafakkori",
+      "maintainer_email": "k.tafakkori@gmail.com",
+      "name": "feloopy",
+      "package_url": "https://pypi.org/project/feloopy/",
+      "platform": null,
+      "project_url": "https://pypi.org/project/feloopy/",
+      "project_urls": {
+        "Download": "https://github.com/feloopy/feloopy/releases",
+        "Homepage": "https://feloopy.github.io/"
+      },
+      "provides_extra": [
+        "pico",
+        "nano",
+        "micro",
+        "mini",
+        "full",
+        "stock",
+        "hyper",
+        "plus-gurobi",
+        "plus-cplex",
+        "plus-xpress",
+        "plus-copt",
+        "plus-insideopt",
+        "plus-insideoptdemo",
+        "plus-gams",
+        "plus-jump",
+        "only-cylp",
+        "only-linux",
+        "mega",
+        "beta"
+      ],
+      "release_url": "https://pypi.org/project/feloopy/0.3.9/",
+      "requires_dist": [
+        "gputil",
+        "infix",
+        "matplotlib",
+        "nbformat",
+        "numpy",
+        "openpyxl",
+        "pandas",
+        "psutil",
+        "py-cpuinfo",
+        "tabulate",
+        "win-unicode-console",
+        "xlsxwriter",
+        "tqdm",
+        "colorama",
+        "rich",
+        "pymprog==1.1.2; extra == \"nano\"",
+        "highspy==1.10.0; extra == \"nano\"",
+        "pymprog==1.1.2; extra == \"micro\"",
+        "highspy==1.10.0; extra == \"micro\"",
+        "gekko==1.3.0; extra == \"micro\"",
+        "mealpy==3.0.1; extra == \"micro\"",
+        "pymprog==1.1.2; extra == \"mini\"",
+        "highspy==1.10.0; extra == \"mini\"",
+        "gekko==1.3.0; extra == \"mini\"",
+        "mealpy==3.0.1; extra == \"mini\"",
+        "cvxpy==1.6.4; extra == \"mini\"",
+        "ortools==9.12.4544; extra == \"mini\"",
+        "pymprog==1.1.2; extra == \"full\"",
+        "highspy==1.10.0; extra == \"full\"",
+        "gekko==1.3.0; extra == \"full\"",
+        "mealpy==3.0.1; extra == \"full\"",
+        "cvxpy==1.6.4; extra == \"full\"",
+        "ortools==9.12.4544; extra == \"full\"",
+        "pydecision==4.7.5; extra == \"full\"",
+        "pymoo==0.6.1.3; extra == \"full\"",
+        "rsome==1.3.1; extra == \"full\"",
+        "pymprog==1.1.2; extra == \"stock\"",
+        "highspy==1.10.0; extra == \"stock\"",
+        "gekko==1.3.0; extra == \"stock\"",
+        "mealpy==3.0.1; extra == \"stock\"",
+        "cvxpy==1.6.4; extra == \"stock\"",
+        "ortools==9.12.4544; extra == \"stock\"",
+        "pydecision==4.7.5; extra == \"stock\"",
+        "pymoo==0.6.1.3; extra == \"stock\"",
+        "rsome==1.3.1; extra == \"stock\"",
+        "linopy==0.5.2; extra == \"stock\"",
+        "mip==1.15.0; extra == \"stock\"",
+        "niapy==2.5.2; extra == \"stock\"",
+        "picos==2.6.0; extra == \"stock\"",
+        "pulp==3.1.1; extra == \"stock\"",
+        "pygad==3.4.0; extra == \"stock\"",
+        "pyomo==6.9.1; extra == \"stock\"",
+        "highsbox==1.10.0; extra == \"stock\"",
+        "pyoptinterface==0.4.1; extra == \"stock\"",
+        "pymprog==1.1.2; extra == \"hyper\"",
+        "highspy==1.10.0; extra == \"hyper\"",
+        "gekko==1.3.0; extra == \"hyper\"",
+        "mealpy==3.0.1; extra == \"hyper\"",
+        "cvxpy==1.6.4; extra == \"hyper\"",
+        "ortools==9.12.4544; extra == \"hyper\"",
+        "pydecision==4.7.5; extra == \"hyper\"",
+        "pymoo==0.6.1.3; extra == \"hyper\"",
+        "rsome==1.3.1; extra == \"hyper\"",
+        "linopy==0.5.2; extra == \"hyper\"",
+        "mip==1.15.0; extra == \"hyper\"",
+        "niapy==2.5.2; extra == \"hyper\"",
+        "picos==2.6.0; extra == \"hyper\"",
+        "pulp==3.1.1; extra == \"hyper\"",
+        "pygad==3.4.0; extra == \"hyper\"",
+        "pyomo==6.9.1; extra == \"hyper\"",
+        "highsbox==1.10.0; extra == \"hyper\"",
+        "pyoptinterface==0.4.1; extra == \"hyper\"",
+        "gurobipy==12.0.1; extra == \"hyper\"",
+        "cplex==22.1.2.0; extra == \"hyper\"",
+        "docplex==2.29.241; extra == \"hyper\"",
+        "xpress==9.5.4; extra == \"hyper\"",
+        "coptpy==7.2.6; extra == \"hyper\"",
+        "gamspy==1.8.0; extra == \"hyper\"",
+        "gurobipy==12.0.1; extra == \"plus-gurobi\"",
+        "cplex==22.1.2.0; extra == \"plus-cplex\"",
+        "docplex==2.29.241; extra == \"plus-cplex\"",
+        "xpress==9.5.4; extra == \"plus-xpress\"",
+        "coptpy==7.2.6; extra == \"plus-copt\"",
+        "insideopt-seeker==0.1.21; extra == \"plus-insideopt\"",
+        "insideopt-demo==0.3.3; extra == \"plus-insideoptdemo\"",
+        "gamspy==1.8.0; extra == \"plus-gams\"",
+        "juliacall==0.9.24; extra == \"plus-jump\"",
+        "cylp==0.92.2; extra == \"only-cylp\"",
+        "pymultiobjective==1.5.5; extra == \"only-linux\"",
+        "pymprog==1.1.2; extra == \"mega\"",
+        "highspy==1.10.0; extra == \"mega\"",
+        "gekko==1.3.0; extra == \"mega\"",
+        "mealpy==3.0.1; extra == \"mega\"",
+        "cvxpy==1.6.4; extra == \"mega\"",
+        "ortools==9.12.4544; extra == \"mega\"",
+        "pydecision==4.7.5; extra == \"mega\"",
+        "pymoo==0.6.1.3; extra == \"mega\"",
+        "rsome==1.3.1; extra == \"mega\"",
+        "linopy==0.5.2; extra == \"mega\"",
+        "mip==1.15.0; extra == \"mega\"",
+        "niapy==2.5.2; extra == \"mega\"",
+        "picos==2.6.0; extra == \"mega\"",
+        "pulp==3.1.1; extra == \"mega\"",
+        "pygad==3.4.0; extra == \"mega\"",
+        "pyomo==6.9.1; extra == \"mega\"",
+        "highsbox==1.10.0; extra == \"mega\"",
+        "pyoptinterface==0.4.1; extra == \"mega\"",
+        "gurobipy==12.0.1; extra == \"mega\"",
+        "cplex==22.1.2.0; extra == \"mega\"",
+        "docplex==2.29.241; extra == \"mega\"",
+        "xpress==9.5.4; extra == \"mega\"",
+        "coptpy==7.2.6; extra == \"mega\"",
+        "gamspy==1.8.0; extra == \"mega\"",
+        "cylp==0.92.2; extra == \"mega\"",
+        "pymultiobjective==1.5.5; extra == \"mega\"",
+        "casadi==3.7.0; extra == \"beta\"",
+        "scipy==1.15.2; extra == \"beta\""
+      ],
+      "requires_python": ">=3.10",
+      "summary": "FelooPy: Efficient and feature-rich integrated decision environment",
+      "version": "0.3.9",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    "last_serial": 29927109,
+    "releases": {
+      "0.2.3": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "73da6affaa194c1ac10e750abb631ea1ea20d14209a1353d1887f642c8de45f4",
+            "md5": "37a4a67305f00650444408076525a80f",
+            "sha256": "de6b418820a412c187f38c7ba4d62fdbe4972a6a3cdef457a358a2135bcdce99"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.3-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "37a4a67305f00650444408076525a80f",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 58940,
+          "upload_time": "2023-02-28T19:19:41",
+          "upload_time_iso_8601": "2023-02-28T19:19:41.875383Z",
+          "url": "https://files.pythonhosted.org/packages/73/da/6affaa194c1ac10e750abb631ea1ea20d14209a1353d1887f642c8de45f4/feloopy-0.2.3-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "cdee31fbca5077842a651fe2477eadf7bf0def6cd880cda65014e7760a3228ba",
+            "md5": "01c52ee89040b1dd27fc064d420bf8fe",
+            "sha256": "56fa120a5ff34873638cb073d716e9f9ac8a79f4a82dc2520385495c8719a551"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.3.tar.gz",
+          "has_sig": false,
+          "md5_digest": "01c52ee89040b1dd27fc064d420bf8fe",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 34611,
+          "upload_time": "2023-02-28T19:19:45",
+          "upload_time_iso_8601": "2023-02-28T19:19:45.267635Z",
+          "url": "https://files.pythonhosted.org/packages/cd/ee/31fbca5077842a651fe2477eadf7bf0def6cd880cda65014e7760a3228ba/feloopy-0.2.3.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.2.4": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "86252312de0af7a529675718d03123aed42a27a44d60c265180122622b81ed35",
+            "md5": "d2b3304f11684e8f48ff80c8b3b01ca9",
+            "sha256": "aeea2edca2b4777bd1791b6f16bf483bdde8b35a2ef3ffcf3f32d65ee7a7aa5f"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.4-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "d2b3304f11684e8f48ff80c8b3b01ca9",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 75818,
+          "upload_time": "2023-04-16T19:25:51",
+          "upload_time_iso_8601": "2023-04-16T19:25:51.652918Z",
+          "url": "https://files.pythonhosted.org/packages/86/25/2312de0af7a529675718d03123aed42a27a44d60c265180122622b81ed35/feloopy-0.2.4-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "bf70bd4b10d63c4e512f1923cc25d8faba3c29932f0717867d309a67f5024760",
+            "md5": "fa83a1f6842553bcd00c9e7ecbaf81c4",
+            "sha256": "24e37275abde673eaa5893e8a9218b8cc287dfa0c12fd00f9a89ecfc3adee43d"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.4.tar.gz",
+          "has_sig": false,
+          "md5_digest": "fa83a1f6842553bcd00c9e7ecbaf81c4",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 46336,
+          "upload_time": "2023-04-16T19:25:54",
+          "upload_time_iso_8601": "2023-04-16T19:25:54.906173Z",
+          "url": "https://files.pythonhosted.org/packages/bf/70/bd4b10d63c4e512f1923cc25d8faba3c29932f0717867d309a67f5024760/feloopy-0.2.4.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.2.5": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "0dfbfe9c70a6f835cc7d5a9b7e5c58a122598468802390da55b3ace5730b04d3",
+            "md5": "59d19918fac6abab185b2cbe0dad37d9",
+            "sha256": "f526cf2951befb8071d4847fae8fe88231502b5c0170f40e67acb630cc4129a8"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.5-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "59d19918fac6abab185b2cbe0dad37d9",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 152018,
+          "upload_time": "2023-05-27T17:40:01",
+          "upload_time_iso_8601": "2023-05-27T17:40:01.007625Z",
+          "url": "https://files.pythonhosted.org/packages/0d/fb/fe9c70a6f835cc7d5a9b7e5c58a122598468802390da55b3ace5730b04d3/feloopy-0.2.5-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "6763cea55a58d8f7d86c3c76075cfbc5e2d482e617471c8c2fce5f5d6a1500b9",
+            "md5": "3e2d495c550bbc4688b3ebfce1f53e5d",
+            "sha256": "b2d9d3fb9ec3f36d0a968369844015f94c62b690f48767fcb2366ca498e4a696"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.5.tar.gz",
+          "has_sig": false,
+          "md5_digest": "3e2d495c550bbc4688b3ebfce1f53e5d",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 76233,
+          "upload_time": "2023-05-27T17:40:05",
+          "upload_time_iso_8601": "2023-05-27T17:40:05.599283Z",
+          "url": "https://files.pythonhosted.org/packages/67/63/cea55a58d8f7d86c3c76075cfbc5e2d482e617471c8c2fce5f5d6a1500b9/feloopy-0.2.5.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.2.6": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "88e981b118d64b9e9cca2c0783c8634e7830f42f8c1658590cd3aa54386a4dc5",
+            "md5": "6dc0c8891b2675dac30a7afe9dbcb9ab",
+            "sha256": "1b049503db525c0f770c6f3ec861814945e958a535391984fb1508a6d06ba39a"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.6-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "6dc0c8891b2675dac30a7afe9dbcb9ab",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 167204,
+          "upload_time": "2023-07-06T10:28:40",
+          "upload_time_iso_8601": "2023-07-06T10:28:40.851627Z",
+          "url": "https://files.pythonhosted.org/packages/88/e9/81b118d64b9e9cca2c0783c8634e7830f42f8c1658590cd3aa54386a4dc5/feloopy-0.2.6-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "2080a9bec376e228229c3371e38dafde9499adc679bbde60749590b0309d1403",
+            "md5": "e4143f3bfdd67e93ac62101ed67224c7",
+            "sha256": "1deb2fcc8eedfe8076bb5c07004908a10ceb38101f6f9efa27aafe97c9c2719f"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.6.tar.gz",
+          "has_sig": false,
+          "md5_digest": "e4143f3bfdd67e93ac62101ed67224c7",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 85218,
+          "upload_time": "2023-07-06T10:28:43",
+          "upload_time_iso_8601": "2023-07-06T10:28:43.744479Z",
+          "url": "https://files.pythonhosted.org/packages/20/80/a9bec376e228229c3371e38dafde9499adc679bbde60749590b0309d1403/feloopy-0.2.6.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.2.7": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "6cbdbd7bb23b281485a27b8b47b7a4fdbf8ba2d6db07d7a3a67bc74ae7939f48",
+            "md5": "4e46d15b1c46fba9c50a1684abcf59ad",
+            "sha256": "b7e452f1042d8e1b2974a97dc48ec3eb23d738c001c7214b2276546625d7ae86"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.7-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "4e46d15b1c46fba9c50a1684abcf59ad",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 143309,
+          "upload_time": "2023-09-27T20:34:26",
+          "upload_time_iso_8601": "2023-09-27T20:34:26.353234Z",
+          "url": "https://files.pythonhosted.org/packages/6c/bd/bd7bb23b281485a27b8b47b7a4fdbf8ba2d6db07d7a3a67bc74ae7939f48/feloopy-0.2.7-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "58794e8c2e4392e3eac63282f8c16deae20c669d0c9e728200dcd53db1adeb04",
+            "md5": "0b2ab65ca00d5eac70aa48b29538bee6",
+            "sha256": "b1544a4d4ab7a6898fc8bb75c0cbfed3390a42be4a3e4596f5a5d2d082b89996"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.7.tar.gz",
+          "has_sig": false,
+          "md5_digest": "0b2ab65ca00d5eac70aa48b29538bee6",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 83315,
+          "upload_time": "2023-09-27T20:34:28",
+          "upload_time_iso_8601": "2023-09-27T20:34:28.797617Z",
+          "url": "https://files.pythonhosted.org/packages/58/79/4e8c2e4392e3eac63282f8c16deae20c669d0c9e728200dcd53db1adeb04/feloopy-0.2.7.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.2.8": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "cb3f3df62f4c655037c4cc14d9c37c65c1c3423224f18abd591223ca8fe692cf",
+            "md5": "d65a46c5ad74f740488d1a3bbea9e40d",
+            "sha256": "2adf39e2c67c75e7211216ab360cc8a5c6925602cb5db382ce0cbf0a02986b36"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.8-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "d65a46c5ad74f740488d1a3bbea9e40d",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 161150,
+          "upload_time": "2023-12-25T13:55:06",
+          "upload_time_iso_8601": "2023-12-25T13:55:06.893255Z",
+          "url": "https://files.pythonhosted.org/packages/cb/3f/3df62f4c655037c4cc14d9c37c65c1c3423224f18abd591223ca8fe692cf/feloopy-0.2.8-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "1c5da182789743c09f4a91805148f37700989098930a00bc5c4a1b64c0898e06",
+            "md5": "30443d41ccd943b716a37dcdda920592",
+            "sha256": "7e442a9b7afd8a32344aebdcef44fe03640f3da72d962578ea664a33849f1555"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.8.tar.gz",
+          "has_sig": false,
+          "md5_digest": "30443d41ccd943b716a37dcdda920592",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 107469,
+          "upload_time": "2023-12-25T13:55:09",
+          "upload_time_iso_8601": "2023-12-25T13:55:09.948092Z",
+          "url": "https://files.pythonhosted.org/packages/1c/5d/a182789743c09f4a91805148f37700989098930a00bc5c4a1b64c0898e06/feloopy-0.2.8.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.2.9": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "75d344e7983f7036962ecd347c509c84c3bf79c55858ae13379f3a1019cd2fdb",
+            "md5": "c872d16abd766ea07a04e56edcace822",
+            "sha256": "fae26aae0a67ab70b12ce3e942517e705747cebf791ebd3fb121d4a6a91ea66b"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.9-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "c872d16abd766ea07a04e56edcace822",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 170122,
+          "upload_time": "2024-04-07T21:21:20",
+          "upload_time_iso_8601": "2024-04-07T21:21:20.070472Z",
+          "url": "https://files.pythonhosted.org/packages/75/d3/44e7983f7036962ecd347c509c84c3bf79c55858ae13379f3a1019cd2fdb/feloopy-0.2.9-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "f2fe3a4795563e9b9bf5f5e15d1e3f65f7c4129e918483f0aabd605917bb3049",
+            "md5": "6f151b49972615e428be83968918c384",
+            "sha256": "afdcf9940c6eab0be390c7aa1452de59c3263b7149032b774867647dc5770fe4"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.2.9.tar.gz",
+          "has_sig": false,
+          "md5_digest": "6f151b49972615e428be83968918c384",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 103285,
+          "upload_time": "2024-04-07T21:21:22",
+          "upload_time_iso_8601": "2024-04-07T21:21:22.961967Z",
+          "url": "https://files.pythonhosted.org/packages/f2/fe/3a4795563e9b9bf5f5e15d1e3f65f7c4129e918483f0aabd605917bb3049/feloopy-0.2.9.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.3.0": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "40b85bf03992dc2a984052e974cf9dce294dc98c144f82dbd02e2852b63b87e1",
+            "md5": "615003d6cf1f335718da9fdf24cf40d7",
+            "sha256": "cc00c3625b128a9520b1918d481b9a37211bc6a471f2d55acdab9455ed23cd39"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.0-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "615003d6cf1f335718da9fdf24cf40d7",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 170359,
+          "upload_time": "2024-04-08T13:03:19",
+          "upload_time_iso_8601": "2024-04-08T13:03:19.125083Z",
+          "url": "https://files.pythonhosted.org/packages/40/b8/5bf03992dc2a984052e974cf9dce294dc98c144f82dbd02e2852b63b87e1/feloopy-0.3.0-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "26d28f978fb8d4e8858e4496fff8e13a6ef95a9bf7ca5d88fc6d2400c6fedb2c",
+            "md5": "0d9669e0aaf4ae157ac71a8d2730a18e",
+            "sha256": "43d36525a54bfac8298a8c9de314ec8274e9176466993b67310f48bdb22f0dd3"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.0.tar.gz",
+          "has_sig": false,
+          "md5_digest": "0d9669e0aaf4ae157ac71a8d2730a18e",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 103616,
+          "upload_time": "2024-04-08T13:03:23",
+          "upload_time_iso_8601": "2024-04-08T13:03:23.989928Z",
+          "url": "https://files.pythonhosted.org/packages/26/d2/8f978fb8d4e8858e4496fff8e13a6ef95a9bf7ca5d88fc6d2400c6fedb2c/feloopy-0.3.0.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.3.5": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "42b9af366011d9da3f40f8b2cc49aa3ebbf75a9434290c3c223bd3dd85a8c69b",
+            "md5": "71925dea4527548048b5db63c4660f35",
+            "sha256": "5d16342366e28c0b08781f10084c1bac472281ce91e25bf790bfe206153ed254"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.5-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "71925dea4527548048b5db63c4660f35",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 189522,
+          "upload_time": "2024-07-20T20:33:14",
+          "upload_time_iso_8601": "2024-07-20T20:33:14.399045Z",
+          "url": "https://files.pythonhosted.org/packages/42/b9/af366011d9da3f40f8b2cc49aa3ebbf75a9434290c3c223bd3dd85a8c69b/feloopy-0.3.5-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "cacb14a7b80f5dd15aa19303eb78b65cfabcabaf7fe098ed86c66b9503277ea8",
+            "md5": "aff82ee4bd118b3911cf3709874e182b",
+            "sha256": "593b853bbc36673ba690017b4b8d628acd9aeb57fc225247325ec3a82cdaebab"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.5.tar.gz",
+          "has_sig": false,
+          "md5_digest": "aff82ee4bd118b3911cf3709874e182b",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 117108,
+          "upload_time": "2024-07-20T20:33:17",
+          "upload_time_iso_8601": "2024-07-20T20:33:17.856745Z",
+          "url": "https://files.pythonhosted.org/packages/ca/cb/14a7b80f5dd15aa19303eb78b65cfabcabaf7fe098ed86c66b9503277ea8/feloopy-0.3.5.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.3.6": [
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "aa85a6dc01a998f41f6546544420ccb6b0c0d3ce8619feaf215287569f01b936",
+            "md5": "e28476d602c955ea88646919676fef94",
+            "sha256": "c88ffee7eebaea5d8124b491ecf333483a3ba95897276dc307a308d336fd692a"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.6-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "e28476d602c955ea88646919676fef94",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 193551,
+          "upload_time": "2024-09-30T10:39:40",
+          "upload_time_iso_8601": "2024-09-30T10:39:40.460596Z",
+          "url": "https://files.pythonhosted.org/packages/aa/85/a6dc01a998f41f6546544420ccb6b0c0d3ce8619feaf215287569f01b936/feloopy-0.3.6-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": "",
+          "digests": {
+            "blake2b_256": "89c1181dd8ef58afcd80fda76ecef9de5c75b390f9cbb5e7087897b195397612",
+            "md5": "2cfb5a2a02729175a7f587f612473c16",
+            "sha256": "7946e512ede0ff4985a6e505900f5d27249e4b04be07d7a57e6291d89fc07b8c"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.6.tar.gz",
+          "has_sig": false,
+          "md5_digest": "2cfb5a2a02729175a7f587f612473c16",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 118159,
+          "upload_time": "2024-09-30T10:39:43",
+          "upload_time_iso_8601": "2024-09-30T10:39:43.579336Z",
+          "url": "https://files.pythonhosted.org/packages/89/c1/181dd8ef58afcd80fda76ecef9de5c75b390f9cbb5e7087897b195397612/feloopy-0.3.6.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.3.7": [
+        {
+          "comment_text": null,
+          "digests": {
+            "blake2b_256": "cb9415ae10dbf94fc73bc1f3459b5fdf8e7b2308611bf0df45a953d3a48d6867",
+            "md5": "d498b0e5ee894c8428288b98116fd228",
+            "sha256": "5c0ee04a7049628e5ca0e3373df3be6c71414ae87b08610a5c039044e828e2df"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.7-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "d498b0e5ee894c8428288b98116fd228",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 202162,
+          "upload_time": "2025-04-08T18:03:04",
+          "upload_time_iso_8601": "2025-04-08T18:03:04.351335Z",
+          "url": "https://files.pythonhosted.org/packages/cb/94/15ae10dbf94fc73bc1f3459b5fdf8e7b2308611bf0df45a953d3a48d6867/feloopy-0.3.7-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": null,
+          "digests": {
+            "blake2b_256": "8b4cf06a6ed8ff6d2d564413f7d32a53697d7974883877aa618a07f4dbc3bbd6",
+            "md5": "5f2a210ff7e86c91993c4a886f26b3b8",
+            "sha256": "852a73714091fed51d4996f45b33b74480a1256097e67e6b4a6119b6f873bcd8"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.7.tar.gz",
+          "has_sig": false,
+          "md5_digest": "5f2a210ff7e86c91993c4a886f26b3b8",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 125949,
+          "upload_time": "2025-04-08T18:03:07",
+          "upload_time_iso_8601": "2025-04-08T18:03:07.467028Z",
+          "url": "https://files.pythonhosted.org/packages/8b/4c/f06a6ed8ff6d2d564413f7d32a53697d7974883877aa618a07f4dbc3bbd6/feloopy-0.3.7.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.3.8": [
+        {
+          "comment_text": null,
+          "digests": {
+            "blake2b_256": "ccce7ce15f10624963eccb7a4d117e4efbbad5dda9ce21e729346686fbf47568",
+            "md5": "cc8549f8bb73261f9ad4fad87c26978b",
+            "sha256": "2d01856be88831f472885fafa645c89a8387d2f21883fd04a542e26bfbc173b7"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.8-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "cc8549f8bb73261f9ad4fad87c26978b",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 202306,
+          "upload_time": "2025-04-29T18:48:19",
+          "upload_time_iso_8601": "2025-04-29T18:48:19.745557Z",
+          "url": "https://files.pythonhosted.org/packages/cc/ce/7ce15f10624963eccb7a4d117e4efbbad5dda9ce21e729346686fbf47568/feloopy-0.3.8-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": null,
+          "digests": {
+            "blake2b_256": "afb9501b6fa719f7a85bd3543c907243e496a47e4ab415ea4a7c4a95cbc1eaf6",
+            "md5": "cd851cf9029bdc1c5377c125f799ec14",
+            "sha256": "af2793af98e3a1c31e6be5e35b36ca705cd6407b2e0a7029009776c0bc9841d7"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.8.tar.gz",
+          "has_sig": false,
+          "md5_digest": "cd851cf9029bdc1c5377c125f799ec14",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 126297,
+          "upload_time": "2025-04-29T18:48:24",
+          "upload_time_iso_8601": "2025-04-29T18:48:24.176607Z",
+          "url": "https://files.pythonhosted.org/packages/af/b9/501b6fa719f7a85bd3543c907243e496a47e4ab415ea4a7c4a95cbc1eaf6/feloopy-0.3.8.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ],
+      "0.3.9": [
+        {
+          "comment_text": null,
+          "digests": {
+            "blake2b_256": "6aa5e7cd5fc231415fe2a753e0bd2fcb1a35ca41d20443367b7721a31760ea35",
+            "md5": "cb13a741f9866721409cee4fb5a8754f",
+            "sha256": "8001e27f747dfe02e255f05392180620b96f94633b3a7f715eda977eddc06ebe"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.9-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "cb13a741f9866721409cee4fb5a8754f",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.10",
+          "size": 213658,
+          "upload_time": "2025-07-01T20:43:24",
+          "upload_time_iso_8601": "2025-07-01T20:43:24.715772Z",
+          "url": "https://files.pythonhosted.org/packages/6a/a5/e7cd5fc231415fe2a753e0bd2fcb1a35ca41d20443367b7721a31760ea35/feloopy-0.3.9-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        },
+        {
+          "comment_text": null,
+          "digests": {
+            "blake2b_256": "4f559158a53596cdafc28b32d1a6bc7725a528ef745c0970c71bb05df7f1f102",
+            "md5": "5f0be629894ba97d4e8c396a799f2334",
+            "sha256": "d47538885cbfc0740248484ddb5d260fd23729d0b53bcb068e3f5d7e083455c6"
+          },
+          "downloads": -1,
+          "filename": "feloopy-0.3.9.tar.gz",
+          "has_sig": false,
+          "md5_digest": "5f0be629894ba97d4e8c396a799f2334",
+          "packagetype": "sdist",
+          "python_version": "source",
+          "requires_python": ">=3.10",
+          "size": 137718,
+          "upload_time": "2025-07-01T20:43:34",
+          "upload_time_iso_8601": "2025-07-01T20:43:34.766160Z",
+          "url": "https://files.pythonhosted.org/packages/4f/55/9158a53596cdafc28b32d1a6bc7725a528ef745c0970c71bb05df7f1f102/feloopy-0.3.9.tar.gz",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ]
+    },
+    "urls": [
+      {
+        "comment_text": null,
+        "digests": {
+          "blake2b_256": "6aa5e7cd5fc231415fe2a753e0bd2fcb1a35ca41d20443367b7721a31760ea35",
+          "md5": "cb13a741f9866721409cee4fb5a8754f",
+          "sha256": "8001e27f747dfe02e255f05392180620b96f94633b3a7f715eda977eddc06ebe"
+        },
+        "downloads": -1,
+        "filename": "feloopy-0.3.9-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "cb13a741f9866721409cee4fb5a8754f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.10",
+        "size": 213658,
+        "upload_time": "2025-07-01T20:43:24",
+        "upload_time_iso_8601": "2025-07-01T20:43:24.715772Z",
+        "url": "https://files.pythonhosted.org/packages/6a/a5/e7cd5fc231415fe2a753e0bd2fcb1a35ca41d20443367b7721a31760ea35/feloopy-0.3.9-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": null,
+        "digests": {
+          "blake2b_256": "4f559158a53596cdafc28b32d1a6bc7725a528ef745c0970c71bb05df7f1f102",
+          "md5": "5f0be629894ba97d4e8c396a799f2334",
+          "sha256": "d47538885cbfc0740248484ddb5d260fd23729d0b53bcb068e3f5d7e083455c6"
+        },
+        "downloads": -1,
+        "filename": "feloopy-0.3.9.tar.gz",
+        "has_sig": false,
+        "md5_digest": "5f0be629894ba97d4e8c396a799f2334",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.10",
+        "size": 137718,
+        "upload_time": "2025-07-01T20:43:34",
+        "upload_time_iso_8601": "2025-07-01T20:43:34.766160Z",
+        "url": "https://files.pythonhosted.org/packages/4f/55/9158a53596cdafc28b32d1a6bc7725a528ef745c0970c71bb05df7f1f102/feloopy-0.3.9.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "vulnerabilities": []
+  },
+  "pypistats": {
+    "data": [
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-19",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-20",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-21",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-22",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-23",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-24",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-25",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-26",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-27",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-28",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-29",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-05-30",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-01",
+        "downloads": 12
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-02",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-03",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-06",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-07",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-10",
+        "downloads": 5
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-12",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-15",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-17",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-18",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-20",
+        "downloads": 11
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-21",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-22",
+        "downloads": 5
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-23",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-24",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-25",
+        "downloads": 12
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-26",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-06-30",
+        "downloads": 6
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-01",
+        "downloads": 62
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-02",
+        "downloads": 15
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-04",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-05",
+        "downloads": 7
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-06",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-07",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-08",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-09",
+        "downloads": 6
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-10",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-11",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-12",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-13",
+        "downloads": 14
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-14",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-16",
+        "downloads": 9
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-17",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-18",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-19",
+        "downloads": 8
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-20",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-21",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-22",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-23",
+        "downloads": 24
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-24",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-25",
+        "downloads": 8
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-27",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-28",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-29",
+        "downloads": 5
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-30",
+        "downloads": 10
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-07-31",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-01",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-02",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-03",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-04",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-06",
+        "downloads": 7
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-08",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-09",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-10",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-13",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-15",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-16",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-17",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-18",
+        "downloads": 11
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-19",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-20",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-21",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-23",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-24",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-28",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-08-29",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-04",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-05",
+        "downloads": 10
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-06",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-10",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-11",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-12",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-13",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-14",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-15",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-16",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-17",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-18",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-19",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-21",
+        "downloads": 6
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-22",
+        "downloads": 9
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-23",
+        "downloads": 29
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-09-26",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-01",
+        "downloads": 14
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-02",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-07",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-08",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-09",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-10",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-12",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-13",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-14",
+        "downloads": 12
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-15",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-16",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-18",
+        "downloads": 5
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-19",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-20",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-21",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-23",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-25",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-28",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-10-30",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-01",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-05",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-06",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-07",
+        "downloads": 5
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-09",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-10",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-11",
+        "downloads": 16
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-12",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-13",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-15",
+        "downloads": 2
+      }
+    ]
+  }
+}

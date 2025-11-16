@@ -1,0 +1,160 @@
+name: Fetch stats
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-stats:
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE: feloopy
+      REPO_FULL: feloopy/feloopy
+      OWNER: feloopy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Ensure jq available
+        run: |
+          set -euo pipefail
+          if ! command -v jq >/dev/null 2>&1; then
+            sudo apt-get update -y
+            sudo apt-get install -y jq
+          else
+            echo jq present: $(jq --version)
+          fi
+
+      - name: Fetch stats and write trimmed data/stats.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tmp data
+
+          UA="${OWNER:-github-actions}"
+          AUTH_HEADER=()
+          if [[ -n "${GITHUB_TOKEN:-}" ]]; then
+            AUTH_HEADER=(-H "Authorization: token ${GITHUB_TOKEN}")
+          fi
+
+          fetch_to_file() {
+            local url=$1
+            local out=$2
+            local extra_accept=${3:-}
+            if [[ -n "$extra_accept" ]]; then
+              accept_header=(-H "Accept: $extra_accept")
+            else
+              accept_header=()
+            fi
+            http_status=$(curl --retry 3 --retry-delay 2 --retry-connrefused -sS -w "%{http_code}" -o "$out.tmp" -H "User-Agent: $UA" "${AUTH_HEADER[@]}" "${accept_header[@]}" "$url" || echo "000")
+            if [[ "$http_status" =~ ^2[0-9][0-9]$ ]]; then
+              mv "$out.tmp" "$out"
+            else
+              echo "null" > "$out"
+              rm -f "$out.tmp" || true
+            fi
+          }
+
+          fetch_to_file "https://api.github.com/repos/${REPO_FULL}" tmp/github.json
+
+          STARS_FILES=()
+          for p in 1 2 3; do
+            url="https://api.github.com/repos/${REPO_FULL}/stargazers?per_page=100&page=${p}"
+            out="tmp/stars_${p}.json"
+            fetch_to_file "$url" "$out" "application/vnd.github.v3.star+json"
+            if jq -e 'if type=="array" then . else empty end' "$out" >/dev/null 2>&1; then
+              len=$(jq 'length' "$out")
+              if [[ "$len" -eq 0 ]]; then
+                break
+              fi
+              STARS_FILES+=("$out")
+              if [[ "$len" -lt 100 ]]; then
+                break
+              fi
+            else
+              break
+            fi
+          done
+
+          if [ ${#STARS_FILES[@]} -eq 0 ]; then
+            echo "null" > tmp/stargazers.json
+          else
+            jq -s 'add' "${STARS_FILES[@]}" > tmp/stargazers.json
+          fi
+
+          fetch_to_file "https://api.github.com/repos/${REPO_FULL}/contributors?per_page=100&anon=true" tmp/contributors.json
+          fetch_to_file "https://api.github.com/repos/${REPO_FULL}/releases?per_page=100" tmp/releases.json
+          fetch_to_file "https://pypi.org/pypi/${PACKAGE}/json" tmp/pypi.json
+          fetch_to_file "https://pypistats.org/api/packages/${PACKAGE}/overall?mirrors=false" tmp/pypistats.json
+
+          jq -n \
+            --rawfile gh tmp/github.json \
+            --rawfile stars tmp/stargazers.json \
+            --rawfile contrib tmp/contributors.json \
+            --rawfile rel tmp/releases.json \
+            --rawfile pypi tmp/pypi.json \
+            --rawfile pypistats tmp/pypistats.json \
+            '
+            def safe_fromraw: try fromjson catch null;
+
+            {
+              github: ( ($gh | safe_fromraw) // null ),
+              stargazers:
+                ( ($stars | safe_fromraw) // []
+                  | ( if type=="array" then
+                        map(
+                          if has("user") then
+                            { avatar_url: (.user.avatar_url // null), login: (.user.login // null), starred_at: (.starred_at // null) }
+                          else
+                            { avatar_url: (.avatar_url // null), login: (.login // null), starred_at: (.starred_at // null) }
+                          end
+                        )
+                      else []
+                    end
+                  )[:300]
+                ),
+              contributors:
+                ( ($contrib | safe_fromraw) // []
+                  | ( if type=="array" then map({ avatar_url: (.avatar_url // null), login: (.login // null), contributions: (.contributions // null) }) else [] end )
+                  )[:50],
+              releases:
+                ( ($rel | safe_fromraw) // []
+                  | ( if type=="array" then map({ id: .id, tag_name: .tag_name, name: .name, body: .body, published_at: .published_at, html_url: .html_url }) else [] end )
+                  )[:100],
+              pypi: ( ($pypi | safe_fromraw) // null ),
+              pypistats:
+                ( ($pypistats | safe_fromraw) as $ps
+                  | ( if ($ps|type) == "object" and ($ps|has("data")) then
+                        { data: ( ($ps.data // []) | if (type=="array" and (length>365)) then .[-365:] else . end ) }
+                      else
+                        $ps
+                      end
+                  )
+                )
+            }
+            ' > data/stats.json
+
+          echo "Wrote data/stats.json (size: $(wc -c < data/stats.json) bytes)"
+
+      - name: Commit trimmed data
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stats.json || true
+          if git diff --cached --quiet; then
+            echo "no changes to data/stats.json"
+            exit 0
+          fi
+          git commit -m "updated stats." || echo "nothing to commit/commit failed"
+          git push

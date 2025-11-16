@@ -1,0 +1,664 @@
+<!DOCTYPE html><html lang="en" class="dark"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="bVUxQ-dwS2OJIe_gchcWu-NqHJD3oR9Sl_KMNnR5-vQ">
+    <meta name="description" content="View LLMs as the traveling salesperson problem">
+    <meta name="theme-color" content="#ffffff">
+    <title>On large language models and decision science | FelooPy</title>
+    
+    <base href="/">
+    <script type="module" src="/assets/index-B1ePEqnS.js"></script>
+    <link rel="stylesheet" href="/assets/style-C-UFROS1.css">
+  <meta property="og:title" content="On large language models and decision science"><meta property="og:description" content="View LLMs as the traveling salesperson problem"><meta property="og:image" content="https://images.unsplash.com/photo-1580777361964-27e9cdd2f838?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=1528"><meta property="og:url" content="http://localhost:64582/blog/llms-and-decision-science"><meta property="og:type" content="article"><meta property="og:site_name" content="FelooPy"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="On large language models and decision science"><meta name="twitter:description" content="View LLMs as the traveling salesperson problem"><meta name="twitter:image" content="https://images.unsplash.com/photo-1580777361964-27e9cdd2f838?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=1528"><meta name="twitter:site" content="@FelooPy"><meta name="twitter:creator" content="@FelooPy"><meta property="article:published_time" content="2025-11-11T00:00:00.000Z"><meta property="article:tag" content="GenAI"><link rel="canonical" href="http://localhost:64582/blog/llms-and-decision-science"></head>
+
+  <body>
+    <div id="root"><div class="min-h-screen flex flex-col"><header class="shadow w-full fixed z-50 border-b bg-background"><div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between"><div class="flex items-center gap-3"><a class="flex items-center" href="/" data-discover="true"><svg width="32" height="32" viewBox="0 0 133.33333 133.33333" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="--icon-primary: #76B900; --icon-secondary: #A6D259;"><mask id="hole-mask"><rect x="0" y="0" width="133.33333" height="133.33333" fill="white"></rect><circle cx="66.6667" cy="66.6667" r="6.5" fill="white" fill-opacity="0"></circle></mask><g style="transform-origin: 66.6667px 66.6667px;"><g mask="url(#hole-mask)" transform="rotate(180,67.216049,66.219417)"><path d="M 21.280659,6.6978043 C 8.8419923,15.029804 4.5486591,33.591137 13.428659,46.109804 v 0 c 2.746666,4.119999 5.318666,6.226666 8.798666,9.839999 v 0 c 6.921333,6.986667 20.053333,20.241333 24.106666,24.333333 v 0 c 5.134667,5.533337 12.561333,9.533337 20.108,9.720007 v 0 c 8.345333,0.52 16.799999,-3.57334 22.453333,-9.720007 v 0 c 3.146666,-3.173333 11.506666,-11.613333 18.505336,-18.68 v 0 c 5.16133,-5.533333 10.028,-9.319999 14.25466,-15.279999 v 0 c 7.53334,-10.746667 6.13334,-25.853333 -2.89333,-35.305333 v 0 l -0.188,-0.201333 c -1.852,-1.7053327 -4.14533,-5.4666657 -6.27867,-3.6799997 v 0 C 108.53399,10.791138 93.92199,25.671137 89.187324,30.41647 v 0 c -3.278667,3.414667 -7.145334,6.44 -11.746667,8.201334 v 0 c -12.626666,4.985333 -25.145332,-0.494667 -33.613332,-10.44 v 0 C 38.813992,23.109804 29.893992,14.096471 25.213992,9.3631383 v 0 c -1.637333,-1.566667 -2.465333,-2.756 -3.453333,-2.756 v 0 c -0.154667,0 -0.313334,0.02933 -0.48,0.09067 M 54.108658,59.909807 c 2.558666,-5.72 7.612,-8.438666 12.745333,-8.626666 v 0 c 1.213333,-0.09333 2.454666,-0.052 3.694666,0.174666 v 0 c 6.8,1.226667 11.6,7.025334 11.812,13.68 v 0 c 0.01333,0.253333 0.01333,0.518667 0.01333,0.772 v 0 c 0,0.188 -0.01333,0.373333 -0.01333,0.561333 v 0 c -0.158667,6.812 -5.413333,12.972 -12.172,14.04 v 0 l -0.253333,0.052 c -0.824,0.141333 -1.636,0.208 -2.432,0.208 v 0 c -10.241333,0 -17.873333,-11.125333 -13.394666,-20.861333" fill="var(--icon-secondary)" fill-opacity="0.78" stroke="none"></path></g><g mask="url(#hole-mask)" transform="translate(-0.63661915,0.49529644)"><path d="M 21.280659,6.6978043 C 8.8419923,15.029804 4.5486591,33.591137 13.428659,46.109804 v 0 c 2.746666,4.119999 5.318666,6.226666 8.798666,9.839999 v 0 c 6.921333,6.986667 20.053333,20.241333 24.106666,24.333333 v 0 c 5.134667,5.533337 12.561333,9.533337 20.108,9.720007 v 0 c 8.345333,0.52 16.799999,-3.57334 22.453333,-9.720007 v 0 c 3.146666,-3.173333 11.506666,-11.613333 18.505336,-18.68 v 0 c 5.16133,-5.533333 10.028,-9.319999 14.25466,-15.279999 v 0 c 7.53334,-10.746667 6.13334,-25.853333 -2.89333,-35.305333 v 0 l -0.188,-0.201333 c -1.852,-1.7053327 -4.14533,-5.4666657 -6.27867,-3.6799997 v 0 C 108.53399,10.791138 93.92199,25.671137 89.187324,30.41647 v 0 c -3.278667,3.414667 -7.145334,6.44 -11.746667,8.201334 v 0 c -12.626666,4.985333 -25.145332,-0.494667 -33.613332,-10.44 v 0 C 38.813992,23.109804 29.893992,14.096471 25.213992,9.3631383 v 0 c -1.637333,-1.566667 -2.465333,-2.756 -3.453333,-2.756 v 0 c -0.154667,0 -0.313334,0.02933 -0.48,0.09067 M 54.108658,59.909807 c 2.558666,-5.72 7.612,-8.438666 12.745333,-8.626666 v 0 c 1.213333,-0.09333 2.454666,-0.052 3.694666,0.174666 v 0 c 6.8,1.226667 11.6,7.025334 11.812,13.68 v 0 c 0.01333,0.253333 0.01333,0.518667 0.01333,0.772 v 0 c 0,0.188 -0.01333,0.373333 -0.01333,0.561333 v 0 c -0.158667,6.812 -5.413333,12.972 -12.172,14.04 v 0 l -0.253333,0.052 c -0.824,0.141333 -1.636,0.208 -2.432,0.208 v 0 c -10.241333,0 -17.873333,-11.125333 -13.394666,-20.861333" fill="var(--icon-primary)" fill-opacity="1" stroke="none"></path></g><g mask="url(#hole-mask)" opacity="0.12" transform="translate(0.30715895,-0.12792755)"><path d="M 21.280659,6.6978043 C 8.8419923,15.029804 4.5486591,33.591137 13.428659,46.109804 v 0 c 2.746666,4.119999 5.318666,6.226666 8.798666,9.839999 v 0 c 6.921333,6.986667 20.053333,20.241333 24.106666,24.333333 v 0 c 5.134667,5.533337 12.561333,9.533337 20.108,9.720007 v 0 c 8.345333,0.52 16.799999,-3.57334 22.453333,-9.720007 v 0 c 3.146666,-3.173333 11.506666,-11.613333 18.505336,-18.68 v 0 c 5.16133,-5.533333 10.028,-9.319999 14.25466,-15.279999 v 0 c 7.53334,-10.746667 6.13334,-25.853333 -2.89333,-35.305333 v 0 l -0.188,-0.201333 c -1.852,-1.7053327 -4.14533,-5.4666657 -6.27867,-3.6799997 v 0 C 108.53399,10.791138 93.92199,25.671137 89.187324,30.41647 v 0 c -3.278667,3.414667 -7.145334,6.44 -11.746667,8.201334 v 0 c -12.626666,4.985333 -25.145332,-0.494667 -33.613332,-10.44 v 0 C 38.813992,23.109804 29.893992,14.096471 25.213992,9.3631383 v 0 c -1.637333,-1.566667 -2.465333,-2.756 -3.453333,-2.756 v 0 c -0.154667,0 -0.313334,0.02933 -0.48,0.09067 M 54.108658,59.909807 c 2.558666,-5.72 7.612,-8.438666 12.745333,-8.626666 v 0 c 1.213333,-0.09333 2.454666,-0.052 3.694666,0.174666 v 0 c 6.8,1.226667 11.6,7.025334 11.812,13.68 v 0 c 0.01333,0.253333 0.01333,0.518667 0.01333,0.772 v 0 c 0,0.188 -0.01333,0.373333 -0.01333,0.561333 v 0 c -0.158667,6.812 -5.413333,12.972 -12.172,14.04 v 0 l -0.253333,0.052 c -0.824,0.141333 -1.636,0.208 -2.432,0.208 v 0 c -10.241333,0 -17.873333,-11.125333 -13.394666,-20.861333" fill="var(--icon-primary)"></path></g></g></svg></a><div class="flex flex-col md:flex-row md:items-baseline leading-tight md:leading-normal"><h1 class="text-2xl font-bold bg-linear-to-r from-[#76B900] via-foreground to-[#76B900]
+                  bg-size-[800%_auto] bg-clip-text text-transparent animate-gradient">FelooPy</h1><span aria-hidden="true" class="text-sm font-medium text-muted-foreground md:ml-2 -mt-0.5 md:mt-0"><span class="hidden md:inline">• </span><a href="https://pepy.tech/project/feloopy" target="_blank" rel="noopener noreferrer" class=" hover:text-green-600">23k downloads!</a></span></div></div><div class="hidden md:flex items-center gap-4"><nav class="flex gap-4 items-center"><a class="hover:text-green-600" href="/" data-discover="true">Home</a><a class="hover:text-green-600" href="/blog" data-discover="true">Blog</a><a class="hover:text-green-600" href="/docs" data-discover="true">Documentation</a><a class="hover:text-green-600" href="/store" data-discover="true">StORe</a><a class="hover:text-green-600" href="/submissions" data-discover="true">Submit</a><a class="hover:text-green-600" href="/about" data-discover="true">About</a></nav><button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 size-9 w-10 h-10 rounded-md border bg-background! hover:bg-muted! transition-all active:scale-95 focus-visible:ring-0 focus-visible:ring-offset-0 relative overflow-hidden" aria-label="Toggle theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun text-foreground h-6 w-6 transition-all 
+          rotate-90 scale-0" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon text-foreground absolute inset-0 m-auto h-6 w-6 transition-all 
+          rotate-0 scale-100" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg><span class="sr-only">Toggle theme</span></button><div class="relative inline-flex items-center"><span aria-hidden="true" class="absolute bg-background -top-2 right-0 flex items-center justify-center gap-1 rounded-full px-2 py-0.5 text-xs leading-none pointer-events-none font-bold" style="transform: translateX(28%); box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;">32<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star text-yellow-600" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg></span><button data-slot="button" class="whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 inline-flex items-center justify-center h-10 w-10 bg-background text-foreground"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"><title>GitHub</title><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></button></div></div><div class="md:hidden flex items-center gap-2"><button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 size-9 w-10 h-10 rounded-md border bg-background! hover:bg-muted! transition-all active:scale-95 focus-visible:ring-0 focus-visible:ring-offset-0 relative overflow-hidden" aria-label="Toggle theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun text-foreground h-6 w-6 transition-all 
+          rotate-90 scale-0" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon text-foreground absolute inset-0 m-auto h-6 w-6 transition-all 
+          rotate-0 scale-100" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg><span class="sr-only">Toggle theme</span></button><div class="relative inline-flex items-center"><span aria-hidden="true" class="absolute bg-background -top-2 right-0 flex items-center justify-center gap-1 rounded-full px-2 py-0.5 text-xs leading-none pointer-events-none font-bold" style="transform: translateX(28%); box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;">32<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star text-yellow-600" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg></span><button data-slot="button" class="whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 inline-flex items-center justify-center h-10 w-10 bg-background text-foreground"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"><title>GitHub</title><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></button></div><button class="p-2 rounded-md border border-input bg-background" aria-label="Toggle menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-6 w-6" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div></div></header><main class="grow pt-20 pb-24 text-left"><div class="max-w-4xl mx-auto px-4"><div class="max-w-6xl mx-auto px-2 lg:px-8"><style>
+        .toc-scroll { scrollbar-width: thin; -ms-overflow-style: none; }
+        .toc-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+        .toc-scroll::-webkit-scrollbar-track { background: transparent; }
+        .toc-scroll::-webkit-scrollbar-thumb {
+          background-color: rgba(16,24,40,0.08);
+          border-radius: 999px;
+          border: 2px solid transparent;
+          background-clip: padding-box;
+          min-height: 28px;
+        }
+        .dark .toc-scroll::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.06); }
+        .toc-scroll { scrollbar-color: rgba(16,24,40,0.08) transparent; }
+
+        /* ---------- TABLE COMPACT STYLES ---------- */
+        /* Scoped to markdown body to override prose defaults */
+        .markdown-body table { border-collapse: collapse; }
+        .markdown-body table td, .markdown-body table th {
+          padding: .25rem .5rem; /* smaller vertical padding */
+          line-height: 1; /* tighter lines */
+        }
+        .markdown-body table tr { height: 2rem; } /* optional fixed row height */
+        .markdown-body table th { vertical-align: middle; }
+        .markdown-body table td { vertical-align: middle; }
+      </style><div class="fixed bottom-6 z-50 flex flex-col items-end gap-3"><div class="right-6"></div><div class="flex flex-col gap-3 transition-all opacity-100"></div></div><div class="hidden lg:block"><button data-slot="button" class="gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9 fixed left-0 z-70 ml-0 h-10 w-10 rounded-r-full shadow-lg bg-background border border-gray-200 dark:border-gray-700 flex items-center justify-center" aria-label="Open table of contents" title="Open table of contents" style="top: 85px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-4 w-4 text-gray-700 dark:text-gray-100" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button></div><article class="max-w-4xl mx-auto space-y-8 relative"><header class="space-y-6 pt-6"><div class="flex flex-col items-center text-center gap-4"><div class="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground"><div class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar h-4 w-4" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg><span>November 11, 2025</span></div><div class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-4 w-4" aria-hidden="true"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg><span>18 min read</span></div></div><div class="flex flex-wrap gap-2 justify-center"><span data-slot="badge" class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-secondary/90 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">optimization</span><span data-slot="badge" class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-secondary/90 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">LLM</span><span data-slot="badge" class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-secondary/90 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">GenAI</span></div><h1 class="text-4xl font-bold tracking-tight">On large language models and decision science</h1><p class="text-xl text-muted-foreground leading-relaxed max-w-2xl">View LLMs as the traveling salesperson problem</p><div class="text-sm text-muted-foreground"><span class="font-medium">By </span><span class="italic">Keivan Tafakkori</span></div></div><div class="space-y-2"><div class="w-full h-64 overflow-hidden rounded-lg"><img alt="On large language models and decision science" class="w-full h-full object-cover" loading="eager" src="https://images.unsplash.com/photo-1580777361964-27e9cdd2f838?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=1528"></div><p class="text-sm text-muted-foreground text-center italic">Source: <a href="https://images.unsplash.com/photo-1580777361964-27e9cdd2f838?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=1528" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 hover:underline text-blue-600 dark:text-blue-400">images.unsplash.com<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link h-3 w-3" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></p></div></header><div class="prose prose-lg dark:prose-invert max-w-none markdown-body"><h1 id="introduction" class="text-3xl font-bold mt-8 mb-4 scroll-mt-20 text-gray-900 dark:text-gray-100"><a href="#introduction" class="text-[#76b900] hover:underline font-medium">Introduction</a></h1>
+<p class="my-4 leading-relaxed text-foreground">Plainly put, I see current large language models (LLMs), those representing the current state of Generative AI, as systems that are trained to infer logical tours or routes among characters, words, phrases, and larger linguistic patterns from vocabularies, dictionaries, blogs, and papers to generate a piece of text that matches a user’s prompted context. Nothing is special about it. LLMs today are similar to advanced search engines or advanced researchers who know which keywords to search for to find internet content that satisfies their needs. But now, with much less time wasted. And somehow, LLMs can reason by connecting ideas, text, and programming instructions from each observed resource.</p>
+<p class="my-4 leading-relaxed text-foreground">You, as an Operations Research (OR) scientist, can think of LLMs as systems that repeatedly use input-distance graphs to solve the traveling-salesman problem. Each sentence, paragraph, or article is a route through a set of nodes (characters, words, concepts), and the “distance” between nodes is learned or adjusted during training or fine-tuning. Because of featuring this property, frequent co-occurrences in widely shared sources and recurring patterns pull some nodes closer together, so the LLM tends to favor those routes. That tendency explains why it leans toward familiar phrasings and can overproduce common sequences. When it follows less-traveled routes, “hallucination” becomes more likely. Because of this mechanism, LLMs can follow formal logic, manipulate algebraic or code structures, and produce step-by-step instructions, demonstrating coherent chains of reasoning when the selected paths match valid patterns.</p>
+<p class="my-4 leading-relaxed text-foreground">LLMs solve problems along paths they have learned. It’s like a closed-book versus an open-book exam. I wrote about optimization and learning two years ago, and I believe this perspective remains valid in 2025 and beyond (refer to <a href="https://lnkd.in/dsxcmMAq" class="text-[#76b900] hover:underline font-medium" target="_blank" rel="noopener noreferrer">my LinkedIn post</a>). In the real world, or over the internet, you may find at least one or two experts who can instantly respond to your prompt or who have documented how to respond to that prompt. But no expert can instantly solve a decision problem; finding a solution requires time for inference. Decision problems require explicit preferences, context, and trade-offs. That is Decision Science.</p>
+<p class="my-4 leading-relaxed text-foreground">Before 30 November 2022, people saved time and cost by outsourcing coding to experts in a field; now, they save time and cost by outsourcing prompting to experts in a field. However, a small deviation from expectations in decisions suggested by LLMs can erode ROI and create real business losses. That is why, in many cases, adoption of LLMs does not deliver a clear return on investment or value to the business. It is not clear who truly captures the value of LLMs: the LLM user or their customers, and why wouldn’t the customers use LLMs themselves?</p>
+<p class="my-4 leading-relaxed text-foreground">In this article, I aim to outline potential use cases, and situations to avoid LLMs, for non-experts and experts in the decision science field, which will evolve over time. Stay tuned! Notably, when ChatGPT was first introduced on 30 November 2022, it was common for everyone to share their experiences using it. I try, however, to focus on writing key takeaways for you, the reader; not to judge, but to reveal some facts on today LLMs.</p>
+<h1 id="using-llms-as-a-non-expert-decision-maker" class="text-3xl font-bold mt-8 mb-4 scroll-mt-20 text-gray-900 dark:text-gray-100"><a href="#using-llms-as-a-non-expert-decision-maker" class="text-[#76b900] hover:underline font-medium">Using LLMs as a non-expert decision maker</a></h1>
+<p class="my-4 leading-relaxed text-foreground">I prompted <strong class="font-semibold text-foreground">OpenAI</strong>’s latest free and publicly available LLM, the ChatGPT 5 API, using its <strong class="font-semibold text-foreground">Thinking</strong> mode, with the following prompt:
+<em class="italic text-foreground">“I want to select from a set of items with different weights because my backpack has limited capacity. These items have different values to me. How can I decide which to take?”</em></p>
+<p class="my-4 leading-relaxed text-foreground">Before even trying to ask this prompt, the non-expert *should first be able to recognize that this is even a problem or weakness to decide on or address it. This isn’t unique to using an LLM. The problem of not getting concerned about a critical aspect of a system, industry, or supply chain existed in the past, is observable today, and will likely remain in the future. This can be a barrier to even asking a question, as posted by Adam Dejans Jr. on LinkedIn (see <a href="https://www.linkedin.com/posts/addejans_leadership-processimprovement-operations-activity-7393637316113854464-Jw4z" class="text-[#76b900] hover:underline font-medium" target="_blank" rel="noopener noreferrer">his post</a>).</p>
+<p class="my-4 leading-relaxed text-foreground">ChatGPT 5 structured its response with sections titled “Quick plan,” “When to pick which,” “Code — full, ready-to-run Python,” “Steps you should follow (short),” “Troubleshooting / if step fails, do this,” and “Complexity summary.” Because it’s designed to ask follow-ups, it ended the response with:
+<em class="italic text-foreground">“If you want, paste your item list and capacity (IDs, weights, values). I can run the appropriate routine and give you the exact selection quickly.”</em></p>
+<p class="my-4 leading-relaxed text-foreground">Note that <em class="italic text-foreground">it responds based on how one have thought, rated, or interacted before; so reproducing the same result from a similar prompt is not guaranteed.</em> It is <em class="italic text-foreground">constantly personalized</em> because of reinforcement learning from human feedback. In decision science, however, the way one thinks might be suboptimal; optimization algorithms surpass human-level reasoning.</p>
+<p class="my-4 leading-relaxed text-foreground">Everything about the outline seems fine, but it clearly preferred Python; unsurprising, since this programming language dominates most blogs and tutorials and has become the world’s most popular programming language. Therefore, the LLM <em class="italic text-foreground">tends to prefer information that is repeated frequently on the internet as a measure of reliability.</em> But, of course, repetition does not guarantee reliability.</p>
+<p class="my-4 leading-relaxed text-foreground">Looking at the code, the first thing it attempted was to develop a heuristic using pure Python, without relying on any external solver. So, the common claim that <em class="italic text-foreground">LLMs are simply an interface between your tool and the user</em> isn’t entirely accurate. LLMs can, in fact, design the tool themselves. LLMs <em class="italic text-foreground">can solve a decision problem without an external solver and it can even design the tool itself</em> (whether that’s an LP solver, MIP solver, etc.). But they still rely on a programming language, and cannot solve a decision problem by a direct, timely inference.</p>
+<p class="my-4 leading-relaxed text-foreground">Interestingly, the privided code by the LLM did not rely on a single solution algorithm; instead, it provided two alternatives. <em class="italic text-foreground">Selecting among the alternatives it provides is itself a decision problem. A non-expert user might worry that the solution is incorrect, or be unsure which algorithm to use. LLMs</em> <em class="italic text-foreground">may confuse you and lead you to overthink.</em> The algorithms it used, fractional knapsack (value-to-weight ratio) and dynamic programming, are technically sound, but the typical user is unlikely to care about these details.</p>
+<p class="my-4 leading-relaxed text-foreground">Here is the code it provided:</p>
+<div class="relative my-6 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm"><div class="flex items-center justify-between bg-gray-100 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700"><span class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">python</span><button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-7 px-2 text-xs font-medium hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"><span class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy h-3 w-3" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg> Copy</span></button></div><div class="relative bg-gray-50 dark:bg-gray-900"><pre class="p-4 overflow-x-auto text-sm"><code><span class="hljs-comment"># knapsack_full.py</span>
+<span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> <span class="hljs-type">List</span>, <span class="hljs-type">Tuple</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">fractional_knapsack</span>(<span class="hljs-params">items: <span class="hljs-type">List</span>[<span class="hljs-type">Tuple</span>[<span class="hljs-built_in">float</span>, <span class="hljs-built_in">float</span>, <span class="hljs-built_in">str</span>]], capacity: <span class="hljs-built_in">float</span></span>):
+    <span class="hljs-string">"""
+    items: list of (weight, value, id)
+    capacity: backpack capacity (float)
+    Returns: (total_value, list_of_taken (id, taken_weight, taken_value))
+    Greedy: takes highest value/weight ratio first.
+    """</span>
+    <span class="hljs-comment"># compute ratio and sort descending</span>
+    items_sorted = <span class="hljs-built_in">sorted</span>(items, key=<span class="hljs-keyword">lambda</span> it: (it[<span class="hljs-number">1</span>]/it[<span class="hljs-number">0</span>]) <span class="hljs-keyword">if</span> it[<span class="hljs-number">0</span>] &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-built_in">float</span>(<span class="hljs-string">'inf'</span>), reverse=<span class="hljs-literal">True</span>)
+    taken = []
+    total_value = <span class="hljs-number">0.0</span>
+    remaining = capacity
+
+    <span class="hljs-keyword">for</span> w, v, id_ <span class="hljs-keyword">in</span> items_sorted:
+        <span class="hljs-keyword">if</span> remaining &lt;= <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">break</span>
+        take_w = <span class="hljs-built_in">min</span>(w, remaining)
+        take_v = (v * (take_w / w)) <span class="hljs-keyword">if</span> w &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>
+        taken.append((id_, take_w, take_v))
+        total_value += take_v
+        remaining -= take_w
+
+    <span class="hljs-keyword">return</span> total_value, taken
+
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">knapsack_01_dp</span>(<span class="hljs-params">items: <span class="hljs-type">List</span>[<span class="hljs-type">Tuple</span>[<span class="hljs-built_in">int</span>, <span class="hljs-built_in">int</span>, <span class="hljs-built_in">str</span>]], capacity: <span class="hljs-built_in">int</span></span>):
+    <span class="hljs-string">"""
+    0/1 knapsack DP.
+    items: list of (weight:int, value:int, id)
+    capacity: int
+    Returns: (max_value, list_of_taken ids)
+    Complexity: O(n * capacity) time and O(n * capacity) memory (we use optimized memory but still reconstruct choices).
+    """</span>
+    n = <span class="hljs-built_in">len</span>(items)
+    <span class="hljs-comment"># dp[w] = max value achievable with capacity w</span>
+    dp = [<span class="hljs-number">0</span>] * (capacity + <span class="hljs-number">1</span>)
+    <span class="hljs-comment"># parent store: for reconstruction, store index of item used to reach dp[w] or -1</span>
+    parent = [[<span class="hljs-literal">False</span>] * (capacity + <span class="hljs-number">1</span>) <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)]  <span class="hljs-comment"># parent[i][w] = True if item i taken in optimal for capacity w after processing i</span>
+
+    <span class="hljs-keyword">for</span> i, (wt, val, _) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(items):
+        <span class="hljs-comment"># iterate w from high to low to avoid reuse</span>
+        <span class="hljs-keyword">for</span> w <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(capacity, wt - <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>):
+            <span class="hljs-keyword">if</span> dp[w - wt] + val &gt; dp[w]:
+                dp[w] = dp[w - wt] + val
+                parent[i][w] = <span class="hljs-literal">True</span>
+
+    max_value = dp[capacity]
+
+    <span class="hljs-comment"># reconstruct chosen items</span>
+    chosen = []
+    w = capacity
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n - <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">if</span> parent[i][w]:
+            wt, val, id_ = items[i]
+            chosen.append(id_)
+            w -= wt
+
+    chosen.reverse()
+    <span class="hljs-keyword">return</span> max_value, chosen
+
+
+<span class="hljs-comment"># Example usage</span>
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    <span class="hljs-comment"># Example for fractional</span>
+    items_frac = [
+        (<span class="hljs-number">10</span>, <span class="hljs-number">60</span>, <span class="hljs-string">"A"</span>),  <span class="hljs-comment"># weight, value, id</span>
+        (<span class="hljs-number">20</span>, <span class="hljs-number">100</span>, <span class="hljs-string">"B"</span>),
+        (<span class="hljs-number">30</span>, <span class="hljs-number">120</span>, <span class="hljs-string">"C"</span>)
+    ]
+    capacity = <span class="hljs-number">50</span>
+    total_val, taken = fractional_knapsack(items_frac, capacity)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Fractional knapsack result:"</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">" Total value:"</span>, total_val)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">" Taken:"</span>, taken)
+
+    <span class="hljs-comment"># Example for 0/1 knapsack (weights and capacity must be integers)</span>
+    items_01 = [
+        (<span class="hljs-number">10</span>, <span class="hljs-number">60</span>, <span class="hljs-string">"A"</span>),
+        (<span class="hljs-number">20</span>, <span class="hljs-number">100</span>, <span class="hljs-string">"B"</span>),
+        (<span class="hljs-number">30</span>, <span class="hljs-number">120</span>, <span class="hljs-string">"C"</span>)
+    ]
+    cap_int = <span class="hljs-number">50</span>
+    max_val, chosen = knapsack_01_dp(items_01, cap_int)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"\n0/1 knapsack result:"</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">" Max value:"</span>, max_val)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">" Chosen items:"</span>, chosen)
+</code></pre></div></div>
+<p class="my-4 leading-relaxed text-foreground">Then I followed its suggestion and asked:</p>
+<p class="my-4 leading-relaxed text-foreground"><em class="italic text-foreground">“Please run the appropriate routine with simulated data.”</em></p>
+<p class="my-4 leading-relaxed text-foreground">It responded by generating a simulated dataset, assuming the knapsack capacity is 50:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="overflow-x-auto my-6 rounded-lg border border-gray-200 dark:border-gray-700"><table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 table-auto text-sm"><thead class="bg-gray-50 dark:bg-gray-800"><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><th class="px-2 py-1 text-left font-semibold text-foreground text-sm border-b">id</th><th class="px-2 py-1 text-left font-semibold text-foreground text-sm border-b">weight</th><th class="px-2 py-1 text-left font-semibold text-foreground text-sm border-b">value</th><th class="px-2 py-1 text-left font-semibold text-foreground text-sm border-b">value/weight</th></tr></thead><tbody class="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900"><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_1</td><td class="px-2 py-1 text-sm text-foreground border-b">4</td><td class="px-2 py-1 text-sm text-foreground border-b">93</td><td class="px-2 py-1 text-sm text-foreground border-b">23.25</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_2</td><td class="px-2 py-1 text-sm text-foreground border-b">9</td><td class="px-2 py-1 text-sm text-foreground border-b">36</td><td class="px-2 py-1 text-sm text-foreground border-b">4.00</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_3</td><td class="px-2 py-1 text-sm text-foreground border-b">5</td><td class="px-2 py-1 text-sm text-foreground border-b">14</td><td class="px-2 py-1 text-sm text-foreground border-b">2.80</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_4</td><td class="px-2 py-1 text-sm text-foreground border-b">4</td><td class="px-2 py-1 text-sm text-foreground border-b">91</td><td class="px-2 py-1 text-sm text-foreground border-b">22.75</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_5</td><td class="px-2 py-1 text-sm text-foreground border-b">3</td><td class="px-2 py-1 text-sm text-foreground border-b">10</td><td class="px-2 py-1 text-sm text-foreground border-b">3.33</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_6</td><td class="px-2 py-1 text-sm text-foreground border-b">19</td><td class="px-2 py-1 text-sm text-foreground border-b">59</td><td class="px-2 py-1 text-sm text-foreground border-b">3.11</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_7</td><td class="px-2 py-1 text-sm text-foreground border-b">2</td><td class="px-2 py-1 text-sm text-foreground border-b">8</td><td class="px-2 py-1 text-sm text-foreground border-b">4.00</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_8</td><td class="px-2 py-1 text-sm text-foreground border-b">3</td><td class="px-2 py-1 text-sm text-foreground border-b">32</td><td class="px-2 py-1 text-sm text-foreground border-b">10.67</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_9</td><td class="px-2 py-1 text-sm text-foreground border-b">8</td><td class="px-2 py-1 text-sm text-foreground border-b">69</td><td class="px-2 py-1 text-sm text-foreground border-b">8.63</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_10</td><td class="px-2 py-1 text-sm text-foreground border-b">5</td><td class="px-2 py-1 text-sm text-foreground border-b">63</td><td class="px-2 py-1 text-sm text-foreground border-b">12.60</td></tr></tbody></table></div>
+<p class="my-4 leading-relaxed text-foreground">Since the LLM can be connected to a Python backend, or any other tool, it can execute the code directly and produce the results. The output is as follows:</p>
+<div class="relative my-6 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm"><div class="flex items-center justify-between bg-gray-100 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700"><span class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">text</span><button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-7 px-2 text-xs font-medium hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"><span class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy h-3 w-3" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg> Copy</span></button></div><div class="relative bg-gray-50 dark:bg-gray-900"><pre class="p-4 overflow-x-auto text-sm"><code>Fractional Knapsack (you can take fractions)
+
+Total value: 308.75
+
+Items (fully or partially taken):
+
+item_4: 4 weight, 91.0 value
+item_8: 3 weight, 32.0 value
+item_9: 8 weight, 69.0 value
+item_2: 9 weight, 36.0 value
+item_7: 2 weight, 8.0 value
+item_6: 19 weight, 59.0 value
+item_3: 5 weight (partially), 13.75 value
+</code></pre></div></div>
+<p class="my-4 leading-relaxed text-foreground">and</p>
+<div class="relative my-6 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm"><div class="flex items-center justify-between bg-gray-100 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700"><span class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">text</span><button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-7 px-2 text-xs font-medium hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"><span class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy h-3 w-3" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg> Copy</span></button></div><div class="relative bg-gray-50 dark:bg-gray-900"><pre class="p-4 overflow-x-auto text-sm"><code>0/1 Knapsack (you must take whole items)
+
+Max total value: 303
+
+Optimal selection:
+
+item_1, item_2, item_4, item_6, item_7, item_8, item_9
+</code></pre></div></div>
+<p class="my-4 leading-relaxed text-foreground">LLMs can conclude the answer they provide with a concise summary sentence, of course:</p>
+<p class="my-4 leading-relaxed text-foreground">"If your items cannot be split, select
+item_1, item_2, item_4, item_6, item_7, item_8, item_9.
+They fit within the 50-unit capacity and give the maximum total value = 303."</p>
+<p class="my-4 leading-relaxed text-foreground">A non-expert who is not familiar with optimization might stop here; and that might seem perfectly fine. Non-experts often care more about practical outcomes than technical details. They were presented with two reasonable options, and which one is best depends on how the items are chosen for the knapsack. Writing from a non-expert’s perspective, I find the answer satisfactory and see no need to explore it further.</p>
+<h1 id="using-llms-as-a-decision-optimization-expert" class="text-3xl font-bold mt-8 mb-4 scroll-mt-20 text-gray-900 dark:text-gray-100"><a href="#using-llms-as-a-decision-optimization-expert" class="text-[#76b900] hover:underline font-medium">Using LLMs as a Decision Optimization Expert</a></h1>
+<p class="my-4 leading-relaxed text-foreground">Now, let’s assume the person using the LLM is an expert in the field. Experts typically use LLMs as tools, mainly to reduce repetitive or tedious tasks, when given the opportunity. They usually work with either simulated datasets or real-world data. Suppose I want to solve the same problem using the simulated data provided earlier by the answer of the LLM to the non-expert. After clearing the previous chat, I entered the following prompt:</p>
+<p class="my-4 leading-relaxed text-foreground"><em class="italic text-foreground">“Please provide a Python code that solves the knapsack problem with the following data, using FelooPy:”</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="overflow-x-auto my-6 rounded-lg border border-gray-200 dark:border-gray-700"><table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 table-auto text-sm"><thead class="bg-gray-50 dark:bg-gray-800"><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><th class="px-2 py-1 text-left font-semibold text-foreground text-sm border-b">id</th><th class="px-2 py-1 text-left font-semibold text-foreground text-sm border-b">weight</th><th class="px-2 py-1 text-left font-semibold text-foreground text-sm border-b">value</th></tr></thead><tbody class="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900"><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_1</td><td class="px-2 py-1 text-sm text-foreground border-b">4</td><td class="px-2 py-1 text-sm text-foreground border-b">93</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_2</td><td class="px-2 py-1 text-sm text-foreground border-b">9</td><td class="px-2 py-1 text-sm text-foreground border-b">36</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_3</td><td class="px-2 py-1 text-sm text-foreground border-b">5</td><td class="px-2 py-1 text-sm text-foreground border-b">14</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_4</td><td class="px-2 py-1 text-sm text-foreground border-b">4</td><td class="px-2 py-1 text-sm text-foreground border-b">91</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_5</td><td class="px-2 py-1 text-sm text-foreground border-b">3</td><td class="px-2 py-1 text-sm text-foreground border-b">10</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_6</td><td class="px-2 py-1 text-sm text-foreground border-b">19</td><td class="px-2 py-1 text-sm text-foreground border-b">59</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_7</td><td class="px-2 py-1 text-sm text-foreground border-b">2</td><td class="px-2 py-1 text-sm text-foreground border-b">8</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_8</td><td class="px-2 py-1 text-sm text-foreground border-b">3</td><td class="px-2 py-1 text-sm text-foreground border-b">32</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_9</td><td class="px-2 py-1 text-sm text-foreground border-b">8</td><td class="px-2 py-1 text-sm text-foreground border-b">69</td></tr><tr class="even:bg-gray-50 dark:even:bg-gray-800/50"><td class="px-2 py-1 text-sm text-foreground border-b">item_10</td><td class="px-2 py-1 text-sm text-foreground border-b">5</td><td class="px-2 py-1 text-sm text-foreground border-b">63</td></tr></tbody></table></div>
+<p class="my-4 leading-relaxed text-foreground">The first thing the LLM did was to search the web, without me asking it to. The likely reason is that FelooPy, the integrated decision environment used for solving decision problems, is still not well-documented despite being around for three years. It then presented the following code:</p>
+<div class="relative my-6 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm"><div class="flex items-center justify-between bg-gray-100 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700"><span class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">python</span><button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-7 px-2 text-xs font-medium hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"><span class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy h-3 w-3" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg> Copy</span></button></div><div class="relative bg-gray-50 dark:bg-gray-900"><pre class="p-4 overflow-x-auto text-sm"><code><span class="hljs-comment"># pip install feloopy[stock]   # uncomment &amp; run once if FelooPy is not installed</span>
+
+<span class="hljs-keyword">import</span> feloopy <span class="hljs-keyword">as</span> flp
+
+<span class="hljs-comment"># --- data (from your table) ---</span>
+items = [
+    (<span class="hljs-string">"item_1"</span>,  <span class="hljs-number">4</span>,  <span class="hljs-number">93</span>),
+    (<span class="hljs-string">"item_2"</span>,  <span class="hljs-number">9</span>,  <span class="hljs-number">36</span>),
+    (<span class="hljs-string">"item_3"</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">14</span>),
+    (<span class="hljs-string">"item_4"</span>,  <span class="hljs-number">4</span>,  <span class="hljs-number">91</span>),
+    (<span class="hljs-string">"item_5"</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">10</span>),
+    (<span class="hljs-string">"item_6"</span>, <span class="hljs-number">19</span>,  <span class="hljs-number">59</span>),
+    (<span class="hljs-string">"item_7"</span>,  <span class="hljs-number">2</span>,   <span class="hljs-number">8</span>),
+    (<span class="hljs-string">"item_8"</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">32</span>),
+    (<span class="hljs-string">"item_9"</span>,  <span class="hljs-number">8</span>,  <span class="hljs-number">69</span>),
+    (<span class="hljs-string">"item_10"</span>, <span class="hljs-number">5</span>,  <span class="hljs-number">63</span>),
+]
+
+<span class="hljs-comment"># Change this capacity as needed</span>
+CAPACITY = <span class="hljs-number">50</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">build_knapsack_model</span>(<span class="hljs-params">m</span>):
+    <span class="hljs-comment"># create a binary decision var for each item</span>
+    x_vars = []
+    <span class="hljs-keyword">for</span> name, w, v <span class="hljs-keyword">in</span> items:
+        <span class="hljs-comment"># m.bvar creates a binary variable (per FelooPy examples)</span>
+        x = m.bvar(name=name)
+        x_vars.append(x)
+
+    <span class="hljs-comment"># objective: maximize total value</span>
+    obj_expr = <span class="hljs-built_in">sum</span>(v * x <span class="hljs-keyword">for</span> (_, _, v), x <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(items, x_vars))
+    m.obj(obj_expr)
+
+    <span class="hljs-comment"># knapsack capacity constraint: sum(weights * x) &lt;= CAPACITY</span>
+    cap_expr = <span class="hljs-built_in">sum</span>(w * x <span class="hljs-keyword">for</span> (_, w, _), x <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(items, x_vars))
+    m.con(cap_expr &lt;= CAPACITY, name=<span class="hljs-string">"capacity"</span>)
+
+    <span class="hljs-comment"># expose variables so we can inspect them later</span>
+    m._x_vars = x_vars
+    <span class="hljs-keyword">return</span> m
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">try_get_var_value</span>(<span class="hljs-params">var</span>):
+    <span class="hljs-string">"""
+    Try several common attribute/method names to retrieve the solved value of a variable.
+    FelooPy interfaces may wrap solver variables differently, so we attempt multiple ways.
+    """</span>
+    <span class="hljs-keyword">for</span> attr <span class="hljs-keyword">in</span> (<span class="hljs-string">"value"</span>, <span class="hljs-string">"x"</span>, <span class="hljs-string">"X"</span>, <span class="hljs-string">"value_"</span>, <span class="hljs-string">"solution_value"</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">hasattr</span>(var, attr):
+            val = <span class="hljs-built_in">getattr</span>(var, attr)
+            <span class="hljs-comment"># if it's callable (method), call it</span>
+            <span class="hljs-keyword">try</span>:
+                <span class="hljs-keyword">return</span> val() <span class="hljs-keyword">if</span> <span class="hljs-built_in">callable</span>(val) <span class="hljs-keyword">else</span> val
+            <span class="hljs-keyword">except</span> Exception:
+                <span class="hljs-keyword">pass</span>
+    <span class="hljs-comment"># try call directly (some wrappers overload __call__)</span>
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">return</span> var()
+    <span class="hljs-keyword">except</span> Exception:
+        <span class="hljs-keyword">pass</span>
+    <span class="hljs-comment"># couldn't read</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+<span class="hljs-comment"># Build model using FelooPy 'exact' modelling interface and a common open solver ('pulp')</span>
+m = flp.model(<span class="hljs-string">'exact'</span>, <span class="hljs-string">'knapsack_problem'</span>, <span class="hljs-string">'pulp'</span>)
+
+<span class="hljs-comment"># Add the knapsack structure</span>
+m = build_knapsack_model(m)
+
+<span class="hljs-comment"># Solve: objective direction 'max' with 'pulp' solver</span>
+<span class="hljs-comment"># (You can replace 'pulp' with any solver available on your machine/framework)</span>
+m.sol([<span class="hljs-string">'max'</span>], <span class="hljs-string">'pulp'</span>)
+
+<span class="hljs-comment"># Print FelooPy report (human-readable)</span>
+m.report()
+
+<span class="hljs-comment"># Try to display variables using FelooPy helper (prints to console)</span>
+<span class="hljs-comment"># This typically shows variable names and values in FelooPy</span>
+<span class="hljs-keyword">try</span>:
+    m.dis_variable(*m._x_vars)
+<span class="hljs-keyword">except</span> Exception:
+    <span class="hljs-comment"># if the helper is not available for the chosen interface, ignore</span>
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-comment"># Now attempt to collect solution values programmatically and print chosen items + totals</span>
+selected = []
+total_weight = <span class="hljs-number">0</span>
+total_value = <span class="hljs-number">0</span>
+
+<span class="hljs-keyword">for</span> (name, w, v), var <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(items, m._x_vars):
+    val = try_get_var_value(var)
+    <span class="hljs-comment"># Val might be float-like; treat &gt; 0.5 as chosen (binary)</span>
+    chosen = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> val <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+        <span class="hljs-comment"># fallback: try to query model's solution summary if available</span>
+        chosen = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">try</span>:
+            chosen = <span class="hljs-built_in">float</span>(val) &gt; <span class="hljs-number">0.5</span>
+        <span class="hljs-keyword">except</span> Exception:
+            chosen = <span class="hljs-built_in">bool</span>(val)
+
+    <span class="hljs-keyword">if</span> chosen:
+        selected.append(name)
+        total_weight += w
+        total_value += v
+
+<span class="hljs-comment"># Print concise solution summary</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"\n--- Solution summary ---"</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Capacity:"</span>, CAPACITY)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Chosen items:"</span>, selected)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Total weight:"</span>, total_weight)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Total value:"</span>, total_value)
+</code></pre></div></div>
+<p class="my-4 leading-relaxed text-foreground">The code it generated contains several errors and is unnecessarily complex. It seems the LLM couldn’t keep up with the updates that <code>feloopy</code> has undergone over the past three years. The error is:</p>
+<div class="relative my-6 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm"><div class="flex items-center justify-between bg-gray-100 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700"><span class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">text</span><button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-7 px-2 text-xs font-medium hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"><span class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy h-3 w-3" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg> Copy</span></button></div><div class="relative bg-gray-50 dark:bg-gray-900"><pre class="p-4 overflow-x-auto text-sm"><code>    raise ValueError(f"Invalid '{label}'. Please choose from: {str(list_of_allowed_values)}.")
+ValueError: Invalid 'method'. Please choose from: ['constraint', 'convex', 'exact', 'heuristic', 'uncertain'].
+</code></pre></div></div>
+<p class="my-4 leading-relaxed text-foreground">I fixed the code myself and tried running it again:</p>
+<div class="relative my-6 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm"><div class="flex items-center justify-between bg-gray-100 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700"><span class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">python</span><button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-7 px-2 text-xs font-medium hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"><span class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy h-3 w-3" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg> Copy</span></button></div><div class="relative bg-gray-50 dark:bg-gray-900"><pre class="p-4 overflow-x-auto text-sm"><code>
+<span class="hljs-comment"># pip install feloopy[stock]   # uncomment &amp; run once if FelooPy is not installed</span>
+
+<span class="hljs-keyword">import</span> feloopy <span class="hljs-keyword">as</span> flp
+
+<span class="hljs-comment"># --- data (from your table) ---</span>
+items = [
+    (<span class="hljs-string">"item_1"</span>,  <span class="hljs-number">4</span>,  <span class="hljs-number">93</span>),
+    (<span class="hljs-string">"item_2"</span>,  <span class="hljs-number">9</span>,  <span class="hljs-number">36</span>),
+    (<span class="hljs-string">"item_3"</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">14</span>),
+    (<span class="hljs-string">"item_4"</span>,  <span class="hljs-number">4</span>,  <span class="hljs-number">91</span>),
+    (<span class="hljs-string">"item_5"</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">10</span>),
+    (<span class="hljs-string">"item_6"</span>, <span class="hljs-number">19</span>,  <span class="hljs-number">59</span>),
+    (<span class="hljs-string">"item_7"</span>,  <span class="hljs-number">2</span>,   <span class="hljs-number">8</span>),
+    (<span class="hljs-string">"item_8"</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">32</span>),
+    (<span class="hljs-string">"item_9"</span>,  <span class="hljs-number">8</span>,  <span class="hljs-number">69</span>),
+    (<span class="hljs-string">"item_10"</span>, <span class="hljs-number">5</span>,  <span class="hljs-number">63</span>),
+]
+
+<span class="hljs-comment"># Change this capacity as needed</span>
+CAPACITY = <span class="hljs-number">50</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">build_knapsack_model</span>(<span class="hljs-params">m</span>):
+    <span class="hljs-comment"># create a binary decision var for each item</span>
+    x_vars = []
+    <span class="hljs-keyword">for</span> name, w, v <span class="hljs-keyword">in</span> items:
+        <span class="hljs-comment"># m.bvar creates a binary variable (per FelooPy examples)</span>
+        x = m.bvar(name=name)
+        x_vars.append(x)
+
+    <span class="hljs-comment"># objective: maximize total value</span>
+    obj_expr = <span class="hljs-built_in">sum</span>(v * x <span class="hljs-keyword">for</span> (_, _, v), x <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(items, x_vars))
+    m.obj(obj_expr)
+
+    <span class="hljs-comment"># knapsack capacity constraint: sum(weights * x) &lt;= CAPACITY</span>
+    cap_expr = <span class="hljs-built_in">sum</span>(w * x <span class="hljs-keyword">for</span> (_, w, _), x <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(items, x_vars))
+    m.con(cap_expr &lt;= CAPACITY, name=<span class="hljs-string">"capacity"</span>)
+
+    <span class="hljs-comment"># expose variables so we can inspect them later</span>
+    m._x_vars = x_vars
+    <span class="hljs-keyword">return</span> m
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">try_get_var_value</span>(<span class="hljs-params">var</span>):
+    <span class="hljs-string">"""
+    Try several common attribute/method names to retrieve the solved value of a variable.
+    FelooPy interfaces may wrap solver variables differently, so we attempt multiple ways.
+    """</span>
+    <span class="hljs-keyword">for</span> attr <span class="hljs-keyword">in</span> (<span class="hljs-string">"value"</span>, <span class="hljs-string">"x"</span>, <span class="hljs-string">"X"</span>, <span class="hljs-string">"value_"</span>, <span class="hljs-string">"solution_value"</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">hasattr</span>(var, attr):
+            val = <span class="hljs-built_in">getattr</span>(var, attr)
+            <span class="hljs-comment"># if it's callable (method), call it</span>
+            <span class="hljs-keyword">try</span>:
+                <span class="hljs-keyword">return</span> val() <span class="hljs-keyword">if</span> <span class="hljs-built_in">callable</span>(val) <span class="hljs-keyword">else</span> val
+            <span class="hljs-keyword">except</span> Exception:
+                <span class="hljs-keyword">pass</span>
+    <span class="hljs-comment"># try call directly (some wrappers overload __call__)</span>
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">return</span> var()
+    <span class="hljs-keyword">except</span> Exception:
+        <span class="hljs-keyword">pass</span>
+    <span class="hljs-comment"># couldn't read</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+<span class="hljs-comment"># Build model using FelooPy 'exact' modelling interface and a common open solver ('pulp')</span>
+m = flp.model(method=<span class="hljs-string">'exact'</span>,name=<span class="hljs-string">'knapsack_problem'</span>, interface=<span class="hljs-string">'pulp'</span>)
+
+<span class="hljs-comment"># Add the knapsack structure</span>
+m = build_knapsack_model(m)
+
+<span class="hljs-comment"># Solve: objective direction 'max' with 'pulp' solver</span>
+<span class="hljs-comment"># (You can replace 'pulp' with any solver available on your machine/framework)</span>
+m.sol([<span class="hljs-string">'max'</span>], <span class="hljs-string">'cbc'</span>)
+
+<span class="hljs-comment"># Print FelooPy report (human-readable)</span>
+m.report()
+
+<span class="hljs-comment"># Try to display variables using FelooPy helper (prints to console)</span>
+<span class="hljs-comment"># This typically shows variable names and values in FelooPy</span>
+<span class="hljs-keyword">try</span>:
+    m.dis_variable(*m._x_vars)
+<span class="hljs-keyword">except</span> Exception:
+    <span class="hljs-comment"># if the helper is not available for the chosen interface, ignore</span>
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-comment"># Now attempt to collect solution values programmatically and print chosen items + totals</span>
+selected = []
+total_weight = <span class="hljs-number">0</span>
+total_value = <span class="hljs-number">0</span>
+
+<span class="hljs-keyword">for</span> (name, w, v), var <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(items, m._x_vars):
+    val = try_get_var_value(var)
+    <span class="hljs-comment"># Val might be float-like; treat &gt; 0.5 as chosen (binary)</span>
+    chosen = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">if</span> val <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+        <span class="hljs-comment"># fallback: try to query model's solution summary if available</span>
+        chosen = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">try</span>:
+            chosen = <span class="hljs-built_in">float</span>(val) &gt; <span class="hljs-number">0.5</span>
+        <span class="hljs-keyword">except</span> Exception:
+            chosen = <span class="hljs-built_in">bool</span>(val)
+
+    <span class="hljs-keyword">if</span> chosen:
+        selected.append(name)
+        total_weight += w
+        total_value += v
+
+<span class="hljs-comment"># Print concise solution summary</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"\n--- Solution summary ---"</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Capacity:"</span>, CAPACITY)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Chosen items:"</span>, selected)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Total weight:"</span>, total_weight)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Total value:"</span>, total_value)
+</code></pre></div></div>
+<p class="my-4 leading-relaxed text-foreground">The result was:</p>
+<div class="relative my-6 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm"><div class="flex items-center justify-between bg-gray-100 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700"><span class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">text</span><button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-7 px-2 text-xs font-medium hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"><span class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy h-3 w-3" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg> Copy</span></button></div><div class="relative bg-gray-50 dark:bg-gray-900"><pre class="p-4 overflow-x-auto text-sm"><code>
+┌─ FelooPy v0.3.9 ───────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ Date: 2025-11-11                                                        Time: 11:13:25 │
+│ Interface: pulp                                                            Solver: cbc │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌─ Model ────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ Name: knapsack_problem                                                                 │
+│ Feature:                                    Class:                            Total:   │
+│ Binary variable                             10                                10       │
+│ Total variables                             10                                10       │
+│ Objective                                   -                                 1        │
+│ Constraint                                  1                                 1        │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌─ Solve ────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ Method: exact                                                          Objective value │
+│ Status:                                                                            max │
+│ Optimal                                                                         429.00 │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌─ Metric ───────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ CPT (microseconds)                                                            8.70e+04 │
+│ CPT (hour:min:sec)                                                            00:00:00 │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌─ Decision ─────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│ item_1 = 1.0                                                                           │
+│ item_3 = 1.0                                                                           │
+│ item_4 = 1.0                                                                           │
+│ item_6 = 1.0                                                                           │
+│ item_7 = 1.0                                                                           │
+│ item_8 = 1.0                                                                           │
+│ item_9 = 1.0                                                                           │
+│ item_10 = 1.0                                                                          │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+
+--- Solution summary ---
+Capacity: 50
+Chosen items: ['item_1', 'item_3', 'item_4', 'item_6', 'item_7', 'item_8', 'item_9', 'item_10']
+Total weight: 50
+Total value: 429
+</code></pre></div></div>
+<p class="my-4 leading-relaxed text-foreground">This run reached a value of 429! 38.96% better than the solution obtained by a non-expert using an LLM. So yes, an LLM can act as an interface between user and solver, but it’s more like navigating a crowded road than walking an empty one: you save coding time, but may spend more time debugging. Even experts can take much longer if they don’t know how to fix issues. The code it produced works, but it could be written more cleanly as follows:</p>
+<div class="relative my-6 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm"><div class="flex items-center justify-between bg-gray-100 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700"><span class="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">python</span><button data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-7 px-2 text-xs font-medium hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"><span class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy h-3 w-3" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"></path><path d="m15 10-4 4 4 4"></path></svg> Copy</span></button></div><div class="relative bg-gray-50 dark:bg-gray-900"><pre class="p-4 overflow-x-auto text-sm"><code><span class="hljs-keyword">import</span> feloopy <span class="hljs-keyword">as</span> flp
+
+n = <span class="hljs-number">10</span>
+<span class="hljs-built_in">id</span> = [<span class="hljs-string">f"item_<span class="hljs-subst">{i+<span class="hljs-number">1</span>}</span>"</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)]
+weight = [<span class="hljs-number">4</span>,<span class="hljs-number">9</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">19</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">8</span>,<span class="hljs-number">5</span>]
+value = [<span class="hljs-number">93</span>,<span class="hljs-number">36</span>,<span class="hljs-number">14</span>,<span class="hljs-number">91</span>,<span class="hljs-number">10</span>,<span class="hljs-number">59</span>,<span class="hljs-number">8</span>,<span class="hljs-number">32</span>,<span class="hljs-number">69</span>,<span class="hljs-number">63</span>]
+capacity = <span class="hljs-number">50</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">knapsack</span>(<span class="hljs-params">m</span>):
+    x = m.bvar(name=<span class="hljs-string">"x"</span>, dim=[n])
+    m.con(m.<span class="hljs-built_in">sum</span>(weight[i]*x[i] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n))&lt;=<span class="hljs-number">50</span>)
+    m.obj(m.<span class="hljs-built_in">sum</span>(value[i]*x[i] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)))
+    <span class="hljs-keyword">return</span> m
+
+problem = {
+    <span class="hljs-string">"environment"</span>:knapsack,
+    <span class="hljs-string">"interface"</span>: <span class="hljs-string">"pulp"</span>,
+    <span class="hljs-string">"solver"</span>: <span class="hljs-string">"cbc"</span>,
+    <span class="hljs-string">"directions"</span>: [<span class="hljs-string">"max"</span>]
+}
+
+model = flp.search(**problem)
+x = model.get(<span class="hljs-string">"x"</span>)
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):
+    <span class="hljs-keyword">if</span> x[i]==<span class="hljs-number">1</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>[i], <span class="hljs-string">"is selected"</span>)
+</code></pre></div></div>
+<p class="my-4 leading-relaxed text-foreground">Knowing the right tips and tricks can help you code more efficiently, build stronger models, and find better solutions. How much you improve depends on the time you invest in learning. It is not just about writing constraints in the correct mathematical form; each constraint is simple math. The real challenge lies in how constraints interact, and diagnosing those interactions is difficult even for experts.</p>
+<h1 id="conclusion" class="text-3xl font-bold mt-8 mb-4 scroll-mt-20 text-gray-900 dark:text-gray-100"><a href="#conclusion" class="text-[#76b900] hover:underline font-medium">Conclusion</a></h1>
+<p class="my-4 leading-relaxed text-foreground">Getting stakeholders to implement your recommendations; especially when they have relied on intuition for years, is one of the most challenging tasks for industrial engineers. When you write a research proposal or prepare a model or algorithm for deployment, you must clearly demonstrate business value to both the paper reviewer and the industry decision-maker; without that, your work risks rejection.</p>
+<p class="my-4 leading-relaxed text-foreground">LLMs can deliver real value for routine, repetitive tasks. In operations research, and in any field that automates repetitive work; code, models, and algorithms are tools, not sources of competitive advantage. The real edge comes from continually clarifying and updating the assumptions that define the problem, ensuring solutions genuinely fit real-world expectations or address system weaknesses. That is continuous improvement: be context- and result-oriented, not tool-oriented.</p>
+<p class="my-4 leading-relaxed text-foreground">We must also consider who builds the systems, who makes decisions with LLMs, and who benefits. If an LLM only produces what an equally skilled developer could have written unaided, its added value is limited. Trust and expertise matter: a practitioner who understands the underlying theory and can actively collaborate with an LLM is far more reliable than someone who treats the process as a black box. Non-experts often remain uncertain about when to stop prompting or whether their prompts are adequate; experts, by contrast, can use LLMs to simplify repetitive tasks; but should avoid overreliance.</p><div data-slot="accordion" class="mt-8 max-w-4xl mx-auto border border-gray-200 dark:border-gray-700 rounded-lg" data-orientation="vertical"><div data-state="closed" data-orientation="vertical" data-slot="accordion-item" class="last:border-b-0 border-b-0"><h3 data-orientation="vertical" data-state="closed" class="flex"><button type="button" aria-controls="radix-_r_1_" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-_r_0_" data-slot="accordion-trigger" class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold py-4 px-6 hover:no-underline hover:bg-gray-50 dark:hover:bg-gray-800/50" data-radix-collection-item=""><div class="flex items-center gap-2"><div class="w-1 h-4 bg-[#76b900] rounded"></div>How to cite?</div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></h3><div data-state="closed" id="radix-_r_1_" hidden="" role="region" aria-labelledby="radix-_r_0_" data-orientation="vertical" data-slot="accordion-content" class="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm" style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);"></div></div></div></div><div class="mt-12 max-w-4xl mx-auto"><div class="comment-ui" style="position: relative; z-index: 50;"><style>
+ .comment-ui ::-webkit-scrollbar { display: none; width: 0; height: 0; }
+ .comment-ui { scrollbar-width: none; -ms-overflow-style: none; }
+ .comment-ui textarea::-webkit-scrollbar { display: none; height: 0; width: 0; }
+ .comment-ui textarea { scrollbar-width: none; -ms-overflow-style: none; }
+ </style><div style="position: fixed; left: 0px; right: 0px; bottom: calc(0px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; align-items: center; pointer-events: none; z-index: 60;"><div aria-hidden="true" class="bg-background" style="position: absolute; left: 0px; right: 0px; bottom: 0px; pointer-events: none; z-index: 0; height: 37px;"></div><div class="comment-composer" style="padding: 0.92px; pointer-events: auto; display: flex; justify-content: center; width: 100%;"><div style="width: 100%; max-width: 1000px; padding: 0px 9.2px;"><div class="bg-background shadow-2xl border composer-card singleline" style="padding: 5.52px 7.36px; display: flex; gap: 7.36px; align-items: center; transition: padding 140ms; flex-direction: row; position: relative; overflow: visible; min-height: 36.8px;"><div style="display: flex; align-items: center; gap: 0.92px;"><button type="button" title="Add reaction" class="inline-flex items-center justify-center" style="padding: 5.52px; border-radius: 999px; background: transparent; min-width: 33.12px; min-height: 33.12px; display: inline-flex; pointer-events: auto;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus h-5 w-5" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button><button type="button" title="Preview comment" aria-pressed="false" class="inline-flex items-center justify-center text-gray-600 dark:text-gray-300" style="padding: 7.36px; border-radius: 999px; display: inline-flex; min-width: 33.12px; min-height: 33.12px; background: transparent; border: none; pointer-events: auto;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye h-5 w-5" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg></button></div><div class="" style="flex: 1 1 0%; display: flex; align-items: center; width: 100%;"><textarea id="sticky-comment" placeholder="Add a comment..." class="w-full bg-transparent text-sm placeholder-gray-500 resize-none focus:outline-none" rows="1" style="min-height: 33.12px; max-height: 239px; line-height: 18.4px; padding: 9.2px; border-radius: 7.36px; overflow: auto hidden; background: transparent; border: none; outline: none; transition: font-size 120ms, padding 120ms; font-size: 14.72px; pointer-events: auto; height: 34px;"></textarea></div><div style="display: flex; align-items: center; gap: 7.36px;"><button type="button" title="View comments" aria-pressed="false" class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300" style="padding: 7.36px; border-radius: 999px; display: inline-flex; min-width: 33.12px; min-height: 33.12px; background: transparent; border: none; position: relative; pointer-events: auto;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-messages-square h-5 w-5" aria-hidden="true"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path><path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"></path></svg></button><button title="Finalize comment" class="inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-gray-900" aria-label="Finalize comment" style="height: 27.6px; width: 27.6px; border-radius: 999px; display: inline-flex; pointer-events: auto;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up h-5 w-5" aria-hidden="true"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg></button></div></div></div></div><div class="text-foreground z-100 " style="width: 100%; max-width: 1000px; pointer-events: auto;"><div class="text-foreground " style="background: transparent; padding: 2.76px 0px; text-align: center; border-radius: 8px;"><div class="text-foreground" style="font-size: 12.88px;">Share your thought in one sentence.</div></div></div></div></div><style>
+ f .comment-ui [style*="overscroll-behavior"] { overscroll-behavior: contain; }
+ .comment-ui textarea { font-size: 14.72px; }
+ @media (min-width: 640px) { .comment-ui textarea { font-size: 11.96px; } }
+ .compact-comment { transition: background 120ms ease; }
+ .compact-comment:hover { background: rgba(255,255,255,0.02); }
+ </style></div></article></div></div></main><footer class="bg-background border-t py-4 mt-auto col-span-2"><div class="max-w-4xl mx-auto px-4 text-sm flex items-center justify-between"><span>© 2022–2025 FelooPy | All Rights Reserved.</span><div><a aria-label="Status page" href="/status" data-discover="true"><button data-slot="button" class="justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md has-[&gt;svg]:px-2.5 inline-flex items-center gap-2 px-3 py-1"><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; border-radius: 999px; background: rgb(16, 185, 129); box-shadow: rgba(16, 185, 129, 0.533) 0px 0px 10px, rgba(16, 185, 129, 0.267) 0px 0px 20px; transform: translateY(0.5px);"></span><span style="font-weight: 600;">Active</span></button></a></div></div></footer><style>
+        @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .animate-gradient { animation: gradient 3s ease infinite; }
+      </style></div></div>
+    <script>
+      try {
+        console.log(
+          "%cFelooPy Console System",
+          "font-weight:700; font-size:12px; color:#0769AD;"
+        );
+      } catch (e) {
+        /* ignore if console is unavailable */
+      }
+    </script>
+  
+
+</body></html>

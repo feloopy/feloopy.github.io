@@ -1,0 +1,7 @@
+LPSolve implements the revised simplex method for LP and branch-and-bound for MILP, accepts .lp and .mps model formats, offers presolve, SOS, and semi-continuous variable support, and can be called from many languages (C, Java, R/Python wrappers, Excel, .NET, …) via its API or CLI.
+
+It handles linear models only; expressions like 5x - 3y are OK, but nonlinear terms like x*y cannot be modeled directly.
+
+It’s LGPL-licensed and even distributed via Linux distros or Excel Add-ins. Founding contributors are Michel Berkelaar, Jeroen Dirks, Kjell Eikland, Peter Notebaert, and Juergen Ebert. An integrated development environment for LPSolve (called LPSolve IDE) has also been in development by Henri Gourvest. Recently, the codebase and releases have been maintained on GitHub/SourceForge with community contributors and distro packages. The reference guide and documentation are also hosted on a Massachusetts Institute of Technology (MIT) mirror.
+
+There are claims that the origins of LPSolve development trace back to the mid-1990s, and the project has remained actively available and packaged across distros for around 30 years. However, its release history on SourceForge shows versions from[5.5.0.6](http://5.5.0.6/)to[5.5.2.12](http://5.5.2.12/)(beta) in development from 4 December 2005 to 6 January 2021 (about 16 years). On GitHub, development is in progress, and there is a release dated 14 April 2025, version[5.5.2.14](http://5.5.2.14/), by peno64, Vikas Khurana, Marcel Gosselin, and Caolán McNamara. It’s an open source project with ongoing community updates.

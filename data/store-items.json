@@ -1,0 +1,359 @@
+[
+  {
+    "id": "omelet",
+    "name": "OMELET",
+    "vendor": "Omelet",
+    "short_description": "AI-first Routing Solver",
+    "long_description": "./info/omelet.md",
+    "tags": [
+      "solver",
+      "routing",
+      "tms",
+      "optimization",
+      "ai",
+      "ml",
+      "vrp",
+      "vehicle-routing"
+    ],
+    "license": "Proprietary",
+    "video": "",
+    "officialDownload": ["https://omelet.ai/en/"],
+    "homepage": "https://omelet.ai/en/",
+    "last_checked": "2025-11-01T00:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://www.oaasis.cc/routing/static/media/omelet-icon-gradient.7248992b996b71720452.png",
+    "screenshots": [
+      "https://omelet.ai/_next/static/media/optimizationAI.ebd0a3e1.png",
+      "https://omelet.ai/_next/static/media/vision_optimizationAI-agent.cb3e8ecc.png",
+      "https://www.oaasis.cc/routing/static/media/how-img.ede4d5c7e127a4dd9ab5.png",
+      "https://omelet.ai/_next/static/media/op-aiagent-structure.af07542a.png",
+      "https://www.oaasis.cc/routing/static/media/step1-1.1cc377b1a7678fe99002.gif",
+      "https://www.oaasis.cc/routing/static/media/step2-1.a0bdb6efc13441009c22a.gif",
+      "https://www.oaasis.cc/routing/static/media/step3-1.d87d78203653867ddbb4.gif",
+      "https://www.oaasis.cc/routing/static/media/step4-1.0a58808285c650a9afd7.gif"
+    ],
+    "popularity": 100,
+    "documentation": [
+      "https://omelet.ai/en/research/",
+      "https://omelet.ai/en/history/",
+      "https://omelet.ai/en/members/",
+      "https://omelet.ai/en/contact/"
+    ],
+    "auto_update": false,
+    "latest_version": "",
+    "background_color": "#6b5eb5"
+  },
+
+  {
+    "id": "copt",
+    "name": "COPT",
+    "vendor": "Cardinal Operations",
+    "short_description": "Ultimate Optimziation Engine",
+    "long_description": "./info/copt.md",
+    "tags": ["solver", "lp", "ip", "milp", "sop"],
+    "license": "Proprietary",
+    "officialDownload": ["https://www.shanshu.ai/copt"],
+    "homepage": "https://www.shanshu.ai/",
+    "video": "https://pub.shanshu.ai/cardinalsite_v2/video/20230118/%E6%A8%AA%E7%89%88.mp4",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://styles.redditmedia.com/t5_405odc/styles/communityIcon_8ycj3dtwb2j61.jpg?width=256&format=pjpg&s=1cc2d56bf35ff2564c8a973ac9a68a8951bc8f2d",
+    "screenshots": [
+      "https://www.shanshu.ai/_nuxt/videos/115.dee43fd.mp4",
+      "https://www.shanshu.ai/_nuxt/img/copt_big_en.46251ae.jpg"
+    ],
+    "popularity": 100,
+    "documentation": ["https://www.shanshu.ai/copt-document"],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "#851d33"
+  },
+
+  {
+    "id": "mosek",
+    "name": "MOSEK",
+    "vendor": "MOSEK ApS",
+    "short_description": "Fast Interior Point Solver",
+    "long_description": "./info/mosek.md",
+    "tags": ["solver", "lp", "ip", "milp", "sop"],
+    "license": "Proprietary",
+    "officialDownload": [
+      "https://download.mosek.com/stable/11.0.29/mosektoolslinux64x86.tar.bz2",
+      "https://download.mosek.com/stable/11.0.29/mosektoolslinuxaarch64.tar.bz2",
+      "https://download.mosek.com/stable/11.0.29/mosektoolsosxaarch64.tar.bz2",
+      "https://download.mosek.com/stable/11.0.29/moseksetupwin64x86.msi"
+    ],
+    "homepage": "https://www.mosek.com/",
+    "video": "https://www.youtube.com/watch?v=4e4FdYdyIU4",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://www.mosek.com/static/images/branding/icon48x48.png",
+    "screenshots": [
+      "https://docs.mosek.com/graphics/cookbook_cover.jpg",
+      "https://docs.mosek.com/graphics/portfolio_cover.jpg"
+    ],
+    "popularity": 100,
+    "documentation": [
+      "https://www.mosek.com/documentation/",
+      "https://docs.mosek.com/MOSEKModelingCookbook-letter.pdf",
+      "https://docs.mosek.com/MOSEKPortfolioCookbook-letter.pdf",
+      "https://www.mosek.com/resources/presentations/"
+    ],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "#ff7d00"
+  },
+  {
+    "id": "timefold",
+    "name": "Timefold",
+    "vendor": "Geoffrey De Smet and Maarten Vandenbroucke",
+    "short_description": "Solver for Scheduling & Routing",
+    "long_description": "./info/timefold.md",
+    "tags": ["solver", "lp", "ip", "milp", "sop"],
+    "license": "Apache 2.0",
+    "officialDownload": [
+      "https://github.com/TimefoldAI/timefold-solver/archive/refs/tags/v1.27.0.zip"
+    ],
+    "homepage": "https://solver.timefold.ai/",
+    "video": "https://www.youtube.com/watch?v=pM0-kebKUnU",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://timefold.ai/uploads/images/Brand-Assets/Logomark-Positive.png",
+    "screenshots": [
+      "https://timefold.ai/uploads/images/_3072xAUTO_fit_center-center_90_none/3785/platform-screenshot.webp",
+      "https://timefold.ai/uploads/images/_1536xAUTO_fit_center-center_90_none/95/USP-1-REAL-TIME.webp",
+      "https://timefold.ai/uploads/images/_1536xAUTO_fit_center-center_90_none/97/USP-3-CONTINUOUSLY.webp",
+      "https://timefold.ai/uploads/images/_1536xAUTO_fit_center-center_90_none/96/USP-2-FIXED.webp",
+      "https://timefold.ai/uploads/images/_1536xAUTO_fit_center-center_90_none/100/USP-4-FORESIGHT.webp"
+    ],
+    "popularity": 100,
+    "documentation": [
+      "https://github.com/TimefoldAI/timefold-quickstarts",
+      "https://docs.timefold.ai/"
+    ],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "black"
+  },
+
+  {
+    "id": "highs",
+    "name": "HiGHS",
+    "vendor": "Julian Hall, Ivet Galabova, Qi Huangfu, Lukas Schork",
+    "short_description": "High Performance Solver Suite",
+    "long_description": "./info/highs.md",
+    "tags": ["solver", "lp", "ip", "milp", "sop"],
+    "license": "MIT",
+    "video": "",
+    "officialDownload": [
+      "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.x86_64-w64-mingw32.tar.gz",
+      "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.x86_64-linux-gnu-cxx11.tar.gz",
+      "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.x86_64-apple-darwin.tar.gz",
+      "https://github.com/JuliaBinaryWrappers/HiGHSstatic_jll.jl/releases/download/HiGHSstatic-v1.11.0%2B1/HiGHSstatic.v1.11.0.aarch64-apple-darwin.tar.gz",
+      "https://github.com/ERGO-Code/HiGHS/releases/download/v1.11.0/source-archive.tar.gz"
+    ],
+    "homepage": "https://highs.dev/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://ergo-code.github.io/HiGHS/dev/assets/logo.png",
+    "screenshots": [
+      "https://repository-images.githubusercontent.com/126994758/aac8de80-69ec-11e9-9432-19d01c60eb19"
+    ],
+    "popularity": 100,
+    "documentation": ["https://ergo-code.github.io/HiGHS/dev/"],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "#bd252c"
+  },
+
+  {
+    "id": "scip",
+    "name": "SCIP",
+    "vendor": "Zuse Institute Berlin",
+    "short_description": "Solver Suite",
+    "long_description": "./info/scip.md",
+    "tags": ["solver", "lp", "ip", "milp", "minlp", "sop"],
+    "license": "Apache 2.0, LGPLv3",
+    "video": "https://www.youtube.com/watch?v=Rzk5GfUaLiY&list=PLRR7y4aaxzXNp0hgDY-1okOZLFf-pf5Kl&index=1&pp=iAQB",
+    "officialDownload": [
+      "https://scipopt.org/download/release/SCIPOptSuite-9.2.3-win64.exe",
+      "https://scipopt.org/download/release/SCIPOptSuite-9.2.3-Linux-ubuntu24.deb",
+      "https://scipopt.org/download/release/SCIPOptSuite-9.2.3-Linux-debian12.deb",
+      "https://scipopt.org/download/release/SCIPOptSuite-9.2.3-Darwin.sh"
+    ],
+    "homepage": "https://scipopt.org/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://scipopt.org/images/newscippy.png",
+    "screenshots": [
+      "https://scipopt.org/images/scip_structure_landscape-compressed.png",
+      "https://ug.zib.de/images/ug_design.png",
+      "https://ug.zib.de/images/ug_tree.png"
+    ],
+    "popularity": 100,
+    "documentation": ["https://scipopt.org/doc/html/"],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "#35c1f1",
+    "icon_background": "blue"
+  },
+
+  {
+    "id": "seeker",
+    "name": "SEEKER",
+    "vendor": "InsideOpt",
+    "short_description": "The Next Generation Primal Solver",
+    "long_description": "./info/seeker.md",
+    "tags": ["solver", "lp", "ip", "milp", "minlp", "gpp", "up", "sop", "mop"],
+    "license": "Proprietary",
+    "video": "https://www.youtube.com/watch?v=E7meP8wph3w&list=PLHULWUkgcw3KkeaFHnX9X5pMw1GzU4llc",
+    "officialDownload": [
+      "https://insideopt.com/pages/install-insideopt-seeker"
+    ],
+    "homepage": "https://insideopt.com/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://insideopt.com/cdn/shop/files/Logo_InsideOpt_Neu2-removebg-preview_130x@2x.png?v=1685794392",
+    "screenshots": [
+      "https://insideopt.com/cdn/shop/files/Snapseed_8.jpg?v=1686791647",
+      "https://insideopt.com/cdn/shop/articles/Seeker_Short_-_Google_Slides_2025-09-24_16-08-47_1500x.png?v=1758744926"
+    ],
+    "popularity": 100,
+    "documentation": [
+      "https://insideopt.com/pages/seeker-workshop",
+      "http://linkedin.com/build-relation/newsletter-follow?entityUrn=7055208705293733889",
+      "https://insideopt.com/blogs/news",
+      "https://cdn.shopify.com/s/files/1/0577/5602/4854/files/Seeker_User_s_Manual.pdf",
+      "https://cdn.shopify.com/s/files/1/0577/5602/4854/files/IO_License_Terms.pdf"
+    ],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "#8f0d8e"
+  },
+  {
+    "id": "lpl",
+    "name": "LPL",
+    "vendor": "Tony Hürlimann (MatMod)",
+    "short_description": "Modeling Language & IDE",
+    "long_description": "./info/lpl.md",
+    "tags": ["modeling", "lp", "ip", "milp", "minlp", "sop"],
+    "license": "Proprietary",
+    "officialDownload": [
+      "https://matmod.ch/lpl/download/lpl/install-lpl.exe",
+      "https://matmod.ch/papers.html#sect04"
+    ],
+    "homepage": "https://matmod.ch/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://matmod.ch/img/logos/logo2.jpg",
+    "screenshots": [
+      "https://matmod.ch/img/hero.png",
+      "https://matmod.ch/img/models/Erkl_03.jpg",
+      "https://matmod.ch/img/models/Erkl_02.gif"
+    ],
+    "popularity": 100,
+    "documentation": ["https://matmod.ch/lpl/doc/modelbook.pdf"],
+    "auto_update": true,
+    "latest_version": "",
+    "background_color": "#1871c1"
+  },
+
+  {
+    "id": "lpsolve",
+    "name": "LPSOLVE",
+    "vendor": "Michel Berkelaar & Henri Gourvest",
+    "short_description": "Solver & IDE",
+    "long_description": "./info/lpsolve.md",
+    "video": "https://www.youtube.com/watch?v=oPX0HEs5X-Y",
+    "tags": ["solver", "lp", "ip", "milp", "sop"],
+    "license": "LGPL",
+    "officialDownload": [
+      "https://github.com/lp-solve/lp_solve/releases/download/5.5.2.14/lp_solve_5.5.2.14_IDE_Setup.exe",
+      "https://github.com/lp-solve/lp_solve/releases/download/5.5.2.14/lp_solve_5.5.2.14_IDE_source.zip",
+      "https://github.com/lp-solve/lp_solve/releases/download/5.5.2.14/lp_solve_5.5.2.14_c.tar.gz"
+    ],
+    "homepage": "https://lp-solve.github.io/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://avatars.githubusercontent.com/u/204413353?s=200&v=4",
+    "screenshots": [
+      "https://lp-solve.github.io/IDE/IDE1.gif",
+      "https://lp-solve.github.io/IDE/IDE2.gif",
+      "https://lp-solve.github.io/IDE/IDE3.gif",
+      "https://lp-solve.github.io/IDE/IDE4.gif"
+    ],
+    "popularity": 100,
+    "documentation": ["https://lp-solve.github.io/"],
+    "auto_update": true,
+    "latest_version": "5.5.2.14",
+    "background_color": "#000000"
+  },
+  {
+    "id": "picat",
+    "name": "PICAT",
+    "vendor": "Neng-Fa Zhou",
+    "short_description": "Logical Scripting & Modeling Language",
+    "long_description": "./info/picat.md",
+    "tags": ["modeling", "scripting", "lp", "ip", "milp", "cp", "sop"],
+    "video": "https://www.youtube.com/watch?v=cnfxMmyDAj4",
+    "license": "MPL-2.0",
+    "officialDownload": [
+      "https://picat-lang.org/download/picat39_linux64.tar.gz",
+      "https://picat-lang.org/download/picat39_mingw64.zip",
+      "https://picat-lang.org/download/picat391_src.tar.gz"
+    ],
+    "homepage": "https://picat-lang.org/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://picat-lang.org/images/picat_logo.png",
+    "screenshots": ["https://picat-lang.org/images/springer_11845.jpg"],
+    "popularity": 100,
+    "documentation": [
+      "https://picat-lang.org/download/picat_guide_html/picat_guide.html",
+      "https://picat-lang.org/download/picat_guide.pdf"
+    ],
+    "auto_update": true,
+    "latest_version": "3.9",
+    "background_color": "#8adce0"
+  },
+
+  {
+    "id": "gusek",
+    "name": "GUSEK",
+    "vendor": "Luiz Bettoni",
+    "short_description": "Integrated Development Environment",
+    "long_description": "./info/gusek.md",
+    "video": "https://www.youtube.com/watch?v=q88HgdgxtLs&list=PLpmuXL_Dd1RmAFIrQ261n5PykOaaygb85",
+    "tags": ["ide", "lp", "ip", "milp", "sop"],
+    "license": "GPL",
+    "officialDownload": [
+      "https://sourceforge.net/projects/gusek/files/gusek/0.2.24/gusek_0-2-24.zip/download"
+    ],
+    "homepage": "https://gusek.sourceforge.net/",
+    "last_checked": "2025-09-30T08:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://a.fsdn.com/allura/p/gusek/icon?1367005723",
+    "screenshots": [
+      "https://a.fsdn.com/con/app/proj/gusek/screenshots/196830.jpg/max/max/1",
+      "https://a.fsdn.com/con/app/proj/gusek/screenshots/196826.jpg/245/183/1.5",
+      "https://a.fsdn.com/con/app/proj/gusek/screenshots/196824.jpg/max/max/1",
+      "https://a.fsdn.com/con/app/proj/gusek/screenshots/196828.jpg/245/183/1.5"
+    ],
+    "popularity": 100,
+    "documentation": ["https://gusek.sourceforge.net/gusek.html#3"],
+    "auto_update": true,
+    "latest_version": "0.2.24",
+    "background_color": "#92815f"
+  }
+]

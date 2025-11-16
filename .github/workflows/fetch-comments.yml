@@ -1,0 +1,122 @@
+name: Fetch Comments
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment (default: production)'
+        required: false
+        default: 'production'
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+    - cron: '0 12 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-comments:
+    if: ${{ github.event_name != 'push' || github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: fetch-comments-${{ github.ref }}
+      cancel-in-progress: false
+
+    env:
+      COMMENTS_OUTPUT: ${{ secrets.COMMENTS_OUTPUT }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Validate and prepare output directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${COMMENTS_OUTPUT:-}" ]; then
+            echo "ERROR: COMMENTS_OUTPUT secret is empty. Set it to a path like 'data/comments.json'."
+            exit 2
+          fi
+          mkdir -p "$(dirname "$COMMENTS_OUTPUT")"
+
+      - name: Fetch comments
+        shell: bash
+        env:
+          APPS_SCRIPT_ID: ${{ secrets.APPS_SCRIPT_ID }}
+          APPS_SCRIPT_SECRET: ${{ secrets.APPS_SCRIPT_SECRET }}
+        run: |
+          set -euo pipefail
+          TMP="$RUNNER_TEMP/comments.json.tmp"
+          rm -f "$TMP"
+
+          if [ -z "${APPS_SCRIPT_ID:-}" ]; then
+            echo "ERROR: APPS_SCRIPT_ID secret missing"; exit 3
+          fi
+          if [ -z "${APPS_SCRIPT_SECRET:-}" ]; then
+            echo "ERROR: APPS_SCRIPT_SECRET secret missing"; exit 4
+          fi
+
+          URL="https://script.google.com/macros/s/${APPS_SCRIPT_ID}/exec?secret=${APPS_SCRIPT_SECRET}"
+
+          curl -fsSL --max-time 30 --retry 3 --retry-delay 2 "$URL" -o "$TMP"
+
+          if head -c 256 "$TMP" | grep -qi '<html\|<!doctype'; then
+            echo "ERROR: HTML detected (redirect/login)."
+            exit 6
+          fi
+
+          if command -v python3 >/dev/null 2>&1; then
+            if ! python3 -m json.tool "$TMP" >/dev/null 2>&1; then
+              echo "ERROR: Invalid JSON response."
+              exit 7
+            fi
+          fi
+
+          mv "$TMP" "$COMMENTS_OUTPUT"
+
+      - name: Commit and push (commit new file even if previously untracked)
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$COMMENTS_OUTPUT"
+
+          if [ ! -f "$OUT" ]; then
+            echo "No output file found; skipping commit."
+            exit 0
+          fi
+
+          if git ls-files --error-unmatch -- "$OUT" >/dev/null 2>&1; then
+            FILE_TRACKED=1
+          else
+            FILE_TRACKED=0
+          fi
+
+          BRANCH="${GITHUB_REF_NAME:-main}"
+
+          # attribute commit to the Actions app
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          if [ "$FILE_TRACKED" -eq 1 ]; then
+            if git diff --quiet --exit-code -- "$OUT"; then
+              echo "No changes detected in tracked file $OUT; skipping commit."
+              exit 0
+            fi
+          fi
+
+          git add -- "$OUT"
+
+          if git diff --cached --quiet; then
+            echo "No staged changes after adding; skipping commit."
+            exit 0
+          fi
+
+          git commit -m "updated comments."
+          git push origin "HEAD:${BRANCH}"

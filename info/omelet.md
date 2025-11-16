@@ -1,0 +1,7 @@
+[Omelet](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#) is the [KAIST](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#)-backed startup founded in April 2023 that’s building an AI-first foundation for routing and logistics optimization.
+
+OMELET develops a commercial Routing Engine and a Transportation Management System (TMS) under its Optimization-as-a-Service / Infra / System (OaaSIS) offering. The leadership and core engineering team originate from KAIST research groups and include [Jinkyoo Park](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#) and [Changhyun Kwon](https://www.linkedin.com/in/k-tafakkori/overlay/create-post/#), supported by specialists in operations research and machine learning.
+
+The engine is designed to solve classical and practical vehicle-routing and pickup-and-delivery problems — TSP, mTSP, CVRP, CVRPTW, preference-aware capacitated routing, and long-running task scenarios — using an AI-first, three-stage workflow: fast encoder–decoder generation of diverse candidate solutions, neural-guided parallel improvement search, and an end-to-end iterative training loop that retrains on internally generated datasets. The team frames this pipeline as an Optimization AI-Agent / an AI foundation model for routing.
+
+OMELET is available as a developer-facing Route Optimization API and as a TMS SaaS platform; you can register on their developer portal, obtain an App Key, and run the TSP/CVRP example payloads in the docs to evaluate solution quality and latency.
