@@ -13,6 +13,7 @@ permissions:
 env:
   PUBLISH_DIR: publish
   NODE_OPTIONS: --max-old-space-size=4096
+  # CUSTOM_DOMAIN: "example.com"
 
 jobs:
   build-and-deploy:
@@ -37,39 +38,41 @@ jobs:
         run: |
           if [ -f package-lock.json ] || [ -f package.json ]; then
             npm ci
+          else
+            echo "No package.json found; skipping npm install."
           fi
 
       - name: Build site (if build script exists)
         run: |
-          if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
+          if [ -f package.json ] && grep -q '"build"' package.json; then
             npm run build
           else
-            echo "No build script found; skipping."
+            echo "No build script found; skipping build."
           fi
 
       - name: Prepare publish directory
         run: |
-          mkdir -p "${{ env.PUBLISH_DIR }}"
+          mkdir -p "$PUBLISH_DIR"
 
           if [ -d "dist" ] && [ -n "$(ls -A dist 2>/dev/null || true)" ]; then
-            cp -r dist/. "${{ env.PUBLISH_DIR }}/"
+            cp -r dist/. "$PUBLISH_DIR/"
           else
-            rsync -a --delete --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='README*' --exclude='LICENSE*' --exclude='package.json' --exclude='package-lock.json' --exclude='.gitignore' ./ "${{ env.PUBLISH_DIR }}/"
+            rsync -a --delete --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='README*' --exclude='LICENSE*' --exclude='package.json' --exclude='package-lock.json' --exclude='.gitignore' ./ "$PUBLISH_DIR/"
           fi
 
-          if [ -z "$(ls -A "${{ env.PUBLISH_DIR }}" 2>/dev/null || true)" ]; then
-            echo "Error: '${{ env.PUBLISH_DIR }}' is empty."
+          if [ -z "$(ls -A "$PUBLISH_DIR" 2>/dev/null || true)" ]; then
+            echo "Error: '$PUBLISH_DIR' is empty."
             ls -la
             exit 1
           fi
 
           echo "Publish directory contains:"
-          ls -la "${{ env.PUBLISH_DIR }}"
+          ls -la "$PUBLISH_DIR"
 
       - name: Warn / fail if publish dir is too large
         run: |
           max_bytes=$((1024 * 1024 * 1024))
-          size=$(du -sb "${{ env.PUBLISH_DIR }}" | cut -f1 || echo 0)
+          size=$(du -sb "$PUBLISH_DIR" | cut -f1 || echo 0)
           echo "Publish dir size (bytes): $size"
           if [ "$size" -gt "$max_bytes" ]; then
             echo "Error: publish directory is larger than 1GB ($size bytes)."
@@ -78,9 +81,9 @@ jobs:
 
       - name: Disable Jekyll and write CNAME (if configured)
         run: |
-          touch "${{ env.PUBLISH_DIR }}/.nojekyll"
-          if [ -n "${{ env.CUSTOM_DOMAIN:- }}" ]; then
-            echo "${{ env.CUSTOM_DOMAIN }}" > "${{ env.PUBLISH_DIR }}/CNAME"
+          touch "$PUBLISH_DIR/.nojekyll"
+          if [ -n "${CUSTOM_DOMAIN:-}" ]; then
+            echo "$CUSTOM_DOMAIN" > "$PUBLISH_DIR/CNAME"
           fi
 
       - name: Upload artifact for GitHub Pages
@@ -95,9 +98,9 @@ jobs:
         if: ${{ always() }}
         run: |
           echo "Contents of publish directory (for workflow log):"
-          ls -la "${{ env.PUBLISH_DIR }}" || true
+          ls -la "$PUBLISH_DIR" || true
 
       - name: Print published message
         if: ${{ always() }}
         run: |
-          echo "Published directory: ${{ env.PUBLISH_DIR }}"
+          echo "Published directory: $PUBLISH_DIR"
