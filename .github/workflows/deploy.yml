@@ -13,7 +13,6 @@ permissions:
 env:
   PUBLISH_DIR: publish
   NODE_OPTIONS: --max-old-space-size=4096
-  # CUSTOM_DOMAIN: "example.com"
 
 jobs:
   build-and-deploy:
@@ -28,13 +27,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Setup Node.js (optional)
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install dependencies (if present)
         run: |
           if [ -f package-lock.json ] || [ -f package.json ]; then
             npm ci
@@ -42,7 +41,7 @@ jobs:
             echo "No package.json found; skipping npm install."
           fi
 
-      - name: Build site (if build script exists)
+      - name: Build site (if package.json has build script)
         run: |
           if [ -f package.json ] && grep -q '"build"' package.json; then
             npm run build
@@ -53,11 +52,19 @@ jobs:
       - name: Prepare publish directory
         run: |
           mkdir -p "$PUBLISH_DIR"
-
           if [ -d "dist" ] && [ -n "$(ls -A dist 2>/dev/null || true)" ]; then
             cp -r dist/. "$PUBLISH_DIR/"
           else
-            rsync -a --delete --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='README*' --exclude='LICENSE*' --exclude='package.json' --exclude='package-lock.json' --exclude='.gitignore' ./ "$PUBLISH_DIR/"
+            rsync -a --delete \
+              --exclude='.git' \
+              --exclude='.github' \
+              --exclude='node_modules' \
+              --exclude='README*' \
+              --exclude='LICENSE*' \
+              --exclude='package.json' \
+              --exclude='package-lock.json' \
+              --exclude='.gitignore' \
+              ./ "$PUBLISH_DIR/"
           fi
 
           if [ -z "$(ls -A "$PUBLISH_DIR" 2>/dev/null || true)" ]; then
@@ -79,22 +86,19 @@ jobs:
             exit 1
           fi
 
-      - name: Disable Jekyll and write CNAME (if configured)
+      - name: Disable Jekyll (no CNAME - no custom domain)
         run: |
           touch "$PUBLISH_DIR/.nojekyll"
-          if [ -n "${CUSTOM_DOMAIN:-}" ]; then
-            echo "$CUSTOM_DOMAIN" > "$PUBLISH_DIR/CNAME"
-          fi
 
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ env.PUBLISH_DIR }}
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
 
-      - name: List deployed files
+      - name: List publish directory (log)
         if: ${{ always() }}
         run: |
           echo "Contents of publish directory (for workflow log):"
