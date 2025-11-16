@@ -33,42 +33,37 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install dependencies (if present)
+      - name: Install dependencies only if lockfile exists
         run: |
-          if [ -f package-lock.json ] || [ -f package.json ]; then
+          if [ -f package-lock.json ]; then
+            echo "package-lock.json found — running npm ci"
             npm ci
+          elif [ -f package.json ]; then
+            echo "package.json found but no lockfile — skipping npm install (no build step required)"
           else
             echo "No package.json found; skipping npm install."
           fi
 
-      - name: Build site (if package.json has build script)
+      - name: Prepare publish directory (repo-root contains built site)
         run: |
-          if [ -f package.json ] && grep -q '"build"' package.json; then
-            npm run build
-          else
-            echo "No build script found; skipping build."
-          fi
-
-      - name: Prepare publish directory
-        run: |
+          set -e
           mkdir -p "$PUBLISH_DIR"
-          if [ -d "dist" ] && [ -n "$(ls -A dist 2>/dev/null || true)" ]; then
-            cp -r dist/. "$PUBLISH_DIR/"
-          else
-            rsync -a --delete \
-              --exclude='.git' \
-              --exclude='.github' \
-              --exclude='node_modules' \
-              --exclude='README*' \
-              --exclude='LICENSE*' \
-              --exclude='package.json' \
-              --exclude='package-lock.json' \
-              --exclude='.gitignore' \
-              ./ "$PUBLISH_DIR/"
-          fi
+
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='README*' \
+            --exclude='LICENSE*' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+            --exclude='.gitignore' \
+            --exclude='*.yml' \
+            --exclude='*.yaml' \
+            ./ "$PUBLISH_DIR/"
 
           if [ -z "$(ls -A "$PUBLISH_DIR" 2>/dev/null || true)" ]; then
-            echo "Error: '$PUBLISH_DIR' is empty."
+            echo "Error: '$PUBLISH_DIR' is empty after prepare steps."
             ls -la
             exit 1
           fi
