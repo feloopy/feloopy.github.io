@@ -1,36 +1,81 @@
-# This is a basic workflow to help you get started with Actions
+name: Build and Deploy
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches:
+      - main
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  PUBLISH_DIR: publish
+  NODE_OPTIONS: --max-old-space-size=4096
+
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-and-deploy:
     runs-on: ubuntu-latest
+    concurrency:
+      group: build-and-deploy-${{ github.workflow }}-${{ github.ref_name }}
+      cancel-in-progress: true
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Prepare publish directory
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          mkdir -p "${{ env.PUBLISH_DIR }}"
+          if [ -d "dist" ] && [ -n "$(ls -A dist 2>/dev/null || true)" ]; then
+            cp -r dist/. "${{ env.PUBLISH_DIR }}/"
+          else
+            rsync -a --delete --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='README*' --exclude='LICENSE*' --exclude='package.json' --exclude='package-lock.json' --exclude='.gitignore' ./ "${{ env.PUBLISH_DIR }}/"
+          fi
+          if [ -z "$(ls -A "${{ env.PUBLISH_DIR }}" 2>/dev/null || true)" ]; then
+            echo "Error: '${{ env.PUBLISH_DIR }}' is empty."
+            ls -la
+            exit 1
+          fi
+          echo "Publish directory contains:"
+          ls -la "${{ env.PUBLISH_DIR }}"
+
+      - name: Warn / fail if publish dir is too large
+        run: |
+          max_bytes=$((1024 * 1024 * 1024))
+          size=$(du -sb "${{ env.PUBLISH_DIR }}" | cut -f1 || echo 0)
+          echo "Publish dir size (bytes): $size"
+          if [ "$size" -gt "$max_bytes" ]; then
+            echo "Error: publish directory is larger than 1GB ($size bytes)."
+            exit 1
+          fi
+
+      - name: Disable Jekyll and write CNAME
+        run: |
+          touch "${{ env.PUBLISH_DIR }}/.nojekyll"
+          if [ -n "${{ env.CUSTOM_DOMAIN:- }}" ]; then
+            echo "${{ env.CUSTOM_DOMAIN }}" > "${{ env.PUBLISH_DIR }}/CNAME"
+          fi
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ${{ env.PUBLISH_DIR }}
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
+
+      - name: List deployed files
+        if: ${{ always() }}
+        run: |
+          echo "Contents of publish directory (for workflow log):"
+          ls -la "${{ env.PUBLISH_DIR }}" || true
+
+      - name: Print published message
+        if: ${{ always() }}
+        run: |
+          echo "Published directory: ${{ env.PUBLISH_DIR }}"
