@@ -1,106 +1,66 @@
 [
   {
     "loc": "https://feloopy.github.io/",
-    "lastmod": "2025-11-17T13:55:54.878Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/submissions/bug-report",
-    "lastmod": "2025-11-17T13:55:54.884Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/submissions/feature-request",
-    "lastmod": "2025-11-17T13:55:54.891Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/submissions/project",
-    "lastmod": "2025-11-17T13:55:54.893Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/submissions/contact",
-    "lastmod": "2025-11-17T13:55:54.896Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/submissions/payment",
-    "lastmod": "2025-11-17T13:55:54.898Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/docs",
-    "lastmod": "2025-11-17T13:55:54.876Z"
+    "lastmod": "2025-11-17T17:55:23.845Z"
   },
   {
     "loc": "https://feloopy.github.io/videos",
-    "lastmod": "2025-11-17T13:55:54.876Z"
+    "lastmod": "2025-11-17T17:55:23.822Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/docs",
+    "lastmod": "2025-11-17T17:55:23.831Z"
   },
   {
     "loc": "https://feloopy.github.io/about",
-    "lastmod": "2025-11-17T13:55:54.874Z"
+    "lastmod": "2025-11-17T17:55:23.855Z"
   },
   {
     "loc": "https://feloopy.github.io/submissions",
-    "lastmod": "2025-11-17T13:55:54.877Z"
+    "lastmod": "2025-11-17T17:55:23.884Z"
   },
   {
     "loc": "https://feloopy.github.io/status",
-    "lastmod": "2025-11-17T13:55:54.877Z"
+    "lastmod": "2025-11-17T17:55:23.837Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/copt",
-    "lastmod": "2025-11-17T13:55:59.840Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/blog/gpu-accelerated-optimization",
-    "lastmod": "2025-11-17T13:55:59.750Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/blog/llms-and-decision-science",
-    "lastmod": "2025-11-17T13:56:00.102Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/highs",
-    "lastmod": "2025-11-17T13:56:01.008Z"
+    "loc": "https://feloopy.github.io/submissions/project",
+    "lastmod": "2025-11-17T17:55:31.346Z"
   },
   {
     "loc": "https://feloopy.github.io/store",
-    "lastmod": "2025-11-17T13:55:59.737Z"
+    "lastmod": "2025-11-17T17:55:30.431Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/seeker",
-    "lastmod": "2025-11-17T13:56:05.431Z"
+    "loc": "https://feloopy.github.io/submissions/feature-request",
+    "lastmod": "2025-11-17T17:55:33.561Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/timefold",
-    "lastmod": "2025-11-17T13:56:05.112Z"
+    "loc": "https://feloopy.github.io/submissions/contact",
+    "lastmod": "2025-11-17T17:55:34.882Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/mosek",
-    "lastmod": "2025-11-17T13:56:04.759Z"
+    "loc": "https://feloopy.github.io/blog/llms-and-decision-science",
+    "lastmod": "2025-11-17T17:55:30.898Z"
   },
   {
-    "loc": "https://feloopy.github.io/store/lpsolve",
-    "lastmod": "2025-11-17T13:56:11.957Z"
+    "loc": "https://feloopy.github.io/submissions/bug-report",
+    "lastmod": "2025-11-17T17:55:38.494Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions/payment",
+    "lastmod": "2025-11-17T17:55:40.183Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog/gpu-accelerated-optimization",
+    "lastmod": "2025-11-17T17:55:37.904Z"
   },
   {
     "loc": "https://feloopy.github.io/blog",
-    "lastmod": "2025-11-17T13:55:54.899Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/picat",
-    "lastmod": "2025-11-17T13:56:14.465Z"
+    "lastmod": "2025-11-17T17:55:23.857Z"
   },
   {
     "loc": "https://feloopy.github.io/blog/list-of-optimization-packages",
-    "lastmod": "2025-11-17T13:56:07.393Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/scip",
-    "lastmod": "2025-11-17T13:56:12.082Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/gusek",
-    "lastmod": "2025-11-17T13:56:15.235Z"
-  },
-  {
-    "loc": "https://feloopy.github.io/store/lpl",
-    "lastmod": "2025-11-17T13:56:21.602Z"
+    "lastmod": "2025-11-17T17:55:40.689Z"
   }
 ]
