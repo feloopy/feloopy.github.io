@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://feloopy.github.io/</loc>
-    <lastmod>2025-11-17T17:55:23.845Z</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://feloopy.github.io/videos</loc>
-    <lastmod>2025-11-17T17:55:23.822Z</lastmod>
+    <lastmod>2025-11-17T18:23:01.552Z</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://feloopy.github.io/docs</loc>
-    <lastmod>2025-11-17T17:55:23.831Z</lastmod>
+    <lastmod>2025-11-17T18:23:01.549Z</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/videos</loc>
+    <lastmod>2025-11-17T18:23:01.551Z</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://feloopy.github.io/about</loc>
-    <lastmod>2025-11-17T17:55:23.855Z</lastmod>
+    <lastmod>2025-11-17T18:23:01.529Z</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://feloopy.github.io/submissions</loc>
-    <lastmod>2025-11-17T17:55:23.884Z</lastmod>
+    <lastmod>2025-11-17T18:23:01.554Z</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://feloopy.github.io/status</loc>
-    <lastmod>2025-11-17T17:55:23.837Z</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://feloopy.github.io/submissions/project</loc>
-    <lastmod>2025-11-17T17:55:31.346Z</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://feloopy.github.io/store</loc>
-    <lastmod>2025-11-17T17:55:30.431Z</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://feloopy.github.io/submissions/feature-request</loc>
-    <lastmod>2025-11-17T17:55:33.561Z</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://feloopy.github.io/submissions/contact</loc>
-    <lastmod>2025-11-17T17:55:34.882Z</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://feloopy.github.io/blog/llms-and-decision-science</loc>
-    <lastmod>2025-11-17T17:55:30.898Z</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://feloopy.github.io/submissions/bug-report</loc>
-    <lastmod>2025-11-17T17:55:38.494Z</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://feloopy.github.io/submissions/payment</loc>
-    <lastmod>2025-11-17T17:55:40.183Z</lastmod>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://feloopy.github.io/blog/gpu-accelerated-optimization</loc>
-    <lastmod>2025-11-17T17:55:37.904Z</lastmod>
+    <lastmod>2025-11-17T18:23:01.550Z</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://feloopy.github.io/blog</loc>
-    <lastmod>2025-11-17T17:55:23.857Z</lastmod>
+    <lastmod>2025-11-17T18:23:01.569Z</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/submissions/bug-report</loc>
+    <lastmod>2025-11-17T18:23:09.256Z</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/submissions/project</loc>
+    <lastmod>2025-11-17T18:23:09.532Z</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/store</loc>
+    <lastmod>2025-11-17T18:23:09.226Z</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/submissions/feature-request</loc>
+    <lastmod>2025-11-17T18:23:10.868Z</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/submissions/contact</loc>
+    <lastmod>2025-11-17T18:23:11.326Z</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/submissions/payment</loc>
+    <lastmod>2025-11-17T18:23:11.588Z</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/blog/gpu-accelerated-optimization</loc>
+    <lastmod>2025-11-17T18:23:14.978Z</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://feloopy.github.io/blog/llms-and-decision-science</loc>
+    <lastmod>2025-11-17T18:23:14.973Z</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://feloopy.github.io/blog/list-of-optimization-packages</loc>
-    <lastmod>2025-11-17T17:55:40.689Z</lastmod>
+    <lastmod>2025-11-17T18:23:15.188Z</lastmod>
     <changefreq>daily</changefreq>
   </url>
 </urlset>
