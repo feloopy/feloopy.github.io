@@ -67,7 +67,7 @@
     "releases_url": "https://api.github.com/repos/feloopy/feloopy/releases{/id}",
     "deployments_url": "https://api.github.com/repos/feloopy/feloopy/deployments",
     "created_at": "2024-08-27T20:28:30Z",
-    "updated_at": "2025-09-25T17:57:43Z",
+    "updated_at": "2025-11-21T20:00:22Z",
     "pushed_at": "2025-09-25T17:57:39Z",
     "git_url": "git://github.com/feloopy/feloopy.git",
     "ssh_url": "git@github.com:feloopy/feloopy.git",
@@ -75,8 +75,8 @@
     "svn_url": "https://github.com/feloopy/feloopy",
     "homepage": "",
     "size": 1238,
-    "stargazers_count": 32,
-    "watchers_count": 32,
+    "stargazers_count": 33,
+    "watchers_count": 33,
     "language": "Python",
     "has_issues": true,
     "has_projects": true,
@@ -103,7 +103,7 @@
     "visibility": "public",
     "forks": 2,
     "open_issues": 0,
-    "watchers": 32,
+    "watchers": 33,
     "default_branch": "main",
     "temp_clone_token": null,
     "custom_properties": {},
@@ -291,6 +291,11 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/93426266?v=4",
       "login": "kiagram",
       "starred_at": "2025-09-01T07:21:18Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/210953269?v=4",
+      "login": "svflake",
+      "starred_at": "2025-11-21T20:00:21Z"
     }
   ],
   "contributors": [
@@ -1160,36 +1165,6 @@
     "data": [
       {
         "category": "without_mirrors",
-        "date": "2025-05-19",
-        "downloads": 4
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-05-20",
-        "downloads": 2
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-05-21",
-        "downloads": 4
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-05-22",
-        "downloads": 3
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-05-23",
-        "downloads": 4
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-05-24",
-        "downloads": 1
-      },
-      {
-        "category": "without_mirrors",
         "date": "2025-05-25",
         "downloads": 1
       },
@@ -1777,6 +1752,26 @@
         "category": "without_mirrors",
         "date": "2025-11-15",
         "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-16",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-17",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-18",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-11-21",
+        "downloads": 3
       }
     ]
   },
