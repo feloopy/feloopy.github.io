@@ -67,14 +67,14 @@
     "releases_url": "https://api.github.com/repos/feloopy/feloopy/releases{/id}",
     "deployments_url": "https://api.github.com/repos/feloopy/feloopy/deployments",
     "created_at": "2024-08-27T20:28:30Z",
-    "updated_at": "2025-11-26T07:08:29Z",
-    "pushed_at": "2025-11-26T07:08:25Z",
+    "updated_at": "2025-11-27T11:00:49Z",
+    "pushed_at": "2025-11-27T11:00:45Z",
     "git_url": "git://github.com/feloopy/feloopy.git",
     "ssh_url": "git@github.com:feloopy/feloopy.git",
     "clone_url": "https://github.com/feloopy/feloopy.git",
     "svn_url": "https://github.com/feloopy/feloopy",
     "homepage": "",
-    "size": 1239,
+    "size": 614,
     "stargazers_count": 33,
     "watchers_count": 33,
     "language": "Python",
@@ -302,7 +302,7 @@
     {
       "avatar_url": "https://avatars.githubusercontent.com/u/179344848?v=4",
       "login": "k-tafakkori",
-      "contributions": 96
+      "contributions": 100
     },
     {
       "avatar_url": null,
@@ -1165,11 +1165,6 @@
     "data": [
       {
         "category": "without_mirrors",
-        "date": "2025-05-30",
-        "downloads": 2
-      },
-      {
-        "category": "without_mirrors",
         "date": "2025-06-01",
         "downloads": 12
       },
@@ -1773,7 +1768,8 @@
   "commit_counts": {
     "2025-09-25": 1,
     "2025-11-25": 2,
-    "2025-11-26": 1
+    "2025-11-26": 1,
+    "2025-11-27": 4
   },
-  "last_commit_date": "2025-11-26"
+  "last_commit_date": "2025-11-27"
 }
