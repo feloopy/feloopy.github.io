@@ -1,36 +1,31 @@
 name: Deploy Website
-
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'data/**'
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 env:
   PUBLISH_DIR: publish
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     concurrency:
       group: build-and-deploy-${{ github.workflow }}-${{ github.ref_name }}
       cancel-in-progress: true
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Prepare publish directory (repo-root contains built site)
         run: |
           set -e
           mkdir -p "$PUBLISH_DIR"
-
           rsync -a --delete \
             --exclude='.git' \
             --exclude='.github' \
@@ -43,23 +38,19 @@ jobs:
             --exclude='package.json' \
             --exclude='package-lock.json' \
             ./ "$PUBLISH_DIR/"
-
           if [ -z "$(ls -A "$PUBLISH_DIR" 2>/dev/null || true)" ]; then
             echo "Error: '$PUBLISH_DIR' is empty after prepare steps."
             ls -la
             exit 1
           fi
-
           echo "Publish directory contains:"
           ls -la "$PUBLISH_DIR"
-
       - name: Debug to show exact html files
         run: |
           echo "List all HTML files under $PUBLISH_DIR (paths and sizes):"
           find "$PUBLISH_DIR" -type f -name '*.html' -exec ls -la {} \; || true
           echo "Also list top-level of publish dir:"
           ls -la "$PUBLISH_DIR" || true
-
       - name: Warn / fail if publish dir is too large
         run: |
           max_bytes=$((1024 * 1024 * 1024))
@@ -69,25 +60,20 @@ jobs:
             echo "Error: publish directory is larger than 1GB ($size bytes)."
             exit 1
           fi
-
       - name: Disable Jekyll (no CNAME - no custom domain)
         run: |
           touch "$PUBLISH_DIR/.nojekyll"
-
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ env.PUBLISH_DIR }}
-
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-
       - name: List publish directory (log)
         if: ${{ always() }}
         run: |
           echo "Contents of publish directory (for workflow log):"
           ls -la "$PUBLISH_DIR" || true
-
       - name: Print published message
         if: ${{ always() }}
         run: |
