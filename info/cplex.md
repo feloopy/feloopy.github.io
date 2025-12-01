@@ -1,0 +1,7 @@
+IBM ILOG CPLEX Optimization Studio is a high-performance commercial optimization suite for building, solving and deploying mathematical and constraint programming models. It combines a developer IDE and modeling tools (OPL) with a world-class optimizer that targets linear, integer, quadratic and related problem classes, enabling prescriptive analytics and decision optimization for planning, scheduling and operations problems. 
+
+CPLEX solves large-scale LP, MIP, QP, MIQP and other convex and certain nonconvex problems using a variety of algorithms including simplex and barrier methods, network optimizers and advanced MIP heuristics. It provides callable libraries and language bindings for C, C++, Java, .NET and Python, plus an interactive modeling environment, so it can be embedded in research workflows, production systems and enterprise applications.
+
+Typical uses include supply chain planning, production scheduling, routing, blending and finance optimization, where fast, reliable solves and rich modeling capability reduce operational cost and improve decision quality. The product is widely used where scalable, repeatable optimization is required and where integration with data pipelines and applications matters.
+
+CPLEX is proprietary commercial software. Current public documentation and release notes are maintained on IBM’s product documentation site; version history and release notes are available from IBM and community sources. For downloads, licensing and the official documentation see IBM’s CPLEX product pages and docs.

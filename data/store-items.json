@@ -1,4 +1,139 @@
 [
+    {
+    "id": "hexaly",
+    "name": "HEXALY",
+    "vendor": "Hexaly",
+    "short_description": "Ultra-fast, cost-effective optimization solver",
+    "long_description": "./info/hexaly.md",
+    "tags": [
+      "solver",
+      "lp",
+      "milp",
+      "minlp",
+      "mip",
+      "scheduling",
+      "vrp",
+      "routing",
+      "supply chain",
+      "workforce"
+    ],
+    "license": "Proprietary",
+    "video": "",
+    "officialDownload": ["https://www.hexaly.com/download"],
+    "homepage": "https://www.hexaly.com/",
+    "last_checked": "2025-11-01T00:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://hexaly.gallerycdn.vsassets.io/extensions/hexaly/hexaly/0.3.2/1720615244455/Microsoft.VisualStudio.Services.Icons.Default",
+    "screenshots": [
+      "https://www.hexaly.com/wp-content/uploads/2025/07/solution-route-optimization.jpg",
+      "https://www.hexaly.com/wp-content/uploads/2025/07/solution-production-scheduling-scaled.jpg",
+      "https://www.hexaly.com/wp-content/uploads/2025/07/solution-supply-chain-network-optimization-scaled.jpg",
+      "https://www.hexaly.com/wp-content/uploads/2025/07/solution-workforce-scheduling-routing-scaled.jpg",
+      "https://www.hexaly.com/wp-content/uploads/2025/07/solution-simulation-optimization-scaled.jpg"
+    ],
+    "popularity": 100,
+    "documentation": [
+      "https://www.hexaly.com/docs/last/index.html",
+      "https://www.hexaly.com/benchmarks",
+      "https://www.hexaly.com/templates"
+    ],
+    "auto_update": false,
+    "latest_version": "",
+    "background_color": "#df3f13"
+  },
+
+  {
+    "id": "cplex",
+    "name": "CPLEX",
+    "vendor": "IBM ILOG CPLEX Optimization Studio",
+    "short_description": "High-performance solver suite",
+    "long_description": "./info/cplex.md",
+    "tags": ["solver", "optimization", "lp", "mip", "qp", "cp"],
+    "license": "Proprietary",
+    "video": "",
+    "officialDownload": [
+      "https://www.ibm.com/products/ilog-cplex-optimization-studio"
+    ],
+    "homepage": "https://www.ibm.com/products/ilog-cplex-optimization-studio",
+    "last_checked": "2025-11-30T00:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://www.academic-center.de/icons/ibm/ilog-cplex_bg.gif",
+    "screenshots": [],
+    "popularity": 100,
+    "documentation": [
+      "https://www.ibm.com/docs/en/icos",
+      "https://ibmdecisionoptimization.github.io/docplex-doc/"
+    ],
+    "auto_update": false,
+    "latest_version": "22.1.2",
+    "background_color": "#ffffff"
+  },
+
+  {
+    "id": "impl",
+    "name": "IMPL",
+    "vendor": "Industrial Algorithms Limited",
+    "short_description": "Modeling and solving platform",
+    "long_description": "./info/impl.md",
+    "tags": ["solver", "optimization"],
+    "license": "Proprietary",
+    "video": "",
+    "officialDownload": ["https://odllive.com/index.html"],
+    "homepage": "https://link.springer.com/chapter/10.1007/978-3-030-28565-4_13",
+    "last_checked": "2025-11-01T00:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "images/store/impl.png",
+    "screenshots": [],
+    "popularity": 100,
+    "documentation": [
+      "https://link.springer.com/chapter/10.1007/978-3-030-28565-4_13",
+      "https://link.springer.com/article/10.1007/s11081-016-9312-7"
+    ],
+    "auto_update": false,
+    "latest_version": "",
+    "background_color": "#ffffff"
+  },
+
+  {
+    "id": "odllive",
+    "name": "ODL Live",
+    "vendor": "ODL Live",
+    "short_description": "Route optimiser API",
+    "long_description": "./info/odllive.md",
+    "tags": [
+      "solver",
+      "routing",
+      "optimization",
+      "ai",
+      "ml",
+      "vrp",
+      "vehicle-routing"
+    ],
+    "license": "Proprietary",
+    "video": "",
+    "officialDownload": ["https://odllive.com/index.html"],
+    "homepage": "https://odllive.com/index.html",
+    "last_checked": "2025-11-01T00:00:00Z",
+    "official": true,
+    "verified": true,
+    "icon": "https://odllive.com/images/simple-routes.png",
+    "screenshots": [
+      "https://odllive.com/images/nemt-parallel-ops.png",
+      "https://odllive.com/images/image-job-types-2.png",
+      "https://odllive.com/images/image-put-model-body-data-in-Postman.png",
+      "https://odllive.com/images/image-basic-walkthrough-map1.png",
+      "https://odllive.com/images/image-template-helpers-in-postman.png"
+    ],
+    "popularity": 100,
+    "documentation": ["https://odllive.com/index.html"],
+    "auto_update": false,
+    "latest_version": "",
+    "background_color": "#452b5c"
+  },
+
   {
     "id": "omelet",
     "name": "OMELET",
