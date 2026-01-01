@@ -1165,96 +1165,6 @@
     "data": [
       {
         "category": "without_mirrors",
-        "date": "2025-06-03",
-        "downloads": 4
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-06",
-        "downloads": 1
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-07",
-        "downloads": 2
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-10",
-        "downloads": 5
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-12",
-        "downloads": 3
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-15",
-        "downloads": 2
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-17",
-        "downloads": 3
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-18",
-        "downloads": 2
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-20",
-        "downloads": 11
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-21",
-        "downloads": 3
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-22",
-        "downloads": 5
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-23",
-        "downloads": 4
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-24",
-        "downloads": 2
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-25",
-        "downloads": 12
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-26",
-        "downloads": 1
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-06-30",
-        "downloads": 6
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-07-01",
-        "downloads": 62
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-07-02",
-        "downloads": 15
-      },
-      {
-        "category": "without_mirrors",
         "date": "2025-07-04",
         "downloads": 4
       },
@@ -1767,11 +1677,145 @@
         "category": "without_mirrors",
         "date": "2025-11-30",
         "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-01",
+        "downloads": 12
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-03",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-05",
+        "downloads": 6
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-06",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-07",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-08",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-09",
+        "downloads": 5
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-10",
+        "downloads": 9
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-11",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-12",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-13",
+        "downloads": 6
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-14",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-15",
+        "downloads": 13
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-16",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-17",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-18",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-20",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-21",
+        "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-22",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-23",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-24",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-25",
+        "downloads": 23
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-26",
+        "downloads": 1
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-27",
+        "downloads": 11
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-29",
+        "downloads": 5
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-30",
+        "downloads": 5
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2025-12-31",
+        "downloads": 4
       }
     ]
   },
   "commit_counts": {
-    "2025-09-25": 1,
     "2025-11-25": 2,
     "2025-11-26": 1,
     "2025-11-27": 4
