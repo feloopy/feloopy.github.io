@@ -67,7 +67,7 @@
     "releases_url": "https://api.github.com/repos/feloopy/feloopy/releases{/id}",
     "deployments_url": "https://api.github.com/repos/feloopy/feloopy/deployments",
     "created_at": "2024-08-27T20:28:30Z",
-    "updated_at": "2025-11-27T11:00:49Z",
+    "updated_at": "2026-01-02T16:52:43Z",
     "pushed_at": "2025-11-27T11:00:45Z",
     "git_url": "git://github.com/feloopy/feloopy.git",
     "ssh_url": "git@github.com:feloopy/feloopy.git",
@@ -75,8 +75,8 @@
     "svn_url": "https://github.com/feloopy/feloopy",
     "homepage": "",
     "size": 614,
-    "stargazers_count": 33,
-    "watchers_count": 33,
+    "stargazers_count": 34,
+    "watchers_count": 34,
     "language": "Python",
     "has_issues": true,
     "has_projects": true,
@@ -103,7 +103,7 @@
     "visibility": "public",
     "forks": 2,
     "open_issues": 0,
-    "watchers": 33,
+    "watchers": 34,
     "default_branch": "main",
     "temp_clone_token": null,
     "custom_properties": {},
@@ -296,6 +296,11 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/210953269?v=4",
       "login": "svflake",
       "starred_at": "2025-11-21T20:00:21Z"
+    },
+    {
+      "avatar_url": "https://avatars.githubusercontent.com/u/35213521?v=4",
+      "login": "lucawrabetz",
+      "starred_at": "2026-01-02T16:52:42Z"
     }
   ],
   "contributors": [
@@ -1165,31 +1170,6 @@
     "data": [
       {
         "category": "without_mirrors",
-        "date": "2025-07-04",
-        "downloads": 4
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-07-05",
-        "downloads": 7
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-07-06",
-        "downloads": 3
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-07-07",
-        "downloads": 1
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2025-07-08",
-        "downloads": 3
-      },
-      {
-        "category": "without_mirrors",
         "date": "2025-07-09",
         "downloads": 6
       },
@@ -1812,6 +1792,21 @@
         "category": "without_mirrors",
         "date": "2025-12-31",
         "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-01-01",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-01-02",
+        "downloads": 4
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-01-05",
+        "downloads": 18
       }
     ]
   },
