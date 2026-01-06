@@ -1,0 +1,126 @@
+[
+  {
+    "loc": "https://feloopy.github.io/",
+    "lastmod": "2026-01-06T06:28:13.398Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/videos",
+    "lastmod": "2026-01-06T06:28:13.398Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/about",
+    "lastmod": "2026-01-06T06:28:13.396Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/docs",
+    "lastmod": "2026-01-06T06:28:13.398Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/status",
+    "lastmod": "2026-01-06T06:28:13.397Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions",
+    "lastmod": "2026-01-06T06:28:13.398Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog",
+    "lastmod": "2026-01-06T06:28:13.404Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions/bug-report",
+    "lastmod": "2026-01-06T06:28:18.015Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions/project",
+    "lastmod": "2026-01-06T06:28:18.248Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions/feature-request",
+    "lastmod": "2026-01-06T06:28:18.136Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions/contact",
+    "lastmod": "2026-01-06T06:28:18.570Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions/waitlist",
+    "lastmod": "2026-01-06T06:28:20.535Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/submissions/payment",
+    "lastmod": "2026-01-06T06:28:21.565Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog/gpu-accelerated-optimization",
+    "lastmod": "2026-01-06T06:28:23.322Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog/llms-and-decision-science",
+    "lastmod": "2026-01-06T06:28:23.324Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/cplex",
+    "lastmod": "2026-01-06T06:28:26.235Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/blog/list-of-optimization-packages",
+    "lastmod": "2026-01-06T06:28:23.453Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store",
+    "lastmod": "2026-01-06T06:28:23.494Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/impl",
+    "lastmod": "2026-01-06T06:28:28.607Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/odllive",
+    "lastmod": "2026-01-06T06:28:28.622Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/copt",
+    "lastmod": "2026-01-06T06:28:35.249Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/hexaly",
+    "lastmod": "2026-01-06T06:28:25.382Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/highs",
+    "lastmod": "2026-01-06T06:28:34.047Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/timefold",
+    "lastmod": "2026-01-06T06:28:34.041Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/mosek",
+    "lastmod": "2026-01-06T06:28:33.055Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/omelet",
+    "lastmod": "2026-01-06T06:28:31.314Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/seeker",
+    "lastmod": "2026-01-06T06:28:41.110Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/scip",
+    "lastmod": "2026-01-06T06:28:39.963Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/lpsolve",
+    "lastmod": "2026-01-06T06:28:43.777Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/picat",
+    "lastmod": "2026-01-06T06:28:44.770Z"
+  },
+  {
+    "loc": "https://feloopy.github.io/store/lpl",
+    "lastmod": "2026-01-06T06:28:44.765Z"
+  }
+]
