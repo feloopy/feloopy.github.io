@@ -553,6 +553,15 @@
       "yanked_reason": null
     },
     "last_serial": 29927109,
+    "ownership": {
+      "organization": null,
+      "roles": [
+        {
+          "role": "Owner",
+          "user": "ktafakkori"
+        }
+      ]
+    },
     "releases": {
       "0.2.3": [
         {
@@ -1175,11 +1184,6 @@
   },
   "pypistats": {
     "data": [
-      {
-        "category": "without_mirrors",
-        "date": "2025-08-21",
-        "downloads": 1
-      },
       {
         "category": "without_mirrors",
         "date": "2025-08-23",
