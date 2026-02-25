@@ -1748,11 +1748,15 @@
         "category": "without_mirrors",
         "date": "2026-02-22",
         "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-02-24",
+        "downloads": 1
       }
     ]
   },
   "commit_counts": {
-    "2025-11-26": 1,
     "2025-11-27": 4
   },
   "last_commit_date": "2025-11-27"
