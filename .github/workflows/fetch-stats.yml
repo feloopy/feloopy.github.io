@@ -125,6 +125,17 @@ jobs:
             ' "${COMMIT_FILES[@]}" > tmp/commit_counts_full.json
           fi
 
+          if [ -s tmp/stargazers.json ] && [ "$(cat tmp/stargazers.json)" != "null" ]; then
+            jq '
+              [ .[]? | .starred_at // null | select(. != null) | .[0:10] ]
+              | group_by(.)
+              | map({date: .[0], stars: length})
+              | sort_by(.date)
+            ' tmp/stargazers.json > tmp/star_series.json
+          else
+            echo '[]' > tmp/star_series.json
+          fi
+
           jq -n \
             --rawfile gh tmp/github.json \
             --rawfile stars tmp/stargazers.json \
@@ -133,6 +144,7 @@ jobs:
             --rawfile pypi tmp/pypi.json \
             --rawfile pypistats tmp/pypistats.json \
             --rawfile commits tmp/commit_counts_full.json \
+            --rawfile star_series tmp/star_series.json \
             '
             def safe_fromraw: try fromjson catch null;
 
@@ -170,9 +182,9 @@ jobs:
                       end
                   )
                 ),
-          
               commit_counts: ( (($commits | safe_fromraw) // {} ) .commit_counts // {} ),
-              last_commit_date: ( (($commits | safe_fromraw) // {} ) .last_commit_date // null )
+              last_commit_date: ( (($commits | safe_fromraw) // {} ) .last_commit_date // null ),
+              star_series: ( ($star_series | safe_fromraw) // [] )
             }
             ' > data/stats.json
 
