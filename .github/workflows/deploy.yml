@@ -21,29 +21,65 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        working-directory: source
+        run: npm ci
+
+      - name: Install Chrome for Puppeteer
+        working-directory: source
+        run: npx puppeteer browsers install chrome
+
+      - name: Build from source
+        working-directory: source
+        run: npm run build:prerender
+
+      - name: Prerender all pages
+        working-directory: source
+        run: npm run prerender
+
+      - name: Copy data files to dist
+        working-directory: source
+        run: |
+          mkdir -p dist/data
+          cp -n ../data/stats.json dist/data/ 2>/dev/null || true
+          cp -n ../data/comments.json dist/data/ 2>/dev/null || true
+          ls -la dist/data/ 2>/dev/null || echo "No data files to copy"
+
+      - name: Verify static pages exist
+        run: |
+          echo "=== Checking prerendered pages ==="
+          for page in index.html 404.html about.html docs.html blog.html store.html status.html; do
+            if [ -f "source/dist/$page" ]; then
+              echo "  OK: $page ($(wc -c < source/dist/$page) bytes)"
+            else
+              echo "  MISSING: $page"
+            fi
+          done
+          echo "=== Checking generated files ==="
+          for file in sitemap.xml robots.txt; do
+            if [ -f "source/dist/$file" ]; then
+              echo "  OK: $file"
+            else
+              echo "  MISSING: $file"
+            fi
+          done
+
       - name: Prepare publish directory
         run: |
           set -e
           mkdir -p publish
-          rsync -a --delete \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='source' \
-            --exclude='node_modules' \
-            --exclude='README*' \
-            --exclude='LICENSE*' \
-            --exclude='.gitignore' \
-            --exclude='*.yml' \
-            --exclude='*.yaml' \
-            --exclude='package.json' \
-            --exclude='package-lock.json' \
-            --exclude='build.bat' \
-            --exclude='show.bat' \
-            --exclude='.vscode' \
-            ./ publish/
+          cp -a source/dist/. publish/
           touch publish/.nojekyll
           echo "Publish dir size: $(du -sh publish | cut -f1)"
-          ls publish/ | head -20
+          echo "=== Publish dir contents ==="
+          ls publish/ | head -30
+          echo "=== Page file sizes ==="
+          find publish -name "*.html" -exec sh -c 'echo "  {} $(wc -c < {})"' \; 2>/dev/null || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
