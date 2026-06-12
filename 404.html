@@ -3,28 +3,53 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link id="favicon-light" rel="icon" type="image/svg+xml" href="/logo-black.svg" />
+    <link id="favicon-dark" rel="icon" type="image/svg+xml" href="/logo-white.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="google-site-verification"
-      content="bVUxQ-dwS2OJIe_gchcWu-NqHJD3oR9Sl_KMNnR5-vQ"
-    />
+    <meta name="google-site-verification" content="bVUxQ-dwS2OJIe_gchcWu-NqHJD3oR9Sl_KMNnR5-vQ" />
     <meta name="description" content="Feasible Logical Optimal - FelooPy" />
     <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://api.github.com" crossorigin />
+    <link rel="preconnect" href="https://pypi.org" crossorigin />
+    <link rel="preconnect" href="https://pypistats.org" crossorigin />
+    <link rel="preconnect" href="https://img.shields.io" crossorigin />
+    <link rel="preconnect" href="https://api.codetabs.com" crossorigin />
+    <link rel="preconnect" href="https://www.youtube.com" crossorigin />
+    <link rel="dns-prefetch" href="https://ipapi.co" />
+    <link rel="dns-prefetch" href="https://ipwhois.app" />
+    <link rel="dns-prefetch" href="https://ipinfo.io" />
+    <link rel="dns-prefetch" href="https://docs.google.com" />
+    <link rel="dns-prefetch" href="https://script.google.com" />
     <title>Feasible Logical Optimal - FelooPy</title>
-    <link rel="modulepreload" href="data:application/octet-stream;base64,aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IHsgY3JlYXRlUm9vdCwgaHlkcmF0ZVJvb3QgfSBmcm9tICJyZWFjdC1kb20vY2xpZW50IjsKaW1wb3J0IHsgQnJvd3NlclJvdXRlciB9IGZyb20gInJlYWN0LXJvdXRlci1kb20iOwppbXBvcnQgQXBwIGZyb20gIi4vQXBwIjsKaW1wb3J0ICIuL2luZGV4LmNzcyI7CmNvbnN0IHJvb3RFbCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJyb290IikhOwpjb25zdCByYXdCYXNlID0gaW1wb3J0Lm1ldGEuZW52LkJBU0VfVVJMIHx8ICIvIjsKY29uc3Qgcm91dGVyQmFzZSA9IHJhd0Jhc2UgPT09ICIuLyIgPyAiLyIgOiByYXdCYXNlOwpjb25zdCBhcHAgPSAoCiAgPFJlYWN0LlN0cmljdE1vZGU+CiAgICA8QnJvd3NlclJvdXRlciBiYXNlbmFtZT17cm91dGVyQmFzZX0+CiAgICAgIDxBcHAgLz4KICAgIDwvQnJvd3NlclJvdXRlcj4KICA8L1JlYWN0LlN0cmljdE1vZGU+Cik7CmlmIChyb290RWwuaGFzQ2hpbGROb2RlcygpKSBoeWRyYXRlUm9vdChyb290RWwsIGFwcCk7CmVsc2UgY3JlYXRlUm9vdChyb290RWwpLnJlbmRlcihhcHApOwo=" />
-    <base href="/" />
-    <script type="module" crossorigin src="/assets/index-Czb1Jutj.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/style-XsbkHKAE.css">
+    <link rel="modulepreload" href="data:application/octet-stream;base64,aW1wb3J0IFJlYWN0IGZyb20gInJlYWN0IjsKaW1wb3J0IHsgY3JlYXRlUm9vdCwgaHlkcmF0ZVJvb3QgfSBmcm9tICJyZWFjdC1kb20vY2xpZW50IjsKaW1wb3J0IHsgQnJvd3NlclJvdXRlciB9IGZyb20gInJlYWN0LXJvdXRlci1kb20iOwppbXBvcnQgQXBwIGZyb20gIi4vQXBwIjsKaW1wb3J0ICIuL2luZGV4LmNzcyI7Cgpjb25zdCByb290RWwgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgicm9vdCIpITsKY29uc3QgYXBwID0gKAogIDxSZWFjdC5TdHJpY3RNb2RlPgogICAgPEJyb3dzZXJSb3V0ZXIgYmFzZW5hbWU9e2ltcG9ydC5tZXRhLmVudi5CQVNFX1VSTH0+CiAgICAgIDxBcHAgLz4KICAgIDwvQnJvd3NlclJvdXRlcj4KICA8L1JlYWN0LlN0cmljdE1vZGU+Cik7CgppZiAocm9vdEVsLmhhc0NoaWxkTm9kZXMoKSkgewogIGh5ZHJhdGVSb290KHJvb3RFbCwgYXBwKTsKfSBlbHNlIHsKICBjcmVhdGVSb290KHJvb3RFbCkucmVuZGVyKGFwcCk7Cn0K" />
+    <base href="/">
+    <script>
+      (function() {
+        function getIsDark() {
+          return document.documentElement.classList.contains("dark")
+            || (!document.documentElement.classList.contains("light") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        }
+        function updateFavicon() {
+          var dark = getIsDark();
+          var light = document.getElementById("favicon-light");
+          var darkEl = document.getElementById("favicon-dark");
+          if (light) light.media = dark ? "not all" : "all";
+          if (darkEl) darkEl.media = dark ? "all" : "not all";
+        }
+        updateFavicon();
+        var mo = new MutationObserver(updateFavicon);
+        mo.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicon);
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DuUQRC8b.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/style-l3SFnNRb.css">
   </head>
   <body>
     <div id="root"></div>
     <script>
       try {
-        console.log(
-          "%cFelooPy Console System",
-          "font-weight:700; font-size:12px; color:#0769AD;"
-        );
+        console.log("%cFelooPy Console System","font-weight:700; font-size:12px; color:#0769AD;");
       } catch (e) {}
     </script>
   </body>
