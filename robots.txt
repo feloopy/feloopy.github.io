@@ -4,4 +4,3 @@ Disallow: /payment
 Disallow: /payment-ref
 
 Sitemap: https://feloopy.github.io/sitemap.xml
-Host: https://feloopy.github.io
