@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   fetch-stats:
@@ -20,7 +21,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Ensure jq available
         run: |
@@ -34,6 +34,8 @@ jobs:
 
       - name: Fetch stats and write trimmed data/stats.json
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           mkdir -p tmp data
@@ -212,6 +214,7 @@ jobs:
           echo "Wrote data/stats.json (size: $(wc -c < data/stats.json) bytes)"
 
       - name: Commit trimmed data
+        id: commit
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -224,5 +227,27 @@ jobs:
             echo "no changes to data/stats.json"
             exit 0
           fi
-          git commit -m "updated stats." || echo "nothing to commit/commit failed"
+          git commit -m "updated stats."
           git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger deploy
+        if: steps.commit.outputs.pushed == 'true'
+        continue-on-error: true
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Triggering deploy workflow..."
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            --retry 3 --retry-delay 5 --retry-all-errors \
+            -X POST \
+            -H "Authorization: token ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches" \
+            -d '{"ref":"main"}')
+          if [ "$HTTP_CODE" = "204" ]; then
+            echo "Deploy triggered successfully."
+          else
+            echo "::warning::Deploy trigger returned HTTP ${HTTP_CODE}. You can trigger deploy manually."
+          fi
