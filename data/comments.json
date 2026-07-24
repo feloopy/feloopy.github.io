@@ -1,1 +1,49 @@
-{"items":[{"timestamp":"8 months ago","name":"Fred","comment":"Insightful!","reaction":"star","other":"c61bb454-56ee-4f3f-8f76-ebebad22df01","url":"https://feloopy.github.io/blog/list-of-optimization-packages","reply":""},{"timestamp":"8 months ago","name":"Keivan","comment":"@Fred Thanks!","reaction":"","other":"c61bb454-56ee-4f3f-8f76-ebebad22df01","url":"https://feloopy.github.io/blog/list-of-optimization-packages","reply":""},{"timestamp":"8 months ago","name":"John McGregor","comment":"Useful optimization packages!","reaction":"","other":"8593c893-ca13-48de-84e9-34ed5769a39a","url":"https://feloopy.github.io/blog/list-of-optimization-packages","reply":""},{"timestamp":"27 minutes ago","name":"Anonymous","comment":"[Title] A data-driven sustainable scheduling model for dispatch-steerable last-mile delivery systems with negotiable time windows\n[Authors] Keivan Tafakkori, Reza Tavakkoli-Moghaddam, Ali Siadat\n[Journal] Engineering Applications of Artificial Intelligence\n[Year] 2025\n[DOI] https://doi.org/10.1016/j.engappai.2025.111280\n[URL] https://doi.org/10.1016/j.engappai.2025.111280\n[Abstract] With the surge in e-commerce, last-mile delivery (LMD) faces challenges in meeting the dynamic arrival of large-scale customer demand. Existing research considers traditional, static, single or two-echelon, and inflexible vehicle routing-based dispatch strategies, yielding inefficiencies while the sustainability impacts remain unclear. This paper proposes a novel tri-objective mathematical model for dispatch-steerability in sustainable LMD systems by integrating insourced and crowdsourced transport modes with heterogeneous capacities. Deliveries originate from main dispatch points (MDPs) or dynamically generated alternative dispatch points (ADPs), adapting to stakeholder, driver, and customer preferences via negotiable timing through temporary rejections or incentives. The model optimizes economic efficiency (minimizing routing, rejection, and negotiation costs), environmental impact (reducing underutilization of transport modes), and social responsibility (balancing driver workload and just-in-time deliveries). A data-driven density-based spatial clustering of applications with noise (DBSCAN) algorithm identifies ADP locations, enhancing the adaptability of the decisions. Scalability is achieved via a rolling horizon strategy, an improved augmented epsilon-constraint method, and multi-objective meta-heuristics, including a genetic algorithm (GA) and simulated annealing (SA) featuring an archive and grid mechanism with a tailored representation scheme. Results show a 200 % increase in Pareto-optimal solutions as demand rises, and that a dispatch steerable LMD system with ADPs offers 150 % more diverse delivery options than MDP-only systems. Pareto surface analysis underscores LMD adaptation trends and the need for multi-criteria decision-making in sustainable LMD systems.","reaction":"star","other":"paper-1784898632959-bdv2w67","url":"https://feloopy.github.io/papers","reply":""},{"timestamp":"20 minutes ago","name":"Anonymous","comment":"[Title] Scheduling multi-configuration last-mile delivery logistics by learning from optimisation feedback and customer preferences\n[Authors] Keivan Tafakkori, Reza Tavakkoli-Moghaddam, Ali Siadat\n[Journal] International Journal of Production Research\n[Year] 2025\n[DOI] https://doi.org/10.1080/00207543.2025.2507795\n[URL] https://doi.org/10.1080/00207543.2025.2507795\n[Abstract] Last-mile delivery (LMD) logistics employ multiple delivery process configurations (e.g. depot-micro, depot-self, and depot-home) to meet the delivery time expectations of customers on a large scale. Meanwhile, scheduling delivery visits within multi-configuration LMD logistics requires solving complex, integrated, and intractable mathematical models. This paper presents a deep neuroevolution from an optimisation feedback algorithm that enables one to solve a set of decomposed configuration-based mathematical models instead. The algorithm trains a predictive model (e.g. a deep neural network) to learn to assign customers to each configuration. Then, feedback is deduced by solving a set of decomposed prescriptive models to schedule deliveries within each configuration. A single objective is minimised considering total delivery time, earliness and tardiness of deliveries, arrival deviation, and total and maximum self-pickup time. The pre-trained predictive model is compared with a surrogate prescriptive assignment model regarding computational time and optimisation feedback. The applicability of the proposed algorithm is validated by a set of stability and scalability tests based on Amazon's LMD case study. The predictive model is found to outperform the simple assignment model in 100% of the test instances. In addition, its ability to grasp contextual attributes of multiple sides in LMD logistics and generalisation is highlighted.","reaction":"star","other":"paper-1784899022293-rgz71d2","url":"https://feloopy.github.io/papers","reply":""}]}
+{
+    "items":  [
+                  {
+                      "timestamp":  "8 months ago",
+                      "name":  "Keivan",
+                      "comment":  "Don\u0027t hesitate to leave us a comment!\n\u003c!--avatar:https://media.licdn.com/dms/image/v2/D5603AQF5P7WyZ5focQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728078928583?e=1764806400\u0026v=beta\u0026t=VPo1d1HedCTmuyXlD_QIRLUYWQePXx2lXZd5EdWLjuQ--\u003e",
+                      "reaction":  "thumbs",
+                      "other":  "9bbdbdf7-e70d-46f4-b7be-3520ee237596",
+                      "url":  "https://feloopy.github.io/blog/llms-and-decision-science",
+                      "reply":  ""
+                  },
+                  {
+                      "timestamp":  "8 months ago",
+                      "name":  "Fred",
+                      "comment":  "Insightful!",
+                      "reaction":  "star",
+                      "other":  "c61bb454-56ee-4f3f-8f76-ebebad22df01",
+                      "url":  "https://feloopy.github.io/blog/list-of-optimization-packages",
+                      "reply":  ""
+                  },
+                  {
+                      "timestamp":  "8 months ago",
+                      "name":  "Keivan",
+                      "comment":  "@Fred Thanks!",
+                      "reaction":  "",
+                      "other":  "c61bb454-56ee-4f3f-8f76-ebebad22df01",
+                      "url":  "https://feloopy.github.io/blog/list-of-optimization-packages",
+                      "reply":  ""
+                  },
+                  {
+                      "timestamp":  "8 months ago",
+                      "name":  "John McGregor",
+                      "comment":  "Useful optimization packages!",
+                      "reaction":  "",
+                      "other":  "8593c893-ca13-48de-84e9-34ed5769a39a",
+                      "url":  "https://feloopy.github.io/blog/list-of-optimization-packages",
+                      "reply":  ""
+                  },
+                  {
+                      "timestamp":  "8 months ago",
+                      "name":  "Keivan",
+                      "comment":  "What do you think?\n\u003c!--avatar:https://media.licdn.com/dms/image/v2/D5603AQF5P7WyZ5focQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728078928583?e=1764806400\u0026v=beta\u0026t=VPo1d1HedCTmuyXlD_QIRLUYWQePXx2lXZd5EdWLjuQ--\u003e",
+                      "reaction":  "",
+                      "other":  "50c4edb6-381c-4a04-9ce5-c7221d30eb35",
+                      "url":  "https://feloopy.github.io/blog/gpu-accelerated-optimization",
+                      "reply":  ""
+                  }
+              ]
+}
