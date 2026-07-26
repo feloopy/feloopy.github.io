@@ -57,7 +57,7 @@ jobs:
           fetch_to_file() {
             local url=$1
             local out=$2
-            local fallback_key=$3
+            local fallback_key=${3:-}
             local extra_accept=${4:-}
             if [[ -n "$extra_accept" ]]; then
               accept_header=(-H "Accept: $extra_accept")
