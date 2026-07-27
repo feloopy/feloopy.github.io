@@ -107,7 +107,14 @@
     "open_issues": 0,
     "watchers": 39,
     "default_branch": "main",
-    "temp_clone_token": null,
+    "permissions": {
+      "admin": false,
+      "maintain": false,
+      "push": false,
+      "triage": false,
+      "pull": false
+    },
+    "temp_clone_token": "",
     "custom_properties": {},
     "organization": {
       "login": "feloopy",
@@ -1533,6 +1540,16 @@
         "category": "without_mirrors",
         "date": "2026-07-20",
         "downloads": 2
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-07-23",
+        "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-07-25",
+        "downloads": 4
       }
     ]
   },
