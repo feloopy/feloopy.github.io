@@ -1,0 +1,11 @@
+{
+  "rate": 200000,
+  "gas": {
+    "paymentApi": "https://script.google.com/macros/s/AKfycbzy7cFT3bx2CA_TWT2beWHqhoN-AtfHfj7LWn_s_u-Ir-pQOQt7kBP_MIWcg1SY5aaGHg/exec"
+  },
+  "forms": {
+    "paymentForm": "https://docs.google.com/forms/d/e/1FAIpQLSfOZ3wbJ4D8gsjBoHzaId1axXjYlaqpwZTowyOQs0u7W2S_Ig/formResponse",
+    "commentsForm": "https://docs.google.com/forms/d/e/1FAIpQLSfJqsAzy4IuBMLFWueCvdwZ496IdEf87-jUto2U1mqjCdoZjQ/formResponse",
+    "submissionForm": "https://docs.google.com/forms/d/e/1FAIpQLSccjnJ_FURnORjyMt61PXwK0UQ0ybYBPVvY9hfF1qt05cQlXA/formResponse"
+  }
+}
