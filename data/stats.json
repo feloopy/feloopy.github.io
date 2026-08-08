@@ -1555,11 +1555,15 @@
         "category": "without_mirrors",
         "date": "2026-08-06",
         "downloads": 7
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-08-07",
+        "downloads": 1
       }
     ]
   },
   "commit_counts": {
-    "2026-05-09": 7,
     "2026-05-25": 1
   },
   "last_commit_date": "2026-05-25",
