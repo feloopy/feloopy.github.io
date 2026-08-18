@@ -78,6 +78,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://feloopy.github.io/blog/list-of-factors-affecting-decision-model-practicality</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://feloopy.github.io/blog/list-of-optimization-benchmark-libraries</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
