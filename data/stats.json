@@ -1073,11 +1073,6 @@
     "data": [
       {
         "category": "without_mirrors",
-        "date": "2026-03-04",
-        "downloads": 1
-      },
-      {
-        "category": "without_mirrors",
         "date": "2026-03-07",
         "downloads": 13
       },
@@ -1575,6 +1570,11 @@
         "category": "without_mirrors",
         "date": "2026-08-31",
         "downloads": 3
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-09-01",
+        "downloads": 19
       }
     ]
   },
