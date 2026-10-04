@@ -1011,26 +1011,6 @@
     "data": [
       {
         "category": "without_mirrors",
-        "date": "2026-03-30",
-        "downloads": 7
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2026-04-01",
-        "downloads": 2
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2026-04-03",
-        "downloads": 18
-      },
-      {
-        "category": "without_mirrors",
-        "date": "2026-04-05",
-        "downloads": 2
-      },
-      {
-        "category": "without_mirrors",
         "date": "2026-04-06",
         "downloads": 1
       },
@@ -1553,6 +1533,11 @@
         "category": "without_mirrors",
         "date": "2026-10-02",
         "downloads": 23
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-10-03",
+        "downloads": 8
       }
     ]
   },
