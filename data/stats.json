@@ -1708,11 +1708,15 @@
         "category": "without_mirrors",
         "date": "2026-11-10",
         "downloads": 7
+      },
+      {
+        "category": "without_mirrors",
+        "date": "2026-11-11",
+        "downloads": 2
       }
     ]
   },
   "commit_counts": {
-    "2026-08-13": 3,
     "2026-10-01": 4
   },
   "last_commit_date": "2026-10-01",
